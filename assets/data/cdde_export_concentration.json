@@ -1,0 +1,135 @@
+{
+  "name": "World",
+  "children": [
+    {
+      "name": "Europe",
+      "color_key": "blue",
+      "children": [
+        {
+          "name": "Western Europe",
+          "value": 1012795,
+          "countries": ["Germany", "France", "Netherlands", "Belgium", "Austria", "Switzerland", "Luxembourg", "Liechtenstein"]
+        },
+        {
+          "name": "Eastern Europe",
+          "value": 593168,
+          "countries": ["Russian Federation", "Poland", "Ukraine", "Romania", "Czech Republic", "Hungary", "Belarus", "Bulgaria", "Slovakia", "Moldova"]
+        },
+        {
+          "name": "Northern Europe",
+          "value": 519326,
+          "countries": ["United Kingdom", "Sweden", "Norway", "Denmark", "Finland", "Estonia", "Latvia", "Lithuania", "Iceland"]
+        },
+        {
+          "name": "Southern Europe",
+          "value": 333790,
+          "countries": ["Italy", "Spain", "Portugal", "Greece", "Croatia", "Serbia", "Slovenia", "Albania", "Bosnia and Herz.", "North Macedonia", "Montenegro"]
+        }
+      ]
+    },
+    {
+      "name": "Asia",
+      "color_key": "yellow",
+      "children": [
+        {
+          "name": "Western Asia",
+          "value": 1127138,
+          "countries": ["Saudi Arabia", "UAE", "Iraq", "Kuwait", "Qatar", "Oman", "Iran", "Türkiye", "Israel", "Jordan", "Bahrain", "Lebanon", "Yemen", "Syria", "Armenia", "Azerbaijan", "Georgia", "Palestine"]
+        },
+        {
+          "name": "SE Asia",
+          "value": 551454,
+          "countries": ["Indonesia", "Malaysia", "Thailand", "Viet Nam", "Philippines", "Singapore", "Myanmar", "Cambodia", "Lao PDR", "Brunei Darussalam", "Timor-Leste"]
+        },
+        {
+          "name": "Eastern Asia",
+          "value": 380190,
+          "countries": ["China", "Japan", "Republic of Korea", "Mongolia", "Dem. People's Rep. of Korea"]
+        },
+        {
+          "name": "Southern Asia",
+          "value": 247154,
+          "countries": ["India", "Pakistan", "Bangladesh", "Sri Lanka", "Nepal", "Afghanistan", "Bhutan", "Maldives"]
+        },
+        {
+          "name": "Central Asia",
+          "value": 85000,
+          "countries": ["Kazakhstan", "Uzbekistan", "Turkmenistan", "Kyrgyzstan", "Tajikistan"]
+        }
+      ]
+    },
+    {
+      "name": "Americas",
+      "color_key": "green",
+      "children": [
+        {
+          "name": "Northern America",
+          "value": 961163,
+          "countries": ["United States of America", "Canada", "Mexico"]
+        },
+        {
+          "name": "South America",
+          "value": 570289,
+          "countries": ["Brazil", "Argentina", "Chile", "Colombia", "Peru", "Ecuador", "Venezuela", "Bolivia", "Uruguay", "Paraguay", "Guyana", "Suriname"]
+        },
+        {
+          "name": "Central America",
+          "value": 68420,
+          "countries": ["Guatemala", "Costa Rica", "Panama", "Honduras", "El Salvador", "Nicaragua", "Belize"]
+        },
+        {
+          "name": "Caribbean",
+          "value": 42180,
+          "countries": ["Cuba", "Dominican Republic", "Trinidad and Tobago", "Jamaica", "Haiti", "Bahamas", "Barbados", "Saint Lucia", "Grenada", "Antigua and Barbuda", "Saint Kitts and Nevis", "Saint Vincent and the Grenadines", "Dominica"]
+        }
+      ]
+    },
+    {
+      "name": "Africa",
+      "color_key": "purple",
+      "children": [
+        {
+          "name": "Northern Africa",
+          "value": 124333,
+          "countries": ["Algeria", "Egypt", "Libya", "Morocco", "Sudan", "Tunisia"]
+        },
+        {
+          "name": "Sub-Saharan Africa",
+          "value": 83313,
+          "countries": ["Nigeria", "South Africa", "Angola", "Ethiopia", "Kenya", "Ghana", "Côte d'Ivoire", "Tanzania", "Mozambique", "Cameroon", "Congo", "Zambia", "Gabon", "Zimbabwe"]
+        },
+        {
+          "name": "W. Africa",
+          "value": 62480,
+          "countries": ["Senegal", "Mali", "Burkina Faso", "Guinea", "Niger", "Mauritania", "Sierra Leone", "Liberia", "Benin", "Togo", "Guinea-Bissau", "Gambia", "Cape Verde"]
+        },
+        {
+          "name": "E. Africa",
+          "value": 48220,
+          "countries": ["Uganda", "Rwanda", "Somalia", "Eritrea", "Djibouti", "Madagascar", "Mauritius", "Seychelles", "Malawi", "Comoros"]
+        },
+        {
+          "name": "Central Africa",
+          "value": 38460,
+          "countries": ["Dem. Republic of the Congo", "Cameroon", "Central African Republic", "Chad", "Equatorial Guinea", "Gabon", "Congo", "Sao Tome and Principe"]
+        }
+      ]
+    },
+    {
+      "name": "Oceania",
+      "color_key": "red",
+      "children": [
+        {
+          "name": "Australia & NZ",
+          "value": 285640,
+          "countries": ["Australia", "New Zealand", "Papua New Guinea"]
+        },
+        {
+          "name": "Pacific Islands",
+          "value": 14860,
+          "countries": ["Fiji", "Solomon Islands", "Vanuatu", "Samoa", "Tonga", "Kiribati", "Marshall Islands", "Palau", "Micronesia", "Nauru", "Tuvalu", "Cook Islands", "Niue"]
+        }
+      ]
+    }
+  ]
+}
