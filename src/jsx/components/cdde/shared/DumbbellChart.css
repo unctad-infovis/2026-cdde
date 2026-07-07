@@ -1,0 +1,42 @@
+#app-root-2026-cdde .app .db_svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+#app-root-2026-cdde .app .db_axis_label {
+  font-size: 10px;
+  fill: var(--un-color-grey-text);
+  font-family: Inter, Arial, sans-serif;
+}
+
+#app-root-2026-cdde .app .db_ref_label {
+  font-size: 10px;
+  font-weight: 700;
+  fill: #fff;
+  font-family: Inter, Arial, sans-serif;
+}
+
+#app-root-2026-cdde .app .db_ref_line {
+  stroke: var(--un-color-grey-light);
+  stroke-width: 1px;
+  stroke-dasharray: 3 3;
+}
+
+#app-root-2026-cdde .app .db_track {
+  stroke: var(--un-color-grey-lighest);
+  stroke-width: 1px;
+}
+
+#app-root-2026-cdde .app .db_row_name {
+  font-size: 11px;
+  fill: var(--un-color-blue-darkest);
+  font-family: Inter, Arial, sans-serif;
+}
+
+#app-root-2026-cdde .app .db_badge_label {
+  font-size: 10px;
+  font-weight: 700;
+  font-family: Inter, Arial, sans-serif;
+}

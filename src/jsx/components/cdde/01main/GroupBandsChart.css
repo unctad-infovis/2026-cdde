@@ -1,0 +1,88 @@
+#app-root-2026-cdde .app .gbc_container {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#app-root-2026-cdde .app .gbc_loading {
+  height: 400px;
+  background: var(--un-color-blue-lightest);
+  border-radius: 16px;
+  animation: gbc_pulse 1.4s ease infinite;
+}
+
+@keyframes gbc_pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+
+#app-root-2026-cdde .app .gbc_insight {
+  font-size: var(--un-font-size-xxs);
+  color: var(--un-color-blue-darkest);
+  border-left: 3px solid var(--un-color-blue);
+  padding-left: 12px;
+  margin: 12px 0 16px;
+  line-height: var(--un-line-height-normal);
+}
+
+#app-root-2026-cdde .app .gbc_insight_bold {
+  color: var(--un-color-blue-text-dark);
+  font-weight: var(--un-font-weight-bold);
+}
+
+#app-root-2026-cdde .app .gbc_chart_wrap {
+  flex: 1;
+}
+
+#app-root-2026-cdde .app .gbc_svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+#app-root-2026-cdde .app .gbc_axis_label {
+  font-size: 9px;
+  fill: var(--un-color-grey-text);
+}
+
+#app-root-2026-cdde .app .gbc_bar_label {
+  font-size: 10px;
+  font-weight: var(--un-font-weight-bold);
+  fill: #fff;
+}
+
+#app-root-2026-cdde .app .gbc_x_label {
+  font-size: 9px;
+  fill: var(--un-color-grey-dark);
+}
+
+#app-root-2026-cdde .app .gbc_legend {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  padding-top: 12px;
+  border-top: 1px solid var(--un-color-grey-lighest);
+}
+
+#app-root-2026-cdde .app .gbc_legend_item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--un-font-size-xxxxs);
+  color: var(--un-color-grey-dark);
+}
+
+#app-root-2026-cdde .app .gbc_legend_dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+

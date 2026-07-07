@@ -1,0 +1,16 @@
+[
+  {"name": "Ghana",          "old_pct": 56, "new_pct": 72, "change":  16},
+  {"name": "Tanzania",       "old_pct": 68, "new_pct": 82, "change":  14},
+  {"name": "Cabo Verde",     "old_pct": 52, "new_pct": 71, "change":  19},
+  {"name": "Mozambique",     "old_pct": 70, "new_pct": 82, "change":  12},
+  {"name": "Niger",          "old_pct": 68, "new_pct": 84, "change":  16},
+  {"name": "Mongolia",       "old_pct": 69, "new_pct": 82, "change":  13},
+  {"name": "Madagascar",     "old_pct": 65, "new_pct": 77, "change":  12},
+  {"name": "Sudan",          "old_pct": 72, "new_pct": 62, "change": -10},
+  {"name": "Angola",         "old_pct": 90, "new_pct": 82, "change":  -8},
+  {"name": "Kazakhstan",     "old_pct": 84, "new_pct": 72, "change": -12},
+  {"name": "Saudi Arabia",   "old_pct": 84, "new_pct": 72, "change": -12},
+  {"name": "Algeria",        "old_pct": 74, "new_pct": 68, "change":  -6},
+  {"name": "Russian Fed.",   "old_pct": 78, "new_pct": 66, "change": -12},
+  {"name": "Qatar",          "old_pct": 88, "new_pct": 76, "change": -12}
+]

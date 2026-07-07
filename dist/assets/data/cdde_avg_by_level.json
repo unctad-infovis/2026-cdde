@@ -1,0 +1,32 @@
+[
+  {
+    "group": "LLDCs",
+    "economies": 32,
+    "avg_pct": 79.7,
+    "color": "blue"
+  },
+  {
+    "group": "LDCs",
+    "economies": 44,
+    "avg_pct": 79.5,
+    "color": "blue"
+  },
+  {
+    "group": "SIDS",
+    "economies": 38,
+    "avg_pct": 65.9,
+    "color": "blue"
+  },
+  {
+    "group": "Other developing",
+    "economies": 89,
+    "avg_pct": 61.3,
+    "color": "blue"
+  },
+  {
+    "group": "Developed",
+    "economies": 40,
+    "avg_pct": 36.0,
+    "color": "green"
+  }
+]

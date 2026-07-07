@@ -1,0 +1,83 @@
+#app-root-2026-cdde .app .dm_container {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#app-root-2026-cdde .app .dm_loading {
+  height: 460px;
+  background: var(--un-color-blue-lightest);
+  border-radius: 8px;
+  animation: dm_pulse 1.4s ease infinite;
+}
+
+@keyframes dm_pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+
+
+#app-root-2026-cdde .app .dm_insight {
+  font-size: var(--un-font-size-xxs);
+  color: var(--un-color-blue-darkest);
+  border-left: 3px solid var(--un-color-grey-light);
+  padding: 2px 0 2px 10px;
+  margin: 10px 0 16px;
+  max-width: none;
+  line-height: var(--un-line-height-normal);
+}
+
+#app-root-2026-cdde .app .dm_insight_bold {
+  color: var(--un-color-blue-text-dark);
+  font-weight: var(--un-font-weight-bold);
+}
+
+#app-root-2026-cdde .app .dm_chart_wrap {
+  flex: 1;
+}
+
+#app-root-2026-cdde .app .dm_svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+#app-root-2026-cdde .app .dm_axis_label {
+  font-size: 10px;
+  fill: var(--un-color-grey-text);
+  font-family: Inter, Arial, sans-serif;
+}
+
+#app-root-2026-cdde .app .dm_ref_line {
+  stroke: var(--un-color-grey-light);
+  stroke-width: 1px;
+  stroke-dasharray: 3 3;
+}
+
+#app-root-2026-cdde .app .dm_track {
+  stroke: var(--un-color-grey-lighest);
+  stroke-width: 1px;
+}
+
+#app-root-2026-cdde .app .dm_row_name {
+  font-size: 11px;
+  fill: var(--un-color-blue-darkest);
+  font-family: Inter, Arial, sans-serif;
+}
+
+#app-root-2026-cdde .app .dm_badge_label {
+  font-size: 10px;
+  font-weight: 700;
+  font-family: Inter, Arial, sans-serif;
+}
+
+/* source margin override */
+#app-root-2026-cdde .app .dm_container .cdde_source {
+  margin-top: 14px;
+}

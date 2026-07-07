@@ -1,0 +1,110 @@
+#app-root-2026-cdde .app .cl_panel {
+  background: #fff;
+  border-radius: 16px;
+  padding: 14px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+#app-root-2026-cdde .app .cl_panel_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4px 10px;
+  border-bottom: 1px solid var(--un-color-grey-lighest);
+  margin-bottom: 8px;
+  flex-shrink: 0;
+}
+
+#app-root-2026-cdde .app .cl_count {
+  font-size: var(--un-font-size-xxs);
+  color: var(--un-color-grey-text);
+}
+
+#app-root-2026-cdde .app .cl_count strong {
+  font-weight: var(--un-font-weight-boldest);
+  color: var(--un-color-blue-darkest);
+}
+
+#app-root-2026-cdde .app .cl_sort {
+  font-size: var(--un-font-size-xxxxs);
+  color: var(--un-color-grey-text);
+}
+
+/* Scrollable country grid */
+#app-root-2026-cdde .app .cl_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-content: start;
+  gap: 1px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Scrollbar */
+#app-root-2026-cdde .app .cl_grid::-webkit-scrollbar {
+  width: 4px;
+}
+
+#app-root-2026-cdde .app .cl_grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#app-root-2026-cdde .app .cl_grid::-webkit-scrollbar-thumb {
+  background: var(--un-color-grey-light);
+  border-radius: 4px;
+}
+
+/* Country tiles */
+#app-root-2026-cdde .app .cl_tile {
+  background: none;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 6px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  transition: background 0.12s;
+}
+
+#app-root-2026-cdde .app .cl_tile:hover {
+  background: var(--un-color-grey-lighest);
+}
+
+#app-root-2026-cdde .app .cl_tile--selected {
+  outline: 2px solid var(--un-color-blue);
+  outline-offset: -1px;
+  border-radius: 6px;
+}
+
+#app-root-2026-cdde .app .cl_tile--selected .cl_tile_name {
+  color: var(--un-color-blue);
+}
+
+#app-root-2026-cdde .app .cl_tile_name {
+  font-size: var(--un-font-size-xxs);
+  font-weight: var(--un-font-weight-bold);
+  color: var(--un-color-blue-darkest);
+  line-height: var(--un-line-height-smallest);
+}
+
+#app-root-2026-cdde .app .cl_tile_dep {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--un-font-size-xxs);
+  font-weight: var(--un-font-weight-bold);
+  color: var(--un-color-grey-dark);
+}
+
+#app-root-2026-cdde .app .cl_dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}

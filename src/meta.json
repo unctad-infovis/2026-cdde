@@ -1,0 +1,20 @@
+{
+  "chapters": false,
+  "show_site_header": true,
+  "subtitle": "The world still runs on raw and critical materials. Now you can see it.",
+  "title": "The State of Commodity Dependence of the World",
+  "title_highlight": "Commodity Dependence",
+  "stats": [
+    { "value": "191", "label": "UNCTAD member states" },
+    { "value": "102", "label": "Commodity-dependent economies" },
+    { "value": "30+", "label": "Indicators, refreshed yearly" },
+    { "value": "2022–24", "label": "Latest reference period" }
+  ],
+  "nav": [
+    { "label": "See the year in review →", "primary": true },
+    { "label": "Compare profiles", "href": "#compare" },
+    { "label": "Know more", "href": "#know-more" },
+    { "label": "Media", "href": "#media" },
+    { "label": "Publications", "href": "#publications" }
+  ]
+}

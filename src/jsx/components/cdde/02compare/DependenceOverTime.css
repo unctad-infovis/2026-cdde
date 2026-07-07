@@ -1,0 +1,52 @@
+#app-root-2026-cdde .app .dot_chart_wrap {
+  flex: 1;
+  margin-top: 8px;
+}
+
+#app-root-2026-cdde .app .dot_svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+#app-root-2026-cdde .app .dot_grid {
+  stroke: var(--un-color-grey-lighest);
+  stroke-width: 1px;
+}
+
+#app-root-2026-cdde .app .dot_tick_label {
+  font-size: 12px;
+  fill: var(--un-color-grey-text);
+  font-family: Inter, Arial, sans-serif;
+}
+
+#app-root-2026-cdde .app .dot_threshold {
+  stroke: var(--un-color-grey-light);
+  stroke-width: 1px;
+  stroke-dasharray: 4 3;
+}
+
+#app-root-2026-cdde .app .dot_threshold_label {
+  font-size: 9px;
+  fill: var(--un-color-grey-text);
+  font-family: Inter, Arial, sans-serif;
+  dominant-baseline: middle;
+}
+
+#app-root-2026-cdde .app .dot_axis {
+  stroke: var(--un-color-grey-light);
+  stroke-width: 1px;
+}
+
+#app-root-2026-cdde .app .dot_tick {
+  stroke: var(--un-color-grey-light);
+  stroke-width: 1px;
+}
+
+#app-root-2026-cdde .app .dot_callout_label {
+  font-size: 10px;
+  font-weight: 700;
+  fill: #fff;
+  font-family: Inter, Arial, sans-serif;
+}

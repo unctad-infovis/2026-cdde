@@ -1,0 +1,142 @@
+#app-root-2026-cdde .app .alc_container {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#app-root-2026-cdde .app .alc_loading {
+  height: 400px;
+  background: var(--un-color-blue-lightest);
+  border-radius: 16px;
+  animation: alc_pulse 1.4s ease infinite;
+}
+
+@keyframes alc_pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+
+#app-root-2026-cdde .app .alc_insight {
+  font-size: var(--un-font-size-xxs);
+  color: var(--un-color-blue-darkest);
+  border-left: 3px solid var(--un-color-grey-light);
+  padding-left: 12px;
+  margin: 12px 0 24px;
+  line-height: var(--un-line-height-normal);
+}
+
+#app-root-2026-cdde .app .alc_insight_bold {
+  color: var(--un-color-blue-text-dark);
+  font-weight: var(--un-font-weight-bold);
+}
+
+/* Chart area */
+#app-root-2026-cdde .app .alc_chart {
+  flex: 1;
+  position: relative;
+}
+
+/* Threshold label badge */
+#app-root-2026-cdde .app .alc_threshold_label {
+  position: absolute;
+  top: -22px;
+  transform: translateX(-50%);
+  background: var(--un-color-yellow);
+  color: #fff;
+  font-size: var(--un-font-size-xxxxs);
+  font-weight: var(--un-font-weight-bold);
+  padding: 2px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+#app-root-2026-cdde .app .alc_threshold_label::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid var(--un-color-yellow);
+}
+
+#app-root-2026-cdde .app .alc_bars {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-top: 8px;
+}
+
+#app-root-2026-cdde .app .alc_row {
+  display: grid;
+  grid-template-columns: 100px 1fr 48px;
+  align-items: center;
+  gap: 10px;
+}
+
+#app-root-2026-cdde .app .alc_row_meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+#app-root-2026-cdde .app .alc_row_group {
+  font-size: var(--un-font-size-xxs);
+  font-weight: var(--un-font-weight-bold);
+  color: var(--un-color-blue-darkest);
+  line-height: var(--un-line-height-smallest);
+}
+
+#app-root-2026-cdde .app .alc_row_economies {
+  font-size: var(--un-font-size-xxxxs);
+  color: var(--un-color-grey-text);
+}
+
+#app-root-2026-cdde .app .alc_bar_track {
+  position: relative;
+  height: 20px;
+  background: var(--un-color-grey-lighest);
+  border-radius: 3px;
+  overflow: visible;
+}
+
+#app-root-2026-cdde .app .alc_bar {
+  height: 100%;
+  background: var(--un-color-blue);
+  border-radius: 3px;
+  transition: width 0.6s cubic-bezier(0.34, 1.1, 0.64, 1);
+}
+
+#app-root-2026-cdde .app .alc_bar--green {
+  background: var(--un-color-green);
+}
+
+/* Threshold dashed line */
+#app-root-2026-cdde .app .alc_threshold_line {
+  position: absolute;
+  top: -4px;
+  bottom: -4px;
+  width: 1px;
+  border-left: 1px dashed var(--un-color-grey-dark);
+  pointer-events: none;
+}
+
+#app-root-2026-cdde .app .alc_row_value {
+  font-size: var(--un-font-size-xxs);
+  font-weight: var(--un-font-weight-bold);
+  color: var(--un-color-blue-darkest);
+  text-align: right;
+}
+
+/* source margin override — more breathing room above the long footnote */
+#app-root-2026-cdde .app .alc_container .cdde_source {
+  margin-top: 24px;
+}

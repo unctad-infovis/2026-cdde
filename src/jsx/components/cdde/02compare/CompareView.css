@@ -1,0 +1,345 @@
+#app-root-2026-cdde .app .cv_wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ── Header cards ──────────────────────────────────────────── */
+#app-root-2026-cdde .app .cv_cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+#app-root-2026-cdde .app .cv_card {
+  border-radius: 16px;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ghost circle */
+#app-root-2026-cdde .app .cv_card::after {
+  content: '';
+  position: absolute;
+  right: -60px;
+  top: -60px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  pointer-events: none;
+}
+
+#app-root-2026-cdde .app .cv_card_flag {
+  margin-bottom: 10px;
+}
+
+#app-root-2026-cdde .app .cv_card_name {
+  font-size: var(--un-font-size-xl);
+  font-weight: var(--un-font-weight-boldest);
+  color: #fff;
+  margin: 0 0 4px;
+  padding: 0;
+  max-width: none;
+  line-height: 1.1;
+}
+
+#app-root-2026-cdde .app .cv_card_meta {
+  font-size: var(--un-font-size-xxxxs);
+  color: rgba(255,255,255,0.65);
+  margin: 0 0 12px;
+  padding: 0;
+  max-width: none;
+}
+
+#app-root-2026-cdde .app .cv_card_pct {
+  font-size: 48px;
+  font-weight: var(--un-font-weight-boldest);
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 6px;
+  letter-spacing: -1px;
+}
+
+#app-root-2026-cdde .app .cv_card_dep_label {
+  font-size: var(--un-font-size-xxxxs);
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.06em;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+
+#app-root-2026-cdde .app .cv_card_placeholder {
+  font-size: var(--un-font-size-xxs);
+  color: rgba(255,255,255,0.35);
+  margin: auto;
+  padding: 0;
+  max-width: none;
+  text-align: center;
+}
+
+/* ── Shared panel style ─────────────────────────────────────── */
+#app-root-2026-cdde .app .cv_panel {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+#app-root-2026-cdde .app .cv_panel_title {
+  font-size: var(--un-font-size-l);
+  font-weight: var(--un-font-weight-boldest);
+  color: var(--un-color-blue-darkest);
+  margin: 0 0 6px;
+  padding: 0;
+  max-width: none;
+  line-height: var(--un-line-height-small);
+}
+
+#app-root-2026-cdde .app .cv_panel_desc {
+  font-size: var(--un-font-size-xxs);
+  color: var(--un-color-grey-text);
+  margin: 0;
+  padding: 0;
+  max-width: none;
+  line-height: var(--un-line-height-normal);
+}
+
+/* ── Commodity DNA ──────────────────────────────────────────── */
+#app-root-2026-cdde .app .cv_dna_top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+#app-root-2026-cdde .app .cv_dna_title_col {
+  flex: 1;
+  max-width: 420px;
+}
+
+#app-root-2026-cdde .app .cv_dna_legend {
+  display: flex;
+  align-items: center;
+  gap: 4px 16px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+
+#app-root-2026-cdde .app .cv_dna_leg_item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+#app-root-2026-cdde .app .cv_dna_leg_dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+#app-root-2026-cdde .app .cv_dna_leg_lbl {
+  font-size: var(--un-font-size-xxxxs);
+  color: var(--un-color-grey-text);
+  white-space: nowrap;
+}
+
+#app-root-2026-cdde .app .cv_dna_rows {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+#app-root-2026-cdde .app .cv_dna_row {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  align-items: center;
+  gap: 16px;
+}
+
+#app-root-2026-cdde .app .cv_dna_flag_name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#app-root-2026-cdde .app .cv_dna_cname {
+  font-size: var(--un-font-size-xs);
+  font-weight: var(--un-font-weight-bold);
+  color: var(--un-color-blue-darkest);
+}
+
+#app-root-2026-cdde .app .cv_dna_bar {
+  display: flex;
+  height: 34px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+#app-root-2026-cdde .app .cv_dna_bar--empty {
+  background: var(--un-color-grey-lighest);
+  align-items: center;
+  padding: 0 12px;
+}
+
+#app-root-2026-cdde .app .cv_dna_nodata {
+  font-size: var(--un-font-size-xxxxs);
+  color: var(--un-color-grey-text);
+}
+
+/* ── Indicator table ────────────────────────────────────────── */
+#app-root-2026-cdde .app .cv_tbl_hdr {
+  display: grid;
+  grid-template-columns: 200px repeat(3, 1fr);
+  gap: 0;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--un-color-grey-lighest);
+  margin-bottom: 0;
+}
+
+#app-root-2026-cdde .app .cv_tbl_hdr_ind {
+  font-size: var(--un-font-size-xxxxs);
+  font-weight: var(--un-font-weight-bold);
+  color: var(--un-color-grey-text);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  align-self: center;
+}
+
+#app-root-2026-cdde .app .cv_tbl_hdr_col {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 0;
+}
+
+#app-root-2026-cdde .app .cv_tbl_hdr_name {
+  font-size: var(--un-font-size-xxxxs);
+  font-weight: var(--un-font-weight-bold);
+  letter-spacing: 0.06em;
+}
+
+#app-root-2026-cdde .app .cv_tbl_row {
+  display: grid;
+  grid-template-columns: 200px repeat(3, 1fr);
+  gap: 0;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--un-color-grey-lighest);
+  align-items: start;
+}
+
+#app-root-2026-cdde .app .cv_tbl_row:last-child {
+  border-bottom: none;
+}
+
+#app-root-2026-cdde .app .cv_tbl_ind {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-right: 16px;
+}
+
+#app-root-2026-cdde .app .cv_tbl_ind_label {
+  font-size: var(--un-font-size-xxs);
+  font-weight: var(--un-font-weight-bold);
+  color: var(--un-color-blue-darkest);
+  line-height: var(--un-line-height-small);
+}
+
+#app-root-2026-cdde .app .cv_tbl_ind_desc {
+  font-size: var(--un-font-size-xxxxs);
+  color: var(--un-color-grey-text);
+  line-height: var(--un-line-height-small);
+}
+
+#app-root-2026-cdde .app .cv_tbl_val {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-right: 24px;
+}
+
+#app-root-2026-cdde .app .cv_val_row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+#app-root-2026-cdde .app .cv_val_num {
+  font-size: var(--un-font-size-l);
+  font-weight: var(--un-font-weight-boldest);
+  color: var(--un-color-blue-darkest);
+  line-height: 1;
+}
+
+#app-root-2026-cdde .app .cv_star {
+  font-size: var(--un-font-size-xs);
+  color: #fbaf17;
+  line-height: 1;
+}
+
+#app-root-2026-cdde .app .cv_bar_track {
+  height: 4px;
+  background: var(--un-color-grey-lighest);
+  border-radius: 2px;
+  overflow: hidden;
+  max-width: 240px;
+}
+
+#app-root-2026-cdde .app .cv_bar_fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+
+#app-root-2026-cdde .app .cv_tbl_empty {
+  font-size: var(--un-font-size-xs);
+  color: var(--un-color-grey-text);
+}
+
+/* Dominant group cell */
+#app-root-2026-cdde .app .cv_group_cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#app-root-2026-cdde .app .cv_group_icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+#app-root-2026-cdde .app .cv_group_lbl {
+  font-size: var(--un-font-size-xs);
+  font-weight: var(--un-font-weight-bold);
+  color: var(--un-color-blue-darkest);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  #app-root-2026-cdde .app .cv_cards {
+    grid-template-columns: 1fr;
+  }
+
+  #app-root-2026-cdde .app .cv_tbl_hdr,
+  #app-root-2026-cdde .app .cv_tbl_row {
+    grid-template-columns: 140px repeat(3, 1fr);
+  }
+
+  #app-root-2026-cdde .app .cv_dna_top {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,185 @@
+/* ─────────────────────────────────────────────────────────────────
+   CDDE shared UI patterns
+   Imported once in App.jsx; all classes are globally scoped.
+───────────────────────────────────────────────────────────────── */
+
+/* ── Loading skeleton ──────────────────────────────────────── */
+@keyframes cdde_pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+
+#app-root-2026-cdde .app .cdde_loading {
+  background: var(--un-color-blue-lightest);
+  border-radius: 8px;
+  animation: cdde_pulse 1.4s ease infinite;
+}
+
+/* ── No-data message ───────────────────────────────────────── */
+#app-root-2026-cdde .app .cdde_no_data {
+  font-size: var(--un-font-size-xxs);
+  color: var(--un-color-grey-text);
+  padding: 24px 0;
+  text-align: center;
+  max-width: none;
+}
+
+/* ── White card wrapper ────────────────────────────────────── */
+#app-root-2026-cdde .app .cdde_card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+}
+
+/* Generic card body: flex 1 + top margin */
+#app-root-2026-cdde .app .cdde_card_body {
+  flex: 1;
+  margin-top: 12px;
+}
+
+/* ── Section label (mini uppercase label above a sub-section) ── */
+#app-root-2026-cdde .app .cdde_section_label {
+  display: block;
+  font-size: var(--un-font-size-xxxxs);
+  font-weight: var(--un-font-weight-bold);
+  color: var(--un-color-grey-text);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+/* ── Stacked horizontal bar ────────────────────────────────── */
+#app-root-2026-cdde .app .cdde_stacked_bar {
+  display: flex;
+  height: 28px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+#app-root-2026-cdde .app .cdde_stacked_seg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: width 0.5s ease;
+}
+
+#app-root-2026-cdde .app .cdde_stacked_seg_lbl {
+  font-size: var(--un-font-size-xxxxs);
+  font-weight: var(--un-font-weight-bold);
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* ── Legend row (dot + label pairs) ───────────────────────── */
+#app-root-2026-cdde .app .cdde_legend_row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+}
+
+#app-root-2026-cdde .app .cdde_legend_item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+#app-root-2026-cdde .app .cdde_legend_dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+#app-root-2026-cdde .app .cdde_legend_label {
+  font-size: var(--un-font-size-xxxxs);
+  color: var(--un-color-grey-text);
+}
+
+/* ── Horizontal bar rows (label | track | value) ───────────── */
+#app-root-2026-cdde .app .cdde_bars {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 4px;
+}
+
+#app-root-2026-cdde .app .cdde_hbar_row {
+  display: grid;
+  grid-template-columns: 140px 1fr 52px;
+  align-items: center;
+  gap: 10px;
+}
+
+#app-root-2026-cdde .app .cdde_hbar_label {
+  font-size: var(--un-font-size-xxs);
+  color: var(--un-color-blue-darkest);
+  font-weight: var(--un-font-weight-normal);
+  line-height: var(--un-line-height-small);
+}
+
+#app-root-2026-cdde .app .cdde_hbar_track {
+  height: 14px;
+  background: var(--un-color-grey-lighest);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+#app-root-2026-cdde .app .cdde_hbar_fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+#app-root-2026-cdde .app .cdde_hbar_pct {
+  font-size: var(--un-font-size-xs);
+  font-weight: var(--un-font-weight-bold);
+  color: var(--un-color-blue-darkest);
+  text-align: right;
+}
+
+/* ── Small indicator bar rows ──────────────────────────────── */
+#app-root-2026-cdde .app .cdde_small_bars {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#app-root-2026-cdde .app .cdde_small_row {
+  display: grid;
+  grid-template-columns: 1fr 120px 46px;
+  align-items: center;
+  gap: 10px;
+}
+
+#app-root-2026-cdde .app .cdde_small_label {
+  font-size: var(--un-font-size-xxxxs);
+  color: var(--un-color-grey-text);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: var(--un-line-height-small);
+}
+
+#app-root-2026-cdde .app .cdde_small_track {
+  height: 10px;
+  background: var(--un-color-grey-lighest);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+#app-root-2026-cdde .app .cdde_small_fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+#app-root-2026-cdde .app .cdde_small_pct {
+  font-size: var(--un-font-size-xs);
+  font-weight: var(--un-font-weight-bold);
+  color: var(--un-color-blue-darkest);
+  text-align: right;
+}

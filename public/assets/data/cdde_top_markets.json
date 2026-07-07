@@ -1,0 +1,870 @@
+{
+  "AFG": [
+    {
+      "label": "Pakistan",
+      "pct": 48
+    },
+    {
+      "label": "India",
+      "pct": 18
+    },
+    {
+      "label": "United Arab Emirates",
+      "pct": 8
+    }
+  ],
+  "DZA": [
+    {
+      "label": "Italy",
+      "pct": 28
+    },
+    {
+      "label": "France",
+      "pct": 14
+    },
+    {
+      "label": "Spain",
+      "pct": 11
+    }
+  ],
+  "AGO": [
+    {
+      "label": "China",
+      "pct": 62
+    },
+    {
+      "label": "India",
+      "pct": 12
+    },
+    {
+      "label": "Spain",
+      "pct": 8
+    }
+  ],
+  "ARG": [
+    {
+      "label": "United States",
+      "pct": 23
+    },
+    {
+      "label": "China",
+      "pct": 12
+    },
+    {
+      "label": "European Union",
+      "pct": 8
+    }
+  ],
+  "AUS": [
+    {
+      "label": "China",
+      "pct": 34
+    },
+    {
+      "label": "Japan",
+      "pct": 18
+    },
+    {
+      "label": "South Korea",
+      "pct": 10
+    }
+  ],
+  "AZE": [
+    {
+      "label": "Italy",
+      "pct": 32
+    },
+    {
+      "label": "Turkey",
+      "pct": 18
+    },
+    {
+      "label": "Israel",
+      "pct": 9
+    }
+  ],
+  "BOL": [
+    {
+      "label": "Brazil",
+      "pct": 22
+    },
+    {
+      "label": "Argentina",
+      "pct": 18
+    },
+    {
+      "label": "Colombia",
+      "pct": 12
+    }
+  ],
+  "BWA": [
+    {
+      "label": "Belgium",
+      "pct": 38
+    },
+    {
+      "label": "India",
+      "pct": 24
+    },
+    {
+      "label": "South Africa",
+      "pct": 14
+    }
+  ],
+  "BFA": [
+    {
+      "label": "Switzerland",
+      "pct": 52
+    },
+    {
+      "label": "Singapore",
+      "pct": 18
+    },
+    {
+      "label": "Cote d Ivoire",
+      "pct": 10
+    }
+  ],
+  "BRA": [
+    {
+      "label": "China",
+      "pct": 32
+    },
+    {
+      "label": "United States",
+      "pct": 14
+    },
+    {
+      "label": "Argentina",
+      "pct": 7
+    }
+  ],
+  "CMR": [
+    {
+      "label": "China",
+      "pct": 28
+    },
+    {
+      "label": "France",
+      "pct": 18
+    },
+    {
+      "label": "Belgium",
+      "pct": 12
+    }
+  ],
+  "CAF": [
+    {
+      "label": "China",
+      "pct": 34
+    },
+    {
+      "label": "Belgium",
+      "pct": 22
+    },
+    {
+      "label": "France",
+      "pct": 14
+    }
+  ],
+  "TCD": [
+    {
+      "label": "China",
+      "pct": 52
+    },
+    {
+      "label": "United States",
+      "pct": 14
+    },
+    {
+      "label": "Netherlands",
+      "pct": 8
+    }
+  ],
+  "CHL": [
+    {
+      "label": "China",
+      "pct": 38
+    },
+    {
+      "label": "United States",
+      "pct": 14
+    },
+    {
+      "label": "Japan",
+      "pct": 8
+    }
+  ],
+  "COD": [
+    {
+      "label": "China",
+      "pct": 46
+    },
+    {
+      "label": "South Korea",
+      "pct": 12
+    },
+    {
+      "label": "Belgium",
+      "pct": 8
+    }
+  ],
+  "COG": [
+    {
+      "label": "China",
+      "pct": 52
+    },
+    {
+      "label": "India",
+      "pct": 14
+    },
+    {
+      "label": "United States",
+      "pct": 8
+    }
+  ],
+  "CIV": [
+    {
+      "label": "Switzerland",
+      "pct": 24
+    },
+    {
+      "label": "Netherlands",
+      "pct": 18
+    },
+    {
+      "label": "Malaysia",
+      "pct": 10
+    }
+  ],
+  "COL": [
+    {
+      "label": "United States",
+      "pct": 38
+    },
+    {
+      "label": "China",
+      "pct": 12
+    },
+    {
+      "label": "Panama",
+      "pct": 8
+    }
+  ],
+  "ECU": [
+    {
+      "label": "United States",
+      "pct": 32
+    },
+    {
+      "label": "China",
+      "pct": 18
+    },
+    {
+      "label": "Chile",
+      "pct": 8
+    }
+  ],
+  "ETH": [
+    {
+      "label": "United States",
+      "pct": 22
+    },
+    {
+      "label": "China",
+      "pct": 18
+    },
+    {
+      "label": "Saudi Arabia",
+      "pct": 12
+    }
+  ],
+  "GAB": [
+    {
+      "label": "China",
+      "pct": 48
+    },
+    {
+      "label": "Australia",
+      "pct": 18
+    },
+    {
+      "label": "South Korea",
+      "pct": 12
+    }
+  ],
+  "GHA": [
+    {
+      "label": "Switzerland",
+      "pct": 28
+    },
+    {
+      "label": "India",
+      "pct": 18
+    },
+    {
+      "label": "China",
+      "pct": 12
+    }
+  ],
+  "GIN": [
+    {
+      "label": "India",
+      "pct": 52
+    },
+    {
+      "label": "China",
+      "pct": 22
+    },
+    {
+      "label": "France",
+      "pct": 8
+    }
+  ],
+  "GNB": [
+    {
+      "label": "India",
+      "pct": 64
+    },
+    {
+      "label": "China",
+      "pct": 14
+    },
+    {
+      "label": "Vietnam",
+      "pct": 8
+    }
+  ],
+  "GUY": [
+    {
+      "label": "Canada",
+      "pct": 22
+    },
+    {
+      "label": "Trinidad and Tobago",
+      "pct": 18
+    },
+    {
+      "label": "United States",
+      "pct": 16
+    }
+  ],
+  "IDN": [
+    {
+      "label": "China",
+      "pct": 22
+    },
+    {
+      "label": "United States",
+      "pct": 12
+    },
+    {
+      "label": "Japan",
+      "pct": 10
+    }
+  ],
+  "IRQ": [
+    {
+      "label": "India",
+      "pct": 28
+    },
+    {
+      "label": "China",
+      "pct": 24
+    },
+    {
+      "label": "South Korea",
+      "pct": 14
+    }
+  ],
+  "KAZ": [
+    {
+      "label": "China",
+      "pct": 18
+    },
+    {
+      "label": "Italy",
+      "pct": 14
+    },
+    {
+      "label": "Netherlands",
+      "pct": 12
+    }
+  ],
+  "KEN": [
+    {
+      "label": "Uganda",
+      "pct": 12
+    },
+    {
+      "label": "United States",
+      "pct": 10
+    },
+    {
+      "label": "Pakistan",
+      "pct": 8
+    }
+  ],
+  "KWT": [
+    {
+      "label": "Japan",
+      "pct": 22
+    },
+    {
+      "label": "South Korea",
+      "pct": 18
+    },
+    {
+      "label": "India",
+      "pct": 16
+    }
+  ],
+  "LAO": [
+    {
+      "label": "China",
+      "pct": 38
+    },
+    {
+      "label": "Thailand",
+      "pct": 24
+    },
+    {
+      "label": "Vietnam",
+      "pct": 14
+    }
+  ],
+  "LBR": [
+    {
+      "label": "Poland",
+      "pct": 22
+    },
+    {
+      "label": "China",
+      "pct": 18
+    },
+    {
+      "label": "Germany",
+      "pct": 14
+    }
+  ],
+  "LBY": [
+    {
+      "label": "Italy",
+      "pct": 28
+    },
+    {
+      "label": "Spain",
+      "pct": 18
+    },
+    {
+      "label": "Germany",
+      "pct": 12
+    }
+  ],
+  "MLI": [
+    {
+      "label": "Switzerland",
+      "pct": 44
+    },
+    {
+      "label": "United Arab Emirates",
+      "pct": 18
+    },
+    {
+      "label": "Burkina Faso",
+      "pct": 10
+    }
+  ],
+  "MRT": [
+    {
+      "label": "China",
+      "pct": 38
+    },
+    {
+      "label": "Switzerland",
+      "pct": 22
+    },
+    {
+      "label": "Spain",
+      "pct": 12
+    }
+  ],
+  "MNG": [
+    {
+      "label": "China",
+      "pct": 82
+    },
+    {
+      "label": "Switzerland",
+      "pct": 8
+    },
+    {
+      "label": "United Kingdom",
+      "pct": 4
+    }
+  ],
+  "MOZ": [
+    {
+      "label": "India",
+      "pct": 24
+    },
+    {
+      "label": "Netherlands",
+      "pct": 18
+    },
+    {
+      "label": "South Africa",
+      "pct": 12
+    }
+  ],
+  "MMR": [
+    {
+      "label": "China",
+      "pct": 32
+    },
+    {
+      "label": "Thailand",
+      "pct": 22
+    },
+    {
+      "label": "India",
+      "pct": 12
+    }
+  ],
+  "NAM": [
+    {
+      "label": "Belgium",
+      "pct": 28
+    },
+    {
+      "label": "South Africa",
+      "pct": 18
+    },
+    {
+      "label": "Botswana",
+      "pct": 12
+    }
+  ],
+  "NER": [
+    {
+      "label": "France",
+      "pct": 34
+    },
+    {
+      "label": "Nigeria",
+      "pct": 18
+    },
+    {
+      "label": "United Arab Emirates",
+      "pct": 10
+    }
+  ],
+  "NGA": [
+    {
+      "label": "India",
+      "pct": 18
+    },
+    {
+      "label": "Spain",
+      "pct": 12
+    },
+    {
+      "label": "France",
+      "pct": 10
+    }
+  ],
+  "NOR": [
+    {
+      "label": "Germany",
+      "pct": 24
+    },
+    {
+      "label": "United Kingdom",
+      "pct": 20
+    },
+    {
+      "label": "Netherlands",
+      "pct": 16
+    }
+  ],
+  "OMN": [
+    {
+      "label": "China",
+      "pct": 42
+    },
+    {
+      "label": "India",
+      "pct": 22
+    },
+    {
+      "label": "South Korea",
+      "pct": 14
+    }
+  ],
+  "PER": [
+    {
+      "label": "China",
+      "pct": 38
+    },
+    {
+      "label": "United States",
+      "pct": 14
+    },
+    {
+      "label": "Japan",
+      "pct": 8
+    }
+  ],
+  "PNG": [
+    {
+      "label": "Japan",
+      "pct": 28
+    },
+    {
+      "label": "Australia",
+      "pct": 22
+    },
+    {
+      "label": "China",
+      "pct": 18
+    }
+  ],
+  "QAT": [
+    {
+      "label": "Japan",
+      "pct": 22
+    },
+    {
+      "label": "South Korea",
+      "pct": 18
+    },
+    {
+      "label": "India",
+      "pct": 14
+    }
+  ],
+  "RUS": [
+    {
+      "label": "China",
+      "pct": 28
+    },
+    {
+      "label": "Netherlands",
+      "pct": 10
+    },
+    {
+      "label": "Germany",
+      "pct": 8
+    }
+  ],
+  "SAU": [
+    {
+      "label": "China",
+      "pct": 22
+    },
+    {
+      "label": "Japan",
+      "pct": 18
+    },
+    {
+      "label": "India",
+      "pct": 16
+    }
+  ],
+  "SLE": [
+    {
+      "label": "China",
+      "pct": 38
+    },
+    {
+      "label": "Belgium",
+      "pct": 18
+    },
+    {
+      "label": "India",
+      "pct": 12
+    }
+  ],
+  "SDN": [
+    {
+      "label": "China",
+      "pct": 52
+    },
+    {
+      "label": "United Arab Emirates",
+      "pct": 18
+    },
+    {
+      "label": "Saudi Arabia",
+      "pct": 10
+    }
+  ],
+  "TZA": [
+    {
+      "label": "India",
+      "pct": 22
+    },
+    {
+      "label": "South Africa",
+      "pct": 14
+    },
+    {
+      "label": "China",
+      "pct": 12
+    }
+  ],
+  "TLS": [
+    {
+      "label": "Japan",
+      "pct": 62
+    },
+    {
+      "label": "China",
+      "pct": 14
+    },
+    {
+      "label": "Indonesia",
+      "pct": 8
+    }
+  ],
+  "TTO": [
+    {
+      "label": "United States",
+      "pct": 38
+    },
+    {
+      "label": "Barbados",
+      "pct": 12
+    },
+    {
+      "label": "Jamaica",
+      "pct": 8
+    }
+  ],
+  "TUN": [
+    {
+      "label": "France",
+      "pct": 28
+    },
+    {
+      "label": "Italy",
+      "pct": 22
+    },
+    {
+      "label": "Germany",
+      "pct": 14
+    }
+  ],
+  "TKM": [
+    {
+      "label": "China",
+      "pct": 72
+    },
+    {
+      "label": "Turkey",
+      "pct": 12
+    },
+    {
+      "label": "Afghanistan",
+      "pct": 8
+    }
+  ],
+  "UGA": [
+    {
+      "label": "United Arab Emirates",
+      "pct": 36
+    },
+    {
+      "label": "Kenya",
+      "pct": 14
+    },
+    {
+      "label": "India",
+      "pct": 8
+    }
+  ],
+  "ARE": [
+    {
+      "label": "Japan",
+      "pct": 14
+    },
+    {
+      "label": "India",
+      "pct": 12
+    },
+    {
+      "label": "South Korea",
+      "pct": 10
+    }
+  ],
+  "VEN": [
+    {
+      "label": "China",
+      "pct": 28
+    },
+    {
+      "label": "United States",
+      "pct": 18
+    },
+    {
+      "label": "India",
+      "pct": 12
+    }
+  ],
+  "YEM": [
+    {
+      "label": "China",
+      "pct": 32
+    },
+    {
+      "label": "India",
+      "pct": 18
+    },
+    {
+      "label": "Thailand",
+      "pct": 10
+    }
+  ],
+  "ZMB": [
+    {
+      "label": "Switzerland",
+      "pct": 44
+    },
+    {
+      "label": "China",
+      "pct": 22
+    },
+    {
+      "label": "South Africa",
+      "pct": 12
+    }
+  ],
+  "ZWE": [
+    {
+      "label": "South Africa",
+      "pct": 34
+    },
+    {
+      "label": "China",
+      "pct": 18
+    },
+    {
+      "label": "United Arab Emirates",
+      "pct": 10
+    }
+  ],
+  "ZAF": [
+    {
+      "label": "China",
+      "pct": 18
+    },
+    {
+      "label": "United States",
+      "pct": 10
+    },
+    {
+      "label": "Germany",
+      "pct": 8
+    }
+  ]
+}

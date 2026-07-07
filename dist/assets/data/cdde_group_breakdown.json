@@ -1,0 +1,368 @@
+{
+  "AFG": {
+    "agri": 64,
+    "energy": 8,
+    "mining": 12,
+    "other": 16
+  },
+  "DZA": {
+    "agri": 2,
+    "energy": 78,
+    "mining": 8,
+    "other": 12
+  },
+  "AGO": {
+    "agri": 4,
+    "energy": 82,
+    "mining": 6,
+    "other": 8
+  },
+  "ARG": {
+    "agri": 52,
+    "energy": 16,
+    "mining": 8,
+    "other": 24
+  },
+  "AUS": {
+    "agri": 14,
+    "energy": 36,
+    "mining": 32,
+    "other": 18
+  },
+  "AZE": {
+    "agri": 8,
+    "energy": 72,
+    "mining": 6,
+    "other": 14
+  },
+  "BOL": {
+    "agri": 18,
+    "energy": 38,
+    "mining": 26,
+    "other": 18
+  },
+  "BWA": {
+    "agri": 4,
+    "energy": 2,
+    "mining": 72,
+    "other": 22
+  },
+  "BRA": {
+    "agri": 38,
+    "energy": 12,
+    "mining": 24,
+    "other": 26
+  },
+  "CMR": {
+    "agri": 42,
+    "energy": 34,
+    "mining": 8,
+    "other": 16
+  },
+  "CHL": {
+    "agri": 11,
+    "energy": 16,
+    "mining": 37,
+    "other": 36
+  },
+  "COD": {
+    "agri": 12,
+    "energy": 8,
+    "mining": 68,
+    "other": 12
+  },
+  "COG": {
+    "agri": 4,
+    "energy": 78,
+    "mining": 6,
+    "other": 12
+  },
+  "CIV": {
+    "agri": 56,
+    "energy": 12,
+    "mining": 14,
+    "other": 18
+  },
+  "COL": {
+    "agri": 18,
+    "energy": 42,
+    "mining": 24,
+    "other": 16
+  },
+  "ECU": {
+    "agri": 34,
+    "energy": 36,
+    "mining": 8,
+    "other": 22
+  },
+  "ETH": {
+    "agri": 72,
+    "energy": 2,
+    "mining": 8,
+    "other": 18
+  },
+  "GHA": {
+    "agri": 22,
+    "energy": 32,
+    "mining": 28,
+    "other": 18
+  },
+  "GIN": {
+    "agri": 12,
+    "energy": 6,
+    "mining": 68,
+    "other": 14
+  },
+  "IDN": {
+    "agri": 10,
+    "energy": 16,
+    "mining": 32,
+    "other": 42
+  },
+  "IRQ": {
+    "agri": 2,
+    "energy": 88,
+    "mining": 4,
+    "other": 6
+  },
+  "KAZ": {
+    "agri": 12,
+    "energy": 62,
+    "mining": 16,
+    "other": 10
+  },
+  "KEN": {
+    "agri": 64,
+    "energy": 2,
+    "mining": 12,
+    "other": 22
+  },
+  "MLI": {
+    "agri": 18,
+    "energy": 2,
+    "mining": 62,
+    "other": 18
+  },
+  "MNG": {
+    "agri": 6,
+    "energy": 18,
+    "mining": 68,
+    "other": 8
+  },
+  "MOZ": {
+    "agri": 22,
+    "energy": 42,
+    "mining": 18,
+    "other": 18
+  },
+  "NGA": {
+    "agri": 8,
+    "energy": 76,
+    "mining": 4,
+    "other": 12
+  },
+  "NOR": {
+    "agri": 9,
+    "energy": 54,
+    "mining": 14,
+    "other": 23
+  },
+  "PER": {
+    "agri": 16,
+    "energy": 8,
+    "mining": 56,
+    "other": 20
+  },
+  "RUS": {
+    "agri": 16,
+    "energy": 52,
+    "mining": 18,
+    "other": 14
+  },
+  "SAU": {
+    "agri": 2,
+    "energy": 82,
+    "mining": 6,
+    "other": 10
+  },
+  "TZA": {
+    "agri": 48,
+    "energy": 12,
+    "mining": 22,
+    "other": 18
+  },
+  "ZAF": {
+    "agri": 8,
+    "energy": 24,
+    "mining": 46,
+    "other": 22
+  },
+  "ZMB": {
+    "agri": 12,
+    "energy": 4,
+    "mining": 68,
+    "other": 16
+  },
+  "ZWE": {
+    "agri": 24,
+    "energy": 6,
+    "mining": 48,
+    "other": 22
+  },
+  "BFA": {
+    "agri": 14,
+    "energy": 2,
+    "mining": 72,
+    "other": 12
+  },
+  "CAF": {
+    "agri": 28,
+    "energy": 4,
+    "mining": 52,
+    "other": 16
+  },
+  "TCD": {
+    "agri": 8,
+    "energy": 76,
+    "mining": 6,
+    "other": 10
+  },
+  "GUY": {
+    "agri": 22,
+    "energy": 28,
+    "mining": 36,
+    "other": 14
+  },
+  "IRN": {
+    "agri": 8,
+    "energy": 72,
+    "mining": 8,
+    "other": 12
+  },
+  "KWT": {
+    "agri": 2,
+    "energy": 88,
+    "mining": 4,
+    "other": 6
+  },
+  "LAO": {
+    "agri": 22,
+    "energy": 28,
+    "mining": 38,
+    "other": 12
+  },
+  "LBR": {
+    "agri": 36,
+    "energy": 2,
+    "mining": 48,
+    "other": 14
+  },
+  "LBY": {
+    "agri": 2,
+    "energy": 88,
+    "mining": 4,
+    "other": 6
+  },
+  "MRT": {
+    "agri": 28,
+    "energy": 8,
+    "mining": 48,
+    "other": 16
+  },
+  "MMR": {
+    "agri": 38,
+    "energy": 18,
+    "mining": 28,
+    "other": 16
+  },
+  "NAM": {
+    "agri": 12,
+    "energy": 2,
+    "mining": 72,
+    "other": 14
+  },
+  "NER": {
+    "agri": 16,
+    "energy": 8,
+    "mining": 62,
+    "other": 14
+  },
+  "OMN": {
+    "agri": 4,
+    "energy": 78,
+    "mining": 8,
+    "other": 10
+  },
+  "PNG": {
+    "agri": 22,
+    "energy": 38,
+    "mining": 28,
+    "other": 12
+  },
+  "QAT": {
+    "agri": 2,
+    "energy": 86,
+    "mining": 4,
+    "other": 8
+  },
+  "SDN": {
+    "agri": 18,
+    "energy": 62,
+    "mining": 8,
+    "other": 12
+  },
+  "SLE": {
+    "agri": 18,
+    "energy": 2,
+    "mining": 68,
+    "other": 12
+  },
+  "TLS": {
+    "agri": 42,
+    "energy": 42,
+    "mining": 4,
+    "other": 12
+  },
+  "TTO": {
+    "agri": 4,
+    "energy": 78,
+    "mining": 6,
+    "other": 12
+  },
+  "TUN": {
+    "agri": 12,
+    "energy": 36,
+    "mining": 24,
+    "other": 28
+  },
+  "TKM": {
+    "agri": 8,
+    "energy": 78,
+    "mining": 4,
+    "other": 10
+  },
+  "UGA": {
+    "agri": 58,
+    "energy": 8,
+    "mining": 18,
+    "other": 16
+  },
+  "ARE": {
+    "agri": 2,
+    "energy": 62,
+    "mining": 14,
+    "other": 22
+  },
+  "VEN": {
+    "agri": 2,
+    "energy": 82,
+    "mining": 8,
+    "other": 8
+  },
+  "YEM": {
+    "agri": 8,
+    "energy": 72,
+    "mining": 8,
+    "other": 12
+  }
+}

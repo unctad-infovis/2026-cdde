@@ -1,0 +1,473 @@
+import * as d3 from 'd3';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import * as topojson from 'topojson-client';
+import { SMALL_ISLAND_DOTS } from '../../../data/sids';
+import loadFile from '../../../helpers/LoadFile';
+import CircleFlag from '../../general/CircleFlag';
+import ChartHeader from '../shared/ChartHeader';
+import ChartTooltip from '../shared/ChartTooltip';
+import CountrySearch from '../shared/CountrySearch';
+
+import './CommodityMap.css';
+
+const W = 960;
+const H = 480;
+
+// Export dependence: blue gradient from light to dark
+const EXP_COLORS = [
+  { threshold: 0,  color: '#e3edf6' },
+  { threshold: 20, color: '#c5dfef' },
+  { threshold: 40, color: '#009edb' },
+  { threshold: 60, color: '#0077b8' },
+  { threshold: 80, color: '#005392' },
+];
+
+// Dominant group: categorical colors
+const GROUP_COLORS = {
+  agri:            'var(--un-color-green)',
+  energy:          'var(--un-color-blue)',
+  mining:          'var(--un-color-yellow)',
+  'non-dependent': 'var(--un-color-grey)',
+};
+
+const GROUP_LABELS = {
+  agri:            'Agriculture',
+  energy:          'Energy',
+  mining:          'Mining & metals',
+  'non-dependent': 'Non-commodity-dependent',
+};
+
+const GROUP_NOTES = {
+  agri:            'Food and raw materials',
+  energy:          'Oil, gas, coal',
+  mining:          'Ores and precious metals',
+  'non-dependent': 'Below 60% threshold',
+};
+
+const NO_DATA_FILL = 'var(--un-color-grey-light)';
+
+function getExpColor(pct) {
+  if (pct === null || pct === undefined) return NO_DATA_FILL;
+  let color = EXP_COLORS[0].color;
+  for (const step of EXP_COLORS) {
+    if (pct >= step.threshold) color = step.color;
+  }
+  return color;
+}
+
+function getGroupColor(group) {
+  return GROUP_COLORS[group] || NO_DATA_FILL;
+}
+
+export default function CommodityMap() {
+  const [geoData, setGeoData]           = useState(null);
+  const [mapData, setMapData]           = useState(null);
+  const [view, setView]                 = useState('export');
+  const [selectedCountry, setSelectedCountry] = useState(null);
+  const [panelCollapsed, setPanelCollapsed]   = useState(false);
+  const [hoverTooltip, setHoverTooltip] = useState(null);
+  const [zt, setZt]                     = useState({ x: 0, y: 0, k: 1 });
+  const panelRef   = useRef(null);
+  const mapAreaRef = useRef(null);
+  const svgRef     = useRef(null);
+  const zoomRef    = useRef(null);
+
+  useEffect(() => {
+    Promise.all([
+      loadFile('assets/data/world_topojson.json').then(r => r?.json()),
+      loadFile('assets/data/worldmap-economies-4326.topo.json').then(r => r?.json()),
+    ]).then(([topo, borders]) => {
+      if (topo && borders) {
+        // The UNCTAD border TopoJSON encodes coordinates ~11.314° west of their true
+        // WGS84 positions. Correct the transform once at load time so features decode
+        // to the correct longitudes and align with the country polygons.
+        if (borders.transform) borders.transform.translate[0] += 11.314;
+        setGeoData({ topo, borders });
+      }
+    });
+
+    loadFile('assets/data/cdde_map_data.json')
+      .then(r => r?.json())
+      .then(data => {
+        if (data) {
+          const byIso3 = {};
+          for (const row of data) byIso3[row.iso3] = row;
+          setMapData(byIso3);
+        }
+      });
+  }, []);
+
+  useEffect(() => {
+    if (!svgRef.current) return;
+    const svg  = d3.select(svgRef.current);
+    const zoom = d3.zoom()
+      .scaleExtent([1, 3])
+      .translateExtent([[0, 0], [W, H]])
+      .filter(e => e.type !== 'wheel')   // wheel disabled; touch pinch still works
+      .on('zoom', e => {
+        const { x, y, k } = e.transform;
+        setZt({ x, y, k });
+      });
+    svg.call(zoom);
+    zoomRef.current = zoom;
+    return () => { svg.on('.zoom', null); };
+  }, []);
+
+  const ZOOM_STEP = Math.sqrt(3); // two presses → full 3× range
+
+  function zoomIn() {
+    if (!svgRef.current || !zoomRef.current) return;
+    d3.select(svgRef.current).transition().duration(300)
+      .call(zoomRef.current.scaleBy, ZOOM_STEP);
+  }
+
+  function zoomOut() {
+    if (!svgRef.current || !zoomRef.current) return;
+    d3.select(svgRef.current).transition().duration(300)
+      .call(zoomRef.current.scaleBy, 1 / ZOOM_STEP);
+  }
+
+  const computed = useMemo(() => {
+    if (!geoData) return null;
+    const { topo, borders } = geoData;
+
+    // rotate([-11.314, 0]) shifts the antimeridian to ~191°E, keeping Russia whole,
+    // and pairs with the translate[0] += 11.314 correction applied to the border TopoJSON.
+    const projection = d3.geoNaturalEarth1()
+      .rotate([-11.314, 0])
+      .fitSize([W, H], { type: 'Sphere' });
+    const pathGen    = d3.geoPath(projection);
+    const allFeats   = topojson.feature(topo, topo.objects.BNDA).features;
+
+    const countryPaths = allFeats
+      .filter(f => f.properties?.stscod !== 0)
+      .map(f => {
+        const d = pathGen(f);
+        return d ? { id: f.id, d } : null;
+      })
+      .filter(Boolean);
+
+    // Use pre-classified border objects from the verified UNCTAD TopoJSON
+    const borderPath = (key) => {
+      const obj = borders.objects[key];
+      if (!obj) return null;
+      const fc = topojson.feature(borders, obj);
+      return fc.features.length ? pathGen(fc) : null;
+    };
+    const solidBorderPath   = borderPath('plain-borders');
+    const dashedBorderPath  = borderPath('dashed-borders');
+    const dottedBorderPath  = borderPath('dotted-borders');
+    const dashDotBorderPath = borderPath('dash-dotted-borders');
+
+    const islandDots = SMALL_ISLAND_DOTS.map(s => {
+      const xy = projection([s.lon, s.lat]);
+      return xy ? { ...s, x: xy[0], y: xy[1] } : null;
+    }).filter(Boolean);
+
+    return { countryPaths, solidBorderPath, dashedBorderPath, dottedBorderPath, dashDotBorderPath, islandDots };
+  }, [geoData]);
+
+  const smallIslandSet = useMemo(() => new Set(SMALL_ISLAND_DOTS.map(s => s.iso3)), []);
+
+  function getFill(iso3) {
+    if (!mapData) return NO_DATA_FILL;
+    const row = mapData[iso3];
+    if (!row) return NO_DATA_FILL;
+    if (view === 'export') return getExpColor(row.export_dependence);
+    return getGroupColor(row.dominant_group);
+  }
+
+  function handleCountryClick(iso3) {
+    if (!mapData) return;
+    const row = mapData[iso3];
+    if (row) { setSelectedCountry(row); setPanelCollapsed(false); }
+  }
+
+  const mapCountryList = useMemo(
+    () => mapData
+      ? Object.values(mapData).sort((a, b) => a.name.localeCompare(b.name))
+      : [],
+    [mapData]
+  );
+
+  function closePanel() {
+    setSelectedCountry(null);
+  }
+
+  function handleSvgHover(e) {
+    const iso3 = e.target.dataset.iso;
+    if (!iso3 || !mapData || !mapData[iso3] || !mapAreaRef.current) {
+      setHoverTooltip(null);
+      return;
+    }
+    const r = mapAreaRef.current.getBoundingClientRect();
+    setHoverTooltip({ iso3, left: e.clientX - r.left, top: e.clientY - r.top });
+  }
+
+  function handleSvgLeave() {
+    setHoverTooltip(null);
+  }
+
+  return (
+    <section className="cmap_section">
+      <div className="cmap_inner">
+        <ChartHeader title="Who depends on commodities — and what kind?" large />
+
+        <p className="cmap_insight">
+          Commodity dependence is the norm across the developing world — but the type differs sharply,
+          with <strong className="cmap_insight_bold">energy states clustering in the Gulf and Central Asia</strong>,
+          mining economies ringing sub-Saharan Africa, and agricultural dependence spanning the broadest geography of all.
+        </p>
+
+        <div className="cmap_controls">
+          <div className="cmap_search">
+            <CountrySearch
+              countries={mapCountryList}
+              value={selectedCountry?.iso3 ?? null}
+              onChange={iso3 => { const r = iso3 ? mapData?.[iso3] : null; setSelectedCountry(r); if (r) setPanelCollapsed(false); }}
+              placeholder="Search country…"
+            />
+          </div>
+
+          <div className="cmap_toggle">
+            <button
+              className={`cmap_toggle_btn${view === 'export' ? ' active' : ''}`}
+              onClick={() => setView('export')}
+            >
+              Export dependence
+            </button>
+            <button
+              className={`cmap_toggle_btn${view === 'group' ? ' active' : ''}`}
+              onClick={() => setView('group')}
+            >
+              Dominant product group
+            </button>
+          </div>
+        </div>
+
+        <div className="cmap_groups_top">
+          {Object.entries(GROUP_LABELS).map(([key, label]) => (
+            <div className="cmap_gt_item" key={key}>
+              <span className="cmap_gt_dot" style={{ background: GROUP_COLORS[key] }} />
+              <span className="cmap_gt_text">
+                <span className="cmap_gt_label">{label}</span>
+                <span className="cmap_gt_note">{GROUP_NOTES[key]}</span>
+              </span>
+            </div>
+          ))}
+          <div className="cmap_gt_item cmap_gt_item--nodata">
+            <span className="cmap_gt_dot" style={{ background: NO_DATA_FILL }} />
+            <span className="cmap_gt_text">
+              <span className="cmap_gt_label">No data</span>
+            </span>
+          </div>
+        </div>
+
+        <div className="cmap_map_area" ref={mapAreaRef}>
+          <svg
+            ref={svgRef}
+            viewBox={`0 0 ${W} ${H}`}
+            className="cmap_svg"
+            aria-label="World choropleth map of commodity dependence"
+            onMouseMove={handleSvgHover}
+            onMouseLeave={handleSvgLeave}
+          >
+            {/* Ocean — fixed, always fills SVG */}
+            <rect x={0} y={0} width={W} height={H} className="cmap_ocean" />
+
+            {/* Zoomable content */}
+            <g transform={`translate(${zt.x},${zt.y}) scale(${zt.k})`}>
+              {/* Country fills */}
+              <g className="cmap_countries">
+                {computed?.countryPaths?.map(({ id, d }) => {
+                  if (smallIslandSet.has(id)) return null;
+                  return (
+                    <path
+                      key={id}
+                      d={d}
+                      className="cmap_country"
+                      fill={getFill(id)}
+                      onClick={() => handleCountryClick(id)}
+                      data-iso={id}
+                    />
+                  );
+                })}
+              </g>
+
+              {/* Solid borders — recognized/defined international boundaries */}
+              {computed?.solidBorderPath && (
+                <path d={computed.solidBorderPath} className="cmap_border_solid" />
+              )}
+
+              {/* Dashed borders — indefinite/unsurveyed boundaries */}
+              {computed?.dashedBorderPath && (
+                <path d={computed.dashedBorderPath} className="cmap_border_dashed" />
+              )}
+
+              {/* Dotted borders — lines of control / armistice lines (e.g. Jammu-Kashmir) */}
+              {computed?.dottedBorderPath && (
+                <path d={computed.dottedBorderPath} className="cmap_border_dotted" />
+              )}
+
+              {/* Dash-dotted borders — ceasefire lines */}
+              {computed?.dashDotBorderPath && (
+                <path d={computed.dashDotBorderPath} className="cmap_border_dashdot" />
+              )}
+
+              {/* Small island dots */}
+              <g className="cmap_islands">
+                {computed?.islandDots?.map(s => (
+                  <circle
+                    key={s.iso3}
+                    cx={s.x}
+                    cy={s.y}
+                    r={4 / zt.k}
+                    fill={getFill(s.iso3)}
+                    stroke="#fff"
+                    strokeWidth={0.8 / zt.k}
+                    className="cmap_island_dot"
+                    data-iso={s.iso3}
+                    onClick={() => handleCountryClick(s.iso3)}
+                  />
+                ))}
+              </g>
+            </g>
+          </svg>
+
+          {/* Legend overlay — top-left corner */}
+          <div className="cmap_legend">
+            {view === 'export' ? (
+              <div className="cmap_legend_export">
+                <span className="cmap_legend_label">Export share</span>
+                <div className="cmap_legend_grad_bar" />
+                <div className="cmap_legend_grad_ticks">
+                  <span>0%</span>
+                  <span>40%</span>
+                  <span>80%+</span>
+                </div>
+              </div>
+            ) : (
+              <div className="cmap_legend_groups">
+                {Object.entries(GROUP_LABELS).map(([key, label]) => (
+                  <div key={key} className="cmap_legend_group_item">
+                    <span className="cmap_legend_group_dot" style={{ background: GROUP_COLORS[key] }} />
+                    <span>{label}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Country info panel — overlaid on right side of map */}
+          {selectedCountry && (
+            <div className={`cmap_panel${panelCollapsed ? ' cmap_panel--collapsed' : ''}`} ref={panelRef}>
+              <div className="cmap_panel_header">
+                <CircleFlag countryCode={selectedCountry.iso2} height={32} />
+                <div className="cmap_panel_header_text">
+                  <div className="cmap_panel_name">{selectedCountry.name}</div>
+                  <div className="cmap_panel_region">{selectedCountry.region}</div>
+                </div>
+                <button
+                  className="cmap_panel_toggle"
+                  onClick={() => setPanelCollapsed(c => !c)}
+                  aria-label={panelCollapsed ? 'Expand panel' : 'Collapse panel'}
+                >
+                  {panelCollapsed ? '▼' : '▲'}
+                </button>
+                <button className="cmap_panel_close" onClick={closePanel} aria-label="Close panel">×</button>
+              </div>
+              {!panelCollapsed && (
+                <>
+                  {/* Hero — export share + dominant group combined */}
+                  <div className="cmap_panel_hero">
+                    <span className="cmap_panel_hero_label">Commodity export share</span>
+                    <span className="cmap_panel_hero_value">
+                      {selectedCountry.export_dependence}%
+                    </span>
+                    {selectedCountry.dominant_group && (
+                      <span
+                        className="cmap_panel_stat_group"
+                        style={{ background: GROUP_COLORS[selectedCountry.dominant_group] }}
+                      >
+                        {GROUP_LABELS[selectedCountry.dominant_group] || selectedCountry.dominant_group}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Secondary stats — single column */}
+                  <div className="cmap_panel_stats">
+                    <div className="cmap_panel_stat">
+                      <span className="cmap_panel_stat_label">Merchandise exports</span>
+                      <span className="cmap_panel_stat_value">{selectedCountry.merchandise_exports}</span>
+                    </div>
+                    <div className="cmap_panel_stat">
+                      <span className="cmap_panel_stat_label">HHI (concentration)</span>
+                      <span className="cmap_panel_stat_value">{selectedCountry.hhi}</span>
+                    </div>
+                    <div className="cmap_panel_stat">
+                      <span className="cmap_panel_stat_label">GDP per capita</span>
+                      <span className="cmap_panel_stat_value">{selectedCountry.gdp_per_capita}</span>
+                    </div>
+                    <div className="cmap_panel_stat">
+                      <span className="cmap_panel_stat_label">Population</span>
+                      <span className="cmap_panel_stat_value">{selectedCountry.population}</span>
+                    </div>
+                  </div>
+                  <a className="cmap_panel_profile_link" href="#">Open full country profile →</a>
+                </>
+              )}
+            </div>
+          )}
+
+          {/* Zoom controls */}
+          <div className="cmap_zoom_btns">
+            <button
+              className="cmap_zoom_btn"
+              onClick={zoomIn}
+              disabled={zt.k >= 2.99}
+              aria-label="Zoom in"
+            >+</button>
+            <button
+              className="cmap_zoom_btn"
+              onClick={zoomOut}
+              disabled={zt.k <= 1.01}
+              aria-label="Zoom out"
+            >−</button>
+          </div>
+
+          {/* Hover tooltip */}
+          {hoverTooltip && mapData?.[hoverTooltip.iso3] && (() => {
+            const row  = mapData[hoverTooltip.iso3];
+            const flip = mapAreaRef.current
+              ? hoverTooltip.left > mapAreaRef.current.clientWidth * 0.6
+              : false;
+            return (
+              <ChartTooltip left={hoverTooltip.left} top={hoverTooltip.top} flip={flip}>
+                <div className="cmap_tt_name">{row.name}</div>
+                {row.export_dependence != null && (
+                  <div className="cmap_tt_row">
+                    <span className="cmap_tt_label">Export dependence</span>
+                    <span className="cmap_tt_val">{row.export_dependence}%</span>
+                  </div>
+                )}
+                {row.dominant_group && (
+                  <div className="cmap_tt_row">
+                    <span className="cmap_tt_group_dot" style={{ background: GROUP_COLORS[row.dominant_group] }} />
+                    <span className="cmap_tt_label">
+                      {GROUP_LABELS[row.dominant_group] || row.dominant_group}
+                    </span>
+                  </div>
+                )}
+              </ChartTooltip>
+            );
+          })()}
+        </div>
+
+        <div className="cmap_footer">
+          <div><em>Source:</em> UN Trade and Development (UNCTAD), based on UNCTADStat.</div>
+          <div><em>Note:</em> Small island and coastal states with a land area too small to display as polygons at this scale are represented by dots. Their position reflects the country's geographic location; dot size does not indicate area or population. <a href="https://unctad.org/map-disclaimer" target="_blank" rel="noopener">Map disclaimer</a></div>
+        </div>
+      </div>
+    </section>
+  );
+}
