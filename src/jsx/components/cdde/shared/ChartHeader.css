@@ -17,7 +17,7 @@
   width: 35px;
 }
 
-#app-root-2026-cdde .app .cdde_header_title {
+#app-root-2026-cdde .app .cdde_header .cdde_header_title {
   font-size: var(--un-font-size-xl);
   font-weight: var(--un-font-weight-boldest);
   color: var(--un-color-blue-darkest);
@@ -27,12 +27,12 @@
   max-width: none;
 }
 
-#app-root-2026-cdde .app .cdde_header_title--lg {
+#app-root-2026-cdde .app .cdde_header .cdde_header_title--lg {
   font-size: var(--un-font-size-xxl);
 }
 
-#app-root-2026-cdde .app .cdde_header_subtitle {
-  font-size: var(--un-font-size-xxxxs);
+#app-root-2026-cdde .app .cdde_header .cdde_header_subtitle {
+  font-size: var(--un-font-size-xs);
   color: var(--un-color-grey-text);
   margin: 0;
   padding: 0;

@@ -23,11 +23,11 @@
 
 
 #app-root-2026-cdde .app .alc_insight {
-  font-size: var(--un-font-size-xxs);
+  font-size: var(--un-font-size-xs);
   color: var(--un-color-blue-darkest);
   border-left: 3px solid var(--un-color-grey-light);
-  padding-left: 12px;
-  margin: 12px 0 24px;
+  padding: 4px 0 4px 12px;
+  margin: 0 0 24px;
   line-height: var(--un-line-height-normal);
 }
 
@@ -139,4 +139,14 @@
 /* source margin override — more breathing room above the long footnote */
 #app-root-2026-cdde .app .alc_container .cdde_source {
   margin-top: 24px;
+}
+
+#app-root-2026-cdde .app .alc_note {
+  font-size: var(--un-font-size-xxs);
+  color: var(--un-color-grey-text);
+  font-style: italic;
+  margin: 6px 0 0;
+  line-height: var(--un-line-height-normal);
+  padding: 0;
+  max-width: none;
 }

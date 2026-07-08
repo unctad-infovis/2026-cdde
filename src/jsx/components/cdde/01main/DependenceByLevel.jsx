@@ -36,6 +36,7 @@ export default function DependenceByLevel() {
       <ChartHeader
         title="Average dependence by development level"
         subtitle="Mean commodity export share across economies, 2022–2024"
+        large
       />
 
       <p className="alc_insight">
@@ -74,6 +75,7 @@ export default function DependenceByLevel() {
       </div>
 
       <ChartSource>UN Trade and Development (UNCTAD) secretariat calculations, based on UNCTADstat (2025). LDC: least developed countries. LLDC: landlocked developing countries. SIDS: small island developing States.</ChartSource>
+      <p className="alc_note">For further information on the composition of the country groups, please refer to the section on sources provided within this application.</p>
     </div>
   );
 }
