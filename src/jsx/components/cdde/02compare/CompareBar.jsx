@@ -14,12 +14,7 @@ export default function CompareBar({ countries, compareList, onCompareChange }) 
       {[0, 1, 2].map((idx, i) => (
         <div key={idx} className="cb_slot_group">
           {i > 0 && <span className="cb_vs">VS</span>}
-          <CountrySearch
-            countries={countries}
-            value={compareList[idx]}
-            onChange={iso3 => handleChange(idx, iso3)}
-            placeholder="Select economy…"
-          />
+          <CountrySearch countries={countries} value={compareList[idx]} onChange={iso3 => handleChange(idx, iso3)} placeholder="Select economy…" />
         </div>
       ))}
     </div>

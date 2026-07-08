@@ -3,15 +3,13 @@ import CircleFlag from '../../general/CircleFlag';
 import './CountrySearch.css';
 
 export default function CountrySearch({ countries, value, onChange, placeholder = 'Select economy…' }) {
-  const [query, setQuery]   = useState('');
-  const [open, setOpen]     = useState(false);
-  const ref                 = useRef(null);
+  const [query, setQuery] = useState('');
+  const [open, setOpen] = useState(false);
+  const ref = useRef(null);
 
-  const list     = countries || [];
+  const list = countries || [];
   const selected = value ? list.find(c => c.iso3 === value) : null;
-  const results  = query.trim()
-    ? list.filter(c => c.name.toLowerCase().includes(query.toLowerCase()))
-    : list;
+  const results = query.trim() ? list.filter(c => c.name.toLowerCase().includes(query.toLowerCase())) : list;
 
   function handleFocus() {
     setQuery('');
@@ -51,21 +49,12 @@ export default function CountrySearch({ countries, value, onChange, placeholder 
   return (
     <div className="cs_wrap" ref={ref}>
       <div className={`cs_field${open ? ' cs_field--open' : ''}`}>
-        {selected && !open && (
-          <CircleFlag countryCode={selected.iso2} width={18} height={18} />
-        )}
-        <input
-          className="cs_input"
-          type="text"
-          placeholder={placeholder}
-          value={open ? query : (selected?.name ?? '')}
-          onChange={handleChange}
-          onFocus={handleFocus}
-          autoComplete="off"
-          spellCheck={false}
-        />
+        {selected && !open && <CircleFlag countryCode={selected.iso2} width={18} height={18} />}
+        <input className="cs_input" type="text" placeholder={placeholder} value={open ? query : (selected?.name ?? '')} onChange={handleChange} onFocus={handleFocus} autoComplete="off" spellCheck={false} />
         {selected && (
-          <button className="cs_clear" onMouseDown={handleClear} tabIndex={-1} aria-label="Clear selection">×</button>
+          <button type="button" className="cs_clear" onMouseDown={handleClear} tabIndex={-1} aria-label="Clear selection">
+            ×
+          </button>
         )}
         <svg className="cs_chevron" viewBox="0 0 10 6" fill="none" aria-hidden="true">
           <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -73,15 +62,9 @@ export default function CountrySearch({ countries, value, onChange, placeholder 
       </div>
 
       {open && results.length > 0 && (
-        <ul className="cs_dropdown" role="listbox">
+        <ul className="cs_dropdown">
           {results.map(c => (
-            <li
-              key={c.iso3}
-              className={`cs_item${c.iso3 === value ? ' cs_item--selected' : ''}`}
-              onMouseDown={() => handleSelect(c)}
-              role="option"
-              aria-selected={c.iso3 === value}
-            >
+            <li key={c.iso3} className={`cs_item${c.iso3 === value ? ' cs_item--selected' : ''}`} onMouseDown={() => handleSelect(c)}>
               <CircleFlag countryCode={c.iso2} width={18} height={18} />
               <span className="cs_name">{c.name}</span>
               <span className="cs_region">{c.region}</span>

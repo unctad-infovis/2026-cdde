@@ -2,7 +2,7 @@ import basePath from './../../../helpers/BasePath';
 import Nav from './../shared/Nav.jsx';
 import './Header.css';
 
-export default function Header({ full_report_url, nav, stats, subtitle, title, title_highlight }) {
+export default function Header({ nav, stats, subtitle, title, title_highlight }) {
   function renderTitle() {
     if (!title_highlight || !title.includes(title_highlight)) return title;
     const [before, after] = title.split(title_highlight);

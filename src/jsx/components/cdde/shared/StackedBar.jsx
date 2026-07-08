@@ -2,17 +2,13 @@ export default function StackedBar({ segments, height = 28, showLegend = true })
   return (
     <>
       <div className="cdde_stacked_bar" style={{ height }}>
-        {segments.map(s =>
-          s.pct > 0 && (
-            <div
-              key={s.key}
-              className="cdde_stacked_seg"
-              style={{ width: `${s.pct}%`, background: s.color }}
-              title={`${s.label}: ${s.pct}%`}
-            >
-              {s.pct >= 8 && <span className="cdde_stacked_seg_lbl">{s.pct}%</span>}
-            </div>
-          )
+        {segments.map(
+          s =>
+            s.pct > 0 && (
+              <div key={s.key} className="cdde_stacked_seg" style={{ width: `${s.pct}%`, background: s.color }} title={`${s.label}: ${s.pct}%`}>
+                {s.pct >= 8 && <span className="cdde_stacked_seg_lbl">{s.pct}%</span>}
+              </div>
+            )
         )}
       </div>
       {showLegend && (

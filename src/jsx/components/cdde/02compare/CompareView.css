@@ -30,7 +30,7 @@
   width: 260px;
   height: 260px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.06);
+  background: rgba(255, 255, 255, 0.06);
   pointer-events: none;
 }
 
@@ -50,7 +50,7 @@
 
 #app-root-2026-cdde .app .cv_card_meta {
   font-size: var(--un-font-size-xxxxs);
-  color: rgba(255,255,255,0.65);
+  color: rgba(255, 255, 255, 0.65);
   margin: 0 0 12px;
   padding: 0;
   max-width: none;
@@ -67,7 +67,7 @@
 
 #app-root-2026-cdde .app .cv_card_dep_label {
   font-size: var(--un-font-size-xxxxs);
-  color: rgba(255,255,255,0.55);
+  color: rgba(255, 255, 255, 0.55);
   letter-spacing: 0.06em;
   margin: 0;
   padding: 0;
@@ -76,7 +76,7 @@
 
 #app-root-2026-cdde .app .cv_card_placeholder {
   font-size: var(--un-font-size-xxs);
-  color: rgba(255,255,255,0.35);
+  color: rgba(255, 255, 255, 0.35);
   margin: auto;
   padding: 0;
   max-width: none;

@@ -132,11 +132,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(10, 22, 40, 0.88) 45%,
-    rgba(10, 22, 40, 0.45) 100%
-  );
+  background: linear-gradient(to right, rgba(10, 22, 40, 0.88) 45%, rgba(10, 22, 40, 0.45) 100%);
 }
 
 #app-root-2026-cdde .app .ds_panel_inner {

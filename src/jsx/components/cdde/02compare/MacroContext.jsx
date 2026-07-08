@@ -6,11 +6,12 @@ import StackedBar from '../shared/StackedBar';
 
 import './MacroContext.css';
 
-const VA_SEGS = key => ({
-  agri:     { key: 'agri',     label: 'Agriculture', color: 'var(--un-color-green)' },
-  industry: { key: 'industry', label: 'Industry',    color: 'var(--un-color-yellow)' },
-  services: { key: 'services', label: 'Services',    color: 'var(--un-color-blue)' },
-}[key]);
+const VA_SEGS = key =>
+  ({
+    agri: { key: 'agri', label: 'Agriculture', color: 'var(--un-color-green)' },
+    industry: { key: 'industry', label: 'Industry', color: 'var(--un-color-yellow)' },
+    services: { key: 'services', label: 'Services', color: 'var(--un-color-blue)' }
+  })[key];
 
 export default function MacroContext({ iso3, hhi }) {
   const [allData, setAllData] = useState(null);
@@ -18,24 +19,21 @@ export default function MacroContext({ iso3, hhi }) {
   useEffect(() => {
     loadFile('assets/data/cdde_macro.json')
       .then(r => r?.json())
-      .then(d => { if (d) setAllData(d); });
+      .then(d => {
+        if (d) setAllData(d);
+      });
   }, []);
 
   const d = allData?.[iso3] ?? null;
 
   return (
     <div className="cdde_card">
-      <ChartHeader
-        title="Macro context"
-        subtitle="Economic structure and resource dependence"
-      />
+      <ChartHeader title="Macro context" subtitle="Economic structure and resource dependence" />
 
       <div className="mac_body">
         {!allData && <div className="cdde_loading" style={{ height: 160 }} />}
 
-        {allData && !d && (
-          <p className="cdde_no_data">Macro data not available for this country.</p>
-        )}
+        {allData && !d && <p className="cdde_no_data">Macro data not available for this country.</p>}
 
         {d && (
           <>
@@ -44,9 +42,7 @@ export default function MacroContext({ iso3, hhi }) {
               <div className="mac_gdp_block">
                 <span className="cdde_section_label">AVG GDP GROWTH</span>
                 <div className="mac_gdp_val_row">
-                  <span className={`mac_triangle mac_triangle--${d.gdp_growth >= 0 ? 'up' : 'down'}`}>
-                    {d.gdp_growth >= 0 ? '▲' : '▼'}
-                  </span>
+                  <span className={`mac_triangle mac_triangle--${d.gdp_growth >= 0 ? 'up' : 'down'}`}>{d.gdp_growth >= 0 ? '▲' : '▼'}</span>
                   <span className="mac_gdp_pct">{Math.abs(d.gdp_growth).toFixed(1)}%</span>
                 </div>
                 <span className="mac_gdp_note">Annual avg. 2014–2024</span>
@@ -59,7 +55,7 @@ export default function MacroContext({ iso3, hhi }) {
               <StackedBar
                 segments={['agri', 'industry', 'services'].map(k => ({
                   ...VA_SEGS(k),
-                  pct: d.value_added[k],
+                  pct: d.value_added[k]
                 }))}
               />
             </div>

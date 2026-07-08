@@ -16,7 +16,10 @@
   font-size: var(--un-font-size-xxxxs);
   font-weight: var(--un-font-weight-bold);
   cursor: pointer;
-  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  transition:
+    background 0.15s,
+    color 0.15s,
+    border-color 0.15s;
   white-space: nowrap;
 }
 

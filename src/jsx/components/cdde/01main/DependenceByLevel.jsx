@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import loadFile from '../../../helpers/LoadFile';
 import CSVtoJSON from '../../../helpers/CsvToJson';
+import loadFile from '../../../helpers/LoadFile';
 import ChartHeader from '../shared/ChartHeader';
 import ChartSource from '../shared/ChartSource';
 
@@ -18,12 +18,14 @@ export default function DependenceByLevel() {
       .then(text => {
         if (!text) return;
         const rows = CSVtoJSON(text).filter(r => r.group);
-        setData(rows.map(r => ({
-          group:     r.group,
-          economies: +r.economies,
-          avg_pct:   +r.avg_pct,
-          color:     r.group === 'Developed' ? 'green' : 'blue',
-        })));
+        setData(
+          rows.map(r => ({
+            group: r.group,
+            economies: +r.economies,
+            avg_pct: +r.avg_pct,
+            color: r.group === 'Developed' ? 'green' : 'blue'
+          }))
+        );
       });
   }, []);
 
@@ -33,15 +35,10 @@ export default function DependenceByLevel() {
 
   return (
     <div className="alc_container">
-      <ChartHeader
-        title="Average dependence by development level"
-        subtitle="Mean commodity export share across economies, 2022–2024"
-        large
-      />
+      <ChartHeader title="Average dependence by development level" subtitle="Mean commodity export share across economies, 2022–2024" large />
 
       <p className="alc_insight">
-        Across all country groups, the highest levels of commodity dependence are concentrated in the{' '}
-        <strong className="alc_insight_bold">most vulnerable economies</strong>.
+        Across all country groups, the highest levels of commodity dependence are concentrated in the <strong className="alc_insight_bold">most vulnerable economies</strong>.
       </p>
 
       <div className="alc_chart">
@@ -60,10 +57,7 @@ export default function DependenceByLevel() {
                   <span className="alc_row_economies">{row.economies} economies</span>
                 </div>
                 <div className="alc_bar_track">
-                  <div
-                    className={`alc_bar${isBlue ? '' : ' alc_bar--green'}`}
-                    style={{ width: `${barPct}%` }}
-                  />
+                  <div className={`alc_bar${isBlue ? '' : ' alc_bar--green'}`} style={{ width: `${barPct}%` }} />
                   {/* Threshold line overlay */}
                   <div className="alc_threshold_line" style={{ left: `${thresholdPct}%` }} />
                 </div>

@@ -14,9 +14,7 @@ const AppCompare = ({ meta }) => {
   // Remap nav: scroll-only items → link to main page; anchors → index.html#anchor
   const nav = (meta?.nav || []).map(item => ({
     ...item,
-    href: item.href
-      ? (item.href.startsWith('#') ? `./index.html${item.href}` : item.href)
-      : './index.html',
+    href: item.href ? (item.href.startsWith('#') ? `./index.html${item.href}` : item.href) : './index.html'
   }));
 
   return (

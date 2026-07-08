@@ -113,7 +113,9 @@
   color: var(--un-color-grey-text);
   cursor: pointer;
   font-family: inherit;
-  transition: background 0.15s, color 0.15s;
+  transition:
+    background 0.15s,
+    color 0.15s;
 }
 
 #app-root-2026-cdde .app .rt_csv_btn:hover {

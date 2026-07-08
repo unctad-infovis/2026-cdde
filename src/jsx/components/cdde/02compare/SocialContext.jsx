@@ -7,20 +7,20 @@ import StackedBar from '../shared/StackedBar';
 import './SocialContext.css';
 
 const EMP_SEGS = [
-  { key: 'agri',     label: 'Agriculture', color: 'var(--un-color-green)' },
-  { key: 'industry', label: 'Industry',    color: 'var(--un-color-yellow)' },
-  { key: 'services', label: 'Services',    color: 'var(--un-color-blue)' },
+  { key: 'agri', label: 'Agriculture', color: 'var(--un-color-green)' },
+  { key: 'industry', label: 'Industry', color: 'var(--un-color-yellow)' },
+  { key: 'services', label: 'Services', color: 'var(--un-color-blue)' }
 ];
 
 function hdiCategory(hdi) {
-  if (hdi >= 0.800) return 'Very high';
-  if (hdi >= 0.700) return 'High';
-  if (hdi >= 0.550) return 'Medium';
+  if (hdi >= 0.8) return 'Very high';
+  if (hdi >= 0.7) return 'High';
+  if (hdi >= 0.55) return 'Medium';
   return 'Low';
 }
 
 function hdiMarkerPct(hdi) {
-  return Math.max(0, Math.min(100, (hdi - 0.200) / 0.800 * 100));
+  return Math.max(0, Math.min(100, ((hdi - 0.2) / 0.8) * 100));
 }
 
 export default function SocialContext({ iso3 }) {
@@ -29,24 +29,21 @@ export default function SocialContext({ iso3 }) {
   useEffect(() => {
     loadFile('assets/data/cdde_social.json')
       .then(r => r?.json())
-      .then(d => { if (d) setAllData(d); });
+      .then(d => {
+        if (d) setAllData(d);
+      });
   }, []);
 
   const d = allData?.[iso3] ?? null;
 
   return (
     <div className="cdde_card">
-      <ChartHeader
-        title="Social context"
-        subtitle="Human development and labour market indicators"
-      />
+      <ChartHeader title="Social context" subtitle="Human development and labour market indicators" />
 
       <div className="soc_body">
         {!allData && <div className="cdde_loading" style={{ height: 200 }} />}
 
-        {allData && !d && (
-          <p className="cdde_no_data">Social data not available for this country.</p>
-        )}
+        {allData && !d && <p className="cdde_no_data">Social data not available for this country.</p>}
 
         {d && (
           <>
@@ -65,16 +62,17 @@ export default function SocialContext({ iso3 }) {
                 <div className="soc_hdi_marker" style={{ left: `${hdiMarkerPct(d.hdi)}%` }} />
               </div>
               <div className="soc_hdi_axis">
-                <span>Low</span><span>Medium</span><span>High</span><span>Very high</span>
+                <span>Low</span>
+                <span>Medium</span>
+                <span>High</span>
+                <span>Very high</span>
               </div>
             </div>
 
             {/* Employment by sector */}
             <div className="soc_section">
               <span className="cdde_section_label">EMPLOYMENT BY SECTOR</span>
-              <StackedBar
-                segments={EMP_SEGS.map(s => ({ ...s, pct: d.emp_sector[s.key] }))}
-              />
+              <StackedBar segments={EMP_SEGS.map(s => ({ ...s, pct: d.emp_sector[s.key] }))} />
             </div>
 
             {/* Small bars */}

@@ -10,9 +10,7 @@ import './components/cdde/shared/cdde-patterns.css';
 // in-page anchors become absolute links to index.html#section.
 const nav = (meta.nav || []).map(item => ({
   ...item,
-  href: item.href
-    ? (item.href.startsWith('#') ? `./index.html${item.href}` : item.href)
-    : './index.html',
+  href: item.href ? (item.href.startsWith('#') ? `./index.html${item.href}` : item.href) : './index.html'
 }));
 
 const container = document.getElementById(`app-root-${__PROJECT_NAME__}`);

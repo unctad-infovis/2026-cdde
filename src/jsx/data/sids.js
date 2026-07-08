@@ -25,5 +25,5 @@ export const SMALL_ISLAND_DOTS = [
   { iso3: 'TUV', lon: 177.1, lat: -7.5 },
   { iso3: 'VCT', lon: -61.2, lat: 13.3 },
   { iso3: 'VUT', lon: 167.0, lat: -15.4 },
-  { iso3: 'WSM', lon: -172.1, lat: -13.7 },
+  { iso3: 'WSM', lon: -172.1, lat: -13.7 }
 ];

@@ -20,17 +20,15 @@ export default function Nav({ items = [] }) {
   return (
     <nav className="nav_container">
       {items.map(item =>
-        item.href
-          ? (
-            <a className={`nav_btn${item.primary ? ' nav_btn--primary' : ''}`} href={item.href} key={item.label}>
-              {item.label}
-            </a>
-          )
-          : (
-            <button className={`nav_btn${item.primary ? ' nav_btn--primary' : ''}`} key={item.label} onClick={scrollToY} type="button">
-              {item.label}
-            </button>
-          )
+        item.href ? (
+          <a className={`nav_btn${item.primary ? ' nav_btn--primary' : ''}`} href={item.href} key={item.label}>
+            {item.label}
+          </a>
+        ) : (
+          <button className={`nav_btn${item.primary ? ' nav_btn--primary' : ''}`} key={item.label} onClick={scrollToY} type="button">
+            {item.label}
+          </button>
+        )
       )}
     </nav>
   );

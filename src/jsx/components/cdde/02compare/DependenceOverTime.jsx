@@ -15,7 +15,7 @@ const GROUP_COLORS = {
   agri: '#72bf44',
   energy: '#009edb',
   mining: '#fbaf17',
-  'non-dependent': '#9e9e9e',
+  'non-dependent': '#9e9e9e'
 };
 
 // Deterministic pseudo-random trend from iso3 + current value
@@ -39,23 +39,21 @@ export default function DependenceOverTime({ iso3, currentPct, dominantGroup }) 
   const series = useMemo(() => buildSeries(iso3, currentPct), [iso3, currentPct]);
   const lineColor = GROUP_COLORS[dominantGroup] || '#009edb';
 
-  const xScale = d3.scaleLinear()
-    .domain([2010, 2024])
-    .range([0, CHART_W]);
+  const xScale = d3.scaleLinear().domain([2010, 2024]).range([0, CHART_W]);
 
   const allPcts = series.map(d => d.pct);
-  const yMin = Math.max(0,  Math.floor((Math.min(...allPcts, 55) - 8) / 10) * 10);
+  const yMin = Math.max(0, Math.floor((Math.min(...allPcts, 55) - 8) / 10) * 10);
   const yMax = Math.min(100, Math.ceil((Math.max(...allPcts, 65) + 8) / 10) * 10);
 
-  const yScale = d3.scaleLinear()
-    .domain([yMin, yMax])
-    .range([CHART_H, 0]);
+  const yScale = d3.scaleLinear().domain([yMin, yMax]).range([CHART_H, 0]);
 
-  const linePath = d3.line()
+  const linePath = d3
+    .line()
     .x(d => xScale(d.year))
     .y(d => yScale(d.pct))(series);
 
-  const areaPath = d3.area()
+  const areaPath = d3
+    .area()
     .x(d => xScale(d.year))
     .y0(CHART_H)
     .y1(d => yScale(d.pct))(series);
@@ -71,10 +69,7 @@ export default function DependenceOverTime({ iso3, currentPct, dominantGroup }) 
 
   return (
     <div className="cdde_card">
-      <ChartHeader
-        title="Commodity export dependence over time"
-        subtitle={`Annual share, % · 2010–2024`}
-      />
+      <ChartHeader title="Commodity export dependence over time" subtitle={`Annual share, % · 2010–2024`} />
 
       <div className="dot_chart_wrap">
         <svg viewBox={`0 0 ${W} ${H}`} className="dot_svg" aria-label="Line chart of commodity export dependence over time">
@@ -93,7 +88,9 @@ export default function DependenceOverTime({ iso3, currentPct, dominantGroup }) 
             {yTicks.map(v => (
               <g key={v} transform={`translate(0,${yScale(v)})`}>
                 <line x1={0} x2={CHART_W} className="dot_grid" />
-                <text x={-6} y={4} textAnchor="end" className="dot_tick_label">{v}%</text>
+                <text x={-6} y={4} textAnchor="end" className="dot_tick_label">
+                  {v}%
+                </text>
               </g>
             ))}
 
@@ -101,7 +98,9 @@ export default function DependenceOverTime({ iso3, currentPct, dominantGroup }) 
             {threshold60 >= 0 && threshold60 <= CHART_H && (
               <>
                 <line x1={0} x2={CHART_W} y1={threshold60} y2={threshold60} className="dot_threshold" />
-                <text x={CHART_W + 4} y={threshold60 + 4} className="dot_threshold_label">60% threshold</text>
+                <text x={CHART_W + 4} y={threshold60 + 4} className="dot_threshold_label">
+                  60% threshold
+                </text>
               </>
             )}
 
@@ -113,14 +112,7 @@ export default function DependenceOverTime({ iso3, currentPct, dominantGroup }) 
 
             {/* Last point callout */}
             <circle cx={lastX} cy={lastY} r={4} fill={lineColor} />
-            <rect
-              x={lastX - 22}
-              y={lastY - 22}
-              width={44}
-              height={18}
-              rx={4}
-              fill={lineColor}
-            />
+            <rect x={lastX - 22} y={lastY - 22} width={44} height={18} rx={4} fill={lineColor} />
             <text x={lastX} y={lastY - 9} textAnchor="middle" className="dot_callout_label">
               {lastPt.pct}%
             </text>
@@ -130,7 +122,9 @@ export default function DependenceOverTime({ iso3, currentPct, dominantGroup }) 
             {xTicks.map(t => (
               <g key={t} transform={`translate(${xScale(t)},${CHART_H})`}>
                 <line y2={4} className="dot_tick" />
-                <text y={16} textAnchor={t === 2010 ? 'start' : t === 2024 ? 'end' : 'middle'} className="dot_tick_label">{t}</text>
+                <text y={16} textAnchor={t === 2010 ? 'start' : t === 2024 ? 'end' : 'middle'} className="dot_tick_label">
+                  {t}
+                </text>
               </g>
             ))}
           </g>

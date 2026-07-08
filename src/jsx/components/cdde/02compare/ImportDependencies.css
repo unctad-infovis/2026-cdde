@@ -24,8 +24,13 @@
 }
 
 @keyframes imd_pulse {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.5; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
 
 #app-root-2026-cdde .app .imd_no_data {

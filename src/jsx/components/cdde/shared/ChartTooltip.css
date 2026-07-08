@@ -4,7 +4,7 @@
   background: #fff;
   border: 1px solid var(--un-color-grey-light);
   border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
   padding: 10px 12px;
   min-width: 160px;
   transform: translate(14px, -50%);

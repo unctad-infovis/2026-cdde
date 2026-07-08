@@ -11,7 +11,7 @@ const CRITERIA = [
     valFmt: v => `${v.toFixed(1)}%`,
     domain: [0, 100],
     threshold: 60,
-    thresholdLabel: '60% threshold',
+    thresholdLabel: '60% threshold'
   },
   {
     id: 'hhi',
@@ -20,25 +20,21 @@ const CRITERIA = [
     valFmt: v => v.toFixed(2),
     domain: [0, 1],
     threshold: null,
-    thresholdLabel: null,
-  },
+    thresholdLabel: null
+  }
 ];
 
 const REGION_LIST = ['All regions', 'Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
 
 const REGION_GROUPS = {
-  Africa:   ['North Africa', 'Sub-Saharan Africa'],
+  Africa: ['North Africa', 'Sub-Saharan Africa'],
   Americas: ['Caribbean', 'Central America', 'Northern America', 'South America'],
-  Asia:     ['Central Asia', 'Eastern Asia', 'South-Eastern Asia', 'Southern Asia', 'Western Asia'],
-  Europe:   ['Eastern Europe', 'Northern Europe', 'Southern Europe', 'Western Europe'],
-  Oceania:  ['Oceania'],
+  Asia: ['Central Asia', 'Eastern Asia', 'South-Eastern Asia', 'Southern Asia', 'Western Asia'],
+  Europe: ['Eastern Europe', 'Northern Europe', 'Southern Europe', 'Western Europe'],
+  Oceania: ['Oceania']
 };
 
-const DEVELOPED = new Set([
-  'AUS','AUT','BEL','CAN','CHE','CZE','DEU','DNK','ESP','EST','FIN','FRA',
-  'GBR','GRC','HUN','IRL','ISL','ISR','ITA','JPN','KOR','LTU','LUX','LVA',
-  'NLD','NOR','NZL','POL','PRT','SVK','SVN','SWE','USA',
-]);
+const DEVELOPED = new Set(['AUS', 'AUT', 'BEL', 'CAN', 'CHE', 'CZE', 'DEU', 'DNK', 'ESP', 'EST', 'FIN', 'FRA', 'GBR', 'GRC', 'HUN', 'IRL', 'ISL', 'ISR', 'ITA', 'JPN', 'KOR', 'LTU', 'LUX', 'LVA', 'NLD', 'NOR', 'NZL', 'POL', 'PRT', 'SVK', 'SVN', 'SWE', 'USA']);
 
 function parsePop(pop) {
   if (!pop) return 5e6;
@@ -65,7 +61,7 @@ export default function DependenceStandings({ countries }) {
 
   const visible = (countries || []).filter(c => {
     const v = c[criterion];
-    if (v == null || isNaN(v)) return false;
+    if (v == null || Number.isNaN(v)) return false;
     if (region === 'All regions') return true;
     return REGION_GROUPS[region]?.includes(c.region);
   });
@@ -101,14 +97,17 @@ export default function DependenceStandings({ countries }) {
       r: rScale(parsePop(c.population)),
       dev: DEVELOPED.has(c.iso3),
       x: xScale(c[criterion]),
-      y: iH / 2,
+      y: iH / 2
     }));
 
     // Beeswarm via force simulation (synchronous)
     d3.forceSimulation(nodes)
       .force('x', d3.forceX(d => xScale(d.val)).strength(1))
       .force('y', d3.forceY(iH / 2).strength(0.05))
-      .force('collision', d3.forceCollide(d => d.r + 1.5))
+      .force(
+        'collision',
+        d3.forceCollide(d => d.r + 1.5)
+      )
       .stop()
       .tick(120);
 
@@ -122,9 +121,7 @@ export default function DependenceStandings({ countries }) {
 
     const g = svg.append('g').attr('transform', `translate(${M.left},${M.top})`);
 
-    g.append('rect')
-      .attr('width', iW).attr('height', iH)
-      .attr('fill', '#f5f7fa').attr('rx', 6);
+    g.append('rect').attr('width', iW).attr('height', iH).attr('fill', '#f5f7fa').attr('rx', 6);
 
     // X axis
     g.append('g')
@@ -136,28 +133,35 @@ export default function DependenceStandings({ countries }) {
 
     // Axis label
     g.append('text')
-      .attr('x', iW / 2).attr('y', iH + 48)
+      .attr('x', iW / 2)
+      .attr('y', iH + 48)
       .attr('text-anchor', 'middle')
-      .attr('fill', '#666').attr('font-size', 10).attr('font-weight', 700)
+      .attr('fill', '#666')
+      .attr('font-size', 10)
+      .attr('font-weight', 700)
       .attr('letter-spacing', '0.06em')
       .text(crit.label.toUpperCase());
 
     // Reference line
     if (crit.threshold != null) {
       const tx = xScale(crit.threshold);
-      g.append('line')
-        .attr('x1', tx).attr('x2', tx).attr('y1', 0).attr('y2', iH)
-        .attr('stroke', '#fbaf17').attr('stroke-width', 1.5).attr('stroke-dasharray', '5,4');
+      g.append('line').attr('x1', tx).attr('x2', tx).attr('y1', 0).attr('y2', iH).attr('stroke', '#fbaf17').attr('stroke-width', 1.5).attr('stroke-dasharray', '5,4');
       g.append('text')
-        .attr('x', tx + 6).attr('y', 16)
-        .attr('fill', '#fbaf17').attr('font-size', 11).attr('font-weight', 700)
+        .attr('x', tx + 6)
+        .attr('y', 16)
+        .attr('fill', '#fbaf17')
+        .attr('font-size', 11)
+        .attr('font-weight', 700)
         .text(crit.thresholdLabel);
     }
 
     // Economy count
-    svg.append('text')
-      .attr('x', W - M.right + 8).attr('y', M.top + 16)
-      .attr('fill', '#aaa').attr('font-size', 11)
+    svg
+      .append('text')
+      .attr('x', W - M.right + 8)
+      .attr('y', M.top + 16)
+      .attr('fill', '#aaa')
+      .attr('font-size', 11)
       .text(`${nodes.length} economies`);
 
     // Dots
@@ -170,14 +174,13 @@ export default function DependenceStandings({ countries }) {
       .attr('cx', d => d.x)
       .attr('cy', d => d.y)
       .attr('r', d => d.r)
-      .attr('fill', d => hasHL && !hlSet.has(d.iso3) ? '#ccc' : (d.dev ? '#009edb' : '#fbaf17'))
-      .attr('opacity', d => hasHL && !hlSet.has(d.iso3) ? 0.25 : 0.82)
-      .attr('stroke', d => hlSet.has(d.iso3) ? '#003a5c' : 'none')
+      .attr('fill', d => (hasHL && !hlSet.has(d.iso3) ? '#ccc' : d.dev ? '#009edb' : '#fbaf17'))
+      .attr('opacity', d => (hasHL && !hlSet.has(d.iso3) ? 0.25 : 0.82))
+      .attr('stroke', d => (hlSet.has(d.iso3) ? '#003a5c' : 'none'))
       .attr('stroke-width', 2.5)
       .append('title')
       .text(d => `${d.name}: ${crit.valFmt(d.val)}`);
-
-  }, [visible, criterion, chartW, highlight]);
+  }, [visible, criterion, chartW, highlight, crit.tickFmt, crit.label.toUpperCase, crit.valFmt, crit.thresholdLabel, crit.threshold, crit.domain]);
 
   // Highlight input
   const handleHlInput = e => {
@@ -185,10 +188,7 @@ export default function DependenceStandings({ countries }) {
     setHlInput(val);
     const q = val.toLowerCase().trim();
     const pool = countries || [];
-    setSuggestions(q
-      ? pool.filter(c => c.name.toLowerCase().includes(q)).slice(0, 8)
-      : pool.slice(0, 8)
-    );
+    setSuggestions(q ? pool.filter(c => c.name.toLowerCase().includes(q)).slice(0, 8) : pool.slice(0, 8));
   };
 
   const handleHlFocus = () => {
@@ -205,10 +205,7 @@ export default function DependenceStandings({ countries }) {
     <div className="dp_card">
       <div className="dp_card_header">
         <h3 className="dp_card_title">Where every economy stands</h3>
-        <p className="dp_card_desc">
-          Each dot is a country, positioned by its value on the chosen criterion. Vertical
-          clustering shows where most economies fall.
-        </p>
+        <p className="dp_card_desc">Each dot is a country, positioned by its value on the chosen criterion. Vertical clustering shows where most economies fall.</p>
       </div>
 
       <div className="dp_divider" />
@@ -218,7 +215,11 @@ export default function DependenceStandings({ countries }) {
           <span className="dp_control_label">CRITERION</span>
           <div className="dp_select_wrap">
             <select className="dp_select" value={criterion} onChange={e => setCriterion(e.target.value)}>
-              {CRITERIA.map(c => <option key={c.id} value={c.id}>{c.label}</option>)}
+              {CRITERIA.map(c => (
+                <option key={c.id} value={c.id}>
+                  {c.label}
+                </option>
+              ))}
             </select>
             <svg className="dp_chevron" viewBox="0 0 12 8" fill="none">
               <path d="M1 1l5 5 5-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -230,7 +231,11 @@ export default function DependenceStandings({ countries }) {
           <span className="dp_control_label">REGION</span>
           <div className="dp_select_wrap">
             <select className="dp_select" value={region} onChange={e => setRegion(e.target.value)}>
-              {REGION_LIST.map(r => <option key={r} value={r}>{r}</option>)}
+              {REGION_LIST.map(r => (
+                <option key={r} value={r}>
+                  {r}
+                </option>
+              ))}
             </select>
             <svg className="dp_chevron" viewBox="0 0 12 8" fill="none">
               <path d="M1 1l5 5 5-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -269,14 +274,7 @@ export default function DependenceStandings({ countries }) {
       <div className="dp_hl_bar">
         <span className="dp_hl_label">HIGHLIGHT</span>
         <div className="dp_hl_input_wrap">
-          <input
-            className="dp_hl_input"
-            type="text"
-            placeholder="Click or type to add a country"
-            value={hlInput}
-            onChange={handleHlInput}
-            onFocus={handleHlFocus}
-          />
+          <input className="dp_hl_input" type="text" placeholder="Click or type to add a country" value={hlInput} onChange={handleHlInput} onFocus={handleHlFocus} />
           {suggestions.length > 0 && (
             <div className="dp_suggestions">
               {suggestions.map(c => (
@@ -288,7 +286,9 @@ export default function DependenceStandings({ countries }) {
           )}
         </div>
         {highlight.length > 0 && (
-          <button className="dp_hl_clear" onClick={() => setHighlight([])}>Clear all</button>
+          <button className="dp_hl_clear" onClick={() => setHighlight([])}>
+            Clear all
+          </button>
         )}
       </div>
     </div>

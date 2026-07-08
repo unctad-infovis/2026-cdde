@@ -12,7 +12,9 @@
   border: 1.5px solid transparent;
   border-radius: 8px;
   padding: 0 10px;
-  transition: border-color 0.15s, background 0.15s;
+  transition:
+    border-color 0.15s,
+    background 0.15s;
   cursor: text;
 }
 
@@ -45,7 +47,7 @@
   border: none;
   color: var(--un-color-grey-text);
   cursor: pointer;
-  font-size: 18px;
+  font-size: var(--un-font-size-normal);
   line-height: 1;
   padding: 0;
   flex-shrink: 0;

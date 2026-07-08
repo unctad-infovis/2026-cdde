@@ -8,7 +8,7 @@ const GROUP_COLORS = {
   agri: '#72bf44',
   energy: '#009edb',
   mining: '#fbaf17',
-  'non-dependent': '#9e9e9e',
+  'non-dependent': '#9e9e9e'
 };
 
 export default function LeadingExports({ iso3, dominantGroup }) {
@@ -17,7 +17,9 @@ export default function LeadingExports({ iso3, dominantGroup }) {
   useEffect(() => {
     loadFile('assets/data/cdde_leading_exports.json')
       .then(r => r?.json())
-      .then(d => { if (d) setAllData(d); });
+      .then(d => {
+        if (d) setAllData(d);
+      });
   }, []);
 
   const exports = allData?.[iso3] ?? null;
@@ -25,17 +27,12 @@ export default function LeadingExports({ iso3, dominantGroup }) {
 
   return (
     <div className="cdde_card">
-      <ChartHeader
-        title="Three leading commodity exports"
-        subtitle="% of all allocated product exports · 2022–2024"
-      />
+      <ChartHeader title="Three leading commodity exports" subtitle="% of all allocated product exports · 2022–2024" />
 
       <div className="cdde_card_body">
         {!allData && <div className="cdde_loading" style={{ height: 120 }} />}
 
-        {allData && !exports && (
-          <p className="cdde_no_data">Export breakdown data not available for this country.</p>
-        )}
+        {allData && !exports && <p className="cdde_no_data">Export breakdown data not available for this country.</p>}
 
         {exports && (
           <div className="cdde_bars">

@@ -4,7 +4,7 @@ const GROUPS = [
   { color: 'var(--un-color-green)', label: 'Agricultural products' },
   { color: 'var(--un-color-green-dark)', label: 'Raw materials' },
   { color: 'var(--un-color-blue)', label: 'Energy' },
-  { color: 'var(--un-color-yellow)', label: 'Mining & metals' },
+  { color: 'var(--un-color-yellow)', label: 'Mining & metals' }
 ];
 
 export default function Intro() {
@@ -24,7 +24,9 @@ export default function Intro() {
             </span>
           ))}
         </div>
-        <a className="intro_strip_more" href="#know-more">Know more ↓</a>
+        <a className="intro_strip_more" href="#know-more">
+          Know more ↓
+        </a>
       </div>
     </div>
   );

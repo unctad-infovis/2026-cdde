@@ -1,20 +1,11 @@
 import './BigPicture.css';
 
-export default function BigPicture({
-  cards = [],
-  def_attribution,
-  def_badge,
-  def_title,
-  description,
-  title,
-}) {
+export default function BigPicture({ cards = [], def_attribution, def_badge, def_title, description, title }) {
   const hasDefinition = !!(def_title && def_badge);
 
   return (
     <div className="bigpicture_container">
-
       <div className={`bigpicture_hero${hasDefinition ? ' bigpicture_hero--split' : ''}`}>
-
         {/* Left — big picture */}
         <div className="bigpicture_hero_content">
           <div className="bigpicture_section_label">
@@ -34,16 +25,11 @@ export default function BigPicture({
             </div>
             <h3 className="bigpicture_def_title">{def_title}</h3>
             <p className="bigpicture_def_statement">
-              A country is commodity-dependent when more than{' '}
-              <span className="bigpicture_def_badge">{def_badge}</span>{' '}
-              of its merchandise export value comes from commodities.
+              A country is commodity-dependent when more than <span className="bigpicture_def_badge">{def_badge}</span> of its merchandise export value comes from commodities.
             </p>
-            {def_attribution && (
-              <p className="bigpicture_def_attribution">{def_attribution}</p>
-            )}
+            {def_attribution && <p className="bigpicture_def_attribution">{def_attribution}</p>}
           </div>
         )}
-
       </div>
 
       <div className="bigpicture_cards">
@@ -55,7 +41,6 @@ export default function BigPicture({
           </div>
         ))}
       </div>
-
     </div>
   );
 }

@@ -7,11 +7,7 @@ import './ImportDependencies.css';
 
 function StatusBadge({ status }) {
   const isExporter = status === 'net_exporter';
-  return (
-    <span className={`imd_badge${isExporter ? ' imd_badge--exporter' : ' imd_badge--importer'}`}>
-      {isExporter ? 'Net exporter' : 'Net importer'}
-    </span>
-  );
+  return <span className={`imd_badge${isExporter ? ' imd_badge--exporter' : ' imd_badge--importer'}`}>{isExporter ? 'Net exporter' : 'Net importer'}</span>;
 }
 
 export default function ImportDependencies({ iso3 }) {
@@ -20,24 +16,21 @@ export default function ImportDependencies({ iso3 }) {
   useEffect(() => {
     loadFile('assets/data/cdde_import_deps.json')
       .then(r => r?.json())
-      .then(d => { if (d) setAllData(d); });
+      .then(d => {
+        if (d) setAllData(d);
+      });
   }, []);
 
   const d = allData?.[iso3] ?? null;
 
   return (
     <div className="imd_card">
-      <ChartHeader
-        title="Import dependencies"
-        subtitle="Share of total merchandise imports · 2022–2024"
-      />
+      <ChartHeader title="Import dependencies" subtitle="Share of total merchandise imports · 2022–2024" />
 
       <div className="imd_body">
         {!allData && <div className="imd_loading" />}
 
-        {allData && !d && (
-          <p className="imd_no_data">Import dependency data not available for this country.</p>
-        )}
+        {allData && !d && <p className="imd_no_data">Import dependency data not available for this country.</p>}
 
         {d && (
           <>

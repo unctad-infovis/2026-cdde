@@ -17,10 +17,14 @@
 }
 
 @keyframes gbc_pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
-
 
 #app-root-2026-cdde .app .gbc_insight {
   font-size: var(--un-font-size-xs);
@@ -47,18 +51,18 @@
 }
 
 #app-root-2026-cdde .app .gbc_axis_label {
-  font-size: 9px;
+  font-size: var(--un-font-size-xxxxs);
   fill: var(--un-color-grey-text);
 }
 
 #app-root-2026-cdde .app .gbc_bar_label {
-  font-size: 10px;
+  font-size: var(--un-font-size-xxxxs);
   font-weight: var(--un-font-weight-bold);
   fill: #fff;
 }
 
 #app-root-2026-cdde .app .gbc_x_label {
-  font-size: 9px;
+  font-size: var(--un-font-size-xxxxs);
   fill: var(--un-color-grey-dark);
 }
 
@@ -83,4 +87,3 @@
   border-radius: 2px;
   flex-shrink: 0;
 }
-

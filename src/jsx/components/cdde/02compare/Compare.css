@@ -24,7 +24,9 @@
   background: #fff;
   cursor: pointer;
   text-align: left;
-  transition: border-color 0.15s, background 0.15s;
+  transition:
+    border-color 0.15s,
+    background 0.15s;
   position: relative;
   overflow: hidden;
 }
@@ -146,7 +148,9 @@
   font-size: var(--un-font-size-xxs);
   color: var(--un-color-grey-dark);
   cursor: pointer;
-  transition: background 0.12s, color 0.12s;
+  transition:
+    background 0.12s,
+    color 0.12s;
   white-space: nowrap;
 }
 
@@ -185,8 +189,13 @@
 }
 
 @keyframes cmp_pulse {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.5; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
 
 /* Right panel */

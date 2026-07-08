@@ -1,10 +1,10 @@
 import CircleFlag from '../../general/CircleFlag';
 import DependenceOverTime from './DependenceOverTime';
-import LeadingExports from './LeadingExports';
-import TopMarkets from './TopMarkets';
 import ImportDependencies from './ImportDependencies';
+import LeadingExports from './LeadingExports';
 import MacroContext from './MacroContext';
 import SocialContext from './SocialContext';
+import TopMarkets from './TopMarkets';
 
 import './CountryProfile.css';
 
@@ -12,21 +12,21 @@ const GROUP_LABELS = {
   agri: 'Agricultural',
   energy: 'Energy',
   mining: 'Mining',
-  'non-dependent': 'Non-commodity',
+  'non-dependent': 'Non-commodity'
 };
 
 const GROUP_COLORS = {
   agri: '#72bf44',
   energy: '#009edb',
   mining: '#fbaf17',
-  'non-dependent': '#9e9e9e',
+  'non-dependent': '#9e9e9e'
 };
 
 const GROUP_INSIGHT = {
   agri: 'agricultural commodities, exposing the economy to weather, price and policy shocks across food markets',
   energy: 'energy commodities, leaving the economy highly exposed to oil and gas price cycles and geopolitical supply risks',
   mining: 'mineral and mining resources, making the economy sensitive to global metals demand and price volatility',
-  'non-dependent': 'a diversified export basket, which reduces vulnerability to single-commodity price swings',
+  'non-dependent': 'a diversified export basket, which reduces vulnerability to single-commodity price swings'
 };
 
 function depColor(pct) {
@@ -36,28 +36,20 @@ function depColor(pct) {
 }
 
 function hhiLabel(hhi) {
-  if (hhi < 0.10) return 'Low';
+  if (hhi < 0.1) return 'Low';
   if (hhi < 0.25) return 'Moderate';
   return 'High';
 }
 
 export default function CountryProfile({ country }) {
-  const {
-    iso3, iso2, name, region,
-    export_dependence: pct,
-    dominant_group,
-    merchandise_exports,
-    hhi,
-    gdp_per_capita,
-    population,
-  } = country;
+  const { iso3, iso2, name, region, export_dependence: pct, dominant_group, merchandise_exports, hhi, gdp_per_capita, population } = country;
 
   const safePct = Number.isFinite(pct) ? pct : null;
 
-  const groupColor  = GROUP_COLORS[dominant_group] || '#9e9e9e';
-  const groupLabel  = GROUP_LABELS[dominant_group] || dominant_group;
+  const groupColor = GROUP_COLORS[dominant_group] || '#9e9e9e';
+  const groupLabel = GROUP_LABELS[dominant_group] || dominant_group;
   const insightDesc = GROUP_INSIGHT[dominant_group] || 'commodity exports';
-  const aboveBelow  = safePct != null ? (safePct > 60 ? 'Above' : 'Below') : null;
+  const aboveBelow = safePct != null ? (safePct > 60 ? 'Above' : 'Below') : null;
 
   return (
     <div className="cp_panel">
@@ -67,7 +59,9 @@ export default function CountryProfile({ country }) {
           <CircleFlag countryCode={iso2} height={56} width={56} />
           <div className="cp_header_info">
             <h2 className="cp_country_name">{name}</h2>
-            <p className="cp_country_meta">{region} · ISO {iso3} · Population {population}</p>
+            <p className="cp_country_meta">
+              {region} · ISO {iso3} · Population {population}
+            </p>
           </div>
         </div>
         <div className="cp_dep_block">
@@ -81,9 +75,8 @@ export default function CountryProfile({ country }) {
 
       {/* Insight */}
       <p className="cp_insight">
-        {name}'s exports remain anchored in{' '}
-        <strong style={{ color: groupColor }}>{insightDesc.split(',')[0]}</strong>
-        {insightDesc.includes(',') ? ',' + insightDesc.split(',').slice(1).join(',') : ''}.
+        {name}'s exports remain anchored in <strong style={{ color: groupColor }}>{insightDesc.split(',')[0]}</strong>
+        {insightDesc.includes(',') ? `,${insightDesc.split(',').slice(1).join(',')}` : ''}.
       </p>
 
       {/* Key stats row */}
@@ -95,7 +88,9 @@ export default function CountryProfile({ country }) {
         </div>
         <div className="cp_stat">
           <span className="cp_stat_label">DOMINANT GROUP</span>
-          <span className="cp_stat_value" style={{ color: groupColor }}>{groupLabel}</span>
+          <span className="cp_stat_value" style={{ color: groupColor }}>
+            {groupLabel}
+          </span>
           <span className="cp_stat_note">SITC classification</span>
         </div>
         <div className="cp_stat">
@@ -112,15 +107,8 @@ export default function CountryProfile({ country }) {
 
       {/* Chart row 1 */}
       <div className="cp_chart_row">
-        <DependenceOverTime
-          iso3={iso3}
-          currentPct={safePct}
-          dominantGroup={dominant_group}
-        />
-        <LeadingExports
-          iso3={iso3}
-          dominantGroup={dominant_group}
-        />
+        <DependenceOverTime iso3={iso3} currentPct={safePct} dominantGroup={dominant_group} />
+        <LeadingExports iso3={iso3} dominantGroup={dominant_group} />
       </div>
 
       {/* Chart row 2 */}

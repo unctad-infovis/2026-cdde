@@ -1,27 +1,27 @@
 import { useEffect, useMemo, useState } from 'react';
-import loadFile from '../../../helpers/LoadFile';
 import CSVtoJSON from '../../../helpers/CsvToJson';
-import CountryList from './CountryList';
-import CountryProfile from './CountryProfile';
-import DependenceStandings from './DependenceStandings';
+import loadFile from '../../../helpers/LoadFile';
 import CompareBar from './CompareBar';
 import CompareView from './CompareView';
+import CountryList from './CountryList';
+import CountryProfile from './CountryProfile';
 import CountryRankings from './CountryRankings';
+import DependenceStandings from './DependenceStandings';
 
 import './Compare.css';
 
 const TOOLS = [
   { id: '01', label: 'Country profile', desc: 'Deep-dive on one economy' },
   { id: '02', label: 'Compare profiles', desc: 'Up to 3 economies side by side' },
-  { id: '03', label: 'Variable ranking', desc: 'League table for any indicator' },
+  { id: '03', label: 'Variable ranking', desc: 'League table for any indicator' }
 ];
 
 const REGION_GROUPS = {
-  Africa:   ['North Africa', 'Sub-Saharan Africa'],
+  Africa: ['North Africa', 'Sub-Saharan Africa'],
   Americas: ['Caribbean', 'Central America', 'Northern America', 'South America'],
-  Asia:     ['Central Asia', 'Eastern Asia', 'South-Eastern Asia', 'Southern Asia', 'Western Asia'],
-  Europe:   ['Eastern Europe', 'Northern Europe', 'Southern Europe', 'Western Europe'],
-  Oceania:  ['Oceania'],
+  Asia: ['Central Asia', 'Eastern Asia', 'South-Eastern Asia', 'Southern Asia', 'Western Asia'],
+  Europe: ['Eastern Europe', 'Northern Europe', 'Southern Europe', 'Western Europe'],
+  Oceania: ['Oceania']
 };
 const REGIONS = ['All', ...Object.keys(REGION_GROUPS)];
 const THRESHOLDS = ['All', '≤60%', '60–80%', '>80%'];
@@ -40,10 +40,12 @@ export default function Compare() {
       .then(r => r?.text())
       .then(text => {
         if (!text) return;
-        const rows = CSVtoJSON(text).filter(r => r.iso3).map(r => ({
-          ...r,
-          export_dependence: +r.export_dependence,
-        }));
+        const rows = CSVtoJSON(text)
+          .filter(r => r.iso3)
+          .map(r => ({
+            ...r,
+            export_dependence: +r.export_dependence
+          }));
         const sorted = [...rows].sort((a, b) => a.name.localeCompare(b.name));
         setAllCountries(sorted);
         setSelected(sorted[0]);
@@ -55,14 +57,9 @@ export default function Compare() {
     return allCountries.filter(c => {
       const q = search.trim().toLowerCase();
       const matchSearch = !q || c.name.toLowerCase().includes(q);
-      const matchRegion =
-        region === 'All' || REGION_GROUPS[region]?.includes(c.region);
+      const matchRegion = region === 'All' || REGION_GROUPS[region]?.includes(c.region);
       const pct = c.export_dependence;
-      const matchThreshold =
-        threshold === 'All' ||
-        (threshold === '≤60%'  && pct <= 60) ||
-        (threshold === '60–80%' && pct > 60 && pct <= 80) ||
-        (threshold === '>80%'  && pct > 80);
+      const matchThreshold = threshold === 'All' || (threshold === '≤60%' && pct <= 60) || (threshold === '60–80%' && pct > 60 && pct <= 80) || (threshold === '>80%' && pct > 80);
       return matchSearch && matchRegion && matchThreshold;
     });
   }, [allCountries, search, region, threshold]);
@@ -74,11 +71,7 @@ export default function Compare() {
       {/* Tool nav */}
       <div className="cmp_tool_nav">
         {TOOLS.map(t => (
-          <button
-            key={t.id}
-            className={`cmp_tool_tab${activeTool === t.id ? ' cmp_tool_tab--active' : ''}`}
-            onClick={() => setActiveTool(t.id)}
-          >
+          <button key={t.id} className={`cmp_tool_tab${activeTool === t.id ? ' cmp_tool_tab--active' : ''}`} onClick={() => setActiveTool(t.id)}>
             <span className="cmp_tool_num">{t.id}</span>
             <div className="cmp_tool_text">
               <span className="cmp_tool_label">{t.label}</span>
@@ -97,23 +90,13 @@ export default function Compare() {
                 <circle cx="5.5" cy="5.5" r="4.5" stroke="currentColor" strokeWidth="1.4" />
                 <line x1="9" y1="9" x2="13" y2="13" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
               </svg>
-              <input
-                className="cmp_search_input"
-                type="text"
-                placeholder={`Search ${totalCount} member States`}
-                value={search}
-                onChange={e => setSearch(e.target.value)}
-              />
+              <input className="cmp_search_input" type="text" placeholder={`Search ${totalCount} member States`} value={search} onChange={e => setSearch(e.target.value)} />
             </div>
 
             <div className="cmp_filter_group">
               <span className="cmp_filter_group_label">REGION</span>
               {REGIONS.map(r => (
-                <button
-                  key={r}
-                  className={`cmp_filter_pill${region === r ? ' cmp_filter_pill--active' : ''}`}
-                  onClick={() => setRegion(r)}
-                >
+                <button key={r} className={`cmp_filter_pill${region === r ? ' cmp_filter_pill--active' : ''}`} onClick={() => setRegion(r)}>
                   {r}
                 </button>
               ))}
@@ -122,11 +105,7 @@ export default function Compare() {
             <div className="cmp_filter_group">
               <span className="cmp_filter_group_label">THRESHOLD</span>
               {THRESHOLDS.map(t => (
-                <button
-                  key={t}
-                  className={`cmp_filter_pill${threshold === t ? ' cmp_filter_pill--active' : ''}`}
-                  onClick={() => setThreshold(t)}
-                >
+                <button key={t} className={`cmp_filter_pill${threshold === t ? ' cmp_filter_pill--active' : ''}`} onClick={() => setThreshold(t)}>
                   {t}
                 </button>
               ))}
@@ -134,18 +113,8 @@ export default function Compare() {
           </div>
 
           <div className="cmp_body">
-            <div className="cmp_col_left">
-              {allCountries
-                ? <CountryList countries={filtered} selected={selected} onSelect={setSelected} />
-                : <div className="cmp_list_loading" />
-              }
-            </div>
-            <div className="cmp_col_right">
-              {selected
-                ? <CountryProfile country={selected} />
-                : <p className="cmp_placeholder">Select a country to view its profile.</p>
-              }
-            </div>
+            <div className="cmp_col_left">{allCountries ? <CountryList countries={filtered} selected={selected} onSelect={setSelected} /> : <div className="cmp_list_loading" />}</div>
+            <div className="cmp_col_right">{selected ? <CountryProfile country={selected} /> : <p className="cmp_placeholder">Select a country to view its profile.</p>}</div>
           </div>
         </>
       )}
@@ -154,22 +123,13 @@ export default function Compare() {
       {activeTool === '02' && (
         <>
           <DependenceStandings countries={allCountries} />
-          <CompareBar
-            countries={allCountries}
-            compareList={compareList}
-            onCompareChange={setCompareList}
-          />
-          <CompareView
-            compareList={compareList}
-            countries={allCountries}
-          />
+          <CompareBar countries={allCountries} compareList={compareList} onCompareChange={setCompareList} />
+          <CompareView compareList={compareList} countries={allCountries} />
         </>
       )}
 
       {/* Tab 03: variable ranking */}
-      {activeTool === '03' && (
-        <CountryRankings countries={allCountries} />
-      )}
+      {activeTool === '03' && <CountryRankings countries={allCountries} />}
     </div>
   );
 }

@@ -11,9 +11,7 @@ const W = 560;
 const H = 320;
 const MIN_PCT = 1;
 
-const BLUE_SCALE = d3.scaleSequential()
-  .domain([0, 100])
-  .interpolator(d3.interpolate('#005392', '#009edb'));
+const BLUE_SCALE = d3.scaleSequential().domain([0, 100]).interpolator(d3.interpolate('#005392', '#009edb'));
 
 function buildTreemap(markets) {
   const named = markets.filter(m => m.pct >= MIN_PCT);
@@ -21,20 +19,14 @@ function buildTreemap(markets) {
   const knownSum = markets.reduce((s, m) => s + m.pct, 0);
   const otherSum = smallSum + Math.max(0, 100 - knownSum);
 
-  const children = [
-    ...named.map(m => ({ label: m.label, pct: m.pct })),
-    ...(otherSum > 0 ? [{ label: 'Other', pct: +otherSum.toFixed(1) }] : []),
-  ];
+  const children = [...named.map(m => ({ label: m.label, pct: m.pct })), ...(otherSum > 0 ? [{ label: 'Other', pct: +otherSum.toFixed(1) }] : [])];
 
-  const root = d3.hierarchy({ children })
+  const root = d3
+    .hierarchy({ children })
     .sum(d => d.pct)
     .sort((a, b) => b.value - a.value);
 
-  d3.treemap()
-    .size([W, H])
-    .paddingOuter(2)
-    .paddingInner(2)
-    .round(true)(root);
+  d3.treemap().size([W, H]).paddingOuter(2).paddingInner(2).round(true)(root);
 
   return root.leaves();
 }
@@ -48,11 +40,13 @@ export default function TopMarkets({ iso3 }) {
   useEffect(() => {
     loadFile('assets/data/cdde_top_markets.json')
       .then(r => r?.json())
-      .then(d => { if (d) setAllData(d); });
+      .then(d => {
+        if (d) setAllData(d);
+      });
   }, []);
 
   const markets = allData?.[iso3] ?? null;
-  const leaves = useMemo(() => (markets && showTree) ? buildTreemap(markets) : null, [markets, showTree]);
+  const leaves = useMemo(() => (markets && showTree ? buildTreemap(markets) : null), [markets, showTree]);
 
   function handleMouseMove(e, leaf) {
     const wrap = wrapRef.current;
@@ -64,10 +58,7 @@ export default function TopMarkets({ iso3 }) {
   return (
     <div className="cdde_card">
       <div className="tm_header_row">
-        <ChartHeader
-          title="Top destination markets"
-          subtitle="% of total merchandise exports · 2022–2024"
-        />
+        <ChartHeader title="Top destination markets" subtitle="% of total merchandise exports · 2022–2024" />
         {markets && (
           <button className="tm_toggle_btn" onClick={() => setShowTree(v => !v)}>
             {showTree ? 'Hide treemap' : 'Show treemap'}
@@ -78,9 +69,7 @@ export default function TopMarkets({ iso3 }) {
       <div className="cdde_card_body">
         {!allData && <div className="cdde_loading" style={{ height: 120 }} />}
 
-        {allData && !markets && (
-          <p className="cdde_no_data">Destination market data not available for this country.</p>
-        )}
+        {allData && !markets && <p className="cdde_no_data">Destination market data not available for this country.</p>}
 
         {markets && !showTree && (
           <div className="cdde_bars">
@@ -105,11 +94,7 @@ export default function TopMarkets({ iso3 }) {
               const sm = lw < 70;
 
               return (
-                <g key={i}
-                  onMouseMove={e => handleMouseMove(e, leaf)}
-                  onMouseLeave={() => setTooltip(null)}
-                  className="tm_cell"
-                >
+                <g key={i} onMouseMove={e => handleMouseMove(e, leaf)} onMouseLeave={() => setTooltip(null)} className="tm_cell">
                   <rect x={leaf.x0} y={leaf.y0} width={lw} height={lh} fill={fill} rx={2} />
                   {showLabel && (
                     <>
@@ -127,10 +112,7 @@ export default function TopMarkets({ iso3 }) {
           </svg>
 
           {tooltip && (
-            <div
-              className={`tm_tooltip${tooltip.x > W * 0.6 ? ' tm_tooltip--flip' : ''}`}
-              style={{ left: tooltip.x, top: tooltip.y }}
-            >
+            <div className={`tm_tooltip${tooltip.x > W * 0.6 ? ' tm_tooltip--flip' : ''}`} style={{ left: tooltip.x, top: tooltip.y }}>
               <div className="tm_tt_name">{tooltip.label}</div>
               <div className="tm_tt_pct">{tooltip.pct}%</div>
             </div>

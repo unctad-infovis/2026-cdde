@@ -3,24 +3,20 @@ import CircleFlag from '../../general/CircleFlag';
 
 import './CountryRankings.css';
 
-const DEVELOPED = new Set([
-  'AUS','AUT','BEL','CAN','CHE','CZE','DEU','DNK','ESP','EST','FIN','FRA',
-  'GBR','GRC','HUN','IRL','ISL','ISR','ITA','JPN','KOR','LTU','LUX','LVA',
-  'NLD','NOR','NZL','POL','PRT','SVK','SVN','SWE','USA',
-]);
+const DEVELOPED = new Set(['AUS', 'AUT', 'BEL', 'CAN', 'CHE', 'CZE', 'DEU', 'DNK', 'ESP', 'EST', 'FIN', 'FRA', 'GBR', 'GRC', 'HUN', 'IRL', 'ISL', 'ISR', 'ITA', 'JPN', 'KOR', 'LTU', 'LUX', 'LVA', 'NLD', 'NOR', 'NZL', 'POL', 'PRT', 'SVK', 'SVN', 'SWE', 'USA']);
 
 const RANK_OPTIONS = [
-  { key: 'export_dependence',   label: 'Commodity export dependence (%)', colHeader: 'COMMODITY DEPENDENCE', fmt: v => `${Number(v).toFixed(1)}%` },
-  { key: 'hhi',                 label: 'Export concentration (HHI)',       colHeader: 'EXPORT CONCENTRATION', fmt: v => Number(v).toFixed(2) },
-  { key: 'merchandise_exports', label: 'Merchandise exports',              colHeader: 'MERCHANDISE EXPORTS',  fmt: v => String(v) },
-  { key: 'gdp_per_capita',      label: 'GDP per capita',                   colHeader: 'GDP PER CAPITA',       fmt: v => String(v) },
-  { key: 'population',          label: 'Population',                       colHeader: 'POPULATION',           fmt: v => String(v) },
+  { key: 'export_dependence', label: 'Commodity export dependence (%)', colHeader: 'COMMODITY DEPENDENCE', fmt: v => `${Number(v).toFixed(1)}%` },
+  { key: 'hhi', label: 'Export concentration (HHI)', colHeader: 'EXPORT CONCENTRATION', fmt: v => Number(v).toFixed(2) },
+  { key: 'merchandise_exports', label: 'Merchandise exports', colHeader: 'MERCHANDISE EXPORTS', fmt: v => String(v) },
+  { key: 'gdp_per_capita', label: 'GDP per capita', colHeader: 'GDP PER CAPITA', fmt: v => String(v) },
+  { key: 'population', label: 'Population', colHeader: 'POPULATION', fmt: v => String(v) }
 ];
 
 const FILTER_OPTIONS = [
-  { key: 'all',        label: 'All economies' },
+  { key: 'all', label: 'All economies' },
   { key: 'developing', label: 'Developing' },
-  { key: 'developed',  label: 'Developed' },
+  { key: 'developed', label: 'Developed' }
 ];
 
 function parseVal(v) {
@@ -35,29 +31,25 @@ function parseVal(v) {
 
 function downloadCSV(rows, opt) {
   const header = ['Rank', 'ISO3', 'Economy', 'Status', 'Region', opt.label].join(',');
-  const lines = rows.map((c, i) =>
-    [i + 1, c.iso3, `"${c.name}"`, DEVELOPED.has(c.iso3) ? 'Developed' : 'Developing', c.region, c[opt.key]].join(',')
-  );
+  const lines = rows.map((c, i) => [i + 1, c.iso3, `"${c.name}"`, DEVELOPED.has(c.iso3) ? 'Developed' : 'Developing', c.region, c[opt.key]].join(','));
   const blob = new Blob([[header, ...lines].join('\n')], { type: 'text/csv' });
   const a = Object.assign(document.createElement('a'), {
     href: URL.createObjectURL(blob),
-    download: `cdde_ranking_${opt.key}.csv`,
+    download: `cdde_ranking_${opt.key}.csv`
   });
   a.click();
   URL.revokeObjectURL(a.href);
 }
 
 export default function CountryRankings({ countries }) {
-  const [rankBy, setRankBy]         = useState('export_dependence');
+  const [rankBy, setRankBy] = useState('export_dependence');
   const [groupFilter, setGroupFilter] = useState('all');
 
   const opt = RANK_OPTIONS.find(o => o.key === rankBy);
 
   // Compute directly — no useMemo closure issues, 193 rows sorts in <1ms
   const base = countries || [];
-  const pool = groupFilter === 'developed'  ? base.filter(c =>  DEVELOPED.has(c.iso3))
-             : groupFilter === 'developing' ? base.filter(c => !DEVELOPED.has(c.iso3))
-             : base;
+  const pool = groupFilter === 'developed' ? base.filter(c => DEVELOPED.has(c.iso3)) : groupFilter === 'developing' ? base.filter(c => !DEVELOPED.has(c.iso3)) : base;
   const sorted = [...pool].sort((a, b) => parseVal(b[rankBy]) - parseVal(a[rankBy]));
   const maxVal = sorted.length ? parseVal(sorted[0][rankBy]) : 1;
 
@@ -65,14 +57,17 @@ export default function CountryRankings({ countries }) {
 
   return (
     <div className="rt_wrap">
-
       {/* ── Controls ── */}
       <div className="rt_controls">
         <div className="rt_controls_left">
           <span className="rt_ctrl_label">RANK BY</span>
           <div className="rt_select_wrap">
             <select className="rt_select" value={rankBy} onChange={e => setRankBy(e.target.value)}>
-              {RANK_OPTIONS.map(o => <option key={o.key} value={o.key}>{o.label}</option>)}
+              {RANK_OPTIONS.map(o => (
+                <option key={o.key} value={o.key}>
+                  {o.label}
+                </option>
+              ))}
             </select>
             <svg className="rt_chevron" viewBox="0 0 10 6" fill="none" aria-hidden="true">
               <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -82,7 +77,11 @@ export default function CountryRankings({ countries }) {
           <span className="rt_ctrl_label">FILTER</span>
           <div className="rt_select_wrap">
             <select className="rt_select" value={groupFilter} onChange={e => setGroupFilter(e.target.value)}>
-              {FILTER_OPTIONS.map(o => <option key={o.key} value={o.key}>{o.label}</option>)}
+              {FILTER_OPTIONS.map(o => (
+                <option key={o.key} value={o.key}>
+                  {o.label}
+                </option>
+              ))}
             </select>
             <svg className="rt_chevron" viewBox="0 0 10 6" fill="none" aria-hidden="true">
               <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -127,9 +126,7 @@ export default function CountryRankings({ countries }) {
               </div>
 
               <div className="rt_group">
-                <span className={`rt_pill rt_pill--${dev ? 'dev' : 'devg'}`}>
-                  {dev ? 'DEVELOPED' : 'DEVELOPING'}
-                </span>
+                <span className={`rt_pill rt_pill--${dev ? 'dev' : 'devg'}`}>{dev ? 'DEVELOPED' : 'DEVELOPING'}</span>
                 <span className="rt_region">· {c.region}</span>
               </div>
 

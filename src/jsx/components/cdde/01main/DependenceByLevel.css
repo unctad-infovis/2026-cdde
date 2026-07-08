@@ -17,10 +17,14 @@
 }
 
 @keyframes alc_pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
-
 
 #app-root-2026-cdde .app .alc_insight {
   font-size: var(--un-font-size-xs);

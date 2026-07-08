@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import loadFile from '../../../helpers/LoadFile';
 import CSVtoJSON from '../../../helpers/CsvToJson';
+import loadFile from '../../../helpers/LoadFile';
 import ChartHeader from '../shared/ChartHeader';
 import ChartSource from '../shared/ChartSource';
 
@@ -9,7 +9,7 @@ import './DependenceByGroup.css';
 const BANDS = [
   { key: 'below60', label: 'Non-commodity-dependent (<60%)', color: 'var(--un-color-blue)' },
   { key: 'band60_80', label: '60–80%', color: 'var(--un-color-yellow)' },
-  { key: 'above80', label: '>80%', color: 'var(--un-color-red)' },
+  { key: 'above80', label: '>80%', color: 'var(--un-color-red)' }
 ];
 
 export default function DependenceByGroup() {
@@ -21,14 +21,16 @@ export default function DependenceByGroup() {
       .then(text => {
         if (!text) return;
         const rows = CSVtoJSON(text).filter(r => r.group);
-        setData(rows.map(r => ({
-          group:      r.group,
-          group_short: (r.group_short || r.group).replace(/~/g, '\n'),
-          total:      +r.total,
-          below60:    +r.below60,
-          band60_80:  +r.band60_80,
-          above80:    +r.above80,
-        })));
+        setData(
+          rows.map(r => ({
+            group: r.group,
+            group_short: (r.group_short || r.group).replace(/~/g, '\n'),
+            total: +r.total,
+            below60: +r.below60,
+            band60_80: +r.band60_80,
+            above80: +r.above80
+          }))
+        );
       });
   }, []);
 
@@ -58,11 +60,7 @@ export default function DependenceByGroup() {
 
   return (
     <div className="gbc_container">
-      <ChartHeader
-        title="Severity of commodity dependence"
-        subtitle="Per cent, 2022–2024"
-        large
-      />
+      <ChartHeader title="Severity of commodity dependence" subtitle="Per cent, 2022–2024" large />
 
       <p className="gbc_insight">
         <strong className="gbc_insight_bold">Developing economies dominate</strong> the ranks of countries exceeding the 80% commodity-dependence threshold, while developed nations remain the exception.
@@ -84,7 +82,9 @@ export default function DependenceByGroup() {
             {yTicks.map(v => (
               <g key={v} transform={`translate(0,${yScale(v)})`}>
                 <line x1={0} x2={chartW} stroke="var(--un-color-grey-lighest)" strokeWidth={1} />
-                <text x={-6} y={4} textAnchor="end" className="gbc_axis_label">{v}</text>
+                <text x={-6} y={4} textAnchor="end" className="gbc_axis_label">
+                  {v}
+                </text>
               </g>
             ))}
 
@@ -100,21 +100,9 @@ export default function DependenceByGroup() {
                     const showLabel = d[band.key] > 0;
                     return (
                       <g key={band.key}>
-                        <rect
-                          x={x}
-                          y={yOffset}
-                          width={barW}
-                          height={h}
-                          fill={band.color}
-                          rx={band.key === 'above80' ? 3 : 0}
-                        />
+                        <rect x={x} y={yOffset} width={barW} height={h} fill={band.color} rx={band.key === 'above80' ? 3 : 0} />
                         {showLabel && h > 14 && (
-                          <text
-                            x={x + barW / 2}
-                            y={yOffset + h / 2 + 4}
-                            textAnchor="middle"
-                            className="gbc_bar_label"
-                          >
+                          <text x={x + barW / 2} y={yOffset + h / 2 + 4} textAnchor="middle" className="gbc_bar_label">
                             {d[band.key]}
                           </text>
                         )}
@@ -123,14 +111,11 @@ export default function DependenceByGroup() {
                   })}
 
                   {/* X axis label */}
-                  <text
-                    x={x + barW / 2}
-                    y={chartH + 14}
-                    textAnchor="middle"
-                    className="gbc_x_label"
-                  >
+                  <text x={x + barW / 2} y={chartH + 14} textAnchor="middle" className="gbc_x_label">
                     {d.group_short.split('\n').map((line, li) => (
-                      <tspan key={li} x={x + barW / 2} dy={li === 0 ? 0 : '1.2em'}>{line}</tspan>
+                      <tspan key={line} x={x + barW / 2} dy={li === 0 ? 0 : '1.2em'}>
+                        {line}
+                      </tspan>
                     ))}
                   </text>
                 </g>
