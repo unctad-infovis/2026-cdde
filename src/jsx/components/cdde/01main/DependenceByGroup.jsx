@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import loadFile from '../../../helpers/LoadFile';
+import CSVtoJSON from '../../../helpers/CsvToJson';
 import ChartHeader from '../shared/ChartHeader';
 import ChartSource from '../shared/ChartSource';
 
-import './GroupBandsChart.css';
+import './DependenceByGroup.css';
 
 const BANDS = [
   { key: 'below60', label: '≤60%', color: 'var(--un-color-blue)' },
@@ -11,13 +12,24 @@ const BANDS = [
   { key: 'above80', label: '>80%', color: 'var(--un-color-red-dark)' },
 ];
 
-export default function GroupBandsChart() {
+export default function DependenceByGroup() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    loadFile('assets/data/cdde_group_bands.json')
-      .then(r => r?.json())
-      .then(d => { if (d) setData(d); });
+    loadFile('assets/data/cdde_dependence_by_group.csv')
+      .then(r => r?.text())
+      .then(text => {
+        if (!text) return;
+        const rows = CSVtoJSON(text).filter(r => r.group);
+        setData(rows.map(r => ({
+          group:      r.group,
+          group_short: (r.group_short || r.group).replace(/~/g, '\n'),
+          total:      +r.total,
+          below60:    +r.below60,
+          band60_80:  +r.band60_80,
+          above80:    +r.above80,
+        })));
+      });
   }, []);
 
   if (!data) return <div className="gbc_loading" />;

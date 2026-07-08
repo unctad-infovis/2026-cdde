@@ -7,11 +7,16 @@ import CircleFlag from '../../general/CircleFlag';
 import ChartHeader from '../shared/ChartHeader';
 import ChartTooltip from '../shared/ChartTooltip';
 import CountrySearch from '../shared/CountrySearch';
+import CSVtoJSON from '../../../helpers/CsvToJson';
 
-import './CommodityMap.css';
+import './DependenceMap.css';
 
 const W = 960;
 const H = 480;
+
+// HKG, MAC, TWN share China's data and highlight together
+const CHINA_GROUP    = new Set(['CHN', 'HKG', 'TWN', 'MAC']);
+const CHINA_DELEGATE = new Set(['HKG', 'TWN', 'MAC']);
 
 // Export dependence: blue gradient from light to dark
 const EXP_COLORS = [
@@ -59,7 +64,7 @@ function getGroupColor(group) {
   return GROUP_COLORS[group] || NO_DATA_FILL;
 }
 
-export default function CommodityMap() {
+export default function DependenceMap() {
   const [geoData, setGeoData]           = useState(null);
   const [mapData, setMapData]           = useState(null);
   const [view, setView]                 = useState('export');
@@ -86,12 +91,19 @@ export default function CommodityMap() {
       }
     });
 
-    loadFile('assets/data/cdde_map_data.json')
-      .then(r => r?.json())
-      .then(data => {
-        if (data) {
+    loadFile('assets/data/cdde_dependence_map.csv')
+      .then(r => r?.text())
+      .then(text => {
+        if (text) {
+          const data = CSVtoJSON(text);
           const byIso3 = {};
-          for (const row of data) byIso3[row.iso3] = row;
+          for (const row of data) {
+            if (!row.iso3) continue;
+            byIso3[row.iso3] = {
+              ...row,
+              export_dependence: row.export_dependence ? +row.export_dependence : null,
+            };
+          }
           setMapData(byIso3);
         }
       });
@@ -171,7 +183,8 @@ export default function CommodityMap() {
 
   function getFill(iso3) {
     if (!mapData) return NO_DATA_FILL;
-    const row = mapData[iso3];
+    const lookup = CHINA_DELEGATE.has(iso3) ? 'CHN' : iso3;
+    const row = mapData[lookup];
     if (!row) return NO_DATA_FILL;
     if (view === 'export') return getExpColor(row.export_dependence);
     return getGroupColor(row.dominant_group);
@@ -179,7 +192,8 @@ export default function CommodityMap() {
 
   function handleCountryClick(iso3) {
     if (!mapData) return;
-    const row = mapData[iso3];
+    const lookup = CHINA_DELEGATE.has(iso3) ? 'CHN' : iso3;
+    const row = mapData[lookup];
     if (row) { setSelectedCountry(row); setPanelCollapsed(false); }
   }
 
@@ -196,12 +210,11 @@ export default function CommodityMap() {
 
   function handleSvgHover(e) {
     const iso3 = e.target.dataset.iso;
-    if (!iso3 || !mapData || !mapData[iso3] || !mapAreaRef.current) {
-      setHoverTooltip(null);
-      return;
-    }
+    if (!iso3 || !mapAreaRef.current) { setHoverTooltip(null); return; }
+    const lookup = CHINA_DELEGATE.has(iso3) ? 'CHN' : iso3;
+    if (!mapData || !mapData[lookup]) { setHoverTooltip(null); return; }
     const r = mapAreaRef.current.getBoundingClientRect();
-    setHoverTooltip({ iso3, left: e.clientX - r.left, top: e.clientY - r.top });
+    setHoverTooltip({ iso3, lookup, left: e.clientX - r.left, top: e.clientY - r.top });
   }
 
   function handleSvgLeave() {
@@ -211,10 +224,10 @@ export default function CommodityMap() {
   return (
     <section className="cmap_section">
       <div className="cmap_inner">
-        <ChartHeader title="Who depends on commodities — and what kind?" large />
+        <ChartHeader title="Who depends on commodities – and what kind?" large />
 
         <p className="cmap_insight">
-          Commodity dependence is the norm across the developing world — but the type differs sharply,
+          Commodity dependence is the norm across the developing world – but the type differs sharply,
           with <strong className="cmap_insight_bold">energy states clustering in the Gulf and Central Asia</strong>,
           mining economies ringing sub-Saharan Africa, and agricultural dependence spanning the broadest geography of all.
         </p>
@@ -279,13 +292,16 @@ export default function CommodityMap() {
             <g transform={`translate(${zt.x},${zt.y}) scale(${zt.k})`}>
               {/* Country fills */}
               <g className="cmap_countries">
-                {computed?.countryPaths?.map(({ id, d }) => {
+                {computed?.countryPaths?.map(({ id, d }, i) => {
                   if (smallIslandSet.has(id)) return null;
+                  const inActiveGroup = hoverTooltip?.iso3
+                    && CHINA_GROUP.has(hoverTooltip.iso3)
+                    && CHINA_GROUP.has(id);
                   return (
                     <path
-                      key={id}
+                      key={`${id}-${i}`}
                       d={d}
-                      className="cmap_country"
+                      className={`cmap_country${inActiveGroup ? ' cmap_country--active' : ''}`}
                       fill={getFill(id)}
                       onClick={() => handleCountryClick(id)}
                       data-iso={id}
@@ -384,7 +400,7 @@ export default function CommodityMap() {
                     <span className="cmap_panel_hero_value">
                       {selectedCountry.export_dependence}%
                     </span>
-                    {selectedCountry.dominant_group && (
+                    {selectedCountry.dominant_group && selectedCountry.dominant_group !== 'non-dependent' && (
                       <span
                         className="cmap_panel_stat_group"
                         style={{ background: GROUP_COLORS[selectedCountry.dominant_group] }}
@@ -394,26 +410,9 @@ export default function CommodityMap() {
                     )}
                   </div>
 
-                  {/* Secondary stats — single column */}
-                  <div className="cmap_panel_stats">
-                    <div className="cmap_panel_stat">
-                      <span className="cmap_panel_stat_label">Merchandise exports</span>
-                      <span className="cmap_panel_stat_value">{selectedCountry.merchandise_exports}</span>
-                    </div>
-                    <div className="cmap_panel_stat">
-                      <span className="cmap_panel_stat_label">HHI (concentration)</span>
-                      <span className="cmap_panel_stat_value">{selectedCountry.hhi}</span>
-                    </div>
-                    <div className="cmap_panel_stat">
-                      <span className="cmap_panel_stat_label">GDP per capita</span>
-                      <span className="cmap_panel_stat_value">{selectedCountry.gdp_per_capita}</span>
-                    </div>
-                    <div className="cmap_panel_stat">
-                      <span className="cmap_panel_stat_label">Population</span>
-                      <span className="cmap_panel_stat_value">{selectedCountry.population}</span>
-                    </div>
-                  </div>
-                  <a className="cmap_panel_profile_link" href="#">Open full country profile →</a>
+                  <a className="cmap_panel_profile_link" href="#">
+                    Open full country profile →
+                  </a>
                 </>
               )}
             </div>
@@ -436,8 +435,8 @@ export default function CommodityMap() {
           </div>
 
           {/* Hover tooltip */}
-          {hoverTooltip && mapData?.[hoverTooltip.iso3] && (() => {
-            const row  = mapData[hoverTooltip.iso3];
+          {hoverTooltip && mapData?.[hoverTooltip.lookup] && (() => {
+            const row  = mapData[hoverTooltip.lookup];
             const flip = mapAreaRef.current
               ? hoverTooltip.left > mapAreaRef.current.clientWidth * 0.6
               : false;

@@ -99,7 +99,6 @@
   flex-wrap: wrap;
   gap: 4px 20px;
   padding: 10px 0 14px;
-  border-bottom: 1px solid var(--un-color-grey-lighest);
 }
 
 #app-root-2026-cdde .app .cmap_gt_item {
@@ -165,7 +164,8 @@
   transition: opacity 0.15s;
 }
 
-#app-root-2026-cdde .app .cmap_country:hover {
+#app-root-2026-cdde .app .cmap_country:hover,
+#app-root-2026-cdde .app .cmap_country--active {
   opacity: 0.8;
 }
 
@@ -261,7 +261,7 @@
   display: flex;
   justify-content: space-between;
   width: 140px;
-  font-size: 8px;
+  font-size: var(--un-font-size-xxxxs);
   color: var(--un-color-grey-text);
 }
 
@@ -349,7 +349,7 @@
 
 /* Hover tooltip content */
 #app-root-2026-cdde .app .cmap_tt_name {
-  font-size: var(--un-font-size-xxs);
+  font-size: var(--un-font-size-xs);
   font-weight: var(--un-font-weight-boldest);
   color: var(--un-color-blue-darkest);
   margin-bottom: 6px;
@@ -360,7 +360,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: var(--un-font-size-xxxxs);
+  font-size: var(--un-font-size-xxs);
   color: var(--un-color-blue-darkest);
   margin-top: 3px;
 }
@@ -396,7 +396,7 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
   padding: 14px 14px 16px;
   box-sizing: border-box;
-  height: calc(100% - 20px);
+  max-height: calc(100% - 20px);
   overflow-y: auto;
 }
 
@@ -522,18 +522,21 @@
 }
 
 #app-root-2026-cdde .app .cmap_panel_profile_link {
-  display: inline-block;
-  font-size: var(--un-font-size-xxxxs);
+  display: block;
+  margin-top: 14px;
+  padding: 10px 14px;
+  background: var(--un-color-blue);
+  color: #fff;
+  font-size: var(--un-font-size-xxs);
   font-weight: var(--un-font-weight-bold);
-  color: var(--un-color-blue-text-dark);
+  text-align: center;
   text-decoration: none;
-  border-bottom: 1px solid var(--un-color-blue-light);
-  transition: color 0.15s, border-color 0.15s;
+  border-radius: 6px;
+  transition: background 0.15s;
 }
 
 #app-root-2026-cdde .app .cmap_panel_profile_link:hover {
-  color: var(--un-color-blue);
-  border-color: var(--un-color-blue);
+  background: var(--un-color-blue-dark);
 }
 
 /* Footer */

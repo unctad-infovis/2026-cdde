@@ -29,7 +29,8 @@ The following packages are used in this project by default.
 
 ### Project specific
 
-* none
+* **d3** - used to create the custom visualisations
+* **topojson-client** - used to create the map
 
 ### Build & Dev Server
 

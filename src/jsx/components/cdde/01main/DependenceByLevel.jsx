@@ -1,20 +1,30 @@
 import { useEffect, useState } from 'react';
 import loadFile from '../../../helpers/LoadFile';
+import CSVtoJSON from '../../../helpers/CsvToJson';
 import ChartHeader from '../shared/ChartHeader';
 import ChartSource from '../shared/ChartSource';
 
-import './AvgByLevelChart.css';
+import './DependenceByLevel.css';
 
 const THRESHOLD = 60;
 const MAX_PCT = 100;
 
-export default function AvgByLevelChart() {
+export default function DependenceByLevel() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    loadFile('assets/data/cdde_avg_by_level.json')
-      .then(r => r?.json())
-      .then(d => { if (d) setData(d); });
+    loadFile('assets/data/cdde_dependence_by_level.csv')
+      .then(r => r?.text())
+      .then(text => {
+        if (!text) return;
+        const rows = CSVtoJSON(text).filter(r => r.group);
+        setData(rows.map(r => ({
+          group:     r.group,
+          economies: +r.economies,
+          avg_pct:   +r.avg_pct,
+          color:     r.group === 'Developed' ? 'green' : 'blue',
+        })));
+      });
   }, []);
 
   if (!data) return <div className="alc_loading" />;

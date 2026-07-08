@@ -1,0 +1,57 @@
+#app-root-2026-cdde .app {
+  .mh_container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    justify-content: flex-end;
+    padding: clamp(20px, 4vw, 56px);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      background: var(--hero-bg-url) center 40% / cover no-repeat;
+      content: '';
+      filter: url(#hero-photo-grade) saturate(0.85) contrast(1.05) brightness(0.85);
+      inset: 0;
+      position: absolute;
+      z-index: 0;
+    }
+
+    &::after {
+      background: linear-gradient(
+        to bottom,
+        rgba(5, 12, 28, 0.45) 0%,
+        rgba(5, 12, 28, 0.6) 50%,
+        rgba(5, 12, 28, 0.92) 100%
+      );
+      content: '';
+      inset: 0;
+      pointer-events: none;
+      position: absolute;
+      z-index: 1;
+    }
+  }
+
+  .mh_content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    z-index: 10;
+  }
+
+  .mh_title {
+    color: #fff;
+    font-size: clamp(24px, 3.8vw, 52px);
+    font-weight: var(--un-font-weight-boldest);
+    line-height: var(--un-line-height-smallest);
+    margin: 0;
+    max-width: 820px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  }
+
+  .mh_title_highlight {
+    color: var(--un-color-yellow);
+  }
+}

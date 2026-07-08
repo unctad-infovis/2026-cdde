@@ -76,9 +76,9 @@ export default function MacroContext({ iso3, hhi }) {
               <div className="cdde_small_row">
                 <span className="cdde_small_label">EXPORT CONCENTRATION (HHI)</span>
                 <div className="cdde_small_track">
-                  <div className="cdde_small_fill" style={{ width: `${Math.min(hhi, 1) * 100}%`, background: 'var(--un-color-blue)' }} />
+                  <div className="cdde_small_fill" style={{ width: hhi != null ? `${Math.min(hhi, 1) * 100}%` : '0%', background: 'var(--un-color-blue)' }} />
                 </div>
-                <span className="cdde_small_pct">{hhi.toFixed(2)}</span>
+                <span className="cdde_small_pct">{hhi != null ? Number(hhi).toFixed(2) : '–'}</span>
               </div>
             </div>
           </>

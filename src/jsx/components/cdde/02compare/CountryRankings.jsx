@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import CircleFlag from '../../general/CircleFlag';
 
-import './RankTable.css';
+import './CountryRankings.css';
 
 const DEVELOPED = new Set([
   'AUS','AUT','BEL','CAN','CHE','CZE','DEU','DNK','ESP','EST','FIN','FRA',
@@ -47,7 +47,7 @@ function downloadCSV(rows, opt) {
   URL.revokeObjectURL(a.href);
 }
 
-export default function RankTable({ countries }) {
+export default function CountryRankings({ countries }) {
   const [rankBy, setRankBy]         = useState('export_dependence');
   const [groupFilter, setGroupFilter] = useState('all');
 

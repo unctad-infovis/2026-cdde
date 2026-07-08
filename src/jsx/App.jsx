@@ -9,9 +9,6 @@ import Article from '../Article.mdx';
 // import ProgressBar from './components/general/ProgressBar.jsx';
 // import Quote from './components/general/Quote.jsx';
 
-// cdde/02compare
-import Compare from './components/cdde/02compare/Compare.jsx';
-
 // cdde/01main
 import BigPicture from './components/cdde/01main/BigPicture.jsx';
 import Header from './components/cdde/01main/Header.jsx';
@@ -19,33 +16,32 @@ import Intro from './components/cdde/01main/Intro.jsx';
 import CommodityGroups from './components/cdde/01main/CommodityGroups.jsx';
 import KnowMore from './components/cdde/01main/KnowMore.jsx';
 import Nav from './components/cdde/shared/Nav.jsx';
-import AvgByLevelChart from './components/cdde/01main/AvgByLevelChart.jsx';
+import DependenceByLevel from './components/cdde/01main/DependenceByLevel.jsx';
 import DecadeShift from './components/cdde/01main/DecadeShift.jsx';
 import DependenceMovers from './components/cdde/01main/DependenceMovers.jsx';
-import PriceIndicesChart from './components/cdde/01main/PriceIndicesChart.jsx';
+import CommodityPrices from './components/cdde/01main/CommodityPrices.jsx';
 import ThresholdCrossers from './components/cdde/01main/ThresholdCrossers.jsx';
-import CommodityMap from './components/cdde/01main/CommodityMap.jsx';
-import ExportConcentration from './components/cdde/01main/ExportConcentration.jsx';
-import GroupBandsChart from './components/cdde/01main/GroupBandsChart.jsx';
+import DependenceMap from './components/cdde/01main/DependenceMap.jsx';
+import ExportsByRegion from './components/cdde/01main/ExportsByRegion.jsx';
+import DependenceByGroup from './components/cdde/01main/DependenceByGroup.jsx';
 
 import './../styles/styles.css';
 import './components/cdde/shared/cdde-patterns.css';
 
 const components = {
-  Compare,
   BigPicture,
   Header,
   Intro,
   Nav,
-  AvgByLevelChart,
+  DependenceByLevel,
   CommodityGroups,
-  CommodityMap,
+  DependenceMap,
   KnowMore,
   DecadeShift,
   DependenceMovers,
-  ExportConcentration,
-  GroupBandsChart,
-  PriceIndicesChart,
+  ExportsByRegion,
+  DependenceByGroup,
+  CommodityPrices,
   ThresholdCrossers
   // BackToTop,
   // ChartDataWrapper,

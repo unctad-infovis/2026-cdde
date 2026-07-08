@@ -1,11 +1,12 @@
 import { useEffect, useMemo, useState } from 'react';
 import loadFile from '../../../helpers/LoadFile';
+import CSVtoJSON from '../../../helpers/CsvToJson';
 import CountryList from './CountryList';
 import CountryProfile from './CountryProfile';
-import DotPlot from './DotPlot';
+import DependenceStandings from './DependenceStandings';
 import CompareBar from './CompareBar';
 import CompareView from './CompareView';
-import RankTable from './RankTable';
+import CountryRankings from './CountryRankings';
 
 import './Compare.css';
 
@@ -35,11 +36,15 @@ export default function Compare() {
   const [compareList, setCompareList] = useState(['NGA', 'CHL', 'AUS']);
 
   useEffect(() => {
-    loadFile('assets/data/cdde_map_data.json')
-      .then(r => r?.json())
-      .then(d => {
-        if (!d) return;
-        const sorted = [...d].sort((a, b) => a.name.localeCompare(b.name));
+    loadFile('assets/data/cdde_dependence_map.csv')
+      .then(r => r?.text())
+      .then(text => {
+        if (!text) return;
+        const rows = CSVtoJSON(text).filter(r => r.iso3).map(r => ({
+          ...r,
+          export_dependence: +r.export_dependence,
+        }));
+        const sorted = [...rows].sort((a, b) => a.name.localeCompare(b.name));
         setAllCountries(sorted);
         setSelected(sorted[0]);
       });
@@ -148,7 +153,7 @@ export default function Compare() {
       {/* Tab 02: dot plot + compare bar */}
       {activeTool === '02' && (
         <>
-          <DotPlot countries={allCountries} />
+          <DependenceStandings countries={allCountries} />
           <CompareBar
             countries={allCountries}
             compareList={compareList}
@@ -163,7 +168,7 @@ export default function Compare() {
 
       {/* Tab 03: variable ranking */}
       {activeTool === '03' && (
-        <RankTable countries={allCountries} />
+        <CountryRankings countries={allCountries} />
       )}
     </div>
   );

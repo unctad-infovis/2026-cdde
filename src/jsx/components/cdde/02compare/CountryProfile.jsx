@@ -52,10 +52,12 @@ export default function CountryProfile({ country }) {
     population,
   } = country;
 
+  const safePct = Number.isFinite(pct) ? pct : null;
+
   const groupColor  = GROUP_COLORS[dominant_group] || '#9e9e9e';
   const groupLabel  = GROUP_LABELS[dominant_group] || dominant_group;
   const insightDesc = GROUP_INSIGHT[dominant_group] || 'commodity exports';
-  const aboveBelow  = pct > 60 ? 'Above' : 'Below';
+  const aboveBelow  = safePct != null ? (safePct > 60 ? 'Above' : 'Below') : null;
 
   return (
     <div className="cp_panel">
@@ -70,10 +72,10 @@ export default function CountryProfile({ country }) {
         </div>
         <div className="cp_dep_block">
           <span className="cp_dep_eyebrow">COMMODITY EXPORT DEPENDENCE</span>
-          <span className="cp_dep_pct" style={{ color: depColor(pct) }}>
-            {pct.toFixed(1)}%
+          <span className="cp_dep_pct" style={{ color: safePct != null ? depColor(safePct) : '#9e9e9e' }}>
+            {safePct != null ? `${safePct.toFixed(1)}%` : '–'}
           </span>
-          <span className="cp_dep_note">{aboveBelow} the 60% threshold · 2022–2024</span>
+          {aboveBelow && <span className="cp_dep_note">{aboveBelow} the 60% threshold · 2022–2024</span>}
         </div>
       </div>
 
@@ -98,8 +100,8 @@ export default function CountryProfile({ country }) {
         </div>
         <div className="cp_stat">
           <span className="cp_stat_label">HHI CONCENTRATION</span>
-          <span className="cp_stat_value cp_stat_value--dark">{hhi.toFixed(2)}</span>
-          <span className="cp_stat_note">{hhiLabel(hhi)}</span>
+          <span className="cp_stat_value cp_stat_value--dark">{hhi != null ? Number(hhi).toFixed(2) : '–'}</span>
+          <span className="cp_stat_note">{hhi != null ? hhiLabel(hhi) : ''}</span>
         </div>
         <div className="cp_stat">
           <span className="cp_stat_label">GDP PER CAPITA</span>
@@ -112,7 +114,7 @@ export default function CountryProfile({ country }) {
       <div className="cp_chart_row">
         <DependenceOverTime
           iso3={iso3}
-          currentPct={pct}
+          currentPct={safePct}
           dominantGroup={dominant_group}
         />
         <LeadingExports

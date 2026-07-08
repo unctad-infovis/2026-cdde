@@ -1,7 +1,7 @@
 import * as d3 from 'd3';
 import { useEffect, useRef, useState } from 'react';
 
-import './DotPlot.css';
+import './DependenceStandings.css';
 
 const CRITERIA = [
   {
@@ -50,7 +50,7 @@ function parsePop(pop) {
   return n || 5e6;
 }
 
-export default function DotPlot({ countries }) {
+export default function DependenceStandings({ countries }) {
   const [criterion, setCriterion] = useState('export_dependence');
   const [region, setRegion] = useState('All regions');
   const [highlight, setHighlight] = useState([]);

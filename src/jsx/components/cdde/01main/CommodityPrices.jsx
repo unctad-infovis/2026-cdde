@@ -5,7 +5,7 @@ import ChartHeader from '../shared/ChartHeader';
 import ChartSource from '../shared/ChartSource';
 import ChartTooltip from '../shared/ChartTooltip';
 
-import './PriceIndicesChart.css';
+import './CommodityPrices.css';
 
 const ANNOTATIONS = [
   { date: '2008-09', label: 'Global financial crisis' },
@@ -38,7 +38,7 @@ const fmtMonth   = d3.timeFormat('%b %Y');
 const C_ANNO = '#b06e2a';
 const bisect = d3.bisector(d => d.date).left;
 
-export default function PriceIndicesChart() {
+export default function CommodityPrices() {
   const [rawData, setRawData]       = useState(null);
   const [activeFilter, setActiveFilter] = useState('All');
   const [tooltip, setTooltip]       = useState(null);
@@ -47,7 +47,7 @@ export default function PriceIndicesChart() {
   const wrapRef = useRef(null);
 
   useEffect(() => {
-    loadFile('assets/data/cdde_price_index.json')
+    loadFile('assets/data/cdde_commodity_prices.json')
       .then(r => r?.json())
       .then(d => {
         if (d) setRawData(d.map(row => ({ ...row, date: parseDate(row.date) })));
@@ -156,7 +156,7 @@ export default function PriceIndicesChart() {
       </div>
 
       <p className="pic_insight">
-        Commodity prices have remained <strong className="pic_insight_bold">highly volatile</strong> in recent years — the post-2022 correction followed one of the sharpest surges in decades, a reminder of how quickly external shocks can reshape commodity export dependence.
+        Commodity prices have remained <strong className="pic_insight_bold">highly volatile</strong> in recent years – the post-2022 correction followed one of the sharpest surges in decades, a reminder of how quickly external shocks can reshape commodity export dependence.
       </p>
 
       {/* ── Legend — now above the chart ── */}

@@ -127,7 +127,7 @@ export default function CompareView({ compareList, countries }) {
       <div className="cv_panel">
         <div className="cv_dna_top">
           <div className="cv_dna_title_col">
-            <h3 className="cv_panel_title">Commodity DNA — what each economy exports</h3>
+            <h3 className="cv_panel_title">Commodity DNA – what each economy exports</h3>
             <p className="cv_panel_desc">
               Share of agricultural, energy and mining products in each country's commodity
               export basket. Bigger segment = greater dependence on that group.
@@ -238,7 +238,7 @@ export default function CompareView({ compareList, countries }) {
                           </span>
                           <span className="cv_group_lbl">{g.label}</span>
                         </div>
-                      ) : <span className="cv_tbl_empty">—</span>}
+                      ) : <span className="cv_tbl_empty">–</span>}
                     </div>
                   );
                 }
@@ -259,7 +259,7 @@ export default function CompareView({ compareList, countries }) {
                         </div>
                       </>
                     ) : (
-                      <span className="cv_tbl_empty">—</span>
+                      <span className="cv_tbl_empty">–</span>
                     )}
                   </div>
                 );

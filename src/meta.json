@@ -12,7 +12,7 @@
   ],
   "nav": [
     { "label": "See the year in review →", "primary": true },
-    { "label": "Compare profiles", "href": "#compare" },
+    { "label": "Compare profiles", "href": "./compare.html" },
     { "label": "Know more", "href": "#know-more" },
     { "label": "Media", "href": "#media" },
     { "label": "Publications", "href": "#publications" }

@@ -26,7 +26,7 @@ export default function ThresholdCrossers() {
       />
 
       <p className="tc_insight">
-        Several countries have shifted their commodity-dependence status — some, like{' '}
+        Several countries have shifted their commodity-dependence status – some, like{' '}
         <strong className="tc_insight_bold">Guatemala or Panama</strong>, moved above the 60% threshold; others, such as{' '}
         <strong className="tc_insight_bold">Indonesia or South Africa</strong>, fell below it.
       </p>

@@ -23,7 +23,7 @@ export default function DependenceMovers() {
       />
 
       <p className="dm_insight">
-        Global shifts reveal a split picture — with rises in countries such as{' '}
+        Global shifts reveal a split picture – with rises in countries such as{' '}
         <strong className="dm_insight_bold">Ghana or Tanzania</strong>, while major exporters like{' '}
         <strong className="dm_insight_bold">Angola or Kazakhstan</strong> have moved in the opposite direction.
       </p>
