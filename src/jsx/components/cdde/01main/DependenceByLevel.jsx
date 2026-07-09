@@ -63,7 +63,7 @@ export default function DependenceByLevel() {
           {data.map((row, idx) => {
             const barPct = (row.avg_pct / MAX_PCT) * 100;
             const isBlue = row.color !== 'green';
-            const delay = `${idx * 80}ms`;
+            const delay = `${500 + idx * 80}ms`;
             return (
               <div key={row.group} className="alc_row">
                 <div className="alc_row_meta">
@@ -79,7 +79,7 @@ export default function DependenceByLevel() {
                 </div>
                 <span
                   className="alc_row_value"
-                  style={{ opacity: animated ? 1 : 0, transition: 'opacity 0.3s ease', transitionDelay: `${idx * 80 + 480}ms` }}
+                  style={{ opacity: animated ? 1 : 0, transition: 'opacity 0.3s ease', transitionDelay: `${500 + idx * 80 + 480}ms` }}
                 >
                   {row.avg_pct.toFixed(1)}%
                 </span>

@@ -149,7 +149,7 @@
 #app-root-2026-cdde .app .cmap_country {
   cursor: pointer;
   stroke: none;
-  transition: opacity 0.15s, fill 0.7s ease;
+  transition: opacity 0.15s, fill 0.7s ease 500ms;
 }
 
 #app-root-2026-cdde .app .cmap_country:hover,
@@ -212,7 +212,7 @@
   transform-box: fill-box;
   transform-origin: center;
   animation: cmap_island_beat 3s ease-in-out infinite;
-  transition: fill 0.7s ease;
+  transition: fill 0.7s ease 500ms;
 }
 
 /* Legend — overlaid on top-left corner of the map */

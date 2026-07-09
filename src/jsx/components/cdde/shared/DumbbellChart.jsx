@@ -90,7 +90,7 @@ export default function DumbbellChart({ data, xMin, xMax, nameW = 140, badgeW = 
         const badgeBg = row.change > 0 ? '#fff4bf' : '#e3edf6';
         const badgeColor = row.change > 0 ? '#b06e2a' : '#005392';
 
-        const rowDelay = i * 60;
+        const rowDelay = 500 + i * 60;
         const tr = s => (REDUCED_MOTION ? 'none' : s);
         const shaftStyle = {
           strokeDasharray: 1,

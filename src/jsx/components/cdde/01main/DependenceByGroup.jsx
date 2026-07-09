@@ -125,9 +125,9 @@ export default function DependenceByGroup() {
                     const showLabel = d[band.key] > 0;
                     return (
                       <g key={band.key}>
-                        <rect x={x} y={yOffset} width={barW} height={h} fill={band.color} style={{ transitionDelay: `${i * 80}ms` }} />
+                        <rect x={x} y={yOffset} width={barW} height={h} fill={band.color} style={{ transitionDelay: `${500 + i * 80}ms` }} />
                         {showLabel && h > 14 && (
-                          <text x={x + barW / 2} y={yOffset + h / 2 + 4} textAnchor="middle" className="gbc_bar_label" style={{ transitionDelay: `${i * 80 + 480}ms` }}>
+                          <text x={x + barW / 2} y={yOffset + h / 2 + 4} textAnchor="middle" className="gbc_bar_label" style={{ transitionDelay: `${500 + i * 80 + 480}ms` }}>
                             {d[band.key]}
                           </text>
                         )}

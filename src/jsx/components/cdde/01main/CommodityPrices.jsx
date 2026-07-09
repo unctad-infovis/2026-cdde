@@ -205,7 +205,7 @@ export default function CommodityPrices() {
 
                 {/* Series paths — pointer-events:none so overlay captures */}
                 {SERIES.map((s, i) => (
-                  <path key={s.key} d={chart.paths[s.key]} pathLength="1" fill="none" stroke={s.color} strokeWidth={activeFilter === 'All' ? 1.8 : activeFilter === s.label ? 2.2 : 1.8} opacity={lineOpacity(s.label)} strokeLinecap="round" strokeLinejoin="round" className="pic_line" style={{ pointerEvents: 'none', transitionDelay: `${i * 80}ms` }} />
+                  <path key={s.key} d={chart.paths[s.key]} pathLength="1" fill="none" stroke={s.color} strokeWidth={activeFilter === 'All' ? 1.8 : activeFilter === s.label ? 2.2 : 1.8} opacity={lineOpacity(s.label)} strokeLinecap="round" strokeLinejoin="round" className="pic_line" style={{ pointerEvents: 'none', transitionDelay: `${500 + i * 80}ms` }} />
                 ))}
 
                 {/* Transparent overlay — captures mouse for crosshair */}

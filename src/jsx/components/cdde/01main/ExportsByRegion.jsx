@@ -181,7 +181,7 @@ export default function ExportsByRegion() {
                 const fill = COLOR_MAP[colorKey] || '#ccc';
                 const w = node.x1 - node.x0;
                 const h = node.y1 - node.y0;
-                const textStyle = { opacity: animated ? 1 : 0, transition: 'opacity 0.5s ease', transitionDelay: `${Math.min(i * 20, 300)}ms` };
+                const textStyle = { opacity: animated ? 1 : 0, transition: 'opacity 0.5s ease', transitionDelay: `${500 + Math.min(i * 20, 300)}ms` };
                 return (
                   <g key={node.data.name} onClick={() => handleCellClick(node)} onMouseMove={e => handleMouseMove(e, { name: node.data.name, value: node.data.value, region: node.parent?.data?.name })} className="exc_cell">
                     <rect x={node.x0} y={node.y0} width={w} height={h} fill={fill} />
@@ -199,7 +199,7 @@ export default function ExportsByRegion() {
                 );
               })}
               {overview.regionNodes.map((rNode, j) => (
-                <text key={rNode.data.name} x={rNode.x0 + 10} y={rNode.y0 + 22} className="exc_region_label" style={{ pointerEvents: 'none', opacity: animated ? 1 : 0, transition: 'opacity 0.5s ease', transitionDelay: `${j * 60}ms` }}>
+                <text key={rNode.data.name} x={rNode.x0 + 10} y={rNode.y0 + 22} className="exc_region_label" style={{ pointerEvents: 'none', opacity: animated ? 1 : 0, transition: 'opacity 0.5s ease', transitionDelay: `${500 + j * 60}ms` }}>
                   {rNode.data.name}
                 </text>
               ))}

@@ -209,7 +209,7 @@
 #app-root-2026-cdde .app .cdde_reveal {
   opacity: 0;
   transform: translateY(14px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
+  transition: opacity 0.65s ease 500ms, transform 0.65s ease 500ms;
 }
 
 #app-root-2026-cdde .app .cdde_reveal.visible {
@@ -220,6 +220,6 @@
 @media (prefers-reduced-motion: reduce) {
   #app-root-2026-cdde .app .cdde_reveal {
     transform: none;
-    transition: opacity 0.65s ease;
+    transition: opacity 0.65s ease 500ms;
   }
 }
