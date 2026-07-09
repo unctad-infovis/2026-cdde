@@ -107,7 +107,21 @@
 }
 
 #app-root-2026-cdde .app .pic_line {
-  transition: opacity 0.25s;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 2.2s ease-in-out, opacity 0.25s;
+}
+
+#app-root-2026-cdde .app .pic_svg--animated .pic_line {
+  stroke-dashoffset: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #app-root-2026-cdde .app .pic_line {
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+    transition: opacity 0.25s;
+  }
 }
 
 #app-root-2026-cdde .app .pic_anno_num {

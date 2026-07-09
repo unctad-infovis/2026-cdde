@@ -4,6 +4,7 @@ import * as topojson from 'topojson-client';
 import { SMALL_ISLAND_DOTS } from '../../../data/sids';
 import CSVtoJSON from '../../../helpers/CsvToJson';
 import loadFile from '../../../helpers/LoadFile';
+import useIsVisible from '../../../helpers/UseIsVisible';
 import CircleFlag from '../../general/CircleFlag';
 import ChartHeader from '../shared/ChartHeader';
 import ChartTooltip from '../shared/ChartTooltip';
@@ -18,22 +19,24 @@ const H = 480;
 const CHINA_GROUP = new Set(['CHN', 'HKG', 'TWN', 'MAC']);
 const CHINA_DELEGATE = new Set(['HKG', 'TWN', 'MAC']);
 
-// Export dependence: blue steps from light to dark (hex for SVG fill)
+// Export dependence: gray below 60% threshold, UNCTAD blue at/above
 const EXP_COLORS = [
-  { threshold: 0, color: '#e3edf6' },
-  { threshold: 20, color: '#c5dfef' },
-  { threshold: 40, color: '#009edb' },
+  { threshold: 0,  color: '#d8d8d8' },
+  { threshold: 20, color: '#b0b0b0' },
+  { threshold: 40, color: '#7c7c7c' },
   { threshold: 60, color: '#0077b8' },
-  { threshold: 80, color: '#005392' }
+  { threshold: 80, color: '#004987' }
 ];
 
-// Legend labels paired with CSS vars (HTML elements, so vars resolve fine)
-const EXP_LEGEND = [
-  { label: '0–20%', color: 'var(--un-color-blue-lightest)' },
-  { label: '20–40%', color: 'var(--un-color-blue-light)' },
-  { label: '40–60%', color: 'var(--un-color-blue)' },
-  { label: '60–80%', color: 'var(--un-color-blue-dark)' },
-  { label: '80–100%', color: 'var(--un-color-blue-text-dark)' }
+// Legend split at the 60% dependency threshold
+const EXP_LEGEND_BELOW = [
+  { label: '0–20%',  color: '#d8d8d8' },
+  { label: '20–40%', color: '#b0b0b0' },
+  { label: '40–60%', color: '#7c7c7c' }
+];
+const EXP_LEGEND_ABOVE = [
+  { label: '60–80%',  color: 'var(--un-color-blue-dark)' },
+  { label: '80–100%', color: 'var(--un-color-blue-darkest)' }
 ];
 
 // Dominant group: categorical colors
@@ -58,7 +61,8 @@ const GROUP_NOTES = {
   'non-dependent': 'Below 60% threshold'
 };
 
-const NO_DATA_FILL = 'var(--un-color-grey-light)';
+const NO_DATA_FILL = '#f0f0f0';
+const REDUCED_MOTION = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 function getExpColor(pct) {
   if (pct === null || pct === undefined) return NO_DATA_FILL;
@@ -85,6 +89,8 @@ export default function DependenceMap() {
   const mapAreaRef = useRef(null);
   const svgRef = useRef(null);
   const zoomRef = useRef(null);
+  const [visRef, isVisible] = useIsVisible(0.1);
+  const animated = isVisible || REDUCED_MOTION;
 
   useEffect(() => {
     Promise.all([loadFile('assets/data/world_topojson.json').then(r => r?.json()), loadFile('assets/data/worldmap-economies-4326.topo.json').then(r => r?.json())]).then(([topo, borders]) => {
@@ -196,7 +202,7 @@ export default function DependenceMap() {
   const smallIslandSet = useMemo(() => new Set(SMALL_ISLAND_DOTS.map(s => s.iso3)), []);
 
   function getFill(iso3) {
-    if (!mapData) return NO_DATA_FILL;
+    if (!mapData || !animated) return NO_DATA_FILL;
     const lookup = CHINA_DELEGATE.has(iso3) ? 'CHN' : iso3;
     const row = mapData[lookup];
     if (!row) return NO_DATA_FILL;
@@ -240,7 +246,7 @@ export default function DependenceMap() {
   }
 
   return (
-    <section className="cmap_section cdde_reveal">
+    <section className="cmap_section cdde_reveal" ref={visRef}>
       <div className="cmap_inner">
         <ChartHeader title="Who depends on commodities – and what kind?" subtitle="Commodity export dependence by country, 2022–2024" large />
 
@@ -333,7 +339,14 @@ export default function DependenceMap() {
             {view === 'export' ? (
               <div className="cmap_legend_export">
                 <span className="cmap_legend_label">Export share</span>
-                {EXP_LEGEND.map(step => (
+                {EXP_LEGEND_BELOW.map(step => (
+                  <div key={step.label} className="cmap_legend_group_item">
+                    <span className="cmap_legend_step_dot" style={{ background: step.color }} />
+                    <span>{step.label}</span>
+                  </div>
+                ))}
+                <div className="cmap_legend_threshold_divider">≥ 60% dependent</div>
+                {EXP_LEGEND_ABOVE.map(step => (
                   <div key={step.label} className="cmap_legend_group_item">
                     <span className="cmap_legend_step_dot" style={{ background: step.color }} />
                     <span>{step.label}</span>

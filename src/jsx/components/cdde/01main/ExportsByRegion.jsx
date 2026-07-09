@@ -2,6 +2,7 @@ import * as d3 from 'd3';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import CSVtoJSON from '../../../helpers/CsvToJson';
 import loadFile from '../../../helpers/LoadFile';
+import useIsVisible from '../../../helpers/UseIsVisible';
 import ChartHeader from '../shared/ChartHeader';
 import ChartSource from '../shared/ChartSource';
 import ChartTooltip from '../shared/ChartTooltip';
@@ -33,6 +34,7 @@ const REGION_COLOR = {
 };
 
 const MIN_SHARE = 0.013;
+const REDUCED_MOTION = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 function csvToHierarchy(rows) {
   const regionMap = new Map();
@@ -75,6 +77,8 @@ export default function ExportsByRegion() {
   const [drill, setDrill] = useState(null);
   const [tooltip, setTooltip] = useState(null);
   const wrapRef = useRef(null);
+  const [visRef, isVisible] = useIsVisible(0.15);
+  const animated = isVisible || REDUCED_MOTION;
 
   useEffect(() => {
     loadFile('assets/data/cdde_exports_by_region.csv')
@@ -144,7 +148,7 @@ export default function ExportsByRegion() {
   const subtitle = drill ? `${drill.regionName} › ${drill.subregionName} (${drillView?.countryCount ?? '–'} countries)` : 'Commodity exports by sub-region, 2022–2024 average, millions of dollars';
 
   return (
-    <div className="exc_container cdde_reveal">
+    <div className="exc_container cdde_reveal" ref={visRef}>
       <ChartHeader title={title} subtitle={subtitle} large />
 
       {!drill && (
@@ -172,29 +176,30 @@ export default function ExportsByRegion() {
           )}
           {!drill && (
             <>
-              {overview.leaves.map(node => {
+              {overview.leaves.map((node, i) => {
                 const colorKey = node.parent?.data?.color_key;
                 const fill = COLOR_MAP[colorKey] || '#ccc';
                 const w = node.x1 - node.x0;
                 const h = node.y1 - node.y0;
+                const textStyle = { opacity: animated ? 1 : 0, transition: 'opacity 0.5s ease', transitionDelay: `${Math.min(i * 20, 300)}ms` };
                 return (
                   <g key={node.data.name} onClick={() => handleCellClick(node)} onMouseMove={e => handleMouseMove(e, { name: node.data.name, value: node.data.value, region: node.parent?.data?.name })} className="exc_cell">
                     <rect x={node.x0} y={node.y0} width={w} height={h} fill={fill} />
                     {w > 90 && h > 46 && (
-                      <text x={node.x0 + w / 2} y={node.y0 + h / 2 - (w > 60 && h > 26 ? 9 : 0)} textAnchor="middle" dominantBaseline="middle" className="exc_cell_name">
+                      <text x={node.x0 + w / 2} y={node.y0 + h / 2 - (w > 60 && h > 26 ? 9 : 0)} textAnchor="middle" dominantBaseline="middle" className="exc_cell_name" style={textStyle}>
                         {node.data.name}
                       </text>
                     )}
                     {w > 60 && h > 26 && (
-                      <text x={node.x0 + w / 2} y={node.y0 + h / 2 + (w > 90 && h > 46 ? 11 : 0)} textAnchor="middle" dominantBaseline="middle" className="exc_cell_value">
+                      <text x={node.x0 + w / 2} y={node.y0 + h / 2 + (w > 90 && h > 46 ? 11 : 0)} textAnchor="middle" dominantBaseline="middle" className="exc_cell_value" style={textStyle}>
                         {fmt(node.data.displayValue ?? node.data.value)}
                       </text>
                     )}
                   </g>
                 );
               })}
-              {overview.regionNodes.map(rNode => (
-                <text key={rNode.data.name} x={rNode.x0 + 10} y={rNode.y0 + 22} className="exc_region_label" style={{ pointerEvents: 'none' }}>
+              {overview.regionNodes.map((rNode, j) => (
+                <text key={rNode.data.name} x={rNode.x0 + 10} y={rNode.y0 + 22} className="exc_region_label" style={{ pointerEvents: 'none', opacity: animated ? 1 : 0, transition: 'opacity 0.5s ease', transitionDelay: `${j * 60}ms` }}>
                   {rNode.data.name}
                 </text>
               ))}

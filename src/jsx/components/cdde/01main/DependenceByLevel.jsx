@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import CSVtoJSON from '../../../helpers/CsvToJson';
 import loadFile from '../../../helpers/LoadFile';
+import useIsVisible from '../../../helpers/UseIsVisible';
 import ChartHeader from '../shared/ChartHeader';
 import ChartSource from '../shared/ChartSource';
 
@@ -8,9 +9,11 @@ import './DependenceByLevel.css';
 
 const THRESHOLD = 60;
 const MAX_PCT = 100;
+const REDUCED_MOTION = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 export default function DependenceByLevel() {
   const [data, setData] = useState(null);
+  const [visRef, isVisible] = useIsVisible(0.2);
 
   useEffect(() => {
     loadFile('assets/data/cdde_dependence_by_level.csv')
@@ -29,12 +32,20 @@ export default function DependenceByLevel() {
       });
   }, []);
 
-  if (!data) return <div className="alc_loading" />;
+  const animated = isVisible || REDUCED_MOTION;
+
+  if (!data) {
+    return (
+      <div className="alc_container cdde_reveal" ref={visRef}>
+        <div className="alc_loading" />
+      </div>
+    );
+  }
 
   const thresholdPct = (THRESHOLD / MAX_PCT) * 100;
 
   return (
-    <div className="alc_container cdde_reveal">
+    <div className="alc_container cdde_reveal" ref={visRef}>
       <ChartHeader title="Average dependence by development level" subtitle="Mean commodity export share across economies, 2022–2024" large />
 
       <p className="cdde_insight">
@@ -49,9 +60,10 @@ export default function DependenceByLevel() {
         </div>
 
         <div className="alc_bars">
-          {data.map(row => {
+          {data.map((row, idx) => {
             const barPct = (row.avg_pct / MAX_PCT) * 100;
             const isBlue = row.color !== 'green';
+            const delay = `${idx * 80}ms`;
             return (
               <div key={row.group} className="alc_row">
                 <div className="alc_row_meta">
@@ -59,11 +71,18 @@ export default function DependenceByLevel() {
                   <span className="alc_row_economies">{row.economies} economies</span>
                 </div>
                 <div className="alc_bar_track">
-                  <div className={`alc_bar${isBlue ? '' : ' alc_bar--green'}`} style={{ width: `${barPct}%` }} />
-                  {/* Threshold line overlay */}
+                  <div
+                    className={`alc_bar${isBlue ? '' : ' alc_bar--green'}`}
+                    style={{ width: animated ? `${barPct}%` : '0%', transitionDelay: delay }}
+                  />
                   <div className="alc_threshold_line" style={{ left: `${thresholdPct}%` }} />
                 </div>
-                <span className="alc_row_value">{row.avg_pct.toFixed(1)}%</span>
+                <span
+                  className="alc_row_value"
+                  style={{ opacity: animated ? 1 : 0, transition: 'opacity 0.3s ease', transitionDelay: `${idx * 80 + 480}ms` }}
+                >
+                  {row.avg_pct.toFixed(1)}%
+                </span>
               </div>
             );
           })}

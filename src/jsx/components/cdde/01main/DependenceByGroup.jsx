@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import CSVtoJSON from '../../../helpers/CsvToJson';
 import loadFile from '../../../helpers/LoadFile';
+import useIsVisible from '../../../helpers/UseIsVisible';
 import ChartHeader from '../shared/ChartHeader';
 import ChartSource from '../shared/ChartSource';
 import ChartTooltip from '../shared/ChartTooltip';
@@ -13,10 +14,13 @@ const BANDS = [
   { key: 'above80', label: '>80%', color: 'var(--un-color-red)' }
 ];
 
+const REDUCED_MOTION = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 export default function DependenceByGroup() {
   const [data, setData] = useState(null);
   const [tooltip, setTooltip] = useState(null);
   const wrapRef = useRef(null);
+  const [visRef, isVisible] = useIsVisible(0.2);
 
   function handleMouseMove(e, d) {
     if (!wrapRef.current) return;
@@ -47,7 +51,15 @@ export default function DependenceByGroup() {
       });
   }, []);
 
-  if (!data) return <div className="gbc_loading" />;
+  const animated = isVisible || REDUCED_MOTION;
+
+  if (!data) {
+    return (
+      <div className="gbc_container cdde_reveal" ref={visRef}>
+        <div className="gbc_loading" />
+      </div>
+    );
+  }
 
   const maxTotal = Math.max(...data.map(d => d.total));
   const yMax = Math.ceil(maxTotal / 10) * 10 + 10;
@@ -72,7 +84,7 @@ export default function DependenceByGroup() {
   }
 
   return (
-    <div className="gbc_container cdde_reveal">
+    <div className="gbc_container cdde_reveal" ref={visRef}>
       <ChartHeader title="Severity of commodity dependence" subtitle="Per cent, 2022–2024" large />
 
       <p className="cdde_insight">
@@ -89,7 +101,7 @@ export default function DependenceByGroup() {
       </div>
 
       <div className="gbc_chart_wrap" ref={wrapRef}>
-        <svg viewBox={`0 0 ${W} ${H}`} className="gbc_svg" aria-label="Stacked bar chart of commodity dependence by country group" onMouseLeave={handleMouseLeave}>
+        <svg viewBox={`0 0 ${W} ${H}`} className={`gbc_svg${animated ? ' gbc_svg--animated' : ''}`} aria-label="Stacked bar chart of commodity dependence by country group" onMouseLeave={handleMouseLeave}>
           <g transform={`translate(${PAD.left},${PAD.top})`}>
             {/* Y grid lines and labels */}
             {yTicks.map(v => (
@@ -113,9 +125,9 @@ export default function DependenceByGroup() {
                     const showLabel = d[band.key] > 0;
                     return (
                       <g key={band.key}>
-                        <rect x={x} y={yOffset} width={barW} height={h} fill={band.color} />
+                        <rect x={x} y={yOffset} width={barW} height={h} fill={band.color} style={{ transitionDelay: `${i * 80}ms` }} />
                         {showLabel && h > 14 && (
-                          <text x={x + barW / 2} y={yOffset + h / 2 + 4} textAnchor="middle" className="gbc_bar_label">
+                          <text x={x + barW / 2} y={yOffset + h / 2 + 4} textAnchor="middle" className="gbc_bar_label" style={{ transitionDelay: `${i * 80 + 480}ms` }}>
                             {d[band.key]}
                           </text>
                         )}

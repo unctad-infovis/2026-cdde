@@ -1,6 +1,7 @@
 import * as d3 from 'd3';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import loadFile from '../../../helpers/LoadFile';
+import useIsVisible from '../../../helpers/UseIsVisible';
 import ChartHeader from '../shared/ChartHeader';
 import ChartSource from '../shared/ChartSource';
 import ChartTooltip from '../shared/ChartTooltip';
@@ -40,6 +41,8 @@ const fmtMonth = d3.timeFormat('%b %Y');
 const C_ANNO = '#b06e2a';
 const bisect = d3.bisector(d => d.date).left;
 
+const REDUCED_MOTION = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 export default function CommodityPrices() {
   const [rawData, setRawData] = useState(null);
   const [activeFilter, setActiveFilter] = useState('All');
@@ -47,6 +50,7 @@ export default function CommodityPrices() {
 
   const svgRef = useRef(null);
   const wrapRef = useRef(null);
+  const [visRef, isVisible] = useIsVisible(0.15);
 
   useEffect(() => {
     loadFile('assets/data/cdde_commodity_prices.json')
@@ -144,8 +148,10 @@ export default function CommodityPrices() {
   // Flip tooltip to left when near right edge
   const flipTT = tooltip && wrapRef.current ? tooltip.left > wrapRef.current.clientWidth * 0.6 : false;
 
+  const animated = isVisible || REDUCED_MOTION;
+
   return (
-    <div className="pic_container cdde_reveal">
+    <div className="pic_container cdde_reveal" ref={visRef}>
       <div className="pic_header_row">
         <ChartHeader title="Commodity Price Indices · 1995 to 2026" subtitle="Monthly, nominal dollars, 2010 = 100" large />
         <div className="pic_filters">
@@ -177,7 +183,7 @@ export default function CommodityPrices() {
           <div className="pic_loading" />
         ) : (
           <>
-            <svg ref={svgRef} viewBox={`0 0 ${W} ${H}`} className="pic_svg" aria-label="Line chart of commodity price indices 1995–2026" onMouseLeave={handleMouseLeave}>
+            <svg ref={svgRef} viewBox={`0 0 ${W} ${H}`} className={`pic_svg${animated ? ' pic_svg--animated' : ''}`} aria-label="Line chart of commodity price indices 1995–2026" onMouseLeave={handleMouseLeave}>
               <g transform={`translate(${M.left},${M.top})`}>
                 {/* Post-2022 shaded band */}
                 <rect x={chart.correctionX} y={0} width={CHART_W - chart.correctionX} height={CHART_H} className="pic_correction_band" />
@@ -198,8 +204,8 @@ export default function CommodityPrices() {
                 ))}
 
                 {/* Series paths — pointer-events:none so overlay captures */}
-                {SERIES.map(s => (
-                  <path key={s.key} d={chart.paths[s.key]} fill="none" stroke={s.color} strokeWidth={activeFilter === 'All' ? 1.8 : activeFilter === s.label ? 2.2 : 1.8} opacity={lineOpacity(s.label)} strokeLinecap="round" strokeLinejoin="round" className="pic_line" style={{ pointerEvents: 'none' }} />
+                {SERIES.map((s, i) => (
+                  <path key={s.key} d={chart.paths[s.key]} pathLength="1" fill="none" stroke={s.color} strokeWidth={activeFilter === 'All' ? 1.8 : activeFilter === s.label ? 2.2 : 1.8} opacity={lineOpacity(s.label)} strokeLinecap="round" strokeLinejoin="round" className="pic_line" style={{ pointerEvents: 'none', transitionDelay: `${i * 80}ms` }} />
                 ))}
 
                 {/* Transparent overlay — captures mouse for crosshair */}

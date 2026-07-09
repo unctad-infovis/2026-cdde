@@ -149,7 +149,7 @@
 #app-root-2026-cdde .app .cmap_country {
   cursor: pointer;
   stroke: none;
-  transition: opacity 0.15s;
+  transition: opacity 0.15s, fill 0.7s ease;
 }
 
 #app-root-2026-cdde .app .cmap_country:hover,
@@ -212,6 +212,7 @@
   transform-box: fill-box;
   transform-origin: center;
   animation: cmap_island_beat 3s ease-in-out infinite;
+  transition: fill 0.7s ease;
 }
 
 /* Legend — overlaid on top-left corner of the map */
@@ -578,6 +579,26 @@
 
 #app-root-2026-cdde .app .cmap_footer a:hover {
   color: var(--un-color-blue);
+}
+
+#app-root-2026-cdde .app .cmap_legend_threshold_divider {
+  font-size: var(--un-font-size-xxxs);
+  font-weight: var(--un-font-weight-bold);
+  color: var(--un-color-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 4px 0 2px;
+  padding-top: 6px;
+  border-top: 1px solid var(--un-color-grey-lighest);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #app-root-2026-cdde .app .cmap_country {
+    transition: opacity 0.15s;
+  }
+  #app-root-2026-cdde .app .cmap_island_dot {
+    transition: none;
+  }
 }
 
 /* Responsive */

@@ -133,3 +133,9 @@
   margin-top: 24px;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  #app-root-2026-cdde .app .alc_bar {
+    transition: none;
+  }
+}
+
