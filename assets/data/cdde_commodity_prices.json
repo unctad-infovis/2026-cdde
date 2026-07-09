@@ -1,123 +1,3026 @@
 [
-  {"date":"1995-01","total":47,"energy":35,"agri":78,"mining":51},
-  {"date":"1995-04","total":47,"energy":35,"agri":77,"mining":51},
-  {"date":"1995-07","total":48,"energy":36,"agri":77,"mining":52},
-  {"date":"1995-10","total":48,"energy":36,"agri":77,"mining":52},
-  {"date":"1996-01","total":48,"energy":36,"agri":76,"mining":52},
-  {"date":"1996-04","total":49,"energy":37,"agri":75,"mining":53},
-  {"date":"1996-07","total":49,"energy":38,"agri":75,"mining":53},
-  {"date":"1996-10","total":49,"energy":37,"agri":74,"mining":53},
-  {"date":"1997-01","total":50,"energy":38,"agri":74,"mining":54},
-  {"date":"1997-04","total":51,"energy":40,"agri":74,"mining":55},
-  {"date":"1997-07","total":51,"energy":41,"agri":73,"mining":55},
-  {"date":"1997-10","total":49,"energy":37,"agri":72,"mining":53},
-  {"date":"1998-01","total":46,"energy":30,"agri":72,"mining":50},
-  {"date":"1998-04","total":44,"energy":26,"agri":72,"mining":48},
-  {"date":"1998-07","total":43,"energy":24,"agri":71,"mining":47},
-  {"date":"1998-10","total":42,"energy":23,"agri":70,"mining":46},
-  {"date":"1999-01","total":41,"energy":24,"agri":70,"mining":45},
-  {"date":"1999-04","total":40,"energy":24,"agri":70,"mining":44},
-  {"date":"1999-07","total":42,"energy":28,"agri":70,"mining":45},
-  {"date":"1999-10","total":44,"energy":34,"agri":70,"mining":47},
-  {"date":"2000-01","total":47,"energy":40,"agri":71,"mining":49},
-  {"date":"2000-04","total":50,"energy":45,"agri":71,"mining":51},
-  {"date":"2000-07","total":52,"energy":48,"agri":72,"mining":53},
-  {"date":"2000-10","total":50,"energy":44,"agri":71,"mining":51},
-  {"date":"2001-01","total":49,"energy":42,"agri":71,"mining":50},
-  {"date":"2001-04","total":47,"energy":39,"agri":70,"mining":49},
-  {"date":"2001-07","total":46,"energy":37,"agri":70,"mining":48},
-  {"date":"2001-10","total":45,"energy":36,"agri":70,"mining":47},
-  {"date":"2002-01","total":45,"energy":34,"agri":70,"mining":47},
-  {"date":"2002-04","total":45,"energy":33,"agri":70,"mining":48},
-  {"date":"2002-07","total":46,"energy":34,"agri":70,"mining":49},
-  {"date":"2002-10","total":48,"energy":37,"agri":71,"mining":51},
-  {"date":"2003-01","total":49,"energy":39,"agri":71,"mining":52},
-  {"date":"2003-04","total":52,"energy":41,"agri":72,"mining":54},
-  {"date":"2003-07","total":55,"energy":43,"agri":73,"mining":57},
-  {"date":"2003-10","total":59,"energy":47,"agri":75,"mining":60},
-  {"date":"2004-01","total":63,"energy":55,"agri":77,"mining":65},
-  {"date":"2004-04","total":67,"energy":61,"agri":79,"mining":69},
-  {"date":"2004-07","total":71,"energy":65,"agri":80,"mining":73},
-  {"date":"2004-10","total":75,"energy":69,"agri":81,"mining":76},
-  {"date":"2005-01","total":79,"energy":77,"agri":82,"mining":80},
-  {"date":"2005-04","total":83,"energy":82,"agri":83,"mining":84},
-  {"date":"2005-07","total":87,"energy":86,"agri":84,"mining":88},
-  {"date":"2005-10","total":91,"energy":89,"agri":85,"mining":92},
-  {"date":"2006-01","total":94,"energy":93,"agri":86,"mining":96},
-  {"date":"2006-04","total":97,"energy":96,"agri":87,"mining":100},
-  {"date":"2006-07","total":100,"energy":98,"agri":88,"mining":104},
-  {"date":"2006-10","total":104,"energy":102,"agri":90,"mining":108},
-  {"date":"2007-01","total":110,"energy":112,"agri":94,"mining":112},
-  {"date":"2007-04","total":118,"energy":120,"agri":98,"mining":118},
-  {"date":"2007-07","total":126,"energy":128,"agri":103,"mining":124},
-  {"date":"2007-10","total":136,"energy":138,"agri":108,"mining":132},
-  {"date":"2008-01","total":146,"energy":160,"agri":132,"mining":138},
-  {"date":"2008-04","total":158,"energy":192,"agri":148,"mining":145},
-  {"date":"2008-07","total":165,"energy":200,"agri":150,"mining":145},
-  {"date":"2008-10","total":110,"energy":108,"agri":122,"mining":112},
-  {"date":"2009-01","total":88,"energy":80,"agri":105,"mining":92},
-  {"date":"2009-04","total":92,"energy":84,"agri":104,"mining":95},
-  {"date":"2009-07","total":99,"energy":90,"agri":106,"mining":100},
-  {"date":"2009-10","total":110,"energy":100,"agri":110,"mining":108},
-  {"date":"2010-01","total":116,"energy":108,"agri":112,"mining":116},
-  {"date":"2010-04","total":120,"energy":112,"agri":114,"mining":120},
-  {"date":"2010-07","total":124,"energy":118,"agri":116,"mining":122},
-  {"date":"2010-10","total":130,"energy":128,"agri":120,"mining":126},
-  {"date":"2011-01","total":150,"energy":170,"agri":138,"mining":148},
-  {"date":"2011-04","total":160,"energy":185,"agri":146,"mining":156},
-  {"date":"2011-07","total":162,"energy":188,"agri":148,"mining":158},
-  {"date":"2011-10","total":158,"energy":178,"agri":145,"mining":155},
-  {"date":"2012-01","total":154,"energy":176,"agri":142,"mining":150},
-  {"date":"2012-04","total":153,"energy":178,"agri":141,"mining":148},
-  {"date":"2012-07","total":151,"energy":174,"agri":140,"mining":146},
-  {"date":"2012-10","total":149,"energy":172,"agri":140,"mining":143},
-  {"date":"2013-01","total":146,"energy":170,"agri":138,"mining":140},
-  {"date":"2013-04","total":143,"energy":167,"agri":137,"mining":138},
-  {"date":"2013-07","total":141,"energy":165,"agri":136,"mining":137},
-  {"date":"2013-10","total":139,"energy":163,"agri":135,"mining":136},
-  {"date":"2014-01","total":137,"energy":158,"agri":133,"mining":134},
-  {"date":"2014-04","total":133,"energy":148,"agri":130,"mining":130},
-  {"date":"2014-07","total":126,"energy":118,"agri":126,"mining":126},
-  {"date":"2014-10","total":108,"energy":78,"agri":118,"mining":114},
-  {"date":"2015-01","total":96,"energy":56,"agri":113,"mining":106},
-  {"date":"2015-04","total":94,"energy":60,"agri":112,"mining":104},
-  {"date":"2015-07","total":90,"energy":52,"agri":110,"mining":100},
-  {"date":"2015-10","total":87,"energy":47,"agri":108,"mining":96},
-  {"date":"2016-01","total":83,"energy":42,"agri":100,"mining":88},
-  {"date":"2016-04","total":84,"energy":46,"agri":100,"mining":89},
-  {"date":"2016-07","total":87,"energy":54,"agri":101,"mining":91},
-  {"date":"2016-10","total":90,"energy":60,"agri":102,"mining":94},
-  {"date":"2017-01","total":92,"energy":66,"agri":103,"mining":95},
-  {"date":"2017-04","total":92,"energy":66,"agri":102,"mining":96},
-  {"date":"2017-07","total":93,"energy":68,"agri":102,"mining":96},
-  {"date":"2017-10","total":95,"energy":72,"agri":102,"mining":98},
-  {"date":"2018-01","total":97,"energy":78,"agri":102,"mining":100},
-  {"date":"2018-04","total":99,"energy":82,"agri":102,"mining":100},
-  {"date":"2018-07","total":100,"energy":85,"agri":101,"mining":102},
-  {"date":"2018-10","total":98,"energy":82,"agri":100,"mining":100},
-  {"date":"2019-01","total":96,"energy":76,"agri":100,"mining":98},
-  {"date":"2019-04","total":95,"energy":76,"agri":100,"mining":98},
-  {"date":"2019-07","total":95,"energy":74,"agri":100,"mining":98},
-  {"date":"2019-10","total":95,"energy":74,"agri":101,"mining":99},
-  {"date":"2020-01","total":95,"energy":72,"agri":102,"mining":100},
-  {"date":"2020-04","total":78,"energy":40,"agri":95,"mining":90},
-  {"date":"2020-07","total":86,"energy":56,"agri":100,"mining":95},
-  {"date":"2020-10","total":96,"energy":74,"agri":107,"mining":107},
-  {"date":"2021-01","total":109,"energy":88,"agri":113,"mining":113},
-  {"date":"2021-04","total":124,"energy":106,"agri":122,"mining":125},
-  {"date":"2021-07","total":137,"energy":124,"agri":131,"mining":133},
-  {"date":"2021-10","total":150,"energy":150,"agri":139,"mining":143},
-  {"date":"2022-01","total":160,"energy":198,"agri":154,"mining":150},
-  {"date":"2022-04","total":168,"energy":218,"agri":163,"mining":156},
-  {"date":"2022-07","total":156,"energy":182,"agri":158,"mining":148},
-  {"date":"2022-10","total":142,"energy":155,"agri":148,"mining":142},
-  {"date":"2023-01","total":132,"energy":130,"agri":142,"mining":138},
-  {"date":"2023-04","total":127,"energy":120,"agri":138,"mining":134},
-  {"date":"2023-07","total":122,"energy":112,"agri":134,"mining":132},
-  {"date":"2023-10","total":118,"energy":107,"agri":130,"mining":131},
-  {"date":"2024-01","total":116,"energy":105,"agri":128,"mining":130},
-  {"date":"2024-04","total":114,"energy":102,"agri":127,"mining":130},
-  {"date":"2024-07","total":112,"energy":98,"agri":126,"mining":129},
-  {"date":"2024-10","total":111,"energy":96,"agri":125,"mining":129},
-  {"date":"2025-01","total":110,"energy":95,"agri":125,"mining":128}
+  {
+    "date": "1995-01",
+    "total": 35.4,
+    "energy": 23.0,
+    "agri": 66.2,
+    "mining": 51.2,
+    "precious": 29.4
+  },
+  {
+    "date": "1995-02",
+    "total": 35.7,
+    "energy": 23.6,
+    "agri": 67.0,
+    "mining": 48.0,
+    "precious": 29.2
+  },
+  {
+    "date": "1995-03",
+    "total": 35.5,
+    "energy": 23.5,
+    "agri": 67.0,
+    "mining": 46.5,
+    "precious": 29.5
+  },
+  {
+    "date": "1995-04",
+    "total": 36.7,
+    "energy": 25.3,
+    "agri": 66.6,
+    "mining": 47.0,
+    "precious": 30.9
+  },
+  {
+    "date": "1995-05",
+    "total": 36.3,
+    "energy": 25.1,
+    "agri": 66.6,
+    "mining": 45.2,
+    "precious": 30.6
+  },
+  {
+    "date": "1995-06",
+    "total": 35.6,
+    "energy": 24.1,
+    "agri": 66.4,
+    "mining": 46.8,
+    "precious": 30.5
+  },
+  {
+    "date": "1995-07",
+    "total": 34.9,
+    "energy": 22.3,
+    "agri": 67.5,
+    "mining": 48.5,
+    "precious": 30.3
+  },
+  {
+    "date": "1995-08",
+    "total": 35.0,
+    "energy": 22.7,
+    "agri": 66.6,
+    "mining": 48.8,
+    "precious": 30.3
+  },
+  {
+    "date": "1995-09",
+    "total": 35.2,
+    "energy": 23.6,
+    "agri": 66.2,
+    "mining": 46.3,
+    "precious": 30.3
+  },
+  {
+    "date": "1995-10",
+    "total": 34.9,
+    "energy": 23.0,
+    "agri": 67.3,
+    "mining": 44.6,
+    "precious": 30.2
+  },
+  {
+    "date": "1995-11",
+    "total": 35.8,
+    "energy": 24.1,
+    "agri": 67.8,
+    "mining": 45.5,
+    "precious": 30.3
+  },
+  {
+    "date": "1995-12",
+    "total": 37.0,
+    "energy": 26.1,
+    "agri": 67.2,
+    "mining": 45.1,
+    "precious": 30.3
+  },
+  {
+    "date": "1996-01",
+    "total": 37.0,
+    "energy": 26.4,
+    "agri": 67.3,
+    "mining": 42.8,
+    "precious": 31.3
+  },
+  {
+    "date": "1996-02",
+    "total": 38.5,
+    "energy": 28.4,
+    "agri": 68.6,
+    "mining": 42.6,
+    "precious": 31.9
+  },
+  {
+    "date": "1996-03",
+    "total": 38.7,
+    "energy": 28.5,
+    "agri": 68.5,
+    "mining": 43.0,
+    "precious": 31.2
+  },
+  {
+    "date": "1996-04",
+    "total": 39.6,
+    "energy": 28.9,
+    "agri": 71.3,
+    "mining": 42.9,
+    "precious": 30.9
+  },
+  {
+    "date": "1996-05",
+    "total": 38.4,
+    "energy": 26.7,
+    "agri": 72.3,
+    "mining": 43.2,
+    "precious": 30.8
+  },
+  {
+    "date": "1996-06",
+    "total": 37.3,
+    "energy": 26.2,
+    "agri": 70.6,
+    "mining": 39.2,
+    "precious": 30.1
+  },
+  {
+    "date": "1996-07",
+    "total": 37.9,
+    "energy": 27.6,
+    "agri": 69.6,
+    "mining": 37.8,
+    "precious": 29.9
+  },
+  {
+    "date": "1996-08",
+    "total": 38.1,
+    "energy": 28.0,
+    "agri": 69.0,
+    "mining": 37.9,
+    "precious": 30.2
+  },
+  {
+    "date": "1996-09",
+    "total": 38.9,
+    "energy": 29.9,
+    "agri": 67.3,
+    "mining": 36.9,
+    "precious": 29.9
+  },
+  {
+    "date": "1996-10",
+    "total": 39.9,
+    "energy": 32.3,
+    "agri": 65.2,
+    "mining": 36.0,
+    "precious": 29.6
+  },
+  {
+    "date": "1996-11",
+    "total": 39.6,
+    "energy": 31.5,
+    "agri": 64.9,
+    "mining": 38.8,
+    "precious": 29.3
+  },
+  {
+    "date": "1996-12",
+    "total": 41.1,
+    "energy": 33.9,
+    "agri": 64.5,
+    "mining": 39.4,
+    "precious": 28.7
+  },
+  {
+    "date": "1997-01",
+    "total": 41.0,
+    "energy": 32.7,
+    "agri": 66.5,
+    "mining": 41.5,
+    "precious": 27.8
+  },
+  {
+    "date": "1997-02",
+    "total": 38.5,
+    "energy": 28.4,
+    "agri": 68.0,
+    "mining": 41.8,
+    "precious": 27.5
+  },
+  {
+    "date": "1997-03",
+    "total": 37.5,
+    "energy": 26.3,
+    "agri": 70.0,
+    "mining": 42.8,
+    "precious": 28.0
+  },
+  {
+    "date": "1997-04",
+    "total": 36.2,
+    "energy": 24.6,
+    "agri": 69.5,
+    "mining": 41.4,
+    "precious": 27.1
+  },
+  {
+    "date": "1997-05",
+    "total": 37.7,
+    "energy": 26.6,
+    "agri": 69.7,
+    "mining": 43.0,
+    "precious": 27.1
+  },
+  {
+    "date": "1997-06",
+    "total": 36.0,
+    "energy": 24.8,
+    "agri": 67.5,
+    "mining": 42.7,
+    "precious": 27.0
+  },
+  {
+    "date": "1997-07",
+    "total": 36.0,
+    "energy": 25.7,
+    "agri": 65.0,
+    "mining": 42.4,
+    "precious": 25.5
+  },
+  {
+    "date": "1997-08",
+    "total": 36.4,
+    "energy": 26.5,
+    "agri": 64.1,
+    "mining": 43.1,
+    "precious": 25.7
+  },
+  {
+    "date": "1997-09",
+    "total": 36.2,
+    "energy": 26.7,
+    "agri": 63.6,
+    "mining": 41.0,
+    "precious": 25.8
+  },
+  {
+    "date": "1997-10",
+    "total": 37.0,
+    "energy": 28.4,
+    "agri": 62.4,
+    "mining": 40.0,
+    "precious": 26.2
+  },
+  {
+    "date": "1997-11",
+    "total": 36.1,
+    "energy": 27.3,
+    "agri": 62.4,
+    "mining": 38.8,
+    "precious": 25.0
+  },
+  {
+    "date": "1997-12",
+    "total": 33.7,
+    "energy": 24.2,
+    "agri": 61.6,
+    "mining": 37.0,
+    "precious": 24.6
+  },
+  {
+    "date": "1998-01",
+    "total": 31.7,
+    "energy": 21.9,
+    "agri": 60.2,
+    "mining": 35.9,
+    "precious": 24.7
+  },
+  {
+    "date": "1998-02",
+    "total": 31.3,
+    "energy": 21.0,
+    "agri": 61.3,
+    "mining": 35.4,
+    "precious": 26.1
+  },
+  {
+    "date": "1998-03",
+    "total": 30.3,
+    "energy": 19.9,
+    "agri": 59.9,
+    "mining": 35.6,
+    "precious": 25.5
+  },
+  {
+    "date": "1998-04",
+    "total": 30.7,
+    "energy": 20.4,
+    "agri": 60.3,
+    "mining": 35.7,
+    "precious": 26.4
+  },
+  {
+    "date": "1998-05",
+    "total": 30.7,
+    "energy": 21.0,
+    "agri": 58.8,
+    "mining": 34.5,
+    "precious": 25.0
+  },
+  {
+    "date": "1998-06",
+    "total": 28.4,
+    "energy": 18.6,
+    "agri": 56.5,
+    "mining": 33.1,
+    "precious": 24.2
+  },
+  {
+    "date": "1998-07",
+    "total": 28.1,
+    "energy": 18.4,
+    "agri": 55.7,
+    "mining": 33.1,
+    "precious": 24.5
+  },
+  {
+    "date": "1998-08",
+    "total": 27.3,
+    "energy": 17.7,
+    "agri": 54.4,
+    "mining": 32.9,
+    "precious": 23.7
+  },
+  {
+    "date": "1998-09",
+    "total": 28.6,
+    "energy": 19.5,
+    "agri": 54.7,
+    "mining": 33.3,
+    "precious": 23.8
+  },
+  {
+    "date": "1998-10",
+    "total": 27.9,
+    "energy": 18.4,
+    "agri": 55.1,
+    "mining": 32.3,
+    "precious": 24.2
+  },
+  {
+    "date": "1998-11",
+    "total": 27.0,
+    "energy": 16.9,
+    "agri": 56.0,
+    "mining": 32.3,
+    "precious": 24.1
+  },
+  {
+    "date": "1998-12",
+    "total": 25.5,
+    "energy": 15.2,
+    "agri": 54.9,
+    "mining": 31.1,
+    "precious": 23.8
+  },
+  {
+    "date": "1999-01",
+    "total": 26.4,
+    "energy": 16.6,
+    "agri": 55.2,
+    "mining": 30.1,
+    "precious": 23.8
+  },
+  {
+    "date": "1999-02",
+    "total": 25.2,
+    "energy": 15.6,
+    "agri": 52.7,
+    "mining": 29.9,
+    "precious": 24.2
+  },
+  {
+    "date": "1999-03",
+    "total": 26.5,
+    "energy": 18.0,
+    "agri": 51.3,
+    "mining": 29.9,
+    "precious": 23.8
+  },
+  {
+    "date": "1999-04",
+    "total": 28.9,
+    "energy": 21.4,
+    "agri": 50.6,
+    "mining": 31.5,
+    "precious": 23.4
+  },
+  {
+    "date": "1999-05",
+    "total": 28.9,
+    "energy": 21.4,
+    "agri": 50.3,
+    "mining": 32.5,
+    "precious": 23.2
+  },
+  {
+    "date": "1999-06",
+    "total": 29.2,
+    "energy": 22.2,
+    "agri": 49.9,
+    "mining": 31.7,
+    "precious": 22.0
+  },
+  {
+    "date": "1999-07",
+    "total": 31.5,
+    "energy": 25.7,
+    "agri": 48.3,
+    "mining": 34.2,
+    "precious": 21.8
+  },
+  {
+    "date": "1999-08",
+    "total": 33.1,
+    "energy": 27.6,
+    "agri": 49.3,
+    "mining": 35.0,
+    "precious": 22.0
+  },
+  {
+    "date": "1999-09",
+    "total": 34.9,
+    "energy": 29.7,
+    "agri": 50.2,
+    "mining": 36.6,
+    "precious": 22.5
+  },
+  {
+    "date": "1999-10",
+    "total": 34.7,
+    "energy": 29.6,
+    "agri": 50.1,
+    "mining": 36.3,
+    "precious": 25.7
+  },
+  {
+    "date": "1999-11",
+    "total": 36.3,
+    "energy": 31.9,
+    "agri": 50.0,
+    "mining": 36.6,
+    "precious": 24.3
+  },
+  {
+    "date": "1999-12",
+    "total": 37.2,
+    "energy": 33.1,
+    "agri": 49.9,
+    "mining": 37.9,
+    "precious": 23.7
+  },
+  {
+    "date": "2000-01",
+    "total": 37.7,
+    "energy": 33.3,
+    "agri": 50.3,
+    "mining": 40.1,
+    "precious": 23.8
+  },
+  {
+    "date": "2000-02",
+    "total": 39.6,
+    "energy": 36.1,
+    "agri": 50.4,
+    "mining": 40.0,
+    "precious": 25.0
+  },
+  {
+    "date": "2000-03",
+    "total": 39.4,
+    "energy": 36.1,
+    "agri": 50.0,
+    "mining": 38.8,
+    "precious": 23.9
+  },
+  {
+    "date": "2000-04",
+    "total": 36.0,
+    "energy": 31.3,
+    "agri": 50.4,
+    "mining": 36.8,
+    "precious": 23.5
+  },
+  {
+    "date": "2000-05",
+    "total": 39.9,
+    "energy": 37.1,
+    "agri": 50.0,
+    "mining": 37.7,
+    "precious": 23.2
+  },
+  {
+    "date": "2000-06",
+    "total": 42.0,
+    "energy": 40.5,
+    "agri": 49.1,
+    "mining": 37.3,
+    "precious": 24.0
+  },
+  {
+    "date": "2000-07",
+    "total": 40.9,
+    "energy": 39.1,
+    "agri": 47.9,
+    "mining": 38.2,
+    "precious": 23.7
+  },
+  {
+    "date": "2000-08",
+    "total": 41.9,
+    "energy": 40.6,
+    "agri": 47.7,
+    "mining": 38.0,
+    "precious": 23.2
+  },
+  {
+    "date": "2000-09",
+    "total": 44.9,
+    "energy": 45.0,
+    "agri": 47.5,
+    "mining": 39.9,
+    "precious": 23.2
+  },
+  {
+    "date": "2000-10",
+    "total": 43.5,
+    "energy": 43.3,
+    "agri": 47.6,
+    "mining": 37.7,
+    "precious": 22.9
+  },
+  {
+    "date": "2000-11",
+    "total": 45.0,
+    "energy": 45.7,
+    "agri": 47.4,
+    "mining": 36.6,
+    "precious": 22.5
+  },
+  {
+    "date": "2000-12",
+    "total": 43.1,
+    "energy": 42.5,
+    "agri": 48.1,
+    "mining": 38.0,
+    "precious": 22.8
+  },
+  {
+    "date": "2001-01",
+    "total": 43.0,
+    "energy": 42.2,
+    "agri": 48.0,
+    "mining": 38.3,
+    "precious": 22.5
+  },
+  {
+    "date": "2001-02",
+    "total": 41.8,
+    "energy": 40.7,
+    "agri": 47.4,
+    "mining": 37.9,
+    "precious": 22.1
+  },
+  {
+    "date": "2001-03",
+    "total": 39.0,
+    "energy": 36.9,
+    "agri": 47.2,
+    "mining": 36.4,
+    "precious": 22.0
+  },
+  {
+    "date": "2001-04",
+    "total": 39.7,
+    "energy": 38.2,
+    "agri": 46.6,
+    "mining": 35.8,
+    "precious": 21.9
+  },
+  {
+    "date": "2001-05",
+    "total": 41.0,
+    "energy": 39.9,
+    "agri": 47.0,
+    "mining": 36.6,
+    "precious": 22.7
+  },
+  {
+    "date": "2001-06",
+    "total": 39.8,
+    "energy": 38.5,
+    "agri": 46.8,
+    "mining": 35.1,
+    "precious": 22.5
+  },
+  {
+    "date": "2001-07",
+    "total": 37.1,
+    "energy": 34.0,
+    "agri": 48.8,
+    "mining": 33.7,
+    "precious": 22.1
+  },
+  {
+    "date": "2001-08",
+    "total": 37.7,
+    "energy": 35.0,
+    "agri": 48.7,
+    "mining": 32.7,
+    "precious": 22.2
+  },
+  {
+    "date": "2001-09",
+    "total": 36.4,
+    "energy": 33.8,
+    "agri": 47.1,
+    "mining": 31.8,
+    "precious": 23.0
+  },
+  {
+    "date": "2001-10",
+    "total": 32.4,
+    "energy": 28.6,
+    "agri": 44.9,
+    "mining": 30.6,
+    "precious": 23.0
+  },
+  {
+    "date": "2001-11",
+    "total": 31.4,
+    "energy": 26.7,
+    "agri": 46.1,
+    "mining": 31.6,
+    "precious": 22.3
+  },
+  {
+    "date": "2001-12",
+    "total": 31.3,
+    "energy": 26.2,
+    "agri": 46.3,
+    "mining": 32.1,
+    "precious": 22.6
+  },
+  {
+    "date": "2002-01",
+    "total": 31.8,
+    "energy": 26.8,
+    "agri": 46.6,
+    "mining": 32.8,
+    "precious": 23.1
+  },
+  {
+    "date": "2002-02",
+    "total": 32.4,
+    "energy": 27.7,
+    "agri": 46.6,
+    "mining": 33.0,
+    "precious": 23.9
+  },
+  {
+    "date": "2002-03",
+    "total": 35.8,
+    "energy": 32.2,
+    "agri": 47.6,
+    "mining": 34.0,
+    "precious": 24.0
+  },
+  {
+    "date": "2002-04",
+    "total": 37.3,
+    "energy": 34.7,
+    "agri": 47.6,
+    "mining": 33.6,
+    "precious": 24.6
+  },
+  {
+    "date": "2002-05",
+    "total": 37.3,
+    "energy": 34.5,
+    "agri": 48.2,
+    "mining": 33.2,
+    "precious": 25.5
+  },
+  {
+    "date": "2002-06",
+    "total": 36.6,
+    "energy": 32.8,
+    "agri": 50.0,
+    "mining": 33.7,
+    "precious": 26.1
+  },
+  {
+    "date": "2002-07",
+    "total": 37.9,
+    "energy": 34.2,
+    "agri": 51.7,
+    "mining": 33.3,
+    "precious": 25.6
+  },
+  {
+    "date": "2002-08",
+    "total": 38.6,
+    "energy": 35.2,
+    "agri": 52.4,
+    "mining": 31.8,
+    "precious": 25.1
+  },
+  {
+    "date": "2002-09",
+    "total": 40.7,
+    "energy": 37.7,
+    "agri": 54.2,
+    "mining": 31.9,
+    "precious": 25.7
+  },
+  {
+    "date": "2002-10",
+    "total": 40.7,
+    "energy": 37.8,
+    "agri": 54.3,
+    "mining": 32.2,
+    "precious": 25.4
+  },
+  {
+    "date": "2002-11",
+    "total": 38.3,
+    "energy": 34.2,
+    "agri": 53.6,
+    "mining": 33.7,
+    "precious": 25.7
+  },
+  {
+    "date": "2002-12",
+    "total": 42.3,
+    "energy": 39.7,
+    "agri": 54.7,
+    "mining": 33.8,
+    "precious": 26.6
+  },
+  {
+    "date": "2003-01",
+    "total": 45.1,
+    "energy": 43.6,
+    "agri": 54.9,
+    "mining": 34.7,
+    "precious": 28.5
+  },
+  {
+    "date": "2003-02",
+    "total": 48.3,
+    "energy": 48.3,
+    "agri": 54.9,
+    "mining": 35.7,
+    "precious": 28.6
+  },
+  {
+    "date": "2003-03",
+    "total": 44.8,
+    "energy": 43.4,
+    "agri": 54.3,
+    "mining": 35.1,
+    "precious": 27.3
+  },
+  {
+    "date": "2003-04",
+    "total": 40.3,
+    "energy": 37.0,
+    "agri": 53.8,
+    "mining": 33.8,
+    "precious": 26.3
+  },
+  {
+    "date": "2003-05",
+    "total": 41.4,
+    "energy": 38.6,
+    "agri": 53.4,
+    "mining": 35.1,
+    "precious": 28.4
+  },
+  {
+    "date": "2003-06",
+    "total": 42.5,
+    "energy": 40.4,
+    "agri": 52.9,
+    "mining": 35.7,
+    "precious": 28.2
+  },
+  {
+    "date": "2003-07",
+    "total": 42.4,
+    "energy": 40.3,
+    "agri": 52.3,
+    "mining": 36.2,
+    "precious": 28.2
+  },
+  {
+    "date": "2003-08",
+    "total": 43.7,
+    "energy": 41.7,
+    "agri": 53.1,
+    "mining": 36.9,
+    "precious": 28.9
+  },
+  {
+    "date": "2003-09",
+    "total": 41.8,
+    "energy": 38.4,
+    "agri": 54.5,
+    "mining": 36.8,
+    "precious": 30.4
+  },
+  {
+    "date": "2003-10",
+    "total": 44.4,
+    "energy": 41.1,
+    "agri": 57.4,
+    "mining": 38.8,
+    "precious": 30.3
+  },
+  {
+    "date": "2003-11",
+    "total": 44.3,
+    "energy": 40.2,
+    "agri": 58.9,
+    "mining": 40.4,
+    "precious": 31.2
+  },
+  {
+    "date": "2003-12",
+    "total": 46.9,
+    "energy": 43.8,
+    "agri": 58.8,
+    "mining": 42.7,
+    "precious": 32.8
+  },
+  {
+    "date": "2004-01",
+    "total": 48.6,
+    "energy": 45.2,
+    "agri": 60.5,
+    "mining": 45.9,
+    "precious": 33.9
+  },
+  {
+    "date": "2004-02",
+    "total": 48.4,
+    "energy": 44.1,
+    "agri": 62.0,
+    "mining": 48.7,
+    "precious": 33.5
+  },
+  {
+    "date": "2004-03",
+    "total": 51.3,
+    "energy": 47.6,
+    "agri": 64.1,
+    "mining": 49.3,
+    "precious": 34.5
+  },
+  {
+    "date": "2004-04",
+    "total": 51.3,
+    "energy": 47.8,
+    "agri": 63.7,
+    "mining": 49.4,
+    "precious": 34.1
+  },
+  {
+    "date": "2004-05",
+    "total": 54.6,
+    "energy": 53.6,
+    "agri": 62.4,
+    "mining": 46.5,
+    "precious": 31.5
+  },
+  {
+    "date": "2004-06",
+    "total": 52.6,
+    "energy": 50.8,
+    "agri": 61.1,
+    "mining": 47.8,
+    "precious": 32.1
+  },
+  {
+    "date": "2004-07",
+    "total": 54.7,
+    "energy": 54.0,
+    "agri": 59.8,
+    "mining": 49.3,
+    "precious": 32.9
+  },
+  {
+    "date": "2004-08",
+    "total": 57.3,
+    "energy": 58.1,
+    "agri": 59.0,
+    "mining": 48.8,
+    "precious": 33.4
+  },
+  {
+    "date": "2004-09",
+    "total": 57.3,
+    "energy": 58.1,
+    "agri": 58.8,
+    "mining": 49.3,
+    "precious": 33.5
+  },
+  {
+    "date": "2004-10",
+    "total": 63.3,
+    "energy": 66.8,
+    "agri": 57.9,
+    "mining": 51.6,
+    "precious": 35.1
+  },
+  {
+    "date": "2004-11",
+    "total": 58.2,
+    "energy": 59.1,
+    "agri": 58.3,
+    "mining": 52.1,
+    "precious": 36.7
+  },
+  {
+    "date": "2004-12",
+    "total": 56.3,
+    "energy": 56.1,
+    "agri": 58.6,
+    "mining": 52.7,
+    "precious": 36.5
+  },
+  {
+    "date": "2005-01",
+    "total": 59.9,
+    "energy": 60.8,
+    "agri": 59.0,
+    "mining": 56.4,
+    "precious": 34.9
+  },
+  {
+    "date": "2005-02",
+    "total": 61.3,
+    "energy": 62.0,
+    "agri": 61.0,
+    "mining": 57.9,
+    "precious": 35.3
+  },
+  {
+    "date": "2005-03",
+    "total": 68.3,
+    "energy": 71.1,
+    "agri": 64.0,
+    "mining": 60.2,
+    "precious": 36.1
+  },
+  {
+    "date": "2005-04",
+    "total": 67.3,
+    "energy": 70.3,
+    "agri": 62.5,
+    "mining": 59.1,
+    "precious": 35.7
+  },
+  {
+    "date": "2005-05",
+    "total": 64.2,
+    "energy": 66.0,
+    "agri": 62.3,
+    "mining": 56.6,
+    "precious": 35.2
+  },
+  {
+    "date": "2005-06",
+    "total": 68.8,
+    "energy": 72.9,
+    "agri": 62.2,
+    "mining": 57.6,
+    "precious": 36.0
+  },
+  {
+    "date": "2005-07",
+    "total": 71.7,
+    "energy": 77.2,
+    "agri": 62.0,
+    "mining": 57.8,
+    "precious": 35.3
+  },
+  {
+    "date": "2005-08",
+    "total": 78.2,
+    "energy": 86.8,
+    "agri": 61.1,
+    "mining": 60.1,
+    "precious": 36.3
+  },
+  {
+    "date": "2005-09",
+    "total": 80.3,
+    "energy": 89.7,
+    "agri": 61.8,
+    "mining": 60.0,
+    "precious": 37.6
+  },
+  {
+    "date": "2005-10",
+    "total": 78.2,
+    "energy": 86.0,
+    "agri": 62.7,
+    "mining": 61.7,
+    "precious": 38.9
+  },
+  {
+    "date": "2005-11",
+    "total": 73.5,
+    "energy": 78.7,
+    "agri": 62.0,
+    "mining": 64.4,
+    "precious": 39.6
+  },
+  {
+    "date": "2005-12",
+    "total": 77.2,
+    "energy": 83.2,
+    "agri": 63.4,
+    "mining": 69.4,
+    "precious": 42.5
+  },
+  {
+    "date": "2006-01",
+    "total": 79.6,
+    "energy": 85.4,
+    "agri": 65.6,
+    "mining": 73.1,
+    "precious": 45.6
+  },
+  {
+    "date": "2006-02",
+    "total": 76.8,
+    "energy": 80.3,
+    "agri": 67.6,
+    "mining": 75.6,
+    "precious": 46.3
+  },
+  {
+    "date": "2006-03",
+    "total": 77.9,
+    "energy": 82.1,
+    "agri": 66.4,
+    "mining": 76.3,
+    "precious": 47.3
+  },
+  {
+    "date": "2006-04",
+    "total": 85.3,
+    "energy": 91.3,
+    "agri": 66.6,
+    "mining": 87.8,
+    "precious": 52.9
+  },
+  {
+    "date": "2006-05",
+    "total": 86.2,
+    "energy": 89.9,
+    "agri": 69.0,
+    "mining": 101.3,
+    "precious": 58.0
+  },
+  {
+    "date": "2006-06",
+    "total": 83.9,
+    "energy": 88.5,
+    "agri": 67.7,
+    "mining": 91.5,
+    "precious": 50.4
+  },
+  {
+    "date": "2006-07",
+    "total": 88.4,
+    "energy": 94.0,
+    "agri": 68.4,
+    "mining": 97.2,
+    "precious": 53.3
+  },
+  {
+    "date": "2006-08",
+    "total": 89.0,
+    "energy": 94.7,
+    "agri": 68.3,
+    "mining": 98.0,
+    "precious": 54.1
+  },
+  {
+    "date": "2006-09",
+    "total": 79.2,
+    "energy": 80.3,
+    "agri": 67.6,
+    "mining": 97.8,
+    "precious": 51.4
+  },
+  {
+    "date": "2006-10",
+    "total": 77.7,
+    "energy": 77.0,
+    "agri": 69.2,
+    "mining": 101.7,
+    "precious": 50.3
+  },
+  {
+    "date": "2006-11",
+    "total": 79.7,
+    "energy": 79.2,
+    "agri": 71.6,
+    "mining": 101.1,
+    "precious": 54.4
+  },
+  {
+    "date": "2006-12",
+    "total": 82.0,
+    "energy": 82.2,
+    "agri": 72.7,
+    "mining": 101.8,
+    "precious": 54.8
+  },
+  {
+    "date": "2007-01",
+    "total": 75.9,
+    "energy": 73.6,
+    "agri": 73.4,
+    "mining": 96.8,
+    "precious": 54.5
+  },
+  {
+    "date": "2007-02",
+    "total": 80.3,
+    "energy": 79.1,
+    "agri": 75.4,
+    "mining": 98.7,
+    "precious": 57.7
+  },
+  {
+    "date": "2007-03",
+    "total": 83.3,
+    "energy": 82.7,
+    "agri": 75.3,
+    "mining": 104.6,
+    "precious": 56.5
+  },
+  {
+    "date": "2007-04",
+    "total": 88.5,
+    "energy": 88.8,
+    "agri": 75.7,
+    "mining": 114.4,
+    "precious": 58.6
+  },
+  {
+    "date": "2007-05",
+    "total": 89.2,
+    "energy": 88.9,
+    "agri": 77.3,
+    "mining": 116.4,
+    "precious": 57.4
+  },
+  {
+    "date": "2007-06",
+    "total": 91.7,
+    "energy": 92.8,
+    "agri": 79.8,
+    "mining": 110.0,
+    "precious": 56.6
+  },
+  {
+    "date": "2007-07",
+    "total": 95.6,
+    "energy": 98.0,
+    "agri": 81.4,
+    "mining": 111.1,
+    "precious": 57.0
+  },
+  {
+    "date": "2007-08",
+    "total": 90.7,
+    "energy": 91.4,
+    "agri": 81.7,
+    "mining": 105.5,
+    "precious": 56.4
+  },
+  {
+    "date": "2007-09",
+    "total": 96.3,
+    "energy": 98.1,
+    "agri": 85.2,
+    "mining": 108.2,
+    "precious": 60.0
+  },
+  {
+    "date": "2007-10",
+    "total": 102.6,
+    "energy": 105.7,
+    "agri": 87.5,
+    "mining": 114.4,
+    "precious": 63.6
+  },
+  {
+    "date": "2007-11",
+    "total": 110.6,
+    "energy": 117.1,
+    "agri": 90.0,
+    "mining": 112.1,
+    "precious": 68.0
+  },
+  {
+    "date": "2007-12",
+    "total": 110.0,
+    "energy": 116.3,
+    "agri": 92.4,
+    "mining": 105.3,
+    "precious": 67.5
+  },
+  {
+    "date": "2008-01",
+    "total": 113.1,
+    "energy": 118.6,
+    "agri": 97.5,
+    "mining": 109.5,
+    "precious": 74.7
+  },
+  {
+    "date": "2008-02",
+    "total": 119.6,
+    "energy": 124.4,
+    "agri": 105.5,
+    "mining": 117.7,
+    "precious": 79.2
+  },
+  {
+    "date": "2008-03",
+    "total": 128.4,
+    "energy": 134.0,
+    "agri": 111.5,
+    "mining": 126.3,
+    "precious": 83.8
+  },
+  {
+    "date": "2008-04",
+    "total": 135.4,
+    "energy": 143.1,
+    "agri": 113.6,
+    "mining": 125.5,
+    "precious": 78.3
+  },
+  {
+    "date": "2008-05",
+    "total": 146.6,
+    "energy": 159.8,
+    "agri": 113.7,
+    "mining": 121.3,
+    "precious": 76.7
+  },
+  {
+    "date": "2008-06",
+    "total": 155.7,
+    "energy": 172.7,
+    "agri": 117.1,
+    "mining": 118.0,
+    "precious": 76.6
+  },
+  {
+    "date": "2008-07",
+    "total": 156.2,
+    "energy": 173.5,
+    "agri": 115.4,
+    "mining": 118.9,
+    "precious": 80.5
+  },
+  {
+    "date": "2008-08",
+    "total": 136.3,
+    "energy": 147.6,
+    "agri": 106.7,
+    "mining": 109.9,
+    "precious": 70.1
+  },
+  {
+    "date": "2008-09",
+    "total": 122.7,
+    "energy": 131.0,
+    "agri": 101.7,
+    "mining": 98.0,
+    "precious": 66.8
+  },
+  {
+    "date": "2008-10",
+    "total": 96.5,
+    "energy": 100.5,
+    "agri": 87.4,
+    "mining": 72.3,
+    "precious": 62.9
+  },
+  {
+    "date": "2008-11",
+    "total": 78.8,
+    "energy": 78.8,
+    "agri": 82.7,
+    "mining": 58.7,
+    "precious": 59.3
+  },
+  {
+    "date": "2008-12",
+    "total": 67.5,
+    "energy": 64.4,
+    "agri": 80.3,
+    "mining": 50.6,
+    "precious": 63.2
+  },
+  {
+    "date": "2009-01",
+    "total": 70.0,
+    "energy": 66.3,
+    "agri": 85.2,
+    "mining": 51.7,
+    "precious": 67.1
+  },
+  {
+    "date": "2009-02",
+    "total": 66.7,
+    "energy": 61.8,
+    "agri": 84.5,
+    "mining": 51.0,
+    "precious": 74.6
+  },
+  {
+    "date": "2009-03",
+    "total": 68.2,
+    "energy": 64.1,
+    "agri": 83.7,
+    "mining": 51.8,
+    "precious": 73.2
+  },
+  {
+    "date": "2009-04",
+    "total": 70.7,
+    "energy": 66.5,
+    "agri": 86.6,
+    "mining": 56.7,
+    "precious": 70.6
+  },
+  {
+    "date": "2009-05",
+    "total": 77.1,
+    "energy": 74.2,
+    "agri": 91.5,
+    "mining": 59.4,
+    "precious": 74.4
+  },
+  {
+    "date": "2009-06",
+    "total": 85.3,
+    "energy": 85.8,
+    "agri": 91.5,
+    "mining": 65.6,
+    "precious": 76.3
+  },
+  {
+    "date": "2009-07",
+    "total": 81.4,
+    "energy": 80.8,
+    "agri": 88.1,
+    "mining": 69.7,
+    "precious": 74.3
+  },
+  {
+    "date": "2009-08",
+    "total": 88.5,
+    "energy": 88.6,
+    "agri": 91.3,
+    "mining": 81.6,
+    "precious": 76.3
+  },
+  {
+    "date": "2009-09",
+    "total": 84.2,
+    "energy": 83.2,
+    "agri": 90.2,
+    "mining": 77.9,
+    "precious": 81.3
+  },
+  {
+    "date": "2009-10",
+    "total": 90.0,
+    "energy": 90.9,
+    "agri": 91.8,
+    "mining": 80.5,
+    "precious": 85.2
+  },
+  {
+    "date": "2009-11",
+    "total": 93.8,
+    "energy": 95.0,
+    "agri": 94.4,
+    "mining": 84.7,
+    "precious": 91.2
+  },
+  {
+    "date": "2009-12",
+    "total": 94.6,
+    "energy": 95.0,
+    "agri": 95.3,
+    "mining": 90.3,
+    "precious": 91.6
+  },
+  {
+    "date": "2010-01",
+    "total": 97.8,
+    "energy": 98.5,
+    "agri": 96.2,
+    "mining": 96.6,
+    "precious": 90.9
+  },
+  {
+    "date": "2010-02",
+    "total": 94.8,
+    "energy": 95.6,
+    "agri": 93.7,
+    "mining": 91.1,
+    "precious": 87.6
+  },
+  {
+    "date": "2010-03",
+    "total": 97.9,
+    "energy": 99.6,
+    "agri": 92.1,
+    "mining": 99.4,
+    "precious": 90.0
+  },
+  {
+    "date": "2010-04",
+    "total": 102.5,
+    "energy": 104.9,
+    "agri": 93.4,
+    "mining": 108.1,
+    "precious": 93.4
+  },
+  {
+    "date": "2010-05",
+    "total": 94.8,
+    "energy": 95.7,
+    "agri": 92.6,
+    "mining": 96.0,
+    "precious": 97.2
+  },
+  {
+    "date": "2010-06",
+    "total": 93.6,
+    "energy": 95.1,
+    "agri": 92.4,
+    "mining": 89.1,
+    "precious": 98.8
+  },
+  {
+    "date": "2010-07",
+    "total": 94.4,
+    "energy": 94.9,
+    "agri": 95.7,
+    "mining": 89.2,
+    "precious": 95.8
+  },
+  {
+    "date": "2010-08",
+    "total": 97.3,
+    "energy": 96.5,
+    "agri": 99.8,
+    "mining": 97.6,
+    "precious": 97.6
+  },
+  {
+    "date": "2010-09",
+    "total": 99.1,
+    "energy": 97.2,
+    "agri": 103.8,
+    "mining": 100.6,
+    "precious": 103.3
+  },
+  {
+    "date": "2010-10",
+    "total": 104.4,
+    "energy": 102.2,
+    "agri": 108.7,
+    "mining": 108.3,
+    "precious": 110.7
+  },
+  {
+    "date": "2010-11",
+    "total": 108.2,
+    "energy": 106.1,
+    "agri": 113.0,
+    "mining": 109.4,
+    "precious": 115.4
+  },
+  {
+    "date": "2010-12",
+    "total": 115.1,
+    "energy": 113.9,
+    "agri": 118.5,
+    "mining": 114.5,
+    "precious": 119.4
+  },
+  {
+    "date": "2011-01",
+    "total": 121.1,
+    "energy": 120.1,
+    "agri": 123.8,
+    "mining": 120.8,
+    "precious": 116.8
+  },
+  {
+    "date": "2011-02",
+    "total": 127.6,
+    "energy": 127.4,
+    "agri": 129.9,
+    "mining": 125.8,
+    "precious": 120.0
+  },
+  {
+    "date": "2011-03",
+    "total": 133.6,
+    "energy": 138.4,
+    "agri": 125.9,
+    "mining": 121.4,
+    "precious": 127.7
+  },
+  {
+    "date": "2011-04",
+    "total": 140.7,
+    "energy": 148.3,
+    "agri": 127.5,
+    "mining": 124.3,
+    "precious": 137.8
+  },
+  {
+    "date": "2011-05",
+    "total": 133.2,
+    "energy": 139.1,
+    "agri": 123.9,
+    "mining": 118.5,
+    "precious": 134.8
+  },
+  {
+    "date": "2011-06",
+    "total": 133.2,
+    "energy": 138.7,
+    "agri": 123.0,
+    "mining": 117.0,
+    "precious": 134.4
+  },
+  {
+    "date": "2011-07",
+    "total": 135.8,
+    "energy": 141.9,
+    "agri": 122.7,
+    "mining": 121.0,
+    "precious": 139.1
+  },
+  {
+    "date": "2011-08",
+    "total": 130.5,
+    "energy": 134.6,
+    "agri": 123.4,
+    "mining": 114.8,
+    "precious": 153.3
+  },
+  {
+    "date": "2011-09",
+    "total": 130.1,
+    "energy": 135.4,
+    "agri": 121.4,
+    "mining": 109.1,
+    "precious": 152.0
+  },
+  {
+    "date": "2011-10",
+    "total": 126.5,
+    "energy": 133.6,
+    "agri": 115.3,
+    "mining": 98.4,
+    "precious": 139.0
+  },
+  {
+    "date": "2011-11",
+    "total": 125.7,
+    "energy": 134.0,
+    "agri": 112.0,
+    "mining": 95.8,
+    "precious": 144.8
+  },
+  {
+    "date": "2011-12",
+    "total": 123.0,
+    "energy": 131.1,
+    "agri": 109.4,
+    "mining": 95.1,
+    "precious": 135.6
+  },
+  {
+    "date": "2012-01",
+    "total": 125.8,
+    "energy": 134.1,
+    "agri": 111.1,
+    "mining": 100.5,
+    "precious": 136.9
+  },
+  {
+    "date": "2012-02",
+    "total": 132.4,
+    "energy": 142.8,
+    "agri": 113.4,
+    "mining": 104.0,
+    "precious": 146.3
+  },
+  {
+    "date": "2012-03",
+    "total": 136.0,
+    "energy": 147.9,
+    "agri": 114.5,
+    "mining": 103.5,
+    "precious": 140.8
+  },
+  {
+    "date": "2012-04",
+    "total": 132.4,
+    "energy": 142.4,
+    "agri": 114.7,
+    "mining": 101.0,
+    "precious": 137.6
+  },
+  {
+    "date": "2012-05",
+    "total": 124.7,
+    "energy": 132.3,
+    "agri": 112.9,
+    "mining": 96.6,
+    "precious": 130.9
+  },
+  {
+    "date": "2012-06",
+    "total": 112.7,
+    "energy": 116.0,
+    "agri": 110.5,
+    "mining": 91.6,
+    "precious": 130.8
+  },
+  {
+    "date": "2012-07",
+    "total": 119.7,
+    "energy": 124.6,
+    "agri": 118.4,
+    "mining": 91.2,
+    "precious": 129.9
+  },
+  {
+    "date": "2012-08",
+    "total": 126.8,
+    "energy": 135.4,
+    "agri": 118.1,
+    "mining": 87.7,
+    "precious": 133.6
+  },
+  {
+    "date": "2012-09",
+    "total": 127.3,
+    "energy": 135.2,
+    "agri": 118.1,
+    "mining": 93.6,
+    "precious": 145.7
+  },
+  {
+    "date": "2012-10",
+    "total": 125.9,
+    "energy": 134.2,
+    "agri": 114.9,
+    "mining": 94.0,
+    "precious": 145.4
+  },
+  {
+    "date": "2012-11",
+    "total": 124.0,
+    "energy": 132.3,
+    "agri": 112.6,
+    "mining": 92.4,
+    "precious": 143.4
+  },
+  {
+    "date": "2012-12",
+    "total": 124.5,
+    "energy": 132.4,
+    "agri": 112.1,
+    "mining": 97.4,
+    "precious": 140.2
+  },
+  {
+    "date": "2013-01",
+    "total": 126.9,
+    "energy": 135.9,
+    "agri": 111.2,
+    "mining": 100.3,
+    "precious": 138.7
+  },
+  {
+    "date": "2013-02",
+    "total": 129.4,
+    "energy": 139.8,
+    "agri": 110.0,
+    "mining": 101.3,
+    "precious": 135.3
+  },
+  {
+    "date": "2013-03",
+    "total": 123.5,
+    "energy": 132.5,
+    "agri": 109.0,
+    "mining": 94.5,
+    "precious": 131.5
+  },
+  {
+    "date": "2013-04",
+    "total": 118.4,
+    "energy": 126.6,
+    "agri": 106.7,
+    "mining": 90.7,
+    "precious": 121.4
+  },
+  {
+    "date": "2013-05",
+    "total": 118.1,
+    "energy": 126.3,
+    "agri": 107.1,
+    "mining": 88.3,
+    "precious": 114.5
+  },
+  {
+    "date": "2013-06",
+    "total": 117.3,
+    "energy": 125.7,
+    "agri": 107.1,
+    "mining": 85.4,
+    "precious": 108.1
+  },
+  {
+    "date": "2013-07",
+    "total": 119.6,
+    "energy": 129.9,
+    "agri": 104.7,
+    "mining": 85.7,
+    "precious": 103.0
+  },
+  {
+    "date": "2013-08",
+    "total": 121.7,
+    "energy": 133.0,
+    "agri": 102.6,
+    "mining": 89.6,
+    "precious": 109.5
+  },
+  {
+    "date": "2013-09",
+    "total": 122.0,
+    "energy": 133.8,
+    "agri": 102.6,
+    "mining": 88.2,
+    "precious": 109.8
+  },
+  {
+    "date": "2013-10",
+    "total": 120.7,
+    "energy": 131.7,
+    "agri": 102.9,
+    "mining": 89.1,
+    "precious": 107.1
+  },
+  {
+    "date": "2013-11",
+    "total": 119.5,
+    "energy": 130.3,
+    "agri": 102.1,
+    "mining": 87.8,
+    "precious": 103.4
+  },
+  {
+    "date": "2013-12",
+    "total": 122.2,
+    "energy": 134.2,
+    "agri": 102.2,
+    "mining": 88.7,
+    "precious": 98.8
+  },
+  {
+    "date": "2014-01",
+    "total": 119.9,
+    "energy": 131.2,
+    "agri": 101.0,
+    "mining": 88.1,
+    "precious": 100.6
+  },
+  {
+    "date": "2014-02",
+    "total": 122.0,
+    "energy": 134.0,
+    "agri": 103.2,
+    "mining": 86.2,
+    "precious": 105.0
+  },
+  {
+    "date": "2014-03",
+    "total": 120.5,
+    "energy": 130.7,
+    "agri": 108.1,
+    "mining": 83.0,
+    "precious": 107.3
+  },
+  {
+    "date": "2014-04",
+    "total": 120.5,
+    "energy": 130.7,
+    "agri": 107.3,
+    "mining": 85.5,
+    "precious": 103.9
+  },
+  {
+    "date": "2014-05",
+    "total": 121.4,
+    "energy": 132.3,
+    "agri": 106.9,
+    "mining": 84.8,
+    "precious": 103.0
+  },
+  {
+    "date": "2014-06",
+    "total": 122.3,
+    "energy": 134.3,
+    "agri": 104.7,
+    "mining": 84.4,
+    "precious": 102.9
+  },
+  {
+    "date": "2014-07",
+    "total": 118.0,
+    "energy": 127.9,
+    "agri": 102.6,
+    "mining": 88.2,
+    "precious": 105.9
+  },
+  {
+    "date": "2014-08",
+    "total": 113.9,
+    "energy": 122.4,
+    "agri": 100.9,
+    "mining": 88.0,
+    "precious": 103.8
+  },
+  {
+    "date": "2014-09",
+    "total": 109.7,
+    "energy": 117.4,
+    "agri": 97.8,
+    "mining": 85.1,
+    "precious": 98.6
+  },
+  {
+    "date": "2014-10",
+    "total": 102.2,
+    "energy": 106.8,
+    "agri": 97.3,
+    "mining": 82.6,
+    "precious": 96.3
+  },
+  {
+    "date": "2014-11",
+    "total": 95.8,
+    "energy": 97.3,
+    "agri": 97.2,
+    "mining": 82.9,
+    "precious": 92.1
+  },
+  {
+    "date": "2014-12",
+    "total": 83.4,
+    "energy": 79.8,
+    "agri": 95.7,
+    "mining": 78.8,
+    "precious": 94.0
+  },
+  {
+    "date": "2015-01",
+    "total": 71.6,
+    "energy": 63.7,
+    "agri": 93.7,
+    "mining": 73.9,
+    "precious": 98.2
+  },
+  {
+    "date": "2015-02",
+    "total": 77.8,
+    "energy": 73.8,
+    "agri": 92.0,
+    "mining": 72.4,
+    "precious": 96.2
+  },
+  {
+    "date": "2015-03",
+    "total": 75.5,
+    "energy": 71.1,
+    "agri": 89.8,
+    "mining": 71.8,
+    "precious": 92.4
+  },
+  {
+    "date": "2015-04",
+    "total": 76.9,
+    "energy": 73.4,
+    "agri": 89.5,
+    "mining": 72.1,
+    "precious": 93.9
+  },
+  {
+    "date": "2015-05",
+    "total": 81.1,
+    "energy": 79.3,
+    "agri": 89.3,
+    "mining": 74.6,
+    "precious": 94.3
+  },
+  {
+    "date": "2015-06",
+    "total": 78.9,
+    "energy": 76.7,
+    "agri": 89.1,
+    "mining": 70.3,
+    "precious": 92.4
+  },
+  {
+    "date": "2015-07",
+    "total": 74.0,
+    "energy": 70.0,
+    "agri": 89.4,
+    "mining": 65.7,
+    "precious": 87.9
+  },
+  {
+    "date": "2015-08",
+    "total": 66.4,
+    "energy": 60.3,
+    "agri": 85.6,
+    "mining": 62.7,
+    "precious": 87.0
+  },
+  {
+    "date": "2015-09",
+    "total": 66.1,
+    "energy": 60.3,
+    "agri": 83.9,
+    "mining": 63.4,
+    "precious": 87.3
+  },
+  {
+    "date": "2015-10",
+    "total": 66.3,
+    "energy": 60.5,
+    "agri": 84.8,
+    "mining": 62.2,
+    "precious": 90.5
+  },
+  {
+    "date": "2015-11",
+    "total": 62.5,
+    "energy": 55.9,
+    "agri": 83.7,
+    "mining": 57.8,
+    "precious": 84.4
+  },
+  {
+    "date": "2015-12",
+    "total": 57.3,
+    "energy": 48.3,
+    "agri": 83.7,
+    "mining": 56.3,
+    "precious": 83.4
+  },
+  {
+    "date": "2016-01",
+    "total": 51.8,
+    "energy": 40.9,
+    "agri": 82.3,
+    "mining": 55.2,
+    "precious": 84.7
+  },
+  {
+    "date": "2016-02",
+    "total": 53.3,
+    "energy": 42.8,
+    "agri": 82.5,
+    "mining": 57.7,
+    "precious": 92.3
+  },
+  {
+    "date": "2016-03",
+    "total": 58.0,
+    "energy": 48.7,
+    "agri": 84.4,
+    "mining": 61.2,
+    "precious": 95.6
+  },
+  {
+    "date": "2016-04",
+    "total": 61.0,
+    "energy": 52.3,
+    "agri": 86.9,
+    "mining": 62.0,
+    "precious": 96.3
+  },
+  {
+    "date": "2016-05",
+    "total": 65.0,
+    "energy": 57.7,
+    "agri": 89.6,
+    "mining": 60.0,
+    "precious": 98.1
+  },
+  {
+    "date": "2016-06",
+    "total": 67.3,
+    "energy": 60.2,
+    "agri": 92.6,
+    "mining": 60.3,
+    "precious": 99.3
+  },
+  {
+    "date": "2016-07",
+    "total": 65.2,
+    "energy": 57.3,
+    "agri": 90.3,
+    "mining": 63.5,
+    "precious": 105.9
+  },
+  {
+    "date": "2016-08",
+    "total": 65.7,
+    "energy": 58.4,
+    "agri": 89.1,
+    "mining": 63.8,
+    "precious": 105.8
+  },
+  {
+    "date": "2016-09",
+    "total": 65.9,
+    "energy": 59.1,
+    "agri": 88.6,
+    "mining": 62.8,
+    "precious": 104.6
+  },
+  {
+    "date": "2016-10",
+    "total": 69.4,
+    "energy": 64.4,
+    "agri": 87.4,
+    "mining": 64.1,
+    "precious": 99.0
+  },
+  {
+    "date": "2016-11",
+    "total": 67.9,
+    "energy": 60.9,
+    "agri": 87.9,
+    "mining": 71.5,
+    "precious": 97.0
+  },
+  {
+    "date": "2016-12",
+    "total": 73.9,
+    "energy": 69.6,
+    "agri": 87.7,
+    "mining": 73.5,
+    "precious": 90.8
+  },
+  {
+    "date": "2017-01",
+    "total": 74.8,
+    "energy": 70.2,
+    "agri": 89.5,
+    "mining": 74.5,
+    "precious": 93.6
+  },
+  {
+    "date": "2017-02",
+    "total": 75.0,
+    "energy": 70.1,
+    "agri": 89.3,
+    "mining": 77.9,
+    "precious": 97.3
+  },
+  {
+    "date": "2017-03",
+    "total": 71.8,
+    "energy": 65.9,
+    "agri": 87.7,
+    "mining": 77.3,
+    "precious": 96.7
+  },
+  {
+    "date": "2017-04",
+    "total": 72.2,
+    "energy": 67.4,
+    "agri": 86.8,
+    "mining": 74.0,
+    "precious": 99.4
+  },
+  {
+    "date": "2017-05",
+    "total": 70.5,
+    "energy": 64.9,
+    "agri": 88.1,
+    "mining": 72.2,
+    "precious": 96.8
+  },
+  {
+    "date": "2017-06",
+    "total": 67.5,
+    "energy": 60.6,
+    "agri": 87.1,
+    "mining": 71.7,
+    "precious": 97.9
+  },
+  {
+    "date": "2017-07",
+    "total": 69.5,
+    "energy": 62.9,
+    "agri": 87.5,
+    "mining": 75.4,
+    "precious": 95.6
+  },
+  {
+    "date": "2017-08",
+    "total": 72.1,
+    "energy": 66.4,
+    "agri": 85.6,
+    "mining": 81.6,
+    "precious": 99.4
+  },
+  {
+    "date": "2017-09",
+    "total": 75.3,
+    "energy": 70.7,
+    "agri": 86.1,
+    "mining": 82.7,
+    "precious": 101.8
+  },
+  {
+    "date": "2017-10",
+    "total": 76.9,
+    "energy": 73.3,
+    "agri": 85.3,
+    "mining": 83.4,
+    "precious": 99.1
+  },
+  {
+    "date": "2017-11",
+    "total": 80.9,
+    "energy": 79.0,
+    "agri": 85.6,
+    "mining": 83.5,
+    "precious": 99.3
+  },
+  {
+    "date": "2017-12",
+    "total": 81.9,
+    "energy": 80.8,
+    "agri": 84.8,
+    "mining": 84.1,
+    "precious": 97.3
+  },
+  {
+    "date": "2018-01",
+    "total": 87.3,
+    "energy": 87.4,
+    "agri": 87.0,
+    "mining": 88.6,
+    "precious": 102.7
+  },
+  {
+    "date": "2018-02",
+    "total": 84.1,
+    "energy": 82.1,
+    "agri": 88.7,
+    "mining": 88.6,
+    "precious": 102.1
+  },
+  {
+    "date": "2018-03",
+    "total": 84.4,
+    "energy": 82.8,
+    "agri": 90.0,
+    "mining": 84.5,
+    "precious": 101.6
+  },
+  {
+    "date": "2018-04",
+    "total": 88.7,
+    "energy": 88.4,
+    "agri": 91.7,
+    "mining": 86.4,
+    "precious": 102.3
+  },
+  {
+    "date": "2018-05",
+    "total": 92.9,
+    "energy": 94.6,
+    "agri": 91.8,
+    "mining": 86.8,
+    "precious": 100.1
+  },
+  {
+    "date": "2018-06",
+    "total": 91.7,
+    "energy": 93.7,
+    "agri": 88.9,
+    "mining": 87.0,
+    "precious": 98.7
+  },
+  {
+    "date": "2018-07",
+    "total": 90.1,
+    "energy": 93.0,
+    "agri": 86.4,
+    "mining": 79.8,
+    "precious": 95.1
+  },
+  {
+    "date": "2018-08",
+    "total": 88.9,
+    "energy": 92.0,
+    "agri": 84.8,
+    "mining": 78.1,
+    "precious": 92.0
+  },
+  {
+    "date": "2018-09",
+    "total": 92.9,
+    "energy": 98.7,
+    "agri": 82.6,
+    "mining": 77.4,
+    "precious": 91.2
+  },
+  {
+    "date": "2018-10",
+    "total": 94.3,
+    "energy": 100.2,
+    "agri": 83.4,
+    "mining": 79.4,
+    "precious": 92.6
+  },
+  {
+    "date": "2018-11",
+    "total": 83.3,
+    "energy": 84.4,
+    "agri": 82.2,
+    "mining": 77.5,
+    "precious": 92.7
+  },
+  {
+    "date": "2018-12",
+    "total": 76.8,
+    "energy": 74.9,
+    "agri": 82.5,
+    "mining": 76.1,
+    "precious": 94.9
+  },
+  {
+    "date": "2019-01",
+    "total": 77.8,
+    "energy": 76.2,
+    "agri": 83.3,
+    "mining": 75.8,
+    "precious": 98.4
+  },
+  {
+    "date": "2019-02",
+    "total": 80.9,
+    "energy": 80.1,
+    "agri": 83.5,
+    "mining": 80.1,
+    "precious": 100.4
+  },
+  {
+    "date": "2019-03",
+    "total": 82.3,
+    "energy": 82.2,
+    "agri": 82.8,
+    "mining": 81.1,
+    "precious": 98.7
+  },
+  {
+    "date": "2019-04",
+    "total": 85.2,
+    "energy": 86.4,
+    "agri": 82.9,
+    "mining": 81.6,
+    "precious": 97.6
+  },
+  {
+    "date": "2019-05",
+    "total": 83.8,
+    "energy": 85.2,
+    "agri": 82.0,
+    "mining": 78.6,
+    "precious": 97.0
+  },
+  {
+    "date": "2019-06",
+    "total": 78.3,
+    "energy": 76.3,
+    "agri": 84.0,
+    "mining": 78.5,
+    "precious": 102.1
+  },
+  {
+    "date": "2019-07",
+    "total": 78.8,
+    "energy": 77.0,
+    "agri": 83.0,
+    "mining": 81.0,
+    "precious": 106.3
+  },
+  {
+    "date": "2019-08",
+    "total": 74.1,
+    "energy": 71.6,
+    "agri": 80.6,
+    "mining": 76.0,
+    "precious": 113.2
+  },
+  {
+    "date": "2019-09",
+    "total": 76.9,
+    "energy": 75.6,
+    "agri": 80.7,
+    "mining": 77.3,
+    "precious": 114.9
+  },
+  {
+    "date": "2019-10",
+    "total": 75.2,
+    "energy": 72.7,
+    "agri": 82.2,
+    "mining": 76.5,
+    "precious": 113.4
+  },
+  {
+    "date": "2019-11",
+    "total": 78.4,
+    "energy": 76.6,
+    "agri": 85.2,
+    "mining": 76.2,
+    "precious": 111.4
+  },
+  {
+    "date": "2019-12",
+    "total": 80.6,
+    "energy": 79.1,
+    "agri": 87.1,
+    "mining": 77.5,
+    "precious": 111.9
+  },
+  {
+    "date": "2020-01",
+    "total": 78.8,
+    "energy": 76.1,
+    "agri": 88.2,
+    "mining": 77.7,
+    "precious": 118.0
+  },
+  {
+    "date": "2020-02",
+    "total": 71.2,
+    "energy": 66.3,
+    "agri": 85.6,
+    "mining": 73.0,
+    "precious": 120.2
+  },
+  {
+    "date": "2020-03",
+    "total": 54.3,
+    "energy": 42.6,
+    "agri": 82.8,
+    "mining": 68.7,
+    "precious": 116.6
+  },
+  {
+    "date": "2020-04",
+    "total": 46.2,
+    "energy": 31.6,
+    "agri": 81.1,
+    "mining": 65.6,
+    "precious": 122.6
+  },
+  {
+    "date": "2020-05",
+    "total": 51.6,
+    "energy": 39.2,
+    "agri": 81.1,
+    "mining": 68.0,
+    "precious": 125.9
+  },
+  {
+    "date": "2020-06",
+    "total": 58.8,
+    "energy": 48.5,
+    "agri": 83.2,
+    "mining": 73.7,
+    "precious": 128.3
+  },
+  {
+    "date": "2020-07",
+    "total": 61.7,
+    "energy": 51.6,
+    "agri": 84.0,
+    "mining": 79.1,
+    "precious": 138.4
+  },
+  {
+    "date": "2020-08",
+    "total": 64.6,
+    "energy": 54.3,
+    "agri": 86.7,
+    "mining": 83.5,
+    "precious": 152.3
+  },
+  {
+    "date": "2020-09",
+    "total": 63.2,
+    "energy": 51.2,
+    "agri": 89.3,
+    "mining": 85.1,
+    "precious": 148.1
+  },
+  {
+    "date": "2020-10",
+    "total": 64.0,
+    "energy": 51.6,
+    "agri": 91.2,
+    "mining": 85.5,
+    "precious": 145.2
+  },
+  {
+    "date": "2020-11",
+    "total": 67.7,
+    "energy": 55.3,
+    "agri": 94.7,
+    "mining": 90.3,
+    "precious": 143.0
+  },
+  {
+    "date": "2020-12",
+    "total": 74.8,
+    "energy": 63.7,
+    "agri": 97.1,
+    "mining": 99.7,
+    "precious": 143.6
+  },
+  {
+    "date": "2021-01",
+    "total": 80.4,
+    "energy": 69.9,
+    "agri": 102.2,
+    "mining": 102.8,
+    "precious": 145.1
+  },
+  {
+    "date": "2021-02",
+    "total": 88.4,
+    "energy": 80.4,
+    "agri": 103.8,
+    "mining": 106.4,
+    "precious": 142.9
+  },
+  {
+    "date": "2021-03",
+    "total": 88.9,
+    "energy": 80.8,
+    "agri": 102.9,
+    "mining": 110.2,
+    "precious": 135.6
+  },
+  {
+    "date": "2021-04",
+    "total": 90.1,
+    "energy": 80.8,
+    "agri": 105.6,
+    "mining": 115.3,
+    "precious": 138.4
+  },
+  {
+    "date": "2021-05",
+    "total": 96.1,
+    "energy": 86.3,
+    "agri": 111.2,
+    "mining": 125.8,
+    "precious": 145.8
+  },
+  {
+    "date": "2021-06",
+    "total": 100.7,
+    "energy": 93.9,
+    "agri": 108.7,
+    "mining": 124.3,
+    "precious": 144.2
+  },
+  {
+    "date": "2021-07",
+    "total": 103.8,
+    "energy": 98.3,
+    "agri": 108.2,
+    "mining": 124.5,
+    "precious": 141.2
+  },
+  {
+    "date": "2021-08",
+    "total": 102.2,
+    "energy": 96.3,
+    "agri": 109.4,
+    "mining": 119.0,
+    "precious": 138.0
+  },
+  {
+    "date": "2021-09",
+    "total": 109.0,
+    "energy": 107.2,
+    "agri": 108.2,
+    "mining": 116.8,
+    "precious": 136.5
+  },
+  {
+    "date": "2021-10",
+    "total": 121.3,
+    "energy": 123.4,
+    "agri": 110.2,
+    "mining": 121.4,
+    "precious": 136.9
+  },
+  {
+    "date": "2021-11",
+    "total": 115.6,
+    "energy": 115.0,
+    "agri": 111.2,
+    "mining": 114.0,
+    "precious": 140.5
+  },
+  {
+    "date": "2021-12",
+    "total": 114.1,
+    "energy": 112.4,
+    "agri": 111.1,
+    "mining": 116.7,
+    "precious": 136.8
+  },
+  {
+    "date": "2022-01",
+    "total": 121.8,
+    "energy": 121.3,
+    "agri": 115.4,
+    "mining": 125.2,
+    "precious": 139.1
+  },
+  {
+    "date": "2022-02",
+    "total": 131.4,
+    "energy": 133.3,
+    "agri": 120.8,
+    "mining": 131.2,
+    "precious": 142.2
+  },
+  {
+    "date": "2022-03",
+    "total": 157.1,
+    "energy": 166.7,
+    "agri": 129.1,
+    "mining": 141.3,
+    "precious": 149.6
+  },
+  {
+    "date": "2022-04",
+    "total": 148.4,
+    "energy": 153.2,
+    "agri": 130.4,
+    "mining": 138.1,
+    "precious": 148.1
+  },
+  {
+    "date": "2022-05",
+    "total": 153.2,
+    "energy": 163.6,
+    "agri": 129.8,
+    "mining": 122.5,
+    "precious": 139.9
+  },
+  {
+    "date": "2022-06",
+    "total": 158.0,
+    "energy": 173.5,
+    "agri": 124.8,
+    "mining": 115.7,
+    "precious": 138.9
+  },
+  {
+    "date": "2022-07",
+    "total": 153.1,
+    "energy": 171.8,
+    "agri": 115.6,
+    "mining": 100.2,
+    "precious": 129.8
+  },
+  {
+    "date": "2022-08",
+    "total": 153.9,
+    "energy": 172.8,
+    "agri": 115.2,
+    "mining": 103.8,
+    "precious": 132.5
+  },
+  {
+    "date": "2022-09",
+    "total": 143.3,
+    "energy": 158.2,
+    "agri": 113.8,
+    "mining": 97.8,
+    "precious": 126.4
+  },
+  {
+    "date": "2022-10",
+    "total": 134.7,
+    "energy": 146.2,
+    "agri": 113.0,
+    "mining": 96.1,
+    "precious": 125.8
+  },
+  {
+    "date": "2022-11",
+    "total": 130.4,
+    "energy": 139.4,
+    "agri": 112.4,
+    "mining": 100.9,
+    "precious": 131.3
+  },
+  {
+    "date": "2022-12",
+    "total": 125.0,
+    "energy": 130.9,
+    "agri": 111.6,
+    "mining": 107.6,
+    "precious": 138.1
+  },
+  {
+    "date": "2023-01",
+    "total": 117.9,
+    "energy": 119.3,
+    "agri": 112.2,
+    "mining": 114.0,
+    "precious": 144.9
+  },
+  {
+    "date": "2023-02",
+    "total": 111.9,
+    "energy": 110.5,
+    "agri": 113.3,
+    "mining": 112.0,
+    "precious": 140.3
+  },
+  {
+    "date": "2023-03",
+    "total": 106.2,
+    "energy": 103.5,
+    "agri": 111.0,
+    "mining": 108.4,
+    "precious": 144.1
+  },
+  {
+    "date": "2023-04",
+    "total": 110.7,
+    "energy": 109.3,
+    "agri": 114.1,
+    "mining": 107.4,
+    "precious": 152.7
+  },
+  {
+    "date": "2023-05",
+    "total": 101.1,
+    "energy": 96.9,
+    "agri": 111.5,
+    "mining": 100.5,
+    "precious": 151.5
+  },
+  {
+    "date": "2023-06",
+    "total": 99.3,
+    "energy": 95.2,
+    "agri": 109.1,
+    "mining": 101.2,
+    "precious": 147.4
+  },
+  {
+    "date": "2023-07",
+    "total": 103.4,
+    "energy": 100.9,
+    "agri": 109.9,
+    "mining": 101.6,
+    "precious": 148.6
+  },
+  {
+    "date": "2023-08",
+    "total": 108.4,
+    "energy": 108.7,
+    "agri": 108.7,
+    "mining": 99.6,
+    "precious": 145.8
+  },
+  {
+    "date": "2023-09",
+    "total": 115.0,
+    "energy": 117.7,
+    "agri": 110.8,
+    "mining": 101.2,
+    "precious": 145.3
+  },
+  {
+    "date": "2023-10",
+    "total": 113.1,
+    "energy": 115.7,
+    "agri": 109.3,
+    "mining": 98.5,
+    "precious": 144.6
+  },
+  {
+    "date": "2023-11",
+    "total": 107.3,
+    "energy": 106.2,
+    "agri": 111.0,
+    "mining": 101.2,
+    "precious": 149.9
+  },
+  {
+    "date": "2023-12",
+    "total": 102.3,
+    "energy": 99.6,
+    "agri": 109.7,
+    "mining": 102.4,
+    "precious": 153.0
+  },
+  {
+    "date": "2024-01",
+    "total": 103.2,
+    "energy": 101.2,
+    "agri": 109.2,
+    "mining": 102.0,
+    "precious": 152.6
+  },
+  {
+    "date": "2024-02",
+    "total": 104.0,
+    "energy": 102.2,
+    "agri": 110.5,
+    "mining": 100.1,
+    "precious": 151.6
+  },
+  {
+    "date": "2024-03",
+    "total": 106.1,
+    "energy": 104.2,
+    "agri": 113.7,
+    "mining": 101.5,
+    "precious": 162.0
+  },
+  {
+    "date": "2024-04",
+    "total": 111.6,
+    "energy": 109.6,
+    "agri": 118.1,
+    "mining": 110.5,
+    "precious": 175.8
+  },
+  {
+    "date": "2024-05",
+    "total": 106.9,
+    "energy": 102.6,
+    "agri": 115.5,
+    "mining": 116.6,
+    "precious": 179.0
+  },
+  {
+    "date": "2024-06",
+    "total": 107.2,
+    "energy": 103.8,
+    "agri": 115.7,
+    "mining": 110.6,
+    "precious": 177.6
+  },
+  {
+    "date": "2024-07",
+    "total": 107.9,
+    "energy": 106.0,
+    "agri": 113.6,
+    "mining": 106.8,
+    "precious": 182.3
+  },
+  {
+    "date": "2024-08",
+    "total": 104.9,
+    "energy": 102.6,
+    "agri": 112.0,
+    "mining": 103.5,
+    "precious": 185.6
+  },
+  {
+    "date": "2024-09",
+    "total": 100.9,
+    "energy": 95.4,
+    "agri": 115.1,
+    "mining": 105.4,
+    "precious": 193.6
+  },
+  {
+    "date": "2024-10",
+    "total": 103.2,
+    "energy": 97.7,
+    "agri": 116.0,
+    "mining": 110.6,
+    "precious": 203.4
+  },
+  {
+    "date": "2024-11",
+    "total": 102.5,
+    "energy": 96.5,
+    "agri": 118.1,
+    "mining": 107.2,
+    "precious": 199.6
+  },
+  {
+    "date": "2024-12",
+    "total": 103.2,
+    "energy": 96.5,
+    "agri": 122.2,
+    "mining": 105.9,
+    "precious": 199.0
+  },
+  {
+    "date": "2025-01",
+    "total": 108.1,
+    "energy": 103.5,
+    "agri": 122.3,
+    "mining": 106.0,
+    "precious": 202.6
+  },
+  {
+    "date": "2025-02",
+    "total": 105.7,
+    "energy": 99.2,
+    "agri": 122.7,
+    "mining": 109.6,
+    "precious": 216.1
+  },
+  {
+    "date": "2025-03",
+    "total": 102.2,
+    "energy": 95.1,
+    "agri": 118.2,
+    "mining": 111.8,
+    "precious": 222.7
+  },
+  {
+    "date": "2025-04",
+    "total": 96.4,
+    "energy": 87.9,
+    "agri": 117.5,
+    "mining": 104.0,
+    "precious": 236.6
+  },
+  {
+    "date": "2025-05",
+    "total": 94.2,
+    "energy": 84.0,
+    "agri": 117.8,
+    "mining": 106.8,
+    "precious": 243.0
+  },
+  {
+    "date": "2025-06",
+    "total": 99.3,
+    "energy": 92.2,
+    "agri": 114.4,
+    "mining": 108.7,
+    "precious": 249.3
+  },
+  {
+    "date": "2025-07",
+    "total": 98.8,
+    "energy": 91.7,
+    "agri": 112.3,
+    "mining": 110.3,
+    "precious": 250.4
+  },
+  {
+    "date": "2025-08",
+    "total": 96.4,
+    "energy": 88.1,
+    "agri": 113.5,
+    "mining": 110.0,
+    "precious": 252.5
+  },
+  {
+    "date": "2025-09",
+    "total": 96.4,
+    "energy": 87.6,
+    "agri": 113.8,
+    "mining": 113.1,
+    "precious": 276.1
+  },
+  {
+    "date": "2025-10",
+    "total": 94.3,
+    "energy": 84.3,
+    "agri": 111.6,
+    "mining": 119.3,
+    "precious": 307.5
+  },
+  {
+    "date": "2025-11",
+    "total": 94.5,
+    "energy": 84.0,
+    "agri": 112.5,
+    "mining": 119.9,
+    "precious": 310.2
+  },
+  {
+    "date": "2025-12",
+    "total": 94.3,
+    "energy": 82.9,
+    "agri": 112.1,
+    "mining": 126.3,
+    "precious": 336.1
+  },
+  {
+    "date": "2026-01",
+    "total": 102.1,
+    "energy": 92.8,
+    "agri": 111.6,
+    "mining": 138.0,
+    "precious": 393.3
+  },
+  {
+    "date": "2026-02",
+    "total": 101.3,
+    "energy": 92.4,
+    "agri": 109.9,
+    "mining": 135.7,
+    "precious": 400.2
+  },
+  {
+    "date": "2026-03",
+    "total": 127.9,
+    "energy": 130.6,
+    "agri": 111.5,
+    "mining": 137.6,
+    "precious": 385.7
+  },
+  {
+    "date": "2026-04",
+    "total": 140.0,
+    "energy": 146.7,
+    "agri": 113.3,
+    "mining": 143.6,
+    "precious": 375.3
+  },
+  {
+    "date": "2026-05",
+    "total": 132.3,
+    "energy": 133.7,
+    "agri": 116.0,
+    "mining": 148.8,
+    "precious": 368.7
+  },
+  {
+    "date": "2026-06",
+    "total": 115.0,
+    "energy": 110.0,
+    "agri": 114.0,
+    "mining": 144.6,
+    "precious": 334.7
+  }
 ]

@@ -1,4 +1,23 @@
 region,subregion,country,value
+Oceania,Oceania,,388668
+Africa,Northern Africa,,131293
+Africa,Eastern Africa,,55906
+Africa,Middle Africa,,96041
+Africa,Southern Africa,,83313
+Africa,Western Africa,,124333
+Americas,Northern America,,961163
+Americas,Caribbean,,13295
+Americas,Central America,,134728
+Americas,South America,,570289
+Asia,Central Asia,,94979
+Asia,Eastern Asia,,388402
+Asia,South-eastern Asia,,551454
+Asia,Southern Asia,,247154
+Asia,Western Asia,,1127138
+Europe,Eastern Europe,,593168
+Europe,Northern Europe,,519326
+Europe,Southern Europe,,333790
+Europe,Western Europe,,1012795
 Asia,Southern Asia,Afghanistan,445
 Europe,Southern Europe,Albania,1090
 Africa,Northern Africa,Algeria,54438
@@ -44,7 +63,7 @@ Europe,Southern Europe,Croatia,9768
 Americas,Caribbean,Cuba,1187
 Asia,Western Asia,Cyprus,2198
 Europe,Eastern Europe,Czechia,25772
-Asia,Eastern Asia,North Korea,66
+Asia,Eastern Asia,DPR Korea,66
 Africa,Middle Africa,DR Congo,22153
 Europe,Northern Europe,Denmark,37293
 Africa,Eastern Africa,Djibouti,2286
@@ -136,7 +155,7 @@ Asia,South-eastern Asia,Philippines,15876
 Europe,Eastern Europe,Poland,81579
 Europe,Southern Europe,Portugal,21419
 Asia,Western Asia,Qatar,93437
-Asia,Eastern Asia,South Korea,92174
+Asia,Eastern Asia,Republic of Korea,92174
 Europe,Eastern Europe,Moldova,2223
 Europe,Eastern Europe,Romania,21947
 Europe,Eastern Europe,Russian Federation,364349

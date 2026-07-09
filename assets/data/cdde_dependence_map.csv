@@ -1,196 +1,196 @@
-iso3,iso2,name,region,export_dependence,dominant_group
-AFG,af,Afghanistan,Southern Asia,95.2,agri
-ALB,al,Albania,Southern Europe,32.1,non-dependent
-DZA,dz,Algeria,Northern Africa,96.0,energy
-AND,ad,Andorra,Southern Europe,8.1,non-dependent
-AGO,ao,Angola,Middle Africa,96.1,energy
-ATG,ag,Antigua and Barbuda,Caribbean,40.0,non-dependent
-ARG,ar,Argentina,South America,80.9,agri
-ARM,am,Armenia,Western Asia,74.7,mining
-AUS,au,Australia,Oceania,91.6,mining
-AUT,at,Austria,Western Europe,18.2,non-dependent
-AZE,az,Azerbaijan,Western Asia,95.7,energy
-BHS,bs,Bahamas (the),Caribbean,53.7,non-dependent
-BHR,bh,Bahrain,Western Asia,73.3,mining
-BGD,bd,Bangladesh,Southern Asia,4.6,non-dependent
-BRB,bb,Barbados,Caribbean,51.7,non-dependent
-BLR,by,Belarus,Eastern Europe,37.4,non-dependent
-BEL,be,Belgium,Western Europe,34.4,non-dependent
-BLZ,bz,Belize,Central America,89.3,agri
-BEN,bj,Benin,Western Africa,92.7,agri
-BTN,bt,Bhutan,Southern Asia,55.9,non-dependent
-BOL,bo,Bolivia (Plurinational State of),South America,94.7,mining
-BIH,ba,Bosnia and Herzegovina,Southern Europe,27.3,non-dependent
-BWA,bw,Botswana,Southern Africa,94.0,mining
-BRA,br,Brazil,South America,75.9,agri
-BRN,bn,Brunei Darussalam,South-eastern Asia,79.0,energy
-BGR,bg,Bulgaria,Eastern Europe,43.4,non-dependent
-BFA,bf,Burkina Faso,Western Africa,96.0,mining
-BDI,bi,Burundi,Eastern Africa,89.5,mining
-CPV,cv,Cabo Verde,Western Africa,74.4,agri
-KHM,kh,Cambodia,South-eastern Asia,20.2,non-dependent
-CMR,cm,Cameroon,Middle Africa,93.7,energy
-CAN,ca,Canada,Northern America,55.8,non-dependent
-CAF,cf,Central African Republic (the),Middle Africa,89.9,mining
-TCD,td,Chad,Middle Africa,99.8,energy
-CHL,cl,Chile,South America,82.8,mining
-CHN,cn,China,Eastern Asia,6.3,non-dependent
-COL,co,Colombia,South America,80.1,energy
-COM,km,Comoros (the),Eastern Africa,50.6,non-dependent
-COG,cg,Congo (the),Middle Africa,96.5,energy
-COD,cd,Democratic Republic of the Congo (the),Middle Africa,90.7,mining
-CRI,cr,Costa Rica,Central America,34.7,non-dependent
-CIV,ci,Côte d'Ivoire,Western Africa,91.9,agri
-HRV,hr,Croatia,Southern Europe,38.6,non-dependent
-CUB,cu,Cuba,Caribbean,86.3,agri
-CYP,cy,Cyprus,Western Asia,48.5,non-dependent
-CZE,cz,Czechia,Eastern Europe,10.3,non-dependent
-DNK,dk,Denmark,Northern Europe,30.1,non-dependent
-DJI,dj,Djibouti,Eastern Africa,47.6,non-dependent
-DMA,dm,Dominica,Caribbean,37.5,non-dependent
-DOM,do,Dominican Republic (the),Caribbean,38.8,non-dependent
-ECU,ec,Ecuador,South America,95.0,agri
-EGY,eg,Egypt,Northern Africa,52.8,non-dependent
-SLV,sv,El Salvador,Central America,27.7,non-dependent
-GNQ,gq,Equatorial Guinea,Middle Africa,95.3,energy
-ERI,er,Eritrea,Eastern Africa,93.1,mining
-EST,ee,Estonia,Northern Europe,35.8,non-dependent
-SWZ,sz,Eswatini,Southern Africa,40.9,non-dependent
-ETH,et,Ethiopia,Eastern Africa,84.5,agri
-FJI,fj,Fiji,Oceania,83.5,agri
-FIN,fi,Finland,Northern Europe,29.1,non-dependent
-FRA,fr,France,Western Europe,22.6,non-dependent
-GAB,ga,Gabon,Middle Africa,87.6,energy
-GMB,gm,Gambia (the),Western Africa,88.9,agri
-GEO,ge,Georgia,Western Asia,41.0,non-dependent
-DEU,de,Germany,Western Europe,13.2,non-dependent
-GHA,gh,Ghana,Western Africa,94.8,mining
-GRC,gr,Greece,Southern Europe,63.4,energy
-GRD,gd,Grenada,Caribbean,54.3,non-dependent
-GTM,gt,Guatemala,Central America,56.6,non-dependent
-GIN,gn,Guinea,Western Africa,97.5,mining
-GNB,gw,Guinea-Bissau,Western Africa,97.9,agri
-GUY,gy,Guyana,South America,95.6,energy
-HTI,ht,Haiti,Caribbean,6.7,non-dependent
-VAT,va,Holy see (the),Southern Europe,,
-HND,hn,Honduras,Central America,53.5,non-dependent
-HUN,hu,Hungary,Eastern Europe,14.1,non-dependent
-ISL,is,Iceland,Northern Europe,84.5,agri
-IND,in,India,Southern Asia,40.5,non-dependent
-IDN,id,Indonesia,South-eastern Asia,55.5,non-dependent
-IRN,ir,Iran (Islamic Republic of),Southern Asia,51.4,non-dependent
-IRQ,iq,Iraq,Western Asia,99.5,energy
-IRL,ie,Ireland,Northern Europe,9.7,non-dependent
-ISR,il,Israel,Western Asia,21.0,non-dependent
-ITA,it,Italy,Southern Europe,18.3,non-dependent
-JAM,jm,Jamaica,Caribbean,94.8,energy
-JPN,jp,Japan,Eastern Asia,9.8,non-dependent
-JOR,jo,Jordan,Western Asia,25.8,non-dependent
-KAZ,kz,Kazakhstan,Central Asia,84.5,energy
-KEN,ke,Kenya,Eastern Africa,69.9,agri
-KIR,ki,Kiribati,Oceania,88.8,agri
-PRK,kp,Democratic People’s Republic of Korea (the),Eastern Asia,23.6,non-dependent
-KOR,kr,Republic of Korea (the),Eastern Asia,13.8,non-dependent
-KWT,kw,Kuwait,Western Asia,82.1,energy
-KGZ,kg,Kyrgyzstan,Central Asia,76.6,mining
-LAO,la,Lao People's Democratic Republic (the),South-eastern Asia,69.8,agri
-LVA,lv,Latvia,Northern Europe,45.9,non-dependent
-LBN,lb,Lebanon,Western Asia,49.2,non-dependent
-LSO,ls,Lesotho,Southern Africa,51.4,non-dependent
-LBR,lr,Liberia,Western Africa,79.7,mining
-LBY,ly,Libya,Northern Africa,98.6,energy
-LTU,lt,Lithuania,Northern Europe,38.5,non-dependent
-LUX,lu,Luxembourg,Western Europe,18.6,non-dependent
-MDG,mg,Madagascar,Eastern Africa,73.4,mining
-MWI,mw,Malawi,Eastern Africa,84.8,agri
-MYS,my,Malaysia,South-eastern Asia,31.7,non-dependent
-MDV,mv,Maldives,Southern Asia,76.0,agri
-MLI,ml,Mali,Western Africa,95.8,mining
-MLT,mt,Malta,Southern Europe,30.4,non-dependent
-MHL,mh,Marshall Islands (the),Oceania,13.8,non-dependent
-MRT,mr,Mauritania,Western Africa,97.8,mining
-MUS,mu,Mauritius,Eastern Africa,48.1,non-dependent
-MEX,mx,Mexico,Central America,17.7,non-dependent
-FSM,fm,Micronesia (Federated States of),Oceania,97.9,agri
-MDA,md,Republic of Moldova (the),Eastern Europe,55.9,non-dependent
-MCO,mc,Monaco,Western Europe,,
-MNG,mn,Mongolia,Eastern Asia,98.8,mining
-MNE,me,Montenegro,Southern Europe,71.8,energy
-MAR,ma,Morocco,Northern Africa,26.3,non-dependent
-MOZ,mz,Mozambique,Eastern Africa,96.5,energy
-MMR,mm,Myanmar,South-eastern Asia,55.8,non-dependent
-NAM,na,Namibia,Southern Africa,82.5,mining
-NRU,nr,Nauru,Oceania,94.9,agri
-NPL,np,Nepal,Southern Asia,48.1,non-dependent
-NLD,nl,Netherlands (Kingdom of the),Western Europe,37.8,non-dependent
-NZL,nz,New Zealand,Oceania,81.0,agri
-NIC,ni,Nicaragua,Central America,57.9,non-dependent
-NER,ne,Niger (the),Western Africa,85.8,mining
-NGA,ng,Nigeria,Western Africa,96.7,energy
-MKD,mk,North Macedonia,Southern Europe,17.9,non-dependent
-NOR,no,Norway,Northern Europe,88.2,energy
-OMN,om,Oman,Western Asia,70.7,energy
-PAK,pk,Pakistan,Southern Asia,28.6,non-dependent
-PLW,pw,Palau,Oceania,34.1,non-dependent
-PAN,pa,Panama,Central America,67.8,mining
-PNG,pg,Papua New Guinea,Oceania,99.1,energy
-PRY,py,Paraguay,South America,84.8,agri
-PER,pe,Peru,South America,91.9,mining
-PHL,ph,Philippines (the),South-eastern Asia,21.2,non-dependent
-POL,pl,Poland,Eastern Europe,21.7,non-dependent
-PRT,pt,Portugal,Southern Europe,25.8,non-dependent
-QAT,qa,Qatar,Western Asia,88.8,energy
-ROU,ro,Romania,Eastern Europe,22.4,non-dependent
-RUS,ru,Russian Federation (the),Eastern Europe,75.7,energy
-RWA,rw,Rwanda,Eastern Africa,89.1,mining
-KNA,kn,Saint Kitts and Nevis,Caribbean,19.4,non-dependent
-LCA,lc,Saint Lucia,Caribbean,67.2,agri
-VCT,vc,Saint Vincent and the Grenadines,Caribbean,46.2,non-dependent
-WSM,ws,Samoa,Oceania,47.2,non-dependent
-SMR,sm,San Marino,Southern Europe,,
-STP,st,Sao Tome and Principe,Middle Africa,67.2,agri
-SAU,sa,Saudi Arabia,Western Asia,77.0,energy
-SEN,sn,Senegal,Western Africa,73.8,energy
-SRB,rs,Serbia,Southern Europe,33.2,non-dependent
-SYC,sc,Seychelles,Eastern Africa,91.4,agri
-SLE,sl,Sierra Leone,Western Africa,84.5,mining
-SGP,sg,Singapore,South-eastern Asia,24.6,non-dependent
-SVK,sk,Slovakia,Eastern Europe,11.4,non-dependent
-SVN,si,Slovenia,Southern Europe,15.1,non-dependent
-SLB,sb,Solomon Islands,Oceania,96.9,agri
-SOM,so,Somalia,Eastern Africa,93.4,agri
-ZAF,za,South Africa,Southern Africa,62.7,mining
-SSD,ss,South Sudan,Eastern Africa,98.5,energy
-ESP,es,Spain,Southern Europe,30.9,non-dependent
-LKA,lk,Sri Lanka,Southern Asia,33.6,non-dependent
-PSE,ps,State of Palestine (the),Western Asia,35.9,non-dependent
-SDN,sd,Sudan (the),Northern Africa,98.2,mining
-SUR,sr,Suriname,South America,95.6,mining
-SWE,se,Sweden,Northern Europe,25.7,non-dependent
-CHE,ch,Switzerland (including Liechtenstein),Western Europe,32.3,non-dependent
-LIE,li,Liechtenstein,Western Europe,,
-SYR,sy,Syrian Arab Republic (the),Western Asia,67.1,agri
-TJK,tj,Tajikistan,Central Asia,85.1,mining
-TZA,tz,United Republic of Tanzania (the),Eastern Africa,89.5,mining
-THA,th,Thailand,South-eastern Asia,28.6,non-dependent
-TLS,tl,Timor-Leste,South-eastern Asia,94.8,energy
-TGO,tg,Togo,Western Africa,82.6,agri
-TON,to,Tonga,Oceania,77.0,agri
-TTO,tt,Trinidad and Tobago,Caribbean,49.6,non-dependent
-TUN,tn,Tunisia,Northern Africa,21.8,non-dependent
-TUR,tr,Türkiye,Western Asia,25.1,non-dependent
-TKM,tm,Turkmenistan,Central Asia,88.2,energy
-TUV,tv,Tuvalu,Oceania,65.6,agri
-UGA,ug,Uganda,Eastern Africa,79.7,agri
-UKR,ua,Ukraine,Eastern Europe,68.0,agri
-ARE,ae,United Arab Emirates (the),Western Asia,70.4,energy
-GBR,gb,United Kingdom of Great Britain and Northern Ireland (the),Northern Europe,35.2,non-dependent
-USA,us,United States of America (the),Northern America,35.2,non-dependent
-URY,uy,Uruguay,South America,81.0,agri
-UZB,uz,Uzbekistan,Central Asia,64.3,mining
-VUT,vu,Vanuatu,Oceania,87.9,agri
-VEN,ve,Venezuela (Bolivarian Republic of),South America,81.2,energy
-VNM,vn,Viet Nam,South-eastern Asia,13.5,non-dependent
-YEM,ye,Yemen,Western Asia,92.3,energy
-ZMB,zm,Zambia,Eastern Africa,88.8,mining
-ZWE,zw,Zimbabwe,Eastern Africa,90.8,mining
+iso3,iso2,name,region,export_dependence,dominant_group,agri_pct,energy_pct,mining_pct
+AFG,af,Afghanistan,Southern Asia,95.2,agri,77.5,11.8,5.9
+ALB,al,Albania,Southern Europe,32.1,non-dependent,12.2,10.8,9.1
+DZA,dz,Algeria,Northern Africa,96.0,energy,1.4,93.8,0.8
+AND,ad,Andorra,Southern Europe,8.1,non-dependent,4.1,0.1,3.9
+AGO,ao,Angola,Middle Africa,96.1,energy,0.3,90.1,5.8
+ATG,ag,Antigua and Barbuda,Caribbean,40.0,non-dependent,9.4,29.3,1.3
+ARG,ar,Argentina,South America,80.9,agri,68.4,10.0,2.6
+ARM,am,Armenia,Western Asia,74.7,mining,18.6,0.6,55.5
+AUS,au,Australia,Oceania,91.6,mining,14.6,33.3,43.7
+AUT,at,Austria,Western Europe,18.2,non-dependent,10.0,3.6,4.6
+AZE,az,Azerbaijan,Western Asia,95.7,energy,3.9,90.2,1.6
+BHS,bs,Bahamas (the),Caribbean,53.7,non-dependent,8.5,42.7,2.5
+BHR,bh,Bahrain,Western Asia,73.3,mining,4.9,30.1,38.3
+BGD,bd,Bangladesh,Southern Asia,4.6,non-dependent,3.9,0.3,0.4
+BRB,bb,Barbados,Caribbean,51.7,non-dependent,34.7,12.4,4.5
+BLR,by,Belarus,Eastern Europe,37.4,non-dependent,30.3,5.4,1.6
+BEL,be,Belgium,Western Europe,34.4,non-dependent,12.4,15.4,6.7
+BLZ,bz,Belize,Central America,89.3,agri,81.7,6.1,1.5
+BEN,bj,Benin,Western Africa,92.7,agri,67.4,3.3,22.0
+BTN,bt,Bhutan,Southern Asia,55.9,non-dependent,6.2,37.5,12.2
+BOL,bo,Bolivia (Plurinational State of),South America,94.7,mining,24.5,20.7,49.5
+BIH,ba,Bosnia and Herzegovina,Southern Europe,27.3,non-dependent,10.4,8.6,8.3
+BWA,bw,Botswana,Southern Africa,94.0,mining,2.0,1.0,90.9
+BRA,br,Brazil,South America,75.9,agri,45.5,16.7,13.6
+BRN,bn,Brunei Darussalam,South-eastern Asia,79.0,energy,0.3,78.5,0.2
+BGR,bg,Bulgaria,Eastern Europe,43.4,non-dependent,16.9,11.8,14.7
+BFA,bf,Burkina Faso,Western Africa,96.0,mining,16.0,0.6,79.4
+BDI,bi,Burundi,Eastern Africa,89.5,mining,41.1,2.4,46.0
+CPV,cv,Cabo Verde,Western Africa,74.4,agri,43.6,27.7,3.1
+KHM,kh,Cambodia,South-eastern Asia,20.2,non-dependent,15.6,0.0,4.6
+CMR,cm,Cameroon,Middle Africa,93.7,energy,33.9,52.0,7.8
+CAN,ca,Canada,Northern America,55.8,non-dependent,16.0,28.1,11.7
+CAF,cf,Central African Republic (the),Middle Africa,89.9,mining,28.3,0.1,61.4
+TCD,td,Chad,Middle Africa,99.8,energy,7.1,65.4,27.3
+CHL,cl,Chile,South America,82.8,mining,27.5,1.6,53.7
+CHN,cn,China,Eastern Asia,6.3,non-dependent,2.8,1.7,1.7
+COL,co,Colombia,South America,80.1,energy,21.8,50.0,8.3
+COM,km,Comoros (the),Eastern Africa,50.6,non-dependent,47.5,0.1,3.0
+COG,cg,Congo (the),Middle Africa,96.5,energy,5.7,68.6,22.2
+COD,cd,Democratic Republic of the Congo (the),Middle Africa,90.7,mining,1.1,1.9,87.7
+CRI,cr,Costa Rica,Central America,34.7,non-dependent,33.3,0.0,1.4
+CIV,ci,Côte d'Ivoire,Western Africa,91.9,agri,62.2,17.2,12.5
+HRV,hr,Croatia,Southern Europe,38.6,non-dependent,19.0,14.9,4.7
+CUB,cu,Cuba,Caribbean,86.3,agri,52.4,3.3,30.6
+CYP,cy,Cyprus,Western Asia,48.5,non-dependent,14.0,31.6,2.9
+CZE,cz,Czechia,Eastern Europe,10.3,non-dependent,6.3,2.4,1.6
+DNK,dk,Denmark,Northern Europe,30.1,non-dependent,22.3,5.7,2.1
+DJI,dj,Djibouti,Eastern Africa,47.6,non-dependent,44.9,1.8,0.9
+DMA,dm,Dominica,Caribbean,37.5,non-dependent,26.4,1.2,9.9
+DOM,do,Dominican Republic (the),Caribbean,38.8,non-dependent,23.6,0.9,14.4
+ECU,ec,Ecuador,South America,95.0,agri,54.0,30.8,10.2
+EGY,eg,Egypt,Northern Africa,52.8,non-dependent,19.0,24.8,9.1
+SLV,sv,El Salvador,Central America,27.7,non-dependent,23.1,3.5,1.1
+GNQ,gq,Equatorial Guinea,Middle Africa,95.3,energy,1.6,93.3,0.4
+ERI,er,Eritrea,Eastern Africa,93.1,mining,37.5,0.0,55.6
+EST,ee,Estonia,Northern Europe,35.8,non-dependent,19.8,13.2,2.8
+SWZ,sz,Eswatini,Southern Africa,40.9,non-dependent,32.1,7.9,1.0
+ETH,et,Ethiopia,Eastern Africa,84.5,agri,75.3,1.3,7.9
+FJI,fj,Fiji,Oceania,83.5,agri,59.7,17.1,6.6
+FIN,fi,Finland,Northern Europe,29.1,non-dependent,10.7,10.0,8.4
+FRA,fr,France,Western Europe,22.6,non-dependent,14.5,5.0,3.1
+GAB,ga,Gabon,Middle Africa,87.6,energy,6.0,63.5,18.2
+GMB,gm,Gambia (the),Western Africa,88.9,agri,67.5,9.3,12.1
+GEO,ge,Georgia,Western Asia,41.0,non-dependent,24.3,2.5,14.1
+DEU,de,Germany,Western Europe,13.2,non-dependent,6.9,2.7,3.7
+GHA,gh,Ghana,Western Africa,94.8,mining,22.4,24.1,48.3
+GRC,gr,Greece,Southern Europe,63.4,energy,21.3,33.8,8.3
+GRD,gd,Grenada,Caribbean,54.3,non-dependent,49.9,0.0,4.3
+GTM,gt,Guatemala,Central America,56.6,non-dependent,53.2,2.0,1.5
+GIN,gn,Guinea,Western Africa,97.5,mining,4.3,5.9,87.3
+GNB,gw,Guinea-Bissau,Western Africa,97.9,agri,91.7,,6.3
+GUY,gy,Guyana,South America,95.6,energy,2.5,85.3,7.8
+HTI,ht,Haiti,Caribbean,6.7,non-dependent,4.2,0.0,2.5
+VAT,va,Holy see (the),Southern Europe,,,,,
+HND,hn,Honduras,Central America,53.5,non-dependent,48.1,0.9,4.5
+HUN,hu,Hungary,Eastern Europe,14.1,non-dependent,9.4,3.1,1.5
+ISL,is,Iceland,Northern Europe,84.5,agri,44.2,2.3,38.0
+IND,in,India,Southern Asia,40.5,non-dependent,12.0,19.9,8.6
+IDN,id,Indonesia,South-eastern Asia,55.5,non-dependent,24.9,21.6,9.0
+IRN,ir,Iran (Islamic Republic of),Southern Asia,51.4,non-dependent,18.3,25.0,8.1
+IRQ,iq,Iraq,Western Asia,99.5,energy,0.6,96.5,2.4
+IRL,ie,Ireland,Northern Europe,9.7,non-dependent,8.5,0.6,0.7
+ISR,il,Israel,Western Asia,21.0,non-dependent,4.4,2.1,14.5
+ITA,it,Italy,Southern Europe,18.3,non-dependent,11.0,3.8,3.5
+JAM,jm,Jamaica,Caribbean,94.8,energy,24.1,44.5,26.2
+JPN,jp,Japan,Eastern Asia,9.8,non-dependent,1.9,2.0,5.8
+JOR,jo,Jordan,Western Asia,25.8,non-dependent,13.9,0.9,11.0
+KAZ,kz,Kazakhstan,Central Asia,84.5,energy,6.6,64.7,13.2
+KEN,ke,Kenya,Eastern Africa,69.9,agri,56.6,3.5,9.8
+KIR,ki,Kiribati,Oceania,88.8,agri,88.6,0.2,0.1
+PRK,kp,Democratic People’s Republic of Korea (the),Eastern Asia,23.6,non-dependent,4.2,8.2,11.2
+KOR,kr,Republic of Korea (the),Eastern Asia,13.8,non-dependent,2.4,8.6,2.9
+KWT,kw,Kuwait,Western Asia,82.1,energy,3.2,77.2,1.7
+KGZ,kg,Kyrgyzstan,Central Asia,76.6,mining,13.1,7.1,56.5
+LAO,la,Lao People's Democratic Republic (the),South-eastern Asia,69.8,agri,27.5,20.1,22.2
+LVA,lv,Latvia,Northern Europe,45.9,non-dependent,33.7,10.1,2.1
+LBN,lb,Lebanon,Western Asia,49.2,non-dependent,22.0,1.6,25.5
+LSO,ls,Lesotho,Southern Africa,51.4,non-dependent,13.6,0.0,37.8
+LBR,lr,Liberia,Western Africa,79.7,mining,18.5,7.7,53.4
+LBY,ly,Libya,Northern Africa,98.6,energy,0.2,94.4,4.0
+LTU,lt,Lithuania,Northern Europe,38.5,non-dependent,21.0,15.4,2.0
+LUX,lu,Luxembourg,Western Europe,18.6,non-dependent,10.4,0.7,7.4
+MDG,mg,Madagascar,Eastern Africa,73.4,mining,33.2,0.9,39.3
+MWI,mw,Malawi,Eastern Africa,84.8,agri,83.8,0.0,1.0
+MYS,my,Malaysia,South-eastern Asia,31.7,non-dependent,11.4,16.1,4.2
+MDV,mv,Maldives,Southern Asia,76.0,agri,63.4,8.7,3.8
+MLI,ml,Mali,Western Africa,95.8,mining,11.1,0.6,84.1
+MLT,mt,Malta,Southern Europe,30.4,non-dependent,7.2,21.6,1.5
+MHL,mh,Marshall Islands (the),Oceania,13.8,non-dependent,5.9,7.9,0.1
+MRT,mr,Mauritania,Western Africa,97.8,mining,25.6,0.6,71.6
+MUS,mu,Mauritius,Eastern Africa,48.1,non-dependent,38.1,0.9,9.1
+MEX,mx,Mexico,Central America,17.7,non-dependent,8.9,5.9,3.0
+FSM,fm,Micronesia (Federated States of),Oceania,97.9,agri,97.8,0.0,0.2
+MDA,md,Republic of Moldova (the),Eastern Europe,55.9,non-dependent,43.7,10.5,1.7
+MCO,mc,Monaco,Western Europe,,,,,
+MNG,mn,Mongolia,Eastern Asia,98.8,mining,7.0,40.7,51.2
+MNE,me,Montenegro,Southern Europe,71.8,energy,19.6,30.8,21.4
+MAR,ma,Morocco,Northern Africa,26.3,non-dependent,21.2,0.7,4.4
+MOZ,mz,Mozambique,Eastern Africa,96.5,energy,14.0,47.0,35.5
+MMR,mm,Myanmar,South-eastern Asia,55.8,non-dependent,28.4,18.1,9.3
+NAM,na,Namibia,Southern Africa,82.5,mining,23.6,5.7,53.1
+NRU,nr,Nauru,Oceania,94.9,agri,77.5,0.0,17.4
+NPL,np,Nepal,Southern Asia,48.1,non-dependent,46.6,0.0,1.5
+NLD,nl,Netherlands (Kingdom of the),Western Europe,37.8,non-dependent,19.3,15.7,2.9
+NZL,nz,New Zealand,Oceania,81.0,agri,75.2,1.4,4.4
+NIC,ni,Nicaragua,Central America,57.9,non-dependent,42.0,0.8,15.0
+NER,ne,Niger (the),Western Africa,85.8,mining,20.5,10.0,55.2
+NGA,ng,Nigeria,Western Africa,96.7,energy,5.1,88.3,3.3
+MKD,mk,North Macedonia,Southern Europe,17.9,non-dependent,8.9,4.8,4.2
+NOR,no,Norway,Northern Europe,88.2,energy,9.0,74.3,4.9
+OMN,om,Oman,Western Asia,70.7,energy,5.1,58.0,7.5
+PAK,pk,Pakistan,Southern Asia,28.6,non-dependent,23.0,1.2,4.4
+PLW,pw,Palau,Oceania,34.1,non-dependent,26.3,0.3,7.5
+PAN,pa,Panama,Central America,67.8,mining,22.0,6.9,38.9
+PNG,pg,Papua New Guinea,Oceania,99.1,energy,17.1,51.7,30.3
+PRY,py,Paraguay,South America,84.8,agri,69.0,13.7,2.0
+PER,pe,Peru,South America,91.9,mining,22.9,7.1,61.9
+PHL,ph,Philippines (the),South-eastern Asia,21.2,non-dependent,10.6,1.3,9.3
+POL,pl,Poland,Eastern Europe,21.7,non-dependent,15.3,3.1,3.3
+PRT,pt,Portugal,Southern Europe,25.8,non-dependent,15.6,7.3,2.9
+QAT,qa,Qatar,Western Asia,88.8,energy,0.1,85.7,2.9
+ROU,ro,Romania,Eastern Europe,22.4,non-dependent,13.6,6.0,2.8
+RUS,ru,Russian Federation (the),Eastern Europe,75.7,energy,10.7,55.2,9.8
+RWA,rw,Rwanda,Eastern Africa,89.1,mining,31.5,4.6,53.0
+KNA,kn,Saint Kitts and Nevis,Caribbean,19.4,non-dependent,17.8,0.6,1.0
+LCA,lc,Saint Lucia,Caribbean,67.2,agri,33.4,28.0,5.8
+VCT,vc,Saint Vincent and the Grenadines,Caribbean,46.2,non-dependent,38.3,6.7,1.2
+WSM,ws,Samoa,Oceania,47.2,non-dependent,34.9,10.4,1.9
+SMR,sm,San Marino,Southern Europe,,,,,
+STP,st,Sao Tome and Principe,Middle Africa,67.2,agri,49.6,17.0,0.6
+SAU,sa,Saudi Arabia,Western Asia,77.0,energy,2.3,72.2,2.6
+SEN,sn,Senegal,Western Africa,73.8,energy,24.7,25.1,24.0
+SRB,rs,Serbia,Southern Europe,33.2,non-dependent,17.5,5.1,10.6
+SYC,sc,Seychelles,Eastern Africa,91.4,agri,75.5,13.5,2.5
+SLE,sl,Sierra Leone,Western Africa,84.5,mining,17.3,0.5,66.6
+SGP,sg,Singapore,South-eastern Asia,24.6,non-dependent,4.2,15.7,4.7
+SVK,sk,Slovakia,Eastern Europe,11.4,non-dependent,5.3,4.2,1.8
+SVN,si,Slovenia,Southern Europe,15.1,non-dependent,5.4,6.2,3.6
+SLB,sb,Solomon Islands,Oceania,96.9,agri,81.2,1.7,14.0
+SOM,so,Somalia,Eastern Africa,93.4,agri,67.7,0.0,25.7
+ZAF,za,South Africa,Southern Africa,62.7,mining,13.4,11.6,37.6
+SSD,ss,South Sudan,Eastern Africa,98.5,energy,6.1,87.2,5.2
+ESP,es,Spain,Southern Europe,30.9,non-dependent,19.1,7.4,4.4
+LKA,lk,Sri Lanka,Southern Asia,33.6,non-dependent,26.6,2.1,4.9
+PSE,ps,State of Palestine (the),Western Asia,35.9,non-dependent,21.2,0.1,14.6
+SDN,sd,Sudan (the),Northern Africa,98.2,mining,40.8,9.8,47.6
+SUR,sr,Suriname,South America,95.6,mining,16.5,6.7,72.3
+SWE,se,Sweden,Northern Europe,25.7,non-dependent,11.0,8.6,6.1
+CHE,ch,Switzerland (including Liechtenstein),Western Europe,32.3,non-dependent,2.7,1.7,27.9
+LIE,li,Liechtenstein,Western Europe,,,,,
+SYR,sy,Syrian Arab Republic (the),Western Asia,67.1,agri,54.6,6.6,5.9
+TJK,tj,Tajikistan,Central Asia,85.1,mining,18.6,4.9,61.6
+TZA,tz,United Republic of Tanzania (the),Eastern Africa,89.5,mining,31.0,7.7,50.8
+THA,th,Thailand,South-eastern Asia,28.6,non-dependent,18.6,3.7,6.3
+TLS,tl,Timor-Leste,South-eastern Asia,94.8,energy,19.0,75.5,0.4
+TGO,tg,Togo,Western Africa,82.6,agri,31.5,22.2,29.0
+TON,to,Tonga,Oceania,77.0,agri,51.3,7.7,18.1
+TTO,tt,Trinidad and Tobago,Caribbean,49.6,non-dependent,4.9,43.8,1.0
+TUN,tn,Tunisia,Northern Africa,21.8,non-dependent,12.8,7.4,1.6
+TUR,tr,Türkiye,Western Asia,25.1,non-dependent,12.8,6.4,5.9
+TKM,tm,Turkmenistan,Central Asia,88.2,energy,10.7,76.4,1.0
+TUV,tv,Tuvalu,Oceania,65.6,agri,65.5,0.0,0.1
+UGA,ug,Uganda,Eastern Africa,79.7,agri,57.2,1.7,20.7
+UKR,ua,Ukraine,Eastern Europe,68.0,agri,59.1,1.3,7.5
+ARE,ae,United Arab Emirates (the),Western Asia,70.4,energy,5.1,43.0,22.3
+GBR,gb,United Kingdom of Great Britain and Northern Ireland (the),Northern Europe,35.2,non-dependent,6.8,9.2,19.1
+USA,us,United States of America (the),Northern America,35.2,non-dependent,11.1,18.2,6.0
+URY,uy,Uruguay,South America,81.0,agri,78.9,1.3,0.8
+UZB,uz,Uzbekistan,Central Asia,64.3,mining,12.3,7.6,44.4
+VUT,vu,Vanuatu,Oceania,87.9,agri,79.8,2.0,6.1
+VEN,ve,Venezuela (Bolivarian Republic of),South America,81.2,energy,5.7,72.8,2.7
+VNM,vn,Viet Nam,South-eastern Asia,13.5,non-dependent,11.2,1.0,1.3
+YEM,ye,Yemen,Western Asia,92.3,energy,23.6,54.7,14.1
+ZMB,zm,Zambia,Eastern Africa,88.8,mining,9.1,2.1,77.6
+ZWE,zw,Zimbabwe,Eastern Africa,90.8,mining,24.6,4.1,62.1

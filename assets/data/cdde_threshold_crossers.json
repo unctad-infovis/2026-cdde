@@ -1,15 +1,119 @@
 [
-  {"name": "Comoros",             "old_pct": 45, "new_pct": 65, "change":  20, "status": "now_dependent"},
-  {"name": "Grenada",             "old_pct": 80, "new_pct": 57, "change": -23, "status": "no_longer"},
-  {"name": "Guatemala",           "old_pct": 55, "new_pct": 62, "change":   7, "status": "now_dependent"},
-  {"name": "Indonesia",           "old_pct": 66, "new_pct": 60, "change":  -6, "status": "no_longer"},
-  {"name": "Iran, Islamic Rep.",  "old_pct": 86, "new_pct": 58, "change": -28, "status": "no_longer"},
-  {"name": "Liberia",             "old_pct": 88, "new_pct": 61, "change": -27, "status": "no_longer"},
-  {"name": "Myanmar",             "old_pct": 47, "new_pct": 80, "change":  33, "status": "now_dependent"},
-  {"name": "Palau",               "old_pct": 93, "new_pct": 40, "change": -53, "status": "no_longer"},
-  {"name": "Panama",              "old_pct": 30, "new_pct": 74, "change":  44, "status": "now_dependent"},
-  {"name": "South Africa",        "old_pct": 66, "new_pct": 62, "change":  -4, "status": "no_longer"},
-  {"name": "Trinidad and Tobago", "old_pct": 78, "new_pct": 63, "change": -15, "status": "no_longer"},
-  {"name": "Tuvalu",              "old_pct": 55, "new_pct": 74, "change":  19, "status": "now_dependent"},
-  {"name": "Ukraine",             "old_pct": 47, "new_pct": 72, "change":  25, "status": "now_dependent"}
+  {
+    "name": "Panama",
+    "iso3": "PAN",
+    "iso2": "pa",
+    "old_pct": 22.6,
+    "new_pct": 67.8,
+    "change": 45.2,
+    "status": "now_dependent"
+  },
+  {
+    "name": "Ukraine",
+    "iso3": "UKR",
+    "iso2": "ua",
+    "old_pct": 42.6,
+    "new_pct": 68.0,
+    "change": 25.4,
+    "status": "now_dependent"
+  },
+  {
+    "name": "Liberia",
+    "iso3": "LBR",
+    "iso2": "lr",
+    "old_pct": 55.5,
+    "new_pct": 79.7,
+    "change": 24.2,
+    "status": "now_dependent"
+  },
+  {
+    "name": "Tuvalu",
+    "iso3": "TUV",
+    "iso2": "tv",
+    "old_pct": 47.4,
+    "new_pct": 65.9,
+    "change": 18.5,
+    "status": "now_dependent"
+  },
+  {
+    "name": "South Africa",
+    "iso3": "ZAF",
+    "iso2": "za",
+    "old_pct": 58.1,
+    "new_pct": 62.7,
+    "change": 4.6,
+    "status": "now_dependent"
+  },
+  {
+    "name": "Palau",
+    "iso3": "PLW",
+    "iso2": "pw",
+    "old_pct": 87.2,
+    "new_pct": 34.1,
+    "change": -53.1,
+    "status": "no_longer"
+  },
+  {
+    "name": "Myanmar",
+    "iso3": "MMR",
+    "iso2": "mm",
+    "old_pct": 86.7,
+    "new_pct": 55.8,
+    "change": -30.9,
+    "status": "no_longer"
+  },
+  {
+    "name": "Iran",
+    "iso3": "IRN",
+    "iso2": "ir",
+    "old_pct": 80.6,
+    "new_pct": 51.4,
+    "change": -29.2,
+    "status": "no_longer"
+  },
+  {
+    "name": "Grenada",
+    "iso3": "GRD",
+    "iso2": "gd",
+    "old_pct": 76.0,
+    "new_pct": 54.3,
+    "change": -21.7,
+    "status": "no_longer"
+  },
+  {
+    "name": "Comoros",
+    "iso3": "COM",
+    "iso2": "km",
+    "old_pct": 70.3,
+    "new_pct": 50.6,
+    "change": -19.7,
+    "status": "no_longer"
+  },
+  {
+    "name": "Trinidad and Tobago",
+    "iso3": "TTO",
+    "iso2": "tt",
+    "old_pct": 64.0,
+    "new_pct": 49.6,
+    "change": -14.4,
+    "status": "no_longer"
+  },
+  {
+    "name": "Indonesia",
+    "iso3": "IDN",
+    "iso2": "id",
+    "old_pct": 62.4,
+    "new_pct": 55.5,
+    "change": -6.9,
+    "status": "no_longer"
+  },
+  {
+    "name": "Guatemala",
+    "iso3": "GTM",
+    "iso2": "gt",
+    "old_pct": 62.1,
+    "new_pct": 56.6,
+    "change": -5.5,
+    "status": "no_longer"
+  }
 ]
