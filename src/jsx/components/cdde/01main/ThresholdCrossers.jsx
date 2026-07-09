@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import loadFile from '../../../helpers/LoadFile';
+import useIsVisible from '../../../helpers/UseIsVisible';
 import ChartHeader from '../shared/ChartHeader';
 import ChartSource from '../shared/ChartSource';
 import DumbbellChart from '../shared/DumbbellChart';
@@ -8,9 +9,12 @@ import './ThresholdCrossers.css';
 
 const C_YELLOW = '#fbaf17';
 const C_BLUE = '#009edb';
+const REDUCED_MOTION = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 export default function ThresholdCrossers() {
   const [data, setData] = useState(null);
+  const [visRef, isVisible] = useIsVisible(0.15);
+  const animated = isVisible || REDUCED_MOTION;
 
   useEffect(() => {
     loadFile('assets/data/cdde_threshold_crossers.json')
@@ -21,7 +25,7 @@ export default function ThresholdCrossers() {
   }, []);
 
   return (
-    <div className="tc_container cdde_reveal">
+    <div className="tc_container cdde_reveal" ref={visRef}>
       <ChartHeader title="Countries that changed commodity dependence status" subtitle="Crossed the 60% threshold · 2012/14 vs 2022/24" />
 
       <p className="cdde_insight">
@@ -39,7 +43,7 @@ export default function ThresholdCrossers() {
         </span>
       </div>
 
-      <div className="tc_chart_wrap">{data ? <DumbbellChart data={data} xMin={0} xMax={100} nameW={172} badgeW={56} svgW={544} referencePct={60} referenceLabel="60% threshold" xTickValues={[0, 50, 100]} /> : <div className="tc_loading" />}</div>
+      <div className="tc_chart_wrap">{data ? <DumbbellChart data={data} xMin={0} xMax={100} nameW={172} badgeW={56} svgW={544} referencePct={60} referenceLabel="60% threshold" xTickValues={[0, 50, 100]} animated={animated} /> : <div className="tc_loading" />}</div>
 
       <ChartSource>UN Trade and Development (UNCTAD) secretariat calculations, based on UNCTADstat (2025). Values are 3-year averages.</ChartSource>
     </div>

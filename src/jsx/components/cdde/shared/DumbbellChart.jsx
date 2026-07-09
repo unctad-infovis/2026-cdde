@@ -4,6 +4,7 @@ import './DumbbellChart.css';
 
 const C_YELLOW = '#fbaf17';
 const C_BLUE = '#009edb';
+const REDUCED_MOTION = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 const ROW_H = 34;
 const AXIS_H = 44;
@@ -14,7 +15,7 @@ const TRACK_PAD_R = 12;
 const FLAG_R = 8;
 const FLAG_GAP = 6;
 
-export default function DumbbellChart({ data, xMin, xMax, nameW = 140, badgeW = 56, svgW = 520, referencePct, referenceLabel, xTickValues }) {
+export default function DumbbellChart({ data, xMin, xMax, nameW = 140, badgeW = 56, svgW = 520, referencePct, referenceLabel, xTickValues, animated = false }) {
   const uid = useId().replace(/:/g, '');
   const bp = basePath();
 
@@ -89,6 +90,22 @@ export default function DumbbellChart({ data, xMin, xMax, nameW = 140, badgeW = 
         const badgeBg = row.change > 0 ? '#fff4bf' : '#e3edf6';
         const badgeColor = row.change > 0 ? '#b06e2a' : '#005392';
 
+        const rowDelay = i * 60;
+        const tr = s => (REDUCED_MOTION ? 'none' : s);
+        const shaftStyle = {
+          strokeDasharray: 1,
+          strokeDashoffset: animated ? 0 : 1,
+          transition: tr(`stroke-dashoffset 0.45s ease ${rowDelay}ms`)
+        };
+        const tipStyle = {
+          opacity: animated ? 1 : 0,
+          transition: tr(`opacity 0.2s ease ${rowDelay + 400}ms`)
+        };
+        const dotStyle = {
+          opacity: animated ? 1 : 0,
+          transition: tr(`opacity 0.2s ease ${rowDelay}ms`)
+        };
+
         return (
           <g key={row.name}>
             <text x={textEndX} y={y + 4} textAnchor="end" className="db_row_name">
@@ -105,9 +122,9 @@ export default function DumbbellChart({ data, xMin, xMax, nameW = 140, badgeW = 
               />
             )}
             <line x1={nameW} y1={y} x2={nameW + trackW} y2={y} className="db_track" />
-            <line x1={startX} y1={y} x2={lineEnd} y2={y} stroke={color} strokeWidth={STROKE_W} strokeLinecap="round" />
-            <polyline points={arrowPts} fill="none" stroke={color} strokeWidth={STROKE_W} strokeLinecap="round" strokeLinejoin="round" />
-            <circle cx={startX} cy={y} r={DOT_R} fill="#fff" stroke={color} strokeWidth={STROKE_W} />
+            <line x1={startX} y1={y} x2={lineEnd} y2={y} pathLength="1" stroke={color} strokeWidth={STROKE_W} strokeLinecap="round" style={shaftStyle} />
+            <polyline points={arrowPts} pathLength="1" fill="none" stroke={color} strokeWidth={STROKE_W} strokeLinecap="round" strokeLinejoin="round" style={tipStyle} />
+            <circle cx={startX} cy={y} r={DOT_R} fill="#fff" stroke={color} strokeWidth={STROKE_W} style={dotStyle} />
             <rect x={bx} y={y - 10} width={badgeW - 8} height={20} rx={4} fill={badgeBg} />
             <text x={bx + (badgeW - 8) / 2} y={y + 4} textAnchor="middle" fill={badgeColor} className="db_badge_label">
               {bLabel}
