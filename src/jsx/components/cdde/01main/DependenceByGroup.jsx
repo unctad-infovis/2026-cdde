@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import CSVtoJSON from '../../../helpers/CsvToJson';
 import loadFile from '../../../helpers/LoadFile';
 import ChartHeader from '../shared/ChartHeader';
 import ChartSource from '../shared/ChartSource';
+import ChartTooltip from '../shared/ChartTooltip';
 
 import './DependenceByGroup.css';
 
@@ -14,6 +15,18 @@ const BANDS = [
 
 export default function DependenceByGroup() {
   const [data, setData] = useState(null);
+  const [tooltip, setTooltip] = useState(null);
+  const wrapRef = useRef(null);
+
+  function handleMouseMove(e, d) {
+    if (!wrapRef.current) return;
+    const r = wrapRef.current.getBoundingClientRect();
+    setTooltip({ left: e.clientX - r.left, top: e.clientY - r.top, d });
+  }
+
+  function handleMouseLeave() {
+    setTooltip(null);
+  }
 
   useEffect(() => {
     loadFile('assets/data/cdde_dependence_by_group.csv')
@@ -59,11 +72,11 @@ export default function DependenceByGroup() {
   }
 
   return (
-    <div className="gbc_container">
+    <div className="gbc_container cdde_reveal">
       <ChartHeader title="Severity of commodity dependence" subtitle="Per cent, 2022–2024" large />
 
-      <p className="gbc_insight">
-        <strong className="gbc_insight_bold">Developing economies dominate</strong> the ranks of countries exceeding the 80% commodity-dependence threshold, while developed nations remain the exception.
+      <p className="cdde_insight">
+        <strong className="cdde_insight_bold">Developing economies dominate</strong> the ranks of countries exceeding the 80% commodity-dependence threshold, while developed nations remain the exception.
       </p>
 
       <div className="gbc_legend">
@@ -75,8 +88,8 @@ export default function DependenceByGroup() {
         ))}
       </div>
 
-      <div className="gbc_chart_wrap">
-        <svg viewBox={`0 0 ${W} ${H}`} className="gbc_svg" aria-label="Stacked bar chart of commodity dependence by country group">
+      <div className="gbc_chart_wrap" ref={wrapRef}>
+        <svg viewBox={`0 0 ${W} ${H}`} className="gbc_svg" aria-label="Stacked bar chart of commodity dependence by country group" onMouseLeave={handleMouseLeave}>
           <g transform={`translate(${PAD.left},${PAD.top})`}>
             {/* Y grid lines and labels */}
             {yTicks.map(v => (
@@ -93,14 +106,14 @@ export default function DependenceByGroup() {
               const x = barX(i);
               let yOffset = chartH;
               return (
-                <g key={d.group}>
+                <g key={d.group} onMouseMove={e => handleMouseMove(e, d)}>
                   {BANDS.map(band => {
                     const h = (d[band.key] / yMax) * chartH;
                     yOffset -= h;
                     const showLabel = d[band.key] > 0;
                     return (
                       <g key={band.key}>
-                        <rect x={x} y={yOffset} width={barW} height={h} fill={band.color} rx={band.key === 'above80' ? 3 : 0} />
+                        <rect x={x} y={yOffset} width={barW} height={h} fill={band.color} />
                         {showLabel && h > 14 && (
                           <text x={x + barW / 2} y={yOffset + h / 2 + 4} textAnchor="middle" className="gbc_bar_label">
                             {d[band.key]}
@@ -123,6 +136,23 @@ export default function DependenceByGroup() {
             })}
           </g>
         </svg>
+
+        {tooltip && (
+          <ChartTooltip left={tooltip.left} top={tooltip.top} flip={!!(wrapRef.current && tooltip.left > wrapRef.current.clientWidth * 0.6)}>
+            <div className="gbc_tt_name">{tooltip.d.group}</div>
+            {BANDS.map(band => (
+              <div key={band.key} className="gbc_tt_row">
+                <span className="gbc_tt_dot" style={{ background: band.color }} />
+                <span className="gbc_tt_label">{band.label}</span>
+                <span className="gbc_tt_val">{tooltip.d[band.key]}</span>
+              </div>
+            ))}
+            <div className="gbc_tt_total">
+              <span className="gbc_tt_label">Total</span>
+              <span className="gbc_tt_val">{tooltip.d.total}</span>
+            </div>
+          </ChartTooltip>
+        )}
       </div>
 
       <ChartSource>UN Trade and Development (UNCTAD) secretariat calculations, based on UNCTADstat (2025). UN Trade and Development (UNCTAD) development groupings.</ChartSource>

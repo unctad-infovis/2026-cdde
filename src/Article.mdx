@@ -8,7 +8,8 @@
 <BigPicture
   title="More than half the world still runs on commodities"
   description="From cobalt and copper to soybeans and crude oil, commodity exports remain the backbone of most developing economies – exposing them to price swings, geopolitical shocks and the energy transition all at once."
-  def_title={'What does “commodity-dependent” mean?'}
+  description2="This snapshot draws on UNCTADstat trade statistics for the 2022–2024 reference period, the latest three-year window for which consolidated international trade data is available. Each indicator is computed for all 191 UNCTAD member States and benchmarked against the 60% commodity-dependence threshold."
+  def_title={'What does "commodity-dependent" mean?'}
   def_badge="60%"
   def_attribution="Threshold determined econometrically by Nkurunziza, Tsowou and Cazzaniga (2017) using a quantile regression of human development on commodity export shares. The platform classifies 191 UNCTAD member States against this benchmark every year."
   cards={[
@@ -20,7 +21,7 @@
     {
       description: "economies, almost all developing",
       label: "Exceeding the 80% threshold",
-      value: "73",
+      value: "74",
     },
     {
       description: "commodity export share, 2022–24",
@@ -41,15 +42,11 @@
     <DependenceByGroup />
     <DependenceByLevel />
   </div>
+  <p className="cdde_group_note">LDC: least developed countries. LLDC: landlocked developing countries. SIDS: small island developing States. For further information on the composition of the country groups, please refer to the section on sources provided within this application.</p>
 </div>
 <DecadeShift
   eyebrow="Key shifts at a glance"
   title="What changed between 2012/14 and 2022/24"
-  spotlight="Spotlight box for trends including the war in Ukraine, the Black Sea Grain Initiative, and the US shale revolution."
-  panel_eyebrow="A decade in motion"
-  panel_title="Where commodity dependence moved – and why it matters"
-  panel_description="13 economies switched commodity-dependence status. Major exporters such as Angola and Kazakhstan saw their exposure ease, while Ghana, Tanzania and Mongolia drifted further into the commodity trap. Price super-cycles and the post-2022 correction rewrote the map."
-  photo_credit="Unsplash"
 >
 
 A decade of trade data tells a moving story. Some economies have **climbed above the 60% threshold** and joined the ranks of commodity-dependent countries; others have **diversified their way out**. Behind these movements lie major price cycles, geopolitical shocks and structural transformations.
@@ -63,5 +60,14 @@ The next three views compare the 2012–2014 reference period with 2022–2024: 
     <DependenceMovers />
   </div>
 </div>
-<CommodityPrices />
-<KnowMore />
+<DecadeShift
+  eyebrow="Prices in context"
+  title="A decade of price volatility"
+>
+
+Behind the shifts in commodity dependence lies a turbulent price cycle. The 2008 financial crisis, the 2014 oil collapse, the COVID-19 shock and Russia's 2022 invasion of Ukraine each sent commodity prices sharply higher or lower – reshaping which countries earn enough from commodities to cross the dependence threshold.
+
+</DecadeShift>
+<div className="width_wide" style={{ padding: '40px 24px 0' }}>
+  <CommodityPrices />
+</div>

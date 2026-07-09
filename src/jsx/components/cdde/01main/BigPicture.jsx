@@ -1,6 +1,7 @@
+import RollingNumber from './../shared/RollingNumber.jsx';
 import './BigPicture.css';
 
-export default function BigPicture({ cards = [], def_attribution, def_badge, def_title, description, title }) {
+export default function BigPicture({ cards = [], def_attribution, def_badge, def_title, description, description2, title }) {
   const hasDefinition = !!(def_title && def_badge);
 
   return (
@@ -14,6 +15,7 @@ export default function BigPicture({ cards = [], def_attribution, def_badge, def
           </div>
           <h2 className="bigpicture_title">{title}</h2>
           <p className="bigpicture_desc">{description}</p>
+          {description2 && <p className="bigpicture_desc">{description2}</p>}
         </div>
 
         {/* Right — definition */}
@@ -32,11 +34,11 @@ export default function BigPicture({ cards = [], def_attribution, def_badge, def
         )}
       </div>
 
-      <div className="bigpicture_cards">
+      <div className="bigpicture_cards cdde_reveal">
         {cards.map(card => (
           <div className="bigpicture_card" key={card.label}>
             <p className="bigpicture_card_label">{card.label}</p>
-            <p className="bigpicture_card_value">{card.value}</p>
+            <RollingNumber value={card.value} className="bigpicture_card_value" />
             <p className="bigpicture_card_desc">{card.description}</p>
           </div>
         ))}

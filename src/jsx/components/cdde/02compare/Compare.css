@@ -72,7 +72,7 @@
 }
 
 #app-root-2026-cdde .app .cmp_tool_desc {
-  font-size: var(--un-font-size-xxxxs);
+  font-size: var(--un-font-size-xxxs);
   color: var(--un-color-grey-text);
   line-height: 1.3;
 }
@@ -131,7 +131,7 @@
 }
 
 #app-root-2026-cdde .app .cmp_filter_group_label {
-  font-size: var(--un-font-size-xxxxs);
+  font-size: var(--un-font-size-xxxs);
   font-weight: var(--un-font-weight-bold);
   color: var(--un-color-grey-text);
   letter-spacing: 0.06em;
@@ -185,18 +185,9 @@
   background: #fff;
   border-radius: 16px;
   height: 100%;
-  animation: cmp_pulse 1.4s ease infinite;
+  animation: cdde_pulse 1.4s ease infinite;
 }
 
-@keyframes cmp_pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
 
 /* Right panel */
 #app-root-2026-cdde .app .cmp_col_right {

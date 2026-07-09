@@ -56,7 +56,7 @@
 }
 
 #app-root-2026-cdde .app .dp_control_label {
-  font-size: var(--un-font-size-xxxxs);
+  font-size: var(--un-font-size-xxxs);
   font-weight: var(--un-font-weight-bold);
   color: var(--un-color-grey-text);
   letter-spacing: 0.06em;
@@ -109,18 +109,9 @@
   inset: 0;
   background: var(--un-color-blue-lightest);
   border-radius: 8px;
-  animation: dp_pulse 1.4s ease infinite;
+  animation: cdde_pulse 1.4s ease infinite;
 }
 
-@keyframes dp_pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
 
 /* Legend */
 #app-root-2026-cdde .app .dp_legend {
@@ -204,7 +195,7 @@
 }
 
 #app-root-2026-cdde .app .dp_hl_label {
-  font-size: var(--un-font-size-xxxxs);
+  font-size: var(--un-font-size-xxxs);
   font-weight: var(--un-font-weight-bold);
   color: var(--un-color-grey-text);
   letter-spacing: 0.06em;

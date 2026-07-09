@@ -18,14 +18,14 @@ export default function DependenceMovers() {
   }, []);
 
   return (
-    <div className="dm_container">
+    <div className="dm_container cdde_reveal">
       <ChartHeader title="Where did commodity dependence increase or decrease?" subtitle="Top movers · selected economies · 2012/14 vs 2022/24" />
 
-      <p className="dm_insight">
-        Global shifts reveal a split picture – with rises in countries such as <strong className="dm_insight_bold">Ghana or Tanzania</strong>, while major exporters like <strong className="dm_insight_bold">Angola or Kazakhstan</strong> have moved in the opposite direction.
+      <p className="cdde_insight">
+        Global shifts reveal a split picture – with rises in countries such as <strong className="cdde_insight_bold">Niger or Argentina</strong>, while major exporters like <strong className="cdde_insight_bold">Maldives or Brunei Darussalam</strong> have moved in the opposite direction.
       </p>
 
-      <div className="dm_chart_wrap">{data ? <DumbbellChart data={data} xMin={0} xMax={100} nameW={120} badgeW={56} svgW={520} referencePct={60} xTickValues={[0, 50, 100]} /> : <div className="dm_loading" />}</div>
+      <div className="dm_chart_wrap">{data ? <DumbbellChart data={data} xMin={0} xMax={100} nameW={144} badgeW={56} svgW={544} referencePct={60} referenceLabel="60% threshold" xTickValues={[0, 50, 100]} /> : <div className="dm_loading" />}</div>
 
       <ChartSource>UN Trade and Development (UNCTAD) secretariat calculations, based on UNCTADstat (2025).</ChartSource>
     </div>

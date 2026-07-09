@@ -96,7 +96,7 @@ export default function CountryRankings({ countries }) {
             <span className="rt_legend_dot rt_legend_dot--devg" />
             <span className="rt_legend_lbl">Developing</span>
           </div>
-          <button className="rt_csv_btn" onClick={() => downloadCSV(sorted, opt)}>
+          <button type="button" className="rt_csv_btn" onClick={() => downloadCSV(sorted, opt)}>
             ↓ .csv
           </button>
         </div>

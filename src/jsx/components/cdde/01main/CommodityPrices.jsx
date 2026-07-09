@@ -11,7 +11,8 @@ const ANNOTATIONS = [
   { date: '2008-09', label: 'Global financial crisis' },
   { date: '2014-07', label: 'Oil price collapse' },
   { date: '2020-03', label: 'COVID-19 pandemic' },
-  { date: '2022-02', label: "Russia's full-scale invasion in Ukraine" }
+  { date: '2022-02', label: "Russia's full-scale invasion in Ukraine" },
+  { date: '2026-02', label: '2026 Iran war' }
 ];
 
 const POST_CORRECTION_START = '2022-06';
@@ -20,14 +21,15 @@ const SERIES = [
   { key: 'total', label: 'Total Index', color: '#4f4740' },
   { key: 'energy', label: 'Energy', color: '#009edb' },
   { key: 'agri', label: 'Agricultural', color: '#72bf44' },
-  { key: 'mining', label: 'Mining', color: '#fbaf17' }
+  { key: 'mining', label: 'Mining', color: '#fbaf17' },
+  { key: 'precious', label: 'Precious metals', color: '#9b59b6' }
 ];
 
 const FILTERS = ['All', ...SERIES.map(s => s.label)];
 
 const W = 960;
 const H = 396; // extra height for bottom label
-const M = { top: 30, right: 145, bottom: 52, left: 50 };
+const M = { top: 30, right: 20, bottom: 52, left: 50 };
 const CHART_W = W - M.left - M.right;
 const CHART_H = H - M.top - M.bottom; // 314 — same chart area as before
 
@@ -62,7 +64,7 @@ export default function CommodityPrices() {
       .domain(d3.extent(rawData, d => d.date))
       .range([0, CHART_W]);
 
-    const yScale = d3.scaleLinear().domain([0, 220]).range([CHART_H, 0]).nice();
+    const yScale = d3.scaleLinear().domain([0, 420]).range([CHART_H, 0]);
 
     const lineFn = key =>
       d3
@@ -73,7 +75,7 @@ export default function CommodityPrices() {
         .curve(d3.curveMonotoneX)(rawData);
 
     const xTicks = xScale.ticks(d3.timeYear.every(5));
-    const yTicks = [0, 50, 100, 150, 200];
+    const yTicks = [0, 100, 200, 300, 400];
 
     const annoPositions = ANNOTATIONS.map((a, i) => ({
       ...a,
@@ -143,9 +145,9 @@ export default function CommodityPrices() {
   const flipTT = tooltip && wrapRef.current ? tooltip.left > wrapRef.current.clientWidth * 0.6 : false;
 
   return (
-    <div className="pic_container">
+    <div className="pic_container cdde_reveal">
       <div className="pic_header_row">
-        <ChartHeader title="Commodity Price Indices · 1995 to 2025" subtitle="Monthly, nominal dollars, 2010 = 100" large />
+        <ChartHeader title="Commodity Price Indices · 1995 to 2026" subtitle="Monthly, nominal dollars, 2010 = 100" large />
         <div className="pic_filters">
           {FILTERS.map(f => (
             <button type="button" key={f} className={`pic_filter_btn${activeFilter === f ? ' active' : ''}`} onClick={() => setActiveFilter(f)}>
@@ -155,8 +157,8 @@ export default function CommodityPrices() {
         </div>
       </div>
 
-      <p className="pic_insight">
-        Commodity prices have remained <strong className="pic_insight_bold">highly volatile</strong> in recent years – the post-2022 correction followed one of the sharpest surges in decades, a reminder of how quickly external shocks can reshape commodity export dependence.
+      <p className="cdde_insight pic_insight">
+        Commodity prices have remained <strong className="cdde_insight_bold">highly volatile</strong> in recent years – the post-2022 correction followed one of the sharpest surges in decades, a reminder of how quickly external shocks can reshape commodity export dependence.
       </p>
 
       {/* ── Legend — now above the chart ── */}
@@ -175,7 +177,7 @@ export default function CommodityPrices() {
           <div className="pic_loading" />
         ) : (
           <>
-            <svg ref={svgRef} viewBox={`0 0 ${W} ${H}`} className="pic_svg" aria-label="Line chart of commodity price indices 1995–2025" onMouseLeave={handleMouseLeave}>
+            <svg ref={svgRef} viewBox={`0 0 ${W} ${H}`} className="pic_svg" aria-label="Line chart of commodity price indices 1995–2026" onMouseLeave={handleMouseLeave}>
               <g transform={`translate(${M.left},${M.top})`}>
                 {/* Post-2022 shaded band */}
                 <rect x={chart.correctionX} y={0} width={CHART_W - chart.correctionX} height={CHART_H} className="pic_correction_band" />
@@ -208,7 +210,7 @@ export default function CommodityPrices() {
                   <g key={a.num} transform={`translate(${a.x}, 0)`} style={{ cursor: 'help' }} onMouseEnter={e => handleAnnoEnter(e, a)} onMouseLeave={handleAnnoLeave}>
                     <circle cx={0} cy={-4} r={12} fill="transparent" />
                     <circle cx={0} cy={-4} r={10} fill="#fff" stroke={C_ANNO} strokeWidth={1.5} />
-                    <text x={0} y={0} textAnchor="middle" className="pic_anno_num">
+                    <text x={0} y={-3} textAnchor="middle" dominantBaseline="central" className="pic_anno_num">
                       {a.num}
                     </text>
                   </g>
@@ -278,7 +280,7 @@ export default function CommodityPrices() {
         ))}
       </div>
 
-      <ChartSource>UN Trade and Development (UNCTAD) Free Market Commodity Price Index, monthly series, nominal dollars, 2010=100. Updated quarterly.</ChartSource>
+      <ChartSource>UN Trade and Development (UNCTAD) based on World Bank</ChartSource>
     </div>
   );
 }

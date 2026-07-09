@@ -34,16 +34,18 @@ export default function DependenceByLevel() {
   const thresholdPct = (THRESHOLD / MAX_PCT) * 100;
 
   return (
-    <div className="alc_container">
+    <div className="alc_container cdde_reveal">
       <ChartHeader title="Average dependence by development level" subtitle="Mean commodity export share across economies, 2022–2024" large />
 
-      <p className="alc_insight">
-        Across all country groups, the highest levels of commodity dependence are concentrated in the <strong className="alc_insight_bold">most vulnerable economies</strong>.
+      <p className="cdde_insight">
+        Across all country groups, the highest levels of commodity dependence are concentrated in the <strong className="cdde_insight_bold">most vulnerable economies</strong>.
       </p>
 
       <div className="alc_chart">
-        <div className="alc_threshold_label" style={{ left: `${thresholdPct}%` }}>
-          60% threshold
+        <div className="alc_threshold_wrap">
+          <div className="alc_threshold_label" style={{ left: `${thresholdPct}%` }}>
+            60% threshold
+          </div>
         </div>
 
         <div className="alc_bars">
@@ -68,8 +70,7 @@ export default function DependenceByLevel() {
         </div>
       </div>
 
-      <ChartSource>UN Trade and Development (UNCTAD) secretariat calculations, based on UNCTADstat (2025). LDC: least developed countries. LLDC: landlocked developing countries. SIDS: small island developing States.</ChartSource>
-      <p className="alc_note">For further information on the composition of the country groups, please refer to the section on sources provided within this application.</p>
+      <ChartSource>UN Trade and Development (UNCTAD) secretariat calculations, based on UNCTADstat (2025).</ChartSource>
     </div>
   );
 }

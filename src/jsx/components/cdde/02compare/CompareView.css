@@ -49,7 +49,7 @@
 }
 
 #app-root-2026-cdde .app .cv_card_meta {
-  font-size: var(--un-font-size-xxxxs);
+  font-size: var(--un-font-size-xxxs);
   color: rgba(255, 255, 255, 0.65);
   margin: 0 0 12px;
   padding: 0;
@@ -66,7 +66,7 @@
 }
 
 #app-root-2026-cdde .app .cv_card_dep_label {
-  font-size: var(--un-font-size-xxxxs);
+  font-size: var(--un-font-size-xxxs);
   color: rgba(255, 255, 255, 0.55);
   letter-spacing: 0.06em;
   margin: 0;
@@ -146,7 +146,7 @@
 }
 
 #app-root-2026-cdde .app .cv_dna_leg_lbl {
-  font-size: var(--un-font-size-xxxxs);
+  font-size: var(--un-font-size-xxxs);
   color: var(--un-color-grey-text);
   white-space: nowrap;
 }
@@ -190,7 +190,7 @@
 }
 
 #app-root-2026-cdde .app .cv_dna_nodata {
-  font-size: var(--un-font-size-xxxxs);
+  font-size: var(--un-font-size-xxxs);
   color: var(--un-color-grey-text);
 }
 
@@ -205,7 +205,7 @@
 }
 
 #app-root-2026-cdde .app .cv_tbl_hdr_ind {
-  font-size: var(--un-font-size-xxxxs);
+  font-size: var(--un-font-size-xxxs);
   font-weight: var(--un-font-weight-bold);
   color: var(--un-color-grey-text);
   letter-spacing: 0.06em;
@@ -221,7 +221,7 @@
 }
 
 #app-root-2026-cdde .app .cv_tbl_hdr_name {
-  font-size: var(--un-font-size-xxxxs);
+  font-size: var(--un-font-size-xxxs);
   font-weight: var(--un-font-weight-bold);
   letter-spacing: 0.06em;
 }
@@ -254,7 +254,7 @@
 }
 
 #app-root-2026-cdde .app .cv_tbl_ind_desc {
-  font-size: var(--un-font-size-xxxxs);
+  font-size: var(--un-font-size-xxxs);
   color: var(--un-color-grey-text);
   line-height: var(--un-line-height-small);
 }

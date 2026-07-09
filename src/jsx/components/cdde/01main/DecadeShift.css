@@ -44,7 +44,7 @@
 }
 
 #app-root-2026-cdde .app .ds_eyebrow_text {
-  font-size: var(--un-font-size-xxxxs);
+  font-size: var(--un-font-size-xxxs);
   font-weight: var(--un-font-weight-bold);
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -165,7 +165,7 @@
 }
 
 #app-root-2026-cdde .app .ds_panel_eyebrow_text {
-  font-size: var(--un-font-size-xxxxs);
+  font-size: var(--un-font-size-xxxs);
   font-weight: var(--un-font-weight-bold);
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -202,7 +202,7 @@
   position: absolute;
   top: 14px;
   right: 18px;
-  font-size: var(--un-font-size-xxxxs);
+  font-size: var(--un-font-size-xxxs);
   font-weight: var(--un-font-weight-bold);
   letter-spacing: 0.08em;
   text-transform: uppercase;

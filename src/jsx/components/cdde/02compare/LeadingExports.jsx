@@ -36,8 +36,8 @@ export default function LeadingExports({ iso3, dominantGroup }) {
 
         {exports && (
           <div className="cdde_bars">
-            {exports.map((item, i) => (
-              <HorizBar key={i} label={item.label} pct={item.pct} color={barColor} />
+            {exports.map(item => (
+              <HorizBar key={item.label} label={item.label} pct={item.pct} color={barColor} />
             ))}
           </div>
         )}

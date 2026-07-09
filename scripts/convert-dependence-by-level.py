@@ -26,11 +26,11 @@ except ImportError:
 # Maps full Excel name → (short label used in chart, economy count)
 # Bar colour is derived in the component: "Developed" → green, all others → blue.
 GROUP_MAP = {
-    "Small island developing states":   ("SIDS",             38),
+    "Small island developing states":   ("SIDS",             37),
     "Landlocked developing countries":  ("LLDCs",            32),
     "Least developed countries":        ("LDCs",             44),
-    "Other developing countries":       ("Other developing", 89),
-    "Developed countries":              ("Developed",        40),
+    "Other developing countries":       ("Other developing", 55),
+    "Developed countries":              ("Developed",        48),
 }
 
 

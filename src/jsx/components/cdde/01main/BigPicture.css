@@ -190,7 +190,7 @@
 
   .bigpicture_card_label {
     color: var(--un-color-grey-text);
-    font-size: var(--un-font-size-xxxxs);
+    font-size: var(--un-font-size-xxxs);
     font-weight: var(--un-font-weight-bold);
     letter-spacing: 0.08em;
     margin: 0 0 10px 0;
@@ -200,6 +200,7 @@
 
   .bigpicture_card_value {
     color: var(--un-color-red-text-dark);
+    display: block;
     font-size: var(--un-font-size-xxxxl);
     font-weight: var(--un-font-weight-boldest);
     line-height: 1;

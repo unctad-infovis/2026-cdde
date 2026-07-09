@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import Article from '../Article.mdx';
 
 // cdde/01main
@@ -37,8 +38,40 @@ const components = {
 };
 
 const App = ({ meta }) => {
+  const appRef = useRef(null);
+
+  useEffect(() => {
+    if (!appRef.current) return;
+    const seen = new Set();
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.08 }
+    );
+
+    const attach = () => {
+      appRef.current?.querySelectorAll('.cdde_reveal').forEach(el => {
+        if (!seen.has(el)) {
+          seen.add(el);
+          observer.observe(el);
+        }
+      });
+    };
+
+    attach();
+    // Re-run after data-driven components have finished their async renders
+    const t = setTimeout(attach, 600);
+    return () => { observer.disconnect(); clearTimeout(t); };
+  }, []);
+
   return (
-    <div className="app">
+    <div className="app" ref={appRef}>
       <Article components={components} meta={meta} />
     </div>
   );

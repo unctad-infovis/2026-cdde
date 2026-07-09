@@ -21,11 +21,11 @@ export default function ThresholdCrossers() {
   }, []);
 
   return (
-    <div className="tc_container">
-      <ChartHeader title={`Countries that changed commodity dependence status (${data?.length ?? 13})`} subtitle="Crossed the 60% threshold · 2012/14 vs 2022/24" />
+    <div className="tc_container cdde_reveal">
+      <ChartHeader title="Countries that changed commodity dependence status" subtitle="Crossed the 60% threshold · 2012/14 vs 2022/24" />
 
-      <p className="tc_insight">
-        Several countries have shifted their commodity-dependence status – some, like <strong className="tc_insight_bold">Guatemala or Panama</strong>, moved above the 60% threshold; others, such as <strong className="tc_insight_bold">Indonesia or South Africa</strong>, fell below it.
+      <p className="cdde_insight">
+        <strong className="cdde_insight_bold">13 countries</strong> have shifted their commodity-dependence status – some, like <strong className="cdde_insight_bold">Panama or Ukraine</strong>, moved above the 60% threshold; others, such as <strong className="cdde_insight_bold">Indonesia or Myanmar</strong>, fell below it.
       </p>
 
       <div className="tc_legend">
@@ -39,7 +39,7 @@ export default function ThresholdCrossers() {
         </span>
       </div>
 
-      <div className="tc_chart_wrap">{data ? <DumbbellChart data={data} xMin={10} xMax={90} nameW={148} badgeW={56} svgW={520} referencePct={60} referenceLabel="60% threshold" xTickValues={[10, 90]} /> : <div className="tc_loading" />}</div>
+      <div className="tc_chart_wrap">{data ? <DumbbellChart data={data} xMin={0} xMax={100} nameW={172} badgeW={56} svgW={544} referencePct={60} referenceLabel="60% threshold" xTickValues={[0, 50, 100]} /> : <div className="tc_loading" />}</div>
 
       <ChartSource>UN Trade and Development (UNCTAD) secretariat calculations, based on UNCTADstat (2025). Values are 3-year averages.</ChartSource>
     </div>

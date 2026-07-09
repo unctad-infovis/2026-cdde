@@ -14,7 +14,10 @@
     "data:exports-by-region": "python3 scripts/convert-exports-by-region.py",
     "data:dependence-by-group": "python3 scripts/convert-dependence-by-group.py",
     "data:dependence-by-level": "python3 scripts/convert-dependence-by-level.py",
-    "data:all": "npm run data:dependence-map && npm run data:exports-by-region && npm run data:dependence-by-group && npm run data:dependence-by-level",
+    "data:commodity-prices": "python3 scripts/convert-commodity-prices.py",
+    "data:status-change": "python3 scripts/convert-status-change.py",
+    "data:dependence-movers": "python3 scripts/convert-dependence-movers.py",
+    "data:all": "npm run data:dependence-map && npm run data:exports-by-region && npm run data:dependence-by-group && npm run data:dependence-by-level && npm run data:status-change && npm run data:dependence-movers",
     "push": "git push && git push unctad main",
     "sync-gh-pages": "git subtree push --prefix dist origin gh-pages",
     "sync-prod": "azcopy copy \"dist/*\" \"https://${AZURE_STORAGE_NAME}.blob.core.windows.net/\\$web/${npm_package_name}/\" --include-path 'js;css;assets' --recursive --exclude-pattern '.DS_Store'"

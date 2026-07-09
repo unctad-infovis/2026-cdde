@@ -49,7 +49,7 @@
 }
 
 #app-root-2026-cdde .app .cp_dep_eyebrow {
-  font-size: var(--un-font-size-xxxxs);
+  font-size: var(--un-font-size-xxxs);
   font-weight: var(--un-font-weight-bold);
   color: var(--un-color-grey-text);
   letter-spacing: 0.07em;
@@ -64,7 +64,7 @@
 }
 
 #app-root-2026-cdde .app .cp_dep_note {
-  font-size: var(--un-font-size-xxxxs);
+  font-size: var(--un-font-size-xxxs);
   color: var(--un-color-grey-text);
   margin-top: 4px;
 }
@@ -104,7 +104,7 @@
 }
 
 #app-root-2026-cdde .app .cp_stat_label {
-  font-size: var(--un-font-size-xxxxs);
+  font-size: var(--un-font-size-xxxs);
   font-weight: var(--un-font-weight-bold);
   color: var(--un-color-grey-text);
   letter-spacing: 0.06em;
@@ -124,7 +124,7 @@
 }
 
 #app-root-2026-cdde .app .cp_stat_note {
-  font-size: var(--un-font-size-xxxxs);
+  font-size: var(--un-font-size-xxxs);
   color: var(--un-color-grey-text);
 }
 

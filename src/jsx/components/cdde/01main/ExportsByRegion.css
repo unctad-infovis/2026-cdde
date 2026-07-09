@@ -6,20 +6,6 @@
   max-width: 1100px;
 }
 
-/* Insight */
-#app-root-2026-cdde .app .exc_insight {
-  font-size: var(--un-font-size-xs);
-  color: var(--un-color-blue-darkest);
-  border-left: 3px solid var(--un-color-grey-light);
-  padding: 4px 0 4px 12px;
-  margin: 0 0 20px;
-  line-height: var(--un-line-height-normal);
-}
-
-#app-root-2026-cdde .app .exc_insight_bold {
-  color: var(--un-color-blue-text-dark);
-  font-weight: var(--un-font-weight-bold);
-}
 
 /* SVG chart wrap */
 #app-root-2026-cdde .app .exc_chart_wrap {
@@ -102,6 +88,29 @@
   color: var(--un-color-grey-text);
   margin: 10px 0 0;
   line-height: var(--un-line-height-normal);
+}
+
+/* Tooltip */
+#app-root-2026-cdde .app .exc_tt_name {
+  font-size: var(--un-font-size-xs);
+  font-weight: var(--un-font-weight-boldest);
+  color: var(--un-color-blue-darkest);
+  margin-bottom: 2px;
+  white-space: nowrap;
+}
+
+#app-root-2026-cdde .app .exc_tt_region {
+  font-size: var(--un-font-size-xxs);
+  color: var(--un-color-grey-text);
+  margin-bottom: 4px;
+  white-space: nowrap;
+}
+
+#app-root-2026-cdde .app .exc_tt_val {
+  font-size: var(--un-font-size-xxs);
+  font-weight: var(--un-font-weight-bold);
+  color: var(--un-color-blue-darkest);
+  font-variant-numeric: tabular-nums;
 }
 
 /* Source margin */

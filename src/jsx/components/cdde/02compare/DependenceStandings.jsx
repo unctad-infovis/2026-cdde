@@ -221,7 +221,7 @@ export default function DependenceStandings({ countries }) {
                 </option>
               ))}
             </select>
-            <svg className="dp_chevron" viewBox="0 0 12 8" fill="none">
+            <svg className="dp_chevron" viewBox="0 0 12 8" fill="none" aria-hidden="true">
               <path d="M1 1l5 5 5-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
@@ -237,7 +237,7 @@ export default function DependenceStandings({ countries }) {
                 </option>
               ))}
             </select>
-            <svg className="dp_chevron" viewBox="0 0 12 8" fill="none">
+            <svg className="dp_chevron" viewBox="0 0 12 8" fill="none" aria-hidden="true">
               <path d="M1 1l5 5 5-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
@@ -252,11 +252,11 @@ export default function DependenceStandings({ countries }) {
       <div className="dp_legend">
         <div className="dp_legend_left">
           <div className="dp_legend_item">
-            <span className="dp_dot_swatch" style={{ background: '#009edb' }} />
+            <span className="dp_dot_swatch" style={{ background: 'var(--un-color-blue)' }} />
             <span className="dp_legend_label">Developed</span>
           </div>
           <div className="dp_legend_item">
-            <span className="dp_dot_swatch" style={{ background: '#fbaf17' }} />
+            <span className="dp_dot_swatch" style={{ background: 'var(--un-color-yellow)' }} />
             <span className="dp_legend_label">Developing</span>
           </div>
         </div>
@@ -278,7 +278,7 @@ export default function DependenceStandings({ countries }) {
           {suggestions.length > 0 && (
             <div className="dp_suggestions">
               {suggestions.map(c => (
-                <button key={c.iso3} className="dp_suggestion_item" onMouseDown={() => addHighlight(c)}>
+                <button type="button" key={c.iso3} className="dp_suggestion_item" onMouseDown={() => addHighlight(c)}>
                   {c.name}
                 </button>
               ))}
@@ -286,7 +286,7 @@ export default function DependenceStandings({ countries }) {
           )}
         </div>
         {highlight.length > 0 && (
-          <button className="dp_hl_clear" onClick={() => setHighlight([])}>
+          <button type="button" className="dp_hl_clear" onClick={() => setHighlight([])}>
             Clear all
           </button>
         )}

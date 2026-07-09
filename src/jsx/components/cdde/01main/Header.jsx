@@ -1,5 +1,6 @@
 import basePath from './../../../helpers/BasePath';
 import Nav from './../shared/Nav.jsx';
+import RollingNumber from './../shared/RollingNumber.jsx';
 import './Header.css';
 
 export default function Header({ nav, stats, subtitle, title, title_highlight }) {
@@ -33,7 +34,7 @@ export default function Header({ nav, stats, subtitle, title, title_highlight })
           <div className="header_stats">
             {stats.map(s => (
               <div className="header_stat" key={s.label}>
-                <span className="header_stat_value">{s.value}</span>
+                <RollingNumber value={s.value} className="header_stat_value" />
                 <span className="header_stat_label">{s.label}</span>
               </div>
             ))}

@@ -36,12 +36,12 @@ _STRIP_SUFFIXES = re.compile(
 
 _REPLACEMENTS = {
     "United Kingdom of Great Britain and Northern Ireland": "United Kingdom",
-    "Democratic People's Republic of Korea": "North Korea",
+    "Democratic People's Republic of Korea": "DPR Korea",
     "Lao People's Democratic Republic": "Lao PDR",
     "Democratic Republic of the Congo": "DR Congo",
     "United Republic of Tanzania": "Tanzania",
     "State of Palestine": "Palestine",
-    "Republic of Korea": "South Korea",
+    "Republic of Korea": "Republic of Korea",
     "Republic of Moldova": "Moldova",
     "Syrian Arab Republic": "Syria",
     "Cabo Verde": "Cape Verde",
@@ -62,16 +62,35 @@ def convert(xlsx_path: Path, csv_path: Path) -> None:
     ws = wb.active
 
     rows_written = 0
+    totals_written = 0
     csv_path.parent.mkdir(parents=True, exist_ok=True)
+
+    # Collect subregion totals first (integer ISO, single subregion name without ';')
+    subregion_totals = {}
+    for row in ws.iter_rows(values_only=True):
+        region, subregion, value, country, iso = row[:5]
+        if not isinstance(iso, int):
+            continue
+        if region is None or subregion is None or value is None:
+            continue
+        if not isinstance(subregion, str) or ';' in subregion:
+            continue
+        key = (clean_name(str(region)), clean_name(str(subregion)))
+        subregion_totals[key] = round(float(value))
 
     with csv_path.open("w", newline="", encoding="utf-8") as fh:
         writer = csv.writer(fh)
         writer.writerow(["region", "subregion", "country", "value"])
 
+        # Write subregion total rows first (empty country = total marker)
+        for (region, subregion), total in subregion_totals.items():
+            writer.writerow([region, subregion, "", total])
+            totals_written += 1
+
         for row in ws.iter_rows(values_only=True):
             region, subregion, value, country, iso = row[:5]
 
-            # Skip header, empty rows, and region/subregion aggregate rows.
+            # Skip header, empty rows, and aggregate rows.
             # Country rows have a 3-char zero-padded string ISO code (e.g. '004');
             # aggregate rows have an integer ISO code (e.g. 5110).
             if not isinstance(iso, str):
@@ -89,7 +108,7 @@ def convert(xlsx_path: Path, csv_path: Path) -> None:
             ])
             rows_written += 1
 
-    print(f"Written {rows_written} country rows → {csv_path}")
+    print(f"Written {totals_written} subregion totals + {rows_written} country rows → {csv_path}")
 
 
 if __name__ == "__main__":

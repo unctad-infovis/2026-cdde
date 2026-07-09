@@ -3,7 +3,7 @@ import './DecadeShift.css';
 
 export default function DecadeShift({ children, eyebrow, panel_description, panel_eyebrow, panel_title, photo_credit = 'Unsplash', spotlight, title }) {
   return (
-    <section className="ds_section">
+    <section className="ds_section cdde_reveal">
       {/* Light text area */}
       <div className="ds_light">
         <div className="ds_light_inner">
@@ -26,20 +26,22 @@ export default function DecadeShift({ children, eyebrow, panel_description, pane
         </div>
       </div>
 
-      {/* Dark image panel — a horizontal slice of the hero image */}
-      <div className="ds_panel" style={{ '--ds-bg': `url(${basePath()}assets/img/2026-cdde_hero_tmp.jpg)` }}>
-        <div className="ds_panel_inner">
-          {panel_eyebrow && (
-            <div className="ds_panel_eyebrow">
-              <span className="ds_panel_eyebrow_line" />
-              <span className="ds_panel_eyebrow_text">{panel_eyebrow}</span>
-            </div>
-          )}
-          <h3 className="ds_panel_title">{panel_title}</h3>
-          {panel_description && <p className="ds_panel_description">{panel_description}</p>}
-          {photo_credit && <span className="ds_photo_credit">Photo · {photo_credit}</span>}
+      {/* Dark image panel — only shown when panel_title is provided */}
+      {panel_title && (
+        <div className="ds_panel" style={{ '--ds-bg': `url(${basePath()}assets/img/2026-cdde_hero_tmp.jpg)` }}>
+          <div className="ds_panel_inner">
+            {panel_eyebrow && (
+              <div className="ds_panel_eyebrow">
+                <span className="ds_panel_eyebrow_line" />
+                <span className="ds_panel_eyebrow_text">{panel_eyebrow}</span>
+              </div>
+            )}
+            <h3 className="ds_panel_title">{panel_title}</h3>
+            {panel_description && <p className="ds_panel_description">{panel_description}</p>}
+            {photo_credit && <span className="ds_photo_credit">Photo · {photo_credit}</span>}
+          </div>
         </div>
-      </div>
+      )}
     </section>
   );
 }

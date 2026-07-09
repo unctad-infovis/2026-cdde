@@ -82,7 +82,7 @@
 
     .header_stat_label {
       color: rgba(255, 255, 255, 0.75);
-      font-size: clamp(var(--un-font-size-xxxxs), 0.85vw, var(--un-font-size-xxs));
+      font-size: clamp(var(--un-font-size-xxxs), 0.85vw, var(--un-font-size-xxs));
       font-weight: var(--un-font-weight-bold);
       letter-spacing: 0.08em;
       text-transform: uppercase;

@@ -76,7 +76,7 @@
       }
     }
     .two_column {
-      align-items: center;
+      align-items: flex-start;
       display: flex;
       gap: 20px;
       justify-content: center;
@@ -86,6 +86,15 @@
       figure {
         margin: 0 0 20px 0;
       }
+    }
+    .cdde_group_note {
+      font-size: var(--un-font-size-xxs);
+      color: var(--un-color-grey-text);
+      font-style: italic;
+      margin: 8px 0 0;
+      line-height: var(--un-line-height-normal);
+      padding: 0 24px;
+      max-width: none;
     }
     .parallax_container {
       position: relative;

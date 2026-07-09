@@ -13,47 +13,35 @@
   height: 400px;
   background: var(--un-color-blue-lightest);
   border-radius: 16px;
-  animation: alc_pulse 1.4s ease infinite;
+  animation: cdde_pulse 1.4s ease infinite;
 }
 
-@keyframes alc_pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-
-#app-root-2026-cdde .app .alc_insight {
-  font-size: var(--un-font-size-xs);
-  color: var(--un-color-blue-darkest);
-  border-left: 3px solid var(--un-color-grey-light);
-  padding: 4px 0 4px 12px;
-  margin: 0 0 24px;
-  line-height: var(--un-line-height-normal);
-}
-
-#app-root-2026-cdde .app .alc_insight_bold {
-  color: var(--un-color-blue-text-dark);
-  font-weight: var(--un-font-weight-bold);
+/* more breathing room before threshold badge */
+#app-root-2026-cdde .app .alc_container .cdde_insight {
+  margin-bottom: 24px;
 }
 
 /* Chart area */
 #app-root-2026-cdde .app .alc_chart {
   flex: 1;
+}
+
+/* Wrapper that spans the bar-track column so the label aligns with 60% of the bars */
+#app-root-2026-cdde .app .alc_threshold_wrap {
   position: relative;
+  height: 30px;
+  margin-left: 110px; /* 100px meta col + 10px gap */
+  margin-right: 58px; /* 10px gap + 48px value col */
 }
 
 /* Threshold label badge */
 #app-root-2026-cdde .app .alc_threshold_label {
   position: absolute;
-  top: -22px;
+  bottom: 0;
   transform: translateX(-50%);
   background: var(--un-color-yellow);
   color: #fff;
-  font-size: var(--un-font-size-xxxxs);
+  font-size: var(--un-font-size-xxxs);
   font-weight: var(--un-font-weight-bold);
   padding: 2px 8px;
   border-radius: 4px;
@@ -100,7 +88,7 @@
 }
 
 #app-root-2026-cdde .app .alc_row_economies {
-  font-size: var(--un-font-size-xxxxs);
+  font-size: var(--un-font-size-xxxs);
   color: var(--un-color-grey-text);
 }
 
@@ -145,12 +133,3 @@
   margin-top: 24px;
 }
 
-#app-root-2026-cdde .app .alc_note {
-  font-size: var(--un-font-size-xxs);
-  color: var(--un-color-grey-text);
-  font-style: italic;
-  margin: 6px 0 0;
-  line-height: var(--un-line-height-normal);
-  padding: 0;
-  max-width: none;
-}

@@ -60,7 +60,7 @@ export default function TopMarkets({ iso3 }) {
       <div className="tm_header_row">
         <ChartHeader title="Top destination markets" subtitle="% of total merchandise exports · 2022–2024" />
         {markets && (
-          <button className="tm_toggle_btn" onClick={() => setShowTree(v => !v)}>
+          <button type="button" className="tm_toggle_btn" onClick={() => setShowTree(v => !v)}>
             {showTree ? 'Hide treemap' : 'Show treemap'}
           </button>
         )}
@@ -73,8 +73,8 @@ export default function TopMarkets({ iso3 }) {
 
         {markets && !showTree && (
           <div className="cdde_bars">
-            {markets.map((item, i) => (
-              <HorizBar key={i} label={item.label} pct={item.pct} color="var(--un-color-blue)" />
+            {markets.map(item => (
+              <HorizBar key={item.label} label={item.label} pct={item.pct} color="var(--un-color-blue)" />
             ))}
           </div>
         )}
@@ -83,7 +83,7 @@ export default function TopMarkets({ iso3 }) {
       {leaves && (
         <div className="tm_wrap" ref={wrapRef}>
           <svg viewBox={`0 0 ${W} ${H}`} className="tm_svg" aria-label="Treemap of destination markets">
-            {leaves.map((leaf, i) => {
+            {leaves.map(leaf => {
               const lw = leaf.x1 - leaf.x0;
               const lh = leaf.y1 - leaf.y0;
               const isOther = leaf.data.label === 'Other';
@@ -94,7 +94,7 @@ export default function TopMarkets({ iso3 }) {
               const sm = lw < 70;
 
               return (
-                <g key={i} onMouseMove={e => handleMouseMove(e, leaf)} onMouseLeave={() => setTooltip(null)} className="tm_cell">
+                <g key={leaf.data.label} onMouseMove={e => handleMouseMove(e, leaf)} onMouseLeave={() => setTooltip(null)} className="tm_cell">
                   <rect x={leaf.x0} y={leaf.y0} width={lw} height={lh} fill={fill} rx={2} />
                   {showLabel && (
                     <>

@@ -71,7 +71,7 @@ export default function Compare() {
       {/* Tool nav */}
       <div className="cmp_tool_nav">
         {TOOLS.map(t => (
-          <button key={t.id} className={`cmp_tool_tab${activeTool === t.id ? ' cmp_tool_tab--active' : ''}`} onClick={() => setActiveTool(t.id)}>
+          <button type="button" key={t.id} className={`cmp_tool_tab${activeTool === t.id ? ' cmp_tool_tab--active' : ''}`} onClick={() => setActiveTool(t.id)}>
             <span className="cmp_tool_num">{t.id}</span>
             <div className="cmp_tool_text">
               <span className="cmp_tool_label">{t.label}</span>
@@ -96,7 +96,7 @@ export default function Compare() {
             <div className="cmp_filter_group">
               <span className="cmp_filter_group_label">REGION</span>
               {REGIONS.map(r => (
-                <button key={r} className={`cmp_filter_pill${region === r ? ' cmp_filter_pill--active' : ''}`} onClick={() => setRegion(r)}>
+                <button type="button" key={r} className={`cmp_filter_pill${region === r ? ' cmp_filter_pill--active' : ''}`} onClick={() => setRegion(r)}>
                   {r}
                 </button>
               ))}
@@ -105,7 +105,7 @@ export default function Compare() {
             <div className="cmp_filter_group">
               <span className="cmp_filter_group_label">THRESHOLD</span>
               {THRESHOLDS.map(t => (
-                <button key={t} className={`cmp_filter_pill${threshold === t ? ' cmp_filter_pill--active' : ''}`} onClick={() => setThreshold(t)}>
+                <button type="button" key={t} className={`cmp_filter_pill${threshold === t ? ' cmp_filter_pill--active' : ''}`} onClick={() => setThreshold(t)}>
                   {t}
                 </button>
               ))}

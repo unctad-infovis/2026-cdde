@@ -13,35 +13,58 @@
   height: 400px;
   background: var(--un-color-blue-lightest);
   border-radius: 16px;
-  animation: gbc_pulse 1.4s ease infinite;
-}
-
-@keyframes gbc_pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-
-#app-root-2026-cdde .app .gbc_insight {
-  font-size: var(--un-font-size-xs);
-  color: var(--un-color-blue-darkest);
-  border-left: 3px solid var(--un-color-grey-light);
-  padding: 4px 0 4px 12px;
-  margin: 0 0 16px;
-  line-height: var(--un-line-height-normal);
-}
-
-#app-root-2026-cdde .app .gbc_insight_bold {
-  color: var(--un-color-blue-text-dark);
-  font-weight: var(--un-font-weight-bold);
+  animation: cdde_pulse 1.4s ease infinite;
 }
 
 #app-root-2026-cdde .app .gbc_chart_wrap {
   flex: 1;
+  position: relative;
+}
+
+#app-root-2026-cdde .app .gbc_tt_name {
+  font-size: var(--un-font-size-xs);
+  font-weight: var(--un-font-weight-boldest);
+  color: var(--un-color-blue-darkest);
+  margin-bottom: 6px;
+  white-space: nowrap;
+}
+
+#app-root-2026-cdde .app .gbc_tt_row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--un-font-size-xxs);
+  color: var(--un-color-blue-darkest);
+  margin-top: 3px;
+}
+
+#app-root-2026-cdde .app .gbc_tt_dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+#app-root-2026-cdde .app .gbc_tt_label {
+  flex: 1;
+  color: var(--un-color-grey-text);
+  white-space: nowrap;
+}
+
+#app-root-2026-cdde .app .gbc_tt_val {
+  font-weight: var(--un-font-weight-bold);
+  font-variant-numeric: tabular-nums;
+}
+
+#app-root-2026-cdde .app .gbc_tt_total {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--un-font-size-xxs);
+  color: var(--un-color-blue-darkest);
+  margin-top: 6px;
+  padding-top: 5px;
+  border-top: 1px solid var(--un-color-grey-lighest);
 }
 
 #app-root-2026-cdde .app .gbc_svg {
@@ -51,19 +74,20 @@
 }
 
 #app-root-2026-cdde .app .gbc_axis_label {
-  font-size: var(--un-font-size-xxxxs);
+  font-size: 9px;
   fill: var(--un-color-grey-text);
 }
 
 #app-root-2026-cdde .app .gbc_bar_label {
-  font-size: var(--un-font-size-xxxxs);
+  font-size: 9px;
   font-weight: var(--un-font-weight-bold);
   fill: #fff;
 }
 
 #app-root-2026-cdde .app .gbc_x_label {
-  font-size: var(--un-font-size-xxxxs);
-  fill: var(--un-color-grey-dark);
+  font-size: 10px;
+  font-weight: var(--un-font-weight-bold);
+  fill: var(--un-color-blue-darkest);
 }
 
 #app-root-2026-cdde .app .gbc_legend {

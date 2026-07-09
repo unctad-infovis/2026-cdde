@@ -18,13 +18,22 @@ const H = 480;
 const CHINA_GROUP = new Set(['CHN', 'HKG', 'TWN', 'MAC']);
 const CHINA_DELEGATE = new Set(['HKG', 'TWN', 'MAC']);
 
-// Export dependence: blue gradient from light to dark
+// Export dependence: blue steps from light to dark (hex for SVG fill)
 const EXP_COLORS = [
   { threshold: 0, color: '#e3edf6' },
   { threshold: 20, color: '#c5dfef' },
   { threshold: 40, color: '#009edb' },
   { threshold: 60, color: '#0077b8' },
   { threshold: 80, color: '#005392' }
+];
+
+// Legend labels paired with CSS vars (HTML elements, so vars resolve fine)
+const EXP_LEGEND = [
+  { label: '0–20%', color: 'var(--un-color-blue-lightest)' },
+  { label: '20–40%', color: 'var(--un-color-blue-light)' },
+  { label: '40–60%', color: 'var(--un-color-blue)' },
+  { label: '60–80%', color: 'var(--un-color-blue-dark)' },
+  { label: '80–100%', color: 'var(--un-color-blue-text-dark)' }
 ];
 
 // Dominant group: categorical colors
@@ -43,9 +52,9 @@ const GROUP_LABELS = {
 };
 
 const GROUP_NOTES = {
-  agri: 'Food and raw materials',
+  agri: 'Food and agricultural raw materials',
   energy: 'Oil, gas, coal',
-  mining: 'Ores and precious metals',
+  mining: 'Minerals, ores and metals',
   'non-dependent': 'Below 60% threshold'
 };
 
@@ -98,7 +107,10 @@ export default function DependenceMap() {
             if (!row.iso3) continue;
             byIso3[row.iso3] = {
               ...row,
-              export_dependence: row.export_dependence ? +row.export_dependence : null
+              export_dependence: row.export_dependence ? +row.export_dependence : null,
+              agri_pct: row.agri_pct ? +row.agri_pct : null,
+              energy_pct: row.energy_pct ? +row.energy_pct : null,
+              mining_pct: row.mining_pct ? +row.mining_pct : null
             };
           }
           setMapData(byIso3);
@@ -228,12 +240,12 @@ export default function DependenceMap() {
   }
 
   return (
-    <section className="cmap_section">
+    <section className="cmap_section cdde_reveal">
       <div className="cmap_inner">
-        <ChartHeader title="Who depends on commodities – and what kind?" large />
+        <ChartHeader title="Who depends on commodities – and what kind?" subtitle="Commodity export dependence by country, 2022–2024" large />
 
-        <p className="cmap_insight">
-          Commodity dependence is the norm across the developing world – but the type differs sharply, with <strong className="cmap_insight_bold">energy states clustering in the Gulf and Central Asia</strong>, mining economies ringing sub-Saharan Africa, and agricultural dependence spanning the broadest geography of
+        <p className="cdde_insight">
+          Commodity dependence is the norm across the developing world – but the type differs sharply, with <strong className="cdde_insight_bold">energy states clustering in the Gulf and Central Asia</strong>, mining economies ringing sub-Saharan Africa, and agricultural dependence spanning the broadest geography of
           all.
         </p>
 
@@ -321,12 +333,12 @@ export default function DependenceMap() {
             {view === 'export' ? (
               <div className="cmap_legend_export">
                 <span className="cmap_legend_label">Export share</span>
-                <div className="cmap_legend_grad_bar" />
-                <div className="cmap_legend_grad_ticks">
-                  <span>0%</span>
-                  <span>40%</span>
-                  <span>80%+</span>
-                </div>
+                {EXP_LEGEND.map(step => (
+                  <div key={step.label} className="cmap_legend_group_item">
+                    <span className="cmap_legend_step_dot" style={{ background: step.color }} />
+                    <span>{step.label}</span>
+                  </div>
+                ))}
               </div>
             ) : (
               <div className="cmap_legend_groups">
@@ -367,6 +379,24 @@ export default function DependenceMap() {
                         {GROUP_LABELS[selectedCountry.dominant_group] || selectedCountry.dominant_group}
                       </span>
                     )}
+                    {selectedCountry.export_dependence != null && (
+                      <div className="cmap_tt_categories">
+                        {[
+                          { key: 'agri', label: 'Agriculture', val: selectedCountry.agri_pct },
+                          { key: 'energy', label: 'Energy', val: selectedCountry.energy_pct },
+                          { key: 'mining', label: 'Mining & metals', val: selectedCountry.mining_pct }
+                        ].map(
+                          cat =>
+                            cat.val != null && (
+                              <div key={cat.key} className={`cmap_tt_cat_row${selectedCountry.dominant_group === cat.key ? ' cmap_tt_cat_row--dominant' : ''}`}>
+                                <span className="cmap_tt_group_dot" style={{ background: GROUP_COLORS[cat.key] }} />
+                                <span className="cmap_tt_label">{cat.label}</span>
+                                <span className="cmap_tt_val">{cat.val}%</span>
+                              </div>
+                            )
+                        )}
+                      </div>
+                    )}
                   </div>
 
                   <a className="cmap_panel_profile_link" href="./compare.html">
@@ -402,10 +432,22 @@ export default function DependenceMap() {
                       <span className="cmap_tt_val">{row.export_dependence}%</span>
                     </div>
                   )}
-                  {row.dominant_group && (
-                    <div className="cmap_tt_row">
-                      <span className="cmap_tt_group_dot" style={{ background: GROUP_COLORS[row.dominant_group] }} />
-                      <span className="cmap_tt_label">{GROUP_LABELS[row.dominant_group] || row.dominant_group}</span>
+                  {row.export_dependence != null && (
+                    <div className="cmap_tt_categories">
+                      {[
+                        { key: 'agri', label: 'Agriculture', val: row.agri_pct },
+                        { key: 'energy', label: 'Energy', val: row.energy_pct },
+                        { key: 'mining', label: 'Mining & metals', val: row.mining_pct }
+                      ].map(
+                        cat =>
+                          cat.val != null && (
+                            <div key={cat.key} className={`cmap_tt_cat_row${row.dominant_group === cat.key ? ' cmap_tt_cat_row--dominant' : ''}`}>
+                              <span className="cmap_tt_group_dot" style={{ background: GROUP_COLORS[cat.key] }} />
+                              <span className="cmap_tt_label">{cat.label}</span>
+                              <span className="cmap_tt_val">{cat.val}%</span>
+                            </div>
+                          )
+                      )}
                     </div>
                   )}
                 </ChartTooltip>

@@ -13,33 +13,13 @@
   height: 420px;
   background: var(--un-color-blue-lightest);
   border-radius: 8px;
-  animation: tc_pulse 1.4s ease infinite;
+  animation: cdde_pulse 1.4s ease infinite;
 }
 
-@keyframes tc_pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-
-#app-root-2026-cdde .app .tc_insight {
-  font-size: var(--un-font-size-xxs);
-  color: var(--un-color-blue-darkest);
-  border-left: 3px solid var(--un-color-grey-light);
-  padding: 2px 0 2px 10px;
-  margin: 10px 0 12px;
-  max-width: none;
-  padding-left: 10px;
-  line-height: var(--un-line-height-normal);
-}
-
-#app-root-2026-cdde .app .tc_insight_bold {
-  color: var(--un-color-blue-text-dark);
-  font-weight: var(--un-font-weight-bold);
+/* insight spacing override — cards are in stretch layout */
+#app-root-2026-cdde .app .tc_container .cdde_insight {
+  margin-top: 10px;
+  margin-bottom: 12px;
 }
 
 /* Color legend */
@@ -54,7 +34,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: var(--un-font-size-xxxxs);
+  font-size: var(--un-font-size-xxxs);
   color: var(--un-color-grey-dark);
 }
 
@@ -65,52 +45,8 @@
   flex-shrink: 0;
 }
 
-/* SVG chart */
 #app-root-2026-cdde .app .tc_chart_wrap {
   flex: 1;
-}
-
-#app-root-2026-cdde .app .tc_svg {
-  width: 100%;
-  height: auto;
-  display: block;
-  overflow: visible;
-}
-
-#app-root-2026-cdde .app .tc_axis_label {
-  font-size: 10px;
-  fill: var(--un-color-grey-text);
-  font-family: Inter, Arial, sans-serif;
-}
-
-#app-root-2026-cdde .app .tc_threshold_label {
-  font-size: 10px;
-  font-weight: 700;
-  fill: #fff;
-  font-family: Inter, Arial, sans-serif;
-}
-
-#app-root-2026-cdde .app .tc_threshold_line {
-  stroke: var(--un-color-grey-light);
-  stroke-width: 1px;
-  stroke-dasharray: 3 3;
-}
-
-#app-root-2026-cdde .app .tc_track {
-  stroke: var(--un-color-grey-lighest);
-  stroke-width: 1px;
-}
-
-#app-root-2026-cdde .app .tc_row_name {
-  font-size: 11px;
-  fill: var(--un-color-blue-darkest);
-  font-family: Inter, Arial, sans-serif;
-}
-
-#app-root-2026-cdde .app .tc_badge_label {
-  font-size: 10px;
-  font-weight: 700;
-  font-family: Inter, Arial, sans-serif;
 }
 
 /* source margin override */

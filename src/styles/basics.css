@@ -19,8 +19,9 @@
   /* Font size */
   --un-font-size-normal: 18px;
   --un-font-size-xs: 16px;
-  --un-font-size-xxs: 13px;
-  --un-font-size-xxxxs: 13px;
+  --un-font-size-xxs: 14px;
+  --un-font-size-xxxs: 12px;
+  --un-font-size-xxxxs: 10px;
   --un-font-size-xl: 24px;
   --un-font-size-xxl: 30px;
   --un-font-size-xxxl: 40px;

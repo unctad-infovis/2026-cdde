@@ -20,7 +20,7 @@ export default function CountryList({ countries, selected, onSelect }) {
         {countries.map(c => {
           const isSelected = selected?.iso3 === c.iso3;
           return (
-            <button key={c.iso3} className={`cl_tile${isSelected ? ' cl_tile--selected' : ''}`} onClick={() => onSelect(c)}>
+            <button type="button" key={c.iso3} className={`cl_tile${isSelected ? ' cl_tile--selected' : ''}`} onClick={() => onSelect(c)}>
               <span className="cl_tile_name">{c.name}</span>
               <span className="cl_tile_dep">
                 <span className="cl_dot" style={{ background: dotColor(c.export_dependence) }} />

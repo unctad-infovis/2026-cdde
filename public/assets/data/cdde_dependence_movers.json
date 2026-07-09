@@ -1,16 +1,162 @@
 [
-  {"name": "Ghana",          "old_pct": 56, "new_pct": 72, "change":  16},
-  {"name": "Tanzania",       "old_pct": 68, "new_pct": 82, "change":  14},
-  {"name": "Cabo Verde",     "old_pct": 52, "new_pct": 71, "change":  19},
-  {"name": "Mozambique",     "old_pct": 70, "new_pct": 82, "change":  12},
-  {"name": "Niger",          "old_pct": 68, "new_pct": 84, "change":  16},
-  {"name": "Mongolia",       "old_pct": 69, "new_pct": 82, "change":  13},
-  {"name": "Madagascar",     "old_pct": 65, "new_pct": 77, "change":  12},
-  {"name": "Sudan",          "old_pct": 72, "new_pct": 62, "change": -10},
-  {"name": "Angola",         "old_pct": 90, "new_pct": 82, "change":  -8},
-  {"name": "Kazakhstan",     "old_pct": 84, "new_pct": 72, "change": -12},
-  {"name": "Saudi Arabia",   "old_pct": 84, "new_pct": 72, "change": -12},
-  {"name": "Algeria",        "old_pct": 74, "new_pct": 68, "change":  -6},
-  {"name": "Russian Fed.",   "old_pct": 78, "new_pct": 66, "change": -12},
-  {"name": "Qatar",          "old_pct": 88, "new_pct": 76, "change": -12}
+  {
+    "name": "Niger",
+    "iso3": "NER",
+    "iso2": "ne",
+    "old_pct": 64.2,
+    "new_pct": 85.8,
+    "change": 21.6
+  },
+  {
+    "name": "Gambia",
+    "iso3": "GMB",
+    "iso2": "gm",
+    "old_pct": 72.5,
+    "new_pct": 88.9,
+    "change": 16.4
+  },
+  {
+    "name": "Congo",
+    "iso3": "COG",
+    "iso2": "cg",
+    "old_pct": 83.3,
+    "new_pct": 96.5,
+    "change": 13.2
+  },
+  {
+    "name": "Argentina",
+    "iso3": "ARG",
+    "iso2": "ar",
+    "old_pct": 67.8,
+    "new_pct": 80.9,
+    "change": 13.1
+  },
+  {
+    "name": "Timor-Leste",
+    "iso3": "TLS",
+    "iso2": "tl",
+    "old_pct": 83.8,
+    "new_pct": 94.8,
+    "change": 11.0
+  },
+  {
+    "name": "Cuba",
+    "iso3": "CUB",
+    "iso2": "cu",
+    "old_pct": 75.5,
+    "new_pct": 86.3,
+    "change": 10.8
+  },
+  {
+    "name": "Cabo Verde",
+    "iso3": "CPV",
+    "iso2": "cv",
+    "old_pct": 63.7,
+    "new_pct": 74.4,
+    "change": 10.7
+  },
+  {
+    "name": "Togo",
+    "iso3": "TGO",
+    "iso2": "tg",
+    "old_pct": 72.9,
+    "new_pct": 82.6,
+    "change": 9.7
+  },
+  {
+    "name": "Uganda",
+    "iso3": "UGA",
+    "iso2": "ug",
+    "old_pct": 70.3,
+    "new_pct": 79.7,
+    "change": 9.4
+  },
+  {
+    "name": "Brazil",
+    "iso3": "BRA",
+    "iso2": "br",
+    "old_pct": 66.7,
+    "new_pct": 75.9,
+    "change": 9.2
+  },
+  {
+    "name": "Maldives",
+    "iso3": "MDV",
+    "iso2": "mv",
+    "old_pct": 95.7,
+    "new_pct": 76.0,
+    "change": -19.7
+  },
+  {
+    "name": "Brunei Darussalam",
+    "iso3": "BRN",
+    "iso2": "bn",
+    "old_pct": 95.5,
+    "new_pct": 79.0,
+    "change": -16.5
+  },
+  {
+    "name": "Lao PDR",
+    "iso3": "LAO",
+    "iso2": "la",
+    "old_pct": 86.2,
+    "new_pct": 69.8,
+    "change": -16.4
+  },
+  {
+    "name": "Venezuela",
+    "iso3": "VEN",
+    "iso2": "ve",
+    "old_pct": 93.9,
+    "new_pct": 81.2,
+    "change": -12.7
+  },
+  {
+    "name": "Oman",
+    "iso3": "OMN",
+    "iso2": "om",
+    "old_pct": 83.0,
+    "new_pct": 70.7,
+    "change": -12.3
+  },
+  {
+    "name": "Montenegro",
+    "iso3": "MNE",
+    "iso2": "me",
+    "old_pct": 81.8,
+    "new_pct": 71.8,
+    "change": -10.0
+  },
+  {
+    "name": "Uzbekistan",
+    "iso3": "UZB",
+    "iso2": "uz",
+    "old_pct": 73.0,
+    "new_pct": 64.3,
+    "change": -8.7
+  },
+  {
+    "name": "Russian Fed.",
+    "iso3": "RUS",
+    "iso2": "ru",
+    "old_pct": 83.9,
+    "new_pct": 75.7,
+    "change": -8.2
+  },
+  {
+    "name": "Kuwait",
+    "iso3": "KWT",
+    "iso2": "kw",
+    "old_pct": 89.1,
+    "new_pct": 82.1,
+    "change": -7.0
+  },
+  {
+    "name": "Paraguay",
+    "iso3": "PRY",
+    "iso2": "py",
+    "old_pct": 91.5,
+    "new_pct": 84.8,
+    "change": -6.7
+  }
 ]

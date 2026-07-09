@@ -25,7 +25,7 @@ const wb    = XLSX.readFile(INPUT);
 const sheet = wb.Sheets[wb.SheetNames[0]];
 const rows  = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: '' });
 
-const header = ['iso3', 'iso2', 'name', 'region', 'export_dependence', 'dominant_group'];
+const header = ['iso3', 'iso2', 'name', 'region', 'export_dependence', 'dominant_group', 'agri_pct', 'energy_pct', 'mining_pct'];
 const out    = [header.join(',')];
 
 for (let i = 1; i < rows.length; i++) {
@@ -41,13 +41,16 @@ for (let i = 1; i < rows.length; i++) {
 
   if (isNaN(scd)) {
     // No data (e.g. Vatican, Monaco) — include with empty dependence
-    out.push([iso3, iso2, name, region, '', ''].join(','));
+    out.push([iso3, iso2, name, region, '', '', '', '', ''].join(','));
     continue;
   }
 
-  const exportDep = (scd * 100).toFixed(1);
-  let dominant;
+  const exportDep  = (scd * 100).toFixed(1);
+  const agriPct    = +agri   > 0 ? (+agri   * 100).toFixed(1) : '';
+  const energyPct  = +energy > 0 ? (+energy * 100).toFixed(1) : '';
+  const miningPct  = +mining > 0 ? (+mining * 100).toFixed(1) : '';
 
+  let dominant;
   if (scd >= THRESHOLD) {
     const groups = [['agri', +agri || 0], ['energy', +energy || 0], ['mining', +mining || 0]];
     dominant = groups.reduce((a, b) => (b[1] > a[1] ? b : a))[0];
@@ -55,7 +58,7 @@ for (let i = 1; i < rows.length; i++) {
     dominant = 'non-dependent';
   }
 
-  out.push([iso3, iso2, name, region, exportDep, dominant].join(','));
+  out.push([iso3, iso2, name, region, exportDep, dominant, agriPct, energyPct, miningPct].join(','));
 }
 
 createWriteStream(OUTPUT).end(out.join('\r\n') + '\r\n');
