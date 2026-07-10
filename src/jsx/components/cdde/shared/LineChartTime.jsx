@@ -33,15 +33,31 @@ function axisFmt(v, step) {
 
 export default function LineChartTime({ series, lineColor = '#009edb', yFmt = fmtBillions, tooltipUnit = 'bn USD', ariaLabel = 'Line chart over time' }) {
   const wrapRef = useRef(null);
+  const pathRef = useRef(null);
   const [svgW, setSvgW] = useState(560);
   const [tooltip, setTooltip] = useState(null);
+  const [pathLen, setPathLen] = useState(null);
+  const [revealed, setRevealed] = useState(false);
 
+  // ResizeObserver for responsive width
   useEffect(() => {
     const el = wrapRef.current;
     if (!el) return;
     const ro = new ResizeObserver(([entry]) => setSvgW(entry.contentRect.width));
     ro.observe(el);
     return () => ro.disconnect();
+  }, []);
+
+  // Viewport detection — fires once, triggers draw animation
+  useEffect(() => {
+    const el = wrapRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([e]) => { if (e.isIntersecting) { setRevealed(true); io.disconnect(); } },
+      { threshold: 0.15 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
   }, []);
 
   const CHART_W = svgW - M.left - M.right;
@@ -66,6 +82,13 @@ export default function LineChartTime({ series, lineColor = '#009edb', yFmt = fm
         .y(d => yScale(d.val))(series)
     : '';
 
+  // Measure path length after render so we can set stroke-dasharray
+  useEffect(() => {
+    if (pathRef.current && linePath) {
+      setPathLen(pathRef.current.getTotalLength());
+    }
+  }, [linePath, svgW]);
+
   const xTicks = [xMin, 2000, 2005, 2010, 2015, 2020, xMax].filter((y, i, a) => y >= xMin && y <= xMax && a.indexOf(y) === i);
 
   const lastPt = series.length ? series[series.length - 1] : null;
@@ -73,6 +96,20 @@ export default function LineChartTime({ series, lineColor = '#009edb', yFmt = fm
   const lastY = lastPt ? yScale(lastPt.val) : 0;
   const calloutText = lastPt ? yFmt(lastPt.val) : '';
   const calloutW = Math.max(36, calloutText.length * 7 + 12);
+
+  // Dash animation: invisible until pathLen known, then draw in on reveal
+  const pathStyle = pathLen != null
+    ? {
+        strokeDasharray: pathLen,
+        strokeDashoffset: revealed ? 0 : pathLen,
+        transition: revealed ? 'stroke-dashoffset 1.4s ease 0.2s' : 'none',
+      }
+    : { visibility: 'hidden' };
+
+  const endpointStyle = {
+    opacity: revealed ? 1 : 0,
+    transition: revealed ? 'opacity 0.3s ease 1.4s' : 'none',
+  };
 
   function handleMouseMove(e) {
     if (!series.length) return;
@@ -105,16 +142,27 @@ export default function LineChartTime({ series, lineColor = '#009edb', yFmt = fm
             </g>
           ))}
 
-          {linePath && <path d={linePath} fill="none" stroke={lineColor} strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" />}
+          {linePath && (
+            <path
+              ref={pathRef}
+              d={linePath}
+              fill="none"
+              stroke={lineColor}
+              strokeWidth={3}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              style={pathStyle}
+            />
+          )}
 
           {lastPt && (
-            <>
+            <g style={endpointStyle}>
               <circle cx={lastX} cy={lastY} r={4} fill={lineColor} />
               <rect x={lastX - calloutW / 2} y={lastY - 26} width={calloutW} height={20} rx={6} fill={lineColor} />
               <text x={lastX} y={lastY - 11} textAnchor="middle" className="lct_callout_label">
                 {calloutText}
               </text>
-            </>
+            </g>
           )}
 
           {tooltip && <line x1={tooltip.cursorX} y1={0} x2={tooltip.cursorX} y2={CHART_H} className="lct_cursor" />}

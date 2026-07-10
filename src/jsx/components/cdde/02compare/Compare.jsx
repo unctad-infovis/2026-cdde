@@ -140,7 +140,7 @@ export default function Compare({ content = {} }) {
               </div>
 
               <div className="cmp_list_wrap">
-                {allCountries ? <CountryList countries={filtered} selected={selected} onSelect={setSelected} /> : <div className="cmp_list_loading" />}
+                {allCountries ? <CountryList countries={filtered} selected={selected} onSelect={c => { setSelected(c); setPanelOpen(false); }} /> : <div className="cmp_list_loading" />}
               </div>
             </div>
 

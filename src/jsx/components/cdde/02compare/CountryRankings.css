@@ -129,6 +129,16 @@
     }
   }
 
+  /* ── Unit line ─────────────────────────────────────────────── */
+
+  .rt_unit {
+    font-size: var(--un-font-size-xxxs);
+    color: var(--un-color-grey-text);
+    padding: 8px 24px 0;
+    margin: 0;
+    max-width: none;
+  }
+
   /* ── Table ─────────────────────────────────────────────────── */
 
   .rt_table {
@@ -154,7 +164,7 @@
   .rt_th {
     font-size: var(--un-font-size-xxxs);
     font-weight: var(--un-font-weight-bold);
-    color: var(--un-color-blue);
+    color: var(--un-color-blue-darkest);
     letter-spacing: 0.06em;
     text-transform: uppercase;
   }
@@ -171,6 +181,10 @@
     &:last-child {
       border-bottom: none;
     }
+  }
+
+  .rt_row--nodata {
+    opacity: 0.45;
   }
 
   /* Rank */

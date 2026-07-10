@@ -4,7 +4,7 @@ import ChartHeader from '../shared/ChartHeader';
 import ChartMeta from '../shared/ChartMeta';
 import ColChart from '../shared/ColChart';
 
-export default function TopMarkets({ iso3, title, subtitle, description }) {
+export default function TopMarkets({ iso3, title, subtitle, description, source, note }) {
   const [allData, setAllData] = useState(null);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function TopMarkets({ iso3, title, subtitle, description }) {
       {allData && !markets && <p className="cdde_no_data">Destination market data not available for this country.</p>}
       {markets && <ColChart items={markets} />}
 
-      <ChartMeta source="UN Trade and Development (UNCTAD) calculations, based on UNCTADstat (2025), bilateral trade flows." />
+      <ChartMeta source={source} note={note} />
     </div>
   );
 }

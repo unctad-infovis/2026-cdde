@@ -1,15 +1,71 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CircleFlag from '../../general/CircleFlag';
+import loadFile from '../../../helpers/LoadFile';
 import { DEVELOPED } from '../shared/cdde-constants';
 
 import './CountryRankings.css';
 
+const fmtPct = v => `${Number(v).toFixed(1)} per cent`;
+const fmtGdpPc = v => `$${Math.round(v).toLocaleString('en-US')}`;
+const fmtPop = v => {
+  const m = v / 1000;
+  return m >= 1000 ? `${(m / 1000).toFixed(2)} billion` : `${m.toFixed(1)} million`;
+};
+const fmtGdp = v => {
+  const b = v / 1000;
+  return b >= 1000 ? `$${(b / 1000).toFixed(1)} trillion` : `$${b.toFixed(1)} billion`;
+};
+const fmtHdi = v => Number(v).toFixed(3);
+
 const RANK_OPTIONS = [
-  { key: 'export_dependence', label: 'Commodity export dependence (%)', colHeader: 'COMMODITY DEPENDENCE', fmt: v => `${Number(v).toFixed(1)}%` },
-  { key: 'hhi', label: 'Export concentration (HHI)', colHeader: 'EXPORT CONCENTRATION', fmt: v => Number(v).toFixed(2) },
-  { key: 'merchandise_exports', label: 'Merchandise exports', colHeader: 'MERCHANDISE EXPORTS', fmt: v => String(v) },
-  { key: 'gdp_per_capita', label: 'GDP per capita', colHeader: 'GDP PER CAPITA', fmt: v => String(v) },
-  { key: 'population', label: 'Population', colHeader: 'POPULATION', fmt: v => String(v) }
+  {
+    key: 'export_dependence',
+    label: 'Commodity export dependence',
+    colHeader: 'COMMODITY DEPENDENCE',
+    unit: 'Per cent, 2022–2024',
+    fmt: fmtPct,
+    src: 'country'
+  },
+  {
+    key: 'leading_commodity',
+    label: 'Three leading commodity exports',
+    colHeader: 'LEADING COMMODITIES',
+    unit: 'Per cent of exports, 2022–2024',
+    fmt: fmtPct,
+    src: 'stats'
+  },
+  {
+    key: 'gdp_per_capita',
+    label: 'GDP per capita',
+    colHeader: 'GDP PER CAPITA',
+    unit: 'Constant 2015 USD',
+    fmt: fmtGdpPc,
+    src: 'macro'
+  },
+  {
+    key: 'gdp',
+    label: 'GDP (total)',
+    colHeader: 'GDP TOTAL',
+    unit: 'Millions USD, constant 2015',
+    fmt: fmtGdp,
+    src: 'macro'
+  },
+  {
+    key: 'population',
+    label: 'Population',
+    colHeader: 'POPULATION',
+    unit: 'Thousands, 2024',
+    fmt: fmtPop,
+    src: 'social'
+  },
+  {
+    key: 'hdi_value',
+    label: 'Human Development Index',
+    colHeader: 'HDI',
+    unit: 'Value (0–1), 2023',
+    fmt: fmtHdi,
+    src: 'social'
+  }
 ];
 
 const FILTER_OPTIONS = [
@@ -18,19 +74,11 @@ const FILTER_OPTIONS = [
   { key: 'developed', label: 'Developed' }
 ];
 
-function parseVal(v) {
-  if (typeof v === 'number') return v;
-  const s = String(v).replace(/[$,\s]/g, '');
-  const n = parseFloat(s);
-  if (/B$/i.test(s)) return n * 1e9;
-  if (/M$/i.test(s)) return n * 1e6;
-  if (/K$/i.test(s)) return n * 1e3;
-  return n || 0;
-}
-
 function downloadCSV(rows, opt) {
   const header = ['Rank', 'ISO3', 'Economy', 'Status', 'Region', opt.label].join(',');
-  const lines = rows.map((c, i) => [i + 1, c.iso3, `"${c.name}"`, DEVELOPED.has(c.iso3) ? 'Developed' : 'Developing', c.region, c[opt.key]].join(','));
+  const lines = rows
+    .filter(c => c._val != null)
+    .map((c, i) => [i + 1, c.iso3, `"${c.name}"`, DEVELOPED.has(c.iso3) ? 'Developed' : 'Developing', c.region, c._val].join(','));
   const blob = new Blob([[header, ...lines].join('\n')], { type: 'text/csv' });
   const a = Object.assign(document.createElement('a'), {
     href: URL.createObjectURL(blob),
@@ -43,16 +91,45 @@ function downloadCSV(rows, opt) {
 export default function CountryRankings({ countries }) {
   const [rankBy, setRankBy] = useState('export_dependence');
   const [groupFilter, setGroupFilter] = useState('all');
+  const [macroData, setMacroData] = useState(null);
+  const [socialData, setSocialData] = useState(null);
+  const [statsData, setStatsData] = useState(null);
+
+  useEffect(() => {
+    loadFile('assets/data/cdde_macro_context.json').then(r => r?.json()).then(d => d && setMacroData(d));
+    loadFile('assets/data/cdde_social_context.json').then(r => r?.json()).then(d => d && setSocialData(d));
+    loadFile('assets/data/cdde_profile_stats.json').then(r => r?.json()).then(d => d && setStatsData(d));
+  }, []);
 
   const opt = RANK_OPTIONS.find(o => o.key === rankBy);
 
-  // Compute directly — no useMemo closure issues, 193 rows sorts in <1ms
-  const base = countries || [];
-  const pool = groupFilter === 'developed' ? base.filter(c => DEVELOPED.has(c.iso3)) : groupFilter === 'developing' ? base.filter(c => !DEVELOPED.has(c.iso3)) : base;
-  const sorted = [...pool].sort((a, b) => parseVal(b[rankBy]) - parseVal(a[rankBy]));
-  const maxVal = sorted.length ? parseVal(sorted[0][rankBy]) : 1;
+  function getVal(c) {
+    if (opt.src === 'country') return c.export_dependence ?? null;
+    if (opt.src === 'macro') return macroData?.[c.iso3]?.[opt.key] ?? null;
+    if (opt.src === 'social') return socialData?.[c.iso3]?.[opt.key] ?? null;
+    if (opt.src === 'stats') return statsData?.[c.iso3]?.[opt.key] ?? null;
+    return null;
+  }
 
-  if (!countries) return <div className="cdde_loading" style={{ height: 400 }} />;
+  const base = countries || [];
+  const pool = groupFilter === 'developed'
+    ? base.filter(c => DEVELOPED.has(c.iso3))
+    : groupFilter === 'developing'
+      ? base.filter(c => !DEVELOPED.has(c.iso3))
+      : base;
+
+  const withVals = pool.map(c => ({ ...c, _val: getVal(c) }));
+  const sorted = [...withVals].sort((a, b) => {
+    if (a._val == null && b._val == null) return 0;
+    if (a._val == null) return 1;
+    if (b._val == null) return -1;
+    return b._val - a._val;
+  });
+  const maxVal = sorted.find(c => c._val != null)?._val ?? 1;
+
+  const dataLoaded = opt.src === 'country' || (opt.src === 'macro' && macroData) || (opt.src === 'social' && socialData) || (opt.src === 'stats' && statsData);
+
+  if (!countries || !dataLoaded) return <div className="cdde_loading" style={{ height: 400 }} />;
 
   return (
     <div className="rt_wrap">
@@ -101,6 +178,9 @@ export default function CountryRankings({ countries }) {
         </div>
       </div>
 
+      {/* ── Unit line ── */}
+      <p className="rt_unit">{opt.unit}</p>
+
       {/* ── Table ── */}
       <div className="rt_table">
         <div className="rt_thead">
@@ -114,10 +194,12 @@ export default function CountryRankings({ countries }) {
         {sorted.map((c, i) => {
           const dev = DEVELOPED.has(c.iso3);
           const barColor = dev ? 'var(--un-color-blue)' : 'var(--un-color-yellow)';
-          const pct = maxVal > 0 ? (parseVal(c[rankBy]) / maxVal) * 100 : 0;
+          const pct = maxVal > 0 && c._val != null ? (c._val / maxVal) * 100 : 0;
           return (
-            <div key={c.iso3} className="rt_row">
-              <span className={`rt_rank${i < 10 ? ' rt_rank--top' : ''}`}>{i + 1}</span>
+            <div key={c.iso3} className={`rt_row${c._val == null ? ' rt_row--nodata' : ''}`}>
+              <span className={`rt_rank${i < 10 && c._val != null ? ' rt_rank--top' : ''}`}>
+                {c._val != null ? i + 1 : '–'}
+              </span>
 
               <div className="rt_economy">
                 <CircleFlag countryCode={c.iso2} width={22} height={22} />
@@ -130,12 +212,14 @@ export default function CountryRankings({ countries }) {
               </div>
 
               <div className="rt_bar_col">
-                <div className="rt_bar_track">
-                  <div className="rt_bar_fill" style={{ width: `${pct}%`, background: barColor }} />
-                </div>
+                {c._val != null && (
+                  <div className="rt_bar_track">
+                    <div className="rt_bar_fill" style={{ width: `${pct}%`, background: barColor }} />
+                  </div>
+                )}
               </div>
 
-              <span className="rt_val">{opt.fmt(c[rankBy])}</span>
+              <span className="rt_val">{c._val != null ? opt.fmt(c._val) : '–'}</span>
             </div>
           );
         })}

@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import loadFile from '../../../helpers/LoadFile';
 import CircleFlag from '../../general/CircleFlag';
+import ChartHeader from '../shared/ChartHeader';
 import StackedBar from '../shared/StackedBar';
 
 import './CompareView.css';
 
-// Per-slot visual identity (card gradient bg + bar/text accent color)
 const SLOTS = [
   { bg: 'linear-gradient(135deg, #1a2d4a 0%, #2a5878 100%)', bar: '#009edb' },
   { bg: 'linear-gradient(135deg, #6a3c00 0%, #b07010 100%)', bar: '#fbaf17' },
@@ -26,72 +26,84 @@ const GROUP_INFO = {
   'non-dependent': { label: 'Non-commodity', icon: '●' }
 };
 
-// Rows for the indicator table
 const ROWS = [
   {
-    key: 'export_dependence',
+    key: 'commodity_dependence',
     label: 'Commodity export dependence',
-    desc: '% of merchandise exports, 2022–24',
+    desc: 'Per cent of merchandise exports, 2022–2024',
     star: 'min',
-    fmt: v => `${Number(v).toFixed(1)}%`
+    fmt: v => `${Number(v).toFixed(1)} per cent`
   },
   {
-    key: 'merchandise_exports',
-    label: 'Merchandise exports',
-    desc: 'Millions of dollars, 2022–24 average',
-    star: 'max',
-    fmt: v => String(v)
+    key: 'leading_commodity',
+    label: 'Three leading commodity exports',
+    desc: 'Per cent of total exports, 2022–2024',
+    star: 'min',
+    fmt: v => `${Number(v).toFixed(1)} per cent`
   },
   {
-    key: 'hhi',
-    label: 'Export concentration (HHI)',
-    desc: '0 = diversified, 1 = concentrated',
+    key: 'leading_market',
+    label: 'Top 3 destination markets',
+    desc: 'Per cent of total merchandise exports, 2022–2024',
     star: 'min',
-    fmt: v => Number(v).toFixed(2)
+    fmt: v => `${Number(v).toFixed(1)} per cent`
   },
   {
     key: 'gdp_per_capita',
     label: 'GDP per capita',
-    desc: 'Constant 2015 dollars',
+    desc: 'Constant 2015 USD',
     star: 'max',
-    fmt: v => String(v)
+    fmt: v => `$${Math.round(v).toLocaleString('en-US')}`
   },
   {
-    key: 'population',
+    key: 'population_m',
     label: 'Population',
-    desc: 'Millions, mid-2023 estimate',
+    desc: 'Millions, 2024',
     star: null,
-    fmt: v => String(v)
+    fmt: v => `${Number(v).toFixed(1)} million`
+  },
+  {
+    key: 'hdi_value',
+    label: 'Human Development Index',
+    desc: 'Value (0–1), 2023',
+    star: 'max',
+    fmt: v => Number(v).toFixed(3)
   },
   {
     key: 'dominant_group',
     label: 'Dominant commodity group',
-    desc: 'Largest export category',
+    desc: 'Largest export category, 2022–2024',
     star: null,
-    fmt: null // special render
+    fmt: null
   }
 ];
 
-function parseNum(v) {
-  if (typeof v === 'number') return v;
-  if (!v) return 0;
-  return (
-    parseFloat(
-      String(v)
-        .replace(/[$,%\s,]/g, '')
-        .replace(/[BMKTbmkt]/g, '')
-    ) || 0
-  );
-}
-
-export default function CompareView({ compareList, countries, dnaTitle, dnaDescription }) {
+export default function CompareView({ compareList, countries, dnaTitle, dnaSubtitle, dnaDescription }) {
   const [groupData, setGroupData] = useState(null);
+  const [statsData, setStatsData] = useState(null);
+  const [macroData, setMacroData] = useState(null);
+  const [socialData, setSocialData] = useState(null);
 
   useEffect(() => {
-    loadFile('assets/data/cdde_group_breakdown.json')
-      .then(r => r?.json())
-      .then(d => d && setGroupData(d));
+    loadFile('assets/data/cdde_group_breakdown.json').then(r => r?.json()).then(d => d && setGroupData(d));
+    loadFile('assets/data/cdde_profile_stats.json').then(r => r?.json()).then(d => d && setStatsData(d));
+    loadFile('assets/data/cdde_macro_context.json').then(r => r?.json()).then(d => d && setMacroData(d));
+    loadFile('assets/data/cdde_social_context.json').then(r => r?.json()).then(d => d && setSocialData(d));
   }, []);
+
+  function getMerged(iso3) {
+    const s = statsData?.[iso3] ?? {};
+    const m = macroData?.[iso3] ?? {};
+    const soc = socialData?.[iso3] ?? {};
+    return {
+      commodity_dependence: s.commodity_dependence ?? null,
+      leading_commodity: s.leading_commodity ?? null,
+      leading_market: s.leading_market ?? null,
+      gdp_per_capita: m.gdp_per_capita ?? null,
+      population_m: soc.population != null ? soc.population / 1000 : null,
+      hdi_value: soc.hdi_value ?? null,
+    };
+  }
 
   const slots = compareList.map((iso3, i) => ({
     country: iso3 ? (countries || []).find(c => c.iso3 === iso3) : null,
@@ -114,7 +126,7 @@ export default function CompareView({ compareList, countries, dnaTitle, dnaDescr
                 </div>
                 <h3 className="cv_card_name">{country.name}</h3>
                 <p className="cv_card_meta">
-                  {country.region} · ISO {country.iso3}
+                  {country.region}
                 </p>
                 <div className="cv_card_pct">{country.export_dependence.toFixed(1)}%</div>
                 <p className="cv_card_dep_label">COMMODITY EXPORT DEPENDENCE</p>
@@ -128,24 +140,20 @@ export default function CompareView({ compareList, countries, dnaTitle, dnaDescr
 
       {/* ── Commodity DNA ── */}
       <div className="cv_panel">
-        <div className="cv_dna_top">
-          <div className="cv_dna_title_col">
-            <h3 className="cv_panel_title">{dnaTitle}</h3>
-            {dnaDescription && <p className="cdde_insight">{dnaDescription}</p>}
-          </div>
-          <div className="cv_dna_legend">
-            {[
-              ['agri', 'Agricultural'],
-              ['energy', 'Energy'],
-              ['mining', 'Mining & metals'],
-              ['other', 'Other / non-commodity']
-            ].map(([k, l]) => (
-              <div key={k} className="cv_dna_leg_item">
-                <span className="cv_dna_leg_dot" style={{ background: DNA_COLORS[k] }} />
-                <span className="cv_dna_leg_lbl">{l}</span>
-              </div>
-            ))}
-          </div>
+        <ChartHeader title={dnaTitle} subtitle={dnaSubtitle} description={dnaDescription} />
+
+        <div className="cv_dna_legend">
+          {[
+            ['agri', 'Agricultural'],
+            ['energy', 'Energy'],
+            ['mining', 'Mining & metals'],
+            ['other', 'Other / non-commodity']
+          ].map(([k, l]) => (
+            <div key={k} className="cv_dna_leg_item">
+              <span className="cv_dna_leg_dot" style={{ background: DNA_COLORS[k] }} />
+              <span className="cv_dna_leg_lbl">{l}</span>
+            </div>
+          ))}
         </div>
 
         <div className="cv_dna_rows">
@@ -182,7 +190,6 @@ export default function CompareView({ compareList, countries, dnaTitle, dnaDescr
 
       {/* ── Indicator table ── */}
       <div className="cv_panel">
-        {/* Table header */}
         <div className="cv_tbl_hdr">
           <div className="cv_tbl_hdr_ind">INDICATOR</div>
           {slots.map(({ country, slot, i }) => (
@@ -199,10 +206,14 @@ export default function CompareView({ compareList, countries, dnaTitle, dnaDescr
           ))}
         </div>
 
-        {/* Data rows */}
         {ROWS.map(row => {
-          const vals = slots.map(s => (s.country ? s.country[row.key] : null));
-          const nums = vals.map(v => parseNum(v));
+          const vals = slots.map(({ country }) => {
+            if (!country) return null;
+            if (row.key === 'dominant_group') return country.dominant_group ?? null;
+            return getMerged(country.iso3)[row.key] ?? null;
+          });
+
+          const nums = vals.map(v => (v != null && row.fmt !== null ? parseFloat(v) || 0 : 0));
           const positives = nums.filter(n => n > 0);
           const maxNum = positives.length ? Math.max(...nums) : 0;
 
@@ -222,11 +233,8 @@ export default function CompareView({ compareList, countries, dnaTitle, dnaDescr
               </div>
 
               {slots.map(({ country, slot, i }) => {
-                const val = country ? country[row.key] : null;
-                const num = parseNum(val);
-                const barPct = maxNum > 0 ? (num / maxNum) * 100 : 0;
+                const val = vals[i];
 
-                // Dominant group: icon + label, no bar
                 if (row.fmt === null) {
                   const g = GROUP_INFO[val] || null;
                   return (
@@ -244,6 +252,9 @@ export default function CompareView({ compareList, countries, dnaTitle, dnaDescr
                     </div>
                   );
                 }
+
+                const num = nums[i];
+                const barPct = maxNum > 0 ? (num / maxNum) * 100 : 0;
 
                 return (
                   <div key={i} className="cv_tbl_val">

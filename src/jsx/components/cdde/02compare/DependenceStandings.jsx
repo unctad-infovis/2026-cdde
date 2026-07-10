@@ -1,65 +1,45 @@
 import * as d3 from 'd3';
 import { useEffect, useRef, useState } from 'react';
+import loadFile from '../../../helpers/LoadFile';
 import ChartHeader from '../shared/ChartHeader';
+import ChartMeta from '../shared/ChartMeta';
+import ChartTooltip from '../shared/ChartTooltip';
 import { DEVELOPED, REGION_GROUPS } from '../shared/cdde-constants';
 
 import './DependenceStandings.css';
 
-const CRITERIA = [
-  {
-    id: 'export_dependence',
-    label: 'Commodity dependence (%)',
-    tickFmt: v => `${v}%`,
-    valFmt: v => `${v.toFixed(1)}%`,
-    domain: [0, 100],
-    threshold: 60,
-    thresholdLabel: '60% threshold'
-  },
-  {
-    id: 'hhi',
-    label: 'Export concentration (HHI)',
-    tickFmt: v => v.toFixed(2),
-    valFmt: v => v.toFixed(2),
-    domain: [0, 1],
-    threshold: null,
-    thresholdLabel: null
-  }
-];
+const PILL_W = 110;
+const PILL_H = 20;
+const PILL_R = 3;
+const PILL_ARROW = 4;
 
 const REGION_LIST = ['All regions', 'Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
 
-
-function parsePop(pop) {
-  if (!pop) return 5e6;
-  const s = String(pop).trim().toUpperCase();
-  const n = parseFloat(s);
-  if (s.includes('B')) return n * 1e9;
-  if (s.includes('M')) return n * 1e6;
-  if (s.includes('K')) return n * 1e3;
-  return n || 5e6;
-}
-
-export default function DependenceStandings({ countries, title, description }) {
-  const [criterion, setCriterion] = useState('export_dependence');
+export default function DependenceStandings({ countries, title, subtitle, description, source, note }) {
   const [region, setRegion] = useState('All regions');
   const [highlight, setHighlight] = useState([]);
   const [hlInput, setHlInput] = useState('');
   const [suggestions, setSuggestions] = useState([]);
   const [chartW, setChartW] = useState(0);
+  const [tooltip, setTooltip] = useState(null);
+  const [socialData, setSocialData] = useState(null);
 
   const svgRef = useRef();
   const wrapRef = useRef();
 
-  const crit = CRITERIA.find(c => c.id === criterion);
+  useEffect(() => {
+    loadFile('assets/data/cdde_social_context.json')
+      .then(r => r?.json())
+      .then(d => { if (d) setSocialData(d); });
+  }, []);
 
   const visible = (countries || []).filter(c => {
-    const v = c[criterion];
+    const v = c.export_dependence;
     if (v == null || Number.isNaN(v)) return false;
     if (region === 'All regions') return true;
     return REGION_GROUPS[region]?.includes(c.region);
   });
 
-  // Track container width
   useEffect(() => {
     if (!wrapRef.current) return;
     const ro = new ResizeObserver(entries => setChartW(entries[0].contentRect.width));
@@ -68,40 +48,36 @@ export default function DependenceStandings({ countries, title, description }) {
     return () => ro.disconnect();
   }, []);
 
-  // Draw beeswarm
   useEffect(() => {
     if (!chartW || !visible.length || !svgRef.current) return;
 
     const W = chartW;
-    const H = 400;
-    const M = { top: 36, right: 96, bottom: 56, left: 16 };
+    const H = 220;
+    const M = { top: 40, right: 16, bottom: 28, left: 16 };
     const iW = W - M.left - M.right;
     const iH = H - M.top - M.bottom;
 
-    const xScale = d3.scaleLinear().domain(crit.domain).range([0, iW]);
+    const xScale = d3.scaleLinear().domain([0, 100]).range([0, iW]);
 
-    const maxPop = d3.max(visible, c => parsePop(c.population)) || 1e9;
-    const maxR = W < 420 ? 7 : W < 600 ? 10 : 16;
+    const getPop = c => socialData?.[c.iso3]?.population ?? 5000;
+    const maxPop = d3.max(visible, c => getPop(c)) || 1400000;
+    const maxR = W < 420 ? 10 : W < 600 ? 15 : 24;
     const rScale = d3.scaleSqrt().domain([0, maxPop]).range([2, maxR]);
 
     const nodes = visible.map(c => ({
       iso3: c.iso3,
       name: c.name,
-      val: c[criterion],
-      r: rScale(parsePop(c.population)),
+      val: c.export_dependence,
+      r: rScale(getPop(c)),
       dev: DEVELOPED.has(c.iso3),
-      x: xScale(c[criterion]),
+      x: xScale(c.export_dependence),
       y: iH / 2
     }));
 
-    // Beeswarm via force simulation (synchronous)
     d3.forceSimulation(nodes)
       .force('x', d3.forceX(d => xScale(d.val)).strength(1))
       .force('y', d3.forceY(iH / 2).strength(0.05))
-      .force(
-        'collision',
-        d3.forceCollide(d => d.r + 1.5)
-      )
+      .force('collision', d3.forceCollide(d => d.r + 1.5))
       .stop()
       .tick(120);
 
@@ -115,47 +91,37 @@ export default function DependenceStandings({ countries, title, description }) {
 
     const g = svg.append('g').attr('transform', `translate(${M.left},${M.top})`);
 
-    g.append('rect').attr('width', iW).attr('height', iH).attr('fill', '#f5f7fa').attr('rx', 6);
-
     // X axis
     g.append('g')
       .attr('transform', `translate(0,${iH})`)
-      .call(d3.axisBottom(xScale).ticks(6).tickFormat(crit.tickFmt))
+      .call(d3.axisBottom(xScale).ticks(6).tickFormat(v => `${v}%`))
       .call(ax => ax.select('.domain').remove())
       .call(ax => ax.selectAll('.tick line').attr('stroke', '#ccc'))
       .call(ax => ax.selectAll('text').attr('fill', '#888').attr('font-size', 11));
 
-    // Axis label
-    g.append('text')
-      .attr('x', iW / 2)
-      .attr('y', iH + 48)
+    // 60% threshold vertical line
+    const tx = xScale(60);
+    g.append('line')
+      .attr('x1', tx).attr('x2', tx)
+      .attr('y1', 0).attr('y2', iH)
+      .attr('stroke', '#fbaf17').attr('stroke-width', 1.5).attr('stroke-dasharray', '5,4');
+
+    // 60% threshold pill
+    const pillX = Math.min(iW - PILL_W - 2, Math.max(2, tx - PILL_W / 2));
+    const arrowCX = Math.max(PILL_ARROW + 2, Math.min(PILL_W - PILL_ARROW - 2, tx - pillX));
+    const pillG = g.append('g').attr('transform', `translate(${pillX},${-PILL_H - PILL_ARROW - 4})`);
+    pillG.append('rect').attr('width', PILL_W).attr('height', PILL_H).attr('rx', PILL_R).attr('fill', '#fbaf17');
+    pillG.append('text')
+      .attr('x', PILL_W / 2).attr('y', PILL_H - 5)
       .attr('text-anchor', 'middle')
-      .attr('fill', '#666')
+      .attr('fill', '#fff')
       .attr('font-size', 10)
       .attr('font-weight', 700)
-      .attr('letter-spacing', '0.06em')
-      .text(crit.label.toUpperCase());
-
-    // Reference line
-    if (crit.threshold != null) {
-      const tx = xScale(crit.threshold);
-      g.append('line').attr('x1', tx).attr('x2', tx).attr('y1', 0).attr('y2', iH).attr('stroke', '#fbaf17').attr('stroke-width', 1.5).attr('stroke-dasharray', '5,4');
-      g.append('text')
-        .attr('x', tx + 6)
-        .attr('y', 16)
-        .attr('fill', '#fbaf17')
-        .attr('font-size', 11)
-        .text(crit.thresholdLabel);
-    }
-
-    // Economy count
-    svg
-      .append('text')
-      .attr('x', W - M.right + 8)
-      .attr('y', M.top + 16)
-      .attr('fill', '#aaa')
-      .attr('font-size', 11)
-      .text(`${nodes.length} economies`);
+      .attr('font-family', 'Inter, Arial, sans-serif')
+      .text('60% threshold');
+    pillG.append('polygon')
+      .attr('points', `${arrowCX - PILL_ARROW},${PILL_H} ${arrowCX + PILL_ARROW},${PILL_H} ${arrowCX},${PILL_H + PILL_ARROW}`)
+      .attr('fill', '#fbaf17');
 
     // Dots
     const hlSet = new Set(highlight);
@@ -171,11 +137,21 @@ export default function DependenceStandings({ countries, title, description }) {
       .attr('opacity', d => (hasHL && !hlSet.has(d.iso3) ? 0.25 : 0.82))
       .attr('stroke', d => (hlSet.has(d.iso3) ? '#003a5c' : 'none'))
       .attr('stroke-width', 2.5)
-      .append('title')
-      .text(d => `${d.name}: ${crit.valFmt(d.val)}`);
-  }, [visible, criterion, chartW, highlight, crit.tickFmt, crit.label.toUpperCase, crit.valFmt, crit.thresholdLabel, crit.threshold, crit.domain]);
+      .style('cursor', 'default')
+      .on('mouseover', (event, d) => {
+        const rect = wrapRef.current.getBoundingClientRect();
+        setTooltip({ left: event.clientX - rect.left, top: event.clientY - rect.top, name: d.name, val: d.val });
+      })
+      .on('mousemove', (event, d) => {
+        const rect = wrapRef.current.getBoundingClientRect();
+        setTooltip({ left: event.clientX - rect.left, top: event.clientY - rect.top, name: d.name, val: d.val });
+      })
+      .on('mouseout', () => setTooltip(null));
 
-  // Highlight input
+    d3.select(svgRef.current).on('mouseleave', () => setTooltip(null));
+
+  }, [visible, chartW, highlight, socialData]);
+
   const handleHlInput = e => {
     const val = e.target.value;
     setHlInput(val);
@@ -196,27 +172,11 @@ export default function DependenceStandings({ countries, title, description }) {
 
   return (
     <div className="dp_card">
-      <ChartHeader title={title} description={description} />
+      <ChartHeader title={title} subtitle={subtitle} description={description} />
 
       <div className="dp_divider" />
 
       <div className="dp_controls">
-        <div className="dp_control_group">
-          <span className="dp_control_label">CRITERION</span>
-          <div className="dp_select_wrap">
-            <select className="dp_select" value={criterion} onChange={e => setCriterion(e.target.value)}>
-              {CRITERIA.map(c => (
-                <option key={c.id} value={c.id}>
-                  {c.label}
-                </option>
-              ))}
-            </select>
-            <svg className="dp_chevron" viewBox="0 0 12 8" fill="none" aria-hidden="true">
-              <path d="M1 1l5 5 5-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-        </div>
-
         <div className="dp_control_group">
           <span className="dp_control_label">REGION</span>
           <div className="dp_select_wrap">
@@ -281,6 +241,18 @@ export default function DependenceStandings({ countries, title, description }) {
           </button>
         )}
       </div>
+
+      <ChartMeta source={source} note={note} />
+
+      {tooltip && (
+        <ChartTooltip left={tooltip.left} top={tooltip.top} flip={tooltip.left > chartW * 0.6}>
+          <div className="cmap_tt_name">{tooltip.name}</div>
+          <div className="cmap_tt_row">
+            <span className="cmap_tt_label">Export dependence</span>
+            <span className="cmap_tt_val">{tooltip.val.toFixed(1)}%</span>
+          </div>
+        </ChartTooltip>
+      )}
     </div>
   );
 }

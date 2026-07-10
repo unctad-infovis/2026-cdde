@@ -4,7 +4,7 @@ import ChartHeader from '../shared/ChartHeader';
 import ChartMeta from '../shared/ChartMeta';
 import ColChart from '../shared/ColChart';
 
-export default function LeadingExports({ iso3, dominantGroup, title, subtitle, description }) {
+export default function LeadingExports({ iso3, dominantGroup, title, subtitle, description, source, note }) {
   const [allData, setAllData] = useState(null);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function LeadingExports({ iso3, dominantGroup, title, subtitle, d
       {allData && !exports && <p className="cdde_no_data">Export breakdown data not available for this country.</p>}
       {exports && <ColChart items={exports} />}
 
-      <ChartMeta source="UN Trade and Development (UNCTAD) calculations, based on UNCTADstat (2025), SITC Rev. 3 classification." />
+      <ChartMeta source={source} note={note} />
     </div>
   );
 }

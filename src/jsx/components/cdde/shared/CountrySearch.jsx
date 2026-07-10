@@ -49,7 +49,7 @@ export default function CountrySearch({ countries, value, onChange, placeholder 
 
   return (
     <div className="cs_wrap" ref={ref}>
-      <div className={`cs_field${open ? ' cs_field--open' : ''}`} onClick={() => inputRef.current?.focus()}>
+      <div className={`cs_field${open ? ' cs_field--open' : ''}${selected ? ' cs_field--filled' : ''}`} onClick={() => inputRef.current?.focus()}>
         {selected && !open && <CircleFlag countryCode={selected.iso2} width={18} height={18} />}
         <input ref={inputRef} className="cs_input" type="text" placeholder={placeholder} value={open ? query : (selected?.name ?? '')} onChange={handleChange} onFocus={handleFocus} autoComplete="off" spellCheck={false} />
         {selected && (

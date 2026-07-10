@@ -8,6 +8,10 @@
     gap: 0;
   }
 
+  .dp_card > .cdde_insight {
+    margin-top: 10px;
+  }
+
   .dp_divider {
     height: 1px;
     background: var(--un-color-grey-lighest);
@@ -77,7 +81,7 @@
   .dp_chart_wrap {
     position: relative;
     margin-top: 8px;
-    min-height: 400px;
+    min-height: 200px;
   }
 
   .dp_loading {

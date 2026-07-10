@@ -4,7 +4,7 @@ import ChartHeader from '../shared/ChartHeader';
 import ChartMeta from '../shared/ChartMeta';
 import PeriodColumns from '../shared/PeriodColumns';
 
-export default function EnergyNetImports({ iso3, title, subtitle, description }) {
+export default function EnergyNetImports({ iso3, title, subtitle, description, source, note }) {
   const [allData, setAllData] = useState(null);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function EnergyNetImports({ iso3, title, subtitle, description })
     <div className="cdde_card">
       <ChartHeader title={title} subtitle={subtitle} description={description} />
       <PeriodColumns val1={d?.energy_early ?? null} val2={d?.energy_recent ?? null} />
-      <ChartMeta source="UN Trade and Development (UNCTAD) calculations, based on UNCTADstat (2025)." />
+      <ChartMeta source={source} note={note} />
     </div>
   );
 }

@@ -10,7 +10,7 @@ function fmtPop(thousands) {
   return `${(thousands / 1_000).toFixed(1)} million`;
 }
 
-export default function SocialContext({ iso3, title, subtitle, description }) {
+export default function SocialContext({ iso3, title, subtitle, description, source, note }) {
   const [allData, setAllData] = useState(null);
 
   useEffect(() => {
@@ -37,8 +37,8 @@ export default function SocialContext({ iso3, title, subtitle, description }) {
       <ChartHeader title={title} subtitle={subtitle} description={description} />
       {!allData && <div className="cdde_loading" style={{ height: 120 }} />}
       {allData && !d && <p className="cdde_no_data">Social data not available for this country.</p>}
-      {d && <StatList items={items} />}
-      <ChartMeta source="UN Trade and Development (UNCTAD), based on UNCTADstat (2025)." />
+      {d && <StatList items={items} key={iso3} />}
+      <ChartMeta source={source} note={note} />
     </div>
   );
 }

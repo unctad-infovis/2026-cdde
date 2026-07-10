@@ -107,26 +107,12 @@
 
   /* ── Commodity DNA ──────────────────────────────────────────── */
 
-  .cv_dna_top {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 24px;
-    margin-bottom: 20px;
-  }
-
-  .cv_dna_title_col {
-    flex: 1;
-    max-width: 420px;
-  }
-
   .cv_dna_legend {
     display: flex;
     align-items: center;
     gap: 4px 16px;
     flex-wrap: wrap;
-    justify-content: flex-end;
-    flex-shrink: 0;
+    margin-bottom: 16px;
   }
 
   .cv_dna_leg_item {

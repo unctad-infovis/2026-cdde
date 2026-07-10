@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import loadFile from '../../../helpers/LoadFile';
 import CircleFlag from '../../general/CircleFlag';
+import RollingNumber from '../shared/RollingNumber';
 import DependenceOverTime from './DependenceOverTime';
 import EnergyImportsOverTime from './EnergyImportsOverTime';
 import EnergyNetImports from './EnergyNetImports';
@@ -83,12 +84,14 @@ export default function CountryProfile({ country, content = {} }) {
         {insightDesc.includes(',') ? `,${insightDesc.split(',').slice(1).join(',')}` : ''}.
       </p>
 
-      {/* Key stats row */}
-      <div className="cp_stats_row">
+      {/* Key stats row – keyed on iso3 so RollingNumber re-animates on country change */}
+      <div className="cp_stats_row" key={iso3}>
         <div className="cp_stat">
-          <span className="cp_stat_value" style={{ color: safePct != null ? depColor(safePct) : 'var(--un-color-blue-darkest)' }}>
-            {countryStats?.commodity_dependence != null ? `${countryStats.commodity_dependence}%` : '–'}
-          </span>
+          <RollingNumber
+            value={countryStats?.commodity_dependence != null ? `${countryStats.commodity_dependence}%` : '–'}
+            className="cp_stat_value"
+            style={{ color: safePct != null ? depColor(safePct) : 'var(--un-color-blue-darkest)' }}
+          />
           <span className="cp_stat_label">Commodity dependence</span>
           <div className="cp_stat_cats">
             {categories.map(cat => (
@@ -101,12 +104,12 @@ export default function CountryProfile({ country, content = {} }) {
           </div>
         </div>
         <div className="cp_stat">
-          <span className="cp_stat_value">{countryStats?.leading_market != null ? `${countryStats.leading_market}%` : '–'}</span>
+          <RollingNumber value={countryStats?.leading_market != null ? `${countryStats.leading_market}%` : '–'} className="cp_stat_value" />
           <span className="cp_stat_label">Leading destination markets</span>
           <span className="cp_stat_note">Share of top 3 export destination countries</span>
         </div>
         <div className="cp_stat">
-          <span className="cp_stat_value">{countryStats?.leading_commodity != null ? `${countryStats.leading_commodity}%` : '–'}</span>
+          <RollingNumber value={countryStats?.leading_commodity != null ? `${countryStats.leading_commodity}%` : '–'} className="cp_stat_value" />
           <span className="cp_stat_label">Leading commodities</span>
           <span className="cp_stat_note">Share of top 3 commodities</span>
         </div>

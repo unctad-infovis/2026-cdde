@@ -15,7 +15,7 @@ const PILL_H = 20;
 const PILL_R = 3;
 const PILL_ARROW = 4;
 
-export default function DependenceOverTime({ iso3, title, subtitle, description }) {
+export default function DependenceOverTime({ iso3, title, subtitle, description, source, note }) {
   const [allData, setAllData] = useState(null);
   const lineColor = '#009edb';
 
@@ -143,7 +143,7 @@ export default function DependenceOverTime({ iso3, title, subtitle, description 
         )}
       </div>
 
-      <ChartMeta source="UN Trade and Development (UNCTAD) calculations, based on UNCTADstat (2025)." />
+      <ChartMeta source={source} note={note} />
     </div>
   );
 }

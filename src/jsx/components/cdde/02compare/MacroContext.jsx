@@ -16,7 +16,7 @@ function fmtPerCapita(usd) {
   return `$${Math.round(usd).toLocaleString('en-US')}`;
 }
 
-export default function MacroContext({ iso3, title, subtitle, description }) {
+export default function MacroContext({ iso3, title, subtitle, description, source, note }) {
   const [allData, setAllData] = useState(null);
 
   useEffect(() => {
@@ -37,8 +37,8 @@ export default function MacroContext({ iso3, title, subtitle, description }) {
       <ChartHeader title={title} subtitle={subtitle} description={description} />
       {!allData && <div className="cdde_loading" style={{ height: 120 }} />}
       {allData && !d && <p className="cdde_no_data">Macro data not available for this country.</p>}
-      {d && <StatList items={items} columns={1} />}
-      <ChartMeta source="UN Trade and Development (UNCTAD), based on UNCTADstat (2025)." />
+      {d && <StatList items={items} columns={1} key={iso3} />}
+      <ChartMeta source={source} note={note} />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 export const REGION_GROUPS = {
-  Africa: ['North Africa', 'Sub-Saharan Africa'],
+  Africa: ['Northern Africa', 'Eastern Africa', 'Middle Africa', 'Southern Africa', 'Western Africa'],
   Americas: ['Caribbean', 'Central America', 'Northern America', 'South America'],
-  Asia: ['Central Asia', 'Eastern Asia', 'South-Eastern Asia', 'Southern Asia', 'Western Asia'],
+  Asia: ['Central Asia', 'Eastern Asia', 'South-eastern Asia', 'Southern Asia', 'Western Asia'],
   Europe: ['Eastern Europe', 'Northern Europe', 'Southern Europe', 'Western Europe'],
   Oceania: ['Oceania']
 };

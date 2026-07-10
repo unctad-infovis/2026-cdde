@@ -16,6 +16,7 @@ export default defineConfig(({ command }) => ({
       input: {
         index: './index.html',
         compare: './compare.html',
+        'know-more': './know-more.html',
         header: './header.html'
       },
       output: {

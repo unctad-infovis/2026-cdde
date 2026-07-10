@@ -17,6 +17,7 @@ function niceStep(raw) {
 export default function ColChart({ items, color = 'var(--un-color-blue)' }) {
   const wrapRef = useRef(null);
   const [svgW, setSvgW] = useState(300);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     const el = wrapRef.current;
@@ -24,6 +25,31 @@ export default function ColChart({ items, color = 'var(--un-color-blue)' }) {
     const ro = new ResizeObserver(([entry]) => setSvgW(entry.contentRect.width));
     ro.observe(el);
     return () => ro.disconnect();
+  }, []);
+
+  // Viewport detection → grow animation
+  useEffect(() => {
+    const el = wrapRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([e]) => {
+        if (!e.isIntersecting) return;
+        io.disconnect();
+        const start = performance.now();
+        const dur = 700;
+        const tick = now => {
+          const p = Math.min((now - start) / dur, 1);
+          const eased = 1 - (1 - p) ** 3;
+          setProgress(eased);
+          if (p < 1) requestAnimationFrame(tick);
+          else setProgress(1);
+        };
+        requestAnimationFrame(tick);
+      },
+      { threshold: 0.2 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
   }, []);
 
   if (!items?.length) return null;
@@ -59,12 +85,14 @@ export default function ColChart({ items, color = 'var(--un-color-blue)' }) {
 
           {items.map((item, i) => {
             const cx = (i + 0.5) * slotW;
-            const by = ys(item.pct);
-            const bh = CHART_H - by;
+            const fullBh = CHART_H - ys(item.pct);
+            const bh = fullBh * progress;
+            const by = CHART_H - bh;
+            const labelOpacity = Math.max(0, (progress - 0.75) / 0.25);
             return (
               <g key={item.label}>
                 <rect x={cx - barW / 2} y={by} width={barW} height={bh} fill={color} rx={3} />
-                <text x={cx} y={by - 5} textAnchor="middle" className="cdde_col_val">
+                <text x={cx} y={by - 5} textAnchor="middle" className="cdde_col_val" style={{ opacity: labelOpacity }}>
                   {parseFloat(item.pct.toFixed(1))}%
                 </text>
               </g>

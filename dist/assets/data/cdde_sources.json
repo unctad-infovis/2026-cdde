@@ -1,0 +1,155 @@
+[
+  {
+    "title": "Commodity Dependence, 2022-2024 (and historical trend)",
+    "unit": "Percentage",
+    "definition": "Ratio, expressed as a percentage, of commodity exports to total (all allocated) merchandise exports. Allocated exports correspond to the sum of all individual product lines at the three‑digit level.",
+    "comments": "Data for this indicator are rounded to one decimal place",
+    "source": "UNCTAD",
+    "link": "https://unctadstat.unctad.org/datacentre/",
+    "date": "2025-11-10"
+  },
+  {
+    "title": "Three Leading Commodity Exported, 2022-2024",
+    "unit": "Percentage",
+    "definition": "Three leading 3‑digit commodities (SITC Rev.3) exported by individual UNCTAD member States as a share of the country’s total (all allocated) merchandise exports. The percentage displayed at the top of each country profile corresponds to the combined share of these three commodities",
+    "comments": "Data for this indicator are rounded to one decimal place",
+    "source": "UNCTAD",
+    "link": "https://unctadstat.unctad.org/datacentre/",
+    "date": "2025-11-10"
+  },
+  {
+    "title": "Three Leading Destination Markets, 2022–2024",
+    "unit": "Percentage",
+    "definition": "Three leading destination markets for the commodity exports of individual UNCTAD member States. The EU27 is displayed as a single aggregated partner; therefore, its constituent countries (Austria, Belgium, Bulgaria, Croatia, Cyprus, Czechia, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Italy, Latvia, Lithuania, Luxembourg, Malta, Netherlands, Poland, Portugal, Romania, Slovakia, Slovenia, Spain, and Sweden) do not appear individually as trading partners in country profiles. The percentage displayed at the top of each country profile corresponds to the combined share of exports directed to these three main destination markets.",
+    "comments": "Data for this indicator are rounded to one decimal place",
+    "source": "UNCTAD",
+    "link": "https://unctadstat.unctad.org/datacentre/",
+    "date": "2025-11-10"
+  },
+  {
+    "title": "Dependence by Product Groups, 2022-2024",
+    "unit": "Percentage",
+    "definition": "Dependence by Product Groups is calculated by expressing the total exports of each product group as a share of the country’s total (all allocated) merchandise exports.                                                                                                                   Product groups are defined as follows:\n[0 + 1 + 2 (less 27 and 28) + 4] Agricultural commodities \n[3] Energy commodities \n[27 + 28 + 667 + 68 + 971] Mining commodities                                                         [SITC 5 to 8 less 667 and 68] Manufactured goods",
+    "comments": "Data for this indicator are rounded to one decimal place",
+    "source": "UNCTAD",
+    "link": "https://unctadstat.unctad.org/datacentre/",
+    "date": "2025-11-10"
+  },
+  {
+    "title": "Commodity Exports, 2022–2024 (and historical trend)",
+    "unit": "Million USD",
+    "definition": "The indicator is calculated for each country and for each geographical subregion, the latter being obtained by summing the commodity exports of all individual member States within the subregion.                                                      [A11] Commodity export data include data for the following:\n[0] Food and live animals\n[1] Beverages and tobacco\n[2] Crude materials, inedible, except fuels\n[3] Energy commodities\n[4] Animal and vegetable oils, fats and waxes\n[667] Pearls, precious and semi-precious stones\n[68] Non-ferrous metals\n[971] Gold, non-monetary (excl. gold ores and concentrates)                                    The composition of these subregional groupings can be consulted in the list of countries and other classifications provided in the sources.",
+    "comments": "Data for this indicator are rounded to the nearest whole number",
+    "source": "UNCTAD",
+    "link": "https://unctadstat.unctad.org/datacentre/",
+    "date": "2025-11-10"
+  },
+  {
+    "title": "Commodity Price Indices · 1995 to 2026",
+    "unit": "Index value , 2010=100",
+    "definition": "Monthly indices based on nominal US dollars",
+    "comments": "Data for this indicator are rounded to one decimal place.  The composition of the groups for each index can be consulted directly on the World Bank website.",
+    "source": "World Bank, Pink Sheet Data",
+    "link": "https://www.worldbank.org/en/research/commodity-markets",
+    "date": "2026-07-06"
+  },
+  {
+    "title": "Historical Commodity Imports, 1995–2024",
+    "unit": "Million USD",
+    "definition": "[A11] Commodity import data include data for the following:\n[0] Food and live animals\n[1] Beverages and tobacco\n[2] Crude materials, inedible, except fuels\n[3] Energy commodities\n[4] Animal and vegetable oils, fats and waxes\n[667] Pearls, precious and semi-precious stones\n[68] Non-ferrous metals\n[971] Gold, non-monetary (excl. gold ores and concentrates)",
+    "comments": "Data for this indicator are rounded to the nearest whole number",
+    "source": "UNCTAD",
+    "link": "https://unctadstat.unctad.org/datacentre/",
+    "date": "2025-11-10"
+  },
+  {
+    "title": "Historical Food Imports, 1995–2024",
+    "unit": "Million USD",
+    "definition": "[SITC 0 + 22 + 4] Food, basic imports",
+    "comments": "Data for this indicator are rounded to the nearest whole number",
+    "source": "UNCTAD",
+    "link": "https://unctadstat.unctad.org/datacentre/",
+    "date": "2025-11-10"
+  },
+  {
+    "title": "Historical Energy Imports, 1995–2024",
+    "unit": "Million USD",
+    "definition": "[SITC 3] Energy commodities",
+    "comments": "Data for this indicator are rounded to the nearest whole number",
+    "source": "UNCTAD",
+    "link": "https://unctadstat.unctad.org/datacentre/",
+    "date": "2025-11-10"
+  },
+  {
+    "title": "Net Food Imports, 2012-2014 and 2022-2024",
+    "unit": "Percentage",
+    "definition": "[SITC 0 + 22 + 4] Food, basic imports minus [SITC 0 + 22 + 4] Food, basic exports expressed as a share of the country’s total (all allocated) merchandise imports",
+    "comments": "Data for this indicator are rounded to one decimal place. The chart tindicates net food-importing countries with a positive symbol",
+    "source": "UNCTAD",
+    "link": "https://unctadstat.unctad.org/datacentre/",
+    "date": "2025-11-10"
+  },
+  {
+    "title": "Net Energy Imports, 2012-2014 and 2022-2024",
+    "unit": "Percentage",
+    "definition": "[SITC 3] Energy commodities imports minus [SITC 3] Energy commodities exports expressed as a share of the country’s total (all allocated) merchandise imports",
+    "comments": "Data for this indicator are rounded to one decimal place. The chart tindicates net energy-importing countries with a positive symbol",
+    "source": "UNCTAD",
+    "link": "https://unctadstat.unctad.org/datacentre/",
+    "date": "2025-11-10"
+  },
+  {
+    "title": "Constant GDP, 2024",
+    "unit": "Constant 2020 milion US dollars",
+    "definition": "GDP data in constant prices (US dollars) are obtained by converting GDP in national currency using the annual period‑average exchange rate of the base year for all years.",
+    "comments": "Data for this indicator are rounded to the nearest whole number",
+    "source": "UNCTAD",
+    "link": "https://unctadstat.unctad.org/datacentre/",
+    "date": "2026-03-21"
+  },
+  {
+    "title": "Constant GDP per capita, 2024",
+    "unit": "Constant 2020 US dollars",
+    "definition": "GDP per capita data in constant prices in US dollars are obtained by converting GDP in national currency using the annual period‑average exchange rate of the base year for all years divided by the total population",
+    "comments": "Data for this indicator are rounded to the nearest whole number",
+    "source": "UNCTAD",
+    "link": "https://unctadstat.unctad.org/datacentre/",
+    "date": "2026-03-21"
+  },
+  {
+    "title": "Population,  2024",
+    "unit": "Thousands",
+    "definition": "2024",
+    "comments": "Data for this indicator are rounded to the nearest whole number",
+    "source": "UNCTAD",
+    "link": "https://unctadstat.unctad.org/datacentre/",
+    "date": "2026-07-10"
+  },
+  {
+    "title": "Human Development Index (rank, value, and category),  2023",
+    "unit": "Index value, rank and HDI category",
+    "definition": "The Human Development Index (HDI) is a summary measure of average\nachievement in key dimensions of human development: a long and healthy\nlife, being knowledgeable and have a decent standard of living. The HDI is the\ngeometric mean of normalized indices for each of the three dimensions. Index\ncategories have fixed cut-off points calculated using the quartiles from the\ndistributions of the component indicators, as follows: an index value of less\nthan 0.550 refers to a low level of human development; 0.550–0.699, a medium\nlevel of human development; 0.700–0.799, a high level of human development;\nand 0.800 or greater, a very high level of human development",
+    "comments": "Values for this indicator are rounded to three digits after the period",
+    "source": "United Nations Development Programme",
+    "link": "https://hdr.undp.org/data-center/human-development-index",
+    "date": "2025-12-04"
+  },
+  {
+    "title": "Employment to population, 2024",
+    "unit": "Percentage",
+    "definition": "Employment to population ratio, 15+, total (%) (modeled ILO estimate)",
+    "comments": "Data for this indicator are rounded to one decimal place. Reference year is 2024 excepted for Lebanon (2023), South Sudan (2023), State of Palestine (the) (2022), Sudan (the) (2022), and Ukraine (2021)",
+    "source": "World Development Indicators, World Bank",
+    "link": "https://databank.worldbank.org/source/world-development-indicators",
+    "date": "2025-12-04"
+  },
+  {
+    "title": "Female employment, 2024",
+    "unit": "Percentage of female population ages 15+",
+    "definition": "Employment to population ratio, 15+, female (%) (modeled ILO estimate). SL.EMP.TOTL.SP.FE.ZS.",
+    "comments": "Data for this indicator are rounded to one digit after the period. Reference year is 2024 except for: Lebanon (2023), South Sudan (2023), State of Palestine (the) (2022), Sudan (the) (2022), Ukraine (2021)",
+    "source": "World Development Indicators, World Bank",
+    "link": "https://databank.worldbank.org/source/world-development-indicators",
+    "date": "2025-12-19"
+  }
+]
