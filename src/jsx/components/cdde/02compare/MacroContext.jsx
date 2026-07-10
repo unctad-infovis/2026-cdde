@@ -1,87 +1,44 @@
 import { useEffect, useState } from 'react';
 import loadFile from '../../../helpers/LoadFile';
 import ChartHeader from '../shared/ChartHeader';
-import ChartSource from '../shared/ChartSource';
-import StackedBar from '../shared/StackedBar';
+import ChartMeta from '../shared/ChartMeta';
+import StatList from '../shared/StatList';
 
-import './MacroContext.css';
+function fmtGdp(millions) {
+  if (millions == null) return '–';
+  if (millions >= 1_000_000) return `$${(millions / 1_000_000).toFixed(1)} tn`;
+  if (millions >= 1_000) return `$${(millions / 1_000).toFixed(1)} bn`;
+  return `$${Math.round(millions)} mn`;
+}
 
-const VA_SEGS = key =>
-  ({
-    agri: { key: 'agri', label: 'Agriculture', color: 'var(--un-color-green)' },
-    industry: { key: 'industry', label: 'Industry', color: 'var(--un-color-yellow)' },
-    services: { key: 'services', label: 'Services', color: 'var(--un-color-blue)' }
-  })[key];
+function fmtPerCapita(usd) {
+  if (usd == null) return '–';
+  return `$${Math.round(usd).toLocaleString('en-US')}`;
+}
 
-export default function MacroContext({ iso3, hhi, title, subtitle, description }) {
+export default function MacroContext({ iso3, title, subtitle, description }) {
   const [allData, setAllData] = useState(null);
 
   useEffect(() => {
-    loadFile('assets/data/cdde_macro.json')
+    loadFile('assets/data/cdde_macro_context.json')
       .then(r => r?.json())
-      .then(d => {
-        if (d) setAllData(d);
-      });
+      .then(d => { if (d) setAllData(d); });
   }, []);
 
   const d = allData?.[iso3] ?? null;
 
+  const items = d ? [
+    { label: 'GDP', value: fmtGdp(d.gdp), note: 'Constant 2015 USD' },
+    { label: 'GDP per capita', value: fmtPerCapita(d.gdp_per_capita), note: 'Constant 2015 USD' },
+  ] : [];
+
   return (
     <div className="cdde_card">
       <ChartHeader title={title} subtitle={subtitle} description={description} />
-
-      <div className="mac_body">
-        {!allData && <div className="cdde_loading" style={{ height: 160 }} />}
-
-        {allData && !d && <p className="cdde_no_data">Macro data not available for this country.</p>}
-
-        {d && (
-          <>
-            {/* GDP growth */}
-            <div className="mac_gdp_row">
-              <div className="mac_gdp_block">
-                <span className="cdde_section_label">AVG GDP GROWTH</span>
-                <div className="mac_gdp_val_row">
-                  <span className={`mac_triangle mac_triangle--${d.gdp_growth >= 0 ? 'up' : 'down'}`}>{d.gdp_growth >= 0 ? '▲' : '▼'}</span>
-                  <span className="mac_gdp_pct">{Math.abs(d.gdp_growth).toFixed(1)}%</span>
-                </div>
-                <span className="mac_gdp_note">Annual avg. 2014–2024</span>
-              </div>
-            </div>
-
-            {/* Value added composition */}
-            <div className="mac_section">
-              <span className="cdde_section_label">VALUE ADDED COMPOSITION</span>
-              <StackedBar
-                segments={['agri', 'industry', 'services'].map(k => ({
-                  ...VA_SEGS(k),
-                  pct: d.value_added[k]
-                }))}
-              />
-            </div>
-
-            {/* Small bars */}
-            <div className="cdde_small_bars">
-              <div className="cdde_small_row">
-                <span className="cdde_small_label">TOTAL NATURAL RESOURCE RENTS</span>
-                <div className="cdde_small_track">
-                  <div className="cdde_small_fill" style={{ width: `${Math.min(d.nat_resource_rents, 50) * 2}%`, background: 'var(--un-color-yellow)' }} />
-                </div>
-                <span className="cdde_small_pct">{d.nat_resource_rents}%</span>
-              </div>
-              <div className="cdde_small_row">
-                <span className="cdde_small_label">EXPORT CONCENTRATION (HHI)</span>
-                <div className="cdde_small_track">
-                  <div className="cdde_small_fill" style={{ width: hhi != null ? `${Math.min(hhi, 1) * 100}%` : '0%', background: 'var(--un-color-blue)' }} />
-                </div>
-                <span className="cdde_small_pct">{hhi != null ? Number(hhi).toFixed(2) : '–'}</span>
-              </div>
-            </div>
-          </>
-        )}
-      </div>
-
-      <ChartSource>UNCTADstat (2025) · World Bank WDI (2025).</ChartSource>
+      {!allData && <div className="cdde_loading" style={{ height: 120 }} />}
+      {allData && !d && <p className="cdde_no_data">Macro data not available for this country.</p>}
+      {d && <StatList items={items} columns={1} />}
+      <ChartMeta source="UN Trade and Development (UNCTAD), based on UNCTADstat (2025)." />
     </div>
   );
 }

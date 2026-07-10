@@ -1,0 +1,1530 @@
+{
+  "AFG": {
+    "emp": 32.5,
+    "emp_female": 3.8,
+    "population": 42647,
+    "hdi_rank": 181,
+    "hdi_value": 0.496,
+    "hdi_category": "Low human development"
+  },
+  "AGO": {
+    "emp": 64.8,
+    "emp_female": 62.5,
+    "population": 37886,
+    "hdi_rank": 148,
+    "hdi_value": 0.616,
+    "hdi_category": "Medium human development"
+  },
+  "ALB": {
+    "emp": 54.5,
+    "emp_female": 47.9,
+    "population": 2792,
+    "hdi_rank": 71,
+    "hdi_value": 0.81,
+    "hdi_category": "Very high human development"
+  },
+  "AND": {
+    "population": 82,
+    "hdi_rank": 32,
+    "hdi_value": 0.913,
+    "hdi_category": "Very high human development"
+  },
+  "ARE": {
+    "emp": 76.1,
+    "emp_female": 51.7,
+    "population": 11027,
+    "hdi_rank": 15,
+    "hdi_value": 0.94,
+    "hdi_category": "Very high human development"
+  },
+  "ARG": {
+    "emp": 57.3,
+    "emp_female": 48.5,
+    "population": 45696,
+    "hdi_rank": 47,
+    "hdi_value": 0.865,
+    "hdi_category": "Very high human development"
+  },
+  "ARM": {
+    "emp": 53.4,
+    "emp_female": 49.2,
+    "population": 2974,
+    "hdi_rank": 69,
+    "hdi_value": 0.811,
+    "hdi_category": "Very high human development"
+  },
+  "ATG": {
+    "population": 94,
+    "hdi_rank": 53,
+    "hdi_value": 0.851,
+    "hdi_category": "Very high human development"
+  },
+  "AUS": {
+    "emp": 64.0,
+    "emp_female": 59.9,
+    "population": 26713,
+    "hdi_rank": 7,
+    "hdi_value": 0.958,
+    "hdi_category": "Very high human development"
+  },
+  "AUT": {
+    "emp": 57.3,
+    "emp_female": 52.7,
+    "population": 9121,
+    "hdi_rank": 22,
+    "hdi_value": 0.93,
+    "hdi_category": "Very high human development"
+  },
+  "AZE": {
+    "emp": 59.4,
+    "emp_female": 56.4,
+    "population": 10337,
+    "hdi_rank": 81,
+    "hdi_value": 0.789,
+    "hdi_category": "High human development"
+  },
+  "BDI": {
+    "emp": 77.9,
+    "emp_female": 79.2,
+    "population": 14048,
+    "hdi_rank": 187,
+    "hdi_value": 0.439,
+    "hdi_category": "Low human development"
+  },
+  "BEL": {
+    "emp": 51.3,
+    "emp_female": 47.3,
+    "population": 11739,
+    "hdi_rank": 10,
+    "hdi_value": 0.951,
+    "hdi_category": "Very high human development"
+  },
+  "BEN": {
+    "emp": 74.4,
+    "emp_female": 73.1,
+    "population": 14463,
+    "hdi_rank": 173,
+    "hdi_value": 0.515,
+    "hdi_category": "Low human development"
+  },
+  "BFA": {
+    "emp": 44.7,
+    "emp_female": 38.7,
+    "population": 23549,
+    "hdi_rank": 186,
+    "hdi_value": 0.459,
+    "hdi_category": "Low human development"
+  },
+  "BGD": {
+    "emp": 59.0,
+    "emp_female": 41.8,
+    "population": 173562,
+    "hdi_rank": 130,
+    "hdi_value": 0.685,
+    "hdi_category": "Medium human development"
+  },
+  "BGR": {
+    "emp": 54.4,
+    "emp_female": 48.9,
+    "population": 6758,
+    "hdi_rank": 55,
+    "hdi_value": 0.845,
+    "hdi_category": "Very high human development"
+  },
+  "BHR": {
+    "emp": 69.9,
+    "emp_female": 41.4,
+    "population": 1607,
+    "hdi_rank": 38,
+    "hdi_value": 0.899,
+    "hdi_category": "Very high human development"
+  },
+  "BHS": {
+    "emp": 65.9,
+    "emp_female": 61.1,
+    "population": 401,
+    "hdi_rank": 66,
+    "hdi_value": 0.82,
+    "hdi_category": "Very high human development"
+  },
+  "BIH": {
+    "emp": 44.0,
+    "emp_female": 34.3,
+    "population": 3164,
+    "hdi_rank": 74,
+    "hdi_value": 0.804,
+    "hdi_category": "Very high human development"
+  },
+  "BLR": {
+    "emp": 60.9,
+    "emp_female": 55.4,
+    "population": 9057,
+    "hdi_rank": 65,
+    "hdi_value": 0.824,
+    "hdi_category": "Very high human development"
+  },
+  "BLZ": {
+    "emp": 57.7,
+    "emp_female": 43.8,
+    "population": 417,
+    "hdi_rank": 115,
+    "hdi_value": 0.721,
+    "hdi_category": "High human development"
+  },
+  "BOL": {
+    "emp": 76.3,
+    "emp_female": 69.9,
+    "population": 12413,
+    "hdi_rank": 108,
+    "hdi_value": 0.733,
+    "hdi_category": "High human development"
+  },
+  "BRA": {
+    "emp": 57.9,
+    "emp_female": 48.1,
+    "population": 211999,
+    "hdi_rank": 84,
+    "hdi_value": 0.786,
+    "hdi_category": "High human development"
+  },
+  "BRB": {
+    "emp": 58.2,
+    "emp_female": 55.8,
+    "population": 282,
+    "hdi_rank": 69,
+    "hdi_value": 0.811,
+    "hdi_category": "Very high human development"
+  },
+  "BRN": {
+    "emp": 60.5,
+    "emp_female": 50.1,
+    "population": 463,
+    "hdi_rank": 60,
+    "hdi_value": 0.837,
+    "hdi_category": "Very high human development"
+  },
+  "BTN": {
+    "emp": 63.1,
+    "emp_female": 54.3,
+    "population": 792,
+    "hdi_rank": 125,
+    "hdi_value": 0.698,
+    "hdi_category": "Medium human development"
+  },
+  "BWA": {
+    "emp": 52.7,
+    "emp_female": 46.7,
+    "population": 2521,
+    "hdi_rank": 111,
+    "hdi_value": 0.731,
+    "hdi_category": "High human development"
+  },
+  "CAF": {
+    "emp": 69.2,
+    "emp_female": 61.4,
+    "population": 5331,
+    "hdi_rank": 191,
+    "hdi_value": 0.414,
+    "hdi_category": "Low human development"
+  },
+  "CAN": {
+    "emp": 61.0,
+    "emp_female": 57.2,
+    "population": 39742,
+    "hdi_rank": 16,
+    "hdi_value": 0.939,
+    "hdi_category": "Very high human development"
+  },
+  "CHE": {
+    "emp": 64.3,
+    "emp_female": 59.3,
+    "population": 8922,
+    "hdi_rank": 2,
+    "hdi_value": 0.97,
+    "hdi_category": "Very high human development"
+  },
+  "CHL": {
+    "emp": 55.9,
+    "emp_female": 47.0,
+    "population": 19765,
+    "hdi_rank": 45,
+    "hdi_value": 0.878,
+    "hdi_category": "Very high human development"
+  },
+  "CHN": {
+    "emp": 62.4,
+    "emp_female": 57.2,
+    "population": 1419321,
+    "hdi_rank": 78,
+    "hdi_value": 0.797,
+    "hdi_category": "High human development"
+  },
+  "CIV": {
+    "emp": 65.2,
+    "emp_female": 57.3,
+    "population": 31934,
+    "hdi_rank": 157,
+    "hdi_value": 0.582,
+    "hdi_category": "Medium human development"
+  },
+  "CMR": {
+    "emp": 62.9,
+    "emp_female": 54.2,
+    "population": 29124,
+    "hdi_rank": 155,
+    "hdi_value": 0.588,
+    "hdi_category": "Medium human development"
+  },
+  "COD": {
+    "emp": 62.4,
+    "emp_female": 60.0,
+    "population": 109276,
+    "hdi_rank": 171,
+    "hdi_value": 0.522,
+    "hdi_category": "Low human development"
+  },
+  "COG": {
+    "emp": 54.6,
+    "emp_female": 52.4,
+    "population": 6333,
+    "hdi_rank": 138,
+    "hdi_value": 0.649,
+    "hdi_category": "Medium human development"
+  },
+  "COL": {
+    "emp": 57.5,
+    "emp_female": 45.5,
+    "population": 52886,
+    "hdi_rank": 83,
+    "hdi_value": 0.788,
+    "hdi_category": "High human development"
+  },
+  "COM": {
+    "emp": 48.8,
+    "emp_female": 39.6,
+    "population": 867,
+    "hdi_rank": 152,
+    "hdi_value": 0.603,
+    "hdi_category": "Medium human development"
+  },
+  "CPV": {
+    "emp": 50.6,
+    "emp_female": 44.7,
+    "population": 525,
+    "hdi_rank": 135,
+    "hdi_value": 0.668,
+    "hdi_category": "Medium human development"
+  },
+  "CRI": {
+    "emp": 52.1,
+    "emp_female": 39.8,
+    "population": 5130,
+    "hdi_rank": 62,
+    "hdi_value": 0.833,
+    "hdi_category": "Very high human development"
+  },
+  "CUB": {
+    "emp": 51.4,
+    "emp_female": 38.9,
+    "population": 10980,
+    "hdi_rank": 97,
+    "hdi_value": 0.762,
+    "hdi_category": "High human development"
+  },
+  "CYP": {
+    "emp": 64.0,
+    "emp_female": 58.8,
+    "population": 1358,
+    "hdi_rank": 32,
+    "hdi_value": 0.913,
+    "hdi_category": "Very high human development"
+  },
+  "CZE": {
+    "emp": 58.7,
+    "emp_female": 51.5,
+    "population": 10736,
+    "hdi_rank": 29,
+    "hdi_value": 0.915,
+    "hdi_category": "Very high human development"
+  },
+  "DEU": {
+    "emp": 58.8,
+    "emp_female": 53.9,
+    "population": 84552,
+    "hdi_rank": 5,
+    "hdi_value": 0.959,
+    "hdi_category": "Very high human development"
+  },
+  "DJI": {
+    "emp": 23.7,
+    "emp_female": 12.0,
+    "population": 1169,
+    "hdi_rank": 175,
+    "hdi_value": 0.513,
+    "hdi_category": "Low human development"
+  },
+  "DMA": {
+    "population": 66,
+    "hdi_rank": 98,
+    "hdi_value": 0.761,
+    "hdi_category": "High human development"
+  },
+  "DNK": {
+    "emp": 60.2,
+    "emp_female": 56.2,
+    "population": 5977,
+    "hdi_rank": 4,
+    "hdi_value": 0.962,
+    "hdi_category": "Very high human development"
+  },
+  "DOM": {
+    "emp": 61.0,
+    "emp_female": 48.5,
+    "population": 11428,
+    "hdi_rank": 89,
+    "hdi_value": 0.776,
+    "hdi_category": "High human development"
+  },
+  "DZA": {
+    "emp": 36.1,
+    "emp_female": 11.1,
+    "population": 46814,
+    "hdi_rank": 96,
+    "hdi_value": 0.763,
+    "hdi_category": "High human development"
+  },
+  "ECU": {
+    "emp": 61.3,
+    "emp_female": 49.4,
+    "population": 18135,
+    "hdi_rank": 88,
+    "hdi_value": 0.777,
+    "hdi_category": "High human development"
+  },
+  "EGY": {
+    "emp": 39.5,
+    "emp_female": 12.4,
+    "population": 116538,
+    "hdi_rank": 100,
+    "hdi_value": 0.754,
+    "hdi_category": "High human development"
+  },
+  "ERI": {
+    "emp": 73.8,
+    "emp_female": 67.8,
+    "population": 3536,
+    "hdi_rank": 178,
+    "hdi_value": 0.503,
+    "hdi_category": "Low human development"
+  },
+  "ESP": {
+    "emp": 50.8,
+    "emp_female": 45.7,
+    "population": 47911,
+    "hdi_rank": 28,
+    "hdi_value": 0.918,
+    "hdi_category": "Very high human development"
+  },
+  "EST": {
+    "emp": 60.2,
+    "emp_female": 55.7,
+    "population": 1361,
+    "hdi_rank": 36,
+    "hdi_value": 0.905,
+    "hdi_category": "Very high human development"
+  },
+  "ETH": {
+    "emp": 65.4,
+    "emp_female": 54.6,
+    "population": 132060,
+    "hdi_rank": 180,
+    "hdi_value": 0.497,
+    "hdi_category": "Low human development"
+  },
+  "FIN": {
+    "emp": 55.3,
+    "emp_female": 53.1,
+    "population": 5617,
+    "hdi_rank": 12,
+    "hdi_value": 0.948,
+    "hdi_category": "Very high human development"
+  },
+  "FJI": {
+    "emp": 54.8,
+    "emp_female": 36.4,
+    "population": 929,
+    "hdi_rank": 111,
+    "hdi_value": 0.731,
+    "hdi_category": "High human development"
+  },
+  "FRA": {
+    "emp": 51.4,
+    "emp_female": 47.9,
+    "population": 66549,
+    "hdi_rank": 26,
+    "hdi_value": 0.92,
+    "hdi_category": "Very high human development"
+  },
+  "FSM": {
+    "population": 113,
+    "hdi_rank": 149,
+    "hdi_value": 0.615,
+    "hdi_category": "Medium human development"
+  },
+  "GAB": {
+    "emp": 40.9,
+    "emp_female": 29.8,
+    "population": 2539,
+    "hdi_rank": 108,
+    "hdi_value": 0.733,
+    "hdi_category": "High human development"
+  },
+  "GBR": {
+    "emp": 59.1,
+    "emp_female": 55.1,
+    "population": 69138,
+    "hdi_rank": 13,
+    "hdi_value": 0.946,
+    "hdi_category": "Very high human development"
+  },
+  "GEO": {
+    "emp": 55.8,
+    "emp_female": 49.4,
+    "population": 3808,
+    "hdi_rank": 57,
+    "hdi_value": 0.844,
+    "hdi_category": "Very high human development"
+  },
+  "GHA": {
+    "emp": 61.1,
+    "emp_female": 59.5,
+    "population": 34427,
+    "hdi_rank": 143,
+    "hdi_value": 0.628,
+    "hdi_category": "Medium human development"
+  },
+  "GIN": {
+    "emp": 49.3,
+    "emp_female": 39.4,
+    "population": 14755,
+    "hdi_rank": 179,
+    "hdi_value": 0.5,
+    "hdi_category": "Low human development"
+  },
+  "GMB": {
+    "emp": 44.4,
+    "emp_female": 42.6,
+    "population": 2760,
+    "hdi_rank": 170,
+    "hdi_value": 0.524,
+    "hdi_category": "Low human development"
+  },
+  "GNB": {
+    "emp": 61.1,
+    "emp_female": 55.4,
+    "population": 2201,
+    "hdi_rank": 174,
+    "hdi_value": 0.514,
+    "hdi_category": "Low human development"
+  },
+  "GNQ": {
+    "emp": 55.5,
+    "emp_female": 48.1,
+    "population": 1893,
+    "hdi_rank": 133,
+    "hdi_value": 0.674,
+    "hdi_category": "Medium human development"
+  },
+  "GRC": {
+    "emp": 46.4,
+    "emp_female": 38.7,
+    "population": 10048,
+    "hdi_rank": 34,
+    "hdi_value": 0.908,
+    "hdi_category": "Very high human development"
+  },
+  "GRD": {
+    "population": 117,
+    "hdi_rank": 80,
+    "hdi_value": 0.791,
+    "hdi_category": "High human development"
+  },
+  "GTM": {
+    "emp": 58.8,
+    "emp_female": 39.2,
+    "population": 18406,
+    "hdi_rank": 137,
+    "hdi_value": 0.662,
+    "hdi_category": "Medium human development"
+  },
+  "GUY": {
+    "emp": 44.6,
+    "emp_female": 35.5,
+    "population": 831,
+    "hdi_rank": 89,
+    "hdi_value": 0.776,
+    "hdi_category": "High human development"
+  },
+  "HND": {
+    "emp": 53.7,
+    "emp_female": 36.0,
+    "population": 10826,
+    "hdi_rank": 139,
+    "hdi_value": 0.645,
+    "hdi_category": "Medium human development"
+  },
+  "HRV": {
+    "emp": 49.4,
+    "emp_female": 44.3,
+    "population": 3875,
+    "hdi_rank": 41,
+    "hdi_value": 0.889,
+    "hdi_category": "Very high human development"
+  },
+  "HTI": {
+    "emp": 55.4,
+    "emp_female": 49.1,
+    "population": 11773,
+    "hdi_rank": 166,
+    "hdi_value": 0.554,
+    "hdi_category": "Medium human development"
+  },
+  "HUN": {
+    "emp": 57.8,
+    "emp_female": 51.5,
+    "population": 9676,
+    "hdi_rank": 46,
+    "hdi_value": 0.87,
+    "hdi_category": "Very high human development"
+  },
+  "IDN": {
+    "emp": 64.8,
+    "emp_female": 51.0,
+    "population": 283488,
+    "hdi_rank": 113,
+    "hdi_value": 0.728,
+    "hdi_category": "High human development"
+  },
+  "IND": {
+    "emp": 53.2,
+    "emp_female": 31.4,
+    "population": 1450936,
+    "hdi_rank": 130,
+    "hdi_value": 0.685,
+    "hdi_category": "Medium human development"
+  },
+  "IRL": {
+    "emp": 62.3,
+    "emp_female": 57.6,
+    "population": 5255,
+    "hdi_rank": 11,
+    "hdi_value": 0.949,
+    "hdi_category": "Very high human development"
+  },
+  "IRN": {
+    "emp": 36.5,
+    "emp_female": 11.4,
+    "population": 91568,
+    "hdi_rank": 75,
+    "hdi_value": 0.799,
+    "hdi_category": "High human development"
+  },
+  "IRQ": {
+    "emp": 34.7,
+    "emp_female": 7.5,
+    "population": 46042,
+    "hdi_rank": 126,
+    "hdi_value": 0.695,
+    "hdi_category": "Medium human development"
+  },
+  "ISL": {
+    "emp": 72.3,
+    "emp_female": 68.2,
+    "population": 393,
+    "hdi_rank": 1,
+    "hdi_value": 0.972,
+    "hdi_category": "Very high human development"
+  },
+  "ISR": {
+    "emp": 63.0,
+    "emp_female": 60.1,
+    "population": 9387,
+    "hdi_rank": 27,
+    "hdi_value": 0.919,
+    "hdi_category": "Very high human development"
+  },
+  "ITA": {
+    "emp": 46.3,
+    "emp_female": 38.0,
+    "population": 59343,
+    "hdi_rank": 29,
+    "hdi_value": 0.915,
+    "hdi_category": "Very high human development"
+  },
+  "JAM": {
+    "emp": 64.7,
+    "emp_female": 57.5,
+    "population": 2839,
+    "hdi_rank": 117,
+    "hdi_value": 0.72,
+    "hdi_category": "High human development"
+  },
+  "JOR": {
+    "emp": 31.5,
+    "emp_female": 10.2,
+    "population": 11553,
+    "hdi_rank": 100,
+    "hdi_value": 0.754,
+    "hdi_category": "High human development"
+  },
+  "JPN": {
+    "emp": 61.6,
+    "emp_female": 54.0,
+    "population": 123753,
+    "hdi_rank": 23,
+    "hdi_value": 0.925,
+    "hdi_category": "Very high human development"
+  },
+  "KAZ": {
+    "emp": 67.3,
+    "emp_female": 62.4,
+    "population": 20593,
+    "hdi_rank": 60,
+    "hdi_value": 0.837,
+    "hdi_category": "Very high human development"
+  },
+  "KEN": {
+    "emp": 63.1,
+    "emp_female": 57.6,
+    "population": 56433,
+    "hdi_rank": 143,
+    "hdi_value": 0.628,
+    "hdi_category": "Medium human development"
+  },
+  "KGZ": {
+    "emp": 63.3,
+    "emp_female": 51.1,
+    "population": 7186,
+    "hdi_rank": 117,
+    "hdi_value": 0.72,
+    "hdi_category": "High human development"
+  },
+  "KHM": {
+    "emp": 79.8,
+    "emp_female": 73.7,
+    "population": 17639,
+    "hdi_rank": 151,
+    "hdi_value": 0.606,
+    "hdi_category": "Medium human development"
+  },
+  "KIR": {
+    "population": 135,
+    "hdi_rank": 140,
+    "hdi_value": 0.644,
+    "hdi_category": "Medium human development"
+  },
+  "KNA": {
+    "population": 47,
+    "hdi_rank": 58,
+    "hdi_value": 0.84,
+    "hdi_category": "Very high human development"
+  },
+  "KOR": {
+    "emp": 62.5,
+    "emp_female": 54.6,
+    "population": 51718,
+    "hdi_rank": 20,
+    "hdi_value": 0.937,
+    "hdi_category": "Very high human development"
+  },
+  "KWT": {
+    "emp": 72.2,
+    "emp_female": 45.7,
+    "population": 4935,
+    "hdi_rank": 52,
+    "hdi_value": 0.852,
+    "hdi_category": "Very high human development"
+  },
+  "LAO": {
+    "emp": 65.3,
+    "emp_female": 60.9,
+    "population": 7770,
+    "hdi_rank": 147,
+    "hdi_value": 0.617,
+    "hdi_category": "Medium human development"
+  },
+  "LBN": {
+    "emp": 40.5,
+    "emp_female": 23.5,
+    "population": 5806,
+    "hdi_rank": 102,
+    "hdi_value": 0.752,
+    "hdi_category": "High human development"
+  },
+  "LBR": {
+    "emp": 74.6,
+    "emp_female": 70.5,
+    "population": 5613,
+    "hdi_rank": 177,
+    "hdi_value": 0.51,
+    "hdi_category": "Low human development"
+  },
+  "LBY": {
+    "emp": 39.3,
+    "emp_female": 24.7,
+    "population": 7381,
+    "hdi_rank": 115,
+    "hdi_value": 0.721,
+    "hdi_category": "High human development"
+  },
+  "LCA": {
+    "emp": 61.6,
+    "emp_female": 55.3,
+    "population": 180,
+    "hdi_rank": 103,
+    "hdi_value": 0.748,
+    "hdi_category": "High human development"
+  },
+  "LIE": {
+    "population": 40,
+    "hdi_rank": 17,
+    "hdi_value": 0.938,
+    "hdi_category": "Very high human development"
+  },
+  "LKA": {
+    "emp": 47.3,
+    "emp_female": 29.0,
+    "population": 23104,
+    "hdi_rank": 89,
+    "hdi_value": 0.776,
+    "hdi_category": "High human development"
+  },
+  "LSO": {
+    "emp": 48.4,
+    "emp_female": 39.8,
+    "population": 2337,
+    "hdi_rank": 167,
+    "hdi_value": 0.55,
+    "hdi_category": "Medium human development"
+  },
+  "LTU": {
+    "emp": 58.1,
+    "emp_female": 53.9,
+    "population": 2859,
+    "hdi_rank": 39,
+    "hdi_value": 0.895,
+    "hdi_category": "Very high human development"
+  },
+  "LUX": {
+    "emp": 57.7,
+    "emp_female": 53.7,
+    "population": 673,
+    "hdi_rank": 25,
+    "hdi_value": 0.922,
+    "hdi_category": "Very high human development"
+  },
+  "LVA": {
+    "emp": 56.5,
+    "emp_female": 51.9,
+    "population": 1872,
+    "hdi_rank": 41,
+    "hdi_value": 0.889,
+    "hdi_category": "Very high human development"
+  },
+  "MAR": {
+    "emp": 40.1,
+    "emp_female": 17.5,
+    "population": 38081,
+    "hdi_rank": 120,
+    "hdi_value": 0.71,
+    "hdi_category": "High human development"
+  },
+  "MCO": {
+    "population": 39,
+    "hdi_rank": null,
+    "hdi_value": null,
+    "hdi_category": null
+  },
+  "MDA": {
+    "emp": 69.8,
+    "emp_female": 69.3,
+    "population": 3035,
+    "hdi_rank": 86,
+    "hdi_value": 0.785,
+    "hdi_category": "High human development"
+  },
+  "MDG": {
+    "emp": 82.5,
+    "emp_female": 79.9,
+    "population": 31965,
+    "hdi_rank": 183,
+    "hdi_value": 0.487,
+    "hdi_category": "Low human development"
+  },
+  "MDV": {
+    "emp": 60.7,
+    "emp_female": 39.4,
+    "population": 528,
+    "hdi_rank": 93,
+    "hdi_value": 0.766,
+    "hdi_category": "High human development"
+  },
+  "MEX": {
+    "emp": 60.0,
+    "emp_female": 46.1,
+    "population": 130861,
+    "hdi_rank": 81,
+    "hdi_value": 0.789,
+    "hdi_category": "High human development"
+  },
+  "MHL": {
+    "population": 38,
+    "hdi_rank": 108,
+    "hdi_value": 0.733,
+    "hdi_category": "High human development"
+  },
+  "MKD": {
+    "emp": 45.3,
+    "emp_female": 36.6,
+    "population": 1823,
+    "hdi_rank": 68,
+    "hdi_value": 0.815,
+    "hdi_category": "Very high human development"
+  },
+  "MLI": {
+    "emp": 67.1,
+    "emp_female": 56.1,
+    "population": 24479,
+    "hdi_rank": 188,
+    "hdi_value": 0.419,
+    "hdi_category": "Low human development"
+  },
+  "MLT": {
+    "emp": 62.0,
+    "emp_female": 53.8,
+    "population": 540,
+    "hdi_rank": 24,
+    "hdi_value": 0.924,
+    "hdi_category": "Very high human development"
+  },
+  "MMR": {
+    "emp": 53.5,
+    "emp_female": 39.4,
+    "population": 54500,
+    "hdi_rank": 150,
+    "hdi_value": 0.609,
+    "hdi_category": "Medium human development"
+  },
+  "MNE": {
+    "emp": 41.3,
+    "emp_female": 36.1,
+    "population": 638,
+    "hdi_rank": 48,
+    "hdi_value": 0.862,
+    "hdi_category": "Very high human development"
+  },
+  "MNG": {
+    "emp": 57.3,
+    "emp_female": 50.6,
+    "population": 3476,
+    "hdi_rank": 104,
+    "hdi_value": 0.747,
+    "hdi_category": "High human development"
+  },
+  "MOZ": {
+    "emp": 76.1,
+    "emp_female": 75.2,
+    "population": 34632,
+    "hdi_rank": 182,
+    "hdi_value": 0.493,
+    "hdi_category": "Low human development"
+  },
+  "MRT": {
+    "emp": 36.6,
+    "emp_female": 22.2,
+    "population": 5169,
+    "hdi_rank": 163,
+    "hdi_value": 0.563,
+    "hdi_category": "Medium human development"
+  },
+  "MUS": {
+    "emp": 52.4,
+    "emp_female": 39.4,
+    "population": 1271,
+    "hdi_rank": 73,
+    "hdi_value": 0.806,
+    "hdi_category": "Very high human development"
+  },
+  "MWI": {
+    "emp": 63.6,
+    "emp_female": 59.4,
+    "population": 21655,
+    "hdi_rank": 172,
+    "hdi_value": 0.517,
+    "hdi_category": "Low human development"
+  },
+  "MYS": {
+    "emp": 63.2,
+    "emp_female": 49.5,
+    "population": 35558,
+    "hdi_rank": 67,
+    "hdi_value": 0.819,
+    "hdi_category": "Very high human development"
+  },
+  "NAM": {
+    "emp": 47.9,
+    "emp_female": 45.5,
+    "population": 3030,
+    "hdi_rank": 136,
+    "hdi_value": 0.665,
+    "hdi_category": "Medium human development"
+  },
+  "NER": {
+    "emp": 72.4,
+    "emp_female": 60.1,
+    "population": 27032,
+    "hdi_rank": 188,
+    "hdi_value": 0.419,
+    "hdi_category": "Low human development"
+  },
+  "NGA": {
+    "emp": 80.1,
+    "emp_female": 77.5,
+    "population": 232679,
+    "hdi_rank": 164,
+    "hdi_value": 0.56,
+    "hdi_category": "Medium human development"
+  },
+  "NIC": {
+    "emp": 62.5,
+    "emp_female": 47.7,
+    "population": 6916,
+    "hdi_rank": 123,
+    "hdi_value": 0.706,
+    "hdi_category": "High human development"
+  },
+  "NLD": {
+    "emp": 65.0,
+    "emp_female": 60.5,
+    "population": 18229,
+    "hdi_rank": 8,
+    "hdi_value": 0.955,
+    "hdi_category": "Very high human development"
+  },
+  "NOR": {
+    "emp": 62.6,
+    "emp_female": 59.4,
+    "population": 5577,
+    "hdi_rank": 2,
+    "hdi_value": 0.97,
+    "hdi_category": "Very high human development"
+  },
+  "NPL": {
+    "emp": 35.5,
+    "emp_female": 24.3,
+    "population": 29651,
+    "hdi_rank": 145,
+    "hdi_value": 0.622,
+    "hdi_category": "Medium human development"
+  },
+  "NRU": {
+    "population": 12,
+    "hdi_rank": 124,
+    "hdi_value": 0.703,
+    "hdi_category": "High human development"
+  },
+  "NZL": {
+    "emp": 68.0,
+    "emp_female": 63.5,
+    "population": 5214,
+    "hdi_rank": 17,
+    "hdi_value": 0.938,
+    "hdi_category": "Very high human development"
+  },
+  "OMN": {
+    "emp": 65.6,
+    "emp_female": 27.2,
+    "population": 5282,
+    "hdi_rank": 50,
+    "hdi_value": 0.858,
+    "hdi_category": "Very high human development"
+  },
+  "PAK": {
+    "emp": 49.7,
+    "emp_female": 22.5,
+    "population": 251269,
+    "hdi_rank": 168,
+    "hdi_value": 0.544,
+    "hdi_category": "Low human development"
+  },
+  "PAN": {
+    "emp": 60.8,
+    "emp_female": 48.2,
+    "population": 4516,
+    "hdi_rank": 59,
+    "hdi_value": 0.839,
+    "hdi_category": "Very high human development"
+  },
+  "PER": {
+    "emp": 69.2,
+    "emp_female": 61.5,
+    "population": 34218,
+    "hdi_rank": 79,
+    "hdi_value": 0.794,
+    "hdi_category": "High human development"
+  },
+  "PHL": {
+    "emp": 59.7,
+    "emp_female": 48.7,
+    "population": 115844,
+    "hdi_rank": 117,
+    "hdi_value": 0.72,
+    "hdi_category": "High human development"
+  },
+  "PLW": {
+    "population": 18,
+    "hdi_rank": 84,
+    "hdi_value": 0.786,
+    "hdi_category": "High human development"
+  },
+  "PNG": {
+    "emp": 50.6,
+    "emp_female": 49.5,
+    "population": 10577,
+    "hdi_rank": 160,
+    "hdi_value": 0.576,
+    "hdi_category": "Medium human development"
+  },
+  "POL": {
+    "emp": 57.1,
+    "emp_female": 50.2,
+    "population": 38539,
+    "hdi_rank": 35,
+    "hdi_value": 0.906,
+    "hdi_category": "Very high human development"
+  },
+  "PRK": {
+    "emp": 79.8,
+    "emp_female": 75.4,
+    "population": 26499,
+    "hdi_rank": null,
+    "hdi_value": null,
+    "hdi_category": null
+  },
+  "PRT": {
+    "emp": 54.8,
+    "emp_female": 50.9,
+    "population": 10425,
+    "hdi_rank": 40,
+    "hdi_value": 0.89,
+    "hdi_category": "Very high human development"
+  },
+  "PRY": {
+    "emp": 66.5,
+    "emp_female": 54.4,
+    "population": 6929,
+    "hdi_rank": 99,
+    "hdi_value": 0.756,
+    "hdi_category": "High human development"
+  },
+  "PSE": {
+    "emp": 34.0,
+    "emp_female": 11.4,
+    "population": 5495,
+    "hdi_rank": 133,
+    "hdi_value": 0.674,
+    "hdi_category": "Medium human development"
+  },
+  "QAT": {
+    "emp": 87.4,
+    "emp_female": 63.1,
+    "population": 3048,
+    "hdi_rank": 43,
+    "hdi_value": 0.886,
+    "hdi_category": "Very high human development"
+  },
+  "ROU": {
+    "emp": 48.6,
+    "emp_female": 39.8,
+    "population": 19015,
+    "hdi_rank": 55,
+    "hdi_value": 0.845,
+    "hdi_category": "Very high human development"
+  },
+  "RUS": {
+    "emp": 59.5,
+    "emp_female": 53.2,
+    "population": 144820,
+    "hdi_rank": 64,
+    "hdi_value": 0.832,
+    "hdi_category": "Very high human development"
+  },
+  "RWA": {
+    "emp": 55.9,
+    "emp_female": 49.8,
+    "population": 14257,
+    "hdi_rank": 159,
+    "hdi_value": 0.578,
+    "hdi_category": "Medium human development"
+  },
+  "SAU": {
+    "emp": 61.4,
+    "emp_female": 30.1,
+    "population": 33963,
+    "hdi_rank": 37,
+    "hdi_value": 0.9,
+    "hdi_category": "Very high human development"
+  },
+  "SDN": {
+    "emp": 34.7,
+    "emp_female": 12.4,
+    "population": 50449,
+    "hdi_rank": 176,
+    "hdi_value": 0.511,
+    "hdi_category": "Low human development"
+  },
+  "SEN": {
+    "emp": 48.9,
+    "emp_female": 35.9,
+    "population": 18502,
+    "hdi_rank": 169,
+    "hdi_value": 0.53,
+    "hdi_category": "Low human development"
+  },
+  "SGP": {
+    "emp": 67.6,
+    "emp_female": 60.2,
+    "population": 5832,
+    "hdi_rank": 13,
+    "hdi_value": 0.946,
+    "hdi_category": "Very high human development"
+  },
+  "SLB": {
+    "emp": 83.1,
+    "emp_female": 81.2,
+    "population": 819,
+    "hdi_rank": 156,
+    "hdi_value": 0.584,
+    "hdi_category": "Medium human development"
+  },
+  "SLE": {
+    "emp": 51.8,
+    "emp_female": 50.1,
+    "population": 8642,
+    "hdi_rank": 185,
+    "hdi_value": 0.467,
+    "hdi_category": "Low human development"
+  },
+  "SLV": {
+    "emp": 58.9,
+    "emp_female": 45.2,
+    "population": 6338,
+    "hdi_rank": 132,
+    "hdi_value": 0.678,
+    "hdi_category": "Medium human development"
+  },
+  "SMR": {
+    "population": 34,
+    "hdi_rank": 29,
+    "hdi_value": 0.915,
+    "hdi_category": "Very high human development"
+  },
+  "SOM": {
+    "emp": 27.5,
+    "emp_female": 15.8,
+    "population": 19009,
+    "hdi_rank": 192,
+    "hdi_value": 0.404,
+    "hdi_category": "Low human development"
+  },
+  "SRB": {
+    "emp": 53.0,
+    "emp_female": 46.0,
+    "population": 6736,
+    "hdi_rank": 62,
+    "hdi_value": 0.833,
+    "hdi_category": "Very high human development"
+  },
+  "SSD": {
+    "emp": 64.5,
+    "emp_female": 61.6,
+    "population": 11943,
+    "hdi_rank": 193,
+    "hdi_value": 0.388,
+    "hdi_category": "Low human development"
+  },
+  "STP": {
+    "emp": 21.4,
+    "emp_female": 20.9,
+    "population": 236,
+    "hdi_rank": 141,
+    "hdi_value": 0.637,
+    "hdi_category": "Medium human development"
+  },
+  "SUR": {
+    "emp": 50.2,
+    "emp_female": 40.0,
+    "population": 634,
+    "hdi_rank": 114,
+    "hdi_value": 0.722,
+    "hdi_category": "High human development"
+  },
+  "SVK": {
+    "emp": 57.7,
+    "emp_female": 52.4,
+    "population": 5507,
+    "hdi_rank": 44,
+    "hdi_value": 0.88,
+    "hdi_category": "Very high human development"
+  },
+  "SVN": {
+    "emp": 56.4,
+    "emp_female": 51.4,
+    "population": 2119,
+    "hdi_rank": 21,
+    "hdi_value": 0.931,
+    "hdi_category": "Very high human development"
+  },
+  "SWE": {
+    "emp": 59.4,
+    "emp_female": 56.3,
+    "population": 10607,
+    "hdi_rank": 5,
+    "hdi_value": 0.959,
+    "hdi_category": "Very high human development"
+  },
+  "SWZ": {
+    "emp": 30.9,
+    "emp_female": 28.6,
+    "population": 1243,
+    "hdi_rank": 126,
+    "hdi_value": 0.695,
+    "hdi_category": "Medium human development"
+  },
+  "SYC": {
+    "population": 130,
+    "hdi_rank": 54,
+    "hdi_value": 0.848,
+    "hdi_category": "Very high human development"
+  },
+  "SYR": {
+    "emp": 33.0,
+    "emp_female": 10.1,
+    "population": 24673,
+    "hdi_rank": 162,
+    "hdi_value": 0.564,
+    "hdi_category": "Medium human development"
+  },
+  "TCD": {
+    "emp": 59.6,
+    "emp_female": 48.1,
+    "population": 20299,
+    "hdi_rank": 190,
+    "hdi_value": 0.416,
+    "hdi_category": "Low human development"
+  },
+  "TGO": {
+    "emp": 57.0,
+    "emp_female": 54.9,
+    "population": 9515,
+    "hdi_rank": 161,
+    "hdi_value": 0.571,
+    "hdi_category": "Medium human development"
+  },
+  "THA": {
+    "emp": 66.0,
+    "emp_female": 58.4,
+    "population": 71668,
+    "hdi_rank": 76,
+    "hdi_value": 0.798,
+    "hdi_category": "High human development"
+  },
+  "TJK": {
+    "emp": 36.4,
+    "emp_female": 28.4,
+    "population": 10591,
+    "hdi_rank": 128,
+    "hdi_value": 0.691,
+    "hdi_category": "Medium human development"
+  },
+  "TKM": {
+    "emp": 45.6,
+    "emp_female": 47.4,
+    "population": 7494,
+    "hdi_rank": 95,
+    "hdi_value": 0.764,
+    "hdi_category": "High human development"
+  },
+  "TLS": {
+    "emp": 65.2,
+    "emp_female": 60.0,
+    "population": 1401,
+    "hdi_rank": 142,
+    "hdi_value": 0.634,
+    "hdi_category": "Medium human development"
+  },
+  "TON": {
+    "emp": 50.6,
+    "emp_female": 40.6,
+    "population": 104,
+    "hdi_rank": 92,
+    "hdi_value": 0.769,
+    "hdi_category": "High human development"
+  },
+  "TTO": {
+    "emp": 55.1,
+    "emp_female": 47.1,
+    "population": 1508,
+    "hdi_rank": 72,
+    "hdi_value": 0.807,
+    "hdi_category": "Very high human development"
+  },
+  "TUN": {
+    "emp": 38.2,
+    "emp_female": 20.8,
+    "population": 12277,
+    "hdi_rank": 105,
+    "hdi_value": 0.746,
+    "hdi_category": "High human development"
+  },
+  "TUR": {
+    "emp": 49.2,
+    "emp_female": 32.2,
+    "population": 87474,
+    "hdi_rank": 51,
+    "hdi_value": 0.853,
+    "hdi_category": "Very high human development"
+  },
+  "TUV": {
+    "population": 10,
+    "hdi_rank": 129,
+    "hdi_value": 0.689,
+    "hdi_category": "Medium human development"
+  },
+  "TZA": {
+    "emp": 81.6,
+    "emp_female": 77.4,
+    "population": 68560,
+    "hdi_rank": 165,
+    "hdi_value": 0.555,
+    "hdi_category": "Medium human development"
+  },
+  "UGA": {
+    "emp": 78.5,
+    "emp_female": 73.8,
+    "population": 50015,
+    "hdi_rank": 157,
+    "hdi_value": 0.582,
+    "hdi_category": "Medium human development"
+  },
+  "UKR": {
+    "emp": 49.3,
+    "emp_female": 42.9,
+    "population": 37860,
+    "hdi_rank": 87,
+    "hdi_value": 0.779,
+    "hdi_category": "High human development"
+  },
+  "URY": {
+    "emp": 58.5,
+    "emp_female": 51.7,
+    "population": 3387,
+    "hdi_rank": 48,
+    "hdi_value": 0.862,
+    "hdi_category": "Very high human development"
+  },
+  "USA": {
+    "emp": 59.4,
+    "emp_female": 54.3,
+    "population": 345427,
+    "hdi_rank": 17,
+    "hdi_value": 0.938,
+    "hdi_category": "Very high human development"
+  },
+  "UZB": {
+    "emp": 53.3,
+    "emp_female": 36.8,
+    "population": 36362,
+    "hdi_rank": 107,
+    "hdi_value": 0.74,
+    "hdi_category": "High human development"
+  },
+  "VAT": {
+    "population": 0,
+    "hdi_rank": null,
+    "hdi_value": null,
+    "hdi_category": null
+  },
+  "VCT": {
+    "emp": 54.0,
+    "emp_female": 46.8,
+    "population": 101,
+    "hdi_rank": 76,
+    "hdi_value": 0.798,
+    "hdi_category": "High human development"
+  },
+  "VEN": {
+    "emp": 49.8,
+    "emp_female": 35.4,
+    "population": 28406,
+    "hdi_rank": 121,
+    "hdi_value": 0.709,
+    "hdi_category": "High human development"
+  },
+  "VNM": {
+    "emp": 72.6,
+    "emp_female": 68.2,
+    "population": 100988,
+    "hdi_rank": 93,
+    "hdi_value": 0.766,
+    "hdi_category": "High human development"
+  },
+  "VUT": {
+    "emp": 55.4,
+    "emp_female": 50.3,
+    "population": 328,
+    "hdi_rank": 146,
+    "hdi_value": 0.621,
+    "hdi_category": "Medium human development"
+  },
+  "WSM": {
+    "emp": 40.7,
+    "emp_female": 28.4,
+    "population": 218,
+    "hdi_rank": 122,
+    "hdi_value": 0.708,
+    "hdi_category": "High human development"
+  },
+  "YEM": {
+    "emp": 27.2,
+    "emp_female": 3.5,
+    "population": 40583,
+    "hdi_rank": 184,
+    "hdi_value": 0.47,
+    "hdi_category": "Low human development"
+  },
+  "ZAF": {
+    "emp": 39.1,
+    "emp_female": 34.2,
+    "population": 64007,
+    "hdi_rank": 106,
+    "hdi_value": 0.741,
+    "hdi_category": "High human development"
+  },
+  "ZMB": {
+    "emp": 55.8,
+    "emp_female": 50.5,
+    "population": 21315,
+    "hdi_rank": 154,
+    "hdi_value": 0.595,
+    "hdi_category": "Medium human development"
+  },
+  "ZWE": {
+    "emp": 59.4,
+    "emp_female": 54.5,
+    "population": 16634,
+    "hdi_rank": 153,
+    "hdi_value": 0.598,
+    "hdi_category": "Medium human development"
+  }
+}

@@ -10,12 +10,12 @@ const H = 260;
 const M = { top: 20, right: 24, bottom: 32, left: 44 };
 const CHART_H = H - M.top - M.bottom;
 
-const PILL_W = 86;
-const PILL_H = 16;
+const PILL_W = 100;
+const PILL_H = 20;
 const PILL_R = 3;
 const PILL_ARROW = 4;
 
-export default function DependenceOverTime({ iso3, currentPct, dominantGroup, title, subtitle, description }) {
+export default function DependenceOverTime({ iso3, title, subtitle, description }) {
   const [allData, setAllData] = useState(null);
   const lineColor = '#009edb';
 
@@ -26,7 +26,9 @@ export default function DependenceOverTime({ iso3, currentPct, dominantGroup, ti
   useEffect(() => {
     loadFile('assets/data/cdde_dependence_over_time.json')
       .then(r => r?.json())
-      .then(d => { if (d) setAllData(d); });
+      .then(d => {
+        if (d) setAllData(d);
+      });
   }, []);
 
   useEffect(() => {
@@ -48,7 +50,10 @@ export default function DependenceOverTime({ iso3, currentPct, dominantGroup, ti
   const yScale = d3.scaleLinear().domain([0, 100]).range([CHART_H, 0]);
 
   const linePath = series.length
-    ? d3.line().x(d => xScale(d.year)).y(d => yScale(d.pct))(series)
+    ? d3
+        .line()
+        .x(d => xScale(d.year))
+        .y(d => yScale(d.pct))(series)
     : '';
 
   const threshold60Y = yScale(60);
@@ -68,7 +73,10 @@ export default function DependenceOverTime({ iso3, currentPct, dominantGroup, ti
     const rect = wrap.getBoundingClientRect();
     const mouseX = e.clientX - rect.left;
     const chartX = (mouseX / rect.width) * svgW - M.left;
-    if (chartX < -4 || chartX > CHART_W + 4) { setTooltip(null); return; }
+    if (chartX < -4 || chartX > CHART_W + 4) {
+      setTooltip(null);
+      return;
+    }
     const year = Math.max(xMin, Math.min(xMax, Math.round(xScale.invert(Math.max(0, Math.min(CHART_W, chartX))))));
     const pt = series.find(d => d.year === year);
     if (!pt) return;
@@ -94,20 +102,14 @@ export default function DependenceOverTime({ iso3, currentPct, dominantGroup, ti
 
             <line x1={0} x2={CHART_W} y1={threshold60Y} y2={threshold60Y} className="dot_threshold" />
 
+            {linePath && <path d={linePath} fill="none" stroke={lineColor} strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" />}
             <g transform={`translate(4, ${threshold60Y - PILL_H - PILL_ARROW})`}>
               <rect x={0} y={0} width={PILL_W} height={PILL_H} rx={PILL_R} fill="var(--un-color-yellow)" />
-              <text x={PILL_W / 2} y={PILL_H - 4} textAnchor="middle" className="dot_pill_label">
+              <text x={PILL_W / 2} y={PILL_H - 5} textAnchor="middle" className="dot_pill_label">
                 60% threshold
               </text>
-              <polygon
-                points={`${pillCX - PILL_ARROW},${PILL_H} ${pillCX + PILL_ARROW},${PILL_H} ${pillCX},${PILL_H + PILL_ARROW}`}
-                fill="var(--un-color-yellow)"
-              />
+              <polygon points={`${pillCX - PILL_ARROW},${PILL_H} ${pillCX + PILL_ARROW},${PILL_H} ${pillCX},${PILL_H + PILL_ARROW}`} fill="var(--un-color-yellow)" />
             </g>
-
-            {linePath && (
-              <path d={linePath} fill="none" stroke={lineColor} strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" />
-            )}
 
             {lastPt && (
               <>
@@ -119,9 +121,7 @@ export default function DependenceOverTime({ iso3, currentPct, dominantGroup, ti
               </>
             )}
 
-            {tooltip && (
-              <line x1={tooltip.cursorX} y1={0} x2={tooltip.cursorX} y2={CHART_H} className="dot_cursor" />
-            )}
+            {tooltip && <line x1={tooltip.cursorX} y1={0} x2={tooltip.cursorX} y2={CHART_H} className="dot_cursor" />}
 
             <line x1={0} y1={CHART_H} x2={CHART_W} y2={CHART_H} className="dot_axis" />
             {xTicks.map(t => (

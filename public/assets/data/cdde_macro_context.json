@@ -1,0 +1,778 @@
+{
+  "AFG": {
+    "gdp": 15452.8,
+    "gdp_per_capita": 362
+  },
+  "ALB": {
+    "gdp": 18842.0,
+    "gdp_per_capita": 6749
+  },
+  "DZA": {
+    "gdp": 191179.7,
+    "gdp_per_capita": 4084
+  },
+  "AND": {
+    "gdp": 3637.3,
+    "gdp_per_capita": 44391
+  },
+  "AGO": {
+    "gdp": 74848.0,
+    "gdp_per_capita": 1976
+  },
+  "ATG": {
+    "gdp": 1764.5,
+    "gdp_per_capita": 18817
+  },
+  "ARG": {
+    "gdp": 437333.3,
+    "gdp_per_capita": 9570
+  },
+  "ARM": {
+    "gdp": 17268.7,
+    "gdp_per_capita": 5807
+  },
+  "AUS": {
+    "gdp": 1587216.8,
+    "gdp_per_capita": 59417
+  },
+  "AUT": {
+    "gdp": 473167.1,
+    "gdp_per_capita": 51878
+  },
+  "AZE": {
+    "gdp": 49806.9,
+    "gdp_per_capita": 4819
+  },
+  "BHS": {
+    "gdp": 14393.5,
+    "gdp_per_capita": 35869
+  },
+  "BHR": {
+    "gdp": 42322.2,
+    "gdp_per_capita": 26335
+  },
+  "BGD": {
+    "gdp": 471665.4,
+    "gdp_per_capita": 2718
+  },
+  "BRB": {
+    "gdp": 7122.0,
+    "gdp_per_capita": 25214
+  },
+  "BLR": {
+    "gdp": 64885.0,
+    "gdp_per_capita": 7164
+  },
+  "BEL": {
+    "gdp": 599634.3,
+    "gdp_per_capita": 51082
+  },
+  "BLZ": {
+    "gdp": 2745.2,
+    "gdp_per_capita": 6582
+  },
+  "BEN": {
+    "gdp": 20410.6,
+    "gdp_per_capita": 1411
+  },
+  "BTN": {
+    "gdp": 3037.0,
+    "gdp_per_capita": 3837
+  },
+  "BOL": {
+    "gdp": 41813.7,
+    "gdp_per_capita": 3368
+  },
+  "BIH": {
+    "gdp": 25702.8,
+    "gdp_per_capita": 8123
+  },
+  "BWA": {
+    "gdp": 17647.4,
+    "gdp_per_capita": 7000
+  },
+  "BRA": {
+    "gdp": 1700937.8,
+    "gdp_per_capita": 8023
+  },
+  "BRN": {
+    "gdp": 12247.2,
+    "gdp_per_capita": 26468
+  },
+  "BGR": {
+    "gdp": 83163.4,
+    "gdp_per_capita": 12306
+  },
+  "BFA": {
+    "gdp": 20796.5,
+    "gdp_per_capita": 883
+  },
+  "BDI": {
+    "gdp": 3853.4,
+    "gdp_per_capita": 274
+  },
+  "CPV": {
+    "gdp": 2553.4,
+    "gdp_per_capita": 4865
+  },
+  "KHM": {
+    "gdp": 41515.3,
+    "gdp_per_capita": 2354
+  },
+  "CMR": {
+    "gdp": 46764.5,
+    "gdp_per_capita": 1606
+  },
+  "CAN": {
+    "gdp": 1910760.4,
+    "gdp_per_capita": 48079
+  },
+  "CAF": {
+    "gdp": 2413.4,
+    "gdp_per_capita": 453
+  },
+  "TCD": {
+    "gdp": 17022.4,
+    "gdp_per_capita": 839
+  },
+  "CHL": {
+    "gdp": 297872.8,
+    "gdp_per_capita": 15071
+  },
+  "CHN": {
+    "gdp": 18582293.1,
+    "gdp_per_capita": 13092
+  },
+  "COL": {
+    "gdp": 329437.4,
+    "gdp_per_capita": 6229
+  },
+  "COM": {
+    "gdp": 1593.2,
+    "gdp_per_capita": 1838
+  },
+  "COG": {
+    "gdp": 11076.1,
+    "gdp_per_capita": 1749
+  },
+  "COD": {
+    "gdp": 62550.8,
+    "gdp_per_capita": 572
+  },
+  "CRI": {
+    "gdp": 77210.1,
+    "gdp_per_capita": 15051
+  },
+  "CIV": {
+    "gdp": 80977.2,
+    "gdp_per_capita": 2536
+  },
+  "HRV": {
+    "gdp": 75009.7,
+    "gdp_per_capita": 19356
+  },
+  "CUB": {
+    "gdp": 107342.0,
+    "gdp_per_capita": 9776
+  },
+  "CYP": {
+    "gdp": 33197.4,
+    "gdp_per_capita": 35703
+  },
+  "CZE": {
+    "gdp": 271524.4,
+    "gdp_per_capita": 25291
+  },
+  "DNK": {
+    "gdp": 396039.7,
+    "gdp_per_capita": 66256
+  },
+  "DJI": {
+    "gdp": 3944.7,
+    "gdp_per_capita": 3375
+  },
+  "DMA": {
+    "gdp": 650.9,
+    "gdp_per_capita": 9832
+  },
+  "DOM": {
+    "gdp": 101078.8,
+    "gdp_per_capita": 8845
+  },
+  "ECU": {
+    "gdp": 110995.0,
+    "gdp_per_capita": 6120
+  },
+  "EGY": {
+    "gdp": 456803.9,
+    "gdp_per_capita": 3920
+  },
+  "SLV": {
+    "gdp": 30501.7,
+    "gdp_per_capita": 4812
+  },
+  "GNQ": {
+    "gdp": 9580.8,
+    "gdp_per_capita": 5062
+  },
+  "ERI": {
+    "gdp": 2359.2,
+    "gdp_per_capita": 667
+  },
+  "EST": {
+    "gdp": 33000.2,
+    "gdp_per_capita": 24255
+  },
+  "SWZ": {
+    "gdp": 4508.8,
+    "gdp_per_capita": 3628
+  },
+  "ETH": {
+    "gdp": 122979.2,
+    "gdp_per_capita": 931
+  },
+  "FJI": {
+    "gdp": 5395.2,
+    "gdp_per_capita": 5809
+  },
+  "FIN": {
+    "gdp": 277843.5,
+    "gdp_per_capita": 49462
+  },
+  "FRA": {
+    "gdp": 2983998.5,
+    "gdp_per_capita": 43384
+  },
+  "GAB": {
+    "gdp": 16988.8,
+    "gdp_per_capita": 6691
+  },
+  "GMB": {
+    "gdp": 2226.3,
+    "gdp_per_capita": 807
+  },
+  "GEO": {
+    "gdp": 23252.6,
+    "gdp_per_capita": 6107
+  },
+  "DEU": {
+    "gdp": 4119813.0,
+    "gdp_per_capita": 48725
+  },
+  "GHA": {
+    "gdp": 83277.7,
+    "gdp_per_capita": 2419
+  },
+  "GRC": {
+    "gdp": 230105.8,
+    "gdp_per_capita": 22901
+  },
+  "GRD": {
+    "gdp": 1273.9,
+    "gdp_per_capita": 10869
+  },
+  "GTM": {
+    "gdp": 93881.7,
+    "gdp_per_capita": 5101
+  },
+  "GIN": {
+    "gdp": 36484.7,
+    "gdp_per_capita": 2473
+  },
+  "GNB": {
+    "gdp": 1710.4,
+    "gdp_per_capita": 777
+  },
+  "GUY": {
+    "gdp": 20620.4,
+    "gdp_per_capita": 24811
+  },
+  "HTI": {
+    "gdp": 14078.7,
+    "gdp_per_capita": 1196
+  },
+  "HND": {
+    "gdp": 29362.3,
+    "gdp_per_capita": 2712
+  },
+  "HUN": {
+    "gdp": 176577.8,
+    "gdp_per_capita": 18249
+  },
+  "ISL": {
+    "gdp": 26184.5,
+    "gdp_per_capita": 66560
+  },
+  "IND": {
+    "gdp": 3677596.4,
+    "gdp_per_capita": 2535
+  },
+  "IDN": {
+    "gdp": 1276069.0,
+    "gdp_per_capita": 4501
+  },
+  "IRN": {
+    "gdp": 376460.8,
+    "gdp_per_capita": 4111
+  },
+  "IRQ": {
+    "gdp": 196205.0,
+    "gdp_per_capita": 4261
+  },
+  "IRL": {
+    "gdp": 527141.5,
+    "gdp_per_capita": 100312
+  },
+  "ISR": {
+    "gdp": 492369.1,
+    "gdp_per_capita": 52452
+  },
+  "ITA": {
+    "gdp": 2214500.3,
+    "gdp_per_capita": 37317
+  },
+  "JAM": {
+    "gdp": 17538.7,
+    "gdp_per_capita": 6177
+  },
+  "JPN": {
+    "gdp": 5320978.4,
+    "gdp_per_capita": 42997
+  },
+  "JOR": {
+    "gdp": 49028.8,
+    "gdp_per_capita": 4244
+  },
+  "KAZ": {
+    "gdp": 201682.1,
+    "gdp_per_capita": 9794
+  },
+  "KEN": {
+    "gdp": 125729.2,
+    "gdp_per_capita": 2228
+  },
+  "KIR": {
+    "gdp": 272.4,
+    "gdp_per_capita": 2025
+  },
+  "PRK": {
+    "gdp": 16901.3,
+    "gdp_per_capita": 638
+  },
+  "KOR": {
+    "gdp": 1942106.9,
+    "gdp_per_capita": 37552
+  },
+  "KWT": {
+    "gdp": 115489.7,
+    "gdp_per_capita": 23404
+  },
+  "KGZ": {
+    "gdp": 11302.5,
+    "gdp_per_capita": 1573
+  },
+  "LAO": {
+    "gdp": 22460.8,
+    "gdp_per_capita": 2891
+  },
+  "LVA": {
+    "gdp": 36019.5,
+    "gdp_per_capita": 19243
+  },
+  "LBN": {
+    "gdp": 31917.2,
+    "gdp_per_capita": 5497
+  },
+  "LSO": {
+    "gdp": 2301.0,
+    "gdp_per_capita": 984
+  },
+  "LBR": {
+    "gdp": 4021.5,
+    "gdp_per_capita": 716
+  },
+  "LBY": {
+    "gdp": 59324.7,
+    "gdp_per_capita": 8037
+  },
+  "LIE": {
+    "gdp": 6838.3,
+    "gdp_per_capita": 171515
+  },
+  "LTU": {
+    "gdp": 64581.4,
+    "gdp_per_capita": 22588
+  },
+  "LUX": {
+    "gdp": 78268.6,
+    "gdp_per_capita": 116292
+  },
+  "MDG": {
+    "gdp": 15446.6,
+    "gdp_per_capita": 483
+  },
+  "MWI": {
+    "gdp": 12888.7,
+    "gdp_per_capita": 595
+  },
+  "MYS": {
+    "gdp": 413135.2,
+    "gdp_per_capita": 11619
+  },
+  "MDV": {
+    "gdp": 6311.3,
+    "gdp_per_capita": 11958
+  },
+  "MLI": {
+    "gdp": 24288.7,
+    "gdp_per_capita": 992
+  },
+  "MLT": {
+    "gdp": 22580.6,
+    "gdp_per_capita": 41846
+  },
+  "MHL": {
+    "gdp": 239.1,
+    "gdp_per_capita": 6367
+  },
+  "MRT": {
+    "gdp": 10091.7,
+    "gdp_per_capita": 1952
+  },
+  "MUS": {
+    "gdp": 14096.0,
+    "gdp_per_capita": 11089
+  },
+  "MEX": {
+    "gdp": 1288452.1,
+    "gdp_per_capita": 9846
+  },
+  "FSM": {
+    "gdp": 377.0,
+    "gdp_per_capita": 3331
+  },
+  "MDA": {
+    "gdp": 12688.3,
+    "gdp_per_capita": 4181
+  },
+  "MCO": {
+    "gdp": 10504.7,
+    "gdp_per_capita": 271923
+  },
+  "MNG": {
+    "gdp": 16009.2,
+    "gdp_per_capita": 4606
+  },
+  "MNE": {
+    "gdp": 6333.8,
+    "gdp_per_capita": 9920
+  },
+  "MAR": {
+    "gdp": 143768.2,
+    "gdp_per_capita": 3775
+  },
+  "MOZ": {
+    "gdp": 16388.4,
+    "gdp_per_capita": 473
+  },
+  "MMR": {
+    "gdp": 86594.7,
+    "gdp_per_capita": 1589
+  },
+  "NAM": {
+    "gdp": 12518.6,
+    "gdp_per_capita": 4131
+  },
+  "NRU": {
+    "gdp": 167.3,
+    "gdp_per_capita": 14002
+  },
+  "NPL": {
+    "gdp": 38470.3,
+    "gdp_per_capita": 1297
+  },
+  "NLD": {
+    "gdp": 1045681.1,
+    "gdp_per_capita": 57364
+  },
+  "NZL": {
+    "gdp": 232978.2,
+    "gdp_per_capita": 44684
+  },
+  "NIC": {
+    "gdp": 15745.8,
+    "gdp_per_capita": 2277
+  },
+  "NER": {
+    "gdp": 16589.7,
+    "gdp_per_capita": 614
+  },
+  "NGA": {
+    "gdp": 675258.6,
+    "gdp_per_capita": 2902
+  },
+  "MKD": {
+    "gdp": 14026.6,
+    "gdp_per_capita": 7694
+  },
+  "NOR": {
+    "gdp": 402965.7,
+    "gdp_per_capita": 72259
+  },
+  "OMN": {
+    "gdp": 86668.4,
+    "gdp_per_capita": 16410
+  },
+  "PAK": {
+    "gdp": 338306.9,
+    "gdp_per_capita": 1346
+  },
+  "PLW": {
+    "gdp": 257.4,
+    "gdp_per_capita": 14549
+  },
+  "PAN": {
+    "gdp": 81322.3,
+    "gdp_per_capita": 18009
+  },
+  "PNG": {
+    "gdp": 27102.7,
+    "gdp_per_capita": 2563
+  },
+  "PRY": {
+    "gdp": 40595.3,
+    "gdp_per_capita": 5859
+  },
+  "PER": {
+    "gdp": 241514.7,
+    "gdp_per_capita": 7058
+  },
+  "PHL": {
+    "gdp": 458831.9,
+    "gdp_per_capita": 3961
+  },
+  "POL": {
+    "gdp": 703624.0,
+    "gdp_per_capita": 18257
+  },
+  "PRT": {
+    "gdp": 273074.4,
+    "gdp_per_capita": 26193
+  },
+  "QAT": {
+    "gdp": 158920.9,
+    "gdp_per_capita": 52132
+  },
+  "ROU": {
+    "gdp": 285512.7,
+    "gdp_per_capita": 15015
+  },
+  "RUS": {
+    "gdp": 1692022.9,
+    "gdp_per_capita": 11684
+  },
+  "RWA": {
+    "gdp": 14531.7,
+    "gdp_per_capita": 1019
+  },
+  "KNA": {
+    "gdp": 1012.9,
+    "gdp_per_capita": 21624
+  },
+  "LCA": {
+    "gdp": 2192.6,
+    "gdp_per_capita": 12198
+  },
+  "VCT": {
+    "gdp": 1001.5,
+    "gdp_per_capita": 9954
+  },
+  "WSM": {
+    "gdp": 1052.8,
+    "gdp_per_capita": 4829
+  },
+  "SMR": {
+    "gdp": 1919.3,
+    "gdp_per_capita": 57153
+  },
+  "STP": {
+    "gdp": 491.8,
+    "gdp_per_capita": 2088
+  },
+  "SAU": {
+    "gdp": 945557.5,
+    "gdp_per_capita": 27841
+  },
+  "SEN": {
+    "gdp": 34444.9,
+    "gdp_per_capita": 1862
+  },
+  "SRB": {
+    "gdp": 66777.0,
+    "gdp_per_capita": 9913
+  },
+  "SYC": {
+    "gdp": 1658.1,
+    "gdp_per_capita": 12714
+  },
+  "SLE": {
+    "gdp": 8228.4,
+    "gdp_per_capita": 952
+  },
+  "SGP": {
+    "gdp": 424069.7,
+    "gdp_per_capita": 72709
+  },
+  "SVK": {
+    "gdp": 119259.8,
+    "gdp_per_capita": 21657
+  },
+  "SVN": {
+    "gdp": 61646.3,
+    "gdp_per_capita": 29096
+  },
+  "SLB": {
+    "gdp": 1581.5,
+    "gdp_per_capita": 1931
+  },
+  "SOM": {
+    "gdp": 9945.6,
+    "gdp_per_capita": 523
+  },
+  "ZAF": {
+    "gdp": 366555.3,
+    "gdp_per_capita": 5727
+  },
+  "SSD": {
+    "gdp": 2959.4,
+    "gdp_per_capita": 248
+  },
+  "ESP": {
+    "gdp": 1547355.9,
+    "gdp_per_capita": 32297
+  },
+  "LKA": {
+    "gdp": 83615.4,
+    "gdp_per_capita": 3619
+  },
+  "PSE": {
+    "gdp": 13215.5,
+    "gdp_per_capita": 2405
+  },
+  "SDN": {
+    "gdp": 21486.0,
+    "gdp_per_capita": 426
+  },
+  "SUR": {
+    "gdp": 4387.6,
+    "gdp_per_capita": 6916
+  },
+  "SWE": {
+    "gdp": 584553.4,
+    "gdp_per_capita": 55110
+  },
+  "CHE": {
+    "gdp": 823084.3,
+    "gdp_per_capita": 92254
+  },
+  "SYR": {
+    "gdp": 20370.2,
+    "gdp_per_capita": 826
+  },
+  "TJK": {
+    "gdp": 11285.4,
+    "gdp_per_capita": 1066
+  },
+  "TZA": {
+    "gdp": 79483.5,
+    "gdp_per_capita": 1159
+  },
+  "THA": {
+    "gdp": 545382.6,
+    "gdp_per_capita": 7610
+  },
+  "TLS": {
+    "gdp": 1347.7,
+    "gdp_per_capita": 962
+  },
+  "TGO": {
+    "gdp": 9326.6,
+    "gdp_per_capita": 980
+  },
+  "TON": {
+    "gdp": 515.9,
+    "gdp_per_capita": 4952
+  },
+  "TTO": {
+    "gdp": 21756.7,
+    "gdp_per_capita": 14430
+  },
+  "TUN": {
+    "gdp": 46515.1,
+    "gdp_per_capita": 3789
+  },
+  "TUR": {
+    "gdp": 918812.1,
+    "gdp_per_capita": 10504
+  },
+  "TKM": {
+    "gdp": 55359.4,
+    "gdp_per_capita": 7387
+  },
+  "TUV": {
+    "gdp": 49.7,
+    "gdp_per_capita": 5152
+  },
+  "UGA": {
+    "gdp": 47613.0,
+    "gdp_per_capita": 952
+  },
+  "UKR": {
+    "gdp": 125358.7,
+    "gdp_per_capita": 3311
+  },
+  "ARE": {
+    "gdp": 435467.7,
+    "gdp_per_capita": 39491
+  },
+  "GBR": {
+    "gdp": 3152437.1,
+    "gdp_per_capita": 45596
+  },
+  "USA": {
+    "gdp": 24614499.1,
+    "gdp_per_capita": 71258
+  },
+  "URY": {
+    "gdp": 61527.1,
+    "gdp_per_capita": 18168
+  },
+  "UZB": {
+    "gdp": 86186.1,
+    "gdp_per_capita": 2370
+  },
+  "VUT": {
+    "gdp": 970.5,
+    "gdp_per_capita": 2961
+  },
+  "VEN": {
+    "gdp": 126436.3,
+    "gdp_per_capita": 4451
+  },
+  "VNM": {
+    "gdp": 434101.7,
+    "gdp_per_capita": 4299
+  },
+  "YEM": {
+    "gdp": 8987.5,
+    "gdp_per_capita": 221
+  },
+  "ZMB": {
+    "gdp": 22177.0,
+    "gdp_per_capita": 1040
+  },
+  "ZWE": {
+    "gdp": 41610.9,
+    "gdp_per_capita": 2501
+  }
+}

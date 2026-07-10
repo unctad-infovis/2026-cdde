@@ -2,8 +2,12 @@ import { useEffect, useState } from 'react';
 import loadFile from '../../../helpers/LoadFile';
 import CircleFlag from '../../general/CircleFlag';
 import DependenceOverTime from './DependenceOverTime';
+import EnergyImportsOverTime from './EnergyImportsOverTime';
+import EnergyNetImports from './EnergyNetImports';
 import ExportsOverTime from './ExportsOverTime';
-import ImportDependencies from './ImportDependencies';
+import FoodImportsOverTime from './FoodImportsOverTime';
+import FoodNetImports from './FoodNetImports';
+import ImportsOverTime from './ImportsOverTime';
 import LeadingExports from './LeadingExports';
 import MacroContext from './MacroContext';
 import SocialContext from './SocialContext';
@@ -122,12 +126,23 @@ export default function CountryProfile({ country, content = {} }) {
       {/* Imports section */}
       <h3 className="cp_section_head cp_section_head--sep">{content.importsHeading ?? 'Imports'}</h3>
 
+      <ImportsOverTime iso3={iso3} {...content.importsOverTime} />
+
       <div className="cp_chart_row">
-        <ImportDependencies iso3={iso3} {...content.importDependencies} />
-        <MacroContext iso3={iso3} {...content.macroContext} />
+        <FoodImportsOverTime iso3={iso3} {...content.foodImportsOverTime} />
+        <EnergyImportsOverTime iso3={iso3} {...content.energyImportsOverTime} />
       </div>
 
       <div className="cp_chart_row">
+        <FoodNetImports iso3={iso3} {...content.foodNetImports} />
+        <EnergyNetImports iso3={iso3} {...content.energyNetImports} />
+      </div>
+
+      {/* Context section */}
+      <h3 className="cp_section_head cp_section_head--sep">{content.contextHeading ?? 'Context'}</h3>
+
+      <div className="cp_chart_row">
+        <MacroContext iso3={iso3} {...content.macroContext} />
         <SocialContext iso3={iso3} {...content.socialContext} />
       </div>
     </div>

@@ -2,23 +2,23 @@ import { useEffect, useState } from 'react';
 import loadFile from '../../../helpers/LoadFile';
 import ChartHeader from '../shared/ChartHeader';
 import ChartMeta from '../shared/ChartMeta';
-import LineChartTime from '../shared/LineChartTime';
+import PeriodColumns from '../shared/PeriodColumns';
 
-export default function ExportsOverTime({ iso3, dominantGroup, title, subtitle, description }) {
+export default function FoodNetImports({ iso3, title, subtitle, description }) {
   const [allData, setAllData] = useState(null);
 
   useEffect(() => {
-    loadFile('assets/data/cdde_exports_over_time.json')
+    loadFile('assets/data/cdde_net_imports.json')
       .then(r => r?.json())
       .then(d => { if (d) setAllData(d); });
   }, []);
 
-  const series = allData?.[iso3] ?? [];
+  const d = allData?.[iso3] ?? null;
 
   return (
     <div className="cdde_card">
       <ChartHeader title={title} subtitle={subtitle} description={description} />
-      <LineChartTime series={series} ariaLabel="Line chart of commodity exports over time" />
+      <PeriodColumns val1={d?.food_early ?? null} val2={d?.food_recent ?? null} />
       <ChartMeta source="UN Trade and Development (UNCTAD) calculations, based on UNCTADstat (2025)." />
     </div>
   );

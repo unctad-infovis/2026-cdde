@@ -216,6 +216,98 @@
     text-align: right;
   }
 
+  /* ── Stat list grid (label + value + optional note) ─────── */
+
+  .stl_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 12px;
+    margin-top: 16px;
+  }
+
+  .stl_grid--single {
+    grid-template-columns: 1fr;
+  }
+
+  .stl_item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .stl_label {
+    font-size: var(--un-font-size-xxxxs);
+    color: var(--un-color-grey-text);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    line-height: var(--un-line-height-small);
+  }
+
+  .stl_value {
+    font-size: var(--un-font-size-xxxl);
+    font-weight: var(--un-font-weight-boldest);
+    color: var(--un-color-blue-darkest);
+    line-height: 1;
+  }
+
+  .stl_note {
+    font-size: var(--un-font-size-xxxxs);
+    color: var(--un-color-grey-text);
+    line-height: var(--un-line-height-small);
+  }
+
+  /* ── Vertical column charts ─────────────────────────────── */
+
+  .cdde_col_wrap {
+    flex: 1;
+    margin-top: 12px;
+  }
+
+  .cdde_col_svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: visible;
+  }
+
+  .cdde_col_grid {
+    stroke: var(--un-color-grey-lighest);
+    stroke-width: 1px;
+  }
+
+  .cdde_col_axis {
+    stroke: var(--un-color-grey-light);
+    stroke-width: 1px;
+  }
+
+  .cdde_col_tick {
+    font-size: var(--un-font-size-xxxs);
+    fill: var(--un-color-grey-text);
+    font-family: Inter, Arial, sans-serif;
+  }
+
+  .cdde_col_val {
+    font-size: var(--un-font-size-xxxs);
+    font-weight: var(--un-font-weight-bold);
+    fill: var(--un-color-blue-darkest);
+    font-family: Inter, Arial, sans-serif;
+  }
+
+  .cdde_col_labels {
+    display: flex;
+    box-sizing: border-box;
+    margin-top: 6px;
+  }
+
+  .cdde_col_label {
+    flex: 1;
+    text-align: center;
+    font-size: var(--un-font-size-xxxxs);
+    color: var(--un-color-grey-text);
+    line-height: var(--un-line-height-small);
+    padding: 0 4px;
+  }
+
   @media (max-width: 600px) {
     .cdde_card {
       padding: 16px 12px 14px;
