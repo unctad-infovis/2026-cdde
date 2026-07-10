@@ -11,7 +11,7 @@ export default function CountryList({ countries, selected, onSelect }) {
     <div className="cl_panel">
       <div className="cl_panel_header">
         <span className="cl_count">
-          <strong>{countries.length}</strong> member States · click a tile
+          <strong>{countries.length}</strong> member States
         </span>
         <span className="cl_sort">Sorted A→Z</span>
       </div>

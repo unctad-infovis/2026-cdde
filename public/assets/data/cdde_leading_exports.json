@@ -1,68 +1,2676 @@
 {
-  "AFG": [{"label":"Dried fruits","pct":38.2},{"label":"Opium / medicinals","pct":24.1},{"label":"Cotton","pct":14.8}],
-  "DZA": [{"label":"Crude oil","pct":38.4},{"label":"Natural gas","pct":32.1},{"label":"Refined petroleum","pct":14.2}],
-  "AGO": [{"label":"Crude oil","pct":84.2},{"label":"Natural gas","pct":4.1},{"label":"Diamonds","pct":2.9}],
-  "ARG": [{"label":"Soybeans / cereals","pct":29.4},{"label":"Coffee / cocoa","pct":14.4},{"label":"Sugar / fruits","pct":8.5}],
-  "AUS": [{"label":"Iron ore","pct":28.1},{"label":"Coal","pct":18.4},{"label":"Liquefied nat. gas","pct":13.2}],
-  "AZE": [{"label":"Crude oil","pct":68.3},{"label":"Natural gas","pct":12.4},{"label":"Refined petroleum","pct":8.1}],
-  "BOL": [{"label":"Natural gas","pct":24.3},{"label":"Zinc","pct":14.8},{"label":"Gold","pct":12.1}],
-  "BWA": [{"label":"Diamonds","pct":71.4},{"label":"Nickel / copper","pct":8.2},{"label":"Beef","pct":4.1}],
-  "BFA": [{"label":"Gold","pct":72.4},{"label":"Cotton","pct":12.1},{"label":"Sesame","pct":6.3}],
-  "BDI": [{"label":"Coffee","pct":44.3},{"label":"Gold","pct":18.2},{"label":"Tea","pct":14.1}],
-  "CMR": [{"label":"Crude oil","pct":32.1},{"label":"Cocoa","pct":18.4},{"label":"Aluminum","pct":12.3}],
-  "CAF": [{"label":"Gold","pct":34.2},{"label":"Timber","pct":28.1},{"label":"Diamonds","pct":18.4}],
-  "TCD": [{"label":"Crude oil","pct":78.4},{"label":"Cattle","pct":9.2},{"label":"Cotton","pct":6.1}],
-  "CHL": [{"label":"Copper","pct":46.7},{"label":"Lithium","pct":7.2},{"label":"Cellulose","pct":4.1}],
-  "COD": [{"label":"Cobalt","pct":42.1},{"label":"Copper","pct":38.4},{"label":"Gold","pct":8.2}],
-  "COG": [{"label":"Crude oil","pct":74.3},{"label":"Manganese","pct":6.8},{"label":"Cocoa","pct":4.2}],
-  "CIV": [{"label":"Cocoa","pct":39.7},{"label":"Gold","pct":11.2},{"label":"Rubber","pct":8.4}],
-  "COL": [{"label":"Crude oil","pct":31.2},{"label":"Coal","pct":16.8},{"label":"Coffee","pct":6.4}],
-  "ECU": [{"label":"Crude oil","pct":38.4},{"label":"Bananas","pct":16.2},{"label":"Shrimps","pct":12.1}],
-  "ERI": [{"label":"Gold","pct":62.4},{"label":"Zinc","pct":18.1},{"label":"Fish","pct":8.3}],
-  "ETH": [{"label":"Coffee","pct":31.4},{"label":"Gold","pct":14.2},{"label":"Oilseeds","pct":12.8}],
-  "GAB": [{"label":"Crude oil","pct":58.4},{"label":"Manganese","pct":22.1},{"label":"Timber","pct":8.6}],
-  "GHA": [{"label":"Gold","pct":38.1},{"label":"Crude oil","pct":28.4},{"label":"Cocoa","pct":15.6}],
-  "GIN": [{"label":"Bauxite","pct":48.2},{"label":"Gold","pct":28.4},{"label":"Alumina","pct":12.1}],
-  "GNB": [{"label":"Cashews","pct":82.4},{"label":"Fish","pct":8.2},{"label":"Shrimps","pct":4.1}],
-  "GUY": [{"label":"Crude oil","pct":52.4},{"label":"Gold","pct":24.1},{"label":"Rice","pct":8.2}],
-  "IDN": [{"label":"Coal","pct":13.8},{"label":"Palm oil","pct":12.4},{"label":"Iron / steel","pct":8.2}],
-  "IRQ": [{"label":"Crude oil","pct":92.4},{"label":"Natural gas","pct":4.2},{"label":"Refined petroleum","pct":2.1}],
-  "KAZ": [{"label":"Crude oil","pct":52.1},{"label":"Uranium","pct":7.4},{"label":"Copper","pct":5.8}],
-  "KEN": [{"label":"Tea","pct":19.4},{"label":"Coffee","pct":8.1},{"label":"Cut flowers","pct":7.8}],
-  "KWT": [{"label":"Crude oil","pct":72.4},{"label":"Refined petroleum","pct":14.2},{"label":"Chemicals","pct":6.1}],
-  "LAO": [{"label":"Copper","pct":24.3},{"label":"Electricity","pct":18.4},{"label":"Gold","pct":14.2}],
-  "LBR": [{"label":"Iron ore","pct":52.4},{"label":"Rubber","pct":18.2},{"label":"Timber","pct":12.1}],
-  "LBY": [{"label":"Crude oil","pct":82.4},{"label":"Natural gas","pct":12.1},{"label":"Refined petroleum","pct":4.2}],
-  "MLI": [{"label":"Gold","pct":72.4},{"label":"Cotton","pct":12.1},{"label":"Sesame","pct":6.3}],
-  "MRT": [{"label":"Iron ore","pct":48.4},{"label":"Gold","pct":24.1},{"label":"Fish","pct":12.3}],
-  "MNG": [{"label":"Coal","pct":34.2},{"label":"Copper","pct":28.1},{"label":"Gold","pct":18.4}],
-  "MOZ": [{"label":"Natural gas","pct":42.3},{"label":"Aluminum","pct":18.6},{"label":"Coal","pct":14.1}],
-  "MMR": [{"label":"Natural gas","pct":38.4},{"label":"Jade / gems","pct":18.2},{"label":"Rice","pct":8.1}],
-  "NAM": [{"label":"Diamonds","pct":42.4},{"label":"Uranium","pct":18.2},{"label":"Fish","pct":12.1}],
-  "NER": [{"label":"Uranium","pct":42.3},{"label":"Gold","pct":28.1},{"label":"Crude oil","pct":16.4}],
-  "NGA": [{"label":"Crude oil","pct":79.4},{"label":"Natural gas","pct":8.3},{"label":"Sesame","pct":1.2}],
-  "NOR": [{"label":"Crude oil","pct":38.4},{"label":"Natural gas","pct":28.1},{"label":"Fish","pct":12.3}],
-  "OMN": [{"label":"Crude oil","pct":62.4},{"label":"Natural gas","pct":18.2},{"label":"Refined petroleum","pct":8.1}],
-  "PER": [{"label":"Copper","pct":28.4},{"label":"Gold","pct":18.2},{"label":"Zinc","pct":8.4}],
-  "PNG": [{"label":"Liquefied nat. gas","pct":38.4},{"label":"Gold","pct":24.1},{"label":"Copper","pct":12.3}],
-  "QAT": [{"label":"Natural gas","pct":64.3},{"label":"Refined petroleum","pct":18.2},{"label":"Chemicals","pct":8.1}],
-  "RUS": [{"label":"Crude oil","pct":32.4},{"label":"Natural gas","pct":18.2},{"label":"Coal","pct":8.4}],
-  "SAU": [{"label":"Crude oil","pct":65.3},{"label":"Refined petroleum","pct":17.4},{"label":"Chemicals","pct":5.8}],
-  "SLE": [{"label":"Iron ore","pct":42.4},{"label":"Diamonds","pct":28.2},{"label":"Rutile","pct":12.1}],
-  "SDN": [{"label":"Gold","pct":48.4},{"label":"Sesame","pct":24.1},{"label":"Livestock","pct":12.3}],
-  "SOM": [{"label":"Livestock","pct":62.4},{"label":"Fish","pct":18.2},{"label":"Bananas","pct":8.1}],
-  "SSD": [{"label":"Crude oil","pct":88.4},{"label":"Sesame","pct":6.2},{"label":"Timber","pct":2.4}],
-  "SUR": [{"label":"Gold","pct":58.4},{"label":"Crude oil","pct":18.2},{"label":"Aluminum","pct":12.1}],
-  "TZA": [{"label":"Gold","pct":34.2},{"label":"Coffee","pct":8.1},{"label":"Cashews","pct":6.7}],
-  "TLS": [{"label":"Crude oil","pct":78.4},{"label":"Coffee","pct":14.2},{"label":"Sandalwood","pct":4.1}],
-  "TTO": [{"label":"Natural gas","pct":42.4},{"label":"Refined petroleum","pct":28.2},{"label":"Ammonia","pct":12.1}],
-  "TUN": [{"label":"Crude oil","pct":24.3},{"label":"Phosphates","pct":18.4},{"label":"Textiles","pct":14.2}],
-  "TKM": [{"label":"Natural gas","pct":72.4},{"label":"Cotton","pct":12.1},{"label":"Crude oil","pct":8.3}],
-  "UGA": [{"label":"Coffee","pct":28.4},{"label":"Gold","pct":24.1},{"label":"Fish","pct":8.2}],
-  "ARE": [{"label":"Crude oil","pct":32.4},{"label":"Refined petroleum","pct":18.2},{"label":"Natural gas","pct":8.1}],
-  "VEN": [{"label":"Crude oil","pct":82.4},{"label":"Refined petroleum","pct":8.2},{"label":"Gold","pct":4.1}],
-  "YEM": [{"label":"Crude oil","pct":68.4},{"label":"Gold","pct":12.2},{"label":"Fish","pct":8.1}],
-  "ZMB": [{"label":"Copper","pct":72.4},{"label":"Cobalt","pct":8.2},{"label":"Gold","pct":6.1}],
-  "ZWE": [{"label":"Gold","pct":42.1},{"label":"Tobacco","pct":18.4},{"label":"Diamonds","pct":12.3}],
-  "ZAF": [{"label":"Gold","pct":11.2},{"label":"Platinum","pct":10.8},{"label":"Iron ore","pct":8.4}]
+  "AFG": [
+    {
+      "label": "Fruits and nuts (excluding oil nuts), fresh or dried",
+      "pct": 36.8
+    },
+    {
+      "label": "Coal, whether or not pulverized, not agglomerated",
+      "pct": 11.2
+    },
+    {
+      "label": "Vegetables",
+      "pct": 10.8
+    }
+  ],
+  "ALB": [
+    {
+      "label": "Electric current",
+      "pct": 4.6
+    },
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 3.9
+    },
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 3.4
+    }
+  ],
+  "DZA": [
+    {
+      "label": "Natural gas, whether or not liquefied",
+      "pct": 37.9
+    },
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 31.8
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 13.1
+    }
+  ],
+  "AND": [
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 2.6
+    },
+    {
+      "label": "Sugar, molasses and honey",
+      "pct": 1.3
+    },
+    {
+      "label": "Ferrous waste, scrape; remelting ingots, iron, steel",
+      "pct": 0.6
+    }
+  ],
+  "AGO": [
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 78.9
+    },
+    {
+      "label": "Natural gas, whether or not liquefied",
+      "pct": 8.5
+    },
+    {
+      "label": "Pearls, precious & semi-precious stones",
+      "pct": 2.7
+    }
+  ],
+  "ATG": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 29.2
+    },
+    {
+      "label": "Feeding stuff for animals (no unmilled cereals)",
+      "pct": 3.0
+    },
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 2.5
+    }
+  ],
+  "ARG": [
+    {
+      "label": "Feeding stuff for animals (no unmilled cereals)",
+      "pct": 16.4
+    },
+    {
+      "label": "Maize (not including sweet corn), unmilled",
+      "pct": 11.9
+    },
+    {
+      "label": "Fixed vegetable fats & oils, crude, refined, fractio.",
+      "pct": 10.3
+    }
+  ],
+  "ARM": [
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 30.6
+    },
+    {
+      "label": "Pearls, precious & semi-precious stones",
+      "pct": 7.9
+    },
+    {
+      "label": "Copper ores and concentrates; copper mattes, cemen",
+      "pct": 7.1
+    }
+  ],
+  "AUS": [
+    {
+      "label": "Iron ore and concentrates",
+      "pct": 25.5
+    },
+    {
+      "label": "Coal, whether or not pulverized, not agglomerated",
+      "pct": 21.4
+    },
+    {
+      "label": "Natural gas, whether or not liquefied",
+      "pct": 8.8
+    }
+  ],
+  "AUT": [
+    {
+      "label": "Electric current",
+      "pct": 2.1
+    },
+    {
+      "label": "Non-alcoholic beverages, n.e.s.",
+      "pct": 1.5
+    },
+    {
+      "label": "Forestry products",
+      "pct": 1.4
+    }
+  ],
+  "AZE": [
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 51.8
+    },
+    {
+      "label": "Natural gas, whether or not liquefied",
+      "pct": 35.7
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 2.0
+    }
+  ],
+  "BHS": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 42.5
+    },
+    {
+      "label": "Edible products and preparations, n.e.s.",
+      "pct": 4.7
+    },
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 3.1
+    }
+  ],
+  "BHR": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 28.0
+    },
+    {
+      "label": "Aluminium",
+      "pct": 26.8
+    },
+    {
+      "label": "Iron ore and concentrates",
+      "pct": 8.8
+    }
+  ],
+  "BGD": [
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 1.1
+    },
+    {
+      "label": "Jute, other textile bast fibre, n.e.s., not spun; tow",
+      "pct": 0.6
+    },
+    {
+      "label": "Tobacco, unmanufactured; tobacco refuse",
+      "pct": 0.3
+    }
+  ],
+  "BRB": [
+    {
+      "label": "Alcoholic beverages",
+      "pct": 19.1
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 5.3
+    },
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 4.9
+    }
+  ],
+  "BLR": [
+    {
+      "label": "Milk, cream and milk products (excluding butter, cheese)",
+      "pct": 5.1
+    },
+    {
+      "label": "Cheese and curd",
+      "pct": 5.0
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 3.6
+    }
+  ],
+  "BEL": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 7.3
+    },
+    {
+      "label": "Natural gas, whether or not liquefied",
+      "pct": 6.1
+    },
+    {
+      "label": "Pearls, precious & semi-precious stones",
+      "pct": 2.5
+    }
+  ],
+  "BLZ": [
+    {
+      "label": "Sugar, molasses and honey",
+      "pct": 29.6
+    },
+    {
+      "label": "Fruits and nuts (excluding oil nuts), fresh or dried",
+      "pct": 15.0
+    },
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 14.8
+    }
+  ],
+  "BEN": [
+    {
+      "label": "Cotton",
+      "pct": 37.9
+    },
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 21.7
+    },
+    {
+      "label": "Oil seeds and oleaginous fruits (excluding flour)",
+      "pct": 11.9
+    }
+  ],
+  "BTN": [
+    {
+      "label": "Electric current",
+      "pct": 36.3
+    },
+    {
+      "label": "Copper",
+      "pct": 5.6
+    },
+    {
+      "label": "Stone, sand and gravel",
+      "pct": 2.6
+    }
+  ],
+  "BOL": [
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 20.8
+    },
+    {
+      "label": "Natural gas, whether or not liquefied",
+      "pct": 19.9
+    },
+    {
+      "label": "Ores and concentrates of base metals, n.e.s.",
+      "pct": 13.9
+    }
+  ],
+  "BIH": [
+    {
+      "label": "Electric current",
+      "pct": 5.5
+    },
+    {
+      "label": "Forestry products",
+      "pct": 4.1
+    },
+    {
+      "label": "Aluminium",
+      "pct": 3.2
+    }
+  ],
+  "BWA": [
+    {
+      "label": "Pearls, precious & semi-precious stones",
+      "pct": 82.8
+    },
+    {
+      "label": "Copper ores and concentrates; copper mattes, cemen",
+      "pct": 6.1
+    },
+    {
+      "label": "Live animals other than animals of division 03",
+      "pct": 1.1
+    }
+  ],
+  "BRA": [
+    {
+      "label": "Oil seeds and oleaginous fruits (excluding flour)",
+      "pct": 14.3
+    },
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 12.9
+    },
+    {
+      "label": "Iron ore and concentrates",
+      "pct": 8.8
+    }
+  ],
+  "BRN": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 35.3
+    },
+    {
+      "label": "Natural gas, whether or not liquefied",
+      "pct": 22.7
+    },
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 16.8
+    }
+  ],
+  "BGR": [
+    {
+      "label": "Copper",
+      "pct": 8.9
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 6.5
+    },
+    {
+      "label": "Wheat (including spelt) and meslin, unmilled",
+      "pct": 2.7
+    }
+  ],
+  "BFA": [
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 78.4
+    },
+    {
+      "label": "Cotton",
+      "pct": 6.1
+    },
+    {
+      "label": "Fruits and nuts (excluding oil nuts), fresh or dried",
+      "pct": 3.2
+    }
+  ],
+  "BDI": [
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 38.8
+    },
+    {
+      "label": "Coffee and coffee substitutes",
+      "pct": 22.1
+    },
+    {
+      "label": "Tea and mate",
+      "pct": 10.3
+    }
+  ],
+  "CPV": [
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 39.8
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 27.2
+    },
+    {
+      "label": "Ferrous waste, scrape; remelting ingots, iron, steel",
+      "pct": 1.5
+    }
+  ],
+  "KHM": [
+    {
+      "label": "Fruits and nuts (excluding oil nuts), fresh or dried",
+      "pct": 4.0
+    },
+    {
+      "label": "Natural rubber & similar gums, in primary forms",
+      "pct": 3.4
+    },
+    {
+      "label": "Vegetables",
+      "pct": 3.0
+    }
+  ],
+  "CMR": [
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 33.2
+    },
+    {
+      "label": "Natural gas, whether or not liquefied",
+      "pct": 15.4
+    },
+    {
+      "label": "Cocoa",
+      "pct": 14.5
+    }
+  ],
+  "CAN": [
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 19.6
+    },
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 4.2
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 2.8
+    }
+  ],
+  "CAF": [
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 45.8
+    },
+    {
+      "label": "Forestry products",
+      "pct": 23.0
+    },
+    {
+      "label": "Pearls, precious & semi-precious stones",
+      "pct": 10.8
+    }
+  ],
+  "TCD": [
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 65.4
+    },
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 27.1
+    },
+    {
+      "label": "Oil seeds and oleaginous fruits (excluding flour)",
+      "pct": 3.6
+    }
+  ],
+  "CHL": [
+    {
+      "label": "Copper ores and concentrates; copper mattes, cemen",
+      "pct": 26.8
+    },
+    {
+      "label": "Copper",
+      "pct": 20.6
+    },
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 8.0
+    }
+  ],
+  "CHN": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 1.3
+    },
+    {
+      "label": "Aluminium",
+      "pct": 0.7
+    },
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 0.6
+    }
+  ],
+  "COL": [
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 26.8
+    },
+    {
+      "label": "Coal, whether or not pulverized, not agglomerated",
+      "pct": 15.1
+    },
+    {
+      "label": "Coffee and coffee substitutes",
+      "pct": 8.1
+    }
+  ],
+  "COM": [
+    {
+      "label": "Spices",
+      "pct": 45.9
+    },
+    {
+      "label": "Non-ferrous base metal waste and scrap, n.e.s.",
+      "pct": 1.9
+    },
+    {
+      "label": "Ferrous waste, scrape; remelting ingots, iron, steel",
+      "pct": 0.8
+    }
+  ],
+  "COG": [
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 64.0
+    },
+    {
+      "label": "Copper",
+      "pct": 18.9
+    },
+    {
+      "label": "Forestry products",
+      "pct": 4.6
+    }
+  ],
+  "CRI": [
+    {
+      "label": "Fruits and nuts (excluding oil nuts), fresh or dried",
+      "pct": 14.8
+    },
+    {
+      "label": "Edible products and preparations, n.e.s.",
+      "pct": 4.6
+    },
+    {
+      "label": "Coffee and coffee substitutes",
+      "pct": 1.9
+    }
+  ],
+  "CIV": [
+    {
+      "label": "Cocoa",
+      "pct": 33.0
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 11.6
+    },
+    {
+      "label": "Natural rubber & similar gums, in primary forms",
+      "pct": 11.1
+    }
+  ],
+  "HRV": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 5.7
+    },
+    {
+      "label": "Electric current",
+      "pct": 3.9
+    },
+    {
+      "label": "Forestry products",
+      "pct": 3.7
+    }
+  ],
+  "CUB": [
+    {
+      "label": "Tobacco, manufactured",
+      "pct": 24.1
+    },
+    {
+      "label": "Nickel ores & concentrates; nickel mattes, etc.",
+      "pct": 13.3
+    },
+    {
+      "label": "Alcoholic beverages",
+      "pct": 11.8
+    }
+  ],
+  "CYP": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 31.3
+    },
+    {
+      "label": "Cheese and curd",
+      "pct": 7.4
+    },
+    {
+      "label": "Vegetables",
+      "pct": 1.2
+    }
+  ],
+  "CZE": [
+    {
+      "label": "Electric current",
+      "pct": 1.3
+    },
+    {
+      "label": "Forestry products",
+      "pct": 0.8
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 0.6
+    }
+  ],
+  "PRK": [
+    {
+      "label": "Ores and concentrates of base metals, n.e.s.",
+      "pct": 10.8
+    },
+    {
+      "label": "Electric current",
+      "pct": 5.8
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 2.4
+    }
+  ],
+  "COD": [
+    {
+      "label": "Copper",
+      "pct": 62.5
+    },
+    {
+      "label": "Miscellaneous no-ferrous base metals for metallur.",
+      "pct": 12.5
+    },
+    {
+      "label": "Copper ores and concentrates; copper mattes, cemen",
+      "pct": 7.8
+    }
+  ],
+  "DNK": [
+    {
+      "label": "Other meat and edible meat offal",
+      "pct": 3.2
+    },
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 3.2
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 2.4
+    }
+  ],
+  "DJI": [
+    {
+      "label": "Fixed vegetable fats & oils, crude, refined, fract.",
+      "pct": 16.0
+    },
+    {
+      "label": "Fixed vegetable fats & oils, crude, refined, fractio.",
+      "pct": 7.3
+    },
+    {
+      "label": "Sugar, molasses and honey",
+      "pct": 6.3
+    }
+  ],
+  "DMA": [
+    {
+      "label": "Fruits and nuts (excluding oil nuts), fresh or dried",
+      "pct": 8.4
+    },
+    {
+      "label": "Copper ores and concentrates; copper mattes, cemen",
+      "pct": 3.8
+    },
+    {
+      "label": "Vegetables",
+      "pct": 3.7
+    }
+  ],
+  "DOM": [
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 11.5
+    },
+    {
+      "label": "Tobacco, manufactured",
+      "pct": 8.3
+    },
+    {
+      "label": "Fruits and nuts (excluding oil nuts), fresh or dried",
+      "pct": 3.2
+    }
+  ],
+  "ECU": [
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 27.8
+    },
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 27.1
+    },
+    {
+      "label": "Fruits and nuts (excluding oil nuts), fresh or dried",
+      "pct": 12.0
+    }
+  ],
+  "EGY": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 11.1
+    },
+    {
+      "label": "Natural gas, whether or not liquefied",
+      "pct": 8.0
+    },
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 4.7
+    }
+  ],
+  "SLV": [
+    {
+      "label": "Sugar, molasses and honey",
+      "pct": 4.7
+    },
+    {
+      "label": "Cereal preparations, flour of fruits or vegetables",
+      "pct": 3.4
+    },
+    {
+      "label": "Non-alcoholic beverages, n.e.s.",
+      "pct": 2.5
+    }
+  ],
+  "GNQ": [
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 51.2
+    },
+    {
+      "label": "Natural gas, whether or not liquefied",
+      "pct": 37.2
+    },
+    {
+      "label": "Liquefied propane and butane",
+      "pct": 4.4
+    }
+  ],
+  "ERI": [
+    {
+      "label": "Ores and concentrates of base metals, n.e.s.",
+      "pct": 24.1
+    },
+    {
+      "label": "Vegetables",
+      "pct": 19.1
+    },
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 13.7
+    }
+  ],
+  "EST": [
+    {
+      "label": "Forestry products",
+      "pct": 6.6
+    },
+    {
+      "label": "Electric current",
+      "pct": 3.5
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 3.3
+    }
+  ],
+  "SWZ": [
+    {
+      "label": "Sugar, molasses and honey",
+      "pct": 17.7
+    },
+    {
+      "label": "Forestry products",
+      "pct": 5.9
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 4.2
+    }
+  ],
+  "ETH": [
+    {
+      "label": "Coffee and coffee substitutes",
+      "pct": 38.1
+    },
+    {
+      "label": "Vegetables",
+      "pct": 12.0
+    },
+    {
+      "label": "Crude vegetable materials, n.e.s.",
+      "pct": 9.7
+    }
+  ],
+  "FJI": [
+    {
+      "label": "Non-alcoholic beverages, n.e.s.",
+      "pct": 19.7
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 16.7
+    },
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 11.3
+    }
+  ],
+  "FIN": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 7.9
+    },
+    {
+      "label": "Forestry products",
+      "pct": 7.2
+    },
+    {
+      "label": "Copper",
+      "pct": 2.0
+    }
+  ],
+  "FRA": [
+    {
+      "label": "Alcoholic beverages",
+      "pct": 3.0
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 1.9
+    },
+    {
+      "label": "Natural gas, whether or not liquefied",
+      "pct": 1.5
+    }
+  ],
+  "GAB": [
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 60.6
+    },
+    {
+      "label": "Ores and concentrates of base metals, n.e.s.",
+      "pct": 17.6
+    },
+    {
+      "label": "Forestry products",
+      "pct": 4.4
+    }
+  ],
+  "GMB": [
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 19.2
+    },
+    {
+      "label": "Forestry products",
+      "pct": 18.8
+    },
+    {
+      "label": "Fruits and nuts (excluding oil nuts), fresh or dried",
+      "pct": 14.8
+    }
+  ],
+  "GEO": [
+    {
+      "label": "Copper ores and concentrates; copper mattes, cemen",
+      "pct": 8.8
+    },
+    {
+      "label": "Alcoholic beverages",
+      "pct": 7.9
+    },
+    {
+      "label": "Non-alcoholic beverages, n.e.s.",
+      "pct": 4.1
+    }
+  ],
+  "DEU": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 1.4
+    },
+    {
+      "label": "Aluminium",
+      "pct": 0.7
+    },
+    {
+      "label": "Copper",
+      "pct": 0.7
+    }
+  ],
+  "GHA": [
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 44.2
+    },
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 22.8
+    },
+    {
+      "label": "Cocoa",
+      "pct": 13.8
+    }
+  ],
+  "GRC": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 28.0
+    },
+    {
+      "label": "Aluminium",
+      "pct": 4.9
+    },
+    {
+      "label": "Natural gas, whether or not liquefied",
+      "pct": 2.7
+    }
+  ],
+  "GRD": [
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 14.3
+    },
+    {
+      "label": "Spices",
+      "pct": 12.3
+    },
+    {
+      "label": "Fruit, preserved, and fruit preparations (no juice)",
+      "pct": 4.6
+    }
+  ],
+  "GTM": [
+    {
+      "label": "Fruits and nuts (excluding oil nuts), fresh or dried",
+      "pct": 12.0
+    },
+    {
+      "label": "Coffee and coffee substitutes",
+      "pct": 7.0
+    },
+    {
+      "label": "Fixed vegetable fats & oils, crude, refined, fract.",
+      "pct": 5.8
+    }
+  ],
+  "GIN": [
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 48.9
+    },
+    {
+      "label": "Aluminium ores and concentrates (incl. alumina)",
+      "pct": 36.6
+    },
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 3.2
+    }
+  ],
+  "GNB": [
+    {
+      "label": "Fruits and nuts (excluding oil nuts), fresh or dried",
+      "pct": 72.5
+    },
+    {
+      "label": "Forestry products",
+      "pct": 13.9
+    },
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 5.8
+    }
+  ],
+  "GUY": [
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 85.2
+    },
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 6.8
+    },
+    {
+      "label": "Rice",
+      "pct": 1.4
+    }
+  ],
+  "HTI": [
+    {
+      "label": "Ferrous waste, scrape; remelting ingots, iron, steel",
+      "pct": 1.5
+    },
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 0.9
+    },
+    {
+      "label": "Non-ferrous base metal waste and scrap, n.e.s.",
+      "pct": 0.8
+    }
+  ],
+  "HND": [
+    {
+      "label": "Coffee and coffee substitutes",
+      "pct": 17.5
+    },
+    {
+      "label": "Fruits and nuts (excluding oil nuts), fresh or dried",
+      "pct": 6.6
+    },
+    {
+      "label": "Fixed vegetable fats & oils, crude, refined, fract.",
+      "pct": 5.9
+    }
+  ],
+  "HUN": [
+    {
+      "label": "Electric current",
+      "pct": 1.3
+    },
+    {
+      "label": "Feeding stuff for animals (no unmilled cereals)",
+      "pct": 1.2
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 0.9
+    }
+  ],
+  "ISL": [
+    {
+      "label": "Aluminium",
+      "pct": 37.1
+    },
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 34.9
+    },
+    {
+      "label": "Feeding stuff for animals (no unmilled cereals)",
+      "pct": 3.8
+    }
+  ],
+  "IND": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 18.9
+    },
+    {
+      "label": "Pearls, precious & semi-precious stones",
+      "pct": 4.8
+    },
+    {
+      "label": "Rice",
+      "pct": 2.5
+    }
+  ],
+  "IDN": [
+    {
+      "label": "Coal, whether or not pulverized, not agglomerated",
+      "pct": 13.3
+    },
+    {
+      "label": "Fixed vegetable fats & oils, crude, refined, fract.",
+      "pct": 10.2
+    },
+    {
+      "label": "Copper ores and concentrates; copper mattes, cemen",
+      "pct": 3.3
+    }
+  ],
+  "IRN": [
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 9.4
+    },
+    {
+      "label": "Fruits and nuts (excluding oil nuts), fresh or dried",
+      "pct": 7.4
+    },
+    {
+      "label": "Natural gas, whether or not liquefied",
+      "pct": 5.5
+    }
+  ],
+  "IRQ": [
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 89.2
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 6.1
+    },
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 2.2
+    }
+  ],
+  "IRL": [
+    {
+      "label": "Meat of bovine animals, fresh, chilled or frozen",
+      "pct": 1.3
+    },
+    {
+      "label": "Edible products and preparations, n.e.s.",
+      "pct": 1.0
+    },
+    {
+      "label": "Alcoholic beverages",
+      "pct": 0.9
+    }
+  ],
+  "ISR": [
+    {
+      "label": "Pearls, precious & semi-precious stones",
+      "pct": 13.1
+    },
+    {
+      "label": "Fruits and nuts (excluding oil nuts), fresh or dried",
+      "pct": 1.3
+    },
+    {
+      "label": "Natural gas, whether or not liquefied",
+      "pct": 1.2
+    }
+  ],
+  "ITA": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 3.2
+    },
+    {
+      "label": "Alcoholic beverages",
+      "pct": 1.7
+    },
+    {
+      "label": "Cereal preparations, flour of fruits or vegetables",
+      "pct": 1.2
+    }
+  ],
+  "JAM": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 32.8
+    },
+    {
+      "label": "Aluminium ores and concentrates (incl. alumina)",
+      "pct": 24.9
+    },
+    {
+      "label": "Natural gas, whether or not liquefied",
+      "pct": 11.6
+    }
+  ],
+  "JPN": [
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 2.1
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 1.6
+    },
+    {
+      "label": "Copper",
+      "pct": 1.5
+    }
+  ],
+  "JOR": [
+    {
+      "label": "Crude fertilizers (excluding those of division 56)",
+      "pct": 6.6
+    },
+    {
+      "label": "Fruits and nuts (excluding oil nuts), fresh or dried",
+      "pct": 2.2
+    },
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 2.0
+    }
+  ],
+  "KAZ": [
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 59.5
+    },
+    {
+      "label": "Copper ores and concentrates; copper mattes, cemen",
+      "pct": 3.7
+    },
+    {
+      "label": "Copper",
+      "pct": 3.2
+    }
+  ],
+  "KEN": [
+    {
+      "label": "Tea and mate",
+      "pct": 18.5
+    },
+    {
+      "label": "Crude vegetable materials, n.e.s.",
+      "pct": 11.3
+    },
+    {
+      "label": "Fruits and nuts (excluding oil nuts), fresh or dried",
+      "pct": 4.6
+    }
+  ],
+  "KIR": [
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 84.0
+    },
+    {
+      "label": "Fixed vegetable fats & oils, crude, refined, fract.",
+      "pct": 3.0
+    },
+    {
+      "label": "Oil seeds & oleaginous fruits (incl. flour, n.e.s.)",
+      "pct": 1.1
+    }
+  ],
+  "KWT": [
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 49.5
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 21.4
+    },
+    {
+      "label": "Liquefied propane and butane",
+      "pct": 5.2
+    }
+  ],
+  "KGZ": [
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 46.1
+    },
+    {
+      "label": "Ores & concentrates of precious metals; waste, scrap",
+      "pct": 4.8
+    },
+    {
+      "label": "Non-ferrous base metal waste and scrap, n.e.s.",
+      "pct": 3.6
+    }
+  ],
+  "LAO": [
+    {
+      "label": "Electric current",
+      "pct": 19.0
+    },
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 8.2
+    },
+    {
+      "label": "Forestry products",
+      "pct": 6.3
+    }
+  ],
+  "LVA": [
+    {
+      "label": "Forestry products",
+      "pct": 11.2
+    },
+    {
+      "label": "Alcoholic beverages",
+      "pct": 3.6
+    },
+    {
+      "label": "Wheat (including spelt) and meslin, unmilled",
+      "pct": 3.5
+    }
+  ],
+  "LBN": [
+    {
+      "label": "Pearls, precious & semi-precious stones",
+      "pct": 9.0
+    },
+    {
+      "label": "Fruits and nuts (excluding oil nuts), fresh or dried",
+      "pct": 5.7
+    },
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 5.2
+    }
+  ],
+  "LSO": [
+    {
+      "label": "Pearls, precious & semi-precious stones",
+      "pct": 36.0
+    },
+    {
+      "label": "Wool and other animal hair (incl. wool tops)",
+      "pct": 5.6
+    },
+    {
+      "label": "Non-alcoholic beverages, n.e.s.",
+      "pct": 3.8
+    }
+  ],
+  "LBR": [
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 38.6
+    },
+    {
+      "label": "Iron ore and concentrates",
+      "pct": 13.1
+    },
+    {
+      "label": "Natural rubber & similar gums, in primary forms",
+      "pct": 8.9
+    }
+  ],
+  "LBY": [
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 83.9
+    },
+    {
+      "label": "Natural gas, whether or not liquefied",
+      "pct": 5.1
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 2.9
+    }
+  ],
+  "LTU": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 11.6
+    },
+    {
+      "label": "Wheat (including spelt) and meslin, unmilled",
+      "pct": 2.3
+    },
+    {
+      "label": "Forestry products",
+      "pct": 2.0
+    }
+  ],
+  "LUX": [
+    {
+      "label": "Aluminium",
+      "pct": 2.8
+    },
+    {
+      "label": "Milk, cream and milk products (excluding butter, cheese)",
+      "pct": 1.8
+    },
+    {
+      "label": "Cheese and curd",
+      "pct": 1.4
+    }
+  ],
+  "MDG": [
+    {
+      "label": "Nickel",
+      "pct": 22.7
+    },
+    {
+      "label": "Spices",
+      "pct": 21.3
+    },
+    {
+      "label": "Ores and concentrates of base metals, n.e.s.",
+      "pct": 4.9
+    }
+  ],
+  "MWI": [
+    {
+      "label": "Tobacco, unmanufactured; tobacco refuse",
+      "pct": 42.0
+    },
+    {
+      "label": "Oil seeds and oleaginous fruits (excluding flour)",
+      "pct": 10.6
+    },
+    {
+      "label": "Tea and mate",
+      "pct": 8.0
+    }
+  ],
+  "MYS": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 9.0
+    },
+    {
+      "label": "Fixed vegetable fats & oils, crude, refined, fract.",
+      "pct": 4.6
+    },
+    {
+      "label": "Natural gas, whether or not liquefied",
+      "pct": 4.2
+    }
+  ],
+  "MDV": [
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 56.9
+    },
+    {
+      "label": "Fixed vegetable fats & oils, crude, refined, fractio.",
+      "pct": 4.9
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 4.2
+    }
+  ],
+  "MLI": [
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 83.8
+    },
+    {
+      "label": "Cotton",
+      "pct": 5.5
+    },
+    {
+      "label": "Live animals other than animals of division 03",
+      "pct": 2.4
+    }
+  ],
+  "MLT": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 19.5
+    },
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 4.1
+    },
+    {
+      "label": "Edible products and preparations, n.e.s.",
+      "pct": 1.8
+    }
+  ],
+  "MHL": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 7.7
+    },
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 5.8
+    },
+    {
+      "label": "Liquefied propane and butane",
+      "pct": 0.1
+    }
+  ],
+  "MRT": [
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 34.3
+    },
+    {
+      "label": "Iron ore and concentrates",
+      "pct": 32.7
+    },
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 20.8
+    }
+  ],
+  "MUS": [
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 15.9
+    },
+    {
+      "label": "Sugar, molasses and honey",
+      "pct": 10.4
+    },
+    {
+      "label": "Pearls, precious & semi-precious stones",
+      "pct": 5.1
+    }
+  ],
+  "MEX": [
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 4.9
+    },
+    {
+      "label": "Alcoholic beverages",
+      "pct": 1.9
+    },
+    {
+      "label": "Vegetables",
+      "pct": 1.8
+    }
+  ],
+  "FSM": [
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 87.1
+    },
+    {
+      "label": "Fruits and nuts (excluding oil nuts), fresh or dried",
+      "pct": 7.2
+    },
+    {
+      "label": "Crude vegetable materials, n.e.s.",
+      "pct": 1.1
+    }
+  ],
+  "MNG": [
+    {
+      "label": "Coal, whether or not pulverized, not agglomerated",
+      "pct": 37.5
+    },
+    {
+      "label": "Copper ores and concentrates; copper mattes, cemen",
+      "pct": 32.4
+    },
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 6.1
+    }
+  ],
+  "MNE": [
+    {
+      "label": "Electric current",
+      "pct": 24.9
+    },
+    {
+      "label": "Aluminium",
+      "pct": 14.1
+    },
+    {
+      "label": "Forestry products",
+      "pct": 6.5
+    }
+  ],
+  "MAR": [
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 5.8
+    },
+    {
+      "label": "Vegetables",
+      "pct": 5.4
+    },
+    {
+      "label": "Fruits and nuts (excluding oil nuts), fresh or dried",
+      "pct": 5.4
+    }
+  ],
+  "MOZ": [
+    {
+      "label": "Coal, whether or not pulverized, not agglomerated",
+      "pct": 21.3
+    },
+    {
+      "label": "Aluminium",
+      "pct": 14.9
+    },
+    {
+      "label": "Natural gas, whether or not liquefied",
+      "pct": 13.5
+    }
+  ],
+  "MMR": [
+    {
+      "label": "Natural gas, whether or not liquefied",
+      "pct": 17.7
+    },
+    {
+      "label": "Vegetables",
+      "pct": 9.2
+    },
+    {
+      "label": "Rice",
+      "pct": 4.7
+    }
+  ],
+  "NAM": [
+    {
+      "label": "Pearls, precious & semi-precious stones",
+      "pct": 21.0
+    },
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 13.8
+    },
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 11.2
+    }
+  ],
+  "NRU": [
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 77.4
+    },
+    {
+      "label": "Crude fertilizers (excluding those of division 56)",
+      "pct": 17.4
+    },
+    {
+      "label": "Vegetables, roots, tubers, prepared, preserved, n.e.s.",
+      "pct": 0.1
+    }
+  ],
+  "NPL": [
+    {
+      "label": "Fixed vegetable fats & oils, crude, refined, fractio.",
+      "pct": 14.4
+    },
+    {
+      "label": "Fixed vegetable fats & oils, crude, refined, fract.",
+      "pct": 9.8
+    },
+    {
+      "label": "Spices",
+      "pct": 5.1
+    }
+  ],
+  "NLD": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 10.5
+    },
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 2.8
+    },
+    {
+      "label": "Crude vegetable materials, n.e.s.",
+      "pct": 2.1
+    }
+  ],
+  "NZL": [
+    {
+      "label": "Milk, cream and milk products (excluding butter, cheese)",
+      "pct": 18.7
+    },
+    {
+      "label": "Forestry products",
+      "pct": 7.6
+    },
+    {
+      "label": "Meat of bovine animals, fresh, chilled or frozen",
+      "pct": 6.6
+    }
+  ],
+  "NIC": [
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 14.1
+    },
+    {
+      "label": "Coffee and coffee substitutes",
+      "pct": 9.4
+    },
+    {
+      "label": "Meat of bovine animals, fresh, chilled or frozen",
+      "pct": 8.1
+    }
+  ],
+  "NER": [
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 47.3
+    },
+    {
+      "label": "Oil seeds and oleaginous fruits (excluding flour)",
+      "pct": 16.7
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 10.0
+    }
+  ],
+  "NGA": [
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 74.7
+    },
+    {
+      "label": "Natural gas, whether or not liquefied",
+      "pct": 9.6
+    },
+    {
+      "label": "Cocoa",
+      "pct": 2.2
+    }
+  ],
+  "MKD": [
+    {
+      "label": "Electric current",
+      "pct": 4.1
+    },
+    {
+      "label": "Tobacco, unmanufactured; tobacco refuse",
+      "pct": 1.5
+    },
+    {
+      "label": "Ores and concentrates of base metals, n.e.s.",
+      "pct": 1.4
+    }
+  ],
+  "NOR": [
+    {
+      "label": "Natural gas, whether or not liquefied",
+      "pct": 42.5
+    },
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 26.1
+    },
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 7.6
+    }
+  ],
+  "OMN": [
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 30.9
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 13.3
+    },
+    {
+      "label": "Natural gas, whether or not liquefied",
+      "pct": 10.0
+    }
+  ],
+  "PAK": [
+    {
+      "label": "Rice",
+      "pct": 10.2
+    },
+    {
+      "label": "Copper",
+      "pct": 2.6
+    },
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 1.5
+    }
+  ],
+  "PLW": [
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 19.2
+    },
+    {
+      "label": "Cereal preparations, flour of fruits or vegetables",
+      "pct": 6.1
+    },
+    {
+      "label": "Stone, sand and gravel",
+      "pct": 2.6
+    }
+  ],
+  "PAN": [
+    {
+      "label": "Copper ores and concentrates; copper mattes, cemen",
+      "pct": 34.0
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 6.2
+    },
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 6.0
+    }
+  ],
+  "PNG": [
+    {
+      "label": "Natural gas, whether or not liquefied",
+      "pct": 42.0
+    },
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 14.1
+    },
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 6.8
+    }
+  ],
+  "PRY": [
+    {
+      "label": "Oil seeds and oleaginous fruits (excluding flour)",
+      "pct": 24.8
+    },
+    {
+      "label": "Meat of bovine animals, fresh, chilled or frozen",
+      "pct": 14.2
+    },
+    {
+      "label": "Electric current",
+      "pct": 13.1
+    }
+  ],
+  "PER": [
+    {
+      "label": "Copper ores and concentrates; copper mattes, cemen",
+      "pct": 27.5
+    },
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 13.3
+    },
+    {
+      "label": "Fruits and nuts (excluding oil nuts), fresh or dried",
+      "pct": 9.0
+    }
+  ],
+  "PHL": [
+    {
+      "label": "Copper",
+      "pct": 2.6
+    },
+    {
+      "label": "Fruits and nuts (excluding oil nuts), fresh or dried",
+      "pct": 2.6
+    },
+    {
+      "label": "Fixed vegetable fats & oils, crude, refined, fract.",
+      "pct": 2.5
+    }
+  ],
+  "POL": [
+    {
+      "label": "Other meat and edible meat offal",
+      "pct": 1.5
+    },
+    {
+      "label": "Tobacco, manufactured",
+      "pct": 1.4
+    },
+    {
+      "label": "Copper",
+      "pct": 1.3
+    }
+  ],
+  "PRT": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 6.0
+    },
+    {
+      "label": "Fixed vegetable fats & oils, crude, refined, fractio.",
+      "pct": 1.9
+    },
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 1.7
+    }
+  ],
+  "QAT": [
+    {
+      "label": "Natural gas, whether or not liquefied",
+      "pct": 39.0
+    },
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 20.9
+    },
+    {
+      "label": "Liquefied propane and butane",
+      "pct": 13.7
+    }
+  ],
+  "KOR": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 8.1
+    },
+    {
+      "label": "Copper",
+      "pct": 0.8
+    },
+    {
+      "label": "Aluminium",
+      "pct": 0.6
+    }
+  ],
+  "MDA": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 9.2
+    },
+    {
+      "label": "Oil seeds and oleaginous fruits (excluding flour)",
+      "pct": 8.6
+    },
+    {
+      "label": "Fruits and nuts (excluding oil nuts), fresh or dried",
+      "pct": 6.6
+    }
+  ],
+  "ROU": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 3.0
+    },
+    {
+      "label": "Wheat (including spelt) and meslin, unmilled",
+      "pct": 2.1
+    },
+    {
+      "label": "Oil seeds and oleaginous fruits (excluding flour)",
+      "pct": 1.9
+    }
+  ],
+  "RUS": [
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 28.4
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 14.8
+    },
+    {
+      "label": "Coal, whether or not pulverized, not agglomerated",
+      "pct": 6.8
+    }
+  ],
+  "RWA": [
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 38.3
+    },
+    {
+      "label": "Ores and concentrates of base metals, n.e.s.",
+      "pct": 12.0
+    },
+    {
+      "label": "Coffee and coffee substitutes",
+      "pct": 7.9
+    }
+  ],
+  "KNA": [
+    {
+      "label": "Alcoholic beverages",
+      "pct": 12.7
+    },
+    {
+      "label": "Non-alcoholic beverages, n.e.s.",
+      "pct": 2.5
+    },
+    {
+      "label": "Live animals other than animals of division 03",
+      "pct": 0.6
+    }
+  ],
+  "LCA": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 25.9
+    },
+    {
+      "label": "Alcoholic beverages",
+      "pct": 13.3
+    },
+    {
+      "label": "Fruits and nuts (excluding oil nuts), fresh or dried",
+      "pct": 8.6
+    }
+  ],
+  "VCT": [
+    {
+      "label": "Meal and flour of wheat and flour of meslin",
+      "pct": 12.9
+    },
+    {
+      "label": "Feeding stuff for animals (no unmilled cereals)",
+      "pct": 8.1
+    },
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 7.6
+    }
+  ],
+  "WSM": [
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 14.6
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 10.4
+    },
+    {
+      "label": "Fixed vegetable fats & oils, crude, refined, fract.",
+      "pct": 7.6
+    }
+  ],
+  "STP": [
+    {
+      "label": "Cocoa",
+      "pct": 28.7
+    },
+    {
+      "label": "Fixed vegetable fats & oils, crude, refined, fract.",
+      "pct": 18.5
+    },
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 16.8
+    }
+  ],
+  "SAU": [
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 59.3
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 10.9
+    },
+    {
+      "label": "Liquefied propane and butane",
+      "pct": 1.6
+    }
+  ],
+  "SEN": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 21.7
+    },
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 15.5
+    },
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 9.2
+    }
+  ],
+  "SRB": [
+    {
+      "label": "Copper ores and concentrates; copper mattes, cemen",
+      "pct": 5.3
+    },
+    {
+      "label": "Electric current",
+      "pct": 3.3
+    },
+    {
+      "label": "Copper",
+      "pct": 3.1
+    }
+  ],
+  "SYC": [
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 72.4
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 13.4
+    },
+    {
+      "label": "Ferrous waste, scrape; remelting ingots, iron, steel",
+      "pct": 1.8
+    }
+  ],
+  "SLE": [
+    {
+      "label": "Iron ore and concentrates",
+      "pct": 38.2
+    },
+    {
+      "label": "Ores and concentrates of base metals, n.e.s.",
+      "pct": 15.0
+    },
+    {
+      "label": "Pearls, precious & semi-precious stones",
+      "pct": 5.9
+    }
+  ],
+  "SGP": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 14.8
+    },
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 3.4
+    },
+    {
+      "label": "Edible products and preparations, n.e.s.",
+      "pct": 1.9
+    }
+  ],
+  "SVK": [
+    {
+      "label": "Electric current",
+      "pct": 2.0
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 1.8
+    },
+    {
+      "label": "Forestry products",
+      "pct": 0.6
+    }
+  ],
+  "SVN": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 3.7
+    },
+    {
+      "label": "Electric current",
+      "pct": 2.2
+    },
+    {
+      "label": "Aluminium",
+      "pct": 2.2
+    }
+  ],
+  "SLB": [
+    {
+      "label": "Forestry products",
+      "pct": 50.9
+    },
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 16.8
+    },
+    {
+      "label": "Fixed vegetable fats & oils, crude, refined, fract.",
+      "pct": 9.3
+    }
+  ],
+  "SOM": [
+    {
+      "label": "Live animals other than animals of division 03",
+      "pct": 56.4
+    },
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 22.8
+    },
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 3.8
+    }
+  ],
+  "ZAF": [
+    {
+      "label": "Silver, platinum, other metals of the platinum group",
+      "pct": 11.0
+    },
+    {
+      "label": "Coal, whether or not pulverized, not agglomerated",
+      "pct": 8.0
+    },
+    {
+      "label": "Ores and concentrates of base metals, n.e.s.",
+      "pct": 7.2
+    }
+  ],
+  "SSD": [
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 80.4
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 6.8
+    },
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 3.5
+    }
+  ],
+  "ESP": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 4.8
+    },
+    {
+      "label": "Fruits and nuts (excluding oil nuts), fresh or dried",
+      "pct": 2.7
+    },
+    {
+      "label": "Vegetables",
+      "pct": 2.3
+    }
+  ],
+  "LKA": [
+    {
+      "label": "Tea and mate",
+      "pct": 9.9
+    },
+    {
+      "label": "Pearls, precious & semi-precious stones",
+      "pct": 4.2
+    },
+    {
+      "label": "Spices",
+      "pct": 3.0
+    }
+  ],
+  "PSE": [
+    {
+      "label": "Ferrous waste, scrape; remelting ingots, iron, steel",
+      "pct": 5.6
+    },
+    {
+      "label": "Fruits and nuts (excluding oil nuts), fresh or dried",
+      "pct": 4.4
+    },
+    {
+      "label": "Stone, sand and gravel",
+      "pct": 4.3
+    }
+  ],
+  "SDN": [
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 47.0
+    },
+    {
+      "label": "Live animals other than animals of division 03",
+      "pct": 15.2
+    },
+    {
+      "label": "Oil seeds and oleaginous fruits (excluding flour)",
+      "pct": 11.9
+    }
+  ],
+  "SUR": [
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 69.5
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 6.7
+    },
+    {
+      "label": "Tobacco, manufactured",
+      "pct": 5.7
+    }
+  ],
+  "SWE": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 5.8
+    },
+    {
+      "label": "Forestry products",
+      "pct": 4.0
+    },
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 2.9
+    }
+  ],
+  "CHE": [
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 25.7
+    },
+    {
+      "label": "Electric current",
+      "pct": 1.5
+    },
+    {
+      "label": "Coffee and coffee substitutes",
+      "pct": 0.9
+    }
+  ],
+  "SYR": [
+    {
+      "label": "Non-alcoholic beverages, n.e.s.",
+      "pct": 8.8
+    },
+    {
+      "label": "Fruits and nuts (excluding oil nuts), fresh or dried",
+      "pct": 7.1
+    },
+    {
+      "label": "Vegetables",
+      "pct": 7.1
+    }
+  ],
+  "TJK": [
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 14.7
+    },
+    {
+      "label": "Cotton",
+      "pct": 12.4
+    },
+    {
+      "label": "Ores and concentrates of base metals, n.e.s.",
+      "pct": 12.2
+    }
+  ],
+  "THA": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 3.0
+    },
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 2.5
+    },
+    {
+      "label": "Fruits and nuts (excluding oil nuts), fresh or dried",
+      "pct": 2.0
+    }
+  ],
+  "TLS": [
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 60.7
+    },
+    {
+      "label": "Coffee and coffee substitutes",
+      "pct": 17.4
+    },
+    {
+      "label": "Liquefied propane and butane",
+      "pct": 14.6
+    }
+  ],
+  "TGO": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 18.1
+    },
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 16.7
+    },
+    {
+      "label": "Crude fertilizers (excluding those of division 56)",
+      "pct": 9.4
+    }
+  ],
+  "TON": [
+    {
+      "label": "Vegetables",
+      "pct": 23.9
+    },
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 13.7
+    },
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 8.7
+    }
+  ],
+  "TTO": [
+    {
+      "label": "Natural gas, whether or not liquefied",
+      "pct": 22.3
+    },
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 14.0
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 5.7
+    }
+  ],
+  "TUN": [
+    {
+      "label": "Fixed vegetable fats & oils, crude, refined, fractio.",
+      "pct": 5.5
+    },
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 4.5
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 2.7
+    }
+  ],
+  "TUR": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 5.4
+    },
+    {
+      "label": "Fruits and nuts (excluding oil nuts), fresh or dried",
+      "pct": 2.1
+    },
+    {
+      "label": "Aluminium",
+      "pct": 1.7
+    }
+  ],
+  "TKM": [
+    {
+      "label": "Natural gas, whether or not liquefied",
+      "pct": 61.1
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 9.6
+    },
+    {
+      "label": "Cotton",
+      "pct": 8.2
+    }
+  ],
+  "TUV": [
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 64.9
+    },
+    {
+      "label": "Crude animal materials, n.e.s.",
+      "pct": 0.4
+    },
+    {
+      "label": "Vegetables, roots, tubers, prepared, preserved, n.e.s.",
+      "pct": 0.1
+    }
+  ],
+  "UGA": [
+    {
+      "label": "Coffee and coffee substitutes",
+      "pct": 39.7
+    },
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 20.1
+    },
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 1.9
+    }
+  ],
+  "UKR": [
+    {
+      "label": "Fixed vegetable fats & oils, crude, refined, fractio.",
+      "pct": 14.0
+    },
+    {
+      "label": "Maize (not including sweet corn), unmilled",
+      "pct": 13.1
+    },
+    {
+      "label": "Oil seeds and oleaginous fruits (excluding flour)",
+      "pct": 8.0
+    }
+  ],
+  "ARE": [
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 26.3
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 12.9
+    },
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 12.5
+    }
+  ],
+  "GBR": [
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 13.9
+    },
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 4.2
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 2.9
+    }
+  ],
+  "TZA": [
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 37.1
+    },
+    {
+      "label": "Copper",
+      "pct": 6.0
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 4.9
+    }
+  ],
+  "USA": [
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 6.5
+    },
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 6.3
+    },
+    {
+      "label": "Natural gas, whether or not liquefied",
+      "pct": 2.5
+    }
+  ],
+  "URY": [
+    {
+      "label": "Meat of bovine animals, fresh, chilled or frozen",
+      "pct": 23.5
+    },
+    {
+      "label": "Oil seeds and oleaginous fruits (excluding flour)",
+      "pct": 10.1
+    },
+    {
+      "label": "Forestry products",
+      "pct": 8.4
+    }
+  ],
+  "UZB": [
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 33.2
+    },
+    {
+      "label": "Copper",
+      "pct": 7.6
+    },
+    {
+      "label": "Natural gas, whether or not liquefied",
+      "pct": 5.4
+    }
+  ],
+  "VUT": [
+    {
+      "label": "Fruit, preserved, and fruit preparations (no juice)",
+      "pct": 32.3
+    },
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 11.2
+    },
+    {
+      "label": "Cocoa",
+      "pct": 7.1
+    }
+  ],
+  "VEN": [
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 57.8
+    },
+    {
+      "label": "Petroleum oils or bituminous minerals > 70 % oil",
+      "pct": 11.1
+    },
+    {
+      "label": "Residual petroleum products, n.e.s., related mater.",
+      "pct": 2.6
+    }
+  ],
+  "VNM": [
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 2.6
+    },
+    {
+      "label": "Fruits and nuts (excluding oil nuts), fresh or dried",
+      "pct": 1.8
+    },
+    {
+      "label": "Rice",
+      "pct": 1.1
+    }
+  ],
+  "YEM": [
+    {
+      "label": "Petroleum oils, oils from bitumin. materials, crude",
+      "pct": 46.5
+    },
+    {
+      "label": "Fish, crustaceans, molluscs and preparations thereof",
+      "pct": 10.6
+    },
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 7.5
+    }
+  ],
+  "ZMB": [
+    {
+      "label": "Copper",
+      "pct": 65.4
+    },
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 6.4
+    },
+    {
+      "label": "Electric current",
+      "pct": 2.0
+    }
+  ],
+  "ZWE": [
+    {
+      "label": "Gold, non-monetary (excluding gold ores and concentrates)",
+      "pct": 36.1
+    },
+    {
+      "label": "Tobacco, unmanufactured; tobacco refuse",
+      "pct": 17.7
+    },
+    {
+      "label": "Nickel ores & concentrates; nickel mattes, etc.",
+      "pct": 9.2
+    }
+  ]
 }

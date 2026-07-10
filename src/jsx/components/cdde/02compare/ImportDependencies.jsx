@@ -10,7 +10,7 @@ function StatusBadge({ status }) {
   return <span className={`imd_badge${isExporter ? ' imd_badge--exporter' : ' imd_badge--importer'}`}>{isExporter ? 'Net exporter' : 'Net importer'}</span>;
 }
 
-export default function ImportDependencies({ iso3 }) {
+export default function ImportDependencies({ iso3, title, subtitle, description }) {
   const [allData, setAllData] = useState(null);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function ImportDependencies({ iso3 }) {
 
   return (
     <div className="imd_card">
-      <ChartHeader title="Import dependencies" subtitle="Share of total merchandise imports · 2022–2024" />
+      <ChartHeader title={title} subtitle={subtitle} description={description} />
 
       <div className="imd_body">
         {!allData && <div className="imd_loading" />}

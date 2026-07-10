@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import loadFile from '../../../helpers/LoadFile';
 import useIsVisible from '../../../helpers/UseIsVisible';
 import ChartHeader from '../shared/ChartHeader';
-import ChartSource from '../shared/ChartSource';
+import ChartMeta from '../shared/ChartMeta';
 import DumbbellChart from '../shared/DumbbellChart';
 
 import './ThresholdCrossers.css';
@@ -11,7 +11,7 @@ const C_YELLOW = '#fbaf17';
 const C_BLUE = '#009edb';
 const REDUCED_MOTION = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-export default function ThresholdCrossers() {
+export default function ThresholdCrossers({ insight, note, source, subtitle, title }) {
   const [data, setData] = useState(null);
   const [visRef, isVisible] = useIsVisible(0.15);
   const animated = isVisible || REDUCED_MOTION;
@@ -26,11 +26,9 @@ export default function ThresholdCrossers() {
 
   return (
     <div className="tc_container cdde_reveal" ref={visRef}>
-      <ChartHeader title="Countries that changed commodity dependence status" subtitle="Crossed the 60% threshold · 2012/14 vs 2022/24" />
+      <ChartHeader title={title} subtitle={subtitle} />
 
-      <p className="cdde_insight">
-        <strong className="cdde_insight_bold">13 countries</strong> have shifted their commodity-dependence status – some, like <strong className="cdde_insight_bold">Panama or Ukraine</strong>, moved above the 60% threshold; others, such as <strong className="cdde_insight_bold">Indonesia or Myanmar</strong>, fell below it.
-      </p>
+      {insight && <p className="cdde_insight">{insight}</p>}
 
       <div className="tc_legend">
         <span className="tc_legend_item">
@@ -45,7 +43,7 @@ export default function ThresholdCrossers() {
 
       <div className="tc_chart_wrap">{data ? <DumbbellChart data={data} xMin={0} xMax={100} nameW={172} badgeW={56} svgW={544} referencePct={60} referenceLabel="60% threshold" xTickValues={[0, 50, 100]} animated={animated} /> : <div className="tc_loading" />}</div>
 
-      <ChartSource>UN Trade and Development (UNCTAD) secretariat calculations, based on UNCTADstat (2025). Values are 3-year averages.</ChartSource>
+      <ChartMeta source={source} note={note} />
     </div>
   );
 }

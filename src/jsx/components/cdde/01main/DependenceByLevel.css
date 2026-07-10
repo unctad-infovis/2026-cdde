@@ -1,141 +1,152 @@
-#app-root-2026-cdde .app .alc_container {
-  background: #fff;
-  border-radius: 16px;
-  padding: 28px 24px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  height: 100%;
-  box-sizing: border-box;
-}
+#app-root-2026-cdde .app {
+  .alc_container {
+    background: #fff;
+    border-radius: 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    height: 100%;
+    padding: 28px 24px 20px;
 
-#app-root-2026-cdde .app .alc_loading {
-  height: 400px;
-  background: var(--un-color-blue-lightest);
-  border-radius: 16px;
-  animation: cdde_pulse 1.4s ease infinite;
-}
+    /* more breathing room before threshold badge */
+    .cdde_insight {
+      margin-bottom: 24px;
+    }
 
-/* more breathing room before threshold badge */
-#app-root-2026-cdde .app .alc_container .cdde_insight {
-  margin-bottom: 24px;
-}
+    /* source margin override — more breathing room above the long footnote */
+    .cdde_source {
+      margin-top: 24px;
+    }
+  }
 
-/* Chart area */
-#app-root-2026-cdde .app .alc_chart {
-  flex: 1;
-}
+  .alc_loading {
+    animation: cdde_pulse 1.4s ease infinite;
+    background: var(--un-color-blue-lightest);
+    border-radius: 16px;
+    height: 400px;
+  }
 
-/* Wrapper that spans the bar-track column so the label aligns with 60% of the bars */
-#app-root-2026-cdde .app .alc_threshold_wrap {
-  position: relative;
-  height: 30px;
-  margin-left: 110px; /* 100px meta col + 10px gap */
-  margin-right: 58px; /* 10px gap + 48px value col */
-}
+  /* Chart area */
 
-/* Threshold label badge */
-#app-root-2026-cdde .app .alc_threshold_label {
-  position: absolute;
-  bottom: 0;
-  transform: translateX(-50%);
-  background: var(--un-color-yellow);
-  color: #fff;
-  font-size: var(--un-font-size-xxxs);
-  font-weight: var(--un-font-weight-bold);
-  padding: 2px 8px;
-  border-radius: 4px;
-  white-space: nowrap;
-  pointer-events: none;
-}
+  .alc_chart {
+    flex: 1;
+  }
 
-#app-root-2026-cdde .app .alc_threshold_label::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 5px solid var(--un-color-yellow);
-}
+  /* Wrapper that spans the bar-track column so the label aligns with 60% of the bars */
 
-#app-root-2026-cdde .app .alc_bars {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  padding-top: 8px;
-}
+  .alc_threshold_wrap {
+    height: 30px;
+    margin-left: 110px; /* 100px meta col + 10px gap */
+    margin-right: 58px; /* 10px gap + 48px value col */
+    position: relative;
+  }
 
-#app-root-2026-cdde .app .alc_row {
-  display: grid;
-  grid-template-columns: 100px 1fr 48px;
-  align-items: center;
-  gap: 10px;
-}
+  /* Threshold label badge */
 
-#app-root-2026-cdde .app .alc_row_meta {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
+  .alc_threshold_label {
+    background: var(--un-color-yellow);
+    border-radius: 4px;
+    bottom: 0;
+    color: #fff;
+    font-size: var(--un-font-size-xxxs);
+    font-weight: var(--un-font-weight-bold);
+    padding: 2px 8px;
+    pointer-events: none;
+    position: absolute;
+    transform: translateX(-50%);
+    white-space: nowrap;
 
-#app-root-2026-cdde .app .alc_row_group {
-  font-size: var(--un-font-size-xxs);
-  font-weight: var(--un-font-weight-bold);
-  color: var(--un-color-blue-darkest);
-  line-height: var(--un-line-height-smallest);
-}
+    &::after {
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid var(--un-color-yellow);
+      content: '';
+      left: 50%;
+      position: absolute;
+      top: 100%;
+      transform: translateX(-50%);
+    }
+  }
 
-#app-root-2026-cdde .app .alc_row_economies {
-  font-size: var(--un-font-size-xxxs);
-  color: var(--un-color-grey-text);
-}
+  .alc_bars {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding-top: 8px;
+  }
 
-#app-root-2026-cdde .app .alc_bar_track {
-  position: relative;
-  height: 20px;
-  background: var(--un-color-grey-lighest);
-  border-radius: 3px;
-  overflow: visible;
-}
+  .alc_row {
+    align-items: center;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 100px 1fr 48px;
+  }
 
-#app-root-2026-cdde .app .alc_bar {
-  height: 100%;
-  background: var(--un-color-blue);
-  border-radius: 3px;
-  transition: width 0.6s cubic-bezier(0.34, 1.1, 0.64, 1);
-}
+  .alc_row_meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
 
-#app-root-2026-cdde .app .alc_bar--green {
-  background: var(--un-color-green);
-}
+  .alc_row_group {
+    color: var(--un-color-blue-darkest);
+    font-size: var(--un-font-size-xxs);
+    font-weight: var(--un-font-weight-bold);
+    line-height: var(--un-line-height-smallest);
+  }
 
-/* Threshold dashed line */
-#app-root-2026-cdde .app .alc_threshold_line {
-  position: absolute;
-  top: -4px;
-  bottom: -4px;
-  width: 1px;
-  border-left: 1px dashed var(--un-color-grey-dark);
-  pointer-events: none;
-}
+  .alc_row_economies {
+    color: var(--un-color-grey-text);
+    font-size: var(--un-font-size-xxxs);
+  }
 
-#app-root-2026-cdde .app .alc_row_value {
-  font-size: var(--un-font-size-xxs);
-  font-weight: var(--un-font-weight-bold);
-  color: var(--un-color-blue-darkest);
-  text-align: right;
-}
+  .alc_bar_track {
+    background: var(--un-color-grey-lighest);
+    border-radius: 3px;
+    height: 20px;
+    overflow: visible;
+    position: relative;
+  }
 
-/* source margin override — more breathing room above the long footnote */
-#app-root-2026-cdde .app .alc_container .cdde_source {
-  margin-top: 24px;
-}
+  .alc_bar {
+    background: var(--un-color-blue);
+    border-radius: 3px;
+    height: 100%;
+    transition: width 0.6s cubic-bezier(0.34, 1.1, 0.64, 1);
+  }
 
-@media (prefers-reduced-motion: reduce) {
-  #app-root-2026-cdde .app .alc_bar {
-    transition: none;
+  .alc_bar--green {
+    background: var(--un-color-green);
+  }
+
+  /* Threshold dashed line */
+
+  .alc_threshold_line {
+    border-left: 1px dashed var(--un-color-grey-dark);
+    bottom: -4px;
+    pointer-events: none;
+    position: absolute;
+    top: -4px;
+    width: 1px;
+  }
+
+  .alc_row_value {
+    color: var(--un-color-blue-darkest);
+    font-size: var(--un-font-size-xxs);
+    font-weight: var(--un-font-weight-bold);
+    text-align: right;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .alc_bar {
+      transition: none;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .alc_container {
+      padding: 16px 12px 12px;
+    }
   }
 }
-

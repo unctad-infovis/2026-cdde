@@ -6,12 +6,12 @@ import HorizBar from '../shared/HorizBar';
 
 const GROUP_COLORS = {
   agri: '#72bf44',
-  energy: '#009edb',
+  energy: '#a05fb4',
   mining: '#fbaf17',
   'non-dependent': '#9e9e9e'
 };
 
-export default function LeadingExports({ iso3, dominantGroup }) {
+export default function LeadingExports({ iso3, dominantGroup, title, subtitle, description }) {
   const [allData, setAllData] = useState(null);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export default function LeadingExports({ iso3, dominantGroup }) {
 
   return (
     <div className="cdde_card">
-      <ChartHeader title="Three leading commodity exports" subtitle="% of all allocated product exports · 2022–2024" />
+      <ChartHeader title={title} subtitle={subtitle} description={description} />
 
       <div className="cdde_card_body">
         {!allData && <div className="cdde_loading" style={{ height: 120 }} />}

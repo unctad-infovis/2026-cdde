@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import Article from '../Article.mdx';
+import Article from '../Main.mdx';
 
 // cdde/01main
 import BigPicture from './components/cdde/01main/BigPicture.jsx';

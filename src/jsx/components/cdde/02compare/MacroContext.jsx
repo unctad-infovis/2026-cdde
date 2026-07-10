@@ -13,7 +13,7 @@ const VA_SEGS = key =>
     services: { key: 'services', label: 'Services', color: 'var(--un-color-blue)' }
   })[key];
 
-export default function MacroContext({ iso3, hhi }) {
+export default function MacroContext({ iso3, hhi, title, subtitle, description }) {
   const [allData, setAllData] = useState(null);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export default function MacroContext({ iso3, hhi }) {
 
   return (
     <div className="cdde_card">
-      <ChartHeader title="Macro context" subtitle="Economic structure and resource dependence" />
+      <ChartHeader title={title} subtitle={subtitle} description={description} />
 
       <div className="mac_body">
         {!allData && <div className="cdde_loading" style={{ height: 160 }} />}

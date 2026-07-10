@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import loadFile from '../../../helpers/LoadFile';
 import useIsVisible from '../../../helpers/UseIsVisible';
 import ChartHeader from '../shared/ChartHeader';
-import ChartSource from '../shared/ChartSource';
+import ChartMeta from '../shared/ChartMeta';
 import ChartTooltip from '../shared/ChartTooltip';
 
 import './CommodityPrices.css';
@@ -28,11 +28,9 @@ const SERIES = [
 
 const FILTERS = ['All', ...SERIES.map(s => s.label)];
 
-const W = 960;
-const H = 396; // extra height for bottom label
+const H = 396;
 const M = { top: 30, right: 20, bottom: 52, left: 50 };
-const CHART_W = W - M.left - M.right;
-const CHART_H = H - M.top - M.bottom; // 314 — same chart area as before
+const CHART_H = H - M.top - M.bottom;
 
 const parseDate = d3.timeParse('%Y-%m');
 const formatYear = d3.timeFormat('%Y');
@@ -43,14 +41,23 @@ const bisect = d3.bisector(d => d.date).left;
 
 const REDUCED_MOTION = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-export default function CommodityPrices() {
+export default function CommodityPrices({ insight, note, source, subtitle, title }) {
   const [rawData, setRawData] = useState(null);
   const [activeFilter, setActiveFilter] = useState('All');
   const [tooltip, setTooltip] = useState(null);
+  const [svgW, setSvgW] = useState(960);
 
   const svgRef = useRef(null);
   const wrapRef = useRef(null);
   const [visRef, isVisible] = useIsVisible(0.15);
+
+  useEffect(() => {
+    const el = wrapRef.current;
+    if (!el) return;
+    const ro = new ResizeObserver(([entry]) => setSvgW(entry.contentRect.width));
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
 
   useEffect(() => {
     loadFile('assets/data/cdde_commodity_prices.json')
@@ -59,6 +66,8 @@ export default function CommodityPrices() {
         if (d) setRawData(d.map(row => ({ ...row, date: parseDate(row.date) })));
       });
   }, []);
+
+  const CHART_W = svgW - M.left - M.right;
 
   const chart = useMemo(() => {
     if (!rawData?.length) return null;
@@ -98,7 +107,7 @@ export default function CommodityPrices() {
       annoPositions,
       correctionX
     };
-  }, [rawData]);
+  }, [rawData, svgW]);
 
   function lineOpacity(label) {
     if (activeFilter === 'All') return 1;
@@ -111,7 +120,7 @@ export default function CommodityPrices() {
     const svgRect = svgRef.current.getBoundingClientRect();
     const wrapRect = wrapRef.current.getBoundingClientRect();
 
-    const svgX = ((e.clientX - svgRect.left) / svgRect.width) * W - M.left;
+    const svgX = ((e.clientX - svgRect.left) / svgRect.width) * svgW - M.left;
     if (svgX < 0 || svgX > CHART_W) {
       setTooltip(null);
       return;
@@ -153,7 +162,7 @@ export default function CommodityPrices() {
   return (
     <div className="pic_container cdde_reveal" ref={visRef}>
       <div className="pic_header_row">
-        <ChartHeader title="Commodity Price Indices · 1995 to 2026" subtitle="Monthly, nominal dollars, 2010 = 100" large />
+        <ChartHeader title={title} subtitle={subtitle} large />
         <div className="pic_filters">
           {FILTERS.map(f => (
             <button type="button" key={f} className={`pic_filter_btn${activeFilter === f ? ' active' : ''}`} onClick={() => setActiveFilter(f)}>
@@ -163,9 +172,7 @@ export default function CommodityPrices() {
         </div>
       </div>
 
-      <p className="cdde_insight pic_insight">
-        Commodity prices have remained <strong className="cdde_insight_bold">highly volatile</strong> in recent years – the post-2022 correction followed one of the sharpest surges in decades, a reminder of how quickly external shocks can reshape commodity export dependence.
-      </p>
+      {insight && <p className="cdde_insight pic_insight">{insight}</p>}
 
       {/* ── Legend — now above the chart ── */}
       <div className="pic_legend">
@@ -176,6 +183,14 @@ export default function CommodityPrices() {
           </span>
         ))}
       </div>
+      <div className="pic_anno_key">
+        {ANNOTATIONS.map((a, i) => (
+          <span key={a.label} className="pic_anno_key_item">
+            <span className="pic_anno_key_num">{i + 1}</span>
+            {a.label}
+          </span>
+        ))}
+      </div>
 
       {/* ── Chart ── */}
       <div className="pic_chart_wrap" ref={wrapRef}>
@@ -183,7 +198,7 @@ export default function CommodityPrices() {
           <div className="pic_loading" />
         ) : (
           <>
-            <svg ref={svgRef} viewBox={`0 0 ${W} ${H}`} className={`pic_svg${animated ? ' pic_svg--animated' : ''}`} aria-label="Line chart of commodity price indices 1995–2026" onMouseLeave={handleMouseLeave}>
+            <svg ref={svgRef} viewBox={`0 0 ${svgW} ${H}`} className={`pic_svg${animated ? ' pic_svg--animated' : ''}`} aria-label="Line chart of commodity price indices 1995–2026" onMouseLeave={handleMouseLeave}>
               <g transform={`translate(${M.left},${M.top})`}>
                 {/* Post-2022 shaded band */}
                 <rect x={chart.correctionX} y={0} width={CHART_W - chart.correctionX} height={CHART_H} className="pic_correction_band" />
@@ -205,7 +220,19 @@ export default function CommodityPrices() {
 
                 {/* Series paths — pointer-events:none so overlay captures */}
                 {SERIES.map((s, i) => (
-                  <path key={s.key} d={chart.paths[s.key]} pathLength="1" fill="none" stroke={s.color} strokeWidth={activeFilter === 'All' ? 1.8 : activeFilter === s.label ? 2.2 : 1.8} opacity={lineOpacity(s.label)} strokeLinecap="round" strokeLinejoin="round" className="pic_line" style={{ pointerEvents: 'none', transitionDelay: `${500 + i * 80}ms` }} />
+                  <path
+                    key={s.key}
+                    d={chart.paths[s.key]}
+                    pathLength="1"
+                    fill="none"
+                    stroke={s.color}
+                    strokeWidth={activeFilter === 'All' ? 1.8 : activeFilter === s.label ? 2.2 : 1.8}
+                    opacity={lineOpacity(s.label)}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="pic_line"
+                    style={{ pointerEvents: 'none', transitionDelay: `${500 + i * 80}ms` }}
+                  />
                 ))}
 
                 {/* Transparent overlay — captures mouse for crosshair */}
@@ -277,16 +304,7 @@ export default function CommodityPrices() {
       </div>
 
       {/* ── Annotation key — stays at bottom ── */}
-      <div className="pic_anno_key">
-        {ANNOTATIONS.map((a, i) => (
-          <span key={a.label} className="pic_anno_key_item">
-            <span className="pic_anno_key_num">{i + 1}</span>
-            {a.label}
-          </span>
-        ))}
-      </div>
-
-      <ChartSource>UN Trade and Development (UNCTAD) based on World Bank</ChartSource>
+      <ChartMeta source={source} note={note} />
     </div>
   );
 }

@@ -1,5 +1,7 @@
 import * as d3 from 'd3';
 import { useEffect, useRef, useState } from 'react';
+import ChartHeader from '../shared/ChartHeader';
+import { DEVELOPED, REGION_GROUPS } from '../shared/cdde-constants';
 
 import './DependenceStandings.css';
 
@@ -26,15 +28,6 @@ const CRITERIA = [
 
 const REGION_LIST = ['All regions', 'Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
 
-const REGION_GROUPS = {
-  Africa: ['North Africa', 'Sub-Saharan Africa'],
-  Americas: ['Caribbean', 'Central America', 'Northern America', 'South America'],
-  Asia: ['Central Asia', 'Eastern Asia', 'South-Eastern Asia', 'Southern Asia', 'Western Asia'],
-  Europe: ['Eastern Europe', 'Northern Europe', 'Southern Europe', 'Western Europe'],
-  Oceania: ['Oceania']
-};
-
-const DEVELOPED = new Set(['AUS', 'AUT', 'BEL', 'CAN', 'CHE', 'CZE', 'DEU', 'DNK', 'ESP', 'EST', 'FIN', 'FRA', 'GBR', 'GRC', 'HUN', 'IRL', 'ISL', 'ISR', 'ITA', 'JPN', 'KOR', 'LTU', 'LUX', 'LVA', 'NLD', 'NOR', 'NZL', 'POL', 'PRT', 'SVK', 'SVN', 'SWE', 'USA']);
 
 function parsePop(pop) {
   if (!pop) return 5e6;
@@ -46,7 +39,7 @@ function parsePop(pop) {
   return n || 5e6;
 }
 
-export default function DependenceStandings({ countries }) {
+export default function DependenceStandings({ countries, title, description }) {
   const [criterion, setCriterion] = useState('export_dependence');
   const [region, setRegion] = useState('All regions');
   const [highlight, setHighlight] = useState([]);
@@ -88,7 +81,8 @@ export default function DependenceStandings({ countries }) {
     const xScale = d3.scaleLinear().domain(crit.domain).range([0, iW]);
 
     const maxPop = d3.max(visible, c => parsePop(c.population)) || 1e9;
-    const rScale = d3.scaleSqrt().domain([0, maxPop]).range([3, 16]);
+    const maxR = W < 420 ? 7 : W < 600 ? 10 : 16;
+    const rScale = d3.scaleSqrt().domain([0, maxPop]).range([2, maxR]);
 
     const nodes = visible.map(c => ({
       iso3: c.iso3,
@@ -151,7 +145,6 @@ export default function DependenceStandings({ countries }) {
         .attr('y', 16)
         .attr('fill', '#fbaf17')
         .attr('font-size', 11)
-        .attr('font-weight', 700)
         .text(crit.thresholdLabel);
     }
 
@@ -203,10 +196,7 @@ export default function DependenceStandings({ countries }) {
 
   return (
     <div className="dp_card">
-      <div className="dp_card_header">
-        <h3 className="dp_card_title">Where every economy stands</h3>
-        <p className="dp_card_desc">Each dot is a country, positioned by its value on the chosen criterion. Vertical clustering shows where most economies fall.</p>
-      </div>
+      <ChartHeader title={title} description={description} />
 
       <div className="dp_divider" />
 

@@ -1,90 +1,88 @@
 import * as d3 from 'd3';
-import { useMemo } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import loadFile from '../../../helpers/LoadFile';
 import ChartHeader from '../shared/ChartHeader';
-import ChartSource from '../shared/ChartSource';
+import ChartMeta from '../shared/ChartMeta';
 
 import './DependenceOverTime.css';
 
-const W = 560;
 const H = 260;
-const M = { top: 16, right: 96, bottom: 32, left: 44 };
-const CHART_W = W - M.left - M.right;
+const M = { top: 20, right: 24, bottom: 32, left: 44 };
 const CHART_H = H - M.top - M.bottom;
 
-const GROUP_COLORS = {
-  agri: '#72bf44',
-  energy: '#009edb',
-  mining: '#fbaf17',
-  'non-dependent': '#9e9e9e'
-};
+const PILL_W = 86;
+const PILL_H = 16;
+const PILL_R = 3;
+const PILL_ARROW = 4;
 
-// Deterministic pseudo-random trend from iso3 + current value
-function buildSeries(iso3, currentPct) {
-  const seed = iso3.split('').reduce((s, c, i) => s + c.charCodeAt(0) * (i + 1) * 31, 0);
-  const rn = n => ((seed * (n + 1) * 1664525 + 1013904223) >>> 0) / 4294967295;
+export default function DependenceOverTime({ iso3, currentPct, dominantGroup, title, subtitle, description }) {
+  const [allData, setAllData] = useState(null);
+  const lineColor = '#009edb';
 
-  const n = 15;
-  const startDelta = (rn(1) - 0.5) * 22;
-  const startPct = Math.max(8, Math.min(97, currentPct + startDelta));
+  const wrapRef = useRef(null);
+  const [svgW, setSvgW] = useState(560);
+  const [tooltip, setTooltip] = useState(null);
 
-  return Array.from({ length: n }, (_, i) => {
-    const t = i / (n - 1);
-    const trend = startPct + (currentPct - startPct) * t;
-    const noise = (rn(i + 5) - 0.5) * 12 * (1 - t * 0.55);
-    return { year: 2010 + i, pct: +Math.max(5, Math.min(99, trend + noise)).toFixed(1) };
-  });
-}
+  useEffect(() => {
+    loadFile('assets/data/cdde_dependence_over_time.json')
+      .then(r => r?.json())
+      .then(d => { if (d) setAllData(d); });
+  }, []);
 
-export default function DependenceOverTime({ iso3, currentPct, dominantGroup }) {
-  const series = useMemo(() => buildSeries(iso3, currentPct), [iso3, currentPct]);
-  const lineColor = GROUP_COLORS[dominantGroup] || '#009edb';
+  useEffect(() => {
+    const el = wrapRef.current;
+    if (!el) return;
+    const ro = new ResizeObserver(([entry]) => setSvgW(entry.contentRect.width));
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
 
-  const xScale = d3.scaleLinear().domain([2010, 2024]).range([0, CHART_W]);
+  const series = allData?.[iso3] ?? [];
 
-  const allPcts = series.map(d => d.pct);
-  const yMin = Math.max(0, Math.floor((Math.min(...allPcts, 55) - 8) / 10) * 10);
-  const yMax = Math.min(100, Math.ceil((Math.max(...allPcts, 65) + 8) / 10) * 10);
+  const CHART_W = svgW - M.left - M.right;
 
-  const yScale = d3.scaleLinear().domain([yMin, yMax]).range([CHART_H, 0]);
+  const xMin = series.length ? series[0].year : 1995;
+  const xMax = series.length ? series[series.length - 1].year : 2024;
 
-  const linePath = d3
-    .line()
-    .x(d => xScale(d.year))
-    .y(d => yScale(d.pct))(series);
+  const xScale = d3.scaleLinear().domain([xMin, xMax]).range([0, CHART_W]);
+  const yScale = d3.scaleLinear().domain([0, 100]).range([CHART_H, 0]);
 
-  const areaPath = d3
-    .area()
-    .x(d => xScale(d.year))
-    .y0(CHART_H)
-    .y1(d => yScale(d.pct))(series);
+  const linePath = series.length
+    ? d3.line().x(d => xScale(d.year)).y(d => yScale(d.pct))(series)
+    : '';
 
-  const threshold60 = yScale(60);
-  const lastPt = series[series.length - 1];
-  const lastX = xScale(lastPt.year);
-  const lastY = yScale(lastPt.pct);
+  const threshold60Y = yScale(60);
+  const lastPt = series.length ? series[series.length - 1] : null;
+  const lastX = lastPt ? xScale(lastPt.year) : 0;
+  const lastY = lastPt ? yScale(lastPt.pct) : 0;
 
-  const yTicks = [];
-  for (let v = yMin; v <= yMax; v += 10) yTicks.push(v);
-  const xTicks = [2010, 2015, 2020, 2024];
+  const yTicks = [0, 20, 40, 60, 80, 100];
+  const xTicks = [xMin, 2000, 2005, 2010, 2015, 2020, xMax].filter((y, i, a) => y >= xMin && y <= xMax && a.indexOf(y) === i);
+
+  const pillCX = PILL_W / 2 + 4;
+
+  function handleMouseMove(e) {
+    if (!series.length) return;
+    const wrap = wrapRef.current;
+    if (!wrap) return;
+    const rect = wrap.getBoundingClientRect();
+    const mouseX = e.clientX - rect.left;
+    const chartX = (mouseX / rect.width) * svgW - M.left;
+    if (chartX < -4 || chartX > CHART_W + 4) { setTooltip(null); return; }
+    const year = Math.max(xMin, Math.min(xMax, Math.round(xScale.invert(Math.max(0, Math.min(CHART_W, chartX))))));
+    const pt = series.find(d => d.year === year);
+    if (!pt) return;
+    const domY = ((M.top + yScale(pt.pct)) / H) * rect.height;
+    setTooltip({ x: mouseX, cursorX: xScale(pt.year), domY, year: pt.year, pct: pt.pct, flip: mouseX > rect.width * 0.65 });
+  }
 
   return (
     <div className="cdde_card">
-      <ChartHeader title="Commodity export dependence over time" subtitle={`Annual share, % · 2010–2024`} />
+      <ChartHeader title={title} subtitle={subtitle} description={description} />
 
-      <div className="dot_chart_wrap">
-        <svg viewBox={`0 0 ${W} ${H}`} className="dot_svg" aria-label="Line chart of commodity export dependence over time">
-          <defs>
-            <linearGradient id={`dot_grad_${iso3}`} x1="0" x2="0" y1="0" y2="1">
-              <stop offset="0%" stopColor={lineColor} stopOpacity="0.18" />
-              <stop offset="100%" stopColor={lineColor} stopOpacity="0.01" />
-            </linearGradient>
-            <clipPath id={`dot_clip_${iso3}`}>
-              <rect x={0} y={0} width={CHART_W} height={CHART_H} />
-            </clipPath>
-          </defs>
-
+      <div className="dot_chart_wrap" ref={wrapRef} onMouseMove={handleMouseMove} onMouseLeave={() => setTooltip(null)}>
+        <svg viewBox={`0 0 ${svgW} ${H}`} className="dot_svg" aria-label="Line chart of commodity export dependence over time">
           <g transform={`translate(${M.left},${M.top})`}>
-            {/* Y grid */}
             {yTicks.map(v => (
               <g key={v} transform={`translate(0,${yScale(v)})`}>
                 <line x1={0} x2={CHART_W} className="dot_grid" />
@@ -94,44 +92,58 @@ export default function DependenceOverTime({ iso3, currentPct, dominantGroup }) 
               </g>
             ))}
 
-            {/* 60% threshold */}
-            {threshold60 >= 0 && threshold60 <= CHART_H && (
+            <line x1={0} x2={CHART_W} y1={threshold60Y} y2={threshold60Y} className="dot_threshold" />
+
+            <g transform={`translate(4, ${threshold60Y - PILL_H - PILL_ARROW})`}>
+              <rect x={0} y={0} width={PILL_W} height={PILL_H} rx={PILL_R} fill="var(--un-color-yellow)" />
+              <text x={PILL_W / 2} y={PILL_H - 4} textAnchor="middle" className="dot_pill_label">
+                60% threshold
+              </text>
+              <polygon
+                points={`${pillCX - PILL_ARROW},${PILL_H} ${pillCX + PILL_ARROW},${PILL_H} ${pillCX},${PILL_H + PILL_ARROW}`}
+                fill="var(--un-color-yellow)"
+              />
+            </g>
+
+            {linePath && (
+              <path d={linePath} fill="none" stroke={lineColor} strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" />
+            )}
+
+            {lastPt && (
               <>
-                <line x1={0} x2={CHART_W} y1={threshold60} y2={threshold60} className="dot_threshold" />
-                <text x={CHART_W + 4} y={threshold60 + 4} className="dot_threshold_label">
-                  60% threshold
+                <circle cx={lastX} cy={lastY} r={4} fill={lineColor} />
+                <rect x={lastX - 22} y={lastY - 24} width={44} height={18} rx={4} fill={lineColor} />
+                <text x={lastX} y={lastY - 11} textAnchor="middle" className="dot_callout_label">
+                  {lastPt.pct}%
                 </text>
               </>
             )}
 
-            {/* Area fill */}
-            <path d={areaPath} fill={`url(#dot_grad_${iso3})`} clipPath={`url(#dot_clip_${iso3})`} />
+            {tooltip && (
+              <line x1={tooltip.cursorX} y1={0} x2={tooltip.cursorX} y2={CHART_H} className="dot_cursor" />
+            )}
 
-            {/* Line */}
-            <path d={linePath} fill="none" stroke={lineColor} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-
-            {/* Last point callout */}
-            <circle cx={lastX} cy={lastY} r={4} fill={lineColor} />
-            <rect x={lastX - 22} y={lastY - 22} width={44} height={18} rx={4} fill={lineColor} />
-            <text x={lastX} y={lastY - 9} textAnchor="middle" className="dot_callout_label">
-              {lastPt.pct}%
-            </text>
-
-            {/* X axis */}
             <line x1={0} y1={CHART_H} x2={CHART_W} y2={CHART_H} className="dot_axis" />
             {xTicks.map(t => (
               <g key={t} transform={`translate(${xScale(t)},${CHART_H})`}>
                 <line y2={4} className="dot_tick" />
-                <text y={16} textAnchor={t === 2010 ? 'start' : t === 2024 ? 'end' : 'middle'} className="dot_tick_label">
+                <text y={16} textAnchor={t === xMin ? 'start' : t === xMax ? 'end' : 'middle'} className="dot_tick_label">
                   {t}
                 </text>
               </g>
             ))}
           </g>
         </svg>
+
+        {tooltip && (
+          <div className={`dot_tooltip${tooltip.flip ? ' dot_tooltip--flip' : ''}`} style={{ left: tooltip.x, top: tooltip.domY }}>
+            <div className="dot_tt_year">{tooltip.year}</div>
+            <div className="dot_tt_val">{tooltip.pct}%</div>
+          </div>
+        )}
       </div>
 
-      <ChartSource>UN Trade and Development (UNCTAD) secretariat calculations, based on UNCTADstat (2025).</ChartSource>
+      <ChartMeta source="UN Trade and Development (UNCTAD) calculations, based on UNCTADstat (2025)." />
     </div>
   );
 }

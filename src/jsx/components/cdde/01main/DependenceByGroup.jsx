@@ -3,7 +3,7 @@ import CSVtoJSON from '../../../helpers/CsvToJson';
 import loadFile from '../../../helpers/LoadFile';
 import useIsVisible from '../../../helpers/UseIsVisible';
 import ChartHeader from '../shared/ChartHeader';
-import ChartSource from '../shared/ChartSource';
+import ChartMeta from '../shared/ChartMeta';
 import ChartTooltip from '../shared/ChartTooltip';
 
 import './DependenceByGroup.css';
@@ -16,11 +16,20 @@ const BANDS = [
 
 const REDUCED_MOTION = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-export default function DependenceByGroup() {
+export default function DependenceByGroup({ insight, note, source, subtitle, title }) {
   const [data, setData] = useState(null);
   const [tooltip, setTooltip] = useState(null);
   const wrapRef = useRef(null);
   const [visRef, isVisible] = useIsVisible(0.2);
+  const [svgW, setSvgW] = useState(400);
+
+  useEffect(() => {
+    const el = wrapRef.current;
+    if (!el) return;
+    const ro = new ResizeObserver(([entry]) => setSvgW(entry.contentRect.width));
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [data]);
 
   function handleMouseMove(e, d) {
     if (!wrapRef.current) return;
@@ -66,10 +75,9 @@ export default function DependenceByGroup() {
   const yTicks = [];
   for (let v = 0; v <= yMax; v += 20) yTicks.push(v);
 
-  const W = 400;
   const H = 280;
   const PAD = { top: 16, right: 16, bottom: 40, left: 32 };
-  const chartW = W - PAD.left - PAD.right;
+  const chartW = svgW - PAD.left - PAD.right;
   const chartH = H - PAD.top - PAD.bottom;
 
   const barW = Math.floor(chartW / data.length) - 10;
@@ -85,11 +93,9 @@ export default function DependenceByGroup() {
 
   return (
     <div className="gbc_container cdde_reveal" ref={visRef}>
-      <ChartHeader title="Severity of commodity dependence" subtitle="Per cent, 2022–2024" large />
+      <ChartHeader title={title} subtitle={subtitle} large />
 
-      <p className="cdde_insight">
-        <strong className="cdde_insight_bold">Developing economies dominate</strong> the ranks of countries exceeding the 80% commodity-dependence threshold, while developed nations remain the exception.
-      </p>
+      {insight && <p className="cdde_insight">{insight}</p>}
 
       <div className="gbc_legend">
         {BANDS.map(b => (
@@ -101,7 +107,7 @@ export default function DependenceByGroup() {
       </div>
 
       <div className="gbc_chart_wrap" ref={wrapRef}>
-        <svg viewBox={`0 0 ${W} ${H}`} className={`gbc_svg${animated ? ' gbc_svg--animated' : ''}`} aria-label="Stacked bar chart of commodity dependence by country group" onMouseLeave={handleMouseLeave}>
+        <svg viewBox={`0 0 ${svgW} ${H}`} className={`gbc_svg${animated ? ' gbc_svg--animated' : ''}`} aria-label="Stacked bar chart of commodity dependence by country group" onMouseLeave={handleMouseLeave}>
           <g transform={`translate(${PAD.left},${PAD.top})`}>
             {/* Y grid lines and labels */}
             {yTicks.map(v => (
@@ -167,7 +173,7 @@ export default function DependenceByGroup() {
         )}
       </div>
 
-      <ChartSource>UN Trade and Development (UNCTAD) secretariat calculations, based on UNCTADstat (2025). UN Trade and Development (UNCTAD) development groupings.</ChartSource>
+      <ChartMeta source={source} note={note} />
     </div>
   );
 }

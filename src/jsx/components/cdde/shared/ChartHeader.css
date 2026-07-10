@@ -1,40 +1,42 @@
-#app-root-2026-cdde .app .cdde_header {
-  position: relative;
-  padding-left: 45px;
-  margin-bottom: 10px;
-}
+#app-root-2026-cdde .app {
+  .cdde_header {
+    position: relative;
+    padding-left: 45px;
+    margin-bottom: 10px;
 
-#app-root-2026-cdde .app .cdde_header::before {
-  background-color: var(--un-color-blue);
-  content: '';
-  display: block;
-  height: 35px;
-  left: 0;
-  top: 2px;
-  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='70 105 230 215'><path d='M76.3,317.4l107.9-106.4-107-102.2h92.2s117.8,102.3,117.8,102.3l-110,106.4h-100.9v-.1Z'/></svg>") no-repeat center / contain;
-  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='70 105 230 215'><path d='M76.3,317.4l107.9-106.4-107-102.2h92.2s117.8,102.3,117.8,102.3l-110,106.4h-100.9v-.1Z'/></svg>") no-repeat center / contain;
-  position: absolute;
-  width: 35px;
-}
+    &::before {
+      background-color: var(--un-color-blue);
+      content: '';
+      display: block;
+      height: 35px;
+      left: 0;
+      top: 2px;
+      mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='70 105 230 215'><path d='M76.3,317.4l107.9-106.4-107-102.2h92.2s117.8,102.3,117.8,102.3l-110,106.4h-100.9v-.1Z'/></svg>") no-repeat center / contain;
+      -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='70 105 230 215'><path d='M76.3,317.4l107.9-106.4-107-102.2h92.2s117.8,102.3,117.8,102.3l-110,106.4h-100.9v-.1Z'/></svg>") no-repeat center / contain;
+      position: absolute;
+      width: 35px;
+    }
 
-#app-root-2026-cdde .app .cdde_header .cdde_header_title {
-  font-size: var(--un-font-size-xl);
-  font-weight: var(--un-font-weight-boldest);
-  color: var(--un-color-blue-darkest);
-  line-height: var(--un-line-height-small);
-  margin: 0 0 4px;
-  padding: 0;
-  max-width: none;
-}
+    .cdde_header_title {
+      font-size: var(--un-font-size-xl);
+      font-weight: var(--un-font-weight-boldest);
+      color: var(--un-color-blue-darkest);
+      line-height: var(--un-line-height-small);
+      margin: 0 0 4px;
+      padding: 0;
+      max-width: none;
+    }
 
-#app-root-2026-cdde .app .cdde_header .cdde_header_title--lg {
-  font-size: var(--un-font-size-xxl);
-}
+    .cdde_header_title--lg {
+      font-size: var(--un-font-size-xxl);
+    }
 
-#app-root-2026-cdde .app .cdde_header .cdde_header_subtitle {
-  font-size: var(--un-font-size-xs);
-  color: var(--un-color-grey-text);
-  margin: 0;
-  padding: 0;
-  max-width: none;
+    .cdde_header_subtitle {
+      font-size: var(--un-font-size-xs);
+      color: var(--un-color-grey-text);
+      margin: 0 0 10px;
+      padding: 0;
+      max-width: none;
+    }
+  }
 }

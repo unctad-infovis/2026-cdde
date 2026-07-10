@@ -86,7 +86,9 @@ export default function DumbbellChart({ data, xMin, xMax, nameW = 140, badgeW = 
           : `${ax + ARROW_TIP},${y - 4} ${ax},${y} ${ax + ARROW_TIP},${y + 4}`;
 
         const bx = svgW - badgeW - TRACK_PAD_R + 4;
-        const bLabel = row.change > 0 ? `+${row.change}pp` : `${row.change}pp`;
+        const changeRounded = Math.round(row.change * 10) / 10;
+        const changeStr = Number.isInteger(changeRounded) ? String(changeRounded) : changeRounded.toFixed(1);
+        const bLabel = row.change > 0 ? `+${changeStr}pp` : `${changeStr}pp`;
         const badgeBg = row.change > 0 ? '#fff4bf' : '#e3edf6';
         const badgeColor = row.change > 0 ? '#b06e2a' : '#005392';
 

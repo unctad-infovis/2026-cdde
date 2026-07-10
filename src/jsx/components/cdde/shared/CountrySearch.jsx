@@ -6,6 +6,7 @@ export default function CountrySearch({ countries, value, onChange, placeholder 
   const [query, setQuery] = useState('');
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
+  const inputRef = useRef(null);
 
   const list = countries || [];
   const selected = value ? list.find(c => c.iso3 === value) : null;
@@ -48,17 +49,14 @@ export default function CountrySearch({ countries, value, onChange, placeholder 
 
   return (
     <div className="cs_wrap" ref={ref}>
-      <div className={`cs_field${open ? ' cs_field--open' : ''}`}>
+      <div className={`cs_field${open ? ' cs_field--open' : ''}`} onClick={() => inputRef.current?.focus()}>
         {selected && !open && <CircleFlag countryCode={selected.iso2} width={18} height={18} />}
-        <input className="cs_input" type="text" placeholder={placeholder} value={open ? query : (selected?.name ?? '')} onChange={handleChange} onFocus={handleFocus} autoComplete="off" spellCheck={false} />
+        <input ref={inputRef} className="cs_input" type="text" placeholder={placeholder} value={open ? query : (selected?.name ?? '')} onChange={handleChange} onFocus={handleFocus} autoComplete="off" spellCheck={false} />
         {selected && (
           <button type="button" className="cs_clear" onMouseDown={handleClear} tabIndex={-1} aria-label="Clear selection">
             ×
           </button>
         )}
-        <svg className="cs_chevron" viewBox="0 0 10 6" fill="none" aria-hidden="true">
-          <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
       </div>
 
       {open && results.length > 0 && (

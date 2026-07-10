@@ -10,10 +10,10 @@ import ChartHeader from '../shared/ChartHeader';
 import ChartTooltip from '../shared/ChartTooltip';
 import CountrySearch from '../shared/CountrySearch';
 
+import ChartMeta from '../shared/ChartMeta';
 import './DependenceMap.css';
 
-const W = 960;
-const H = 480;
+const MAX_H = 480;
 
 // HKG, MAC, TWN share China's data and highlight together
 const CHINA_GROUP = new Set(['CHN', 'HKG', 'TWN', 'MAC']);
@@ -21,7 +21,7 @@ const CHINA_DELEGATE = new Set(['HKG', 'TWN', 'MAC']);
 
 // Export dependence: gray below 60% threshold, UNCTAD blue at/above
 const EXP_COLORS = [
-  { threshold: 0,  color: '#d8d8d8' },
+  { threshold: 0, color: '#d8d8d8' },
   { threshold: 20, color: '#b0b0b0' },
   { threshold: 40, color: '#7c7c7c' },
   { threshold: 60, color: '#0077b8' },
@@ -30,21 +30,21 @@ const EXP_COLORS = [
 
 // Legend split at the 60% dependency threshold
 const EXP_LEGEND_BELOW = [
-  { label: '0–20%',  color: '#d8d8d8' },
+  { label: '0–20%', color: '#d8d8d8' },
   { label: '20–40%', color: '#b0b0b0' },
   { label: '40–60%', color: '#7c7c7c' }
 ];
 const EXP_LEGEND_ABOVE = [
-  { label: '60–80%',  color: 'var(--un-color-blue-dark)' },
+  { label: '60–80%', color: 'var(--un-color-blue-dark)' },
   { label: '80–100%', color: 'var(--un-color-blue-darkest)' }
 ];
 
 // Dominant group: categorical colors
 const GROUP_COLORS = {
-  agri: 'var(--un-color-green)',
-  energy: 'var(--un-color-blue)',
-  mining: 'var(--un-color-yellow)',
-  'non-dependent': 'var(--un-color-grey)'
+  agri: '#72bf44',
+  energy: '#009edb',
+  mining: '#fbaf17',
+  'non-dependent': '#aea29a'
 };
 
 const GROUP_LABELS = {
@@ -77,7 +77,7 @@ function getGroupColor(group) {
   return GROUP_COLORS[group] || NO_DATA_FILL;
 }
 
-export default function DependenceMap() {
+export default function DependenceMap({ insight, note, source, subtitle, title }) {
   const [geoData, setGeoData] = useState(null);
   const [mapData, setMapData] = useState(null);
   const [view, setView] = useState('export');
@@ -85,12 +85,28 @@ export default function DependenceMap() {
   const [panelCollapsed, setPanelCollapsed] = useState(false);
   const [hoverTooltip, setHoverTooltip] = useState(null);
   const [zt, setZt] = useState({ x: 0, y: 0, k: 1 });
+  const [svgW, setSvgW] = useState(960);
+  const H = svgW > 0 ? Math.min(MAX_H, Math.round(svgW * 0.65)) : MAX_H;
   const panelRef = useRef(null);
   const mapAreaRef = useRef(null);
   const svgRef = useRef(null);
   const zoomRef = useRef(null);
   const [visRef, isVisible] = useIsVisible(0.1);
   const animated = isVisible || REDUCED_MOTION;
+
+  useEffect(() => {
+    const el = mapAreaRef.current;
+    if (!el) return;
+    const ro = new ResizeObserver(([entry]) => setSvgW(entry.contentRect.width));
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (zoomRef.current) {
+      zoomRef.current.translateExtent([[0, 0], [svgW, H]]);
+    }
+  }, [svgW]);
 
   useEffect(() => {
     Promise.all([loadFile('assets/data/world_topojson.json').then(r => r?.json()), loadFile('assets/data/worldmap-economies-4326.topo.json').then(r => r?.json())]).then(([topo, borders]) => {
@@ -132,7 +148,7 @@ export default function DependenceMap() {
       .scaleExtent([1, 3])
       .translateExtent([
         [0, 0],
-        [W, H]
+        [svgW, H]
       ])
       .filter(e => e.type !== 'wheel') // wheel disabled; touch pinch still works
       .on('zoom', e => {
@@ -167,7 +183,7 @@ export default function DependenceMap() {
 
     // rotate([-11.314, 0]) shifts the antimeridian to ~191°E, keeping Russia whole,
     // and pairs with the translate[0] += 11.314 correction applied to the border TopoJSON.
-    const projection = d3.geoNaturalEarth1().rotate([-11.314, 0]).fitSize([W, H], { type: 'Sphere' });
+    const projection = d3.geoNaturalEarth1().rotate([-11.314, 0]).fitSize([svgW, H], { type: 'Sphere' });
     const pathGen = d3.geoPath(projection);
     const allFeats = topojson.feature(topo, topo.objects.BNDA).features;
 
@@ -197,17 +213,48 @@ export default function DependenceMap() {
     }).filter(Boolean);
 
     return { countryPaths, solidBorderPath, dashedBorderPath, dottedBorderPath, dashDotBorderPath, islandDots };
-  }, [geoData]);
+  }, [geoData, svgW]);
 
   const smallIslandSet = useMemo(() => new Set(SMALL_ISLAND_DOTS.map(s => s.iso3)), []);
 
+  // Single reveal state: false = hidden (opacity 0, washed-out), true = visible
+  const [revealed, setRevealed] = useState(false);
+  const [switching, setSwitching] = useState(false);
+
+  useEffect(() => {
+    if (!animated || !computed || !mapData || revealed) return;
+    if (REDUCED_MOTION) {
+      setRevealed(true);
+      return;
+    }
+    let cancelled = false;
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => {
+        if (!cancelled) setRevealed(true);
+      })
+    );
+    return () => {
+      cancelled = true;
+    };
+  }, [animated, computed, mapData, revealed]);
+
+  function handleViewChange(newView) {
+    if (newView === view || REDUCED_MOTION) {
+      setView(newView);
+      return;
+    }
+    setSwitching(true);
+    setTimeout(() => {
+      setView(newView);
+      requestAnimationFrame(() => requestAnimationFrame(() => setSwitching(false)));
+    }, 200);
+  }
+
   function getFill(iso3) {
-    if (!mapData || !animated) return NO_DATA_FILL;
     const lookup = CHINA_DELEGATE.has(iso3) ? 'CHN' : iso3;
-    const row = mapData[lookup];
+    const row = mapData?.[lookup];
     if (!row) return NO_DATA_FILL;
-    if (view === 'export') return getExpColor(row.export_dependence);
-    return getGroupColor(row.dominant_group);
+    return view === 'export' ? getExpColor(row.export_dependence) : getGroupColor(row.dominant_group);
   }
 
   function handleCountryClick(iso3) {
@@ -246,14 +293,11 @@ export default function DependenceMap() {
   }
 
   return (
-    <section className="cmap_section cdde_reveal" ref={visRef}>
+    <section className="cmap_section" ref={visRef}>
       <div className="cmap_inner">
-        <ChartHeader title="Who depends on commodities – and what kind?" subtitle="Commodity export dependence by country, 2022–2024" large />
+        <ChartHeader title={title} subtitle={subtitle} large />
 
-        <p className="cdde_insight">
-          Commodity dependence is the norm across the developing world – but the type differs sharply, with <strong className="cdde_insight_bold">energy states clustering in the Gulf and Central Asia</strong>, mining economies ringing sub-Saharan Africa, and agricultural dependence spanning the broadest geography of
-          all.
-        </p>
+        {insight && <p className="cdde_insight">{insight}</p>}
 
         <div className="cmap_controls">
           <div className="cmap_search">
@@ -270,10 +314,10 @@ export default function DependenceMap() {
           </div>
 
           <div className="cmap_toggle">
-            <button type="button" className={`cmap_toggle_btn${view === 'export' ? ' active' : ''}`} onClick={() => setView('export')}>
+            <button type="button" className={`cmap_toggle_btn${view === 'export' ? ' active' : ''}`} onClick={() => handleViewChange('export')}>
               Export dependence
             </button>
-            <button type="button" className={`cmap_toggle_btn${view === 'group' ? ' active' : ''}`} onClick={() => setView('group')}>
+            <button type="button" className={`cmap_toggle_btn${view === 'group' ? ' active' : ''}`} onClick={() => handleViewChange('group')}>
               Dominant product group
             </button>
           </div>
@@ -298,18 +342,18 @@ export default function DependenceMap() {
         </div>
 
         <div className="cmap_map_area" ref={mapAreaRef}>
-          <svg ref={svgRef} viewBox={`0 0 ${W} ${H}`} className="cmap_svg" aria-label="World choropleth map of commodity dependence" onMouseMove={handleSvgHover} onMouseLeave={handleSvgLeave}>
+          <svg ref={svgRef} viewBox={`0 0 ${svgW} ${H}`} className="cmap_svg" aria-label="World choropleth map of commodity dependence" onMouseMove={handleSvgHover} onMouseLeave={handleSvgLeave}>
             {/* Ocean — fixed, always fills SVG */}
-            <rect x={0} y={0} width={W} height={H} className="cmap_ocean" />
+            <rect x={0} y={0} width={svgW} height={H} className="cmap_ocean" />
 
             {/* Zoomable content */}
             <g transform={`translate(${zt.x},${zt.y}) scale(${zt.k})`}>
               {/* Country fills */}
-              <g className="cmap_countries">
-                {computed?.countryPaths?.map(({ id, d }) => {
+              <g className="cmap_countries" style={{ opacity: revealed ? (switching ? 0.85 : 1) : 0, transition: REDUCED_MOTION ? 'none' : switching ? 'opacity 0.2s ease' : 'opacity 0.7s ease' }}>
+                {computed?.countryPaths?.map(({ id, d }, i) => {
                   if (smallIslandSet.has(id)) return null;
                   const inActiveGroup = hoverTooltip?.iso3 && CHINA_GROUP.has(hoverTooltip.iso3) && CHINA_GROUP.has(id);
-                  return <path key={id} d={d} className={`cmap_country${inActiveGroup ? ' cmap_country--active' : ''}`} fill={getFill(id)} onClick={() => handleCountryClick(id)} data-iso={id} />;
+                  return <path key={`${id}_${i}`} d={d} className={`cmap_country${inActiveGroup ? ' cmap_country--active' : ''}`} style={{ fill: getFill(id) }} onClick={() => handleCountryClick(id)} data-iso={id} />;
                 })}
               </g>
 
@@ -326,9 +370,9 @@ export default function DependenceMap() {
               {computed?.dashDotBorderPath && <path d={computed.dashDotBorderPath} className="cmap_border_dashdot" />}
 
               {/* Small island dots */}
-              <g className="cmap_islands">
+              <g className="cmap_islands" style={{ opacity: revealed ? (switching ? 0.85 : 1) : 0, transition: REDUCED_MOTION ? 'none' : switching ? 'opacity 0.2s ease' : 'opacity 0.7s ease' }}>
                 {computed?.islandDots?.map(s => (
-                  <circle key={s.iso3} cx={s.x} cy={s.y} r={4 / zt.k} fill={getFill(s.iso3)} stroke="#fff" strokeWidth={0.8 / zt.k} className="cmap_island_dot" data-iso={s.iso3} onClick={() => handleCountryClick(s.iso3)} />
+                  <circle key={s.iso3} cx={s.x} cy={s.y} r={4 / zt.k} style={{ fill: getFill(s.iso3) }} stroke="#fff" strokeWidth={0.8 / zt.k} className="cmap_island_dot" data-iso={s.iso3} onClick={() => handleCountryClick(s.iso3)} />
                 ))}
               </g>
             </g>
@@ -353,16 +397,7 @@ export default function DependenceMap() {
                   </div>
                 ))}
               </div>
-            ) : (
-              <div className="cmap_legend_groups">
-                {Object.entries(GROUP_LABELS).map(([key, label]) => (
-                  <div key={key} className="cmap_legend_group_item">
-                    <span className="cmap_legend_group_dot" style={{ background: GROUP_COLORS[key] }} />
-                    <span>{label}</span>
-                  </div>
-                ))}
-              </div>
-            )}
+            ) : null}
           </div>
 
           {/* Country info panel — overlaid on right side of map */}
@@ -385,7 +420,7 @@ export default function DependenceMap() {
                 <>
                   {/* Hero — export share + dominant group combined */}
                   <div className="cmap_panel_hero">
-                    <span className="cmap_panel_hero_label">Commodity export share</span>
+                    <span className="cmap_panel_hero_label">Commodity dependence share</span>
                     <span className="cmap_panel_hero_value">{selectedCountry.export_dependence}%</span>
                     {selectedCountry.dominant_group && selectedCountry.dominant_group !== 'non-dependent' && (
                       <span className="cmap_panel_stat_group" style={{ background: GROUP_COLORS[selectedCountry.dominant_group] }}>
@@ -398,16 +433,13 @@ export default function DependenceMap() {
                           { key: 'agri', label: 'Agriculture', val: selectedCountry.agri_pct },
                           { key: 'energy', label: 'Energy', val: selectedCountry.energy_pct },
                           { key: 'mining', label: 'Mining & metals', val: selectedCountry.mining_pct }
-                        ].map(
-                          cat =>
-                            cat.val != null && (
-                              <div key={cat.key} className={`cmap_tt_cat_row${selectedCountry.dominant_group === cat.key ? ' cmap_tt_cat_row--dominant' : ''}`}>
-                                <span className="cmap_tt_group_dot" style={{ background: GROUP_COLORS[cat.key] }} />
-                                <span className="cmap_tt_label">{cat.label}</span>
-                                <span className="cmap_tt_val">{cat.val}%</span>
-                              </div>
-                            )
-                        )}
+                        ].map(cat => (
+                          <div key={cat.key} className={`cmap_tt_cat_row${selectedCountry.dominant_group === cat.key ? ' cmap_tt_cat_row--dominant' : ''}`}>
+                            <span className="cmap_tt_group_dot" style={{ background: GROUP_COLORS[cat.key] }} />
+                            <span className="cmap_tt_label">{cat.label}</span>
+                            <span className="cmap_tt_val">{cat.val != null ? cat.val : 0}%</span>
+                          </div>
+                        ))}
                       </div>
                     )}
                   </div>
@@ -451,16 +483,13 @@ export default function DependenceMap() {
                         { key: 'agri', label: 'Agriculture', val: row.agri_pct },
                         { key: 'energy', label: 'Energy', val: row.energy_pct },
                         { key: 'mining', label: 'Mining & metals', val: row.mining_pct }
-                      ].map(
-                        cat =>
-                          cat.val != null && (
-                            <div key={cat.key} className={`cmap_tt_cat_row${row.dominant_group === cat.key ? ' cmap_tt_cat_row--dominant' : ''}`}>
-                              <span className="cmap_tt_group_dot" style={{ background: GROUP_COLORS[cat.key] }} />
-                              <span className="cmap_tt_label">{cat.label}</span>
-                              <span className="cmap_tt_val">{cat.val}%</span>
-                            </div>
-                          )
-                      )}
+                      ].map(cat => (
+                        <div key={cat.key} className={`cmap_tt_cat_row${row.dominant_group === cat.key ? ' cmap_tt_cat_row--dominant' : ''}`}>
+                          <span className="cmap_tt_group_dot" style={{ background: GROUP_COLORS[cat.key] }} />
+                          <span className="cmap_tt_label">{cat.label}</span>
+                          <span className="cmap_tt_val">{cat.val != null ? cat.val : 0}%</span>
+                        </div>
+                      ))}
                     </div>
                   )}
                 </ChartTooltip>
@@ -469,15 +498,7 @@ export default function DependenceMap() {
         </div>
 
         <div className="cmap_footer">
-          <div>
-            <em>Source:</em> UN Trade and Development (UNCTAD), based on UNCTADStat.
-          </div>
-          <div>
-            <em>Note:</em> Small island and coastal states with a land area too small to display as polygons at this scale are represented by dots. Their position reflects the country's geographic location; dot size does not indicate area or population.{' '}
-            <a href="https://unctad.org/map-disclaimer" target="_blank" rel="noopener">
-              Map disclaimer
-            </a>
-          </div>
+          <ChartMeta source={source} note={note} />
         </div>
       </div>
     </section>

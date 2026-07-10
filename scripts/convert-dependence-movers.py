@@ -28,7 +28,7 @@ for row in ws.iter_rows(min_row=2, values_only=True):
     name = NAME_FIX.get(name, name)
     old_pct = round(old * 100, 1)
     new_pct = round(new * 100, 1)
-    change_pp = round(new_pct - old_pct, 1)
+    change_pp = round((new - old) * 100, 2)
     entry = {"name": name, "iso3": iso3, "iso2": ISO3_TO_ISO2.get(iso3, ''), "old_pct": old_pct, "new_pct": new_pct, "change": change_pp}
     if category == "Increase":
         increase.append(entry)

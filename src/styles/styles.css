@@ -102,5 +102,12 @@
         opacity 3s,
         top 1s ease;
     }
+
+    @media (max-width: 600px) {
+      .width_wide {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+      }
+    }
   }
 }

@@ -1,0 +1,57 @@
+<Compare
+  content={{
+    tools: [
+      { id: '01', label: 'Country profile', desc: 'Deep-dive on one economy' },
+      { id: '02', label: 'Compare profiles', desc: 'Up to 3 economies side by side' },
+      { id: '03', label: 'Variable ranking', desc: 'League table for any indicator' }
+    ],
+    standings: {
+      title: 'Where every economy stands',
+      description: 'Each dot is one UNCTAD member State, sized by population and positioned by its value on the chosen criterion. Vertical clustering shows where most economies concentrate.'
+    },
+    compareView: {
+      dnaTitle: 'Commodity DNA – what each economy exports',
+      dnaDescription: 'Share of agricultural, energy and mining products in each country\'s commodity export basket. A larger segment means greater dependence on that product group.'
+    },
+    profile: {
+      exportsHeading: 'Exports',
+      importsHeading: 'Imports',
+      dependenceOverTime: {
+        title: 'Commodity export dependence over time',
+        subtitle: 'Annual share, per cent, 1995–2024',
+        description: 'The trajectory reveals how commodity export reliance has shifted over three decades – shaped by price cycles, structural change and global shocks.'
+      },
+      exportsOverTime: {
+        title: 'Commodity exports over time',
+        subtitle: 'Billions of dollars, 1995–2024',
+        description: 'Total commodity export value places the economy\'s raw-material trade in a long-run context, capturing the combined effect of price and volume changes.'
+      },
+      leadingExports: {
+        title: 'Three leading commodity exports',
+        subtitle: 'Per cent of all allocated product exports, 2022–2024',
+        description: 'Concentration in a small number of commodities amplifies exposure to sector-specific price shocks and supply disruptions.'
+      },
+      topMarkets: {
+        title: 'Top destination markets',
+        subtitle: 'Percentage of total merchandise exports, 2022–2024',
+        description: 'Geographic concentration of export destinations adds a second layer of vulnerability alongside product concentration.'
+      },
+      importDependencies: {
+        title: 'Import dependencies',
+        subtitle: 'Share of total merchandise imports, 2022–2024',
+        description: 'Food and energy import exposure determines how external price shocks feed through to domestic consumption and production costs.'
+      },
+      macroContext: {
+        title: 'Macro context',
+        subtitle: 'Economic structure and resource dependence',
+        description: 'The structure of value added and the weight of natural-resource rents set the broader economic context for commodity dependence.'
+      },
+      socialContext: {
+        title: 'Social context',
+        subtitle: 'Human development and labour market indicators',
+        description: 'Human development outcomes and employment patterns reveal how commodity dependence translates into living standards on the ground.'
+      }
+    }
+  }}
+  meta={props.meta}
+/>

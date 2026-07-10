@@ -4,6 +4,7 @@
 ───────────────────────────────────────────────────────────────── */
 
 /* ── Loading skeleton ──────────────────────────────────────── */
+
 @keyframes cdde_pulse {
   0%,
   100% {
@@ -14,212 +15,231 @@
   }
 }
 
-#app-root-2026-cdde .app .cdde_loading {
-  background: var(--un-color-blue-lightest);
-  border-radius: 8px;
-  animation: cdde_pulse 1.4s ease infinite;
-}
+#app-root-2026-cdde .app {
+  .cdde_loading {
+    background: var(--un-color-blue-lightest);
+    border-radius: 8px;
+    animation: cdde_pulse 1.4s ease infinite;
+  }
 
-/* ── Insight block ─────────────────────────────────────────── */
-#app-root-2026-cdde .app .cdde_insight {
-  font-size: var(--un-font-size-xs);
-  color: var(--un-color-blue-darkest);
-  border-left: 3px solid var(--un-color-grey-light);
-  padding: 4px 0 4px 12px;
-  margin: 0 0 16px;
-  line-height: var(--un-line-height-normal);
-  max-width: none;
-}
+  /* ── Insight block ─────────────────────────────────────────── */
 
-#app-root-2026-cdde .app .cdde_insight_bold {
-  color: var(--un-color-blue-text-dark);
-  font-weight: var(--un-font-weight-bold);
-}
+  .cdde_insight {
+    font-size: var(--un-font-size-xs);
+    color: var(--un-color-blue-darkest);
+    border-left: 3px solid var(--un-color-grey-light);
+    padding: 4px 0 4px 12px;
+    margin: 0 0 16px;
+    line-height: var(--un-line-height-normal);
+    max-width: none;
+  }
 
-/* ── No-data message ───────────────────────────────────────── */
-#app-root-2026-cdde .app .cdde_no_data {
-  font-size: var(--un-font-size-xxs);
-  color: var(--un-color-grey-text);
-  padding: 24px 0;
-  text-align: center;
-  max-width: none;
-}
+  .cdde_insight_bold {
+    color: var(--un-color-blue-text-dark);
+    font-weight: var(--un-font-weight-bold);
+  }
 
-/* ── White card wrapper ────────────────────────────────────── */
-#app-root-2026-cdde .app .cdde_card {
-  background: #fff;
-  border-radius: 16px;
-  padding: 24px 20px 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  min-width: 0;
-}
+  /* ── No-data message ───────────────────────────────────────── */
 
-/* Generic card body: flex 1 + top margin */
-#app-root-2026-cdde .app .cdde_card_body {
-  flex: 1;
-  margin-top: 12px;
-}
+  .cdde_no_data {
+    font-size: var(--un-font-size-xxs);
+    color: var(--un-color-grey-text);
+    padding: 24px 0;
+    text-align: center;
+    max-width: none;
+  }
 
-/* ── Section label (mini uppercase label above a sub-section) ── */
-#app-root-2026-cdde .app .cdde_section_label {
-  display: block;
-  font-size: var(--un-font-size-xxxs);
-  font-weight: var(--un-font-weight-bold);
-  color: var(--un-color-grey-text);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-bottom: 6px;
-}
+  /* ── White card wrapper ────────────────────────────────────── */
 
-/* ── Stacked horizontal bar ────────────────────────────────── */
-#app-root-2026-cdde .app .cdde_stacked_bar {
-  display: flex;
-  height: 28px;
-  border-radius: 4px;
-  overflow: hidden;
-}
+  .cdde_card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px 20px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    min-width: 0;
+  }
 
-#app-root-2026-cdde .app .cdde_stacked_seg {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  transition: width 0.5s ease;
-}
+  /* Generic card body: flex 1 + top margin */
 
-#app-root-2026-cdde .app .cdde_stacked_seg_lbl {
-  font-size: var(--un-font-size-xxxs);
-  font-weight: var(--un-font-weight-bold);
-  color: #fff;
-  white-space: nowrap;
-}
+  .cdde_card_body {
+    flex: 1;
+    margin-top: 12px;
+  }
 
-/* ── Legend row (dot + label pairs) ───────────────────────── */
-#app-root-2026-cdde .app .cdde_legend_row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 16px;
-}
+  /* ── Section label (mini uppercase label above a sub-section) ── */
 
-#app-root-2026-cdde .app .cdde_legend_item {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
+  .cdde_section_label {
+    display: block;
+    font-size: var(--un-font-size-xxxs);
+    font-weight: var(--un-font-weight-bold);
+    color: var(--un-color-grey-text);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+  }
 
-#app-root-2026-cdde .app .cdde_legend_dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
+  /* ── Stacked horizontal bar ────────────────────────────────── */
 
-#app-root-2026-cdde .app .cdde_legend_label {
-  font-size: var(--un-font-size-xxxs);
-  color: var(--un-color-grey-text);
-}
+  .cdde_stacked_bar {
+    display: flex;
+    height: 28px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
 
-/* ── Horizontal bar rows (label | track | value) ───────────── */
-#app-root-2026-cdde .app .cdde_bars {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding-top: 4px;
-}
+  .cdde_stacked_seg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: width 0.5s ease;
+  }
 
-#app-root-2026-cdde .app .cdde_hbar_row {
-  display: grid;
-  grid-template-columns: 140px 1fr 52px;
-  align-items: center;
-  gap: 10px;
-}
+  .cdde_stacked_seg_lbl {
+    font-size: var(--un-font-size-xxxs);
+    font-weight: var(--un-font-weight-bold);
+    color: #fff;
+    white-space: nowrap;
+  }
 
-#app-root-2026-cdde .app .cdde_hbar_label {
-  font-size: var(--un-font-size-xxs);
-  color: var(--un-color-blue-darkest);
-  font-weight: var(--un-font-weight-normal);
-  line-height: var(--un-line-height-small);
-}
+  /* ── Legend row (dot + label pairs) ───────────────────────── */
 
-#app-root-2026-cdde .app .cdde_hbar_track {
-  height: 14px;
-  background: var(--un-color-grey-lighest);
-  border-radius: 3px;
-  overflow: hidden;
-}
+  .cdde_legend_row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+  }
 
-#app-root-2026-cdde .app .cdde_hbar_fill {
-  height: 100%;
-  border-radius: 3px;
-  transition: width 0.5s ease;
-}
+  .cdde_legend_item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
 
-#app-root-2026-cdde .app .cdde_hbar_pct {
-  font-size: var(--un-font-size-xs);
-  font-weight: var(--un-font-weight-bold);
-  color: var(--un-color-blue-darkest);
-  text-align: right;
-}
+  .cdde_legend_dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
 
-/* ── Small indicator bar rows ──────────────────────────────── */
-#app-root-2026-cdde .app .cdde_small_bars {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
+  .cdde_legend_label {
+    font-size: var(--un-font-size-xxxs);
+    color: var(--un-color-grey-text);
+  }
 
-#app-root-2026-cdde .app .cdde_small_row {
-  display: grid;
-  grid-template-columns: 1fr 120px 46px;
-  align-items: center;
-  gap: 10px;
-}
+  /* ── Horizontal bar rows (label | track | value) ───────────── */
 
-#app-root-2026-cdde .app .cdde_small_label {
-  font-size: var(--un-font-size-xxxs);
-  color: var(--un-color-grey-text);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  line-height: var(--un-line-height-small);
-}
+  .cdde_bars {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 4px;
+  }
 
-#app-root-2026-cdde .app .cdde_small_track {
-  height: 10px;
-  background: var(--un-color-grey-lighest);
-  border-radius: 3px;
-  overflow: hidden;
-}
+  .cdde_hbar_row {
+    display: grid;
+    grid-template-columns: 140px 1fr 52px;
+    align-items: center;
+    gap: 10px;
+  }
 
-#app-root-2026-cdde .app .cdde_small_fill {
-  height: 100%;
-  border-radius: 3px;
-  transition: width 0.5s ease;
-}
+  .cdde_hbar_label {
+    font-size: var(--un-font-size-xxs);
+    color: var(--un-color-blue-darkest);
+    font-weight: var(--un-font-weight-normal);
+    line-height: var(--un-line-height-small);
+  }
 
-#app-root-2026-cdde .app .cdde_small_pct {
-  font-size: var(--un-font-size-xs);
-  font-weight: var(--un-font-weight-bold);
-  color: var(--un-color-blue-darkest);
-  text-align: right;
-}
+  .cdde_hbar_track {
+    height: 14px;
+    background: var(--un-color-grey-lighest);
+    border-radius: 3px;
+    overflow: hidden;
+  }
 
-/* ── Scroll-reveal fade-in ─────────────────────────────────── */
-#app-root-2026-cdde .app .cdde_reveal {
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 0.65s ease 500ms, transform 0.65s ease 500ms;
-}
+  .cdde_hbar_fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.5s ease;
+  }
 
-#app-root-2026-cdde .app .cdde_reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+  .cdde_hbar_pct {
+    font-size: var(--un-font-size-xs);
+    font-weight: var(--un-font-weight-bold);
+    color: var(--un-color-blue-darkest);
+    text-align: right;
+  }
 
-@media (prefers-reduced-motion: reduce) {
-  #app-root-2026-cdde .app .cdde_reveal {
-    transform: none;
-    transition: opacity 0.65s ease 500ms;
+  /* ── Small indicator bar rows ──────────────────────────────── */
+
+  .cdde_small_bars {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cdde_small_row {
+    display: grid;
+    grid-template-columns: 1fr 120px 46px;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cdde_small_label {
+    font-size: var(--un-font-size-xxxs);
+    color: var(--un-color-grey-text);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: var(--un-line-height-small);
+  }
+
+  .cdde_small_track {
+    height: 10px;
+    background: var(--un-color-grey-lighest);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .cdde_small_fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.5s ease;
+  }
+
+  .cdde_small_pct {
+    font-size: var(--un-font-size-xs);
+    font-weight: var(--un-font-weight-bold);
+    color: var(--un-color-blue-darkest);
+    text-align: right;
+  }
+
+  @media (max-width: 600px) {
+    .cdde_card {
+      padding: 16px 12px 14px;
+    }
+  }
+
+  /* ── Scroll-reveal fade-in ─────────────────────────────────── */
+
+  .cdde_reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.65s ease 500ms, transform 0.65s ease 500ms;
+
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cdde_reveal {
+      transform: none;
+      transition: opacity 0.65s ease 500ms;
+    }
+
   }
 }

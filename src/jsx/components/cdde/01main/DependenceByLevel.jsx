@@ -3,7 +3,7 @@ import CSVtoJSON from '../../../helpers/CsvToJson';
 import loadFile from '../../../helpers/LoadFile';
 import useIsVisible from '../../../helpers/UseIsVisible';
 import ChartHeader from '../shared/ChartHeader';
-import ChartSource from '../shared/ChartSource';
+import ChartMeta from '../shared/ChartMeta';
 
 import './DependenceByLevel.css';
 
@@ -11,7 +11,7 @@ const THRESHOLD = 60;
 const MAX_PCT = 100;
 const REDUCED_MOTION = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-export default function DependenceByLevel() {
+export default function DependenceByLevel({ insight, note, source, subtitle, title }) {
   const [data, setData] = useState(null);
   const [visRef, isVisible] = useIsVisible(0.2);
 
@@ -46,11 +46,9 @@ export default function DependenceByLevel() {
 
   return (
     <div className="alc_container cdde_reveal" ref={visRef}>
-      <ChartHeader title="Average dependence by development level" subtitle="Mean commodity export share across economies, 2022–2024" large />
+      <ChartHeader title={title} subtitle={subtitle} large />
 
-      <p className="cdde_insight">
-        Across all country groups, the highest levels of commodity dependence are concentrated in the <strong className="cdde_insight_bold">most vulnerable economies</strong>.
-      </p>
+      {insight && <p className="cdde_insight">{insight}</p>}
 
       <div className="alc_chart">
         <div className="alc_threshold_wrap">
@@ -89,7 +87,7 @@ export default function DependenceByLevel() {
         </div>
       </div>
 
-      <ChartSource>UN Trade and Development (UNCTAD) secretariat calculations, based on UNCTADstat (2025).</ChartSource>
+      <ChartMeta source={source} note={note} />
     </div>
   );
 }

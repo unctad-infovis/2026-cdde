@@ -1,126 +1,137 @@
-#app-root-2026-cdde .app .exc_container {
-  background: #fff;
-  border-radius: 16px;
-  padding: 28px 24px 20px;
-  margin: 0 auto;
-  max-width: 1100px;
-}
+#app-root-2026-cdde .app {
+  /* Responsive */
 
-
-/* SVG chart wrap */
-#app-root-2026-cdde .app .exc_chart_wrap {
-  border-radius: 8px;
-  overflow: hidden;
-  position: relative;
-}
-
-#app-root-2026-cdde .app .exc_svg {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-/* Back button — overlaid top-left of chart */
-#app-root-2026-cdde .app .exc_back_btn {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 10;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(0, 0, 0, 0.14);
-  border-radius: 6px;
-  color: var(--un-color-blue-darkest);
-  cursor: pointer;
-  font-family: Inter, Arial, sans-serif;
-  font-size: var(--un-font-size-xxs);
-  font-weight: var(--un-font-weight-bold);
-  padding: 6px 12px;
-  transition: background 0.15s;
-  &:hover {
+  .exc_container {
     background: #fff;
+    border-radius: 16px;
+    padding: 28px 24px 20px;
+    margin: 0 auto;
+    max-width: 1100px;
+
+    /* Source margin */
+    .cdde_source {
+      margin-top: 14px;
+    }
   }
-}
 
-/* Cells */
-#app-root-2026-cdde .app .exc_cell {
-  cursor: pointer;
-}
+  /* SVG chart wrap */
 
-#app-root-2026-cdde .app .exc_cell rect {
-  transition: opacity 0.15s;
-}
+  .exc_chart_wrap {
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+  }
 
-#app-root-2026-cdde .app .exc_cell:hover rect {
-  opacity: 0.82;
-}
+  .exc_svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 
-#app-root-2026-cdde .app .exc_cell--country {
-  cursor: default;
-}
+  /* Back button — overlaid top-left of chart */
 
-#app-root-2026-cdde .app .exc_cell_name {
-  fill: #fff;
-  font-size: 12px;
-  font-weight: var(--un-font-weight-bold);
-  font-family: Inter, Arial, sans-serif;
-  pointer-events: none;
-}
+  .exc_back_btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(0, 0, 0, 0.14);
+    border-radius: 6px;
+    color: var(--un-color-blue-darkest);
+    cursor: pointer;
+    font-family: Inter, Arial, sans-serif;
+    font-size: var(--un-font-size-xxs);
+    font-weight: var(--un-font-weight-bold);
+    padding: 6px 12px;
+    transition: background 0.15s;
+    &:hover {
+      background: #fff;
+    }
+  }
 
-#app-root-2026-cdde .app .exc_cell_value {
-  fill: #fff;
-  font-size: 11px;
-  font-weight: var(--un-font-weight-normal);
-  font-family: Inter, Arial, sans-serif;
-  pointer-events: none;
-}
+  /* Cells */
 
-#app-root-2026-cdde .app .exc_region_label {
-  fill: #fff;
-  font-size: 20px;
-  font-weight: var(--un-font-weight-boldest);
-  font-family: Inter, Arial, sans-serif;
-  pointer-events: none;
-}
+  .exc_cell {
+    cursor: pointer;
 
-/* Drill-mode footnote */
-#app-root-2026-cdde .app .exc_drill_note {
-  font-size: var(--un-font-size-xxs);
-  color: var(--un-color-grey-text);
-  margin: 10px 0 0;
-  line-height: var(--un-line-height-normal);
-}
+    rect {
+      transition: opacity 0.15s;
+    }
 
-/* Tooltip */
-#app-root-2026-cdde .app .exc_tt_name {
-  font-size: var(--un-font-size-xs);
-  font-weight: var(--un-font-weight-boldest);
-  color: var(--un-color-blue-darkest);
-  margin-bottom: 2px;
-  white-space: nowrap;
-}
+    &:hover rect {
+      opacity: 0.82;
+    }
+  }
 
-#app-root-2026-cdde .app .exc_tt_region {
-  font-size: var(--un-font-size-xxs);
-  color: var(--un-color-grey-text);
-  margin-bottom: 4px;
-  white-space: nowrap;
-}
+  .exc_cell--country {
+    cursor: default;
+  }
 
-#app-root-2026-cdde .app .exc_tt_val {
-  font-size: var(--un-font-size-xxs);
-  font-weight: var(--un-font-weight-bold);
-  color: var(--un-color-blue-darkest);
-  font-variant-numeric: tabular-nums;
-}
+  .exc_cell_name {
+    fill: #fff;
+    font-size: 12px;
+    font-weight: var(--un-font-weight-bold);
+    font-family: Inter, Arial, sans-serif;
+    pointer-events: none;
+  }
 
-/* Source margin */
-#app-root-2026-cdde .app .exc_container .cdde_source {
-  margin-top: 14px;
-}
+  .exc_cell_value {
+    fill: #fff;
+    font-size: 11px;
+    font-weight: var(--un-font-weight-normal);
+    font-family: Inter, Arial, sans-serif;
+    pointer-events: none;
+  }
 
-/* Responsive */
-@media (max-width: 600px) {
-  #app-root-2026-cdde .app .exc_container .cdde_header_title--lg {
-    font-size: var(--un-font-size-xl);
+  .exc_region_label {
+    fill: #fff;
+    font-size: 20px;
+    font-weight: var(--un-font-weight-boldest);
+    font-family: Inter, Arial, sans-serif;
+    pointer-events: none;
+  }
+
+  /* Drill-mode footnote */
+
+  .exc_drill_note {
+    font-size: var(--un-font-size-xxs);
+    color: var(--un-color-grey-text);
+    margin: 10px 0 0;
+    line-height: var(--un-line-height-normal);
+  }
+
+  /* Tooltip */
+
+  .exc_tt_name {
+    font-size: var(--un-font-size-xs);
+    font-weight: var(--un-font-weight-boldest);
+    color: var(--un-color-blue-darkest);
+    margin-bottom: 2px;
+    white-space: nowrap;
+  }
+
+  .exc_tt_region {
+    font-size: var(--un-font-size-xxs);
+    color: var(--un-color-grey-text);
+    margin-bottom: 4px;
+    white-space: nowrap;
+  }
+
+  .exc_tt_val {
+    font-size: var(--un-font-size-xxs);
+    font-weight: var(--un-font-weight-bold);
+    color: var(--un-color-blue-darkest);
+    font-variant-numeric: tabular-nums;
+  }
+
+  @media (max-width: 600px) {
+    .exc_container {
+      padding: 16px 8px 12px;
+    }
+
+    .exc_container .cdde_header_title--lg {
+      font-size: var(--un-font-size-xl);
+    }
   }
 }

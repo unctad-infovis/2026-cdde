@@ -5,6 +5,7 @@
   }
 
   /* ── Hero section ── */
+
   .bigpicture_hero {
     background: #0b1627;
     box-sizing: border-box;
@@ -35,6 +36,7 @@
   }
 
   /* ── Right column — definition ── */
+
   .bigpicture_def {
     border-left: 1px solid rgba(255, 255, 255, 0.12);
     padding-left: clamp(32px, 5vw, 64px);
@@ -97,6 +99,7 @@
     .bigpicture_hero--split {
       grid-template-columns: 1fr;
     }
+
     .bigpicture_def {
       border-left: none;
       border-top: 1px solid rgba(255, 255, 255, 0.12);
@@ -104,6 +107,7 @@
       padding-top: clamp(24px, 4vw, 40px);
       margin-top: clamp(24px, 4vw, 40px);
     }
+
   }
 
   .bigpicture_section_label {
@@ -170,6 +174,7 @@
   }
 
   /* ── Indicator cards ── */
+
   .bigpicture_cards {
     display: grid;
     gap: 16px;
@@ -229,11 +234,13 @@
     .bigpicture_cards {
       grid-template-columns: repeat(2, 1fr);
     }
+
   }
 
   @media (max-width: 500px) {
     .bigpicture_cards {
       grid-template-columns: 1fr;
     }
+
   }
 }

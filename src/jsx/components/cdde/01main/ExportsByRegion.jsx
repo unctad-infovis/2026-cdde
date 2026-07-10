@@ -4,7 +4,7 @@ import CSVtoJSON from '../../../helpers/CsvToJson';
 import loadFile from '../../../helpers/LoadFile';
 import useIsVisible from '../../../helpers/UseIsVisible';
 import ChartHeader from '../shared/ChartHeader';
-import ChartSource from '../shared/ChartSource';
+import ChartMeta from '../shared/ChartMeta';
 import ChartTooltip from '../shared/ChartTooltip';
 
 import './ExportsByRegion.css';
@@ -33,6 +33,7 @@ const REGION_COLOR = {
   Oceania: 'red'
 };
 
+const H = 500;
 const MIN_SHARE = 0.013;
 const REDUCED_MOTION = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -65,20 +66,26 @@ function csvToHierarchy(rows) {
   }));
 }
 
-const W = 960;
-const H = 500;
-
 function fmt(v) {
   return `${d3.format(',.0f')(Math.round(v)).replace(/,/g, ' ')}`;
 }
 
-export default function ExportsByRegion() {
+export default function ExportsByRegion({ insight, note, source, subtitle: overviewSubtitle, title: overviewTitle }) {
   const [regions, setRegions] = useState(null);
   const [drill, setDrill] = useState(null);
   const [tooltip, setTooltip] = useState(null);
   const wrapRef = useRef(null);
   const [visRef, isVisible] = useIsVisible(0.15);
   const animated = isVisible || REDUCED_MOTION;
+  const [svgW, setSvgW] = useState(960);
+
+  useEffect(() => {
+    const el = wrapRef.current;
+    if (!el) return;
+    const ro = new ResizeObserver(([entry]) => setSvgW(entry.contentRect.width));
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
 
   useEffect(() => {
     loadFile('assets/data/cdde_exports_by_region.csv')
@@ -95,9 +102,9 @@ export default function ExportsByRegion() {
       .hierarchy({ name: 'World', children: regions })
       .sum(d => d.value || 0)
       .sort((a, b) => b.value - a.value);
-    d3.treemap().size([W, H]).paddingInner(2).paddingOuter(2).round(true)(root);
+    d3.treemap().size([svgW, H]).paddingInner(2).paddingOuter(2).round(true)(root);
     return { leaves: root.leaves(), regionNodes: root.children || [] };
-  }, [regions]);
+  }, [regions, svgW]);
 
   // Drilldown treemap — countries as leaves, with minimum floor
   const drillView = useMemo(() => {
@@ -117,7 +124,7 @@ export default function ExportsByRegion() {
       .hierarchy(drillData)
       .sum(d => d.displayValue || 0)
       .sort((a, b) => b.data.value - a.data.value);
-    d3.treemap().size([W, H]).paddingInner(2).paddingOuter(0).round(true)(root);
+    d3.treemap().size([svgW, H]).paddingInner(2).paddingOuter(0).round(true)(root);
 
     return {
       nodes: root.leaves(),
@@ -127,7 +134,7 @@ export default function ExportsByRegion() {
       colorKey: region.color_key,
       total
     };
-  }, [drill, regions]);
+  }, [drill, regions, svgW]);
 
   function handleCellClick(node) {
     setDrill({ regionName: node.parent?.data?.name, subregionName: node.data.name });
@@ -144,18 +151,14 @@ export default function ExportsByRegion() {
     setTooltip(null);
   }
 
-  const title = drill ? `${drill.subregionName} – Member States` : 'Where commodity exports concentrate';
-  const subtitle = drill ? `${drill.regionName} › ${drill.subregionName} (${drillView?.countryCount ?? '–'} countries)` : 'Commodity exports by sub-region, 2022–2024 average, millions of dollars';
+  const title = drill ? `${drill.subregionName} – Member States` : overviewTitle;
+  const subtitle = drill ? `${drill.regionName} › ${drill.subregionName} (${drillView?.countryCount ?? '–'} countries)` : overviewSubtitle;
 
   return (
     <div className="exc_container cdde_reveal" ref={visRef}>
       <ChartHeader title={title} subtitle={subtitle} large />
 
-      {!drill && (
-        <p className="cdde_insight">
-          Global commodity exports are heavily concentrated in a few regions, with <strong className="cdde_insight_bold">Asia and Europe dominating the landscape</strong>.
-        </p>
-      )}
+      {!drill && insight && <p className="cdde_insight">{insight}</p>}
 
       <div className="exc_chart_wrap" ref={wrapRef}>
         {drill && (
@@ -164,7 +167,7 @@ export default function ExportsByRegion() {
           </button>
         )}
 
-        <svg viewBox={`0 0 ${W} ${H}`} className="exc_svg" aria-label={drill ? `Treemap of ${drill.subregionName} countries` : 'Treemap of commodity exports by sub-region'} onMouseLeave={handleMouseLeave}>
+        <svg viewBox={`0 0 ${svgW} ${H}`} className="exc_svg" aria-label={drill ? `Treemap of ${drill.subregionName} countries` : 'Treemap of commodity exports by sub-region'} onMouseLeave={handleMouseLeave}>
           {drill && drillView && (
             <defs>
               {drillView.nodes.map((node, i) => (
@@ -245,7 +248,7 @@ export default function ExportsByRegion() {
 
       {drill && <p className="exc_drill_note">Tile size uses a minimum share of the sub-region total so every member economy is visible; dollar amounts are actual commodity exports (2022–2024 average $M). * indicates no reported value in the source data for this period.</p>}
 
-      <ChartSource>UN Trade and Development (UNCTAD) secretariat calculations, based on UNCTADstat (2025). Values in current millions of dollars, 2022–2024 average.</ChartSource>
+      <ChartMeta source={source} note={note} />
     </div>
   );
 }

@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import CircleFlag from '../../general/CircleFlag';
+import { DEVELOPED } from '../shared/cdde-constants';
 
 import './CountryRankings.css';
-
-const DEVELOPED = new Set(['AUS', 'AUT', 'BEL', 'CAN', 'CHE', 'CZE', 'DEU', 'DNK', 'ESP', 'EST', 'FIN', 'FRA', 'GBR', 'GRC', 'HUN', 'IRL', 'ISL', 'ISR', 'ITA', 'JPN', 'KOR', 'LTU', 'LUX', 'LVA', 'NLD', 'NOR', 'NZL', 'POL', 'PRT', 'SVK', 'SVN', 'SWE', 'USA']);
 
 const RANK_OPTIONS = [
   { key: 'export_dependence', label: 'Commodity export dependence (%)', colHeader: 'COMMODITY DEPENDENCE', fmt: v => `${Number(v).toFixed(1)}%` },

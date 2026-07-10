@@ -1,5 +1,8 @@
+import { useEffect, useState } from 'react';
+import loadFile from '../../../helpers/LoadFile';
 import CircleFlag from '../../general/CircleFlag';
 import DependenceOverTime from './DependenceOverTime';
+import ExportsOverTime from './ExportsOverTime';
 import ImportDependencies from './ImportDependencies';
 import LeadingExports from './LeadingExports';
 import MacroContext from './MacroContext';
@@ -8,18 +11,18 @@ import TopMarkets from './TopMarkets';
 
 import './CountryProfile.css';
 
-const GROUP_LABELS = {
-  agri: 'Agricultural',
-  energy: 'Energy',
-  mining: 'Mining',
-  'non-dependent': 'Non-commodity'
-};
-
 const GROUP_COLORS = {
   agri: '#72bf44',
-  energy: '#009edb',
+  energy: '#a05fb4',
   mining: '#fbaf17',
   'non-dependent': '#9e9e9e'
+};
+
+const GROUP_TEXT_COLORS = {
+  agri: 'var(--un-color-green-text)',
+  energy: 'var(--un-color-purple-text)',
+  mining: 'var(--un-color-yellow-dark)',
+  'non-dependent': 'var(--un-color-grey-text)'
 };
 
 const GROUP_INSIGHT = {
@@ -35,41 +38,38 @@ function depColor(pct) {
   return '#009edb';
 }
 
-function hhiLabel(hhi) {
-  if (hhi < 0.1) return 'Low';
-  if (hhi < 0.25) return 'Moderate';
-  return 'High';
-}
+export default function CountryProfile({ country, content = {} }) {
+  const { iso3, iso2, name, region, export_dependence: pct, dominant_group, agri_pct, energy_pct, mining_pct } = country;
 
-export default function CountryProfile({ country }) {
-  const { iso3, iso2, name, region, export_dependence: pct, dominant_group, merchandise_exports, hhi, gdp_per_capita, population } = country;
+  const categories = [
+    { key: 'agri', label: 'Agriculture', val: agri_pct != null ? +agri_pct : 0 },
+    { key: 'energy', label: 'Energy', val: energy_pct != null ? +energy_pct : 0 },
+    { key: 'mining', label: 'Mining & metals', val: mining_pct != null ? +mining_pct : 0 }
+  ].sort((a, b) => b.val - a.val);
 
+  const [stats, setStats] = useState(null);
+  useEffect(() => {
+    loadFile('assets/data/cdde_profile_stats.json')
+      .then(r => r?.json())
+      .then(d => {
+        if (d) setStats(d);
+      });
+  }, []);
+
+  const countryStats = stats?.[iso3] ?? null;
   const safePct = Number.isFinite(pct) ? pct : null;
 
-  const groupColor = GROUP_COLORS[dominant_group] || '#9e9e9e';
-  const groupLabel = GROUP_LABELS[dominant_group] || dominant_group;
+  const groupColor = GROUP_TEXT_COLORS[dominant_group] || 'var(--un-color-grey-text)';
   const insightDesc = GROUP_INSIGHT[dominant_group] || 'commodity exports';
-  const aboveBelow = safePct != null ? (safePct > 60 ? 'Above' : 'Below') : null;
 
   return (
     <div className="cp_panel">
       {/* Country header */}
       <div className="cp_header_card">
-        <div className="cp_header_left">
-          <CircleFlag countryCode={iso2} height={56} width={56} />
-          <div className="cp_header_info">
-            <h2 className="cp_country_name">{name}</h2>
-            <p className="cp_country_meta">
-              {region} · ISO {iso3} · Population {population}
-            </p>
-          </div>
-        </div>
-        <div className="cp_dep_block">
-          <span className="cp_dep_eyebrow">COMMODITY EXPORT DEPENDENCE</span>
-          <span className="cp_dep_pct" style={{ color: safePct != null ? depColor(safePct) : '#9e9e9e' }}>
-            {safePct != null ? `${safePct.toFixed(1)}%` : '–'}
-          </span>
-          {aboveBelow && <span className="cp_dep_note">{aboveBelow} the 60% threshold · 2022–2024</span>}
+        <CircleFlag countryCode={iso2} height={56} width={56} />
+        <div className="cp_header_info">
+          <h2 className="cp_country_name">{name}</h2>
+          <p className="cp_country_meta">{region}</p>
         </div>
       </div>
 
@@ -82,45 +82,53 @@ export default function CountryProfile({ country }) {
       {/* Key stats row */}
       <div className="cp_stats_row">
         <div className="cp_stat">
-          <span className="cp_stat_label">MERCHANDISE EXPORTS</span>
-          <span className="cp_stat_value">{merchandise_exports}</span>
-          <span className="cp_stat_note">2022–2024 avg</span>
-        </div>
-        <div className="cp_stat">
-          <span className="cp_stat_label">DOMINANT GROUP</span>
-          <span className="cp_stat_value" style={{ color: groupColor }}>
-            {groupLabel}
+          <span className="cp_stat_value" style={{ color: safePct != null ? depColor(safePct) : 'var(--un-color-blue-darkest)' }}>
+            {countryStats?.commodity_dependence != null ? `${countryStats.commodity_dependence}%` : '–'}
           </span>
-          <span className="cp_stat_note">SITC classification</span>
+          <span className="cp_stat_label">Commodity dependence</span>
+          <div className="cp_stat_cats">
+            {categories.map(cat => (
+              <div key={cat.key} className={`cp_stat_cat_row${dominant_group === cat.key ? ' cp_stat_cat_row--dominant' : ''}`}>
+                <span className="cp_stat_cat_dot" style={{ background: GROUP_COLORS[cat.key] }} />
+                <span className="cp_stat_cat_label">{cat.label}</span>
+                <span className="cp_stat_cat_val">{cat.val}%</span>
+              </div>
+            ))}
+          </div>
         </div>
         <div className="cp_stat">
-          <span className="cp_stat_label">HHI CONCENTRATION</span>
-          <span className="cp_stat_value cp_stat_value--dark">{hhi != null ? Number(hhi).toFixed(2) : '–'}</span>
-          <span className="cp_stat_note">{hhi != null ? hhiLabel(hhi) : ''}</span>
+          <span className="cp_stat_value">{countryStats?.leading_market != null ? `${countryStats.leading_market}%` : '–'}</span>
+          <span className="cp_stat_label">Leading destination markets</span>
+          <span className="cp_stat_note">Share of top 3 export destination countries</span>
         </div>
         <div className="cp_stat">
-          <span className="cp_stat_label">GDP PER CAPITA</span>
-          <span className="cp_stat_value cp_stat_value--dark">{gdp_per_capita}</span>
-          <span className="cp_stat_note">Constant 2015 dollars</span>
+          <span className="cp_stat_value">{countryStats?.leading_commodity != null ? `${countryStats.leading_commodity}%` : '–'}</span>
+          <span className="cp_stat_label">Leading commodities</span>
+          <span className="cp_stat_note">Share of top 3 commodities</span>
         </div>
       </div>
 
-      {/* Chart row 1 */}
+      {/* Exports section */}
+      <h3 className="cp_section_head cp_section_head--sep">{content.exportsHeading ?? 'Exports'}</h3>
+
+      <DependenceOverTime iso3={iso3} currentPct={safePct} dominantGroup={dominant_group} {...content.dependenceOverTime} />
+      <ExportsOverTime iso3={iso3} dominantGroup={dominant_group} {...content.exportsOverTime} />
+
       <div className="cp_chart_row">
-        <DependenceOverTime iso3={iso3} currentPct={safePct} dominantGroup={dominant_group} />
-        <LeadingExports iso3={iso3} dominantGroup={dominant_group} />
+        <LeadingExports iso3={iso3} dominantGroup={dominant_group} {...content.leadingExports} />
+        <TopMarkets iso3={iso3} {...content.topMarkets} />
       </div>
 
-      {/* Chart row 2 */}
+      {/* Imports section */}
+      <h3 className="cp_section_head cp_section_head--sep">{content.importsHeading ?? 'Imports'}</h3>
+
       <div className="cp_chart_row">
-        <TopMarkets iso3={iso3} />
-        <ImportDependencies iso3={iso3} />
+        <ImportDependencies iso3={iso3} {...content.importDependencies} />
+        <MacroContext iso3={iso3} {...content.macroContext} />
       </div>
 
-      {/* Chart row 3 */}
       <div className="cp_chart_row">
-        <MacroContext iso3={iso3} hhi={hhi} />
-        <SocialContext iso3={iso3} />
+        <SocialContext iso3={iso3} {...content.socialContext} />
       </div>
     </div>
   );

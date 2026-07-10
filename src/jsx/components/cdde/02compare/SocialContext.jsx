@@ -23,7 +23,7 @@ function hdiMarkerPct(hdi) {
   return Math.max(0, Math.min(100, ((hdi - 0.2) / 0.8) * 100));
 }
 
-export default function SocialContext({ iso3 }) {
+export default function SocialContext({ iso3, title, subtitle, description }) {
   const [allData, setAllData] = useState(null);
 
   useEffect(() => {
@@ -38,7 +38,7 @@ export default function SocialContext({ iso3 }) {
 
   return (
     <div className="cdde_card">
-      <ChartHeader title="Social context" subtitle="Human development and labour market indicators" />
+      <ChartHeader title={title} subtitle={subtitle} description={description} />
 
       <div className="soc_body">
         {!allData && <div className="cdde_loading" style={{ height: 200 }} />}

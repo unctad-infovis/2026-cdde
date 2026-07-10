@@ -27,7 +27,7 @@ export default function BigPicture({ cards = [], def_attribution, def_badge, def
             </div>
             <h3 className="bigpicture_def_title">{def_title}</h3>
             <p className="bigpicture_def_statement">
-              A country is commodity-dependent when more than <span className="bigpicture_def_badge">{def_badge}</span> of its merchandise export value comes from commodities.
+              UNCTAD defines a country as commodity&#8209;dependent when more than <span className="bigpicture_def_badge">{def_badge}</span> of its merchandise export value is derived from commodities.
             </p>
             {def_attribution && <p className="bigpicture_def_attribution">{def_attribution}</p>}
           </div>

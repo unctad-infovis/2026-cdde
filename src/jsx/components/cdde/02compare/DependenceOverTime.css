@@ -1,52 +1,92 @@
-#app-root-2026-cdde .app .dot_chart_wrap {
-  flex: 1;
-  margin-top: 8px;
-}
+#app-root-2026-cdde .app {
+  .dot_chart_wrap {
+    flex: 1;
+    margin-top: 8px;
+    position: relative;
+  }
 
-#app-root-2026-cdde .app .dot_svg {
-  width: 100%;
-  height: auto;
-  display: block;
-  overflow: visible;
-}
+  .dot_svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: visible;
+  }
 
-#app-root-2026-cdde .app .dot_grid {
-  stroke: var(--un-color-grey-lighest);
-  stroke-width: 1px;
-}
+  .dot_grid {
+    stroke: var(--un-color-grey-lighest);
+    stroke-width: 1px;
+  }
 
-#app-root-2026-cdde .app .dot_tick_label {
-  font-size: 12px;
-  fill: var(--un-color-grey-text);
-  font-family: Inter, Arial, sans-serif;
-}
+  .dot_tick_label {
+    font-size: var(--un-font-size-xxxs);
+    fill: var(--un-color-grey-text);
+    font-family: Inter, Arial, sans-serif;
+  }
 
-#app-root-2026-cdde .app .dot_threshold {
-  stroke: var(--un-color-grey-light);
-  stroke-width: 1px;
-  stroke-dasharray: 4 3;
-}
+  .dot_threshold {
+    stroke: var(--un-color-yellow);
+    stroke-width: 1.5px;
+    stroke-dasharray: 4 3;
+  }
 
-#app-root-2026-cdde .app .dot_threshold_label {
-  font-size: 9px;
-  fill: var(--un-color-grey-text);
-  font-family: Inter, Arial, sans-serif;
-  dominant-baseline: middle;
-}
+  .dot_pill_label {
+    font-size: 9px;
+    font-weight: 700;
+    fill: #fff;
+    font-family: Inter, Arial, sans-serif;
+  }
 
-#app-root-2026-cdde .app .dot_axis {
-  stroke: var(--un-color-grey-light);
-  stroke-width: 1px;
-}
+  .dot_axis {
+    stroke: var(--un-color-grey-light);
+    stroke-width: 1px;
+  }
 
-#app-root-2026-cdde .app .dot_tick {
-  stroke: var(--un-color-grey-light);
-  stroke-width: 1px;
-}
+  .dot_tick {
+    stroke: var(--un-color-grey-light);
+    stroke-width: 1px;
+  }
 
-#app-root-2026-cdde .app .dot_callout_label {
-  font-size: 10px;
-  font-weight: 700;
-  fill: #fff;
-  font-family: Inter, Arial, sans-serif;
+  .dot_callout_label {
+    font-size: 10px;
+    font-weight: 700;
+    fill: #fff;
+    font-family: Inter, Arial, sans-serif;
+  }
+
+  .dot_cursor {
+    stroke: var(--un-color-grey-dark);
+    stroke-width: 1px;
+    stroke-dasharray: 3 2;
+    pointer-events: none;
+  }
+
+  .dot_tooltip {
+    position: absolute;
+    pointer-events: none;
+    background: #fff;
+    border: 1px solid var(--un-color-grey-light);
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    padding: 8px 12px;
+    transform: translate(12px, -50%);
+    z-index: 300;
+    white-space: nowrap;
+  }
+
+  .dot_tooltip--flip {
+    transform: translate(calc(-100% - 12px), -50%);
+  }
+
+  .dot_tt_year {
+    font-size: var(--un-font-size-xxs);
+    font-weight: var(--un-font-weight-boldest);
+    color: var(--un-color-blue-darkest);
+  }
+
+  .dot_tt_val {
+    font-size: var(--un-font-size-xs);
+    font-weight: var(--un-font-weight-boldest);
+    color: var(--un-color-blue);
+    margin-top: 2px;
+  }
 }

@@ -1,60 +1,61 @@
-#app-root-2026-cdde .app .db_svg {
-  width: 100%;
-  height: auto;
-  display: block;
-  overflow: visible;
-}
+#app-root-2026-cdde .app {
+  .db_svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: visible;
+  }
 
-#app-root-2026-cdde .app .db_axis_label {
-  font-size: var(--un-font-size-xxxs);
-  fill: var(--un-color-grey-text);
-  font-family: Inter, Arial, sans-serif;
-}
+  .db_axis_label {
+    font-size: var(--un-font-size-xxxs);
+    fill: var(--un-color-grey-text);
+    font-family: Inter, Arial, sans-serif;
+  }
 
-#app-root-2026-cdde .app .db_ref_badge {
-  position: relative;
-  background: var(--un-color-yellow);
-  color: #fff;
-  font-size: var(--un-font-size-xxxs);
-  font-weight: var(--un-font-weight-bold);
-  padding: 2px 8px;
-  border-radius: 4px;
-  white-space: nowrap;
-  pointer-events: none;
-  transform: translateX(-50%);
-  display: inline-block;
-}
+  .db_ref_badge {
+    position: relative;
+    background: var(--un-color-yellow);
+    color: #fff;
+    font-size: var(--un-font-size-xxxs);
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    pointer-events: none;
+    transform: translateX(-50%);
+    display: inline-block;
 
-#app-root-2026-cdde .app .db_ref_badge::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 5px solid var(--un-color-yellow);
-}
+    &::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid var(--un-color-yellow);
+    }
+  }
 
-#app-root-2026-cdde .app .db_ref_line {
-  stroke: var(--un-color-grey-light);
-  stroke-width: 1px;
-  stroke-dasharray: 3 3;
-}
+  .db_ref_line {
+    stroke: var(--un-color-grey-light);
+    stroke-width: 1px;
+    stroke-dasharray: 3 3;
+  }
 
-#app-root-2026-cdde .app .db_track {
-  stroke: var(--un-color-grey-lighest);
-  stroke-width: 1px;
-}
+  .db_track {
+    stroke: var(--un-color-grey-lighest);
+    stroke-width: 1px;
+  }
 
-#app-root-2026-cdde .app .db_row_name {
-  font-size: var(--un-font-size-xxs);
-  fill: var(--un-color-blue-darkest);
-  font-family: Inter, Arial, sans-serif;
-}
+  .db_row_name {
+    font-size: var(--un-font-size-xxs);
+    fill: var(--un-color-blue-darkest);
+    font-family: Inter, Arial, sans-serif;
+  }
 
-#app-root-2026-cdde .app .db_badge_label {
-  font-size: var(--un-font-size-xxxs);
-  font-weight: 700;
-  font-family: Inter, Arial, sans-serif;
+  .db_badge_label {
+    font-size: var(--un-font-size-xxxs);
+    font-weight: 700;
+    font-family: Inter, Arial, sans-serif;
+  }
 }

@@ -14,7 +14,7 @@ const SLOTS = [
 
 const DNA_COLORS = {
   agri: '#72bf44',
-  energy: '#009edb',
+  energy: '#a05fb4',
   mining: '#fbaf17',
   other: '#cccccc'
 };
@@ -84,7 +84,7 @@ function parseNum(v) {
   );
 }
 
-export default function CompareView({ compareList, countries }) {
+export default function CompareView({ compareList, countries, dnaTitle, dnaDescription }) {
   const [groupData, setGroupData] = useState(null);
 
   useEffect(() => {
@@ -130,8 +130,8 @@ export default function CompareView({ compareList, countries }) {
       <div className="cv_panel">
         <div className="cv_dna_top">
           <div className="cv_dna_title_col">
-            <h3 className="cv_panel_title">Commodity DNA – what each economy exports</h3>
-            <p className="cv_panel_desc">Share of agricultural, energy and mining products in each country's commodity export basket. Bigger segment = greater dependence on that group.</p>
+            <h3 className="cv_panel_title">{dnaTitle}</h3>
+            {dnaDescription && <p className="cdde_insight">{dnaDescription}</p>}
           </div>
           <div className="cv_dna_legend">
             {[
