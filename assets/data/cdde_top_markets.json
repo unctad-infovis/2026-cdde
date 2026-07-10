@@ -2,869 +2,2675 @@
   "AFG": [
     {
       "label": "Pakistan",
-      "pct": 48
+      "pct": 39.1
     },
     {
       "label": "India",
-      "pct": 18
+      "pct": 38.5
     },
     {
       "label": "United Arab Emirates",
-      "pct": 8
+      "pct": 3.4
+    }
+  ],
+  "ALB": [
+    {
+      "label": "EU27",
+      "pct": 62.6
+    },
+    {
+      "label": "China",
+      "pct": 12.0
+    },
+    {
+      "label": "Serbia",
+      "pct": 5.0
     }
   ],
   "DZA": [
     {
-      "label": "Italy",
-      "pct": 28
+      "label": "EU27",
+      "pct": 63.6
     },
     {
-      "label": "France",
-      "pct": 14
+      "label": "Turkiye",
+      "pct": 6.1
     },
     {
-      "label": "Spain",
-      "pct": 11
+      "label": "United States",
+      "pct": 5.1
+    }
+  ],
+  "AND": [
+    {
+      "label": "EU27",
+      "pct": 66.5
+    },
+    {
+      "label": "Nigeria",
+      "pct": 16.0
+    },
+    {
+      "label": "El Salvador",
+      "pct": 7.4
     }
   ],
   "AGO": [
     {
       "label": "China",
-      "pct": 62
+      "pct": 46.6
+    },
+    {
+      "label": "EU27",
+      "pct": 22.3
     },
     {
       "label": "India",
-      "pct": 12
+      "pct": 9.3
+    }
+  ],
+  "ATG": [
+    {
+      "label": "Suriname",
+      "pct": 53.9
     },
     {
-      "label": "Spain",
-      "pct": 8
+      "label": "Australia",
+      "pct": 7.9
+    },
+    {
+      "label": "Dominica",
+      "pct": 7.0
     }
   ],
   "ARG": [
     {
-      "label": "United States",
-      "pct": 23
+      "label": "EU27",
+      "pct": 11.6
     },
     {
       "label": "China",
-      "pct": 12
+      "pct": 11.1
     },
     {
-      "label": "European Union",
-      "pct": 8
+      "label": "Brazil",
+      "pct": 9.3
+    }
+  ],
+  "ARM": [
+    {
+      "label": "United Arab Emirates",
+      "pct": 41.6
+    },
+    {
+      "label": "Russian Federation",
+      "pct": 26.1
+    },
+    {
+      "label": "China",
+      "pct": 11.5
     }
   ],
   "AUS": [
     {
       "label": "China",
-      "pct": 34
+      "pct": 40.6
     },
     {
       "label": "Japan",
-      "pct": 18
+      "pct": 18.5
     },
     {
-      "label": "South Korea",
-      "pct": 10
+      "label": "Republic of Korea",
+      "pct": 9.5
+    }
+  ],
+  "AUT": [
+    {
+      "label": "EU27",
+      "pct": 79.5
+    },
+    {
+      "label": "Switzerland",
+      "pct": 5.9
+    },
+    {
+      "label": "United Kingdom",
+      "pct": 3.1
     }
   ],
   "AZE": [
     {
-      "label": "Italy",
-      "pct": 32
+      "label": "EU27",
+      "pct": 73.0
     },
     {
-      "label": "Turkey",
-      "pct": 18
+      "label": "Turkiye",
+      "pct": 8.8
     },
     {
-      "label": "Israel",
-      "pct": 9
+      "label": "Russian Federation",
+      "pct": 2.7
+    }
+  ],
+  "BHS": [
+    {
+      "label": "United States",
+      "pct": 48.0
+    },
+    {
+      "label": "Zimbabwe",
+      "pct": 24.1
+    },
+    {
+      "label": "Honduras",
+      "pct": 12.8
+    }
+  ],
+  "BHR": [
+    {
+      "label": "EU27",
+      "pct": 13.3
+    },
+    {
+      "label": "Saudi Arabia",
+      "pct": 11.8
+    },
+    {
+      "label": "United Arab Emirates",
+      "pct": 11.7
+    }
+  ],
+  "BGD": [
+    {
+      "label": "India",
+      "pct": 30.1
+    },
+    {
+      "label": "EU27",
+      "pct": 16.7
+    },
+    {
+      "label": "China",
+      "pct": 6.4
+    }
+  ],
+  "BRB": [
+    {
+      "label": "United States",
+      "pct": 20.1
+    },
+    {
+      "label": "Jamaica",
+      "pct": 19.5
+    },
+    {
+      "label": "EU27",
+      "pct": 12.0
+    }
+  ],
+  "BLR": [
+    {
+      "label": "Russian Federation",
+      "pct": 64.1
+    },
+    {
+      "label": "EU27",
+      "pct": 11.5
+    },
+    {
+      "label": "China",
+      "pct": 7.4
+    }
+  ],
+  "BEL": [
+    {
+      "label": "EU27",
+      "pct": 70.1
+    },
+    {
+      "label": "United Kingdom",
+      "pct": 5.4
+    },
+    {
+      "label": "Nigeria",
+      "pct": 3.9
+    }
+  ],
+  "BLZ": [
+    {
+      "label": "EU27",
+      "pct": 24.0
+    },
+    {
+      "label": "United States",
+      "pct": 20.8
+    },
+    {
+      "label": "United Kingdom",
+      "pct": 19.7
+    }
+  ],
+  "BEN": [
+    {
+      "label": "Bangladesh",
+      "pct": 30.5
+    },
+    {
+      "label": "United Arab Emirates",
+      "pct": 23.7
+    },
+    {
+      "label": "India",
+      "pct": 16.1
+    }
+  ],
+  "BTN": [
+    {
+      "label": "India",
+      "pct": 89.2
+    },
+    {
+      "label": "Bangladesh",
+      "pct": 9.3
+    },
+    {
+      "label": "Nepal",
+      "pct": 1.1
     }
   ],
   "BOL": [
     {
       "label": "Brazil",
-      "pct": 22
+      "pct": 14.1
     },
     {
-      "label": "Argentina",
-      "pct": 18
+      "label": "India",
+      "pct": 13.0
     },
     {
-      "label": "Colombia",
-      "pct": 12
+      "label": "China",
+      "pct": 11.0
+    }
+  ],
+  "BIH": [
+    {
+      "label": "EU27",
+      "pct": 57.2
+    },
+    {
+      "label": "Serbia",
+      "pct": 25.8
+    },
+    {
+      "label": "Montenegro",
+      "pct": 5.3
     }
   ],
   "BWA": [
     {
-      "label": "Belgium",
-      "pct": 38
+      "label": "United Arab Emirates",
+      "pct": 34.9
+    },
+    {
+      "label": "EU27",
+      "pct": 21.9
     },
     {
       "label": "India",
-      "pct": 24
-    },
-    {
-      "label": "South Africa",
-      "pct": 14
-    }
-  ],
-  "BFA": [
-    {
-      "label": "Switzerland",
-      "pct": 52
-    },
-    {
-      "label": "Singapore",
-      "pct": 18
-    },
-    {
-      "label": "Cote d Ivoire",
-      "pct": 10
+      "pct": 13.6
     }
   ],
   "BRA": [
     {
       "label": "China",
-      "pct": 32
+      "pct": 37.0
+    },
+    {
+      "label": "EU27",
+      "pct": 15.5
     },
     {
       "label": "United States",
-      "pct": 14
+      "pct": 6.7
+    }
+  ],
+  "BRN": [
+    {
+      "label": "Australia",
+      "pct": 26.3
     },
     {
-      "label": "Argentina",
-      "pct": 7
+      "label": "Japan",
+      "pct": 20.1
+    },
+    {
+      "label": "Singapore",
+      "pct": 19.2
+    }
+  ],
+  "BGR": [
+    {
+      "label": "EU27",
+      "pct": 58.6
+    },
+    {
+      "label": "Turkiye",
+      "pct": 8.5
+    },
+    {
+      "label": "China",
+      "pct": 3.9
+    }
+  ],
+  "BFA": [
+    {
+      "label": "Switzerland",
+      "pct": 65.5
+    },
+    {
+      "label": "United Arab Emirates",
+      "pct": 13.8
+    },
+    {
+      "label": "EU27",
+      "pct": 3.2
+    }
+  ],
+  "BDI": [
+    {
+      "label": "United Arab Emirates",
+      "pct": 43.9
+    },
+    {
+      "label": "EU27",
+      "pct": 14.3
+    },
+    {
+      "label": "Dem. Rep. of the Congo",
+      "pct": 7.7
+    }
+  ],
+  "CPV": [
+    {
+      "label": "EU27",
+      "pct": 72.4
+    },
+    {
+      "label": "Togo",
+      "pct": 10.3
+    },
+    {
+      "label": "India",
+      "pct": 3.8
+    }
+  ],
+  "KHM": [
+    {
+      "label": "Viet Nam",
+      "pct": 55.3
+    },
+    {
+      "label": "China",
+      "pct": 11.4
+    },
+    {
+      "label": "Thailand",
+      "pct": 10.9
     }
   ],
   "CMR": [
     {
+      "label": "EU27",
+      "pct": 45.5
+    },
+    {
+      "label": "India",
+      "pct": 9.9
+    },
+    {
       "label": "China",
-      "pct": 28
+      "pct": 9.7
+    }
+  ],
+  "CAN": [
+    {
+      "label": "United States",
+      "pct": 72.8
     },
     {
-      "label": "France",
-      "pct": 18
+      "label": "China",
+      "pct": 5.7
     },
     {
-      "label": "Belgium",
-      "pct": 12
+      "label": "United Kingdom",
+      "pct": 4.4
     }
   ],
   "CAF": [
     {
+      "label": "United Arab Emirates",
+      "pct": 58.0
+    },
+    {
+      "label": "EU27",
+      "pct": 17.3
+    },
+    {
       "label": "China",
-      "pct": 34
-    },
-    {
-      "label": "Belgium",
-      "pct": 22
-    },
-    {
-      "label": "France",
-      "pct": 14
+      "pct": 11.4
     }
   ],
   "TCD": [
     {
+      "label": "EU27",
+      "pct": 42.4
+    },
+    {
+      "label": "United Arab Emirates",
+      "pct": 30.1
+    },
+    {
       "label": "China",
-      "pct": 52
-    },
-    {
-      "label": "United States",
-      "pct": 14
-    },
-    {
-      "label": "Netherlands",
-      "pct": 8
+      "pct": 17.2
     }
   ],
   "CHL": [
     {
       "label": "China",
-      "pct": 38
+      "pct": 42.0
     },
     {
       "label": "United States",
-      "pct": 14
+      "pct": 15.0
     },
     {
       "label": "Japan",
-      "pct": 8
+      "pct": 9.1
     }
   ],
-  "COD": [
+  "CHN": [
     {
-      "label": "China",
-      "pct": 46
+      "label": "EU27",
+      "pct": 11.7
     },
     {
-      "label": "South Korea",
-      "pct": 12
+      "label": "Japan",
+      "pct": 9.5
     },
     {
-      "label": "Belgium",
-      "pct": 8
-    }
-  ],
-  "COG": [
-    {
-      "label": "China",
-      "pct": 52
-    },
-    {
-      "label": "India",
-      "pct": 14
-    },
-    {
-      "label": "United States",
-      "pct": 8
-    }
-  ],
-  "CIV": [
-    {
-      "label": "Switzerland",
-      "pct": 24
-    },
-    {
-      "label": "Netherlands",
-      "pct": 18
-    },
-    {
-      "label": "Malaysia",
-      "pct": 10
+      "label": "Republic of Korea",
+      "pct": 7.3
     }
   ],
   "COL": [
     {
       "label": "United States",
-      "pct": 38
+      "pct": 31.4
     },
     {
-      "label": "China",
-      "pct": 12
+      "label": "EU27",
+      "pct": 15.8
     },
     {
       "label": "Panama",
-      "pct": 8
+      "pct": 11.5
+    }
+  ],
+  "COM": [
+    {
+      "label": "India",
+      "pct": 45.6
+    },
+    {
+      "label": "EU27",
+      "pct": 21.9
+    },
+    {
+      "label": "United States",
+      "pct": 8.4
+    }
+  ],
+  "COG": [
+    {
+      "label": "China",
+      "pct": 42.0
+    },
+    {
+      "label": "EU27",
+      "pct": 16.4
+    },
+    {
+      "label": "United Arab Emirates",
+      "pct": 13.0
+    }
+  ],
+  "CRI": [
+    {
+      "label": "United States",
+      "pct": 35.7
+    },
+    {
+      "label": "EU27",
+      "pct": 25.5
+    },
+    {
+      "label": "Guatemala",
+      "pct": 6.3
+    }
+  ],
+  "CIV": [
+    {
+      "label": "EU27",
+      "pct": 29.8
+    },
+    {
+      "label": "Switzerland",
+      "pct": 9.5
+    },
+    {
+      "label": "Mali",
+      "pct": 7.8
+    }
+  ],
+  "HRV": [
+    {
+      "label": "EU27",
+      "pct": 62.9
+    },
+    {
+      "label": "Bosnia and Herzegovina",
+      "pct": 17.0
+    },
+    {
+      "label": "Serbia",
+      "pct": 7.8
+    }
+  ],
+  "CUB": [
+    {
+      "label": "EU27",
+      "pct": 41.4
+    },
+    {
+      "label": "China",
+      "pct": 32.8
+    },
+    {
+      "label": "Canada",
+      "pct": 8.5
+    }
+  ],
+  "CYP": [
+    {
+      "label": "Libya",
+      "pct": 26.0
+    },
+    {
+      "label": "Lebanon",
+      "pct": 21.2
+    },
+    {
+      "label": "EU27",
+      "pct": 18.3
+    }
+  ],
+  "CZE": [
+    {
+      "label": "EU27",
+      "pct": 89.0
+    },
+    {
+      "label": "Japan",
+      "pct": 1.9
+    },
+    {
+      "label": "United Kingdom",
+      "pct": 1.3
+    }
+  ],
+  "PRK": [
+    {
+      "label": "China",
+      "pct": 82.7
+    },
+    {
+      "label": "Senegal",
+      "pct": 8.5
+    },
+    {
+      "label": "EU27",
+      "pct": 3.0
+    }
+  ],
+  "COD": [
+    {
+      "label": "China",
+      "pct": 68.0
+    },
+    {
+      "label": "United Arab Emirates",
+      "pct": 5.4
+    },
+    {
+      "label": "EU27",
+      "pct": 3.3
+    }
+  ],
+  "DNK": [
+    {
+      "label": "EU27",
+      "pct": 64.0
+    },
+    {
+      "label": "United Kingdom",
+      "pct": 7.0
+    },
+    {
+      "label": "Norway",
+      "pct": 5.2
+    }
+  ],
+  "DJI": [
+    {
+      "label": "Ethiopia",
+      "pct": 86.6
+    },
+    {
+      "label": "Saudi Arabia",
+      "pct": 2.2
+    },
+    {
+      "label": "Somalia",
+      "pct": 1.9
+    }
+  ],
+  "DMA": [
+    {
+      "label": "Antigua and Barbuda",
+      "pct": 21.3
+    },
+    {
+      "label": "EU27",
+      "pct": 18.6
+    },
+    {
+      "label": "Republic of Korea",
+      "pct": 11.9
+    }
+  ],
+  "DOM": [
+    {
+      "label": "United States",
+      "pct": 38.4
+    },
+    {
+      "label": "Switzerland",
+      "pct": 19.1
+    },
+    {
+      "label": "EU27",
+      "pct": 13.6
     }
   ],
   "ECU": [
     {
       "label": "United States",
-      "pct": 32
+      "pct": 24.3
     },
     {
       "label": "China",
-      "pct": 18
+      "pct": 17.8
     },
     {
-      "label": "Chile",
-      "pct": 8
+      "label": "Panama",
+      "pct": 16.3
+    }
+  ],
+  "EGY": [
+    {
+      "label": "EU27",
+      "pct": 29.7
+    },
+    {
+      "label": "Saudi Arabia",
+      "pct": 13.3
+    },
+    {
+      "label": "United Arab Emirates",
+      "pct": 6.8
+    }
+  ],
+  "SLV": [
+    {
+      "label": "Guatemala",
+      "pct": 24.9
+    },
+    {
+      "label": "United States",
+      "pct": 21.4
+    },
+    {
+      "label": "Honduras",
+      "pct": 12.4
+    }
+  ],
+  "GNQ": [
+    {
+      "label": "EU27",
+      "pct": 37.6
+    },
+    {
+      "label": "China",
+      "pct": 23.3
+    },
+    {
+      "label": "India",
+      "pct": 10.6
+    }
+  ],
+  "ERI": [
+    {
+      "label": "China",
+      "pct": 61.5
+    },
+    {
+      "label": "United Arab Emirates",
+      "pct": 15.1
+    },
+    {
+      "label": "Republic of Korea",
+      "pct": 12.0
+    }
+  ],
+  "EST": [
+    {
+      "label": "EU27",
+      "pct": 65.7
+    },
+    {
+      "label": "Russian Federation",
+      "pct": 9.1
+    },
+    {
+      "label": "United Kingdom",
+      "pct": 2.3
+    }
+  ],
+  "SWZ": [
+    {
+      "label": "South Africa",
+      "pct": 63.1
+    },
+    {
+      "label": "Dem. Rep. of the Congo",
+      "pct": 10.1
+    },
+    {
+      "label": "EU27",
+      "pct": 9.1
     }
   ],
   "ETH": [
     {
-      "label": "United States",
-      "pct": 22
+      "label": "EU27",
+      "pct": 20.5
     },
     {
-      "label": "China",
-      "pct": 18
+      "label": "United Arab Emirates",
+      "pct": 10.5
     },
     {
       "label": "Saudi Arabia",
-      "pct": 12
+      "pct": 9.7
+    }
+  ],
+  "FJI": [
+    {
+      "label": "United States",
+      "pct": 39.6
+    },
+    {
+      "label": "Australia",
+      "pct": 12.8
+    },
+    {
+      "label": "EU27",
+      "pct": 5.9
+    }
+  ],
+  "FIN": [
+    {
+      "label": "EU27",
+      "pct": 62.0
+    },
+    {
+      "label": "China",
+      "pct": 8.6
+    },
+    {
+      "label": "United States",
+      "pct": 6.9
+    }
+  ],
+  "FRA": [
+    {
+      "label": "EU27",
+      "pct": 63.3
+    },
+    {
+      "label": "United Kingdom",
+      "pct": 6.7
+    },
+    {
+      "label": "United States",
+      "pct": 6.0
     }
   ],
   "GAB": [
     {
       "label": "China",
-      "pct": 48
+      "pct": 37.2
     },
     {
-      "label": "Australia",
-      "pct": 18
+      "label": "EU27",
+      "pct": 20.8
     },
     {
-      "label": "South Korea",
-      "pct": 12
+      "label": "Indonesia",
+      "pct": 8.0
+    }
+  ],
+  "GMB": [
+    {
+      "label": "China",
+      "pct": 28.5
+    },
+    {
+      "label": "India",
+      "pct": 21.1
+    },
+    {
+      "label": "EU27",
+      "pct": 16.1
+    }
+  ],
+  "GEO": [
+    {
+      "label": "Russian Federation",
+      "pct": 20.6
+    },
+    {
+      "label": "EU27",
+      "pct": 19.7
+    },
+    {
+      "label": "China",
+      "pct": 16.7
+    }
+  ],
+  "DEU": [
+    {
+      "label": "EU27",
+      "pct": 69.0
+    },
+    {
+      "label": "Switzerland",
+      "pct": 7.1
+    },
+    {
+      "label": "United Kingdom",
+      "pct": 6.6
     }
   ],
   "GHA": [
     {
       "label": "Switzerland",
-      "pct": 28
+      "pct": 18.9
     },
     {
-      "label": "India",
-      "pct": 18
+      "label": "United Arab Emirates",
+      "pct": 16.3
     },
     {
-      "label": "China",
-      "pct": 12
+      "label": "EU27",
+      "pct": 14.1
+    }
+  ],
+  "GRC": [
+    {
+      "label": "EU27",
+      "pct": 51.9
+    },
+    {
+      "label": "Libya",
+      "pct": 4.8
+    },
+    {
+      "label": "Lebanon",
+      "pct": 4.4
+    }
+  ],
+  "GRD": [
+    {
+      "label": "United States",
+      "pct": 44.2
+    },
+    {
+      "label": "EU27",
+      "pct": 14.6
+    },
+    {
+      "label": "Dominica",
+      "pct": 7.6
+    }
+  ],
+  "GTM": [
+    {
+      "label": "United States",
+      "pct": 35.6
+    },
+    {
+      "label": "EU27",
+      "pct": 15.3
+    },
+    {
+      "label": "El Salvador",
+      "pct": 8.7
     }
   ],
   "GIN": [
     {
-      "label": "India",
-      "pct": 52
+      "label": "United Arab Emirates",
+      "pct": 32.7
     },
     {
       "label": "China",
-      "pct": 22
+      "pct": 29.9
     },
     {
-      "label": "France",
-      "pct": 8
+      "label": "India",
+      "pct": 17.9
     }
   ],
   "GNB": [
     {
+      "label": "Singapore",
+      "pct": 34.3
+    },
+    {
       "label": "India",
-      "pct": 64
+      "pct": 33.9
     },
     {
       "label": "China",
-      "pct": 14
-    },
-    {
-      "label": "Vietnam",
-      "pct": 8
+      "pct": 14.4
     }
   ],
   "GUY": [
     {
-      "label": "Canada",
-      "pct": 22
-    },
-    {
-      "label": "Trinidad and Tobago",
-      "pct": 18
+      "label": "EU27",
+      "pct": 43.0
     },
     {
       "label": "United States",
-      "pct": 16
+      "pct": 21.1
+    },
+    {
+      "label": "United Kingdom",
+      "pct": 7.5
+    }
+  ],
+  "HTI": [
+    {
+      "label": "United States",
+      "pct": 29.3
+    },
+    {
+      "label": "Canada",
+      "pct": 15.9
+    },
+    {
+      "label": "EU27",
+      "pct": 12.6
+    }
+  ],
+  "HND": [
+    {
+      "label": "United States",
+      "pct": 36.8
+    },
+    {
+      "label": "EU27",
+      "pct": 27.4
+    },
+    {
+      "label": "Guatemala",
+      "pct": 6.0
+    }
+  ],
+  "HUN": [
+    {
+      "label": "EU27",
+      "pct": 78.9
+    },
+    {
+      "label": "Serbia",
+      "pct": 5.6
+    },
+    {
+      "label": "Ukraine",
+      "pct": 3.6
+    }
+  ],
+  "ISL": [
+    {
+      "label": "EU27",
+      "pct": 68.9
+    },
+    {
+      "label": "United Kingdom",
+      "pct": 9.6
+    },
+    {
+      "label": "United States",
+      "pct": 7.0
+    }
+  ],
+  "IND": [
+    {
+      "label": "EU27",
+      "pct": 15.5
+    },
+    {
+      "label": "United States",
+      "pct": 11.8
+    },
+    {
+      "label": "United Arab Emirates",
+      "pct": 8.6
     }
   ],
   "IDN": [
     {
       "label": "China",
-      "pct": 22
+      "pct": 27.2
     },
     {
-      "label": "United States",
-      "pct": 12
+      "label": "India",
+      "pct": 11.9
     },
     {
       "label": "Japan",
-      "pct": 10
+      "pct": 9.9
+    }
+  ],
+  "IRN": [
+    {
+      "label": "Iraq",
+      "pct": 34.2
+    },
+    {
+      "label": "China",
+      "pct": 22.9
+    },
+    {
+      "label": "Turkiye",
+      "pct": 10.9
     }
   ],
   "IRQ": [
     {
-      "label": "India",
-      "pct": 28
+      "label": "China",
+      "pct": 29.3
     },
+    {
+      "label": "India",
+      "pct": 25.9
+    },
+    {
+      "label": "EU27",
+      "pct": 18.6
+    }
+  ],
+  "IRL": [
+    {
+      "label": "United Kingdom",
+      "pct": 38.2
+    },
+    {
+      "label": "EU27",
+      "pct": 34.4
+    },
+    {
+      "label": "United States",
+      "pct": 8.8
+    }
+  ],
+  "ISR": [
+    {
+      "label": "United States",
+      "pct": 44.2
+    },
+    {
+      "label": "EU27",
+      "pct": 22.3
+    },
+    {
+      "label": "India",
+      "pct": 5.8
+    }
+  ],
+  "ITA": [
+    {
+      "label": "EU27",
+      "pct": 58.0
+    },
+    {
+      "label": "United States",
+      "pct": 9.3
+    },
+    {
+      "label": "United Kingdom",
+      "pct": 5.3
+    }
+  ],
+  "JAM": [
+    {
+      "label": "United States",
+      "pct": 54.1
+    },
+    {
+      "label": "EU27",
+      "pct": 11.7
+    },
+    {
+      "label": "Russian Federation",
+      "pct": 6.4
+    }
+  ],
+  "JPN": [
     {
       "label": "China",
-      "pct": 24
+      "pct": 23.5
     },
     {
-      "label": "South Korea",
-      "pct": 14
+      "label": "Republic of Korea",
+      "pct": 14.4
+    },
+    {
+      "label": "Singapore",
+      "pct": 8.4
+    }
+  ],
+  "JOR": [
+    {
+      "label": "Saudi Arabia",
+      "pct": 20.7
+    },
+    {
+      "label": "India",
+      "pct": 18.7
+    },
+    {
+      "label": "EU27",
+      "pct": 7.7
     }
   ],
   "KAZ": [
     {
+      "label": "EU27",
+      "pct": 50.8
+    },
+    {
       "label": "China",
-      "pct": 18
+      "pct": 17.8
     },
     {
-      "label": "Italy",
-      "pct": 14
-    },
-    {
-      "label": "Netherlands",
-      "pct": 12
+      "label": "Turkiye",
+      "pct": 5.6
     }
   ],
   "KEN": [
     {
-      "label": "Uganda",
-      "pct": 12
-    },
-    {
-      "label": "United States",
-      "pct": 10
+      "label": "EU27",
+      "pct": 20.7
     },
     {
       "label": "Pakistan",
-      "pct": 8
+      "pct": 10.7
+    },
+    {
+      "label": "United Arab Emirates",
+      "pct": 10.4
+    }
+  ],
+  "KIR": [
+    {
+      "label": "Thailand",
+      "pct": 69.8
+    },
+    {
+      "label": "Philippines",
+      "pct": 13.6
+    },
+    {
+      "label": "Japan",
+      "pct": 6.3
     }
   ],
   "KWT": [
     {
-      "label": "Japan",
-      "pct": 22
-    },
-    {
-      "label": "South Korea",
-      "pct": 18
+      "label": "China",
+      "pct": 22.9
     },
     {
       "label": "India",
-      "pct": 16
+      "pct": 14.3
+    },
+    {
+      "label": "Republic of Korea",
+      "pct": 10.2
+    }
+  ],
+  "KGZ": [
+    {
+      "label": "Switzerland",
+      "pct": 24.5
+    },
+    {
+      "label": "China",
+      "pct": 16.3
+    },
+    {
+      "label": "Russian Federation",
+      "pct": 13.2
     }
   ],
   "LAO": [
     {
-      "label": "China",
-      "pct": 38
-    },
-    {
       "label": "Thailand",
-      "pct": 24
+      "pct": 33.4
     },
     {
-      "label": "Vietnam",
-      "pct": 14
+      "label": "China",
+      "pct": 31.6
+    },
+    {
+      "label": "Viet Nam",
+      "pct": 21.2
+    }
+  ],
+  "LVA": [
+    {
+      "label": "EU27",
+      "pct": 61.0
+    },
+    {
+      "label": "United Kingdom",
+      "pct": 8.1
+    },
+    {
+      "label": "Russian Federation",
+      "pct": 5.6
+    }
+  ],
+  "LBN": [
+    {
+      "label": "United Arab Emirates",
+      "pct": 25.8
+    },
+    {
+      "label": "EU27",
+      "pct": 16.4
+    },
+    {
+      "label": "Egypt",
+      "pct": 8.8
+    }
+  ],
+  "LSO": [
+    {
+      "label": "EU27",
+      "pct": 55.5
+    },
+    {
+      "label": "South Africa",
+      "pct": 23.3
+    },
+    {
+      "label": "United Arab Emirates",
+      "pct": 7.8
     }
   ],
   "LBR": [
     {
-      "label": "Poland",
-      "pct": 22
+      "label": "Switzerland",
+      "pct": 40.6
     },
     {
-      "label": "China",
-      "pct": 18
+      "label": "EU27",
+      "pct": 22.8
     },
     {
-      "label": "Germany",
-      "pct": 14
+      "label": "Lebanon",
+      "pct": 5.5
     }
   ],
   "LBY": [
     {
-      "label": "Italy",
-      "pct": 28
+      "label": "EU27",
+      "pct": 68.0
     },
     {
-      "label": "Spain",
-      "pct": 18
+      "label": "China",
+      "pct": 6.6
     },
     {
-      "label": "Germany",
-      "pct": 12
+      "label": "United Arab Emirates",
+      "pct": 6.0
+    }
+  ],
+  "LTU": [
+    {
+      "label": "EU27",
+      "pct": 65.5
+    },
+    {
+      "label": "Ukraine",
+      "pct": 5.2
+    },
+    {
+      "label": "United States",
+      "pct": 4.9
+    }
+  ],
+  "LUX": [
+    {
+      "label": "EU27",
+      "pct": 89.3
+    },
+    {
+      "label": "Switzerland",
+      "pct": 2.1
+    },
+    {
+      "label": "United States",
+      "pct": 1.8
+    }
+  ],
+  "MDG": [
+    {
+      "label": "EU27",
+      "pct": 25.7
+    },
+    {
+      "label": "China",
+      "pct": 14.4
+    },
+    {
+      "label": "Japan",
+      "pct": 12.3
+    }
+  ],
+  "MWI": [
+    {
+      "label": "EU27",
+      "pct": 27.1
+    },
+    {
+      "label": "United Republic of Tanzania",
+      "pct": 8.9
+    },
+    {
+      "label": "South Africa",
+      "pct": 6.3
+    }
+  ],
+  "MYS": [
+    {
+      "label": "China",
+      "pct": 13.9
+    },
+    {
+      "label": "Singapore",
+      "pct": 12.1
+    },
+    {
+      "label": "Japan",
+      "pct": 10.1
+    }
+  ],
+  "MDV": [
+    {
+      "label": "Thailand",
+      "pct": 36.1
+    },
+    {
+      "label": "EU27",
+      "pct": 15.8
+    },
+    {
+      "label": "United Kingdom",
+      "pct": 10.1
     }
   ],
   "MLI": [
     {
-      "label": "Switzerland",
-      "pct": 44
-    },
-    {
       "label": "United Arab Emirates",
-      "pct": 18
+      "pct": 48.3
     },
     {
-      "label": "Burkina Faso",
-      "pct": 10
+      "label": "Switzerland",
+      "pct": 16.8
+    },
+    {
+      "label": "South Africa",
+      "pct": 16.6
+    }
+  ],
+  "MLT": [
+    {
+      "label": "EU27",
+      "pct": 23.5
+    },
+    {
+      "label": "Nigeria",
+      "pct": 18.6
+    },
+    {
+      "label": "Japan",
+      "pct": 11.8
+    }
+  ],
+  "MHL": [
+    {
+      "label": "Thailand",
+      "pct": 22.7
+    },
+    {
+      "label": "United Republic of Tanzania",
+      "pct": 17.6
+    },
+    {
+      "label": "Ghana",
+      "pct": 12.7
     }
   ],
   "MRT": [
     {
       "label": "China",
-      "pct": 38
+      "pct": 25.1
     },
     {
-      "label": "Switzerland",
-      "pct": 22
+      "label": "Canada",
+      "pct": 17.1
     },
     {
-      "label": "Spain",
-      "pct": 12
+      "label": "EU27",
+      "pct": 15.6
+    }
+  ],
+  "MUS": [
+    {
+      "label": "EU27",
+      "pct": 37.9
+    },
+    {
+      "label": "United States",
+      "pct": 13.6
+    },
+    {
+      "label": "United Kingdom",
+      "pct": 10.7
+    }
+  ],
+  "MEX": [
+    {
+      "label": "United States",
+      "pct": 79.4
+    },
+    {
+      "label": "China",
+      "pct": 7.2
+    },
+    {
+      "label": "Japan",
+      "pct": 2.0
+    }
+  ],
+  "FSM": [
+    {
+      "label": "Thailand",
+      "pct": 62.1
+    },
+    {
+      "label": "China",
+      "pct": 18.1
+    },
+    {
+      "label": "Philippines",
+      "pct": 7.4
     }
   ],
   "MNG": [
     {
       "label": "China",
-      "pct": 82
+      "pct": 91.3
     },
     {
       "label": "Switzerland",
-      "pct": 8
+      "pct": 5.6
+    },
+    {
+      "label": "Republic of Korea",
+      "pct": 0.8
+    }
+  ],
+  "MNE": [
+    {
+      "label": "EU27",
+      "pct": 36.7
+    },
+    {
+      "label": "Serbia",
+      "pct": 23.3
+    },
+    {
+      "label": "Bosnia and Herzegovina",
+      "pct": 14.5
+    }
+  ],
+  "MAR": [
+    {
+      "label": "EU27",
+      "pct": 60.0
     },
     {
       "label": "United Kingdom",
-      "pct": 4
+      "pct": 6.5
+    },
+    {
+      "label": "United States",
+      "pct": 3.6
     }
   ],
   "MOZ": [
     {
       "label": "India",
-      "pct": 24
+      "pct": 19.0
     },
     {
-      "label": "Netherlands",
-      "pct": 18
+      "label": "EU27",
+      "pct": 18.1
     },
     {
-      "label": "South Africa",
-      "pct": 12
+      "label": "China",
+      "pct": 15.4
     }
   ],
   "MMR": [
     {
       "label": "China",
-      "pct": 32
+      "pct": 43.7
     },
     {
       "label": "Thailand",
-      "pct": 22
+      "pct": 28.1
     },
     {
       "label": "India",
-      "pct": 12
+      "pct": 9.5
     }
   ],
   "NAM": [
     {
-      "label": "Belgium",
-      "pct": 28
+      "label": "EU27",
+      "pct": 23.9
     },
     {
       "label": "South Africa",
-      "pct": 18
+      "pct": 22.1
     },
     {
       "label": "Botswana",
-      "pct": 12
+      "pct": 17.7
+    }
+  ],
+  "NRU": [
+    {
+      "label": "Thailand",
+      "pct": 71.3
+    },
+    {
+      "label": "Philippines",
+      "pct": 12.6
+    },
+    {
+      "label": "Republic of Korea",
+      "pct": 8.7
+    }
+  ],
+  "NPL": [
+    {
+      "label": "India",
+      "pct": 89.1
+    },
+    {
+      "label": "United States",
+      "pct": 4.2
+    },
+    {
+      "label": "EU27",
+      "pct": 0.9
+    }
+  ],
+  "NLD": [
+    {
+      "label": "EU27",
+      "pct": 73.0
+    },
+    {
+      "label": "United Kingdom",
+      "pct": 7.5
+    },
+    {
+      "label": "United States",
+      "pct": 3.3
+    }
+  ],
+  "NZL": [
+    {
+      "label": "China",
+      "pct": 33.1
+    },
+    {
+      "label": "United States",
+      "pct": 10.8
+    },
+    {
+      "label": "Australia",
+      "pct": 10.1
+    }
+  ],
+  "NIC": [
+    {
+      "label": "United States",
+      "pct": 46.2
+    },
+    {
+      "label": "El Salvador",
+      "pct": 10.1
+    },
+    {
+      "label": "EU27",
+      "pct": 9.4
     }
   ],
   "NER": [
     {
-      "label": "France",
-      "pct": 34
-    },
-    {
-      "label": "Nigeria",
-      "pct": 18
-    },
-    {
       "label": "United Arab Emirates",
-      "pct": 10
+      "pct": 51.1
+    },
+    {
+      "label": "China",
+      "pct": 13.8
+    },
+    {
+      "label": "EU27",
+      "pct": 9.6
     }
   ],
   "NGA": [
     {
+      "label": "EU27",
+      "pct": 38.9
+    },
+    {
       "label": "India",
-      "pct": 18
+      "pct": 9.3
     },
     {
-      "label": "Spain",
-      "pct": 12
+      "label": "United States",
+      "pct": 7.6
+    }
+  ],
+  "MKD": [
+    {
+      "label": "EU27",
+      "pct": 59.5
     },
     {
-      "label": "France",
-      "pct": 10
+      "label": "Serbia",
+      "pct": 16.8
+    },
+    {
+      "label": "Bosnia and Herzegovina",
+      "pct": 3.2
     }
   ],
   "NOR": [
     {
-      "label": "Germany",
-      "pct": 24
+      "label": "EU27",
+      "pct": 70.0
     },
     {
       "label": "United Kingdom",
-      "pct": 20
+      "pct": 22.5
     },
     {
-      "label": "Netherlands",
-      "pct": 16
+      "label": "United States",
+      "pct": 1.6
     }
   ],
   "OMN": [
     {
       "label": "China",
-      "pct": 42
+      "pct": 43.4
+    },
+    {
+      "label": "Republic of Korea",
+      "pct": 7.3
     },
     {
       "label": "India",
-      "pct": 22
-    },
-    {
-      "label": "South Korea",
-      "pct": 14
+      "pct": 6.4
     }
   ],
-  "PER": [
+  "PAK": [
     {
       "label": "China",
-      "pct": 38
+      "pct": 20.6
+    },
+    {
+      "label": "United Arab Emirates",
+      "pct": 10.2
+    },
+    {
+      "label": "Afghanistan",
+      "pct": 8.0
+    }
+  ],
+  "PLW": [
+    {
+      "label": "Japan",
+      "pct": 54.9
+    },
+    {
+      "label": "Micronesia (Federated States of)",
+      "pct": 30.4
     },
     {
       "label": "United States",
-      "pct": 14
+      "pct": 8.9
+    }
+  ],
+  "PAN": [
+    {
+      "label": "China",
+      "pct": 28.0
+    },
+    {
+      "label": "EU27",
+      "pct": 18.7
     },
     {
       "label": "Japan",
-      "pct": 8
+      "pct": 8.6
     }
   ],
   "PNG": [
     {
       "label": "Japan",
-      "pct": 28
-    },
-    {
-      "label": "Australia",
-      "pct": 22
+      "pct": 25.3
     },
     {
       "label": "China",
-      "pct": 18
+      "pct": 23.5
+    },
+    {
+      "label": "Australia",
+      "pct": 18.8
+    }
+  ],
+  "PRY": [
+    {
+      "label": "Argentina",
+      "pct": 32.4
+    },
+    {
+      "label": "Brazil",
+      "pct": 27.9
+    },
+    {
+      "label": "Chile",
+      "pct": 11.6
+    }
+  ],
+  "PER": [
+    {
+      "label": "China",
+      "pct": 38.2
+    },
+    {
+      "label": "United States",
+      "pct": 11.9
+    },
+    {
+      "label": "EU27",
+      "pct": 11.2
+    }
+  ],
+  "PHL": [
+    {
+      "label": "China",
+      "pct": 27.3
+    },
+    {
+      "label": "Japan",
+      "pct": 16.7
+    },
+    {
+      "label": "EU27",
+      "pct": 10.2
+    }
+  ],
+  "POL": [
+    {
+      "label": "EU27",
+      "pct": 73.7
+    },
+    {
+      "label": "United Kingdom",
+      "pct": 6.3
+    },
+    {
+      "label": "Ukraine",
+      "pct": 4.3
+    }
+  ],
+  "PRT": [
+    {
+      "label": "EU27",
+      "pct": 69.1
+    },
+    {
+      "label": "United States",
+      "pct": 7.5
+    },
+    {
+      "label": "Brazil",
+      "pct": 3.5
     }
   ],
   "QAT": [
     {
-      "label": "Japan",
-      "pct": 22
+      "label": "China",
+      "pct": 21.0
     },
     {
-      "label": "South Korea",
-      "pct": 18
+      "label": "Republic of Korea",
+      "pct": 15.2
     },
     {
       "label": "India",
-      "pct": 14
+      "pct": 13.2
+    }
+  ],
+  "KOR": [
+    {
+      "label": "China",
+      "pct": 14.5
+    },
+    {
+      "label": "Australia",
+      "pct": 12.2
+    },
+    {
+      "label": "United States",
+      "pct": 11.9
+    }
+  ],
+  "MDA": [
+    {
+      "label": "EU27",
+      "pct": 52.1
+    },
+    {
+      "label": "Ukraine",
+      "pct": 21.5
+    },
+    {
+      "label": "Turkiye",
+      "pct": 7.0
+    }
+  ],
+  "ROU": [
+    {
+      "label": "EU27",
+      "pct": 56.3
+    },
+    {
+      "label": "Republic of Moldova",
+      "pct": 6.3
+    },
+    {
+      "label": "Turkiye",
+      "pct": 3.6
     }
   ],
   "RUS": [
     {
+      "label": "EU27",
+      "pct": 30.3
+    },
+    {
       "label": "China",
-      "pct": 28
+      "pct": 24.0
     },
     {
-      "label": "Netherlands",
-      "pct": 10
+      "label": "Turkiye",
+      "pct": 9.4
+    }
+  ],
+  "RWA": [
+    {
+      "label": "United Arab Emirates",
+      "pct": 44.4
     },
     {
-      "label": "Germany",
-      "pct": 8
+      "label": "Dem. Rep. of the Congo",
+      "pct": 15.8
+    },
+    {
+      "label": "EU27",
+      "pct": 6.8
+    }
+  ],
+  "KNA": [
+    {
+      "label": "Trinidad and Tobago",
+      "pct": 20.3
+    },
+    {
+      "label": "Saint Vincent and the Grenadines",
+      "pct": 14.0
+    },
+    {
+      "label": "United States",
+      "pct": 12.7
+    }
+  ],
+  "LCA": [
+    {
+      "label": "Suriname",
+      "pct": 24.4
+    },
+    {
+      "label": "United States",
+      "pct": 10.2
+    },
+    {
+      "label": "United Kingdom",
+      "pct": 9.8
+    }
+  ],
+  "VCT": [
+    {
+      "label": "Barbados",
+      "pct": 15.6
+    },
+    {
+      "label": "Malaysia",
+      "pct": 14.7
+    },
+    {
+      "label": "Saint Lucia",
+      "pct": 13.7
+    }
+  ],
+  "WSM": [
+    {
+      "label": "United States",
+      "pct": 32.8
+    },
+    {
+      "label": "New Zealand",
+      "pct": 22.6
+    },
+    {
+      "label": "Australia",
+      "pct": 12.5
+    }
+  ],
+  "STP": [
+    {
+      "label": "EU27",
+      "pct": 68.7
+    },
+    {
+      "label": "Pakistan",
+      "pct": 25.1
+    },
+    {
+      "label": "Switzerland",
+      "pct": 2.2
     }
   ],
   "SAU": [
     {
       "label": "China",
-      "pct": 22
+      "pct": 21.4
     },
     {
       "label": "Japan",
-      "pct": 18
+      "pct": 13.3
     },
     {
-      "label": "India",
-      "pct": 16
+      "label": "EU27",
+      "pct": 12.9
+    }
+  ],
+  "SEN": [
+    {
+      "label": "Mali",
+      "pct": 30.5
+    },
+    {
+      "label": "Switzerland",
+      "pct": 13.8
+    },
+    {
+      "label": "EU27",
+      "pct": 12.9
+    }
+  ],
+  "SRB": [
+    {
+      "label": "EU27",
+      "pct": 46.0
+    },
+    {
+      "label": "China",
+      "pct": 13.6
+    },
+    {
+      "label": "Bosnia and Herzegovina",
+      "pct": 10.1
+    }
+  ],
+  "SYC": [
+    {
+      "label": "EU27",
+      "pct": 44.6
+    },
+    {
+      "label": "United Arab Emirates",
+      "pct": 14.8
+    },
+    {
+      "label": "United Kingdom",
+      "pct": 11.4
     }
   ],
   "SLE": [
     {
       "label": "China",
-      "pct": 38
+      "pct": 57.9
     },
     {
-      "label": "Belgium",
-      "pct": 18
+      "label": "EU27",
+      "pct": 20.2
+    },
+    {
+      "label": "United Arab Emirates",
+      "pct": 3.2
+    }
+  ],
+  "SGP": [
+    {
+      "label": "Malaysia",
+      "pct": 16.6
+    },
+    {
+      "label": "Indonesia",
+      "pct": 14.0
+    },
+    {
+      "label": "Australia",
+      "pct": 9.9
+    }
+  ],
+  "SVK": [
+    {
+      "label": "EU27",
+      "pct": 91.6
+    },
+    {
+      "label": "Ukraine",
+      "pct": 4.2
+    },
+    {
+      "label": "United Kingdom",
+      "pct": 0.9
+    }
+  ],
+  "SVN": [
+    {
+      "label": "EU27",
+      "pct": 87.4
+    },
+    {
+      "label": "Serbia",
+      "pct": 2.1
+    },
+    {
+      "label": "Bosnia and Herzegovina",
+      "pct": 1.9
+    }
+  ],
+  "SLB": [
+    {
+      "label": "China",
+      "pct": 55.2
+    },
+    {
+      "label": "EU27",
+      "pct": 19.0
+    },
+    {
+      "label": "Australia",
+      "pct": 9.6
+    }
+  ],
+  "SOM": [
+    {
+      "label": "Saudi Arabia",
+      "pct": 47.2
+    },
+    {
+      "label": "United Arab Emirates",
+      "pct": 28.2
+    },
+    {
+      "label": "Oman",
+      "pct": 12.2
+    }
+  ],
+  "ZAF": [
+    {
+      "label": "EU27",
+      "pct": 17.2
+    },
+    {
+      "label": "China",
+      "pct": 16.7
+    },
+    {
+      "label": "Japan",
+      "pct": 9.2
+    }
+  ],
+  "SSD": [
+    {
+      "label": "China",
+      "pct": 43.8
+    },
+    {
+      "label": "EU27",
+      "pct": 22.6
+    },
+    {
+      "label": "Singapore",
+      "pct": 12.8
+    }
+  ],
+  "ESP": [
+    {
+      "label": "EU27",
+      "pct": 64.9
+    },
+    {
+      "label": "United Kingdom",
+      "pct": 6.8
+    },
+    {
+      "label": "United States",
+      "pct": 4.9
+    }
+  ],
+  "LKA": [
+    {
+      "label": "EU27",
+      "pct": 15.6
     },
     {
       "label": "India",
-      "pct": 12
+      "pct": 13.9
+    },
+    {
+      "label": "United States",
+      "pct": 9.1
+    }
+  ],
+  "PSE": [
+    {
+      "label": "Israel",
+      "pct": 67.2
+    },
+    {
+      "label": "Jordan",
+      "pct": 13.0
+    },
+    {
+      "label": "United Arab Emirates",
+      "pct": 3.7
     }
   ],
   "SDN": [
     {
-      "label": "China",
-      "pct": 52
-    },
-    {
       "label": "United Arab Emirates",
-      "pct": 18
+      "pct": 50.8
     },
     {
       "label": "Saudi Arabia",
-      "pct": 10
-    }
-  ],
-  "TZA": [
-    {
-      "label": "India",
-      "pct": 22
-    },
-    {
-      "label": "South Africa",
-      "pct": 14
+      "pct": 12.0
     },
     {
       "label": "China",
-      "pct": 12
+      "pct": 11.5
+    }
+  ],
+  "SUR": [
+    {
+      "label": "Switzerland",
+      "pct": 51.4
+    },
+    {
+      "label": "United Arab Emirates",
+      "pct": 24.4
+    },
+    {
+      "label": "EU27",
+      "pct": 5.7
+    }
+  ],
+  "SWE": [
+    {
+      "label": "EU27",
+      "pct": 62.4
+    },
+    {
+      "label": "Norway",
+      "pct": 10.5
+    },
+    {
+      "label": "United Kingdom",
+      "pct": 9.0
+    }
+  ],
+  "CHE": [
+    {
+      "label": "EU27",
+      "pct": 24.3
+    },
+    {
+      "label": "China",
+      "pct": 20.7
+    },
+    {
+      "label": "India",
+      "pct": 12.5
+    }
+  ],
+  "SYR": [
+    {
+      "label": "Iraq",
+      "pct": 35.1
+    },
+    {
+      "label": "Saudi Arabia",
+      "pct": 14.0
+    },
+    {
+      "label": "Turkiye",
+      "pct": 10.1
+    }
+  ],
+  "TJK": [
+    {
+      "label": "Kazakhstan",
+      "pct": 21.3
+    },
+    {
+      "label": "China",
+      "pct": 20.5
+    },
+    {
+      "label": "Switzerland",
+      "pct": 14.0
+    }
+  ],
+  "THA": [
+    {
+      "label": "China",
+      "pct": 23.3
+    },
+    {
+      "label": "Japan",
+      "pct": 7.6
+    },
+    {
+      "label": "United States",
+      "pct": 7.6
     }
   ],
   "TLS": [
     {
-      "label": "Japan",
-      "pct": 62
-    },
-    {
       "label": "China",
-      "pct": 14
+      "pct": 34.5
     },
     {
-      "label": "Indonesia",
-      "pct": 8
+      "label": "Japan",
+      "pct": 15.9
+    },
+    {
+      "label": "Republic of Korea",
+      "pct": 12.1
+    }
+  ],
+  "TGO": [
+    {
+      "label": "United Arab Emirates",
+      "pct": 31.8
+    },
+    {
+      "label": "India",
+      "pct": 17.8
+    },
+    {
+      "label": "EU27",
+      "pct": 6.6
+    }
+  ],
+  "TON": [
+    {
+      "label": "New Zealand",
+      "pct": 25.8
+    },
+    {
+      "label": "United States",
+      "pct": 15.7
+    },
+    {
+      "label": "Australia",
+      "pct": 14.7
     }
   ],
   "TTO": [
     {
       "label": "United States",
-      "pct": 38
+      "pct": 33.1
     },
     {
-      "label": "Barbados",
-      "pct": 12
+      "label": "EU27",
+      "pct": 24.8
     },
     {
-      "label": "Jamaica",
-      "pct": 8
+      "label": "Guyana",
+      "pct": 6.7
     }
   ],
   "TUN": [
     {
-      "label": "France",
-      "pct": 28
+      "label": "EU27",
+      "pct": 52.8
     },
     {
-      "label": "Italy",
-      "pct": 22
+      "label": "Libya",
+      "pct": 8.9
     },
     {
-      "label": "Germany",
-      "pct": 14
+      "label": "United States",
+      "pct": 7.5
+    }
+  ],
+  "TUR": [
+    {
+      "label": "EU27",
+      "pct": 36.7
+    },
+    {
+      "label": "Iraq",
+      "pct": 8.3
+    },
+    {
+      "label": "United States",
+      "pct": 5.8
     }
   ],
   "TKM": [
     {
       "label": "China",
-      "pct": 72
+      "pct": 58.4
     },
     {
-      "label": "Turkey",
-      "pct": 12
+      "label": "Ukraine",
+      "pct": 6.8
     },
     {
-      "label": "Afghanistan",
-      "pct": 8
+      "label": "EU27",
+      "pct": 6.5
+    }
+  ],
+  "TUV": [
+    {
+      "label": "Republic of Korea",
+      "pct": 43.0
+    },
+    {
+      "label": "Japan",
+      "pct": 28.9
+    },
+    {
+      "label": "Philippines",
+      "pct": 24.6
     }
   ],
   "UGA": [
     {
+      "label": "Russian Federation",
+      "pct": 38.4
+    },
+    {
       "label": "United Arab Emirates",
-      "pct": 36
+      "pct": 14.9
     },
     {
-      "label": "Kenya",
-      "pct": 14
+      "label": "EU27",
+      "pct": 12.7
+    }
+  ],
+  "UKR": [
+    {
+      "label": "EU27",
+      "pct": 57.8
     },
     {
-      "label": "India",
-      "pct": 8
+      "label": "China",
+      "pct": 8.4
+    },
+    {
+      "label": "Turkiye",
+      "pct": 7.6
     }
   ],
   "ARE": [
     {
-      "label": "Japan",
-      "pct": 14
+      "label": "India",
+      "pct": 16.3
     },
+    {
+      "label": "Japan",
+      "pct": 14.2
+    },
+    {
+      "label": "China",
+      "pct": 12.3
+    }
+  ],
+  "GBR": [
+    {
+      "label": "EU27",
+      "pct": 39.8
+    },
+    {
+      "label": "Switzerland",
+      "pct": 17.4
+    },
+    {
+      "label": "China",
+      "pct": 15.6
+    }
+  ],
+  "TZA": [
     {
       "label": "India",
-      "pct": 12
+      "pct": 24.9
     },
     {
-      "label": "South Korea",
-      "pct": 10
+      "label": "United Arab Emirates",
+      "pct": 15.4
+    },
+    {
+      "label": "EU27",
+      "pct": 8.7
+    }
+  ],
+  "USA": [
+    {
+      "label": "EU27",
+      "pct": 17.2
+    },
+    {
+      "label": "Mexico",
+      "pct": 14.1
+    },
+    {
+      "label": "Canada",
+      "pct": 12.4
+    }
+  ],
+  "URY": [
+    {
+      "label": "China",
+      "pct": 26.4
+    },
+    {
+      "label": "Brazil",
+      "pct": 17.6
+    },
+    {
+      "label": "EU27",
+      "pct": 11.7
+    }
+  ],
+  "UZB": [
+    {
+      "label": "Switzerland",
+      "pct": 37.8
+    },
+    {
+      "label": "China",
+      "pct": 13.5
+    },
+    {
+      "label": "Russian Federation",
+      "pct": 12.1
+    }
+  ],
+  "VUT": [
+    {
+      "label": "Australia",
+      "pct": 25.3
+    },
+    {
+      "label": "Fiji",
+      "pct": 21.7
+    },
+    {
+      "label": "China",
+      "pct": 20.5
     }
   ],
   "VEN": [
     {
+      "label": "India",
+      "pct": 30.8
+    },
+    {
       "label": "China",
-      "pct": 28
+      "pct": 25.2
+    },
+    {
+      "label": "EU27",
+      "pct": 12.4
+    }
+  ],
+  "VNM": [
+    {
+      "label": "China",
+      "pct": 25.0
     },
     {
       "label": "United States",
-      "pct": 18
+      "pct": 11.5
     },
     {
-      "label": "India",
-      "pct": 12
+      "label": "EU27",
+      "pct": 11.3
     }
   ],
   "YEM": [
     {
       "label": "China",
-      "pct": 32
-    },
-    {
-      "label": "India",
-      "pct": 18
+      "pct": 32.1
     },
     {
       "label": "Thailand",
-      "pct": 10
+      "pct": 15.5
+    },
+    {
+      "label": "United Arab Emirates",
+      "pct": 9.1
     }
   ],
   "ZMB": [
     {
-      "label": "Switzerland",
-      "pct": 44
-    },
-    {
       "label": "China",
-      "pct": 22
+      "pct": 32.7
     },
     {
-      "label": "South Africa",
-      "pct": 12
+      "label": "Switzerland",
+      "pct": 32.5
+    },
+    {
+      "label": "United Arab Emirates",
+      "pct": 6.7
     }
   ],
   "ZWE": [
     {
-      "label": "South Africa",
-      "pct": 34
-    },
-    {
-      "label": "China",
-      "pct": 18
-    },
-    {
       "label": "United Arab Emirates",
-      "pct": 10
-    }
-  ],
-  "ZAF": [
+      "pct": 43.2
+    },
     {
       "label": "China",
-      "pct": 18
+      "pct": 20.9
     },
     {
-      "label": "United States",
-      "pct": 10
-    },
-    {
-      "label": "Germany",
-      "pct": 8
+      "label": "South Africa",
+      "pct": 16.8
     }
   ]
 }

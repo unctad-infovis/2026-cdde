@@ -5,7 +5,7 @@
     "iso2": "ne",
     "old_pct": 64.2,
     "new_pct": 85.8,
-    "change": 21.6
+    "change": 21.57
   },
   {
     "name": "Gambia",
@@ -13,15 +13,7 @@
     "iso2": "gm",
     "old_pct": 72.5,
     "new_pct": 88.9,
-    "change": 16.4
-  },
-  {
-    "name": "Congo",
-    "iso3": "COG",
-    "iso2": "cg",
-    "old_pct": 83.3,
-    "new_pct": 96.5,
-    "change": 13.2
+    "change": 16.39
   },
   {
     "name": "Argentina",
@@ -29,7 +21,15 @@
     "iso2": "ar",
     "old_pct": 67.8,
     "new_pct": 80.9,
-    "change": 13.1
+    "change": 13.17
+  },
+  {
+    "name": "Congo",
+    "iso3": "COG",
+    "iso2": "cg",
+    "old_pct": 83.3,
+    "new_pct": 96.5,
+    "change": 13.16
   },
   {
     "name": "Timor-Leste",
@@ -37,7 +37,7 @@
     "iso2": "tl",
     "old_pct": 83.8,
     "new_pct": 94.8,
-    "change": 11.0
+    "change": 11.04
   },
   {
     "name": "Cuba",
@@ -45,7 +45,7 @@
     "iso2": "cu",
     "old_pct": 75.5,
     "new_pct": 86.3,
-    "change": 10.8
+    "change": 10.79
   },
   {
     "name": "Cabo Verde",
@@ -53,7 +53,7 @@
     "iso2": "cv",
     "old_pct": 63.7,
     "new_pct": 74.4,
-    "change": 10.7
+    "change": 10.65
   },
   {
     "name": "Togo",
@@ -61,7 +61,7 @@
     "iso2": "tg",
     "old_pct": 72.9,
     "new_pct": 82.6,
-    "change": 9.7
+    "change": 9.71
   },
   {
     "name": "Uganda",
@@ -69,7 +69,7 @@
     "iso2": "ug",
     "old_pct": 70.3,
     "new_pct": 79.7,
-    "change": 9.4
+    "change": 9.38
   },
   {
     "name": "Brazil",
@@ -77,7 +77,7 @@
     "iso2": "br",
     "old_pct": 66.7,
     "new_pct": 75.9,
-    "change": 9.2
+    "change": 9.18
   },
   {
     "name": "Maldives",
@@ -85,7 +85,7 @@
     "iso2": "mv",
     "old_pct": 95.7,
     "new_pct": 76.0,
-    "change": -19.7
+    "change": -19.74
   },
   {
     "name": "Brunei Darussalam",
@@ -101,7 +101,7 @@
     "iso2": "la",
     "old_pct": 86.2,
     "new_pct": 69.8,
-    "change": -16.4
+    "change": -16.37
   },
   {
     "name": "Venezuela",
@@ -109,7 +109,7 @@
     "iso2": "ve",
     "old_pct": 93.9,
     "new_pct": 81.2,
-    "change": -12.7
+    "change": -12.79
   },
   {
     "name": "Oman",
@@ -117,7 +117,7 @@
     "iso2": "om",
     "old_pct": 83.0,
     "new_pct": 70.7,
-    "change": -12.3
+    "change": -12.35
   },
   {
     "name": "Montenegro",
@@ -125,7 +125,7 @@
     "iso2": "me",
     "old_pct": 81.8,
     "new_pct": 71.8,
-    "change": -10.0
+    "change": -10.01
   },
   {
     "name": "Uzbekistan",
@@ -133,7 +133,7 @@
     "iso2": "uz",
     "old_pct": 73.0,
     "new_pct": 64.3,
-    "change": -8.7
+    "change": -8.66
   },
   {
     "name": "Russian Fed.",
@@ -141,7 +141,7 @@
     "iso2": "ru",
     "old_pct": 83.9,
     "new_pct": 75.7,
-    "change": -8.2
+    "change": -8.25
   },
   {
     "name": "Kuwait",
@@ -149,7 +149,7 @@
     "iso2": "kw",
     "old_pct": 89.1,
     "new_pct": 82.1,
-    "change": -7.0
+    "change": -6.96
   },
   {
     "name": "Paraguay",

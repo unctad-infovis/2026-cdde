@@ -1,0 +1,977 @@
+{
+  "AFG": {
+    "leading_commodity": 58.9,
+    "commodity_dependence": 95.2,
+    "leading_market": 86.7
+  },
+  "ALB": {
+    "leading_commodity": 11.9,
+    "commodity_dependence": 32.1,
+    "leading_market": 87.9
+  },
+  "DZA": {
+    "leading_commodity": 82.8,
+    "commodity_dependence": 96.0,
+    "leading_market": 74.8
+  },
+  "AND": {
+    "leading_commodity": 4.6,
+    "commodity_dependence": 8.1,
+    "leading_market": 89.9
+  },
+  "AGO": {
+    "leading_commodity": 90.1,
+    "commodity_dependence": 96.1,
+    "leading_market": 78.2
+  },
+  "ATG": {
+    "leading_commodity": 34.7,
+    "commodity_dependence": 40.0,
+    "leading_market": 75.3
+  },
+  "ARG": {
+    "leading_commodity": 38.6,
+    "commodity_dependence": 80.9,
+    "leading_market": 48.3
+  },
+  "ARM": {
+    "leading_commodity": 45.6,
+    "commodity_dependence": 74.7,
+    "leading_market": 87.3
+  },
+  "AUS": {
+    "leading_commodity": 55.7,
+    "commodity_dependence": 91.6,
+    "leading_market": 68.6
+  },
+  "AUT": {
+    "leading_commodity": 4.9,
+    "commodity_dependence": 18.2,
+    "leading_market": 88.5
+  },
+  "AZE": {
+    "leading_commodity": 89.5,
+    "commodity_dependence": 95.7,
+    "leading_market": 88.7
+  },
+  "BHS": {
+    "leading_commodity": 50.3,
+    "commodity_dependence": 53.7,
+    "leading_market": 85.0
+  },
+  "BHR": {
+    "leading_commodity": 63.7,
+    "commodity_dependence": 73.3,
+    "leading_market": 53.1
+  },
+  "BGD": {
+    "leading_commodity": 2.0,
+    "commodity_dependence": 4.6,
+    "leading_market": 57.1
+  },
+  "BRB": {
+    "leading_commodity": 29.4,
+    "commodity_dependence": 51.7,
+    "leading_market": 75.2
+  },
+  "BLR": {
+    "leading_commodity": 13.7,
+    "commodity_dependence": 37.4,
+    "leading_market": 88.3
+  },
+  "BEL": {
+    "leading_commodity": 15.9,
+    "commodity_dependence": 34.4,
+    "leading_market": 79.3
+  },
+  "BLZ": {
+    "leading_commodity": 59.4,
+    "commodity_dependence": 89.3,
+    "leading_market": 64.4
+  },
+  "BEN": {
+    "leading_commodity": 71.5,
+    "commodity_dependence": 92.7,
+    "leading_market": 70.3
+  },
+  "BTN": {
+    "leading_commodity": 44.6,
+    "commodity_dependence": 55.9,
+    "leading_market": 99.7
+  },
+  "BOL": {
+    "leading_commodity": 54.6,
+    "commodity_dependence": 94.7,
+    "leading_market": 67.2
+  },
+  "BIH": {
+    "leading_commodity": 12.8,
+    "commodity_dependence": 27.3,
+    "leading_market": 94.1
+  },
+  "BWA": {
+    "leading_commodity": 89.9,
+    "commodity_dependence": 94.0,
+    "leading_market": 70.5
+  },
+  "BRA": {
+    "leading_commodity": 36.0,
+    "commodity_dependence": 75.9,
+    "leading_market": 59.2
+  },
+  "BRN": {
+    "leading_commodity": 74.8,
+    "commodity_dependence": 79.0,
+    "leading_market": 90.5
+  },
+  "BGR": {
+    "leading_commodity": 18.2,
+    "commodity_dependence": 43.4,
+    "leading_market": 71.0
+  },
+  "BFA": {
+    "leading_commodity": 87.7,
+    "commodity_dependence": 96.0,
+    "leading_market": 86.3
+  },
+  "BDI": {
+    "leading_commodity": 71.3,
+    "commodity_dependence": 89.5,
+    "leading_market": 65.9
+  },
+  "CPV": {
+    "leading_commodity": 68.5,
+    "commodity_dependence": 74.4,
+    "leading_market": 89.1
+  },
+  "KHM": {
+    "leading_commodity": 10.4,
+    "commodity_dependence": 20.2,
+    "leading_market": 88.7
+  },
+  "CMR": {
+    "leading_commodity": 63.1,
+    "commodity_dependence": 93.7,
+    "leading_market": 65.1
+  },
+  "CAN": {
+    "leading_commodity": 26.5,
+    "commodity_dependence": 55.8,
+    "leading_market": 83.0
+  },
+  "CAF": {
+    "leading_commodity": 79.6,
+    "commodity_dependence": 89.9,
+    "leading_market": 86.7
+  },
+  "TCD": {
+    "leading_commodity": 96.1,
+    "commodity_dependence": 99.8,
+    "leading_market": 89.7
+  },
+  "CHL": {
+    "leading_commodity": 55.4,
+    "commodity_dependence": 82.8,
+    "leading_market": 66.1
+  },
+  "CHN": {
+    "leading_commodity": 2.6,
+    "commodity_dependence": 6.3,
+    "leading_market": 35.8
+  },
+  "COL": {
+    "leading_commodity": 49.9,
+    "commodity_dependence": 80.1,
+    "leading_market": 58.6
+  },
+  "COM": {
+    "leading_commodity": 48.7,
+    "commodity_dependence": 50.6,
+    "leading_market": 75.8
+  },
+  "COG": {
+    "leading_commodity": 87.5,
+    "commodity_dependence": 96.5,
+    "leading_market": 71.4
+  },
+  "COD": {
+    "leading_commodity": 82.7,
+    "commodity_dependence": 90.7,
+    "leading_market": 76.8
+  },
+  "CRI": {
+    "leading_commodity": 21.3,
+    "commodity_dependence": 34.7,
+    "leading_market": 83.5
+  },
+  "CIV": {
+    "leading_commodity": 55.6,
+    "commodity_dependence": 91.9,
+    "leading_market": 56.5
+  },
+  "HRV": {
+    "leading_commodity": 13.3,
+    "commodity_dependence": 38.6,
+    "leading_market": 92.7
+  },
+  "CUB": {
+    "leading_commodity": 49.2,
+    "commodity_dependence": 86.3,
+    "leading_market": 82.7
+  },
+  "CYP": {
+    "leading_commodity": 39.9,
+    "commodity_dependence": 48.5,
+    "leading_market": 72.1
+  },
+  "CZE": {
+    "leading_commodity": 2.6,
+    "commodity_dependence": 10.3,
+    "leading_market": 92.2
+  },
+  "DNK": {
+    "leading_commodity": 8.8,
+    "commodity_dependence": 30.1,
+    "leading_market": 80.8
+  },
+  "DJI": {
+    "leading_commodity": 29.6,
+    "commodity_dependence": 47.6,
+    "leading_market": 93.5
+  },
+  "DMA": {
+    "leading_commodity": 15.9,
+    "commodity_dependence": 37.5,
+    "leading_market": 75.7
+  },
+  "DOM": {
+    "leading_commodity": 23.0,
+    "commodity_dependence": 38.8,
+    "leading_market": 71.1
+  },
+  "ECU": {
+    "leading_commodity": 66.8,
+    "commodity_dependence": 95.0,
+    "leading_market": 58.5
+  },
+  "EGY": {
+    "leading_commodity": 23.8,
+    "commodity_dependence": 52.8,
+    "leading_market": 49.8
+  },
+  "SLV": {
+    "leading_commodity": 10.5,
+    "commodity_dependence": 27.7,
+    "leading_market": 83.9
+  },
+  "GNQ": {
+    "leading_commodity": 92.8,
+    "commodity_dependence": 95.3,
+    "leading_market": 71.6
+  },
+  "ERI": {
+    "leading_commodity": 56.9,
+    "commodity_dependence": 93.1,
+    "leading_market": 88.6
+  },
+  "EST": {
+    "leading_commodity": 13.4,
+    "commodity_dependence": 35.8,
+    "leading_market": 79.4
+  },
+  "SWZ": {
+    "leading_commodity": 27.8,
+    "commodity_dependence": 40.9,
+    "leading_market": 84.3
+  },
+  "ETH": {
+    "leading_commodity": 59.8,
+    "commodity_dependence": 84.5,
+    "leading_market": 42.1
+  },
+  "FJI": {
+    "leading_commodity": 47.6,
+    "commodity_dependence": 83.5,
+    "leading_market": 80.0
+  },
+  "FIN": {
+    "leading_commodity": 17.1,
+    "commodity_dependence": 29.1,
+    "leading_market": 77.5
+  },
+  "FRA": {
+    "leading_commodity": 6.5,
+    "commodity_dependence": 22.6,
+    "leading_market": 76.0
+  },
+  "GAB": {
+    "leading_commodity": 82.6,
+    "commodity_dependence": 87.6,
+    "leading_market": 66.0
+  },
+  "GMB": {
+    "leading_commodity": 52.8,
+    "commodity_dependence": 88.9,
+    "leading_market": 66.5
+  },
+  "GEO": {
+    "leading_commodity": 20.8,
+    "commodity_dependence": 41.0,
+    "leading_market": 64.7
+  },
+  "DEU": {
+    "leading_commodity": 2.8,
+    "commodity_dependence": 13.2,
+    "leading_market": 82.7
+  },
+  "GHA": {
+    "leading_commodity": 80.7,
+    "commodity_dependence": 94.8,
+    "leading_market": 49.3
+  },
+  "GRC": {
+    "leading_commodity": 35.6,
+    "commodity_dependence": 63.4,
+    "leading_market": 63.9
+  },
+  "GRD": {
+    "leading_commodity": 31.2,
+    "commodity_dependence": 54.3,
+    "leading_market": 79.6
+  },
+  "GTM": {
+    "leading_commodity": 24.8,
+    "commodity_dependence": 56.6,
+    "leading_market": 75.9
+  },
+  "GIN": {
+    "leading_commodity": 88.7,
+    "commodity_dependence": 97.5,
+    "leading_market": 80.5
+  },
+  "GNB": {
+    "leading_commodity": 92.2,
+    "commodity_dependence": 97.9,
+    "leading_market": 82.6
+  },
+  "GUY": {
+    "leading_commodity": 93.3,
+    "commodity_dependence": 95.6,
+    "leading_market": 71.5
+  },
+  "HTI": {
+    "leading_commodity": 3.2,
+    "commodity_dependence": 6.7,
+    "leading_market": 57.8
+  },
+  "VAT": {
+    "leading_commodity": null,
+    "commodity_dependence": null,
+    "leading_market": null
+  },
+  "HND": {
+    "leading_commodity": 30.0,
+    "commodity_dependence": 53.5,
+    "leading_market": 83.6
+  },
+  "HUN": {
+    "leading_commodity": 3.4,
+    "commodity_dependence": 14.1,
+    "leading_market": 89.2
+  },
+  "ISL": {
+    "leading_commodity": 75.8,
+    "commodity_dependence": 84.5,
+    "leading_market": 90.7
+  },
+  "IND": {
+    "leading_commodity": 26.1,
+    "commodity_dependence": 40.5,
+    "leading_market": 35.9
+  },
+  "IDN": {
+    "leading_commodity": 26.9,
+    "commodity_dependence": 55.5,
+    "leading_market": 60.9
+  },
+  "IRN": {
+    "leading_commodity": 22.3,
+    "commodity_dependence": 51.4,
+    "leading_market": 68.0
+  },
+  "IRQ": {
+    "leading_commodity": 97.5,
+    "commodity_dependence": 99.5,
+    "leading_market": 73.8
+  },
+  "IRL": {
+    "leading_commodity": 3.2,
+    "commodity_dependence": 9.7,
+    "leading_market": 81.8
+  },
+  "ISR": {
+    "leading_commodity": 15.6,
+    "commodity_dependence": 21.0,
+    "leading_market": 72.3
+  },
+  "ITA": {
+    "leading_commodity": 6.1,
+    "commodity_dependence": 18.3,
+    "leading_market": 72.6
+  },
+  "JAM": {
+    "leading_commodity": 69.2,
+    "commodity_dependence": 94.8,
+    "leading_market": 73.4
+  },
+  "JPN": {
+    "leading_commodity": 5.2,
+    "commodity_dependence": 9.8,
+    "leading_market": 54.6
+  },
+  "JOR": {
+    "leading_commodity": 10.8,
+    "commodity_dependence": 25.8,
+    "leading_market": 79.1
+  },
+  "KAZ": {
+    "leading_commodity": 66.4,
+    "commodity_dependence": 84.5,
+    "leading_market": 74.2
+  },
+  "KEN": {
+    "leading_commodity": 34.4,
+    "commodity_dependence": 69.9,
+    "leading_market": 48.3
+  },
+  "KIR": {
+    "leading_commodity": 88.2,
+    "commodity_dependence": 88.8,
+    "leading_market": 89.7
+  },
+  "PRK": {
+    "leading_commodity": 19.0,
+    "commodity_dependence": 23.6,
+    "leading_market": 94.2
+  },
+  "KOR": {
+    "leading_commodity": 9.6,
+    "commodity_dependence": 13.8,
+    "leading_market": 50.3
+  },
+  "KWT": {
+    "leading_commodity": 76.2,
+    "commodity_dependence": 82.1,
+    "leading_market": 50.2
+  },
+  "KGZ": {
+    "leading_commodity": 54.5,
+    "commodity_dependence": 76.6,
+    "leading_market": 55.1
+  },
+  "LAO": {
+    "leading_commodity": 33.5,
+    "commodity_dependence": 69.8,
+    "leading_market": 94.2
+  },
+  "LVA": {
+    "leading_commodity": 18.2,
+    "commodity_dependence": 45.9,
+    "leading_market": 76.0
+  },
+  "LBN": {
+    "leading_commodity": 19.9,
+    "commodity_dependence": 49.2,
+    "leading_market": 71.3
+  },
+  "LSO": {
+    "leading_commodity": 45.3,
+    "commodity_dependence": 51.4,
+    "leading_market": 86.9
+  },
+  "LBR": {
+    "leading_commodity": 60.6,
+    "commodity_dependence": 79.7,
+    "leading_market": 68.9
+  },
+  "LBY": {
+    "leading_commodity": 92.0,
+    "commodity_dependence": 98.6,
+    "leading_market": 80.6
+  },
+  "LTU": {
+    "leading_commodity": 15.9,
+    "commodity_dependence": 38.5,
+    "leading_market": 75.6
+  },
+  "LUX": {
+    "leading_commodity": 6.0,
+    "commodity_dependence": 18.6,
+    "leading_market": 93.3
+  },
+  "MDG": {
+    "leading_commodity": 48.9,
+    "commodity_dependence": 73.4,
+    "leading_market": 52.4
+  },
+  "MWI": {
+    "leading_commodity": 60.7,
+    "commodity_dependence": 84.8,
+    "leading_market": 56.8
+  },
+  "MYS": {
+    "leading_commodity": 17.9,
+    "commodity_dependence": 31.7,
+    "leading_market": 55.1
+  },
+  "MDV": {
+    "leading_commodity": 65.9,
+    "commodity_dependence": 76.0,
+    "leading_market": 69.1
+  },
+  "MLI": {
+    "leading_commodity": 91.7,
+    "commodity_dependence": 95.8,
+    "leading_market": 81.7
+  },
+  "MLT": {
+    "leading_commodity": 25.4,
+    "commodity_dependence": 30.4,
+    "leading_market": 53.9
+  },
+  "MHL": {
+    "leading_commodity": 13.6,
+    "commodity_dependence": 13.8,
+    "leading_market": 53.0
+  },
+  "MRT": {
+    "leading_commodity": 87.8,
+    "commodity_dependence": 97.8,
+    "leading_market": 57.8
+  },
+  "MUS": {
+    "leading_commodity": 31.5,
+    "commodity_dependence": 48.1,
+    "leading_market": 68.0
+  },
+  "MEX": {
+    "leading_commodity": 8.5,
+    "commodity_dependence": 17.7,
+    "leading_market": 88.8
+  },
+  "FSM": {
+    "leading_commodity": 95.4,
+    "commodity_dependence": 97.9,
+    "leading_market": 87.6
+  },
+  "MDA": {
+    "leading_commodity": 24.4,
+    "commodity_dependence": 55.9,
+    "leading_market": 87.7
+  },
+  "MCO": {
+    "leading_commodity": null,
+    "commodity_dependence": null,
+    "leading_market": null
+  },
+  "MNG": {
+    "leading_commodity": 76.0,
+    "commodity_dependence": 98.8,
+    "leading_market": 98.6
+  },
+  "MNE": {
+    "leading_commodity": 45.5,
+    "commodity_dependence": 71.8,
+    "leading_market": 94.1
+  },
+  "MAR": {
+    "leading_commodity": 16.6,
+    "commodity_dependence": 26.3,
+    "leading_market": 70.1
+  },
+  "MOZ": {
+    "leading_commodity": 49.7,
+    "commodity_dependence": 96.5,
+    "leading_market": 52.6
+  },
+  "MMR": {
+    "leading_commodity": 31.7,
+    "commodity_dependence": 55.8,
+    "leading_market": 90.0
+  },
+  "NAM": {
+    "leading_commodity": 45.9,
+    "commodity_dependence": 82.5,
+    "leading_market": 73.8
+  },
+  "NRU": {
+    "leading_commodity": 94.8,
+    "commodity_dependence": 94.9,
+    "leading_market": 92.5
+  },
+  "NPL": {
+    "leading_commodity": 29.3,
+    "commodity_dependence": 48.1,
+    "leading_market": 96.1
+  },
+  "NLD": {
+    "leading_commodity": 15.4,
+    "commodity_dependence": 37.8,
+    "leading_market": 83.9
+  },
+  "NZL": {
+    "leading_commodity": 32.9,
+    "commodity_dependence": 81.0,
+    "leading_market": 54.9
+  },
+  "NIC": {
+    "leading_commodity": 31.6,
+    "commodity_dependence": 57.9,
+    "leading_market": 79.7
+  },
+  "NER": {
+    "leading_commodity": 73.9,
+    "commodity_dependence": 85.8,
+    "leading_market": 79.6
+  },
+  "NGA": {
+    "leading_commodity": 86.5,
+    "commodity_dependence": 96.7,
+    "leading_market": 56.9
+  },
+  "MKD": {
+    "leading_commodity": 7.0,
+    "commodity_dependence": 17.9,
+    "leading_market": 85.8
+  },
+  "NOR": {
+    "leading_commodity": 76.2,
+    "commodity_dependence": 88.2,
+    "leading_market": 94.4
+  },
+  "OMN": {
+    "leading_commodity": 54.1,
+    "commodity_dependence": 70.7,
+    "leading_market": 62.8
+  },
+  "PAK": {
+    "leading_commodity": 14.2,
+    "commodity_dependence": 28.6,
+    "leading_market": 40.9
+  },
+  "PLW": {
+    "leading_commodity": 27.9,
+    "commodity_dependence": 34.1,
+    "leading_market": 94.1
+  },
+  "PAN": {
+    "leading_commodity": 46.2,
+    "commodity_dependence": 67.8,
+    "leading_market": 55.5
+  },
+  "PNG": {
+    "leading_commodity": 62.9,
+    "commodity_dependence": 99.1,
+    "leading_market": 67.8
+  },
+  "PRY": {
+    "leading_commodity": 52.1,
+    "commodity_dependence": 84.8,
+    "leading_market": 84.8
+  },
+  "PER": {
+    "leading_commodity": 49.8,
+    "commodity_dependence": 91.9,
+    "leading_market": 61.4
+  },
+  "PHL": {
+    "leading_commodity": 7.7,
+    "commodity_dependence": 21.2,
+    "leading_market": 60.5
+  },
+  "POL": {
+    "leading_commodity": 4.2,
+    "commodity_dependence": 21.7,
+    "leading_market": 85.7
+  },
+  "PRT": {
+    "leading_commodity": 9.6,
+    "commodity_dependence": 25.8,
+    "leading_market": 80.1
+  },
+  "QAT": {
+    "leading_commodity": 73.7,
+    "commodity_dependence": 88.8,
+    "leading_market": 49.5
+  },
+  "ROU": {
+    "leading_commodity": 7.0,
+    "commodity_dependence": 22.4,
+    "leading_market": 69.4
+  },
+  "RUS": {
+    "leading_commodity": 50.0,
+    "commodity_dependence": 75.7,
+    "leading_market": 63.8
+  },
+  "RWA": {
+    "leading_commodity": 58.3,
+    "commodity_dependence": 89.1,
+    "leading_market": 67.3
+  },
+  "KNA": {
+    "leading_commodity": 15.8,
+    "commodity_dependence": 19.4,
+    "leading_market": 83.7
+  },
+  "LCA": {
+    "leading_commodity": 47.9,
+    "commodity_dependence": 67.2,
+    "leading_market": 72.4
+  },
+  "VCT": {
+    "leading_commodity": 28.7,
+    "commodity_dependence": 46.2,
+    "leading_market": 92.1
+  },
+  "WSM": {
+    "leading_commodity": 32.5,
+    "commodity_dependence": 47.2,
+    "leading_market": 77.9
+  },
+  "SMR": {
+    "leading_commodity": null,
+    "commodity_dependence": null,
+    "leading_market": null
+  },
+  "STP": {
+    "leading_commodity": 64.1,
+    "commodity_dependence": 67.2,
+    "leading_market": 96.1
+  },
+  "SAU": {
+    "leading_commodity": 71.9,
+    "commodity_dependence": 77.0,
+    "leading_market": 47.6
+  },
+  "SEN": {
+    "leading_commodity": 46.5,
+    "commodity_dependence": 73.8,
+    "leading_market": 66.3
+  },
+  "SRB": {
+    "leading_commodity": 11.7,
+    "commodity_dependence": 33.2,
+    "leading_market": 81.5
+  },
+  "SYC": {
+    "leading_commodity": 87.6,
+    "commodity_dependence": 91.4,
+    "leading_market": 70.8
+  },
+  "SLE": {
+    "leading_commodity": 59.1,
+    "commodity_dependence": 84.5,
+    "leading_market": 81.6
+  },
+  "SGP": {
+    "leading_commodity": 20.0,
+    "commodity_dependence": 24.6,
+    "leading_market": 65.5
+  },
+  "SVK": {
+    "leading_commodity": 4.5,
+    "commodity_dependence": 11.4,
+    "leading_market": 97.2
+  },
+  "SVN": {
+    "leading_commodity": 8.1,
+    "commodity_dependence": 15.1,
+    "leading_market": 93.4
+  },
+  "SLB": {
+    "leading_commodity": 77.0,
+    "commodity_dependence": 96.9,
+    "leading_market": 85.8
+  },
+  "SOM": {
+    "leading_commodity": 83.0,
+    "commodity_dependence": 93.4,
+    "leading_market": 87.5
+  },
+  "ZAF": {
+    "leading_commodity": 26.2,
+    "commodity_dependence": 62.7,
+    "leading_market": 43.2
+  },
+  "SSD": {
+    "leading_commodity": 90.7,
+    "commodity_dependence": 98.5,
+    "leading_market": 79.2
+  },
+  "ESP": {
+    "leading_commodity": 9.8,
+    "commodity_dependence": 30.9,
+    "leading_market": 76.6
+  },
+  "LKA": {
+    "leading_commodity": 17.1,
+    "commodity_dependence": 33.6,
+    "leading_market": 44.3
+  },
+  "PSE": {
+    "leading_commodity": 14.3,
+    "commodity_dependence": 35.9,
+    "leading_market": 96.1
+  },
+  "SDN": {
+    "leading_commodity": 74.1,
+    "commodity_dependence": 98.2,
+    "leading_market": 74.3
+  },
+  "SUR": {
+    "leading_commodity": 81.9,
+    "commodity_dependence": 95.6,
+    "leading_market": 82.2
+  },
+  "SWE": {
+    "leading_commodity": 12.7,
+    "commodity_dependence": 25.7,
+    "leading_market": 86.7
+  },
+  "CHE": {
+    "leading_commodity": 28.1,
+    "commodity_dependence": 32.3,
+    "leading_market": 57.4
+  },
+  "LIE": {
+    "leading_commodity": null,
+    "commodity_dependence": null,
+    "leading_market": null
+  },
+  "SYR": {
+    "leading_commodity": 23.1,
+    "commodity_dependence": 67.1,
+    "leading_market": 91.2
+  },
+  "TJK": {
+    "leading_commodity": 39.3,
+    "commodity_dependence": 85.1,
+    "leading_market": 62.5
+  },
+  "TZA": {
+    "leading_commodity": 48.0,
+    "commodity_dependence": 89.5,
+    "leading_market": 56.1
+  },
+  "THA": {
+    "leading_commodity": 7.5,
+    "commodity_dependence": 28.6,
+    "leading_market": 62.9
+  },
+  "TLS": {
+    "leading_commodity": 92.7,
+    "commodity_dependence": 94.8,
+    "leading_market": 79.4
+  },
+  "TGO": {
+    "leading_commodity": 44.2,
+    "commodity_dependence": 82.6,
+    "leading_market": 65.0
+  },
+  "TON": {
+    "leading_commodity": 46.2,
+    "commodity_dependence": 77.0,
+    "leading_market": 69.6
+  },
+  "TTO": {
+    "leading_commodity": 41.9,
+    "commodity_dependence": 49.6,
+    "leading_market": 70.0
+  },
+  "TUN": {
+    "leading_commodity": 12.8,
+    "commodity_dependence": 21.8,
+    "leading_market": 73.2
+  },
+  "TUR": {
+    "leading_commodity": 9.2,
+    "commodity_dependence": 25.1,
+    "leading_market": 64.6
+  },
+  "TKM": {
+    "leading_commodity": 79.0,
+    "commodity_dependence": 88.2,
+    "leading_market": 73.1
+  },
+  "TUV": {
+    "leading_commodity": 65.4,
+    "commodity_dependence": 65.6,
+    "leading_market": 96.5
+  },
+  "UGA": {
+    "leading_commodity": 61.8,
+    "commodity_dependence": 79.7,
+    "leading_market": 66.7
+  },
+  "UKR": {
+    "leading_commodity": 35.1,
+    "commodity_dependence": 68.0,
+    "leading_market": 73.7
+  },
+  "ARE": {
+    "leading_commodity": 51.7,
+    "commodity_dependence": 70.4,
+    "leading_market": 44.1
+  },
+  "GBR": {
+    "leading_commodity": 20.9,
+    "commodity_dependence": 35.2,
+    "leading_market": 72.8
+  },
+  "USA": {
+    "leading_commodity": 15.3,
+    "commodity_dependence": 35.2,
+    "leading_market": 43.7
+  },
+  "URY": {
+    "leading_commodity": 42.0,
+    "commodity_dependence": 81.0,
+    "leading_market": 65.0
+  },
+  "UZB": {
+    "leading_commodity": 46.1,
+    "commodity_dependence": 64.3,
+    "leading_market": 63.4
+  },
+  "VUT": {
+    "leading_commodity": 50.6,
+    "commodity_dependence": 87.9,
+    "leading_market": 84.2
+  },
+  "VEN": {
+    "leading_commodity": 71.6,
+    "commodity_dependence": 81.2,
+    "leading_market": 68.4
+  },
+  "VNM": {
+    "leading_commodity": 5.6,
+    "commodity_dependence": 13.5,
+    "leading_market": 54.8
+  },
+  "YEM": {
+    "leading_commodity": 64.7,
+    "commodity_dependence": 92.3,
+    "leading_market": 71.5
+  },
+  "ZMB": {
+    "leading_commodity": 73.8,
+    "commodity_dependence": 88.8,
+    "leading_market": 71.9
+  },
+  "ZWE": {
+    "leading_commodity": 62.9,
+    "commodity_dependence": 90.8,
+    "leading_market": 80.9
+  }
+}
