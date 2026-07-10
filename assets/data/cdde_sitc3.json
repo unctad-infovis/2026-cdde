@@ -1,0 +1,517 @@
+{
+  "sections": [
+    {
+      "heading": "All allocated products",
+      "items": [
+        {
+          "code": "0 to 8 + 961 + 971",
+          "label": "All allocated products"
+        },
+        {
+          "code": "0 + 1 + 2 + 3 + 4 + 68 + 667 + 971",
+          "label": "All commodities"
+        },
+        {
+          "code": "034 + 035 + 036 + 037",
+          "label": "Fishery products"
+        },
+        {
+          "code": "245 + 246 + 247 + 248 + 251",
+          "label": "Forestry products"
+        },
+        {
+          "code": "0 + 1 + 2 (less 27 and 28) + 4",
+          "label": "Agricultural products"
+        }
+      ]
+    },
+    {
+      "heading": "All food items",
+      "items": [
+        {
+          "code": "0 + 1 + 22 + 4",
+          "label": "All food items"
+        },
+        {
+          "code": "0",
+          "label": "Food and live animals"
+        },
+        {
+          "code": "001",
+          "label": "Live animals other than animals of division 03"
+        },
+        {
+          "code": "011",
+          "label": "Meat of bovine animals, fresh, chilled or frozen"
+        },
+        {
+          "code": "012",
+          "label": "Other meat and edible meat offal"
+        },
+        {
+          "code": "016",
+          "label": "Meat, edible meat offal, salted, dried; flours, meals"
+        },
+        {
+          "code": "017",
+          "label": "Meat, edible meat offal, prepared, preserved, n.e.s."
+        },
+        {
+          "code": "022",
+          "label": "Milk, cream and milk products (excluding butter, cheese)"
+        },
+        {
+          "code": "023",
+          "label": "Butter and other fats and oils derived from milk"
+        },
+        {
+          "code": "024",
+          "label": "Cheese and curd"
+        },
+        {
+          "code": "025",
+          "label": "Birds’ eggs and eggs’ yolks; egg albumin"
+        },
+        {
+          "code": "034",
+          "label": "Fish, fresh (live or dead), chilled or frozen"
+        },
+        {
+          "code": "035",
+          "label": "Fish, dried, salted or in brine; smoked fish"
+        },
+        {
+          "code": "036",
+          "label": "Crustaceans, molluscs and aquatic invertebrates"
+        },
+        {
+          "code": "037",
+          "label": "Fish, aquatic invertebrates, prepared or preserved, n.e.s."
+        },
+        {
+          "code": "041",
+          "label": "Wheat (including spelt) and meslin, unmilled"
+        },
+        {
+          "code": "042",
+          "label": "Rice"
+        },
+        {
+          "code": "043",
+          "label": "Barley, unmilled"
+        },
+        {
+          "code": "044",
+          "label": "Maize (not including sweet corn), unmilled"
+        },
+        {
+          "code": "045",
+          "label": "Cereals, unmilled (excluding wheat, rice, barley, maize)"
+        },
+        {
+          "code": "046",
+          "label": "Meal and flour of wheat and flour of meslin"
+        },
+        {
+          "code": "047",
+          "label": "Other cereal meals and flour"
+        },
+        {
+          "code": "048",
+          "label": "Cereal preparations, flour of fruits or vegetables"
+        },
+        {
+          "code": "054",
+          "label": "Vegetables"
+        },
+        {
+          "code": "056",
+          "label": "Vegetables, roots, tubers, prepared, preserved, n.e.s."
+        },
+        {
+          "code": "057",
+          "label": "Fruits and nuts (excluding oil nuts), fresh or dried"
+        },
+        {
+          "code": "058",
+          "label": "Fruit, preserved, and fruit preparations (no juice)"
+        },
+        {
+          "code": "059",
+          "label": "Fruit and vegetable juices, unfermented, no spirit"
+        },
+        {
+          "code": "061",
+          "label": "Sugar, molasses and honey"
+        },
+        {
+          "code": "062",
+          "label": "Sugar confectionery"
+        },
+        {
+          "code": "071",
+          "label": "Coffee and coffee substitutes"
+        },
+        {
+          "code": "072",
+          "label": "Cocoa"
+        },
+        {
+          "code": "073",
+          "label": "Chocolate, food preparations with cocoa, n.e.s."
+        },
+        {
+          "code": "074",
+          "label": "Tea and mate"
+        },
+        {
+          "code": "075",
+          "label": "Spices"
+        },
+        {
+          "code": "081",
+          "label": "Feeding stuff for animals (no unmilled cereals)"
+        },
+        {
+          "code": "091",
+          "label": "Margarine and shortening"
+        },
+        {
+          "code": "098",
+          "label": "Edible products and preparations, n.e.s."
+        }
+      ]
+    },
+    {
+      "heading": "Beverages and tobacco",
+      "items": [
+        {
+          "code": "1",
+          "label": "Beverages and tobacco"
+        },
+        {
+          "code": "111",
+          "label": "Non-alcoholic beverages, n.e.s."
+        },
+        {
+          "code": "112",
+          "label": "Alcoholic beverages"
+        },
+        {
+          "code": "121",
+          "label": "Tobacco, unmanufactured; tobacco refuse"
+        },
+        {
+          "code": "122",
+          "label": "Tobacco, manufactured"
+        }
+      ]
+    },
+    {
+      "heading": "Oil seeds and oleaginous fruits",
+      "items": [
+        {
+          "code": "22",
+          "label": "Oil seeds and oleaginous fruits"
+        },
+        {
+          "code": "222",
+          "label": "Oil seeds and oleaginous fruits (excluding flour)"
+        },
+        {
+          "code": "223",
+          "label": "Oil seeds and oleaginous fruits (including flour, n.e.s.)"
+        }
+      ]
+    },
+    {
+      "heading": "Animal and vegetable oils, fats and waxes",
+      "items": [
+        {
+          "code": "4",
+          "label": "Animal and vegetable oils, fats and waxes"
+        },
+        {
+          "code": "411",
+          "label": "Animal oils and fats"
+        },
+        {
+          "code": "421",
+          "label": "Fixed vegetable fats and oils, soft, crude, refined or fractionated"
+        },
+        {
+          "code": "422",
+          "label": "Fixed vegetable fats and oils, crude, refined or fractionated, other than soft"
+        },
+        {
+          "code": "431",
+          "label": "Animal or vegetable oils and fats, processed, mixtures, n.e.s."
+        }
+      ]
+    },
+    {
+      "heading": "Agricultural raw materials",
+      "items": [
+        {
+          "code": "2 less 22, 27 and 28",
+          "label": "Agricultural raw materials"
+        },
+        {
+          "code": "211",
+          "label": "Hides and skins (except furskins), raw"
+        },
+        {
+          "code": "212",
+          "label": "Furskins, raw, other than hides and skins of group 211"
+        },
+        {
+          "code": "231",
+          "label": "Natural rubber and similar gums, in primary forms"
+        },
+        {
+          "code": "232",
+          "label": "Synthetic rubber"
+        },
+        {
+          "code": "245",
+          "label": "Fuel wood (excluding wood waste) and wood charcoal"
+        },
+        {
+          "code": "246",
+          "label": "Wood in chips or particles and wood waste"
+        },
+        {
+          "code": "247",
+          "label": "Wood in the rough or roughly squared"
+        },
+        {
+          "code": "248",
+          "label": "Wood simply worked, and railway sleepers of wood"
+        },
+        {
+          "code": "251",
+          "label": "Pulp and waste paper"
+        },
+        {
+          "code": "261",
+          "label": "Silk"
+        },
+        {
+          "code": "263",
+          "label": "Cotton"
+        },
+        {
+          "code": "264",
+          "label": "Jute and other textile bast fibres, n.e.s., not spun"
+        },
+        {
+          "code": "265",
+          "label": "Vegetable textile fibres, not spun; waste of them"
+        },
+        {
+          "code": "266",
+          "label": "Synthetic fibres suitable for spinning"
+        },
+        {
+          "code": "267",
+          "label": "Other man-made fibres suitable for spinning"
+        },
+        {
+          "code": "268",
+          "label": "Wool and other animal hair (including wool tops)"
+        },
+        {
+          "code": "269",
+          "label": "Worn clothing and other worn textile articles"
+        },
+        {
+          "code": "291",
+          "label": "Crude animal materials, n.e.s."
+        },
+        {
+          "code": "292",
+          "label": "Crude vegetable materials, n.e.s."
+        }
+      ]
+    },
+    {
+      "heading": "Energy products",
+      "items": [
+        {
+          "code": "3",
+          "label": "Energy products"
+        },
+        {
+          "code": "321",
+          "label": "Coal, whether or not pulverized, not agglomerated"
+        },
+        {
+          "code": "322",
+          "label": "Briquettes, lignites and peat"
+        },
+        {
+          "code": "325",
+          "label": "Coke and semi-cokes of coal, lignite, peat; retort carbon"
+        },
+        {
+          "code": "333",
+          "label": "Petroleum oils, oils from bituminous materials, crude"
+        },
+        {
+          "code": "334",
+          "label": "Petroleum oils or bituminous minerals > 70 per cent oil"
+        },
+        {
+          "code": "335",
+          "label": "Residual petroleum products, n.e.s., related materials"
+        },
+        {
+          "code": "342",
+          "label": "Liquefied propane and butane"
+        },
+        {
+          "code": "343",
+          "label": "Natural gas, whether or not liquefied"
+        },
+        {
+          "code": "344",
+          "label": "Petroleum gases, other gaseous hydrocarbons, n.e.s."
+        },
+        {
+          "code": "351",
+          "label": "Electric current"
+        }
+      ]
+    },
+    {
+      "heading": "Mining products",
+      "items": [
+        {
+          "code": "27 + 28 + 68 + 667 + 971",
+          "label": "Mining products"
+        },
+        {
+          "code": "272",
+          "label": "Crude fertilizers (excluding those of division 56)"
+        },
+        {
+          "code": "273",
+          "label": "Stone, sand and gravel"
+        },
+        {
+          "code": "274",
+          "label": "Sulphur and unroasted iron pyrites"
+        },
+        {
+          "code": "277",
+          "label": "Natural abrasives, n.e.s. (including industrial diamonds)"
+        },
+        {
+          "code": "278",
+          "label": "Other crude minerals"
+        },
+        {
+          "code": "281",
+          "label": "Iron ore and concentrates"
+        },
+        {
+          "code": "282",
+          "label": "Ferrous waste, scrape; remelting ingots, iron, steel"
+        },
+        {
+          "code": "283",
+          "label": "Copper ores and concentrates; copper mattes, cement copper"
+        },
+        {
+          "code": "284",
+          "label": "Nickel ores and concentrates; nickel mattes, etc."
+        },
+        {
+          "code": "285",
+          "label": "Aluminium ores and concentrates (including alumina)"
+        },
+        {
+          "code": "286",
+          "label": "Ores and concentrates of uranium or thorium"
+        },
+        {
+          "code": "287",
+          "label": "Ores and concentrates of base metals, n.e.s."
+        },
+        {
+          "code": "288",
+          "label": "Non-ferrous base metal waste and scrap, n.e.s."
+        },
+        {
+          "code": "289",
+          "label": "Ores and concentrates of precious metals; waste, scrap"
+        },
+        {
+          "code": "667",
+          "label": "Pearls, precious and semi-precious stones"
+        },
+        {
+          "code": "681",
+          "label": "Silver, platinum, other metals of the platinum group"
+        },
+        {
+          "code": "682",
+          "label": "Copper"
+        },
+        {
+          "code": "683",
+          "label": "Nickel"
+        },
+        {
+          "code": "684",
+          "label": "Aluminium"
+        },
+        {
+          "code": "685",
+          "label": "Lead"
+        },
+        {
+          "code": "686",
+          "label": "Zinc"
+        },
+        {
+          "code": "687",
+          "label": "Tin"
+        },
+        {
+          "code": "689",
+          "label": "Miscellaneous non-ferrous base metals employed in metallurgy"
+        },
+        {
+          "code": "971",
+          "label": "Gold, non-monetary (excl. gold ores and concentrates)"
+        }
+      ]
+    },
+    {
+      "heading": "All other products are considered non-commodities and include the following:",
+      "items": [
+        {
+          "code": "5",
+          "label": "Chemicals and related products, n.e.s."
+        },
+        {
+          "code": "61 + 62 + 63 + 64 + 66 (less 667) + 67 + 69",
+          "label": "Manufactures"
+        },
+        {
+          "code": "7",
+          "label": "Machinery and transport equipment"
+        },
+        {
+          "code": "65 + 84",
+          "label": "Apparel and textiles"
+        },
+        {
+          "code": "8 (less 84)",
+          "label": "Other manufactures"
+        }
+      ]
+    }
+  ]
+}
