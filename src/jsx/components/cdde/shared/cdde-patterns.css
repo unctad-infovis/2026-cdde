@@ -60,25 +60,6 @@
     min-width: 0;
     padding: 24px 20px 18px;
   }
-  /* Generic card body: flex 1 + top margin */
-
-  .cdde_card_body {
-    flex: 1;
-    margin-top: 12px;
-  }
-
-  /* ── Section label (mini uppercase label above a sub-section) ── */
-
-  .cdde_section_label {
-    color: var(--un-color-grey-text);
-    display: block;
-    font-size: var(--un-font-size-xxxs);
-    font-weight: var(--un-font-weight-bold);
-    letter-spacing: 0.06em;
-    margin-bottom: 6px;
-    text-transform: uppercase;
-  }
-
   /* ── Stacked horizontal bar ────────────────────────────────── */
 
   .cdde_stacked_bar {
@@ -146,13 +127,6 @@
 
   /* ── Horizontal bar rows (label | track | value) ───────────── */
 
-  .cdde_bars {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    padding-top: 4px;
-  }
-
   .cdde_hbar_row {
     align-items: center;
     display: grid;
@@ -181,49 +155,6 @@
   }
 
   .cdde_hbar_pct {
-    color: var(--un-color-blue-darkest);
-    font-size: var(--un-font-size-xs);
-    font-weight: var(--un-font-weight-bold);
-    text-align: right;
-  }
-
-  /* ── Small indicator bar rows ──────────────────────────────── */
-
-  .cdde_small_bars {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .cdde_small_row {
-    align-items: center;
-    display: grid;
-    gap: 10px;
-    grid-template-columns: 1fr 120px 46px;
-  }
-
-  .cdde_small_label {
-    color: var(--un-color-grey-text);
-    font-size: var(--un-font-size-xxxs);
-    letter-spacing: 0.05em;
-    line-height: var(--un-line-height-small);
-    text-transform: uppercase;
-  }
-
-  .cdde_small_track {
-    background: var(--un-color-grey-lighest);
-    border-radius: 3px;
-    height: 10px;
-    overflow: hidden;
-  }
-
-  .cdde_small_fill {
-    border-radius: 3px;
-    height: 100%;
-    transition: width 0.5s ease;
-  }
-
-  .cdde_small_pct {
     color: var(--un-color-blue-darkest);
     font-size: var(--un-font-size-xs);
     font-weight: var(--un-font-weight-bold);

@@ -24,23 +24,23 @@ export default function StatusChangers({ insight, note, source, subtitle, title 
   }, []);
 
   return (
-    <div className="tc_container cdde_reveal" ref={visRef}>
+    <div className="sc_container cdde_reveal" ref={visRef}>
       <ChartHeader title={title} subtitle={subtitle} />
 
       {insight && <p className="cdde_insight">{insight}</p>}
 
-      <div className="tc_legend">
-        <span className="tc_legend_item">
-          <span className="tc_legend_dot" style={{ background: C_BLUE }} />
+      <div className="cdde_legend_row">
+        <span className="cdde_legend_item">
+          <span className="cdde_legend_dot" style={{ background: C_BLUE }} />
           No longer commodity-dependent
         </span>
-        <span className="tc_legend_item">
-          <span className="tc_legend_dot" style={{ background: C_YELLOW }} />
+        <span className="cdde_legend_item">
+          <span className="cdde_legend_dot" style={{ background: C_YELLOW }} />
           Now commodity-dependent
         </span>
       </div>
 
-      <div className="tc_chart_wrap">{data ? <DumbbellChart data={data} xMin={0} xMax={100} nameW={172} badgeW={56} svgW={544} referencePct={60} referenceLabel="60% threshold" xTickValues={[0, 50, 100]} animated={animated} /> : <div className="tc_loading" />}</div>
+      <div className="sc_chart_wrap">{data ? <DumbbellChart data={data} xMin={0} xMax={100} nameW={172} badgeW={56} svgW={544} referencePct={60} referenceLabel="60% threshold" xTickValues={[0, 50, 100]} animated={animated} /> : <div className="sc_loading" />}</div>
 
       <ChartMeta source={source} note={note} />
     </div>

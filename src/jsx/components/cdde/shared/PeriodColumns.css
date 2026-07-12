@@ -33,27 +33,5 @@
     font-weight: var(--un-font-weight-bold);
   }
 
-  .pcc_legend {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    margin-top: 4px;
-  }
-
-  .pcc_legend_item {
-    align-items: center;
-    color: var(--un-color-grey-text);
-    display: flex;
-    font-size: var(--un-font-size-xxxs);
-    gap: 6px;
-  }
-
-  .pcc_legend_swatch {
-    border-radius: 2px;
-    flex-shrink: 0;
-    height: 12px;
-    width: 12px;
-  }
-
 }
 

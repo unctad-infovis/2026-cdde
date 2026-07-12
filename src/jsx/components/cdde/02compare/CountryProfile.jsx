@@ -3,13 +3,10 @@ import loadFile from '../../../helpers/LoadFile';
 import CircleFlag from '../../general/CircleFlag';
 import RollingNumber from '../shared/RollingNumber';
 import DependenceOverTime from './DependenceOverTime';
-import EnergyImportsOverTime from './EnergyImportsOverTime';
 import EnergyNetImports from './EnergyNetImports';
-import ExportsOverTime from './ExportsOverTime';
-import FoodImportsOverTime from './FoodImportsOverTime';
 import FoodNetImports from './FoodNetImports';
-import ImportsOverTime from './ImportsOverTime';
 import LeadingExports from './LeadingExports';
+import TimeSeriesChart from './TimeSeriesChart';
 import MacroContext from './MacroContext';
 import SocialContext from './SocialContext';
 import TopMarkets from './TopMarkets';
@@ -113,21 +110,21 @@ export default function CountryProfile({ country, content = {} }) {
       <h3 className="cp_section_head cp_section_head--sep">{content.exportsHeading ?? 'Exports'}</h3>
 
       <DependenceOverTime iso3={iso3} currentPct={safePct} dominantGroup={dominant_group} {...content.dependenceOverTime} />
-      <ExportsOverTime iso3={iso3} dominantGroup={dominant_group} useMillions={isSmall} {...content.exportsOverTime} />
+      <TimeSeriesChart iso3={iso3} dataFile="cdde_exports_over_time.json" ariaLabel="Line chart of commodity exports over time" useMillions={isSmall} {...content.exportsOverTime} />
 
       <div className="cp_chart_row">
-        <LeadingExports iso3={iso3} dominantGroup={dominant_group} {...content.leadingExports} />
+        <LeadingExports iso3={iso3} {...content.leadingExports} />
         <TopMarkets iso3={iso3} {...content.topMarkets} />
       </div>
 
       {/* Imports section */}
       <h3 className="cp_section_head cp_section_head--sep">{content.importsHeading ?? 'Imports'}</h3>
 
-      <ImportsOverTime iso3={iso3} useMillions={isSmall || iso3 === 'SSD'} {...content.importsOverTime} />
+      <TimeSeriesChart iso3={iso3} dataFile="cdde_imports_over_time.json" ariaLabel="Line chart of commodity imports over time" useMillions={isSmall || iso3 === 'SSD'} {...content.importsOverTime} />
 
       <div className="cp_chart_row">
-        <FoodImportsOverTime iso3={iso3} useMillions={isSmall || iso3 === 'SSD' || iso3 === 'PSE'} {...content.foodImportsOverTime} />
-        <EnergyImportsOverTime iso3={iso3} useMillions={isSmall || iso3 === 'SSD' || iso3 === 'PSE'} {...content.energyImportsOverTime} />
+        <TimeSeriesChart iso3={iso3} dataFile="cdde_food_imports.json" lineColor="var(--un-color-green)" ariaLabel="Line chart of food imports over time" useMillions={isSmall || iso3 === 'SSD' || iso3 === 'PSE'} {...content.foodImportsOverTime} />
+        <TimeSeriesChart iso3={iso3} dataFile="cdde_energy_imports.json" lineColor="var(--un-color-purple)" ariaLabel="Line chart of energy imports over time" useMillions={isSmall || iso3 === 'SSD' || iso3 === 'PSE'} {...content.energyImportsOverTime} />
       </div>
 
       <div className="cp_chart_row">

@@ -116,28 +116,6 @@
       margin: 0 0 28px 0;
       padding: 0;
     }
-    .ni_pill {
-      align-items: center;
-      border-radius: 8px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      display: inline-flex;
-      gap: 14px;
-      padding: 14px 20px;
-    }
-    .ni_pill_value {
-      color: var(--un-color-yellow);
-      font-size: var(--un-font-size-xxxl);
-      font-weight: var(--un-font-weight-boldest);
-      line-height: 1;
-      white-space: nowrap;
-    }
-    .ni_pill_label {
-      color: #fff;
-      font-size: var(--un-font-size-xxs);
-      font-weight: var(--un-font-weight-normal);
-      line-height: var(--un-line-height-normal);
-      max-width: 260px;
-    }
     /* Indicator cards */
     .ni_cards {
       display: grid;
@@ -182,13 +160,6 @@
       margin: 0 0 16px 0;
       padding: 0;
     }
-    .ni_card_bar {
-      border-radius: 2px;
-      display: block;
-      height: 4px;
-      width: 48px;
-    }
-
     @media (max-width: 860px) {
       .ni_hero--split {
         grid-template-columns: 1fr;

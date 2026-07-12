@@ -20,18 +20,15 @@
       margin-top: 14px;
     }
   }
-
   .dm_loading {
     height: 460px;
     background: var(--un-color-blue-lightest);
     border-radius: 8px;
     animation: cdde_pulse 1.4s ease infinite;
   }
-
   .dm_chart_wrap {
     flex: 1;
   }
-
   @media (max-width: 600px) {
     .dm_container {
       padding: 16px 12px 12px;

@@ -20,18 +20,6 @@
       max-width: 1100px;
       padding: 0 24px;
     }
-    .cmap_title {
-      color: var(--un-color-blue-darkest);
-      font-size: var(--un-font-size-xxl);
-      font-weight: var(--un-font-weight-boldest);
-      line-height: var(--un-line-height-small);
-      margin: 0 0 8px;
-    }
-    .cmap_subtitle {
-      color: var(--un-color-grey-text);
-      font-size: var(--un-font-size-xs);
-      margin: 0 0 24px;
-    }
     /* Controls row */
     .cmap_controls {
       align-items: center;
@@ -93,14 +81,14 @@
       display: flex;
       gap: 6px;
     }
-    .cmap_gt_item--nodata .cmap_gt_dot {
-      border: 1px solid var(--un-color-grey-light);
-    }
     .cmap_gt_dot {
       border-radius: 50%;
       flex-shrink: 0;
       height: 10px;
       width: 10px;
+    }
+    .cmap_gt_item--nodata .cmap_gt_dot {
+      border: 1px solid var(--un-color-grey-light);
     }
     .cmap_gt_text {
       display: flex;
@@ -229,42 +217,12 @@
       padding-top: 6px;
       text-transform: uppercase;
     }
-    .cmap_legend_groups {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
     .cmap_legend_group_item {
       align-items: center;
       color: var(--un-color-blue-darkest);
       display: flex;
       font-size: var(--un-font-size-xxxs);
       gap: 6px;
-    }
-    .cmap_legend_group_dot {
-      border-radius: 50%;
-      flex-shrink: 0;
-      height: 10px;
-      width: 10px;
-    }
-    .cmap_legend_islands_note {
-      align-items: center;
-      border-top: 1px solid var(--un-color-grey-lighest);
-      color: var(--un-color-grey-text);
-      display: flex;
-      font-size: var(--un-font-size-xxxs);
-      gap: 6px;
-      margin-top: 1px;
-      padding-top: 7px;
-    }
-    .cmap_legend_island_dot {
-      background: var(--un-color-blue-light);
-      border-radius: 50%;
-      border: 1px solid #fff;
-      display: inline-block;
-      flex-shrink: 0;
-      height: 8px;
-      width: 8px;
     }
     /* Zoom buttons */
     .cmap_zoom_btns {
@@ -445,33 +403,6 @@
       font-weight: var(--un-font-weight-boldest);
       line-height: 1;
     }
-    .cmap_panel_stats {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin: 0 0 14px;
-    }
-    .cmap_panel_stat {
-      background: var(--un-color-blue-lightest);
-      border-radius: 8px;
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-      padding: 12px 14px;
-    }
-    .cmap_panel_stat_label {
-      color: var(--un-color-grey-text);
-      font-size: var(--un-font-size-xxxs);
-      font-weight: var(--un-font-weight-bold);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-    .cmap_panel_stat_value {
-      color: var(--un-color-blue-darkest);
-      font-size: var(--un-font-size-xxs);
-      font-weight: var(--un-font-weight-boldest);
-      line-height: var(--un-line-height-smallest);
-    }
     .cmap_panel_stat_group {
       align-self: flex-start;
       border-radius: 99px;
@@ -495,7 +426,6 @@
       text-align: center;
       text-decoration: none;
       transition: background 0.15s;
-
       &:hover {
         background: var(--un-color-blue-dark);
       }
@@ -503,20 +433,17 @@
     /* Footer */
     .cmap_footer {
       margin-top: 16px;
-
       .cdde_meta {
         margin-top: 0;
       }
       a {
         color: var(--un-color-grey-text);
         text-decoration: underline;
-
         &:hover {
           color: var(--un-color-blue);
         }
       }
     }
-
     @media (prefers-reduced-motion: reduce) {
       .cmap_country {
         transition: opacity 0.15s;
@@ -527,7 +454,6 @@
     }
     @media (max-width: 600px) {
       padding: 24px 0;
-
       .cmap_inner {
         padding: 0 8px;
       }
@@ -537,9 +463,6 @@
       }
       .cmap_search {
         flex: 1 1 100%;
-      }
-      .cmap_title {
-        font-size: var(--un-font-size-xl);
       }
     }
   }
