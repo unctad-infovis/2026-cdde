@@ -186,6 +186,7 @@ export default function ExportsByRegion({ insight, note, source, subtitle: overv
                 const h = node.y1 - node.y0;
                 const textStyle = { opacity: animated ? 1 : 0, transition: 'opacity 0.5s ease', transitionDelay: `${500 + Math.min(i * 20, 300)}ms` };
                 return (
+                  // biome-ignore lint/a11y/noStaticElementInteractions: SVG treemap cell interaction
                   <g key={node.data.name} onClick={() => handleCellClick(node)} onMouseMove={e => handleMouseMove(e, { name: node.data.name, value: node.data.value, region: node.parent?.data?.name })} className="exc_cell">
                     <rect x={node.x0} y={node.y0} width={w} height={h} fill={fill} />
                     {w > 90 && h > 46 && (
@@ -219,6 +220,7 @@ export default function ExportsByRegion({ insight, note, source, subtitle: overv
               const showValue = w > 52 && h > 38;
               const clip = `url(#exc_cp_${i})`;
               return (
+                // biome-ignore lint/a11y/noStaticElementInteractions: SVG treemap cell hover target
                 <g key={node.data.name} className="exc_cell exc_cell--country" onMouseMove={e => handleMouseMove(e, { name: node.data.name, value: hasValue ? node.data.value : null, region: drill.subregionName })}>
                   <rect x={node.x0} y={node.y0} width={w} height={h} fill={fill} />
                   {showName && (

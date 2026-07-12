@@ -10,7 +10,9 @@ export default function TopMarkets({ iso3, title, subtitle, description, source,
   useEffect(() => {
     loadFile('assets/data/cdde_top_markets.json')
       .then(r => r?.json())
-      .then(d => { if (d) setAllData(d); });
+      .then(d => {
+        if (d) setAllData(d);
+      });
   }, []);
 
   const markets = allData?.[iso3] ?? null;

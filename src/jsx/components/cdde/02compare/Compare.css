@@ -57,7 +57,7 @@
   }
 
   .cmp_tool_num {
-    font-size: 32px;
+    font-size: var(--un-font-size-xxxl);
     font-weight: var(--un-font-weight-boldest);
     color: var(--un-color-grey-lighest);
     line-height: 1;
@@ -88,13 +88,13 @@
   /* ── Filter bar ─────────────────────────────────────────── */
 
   .cmp_filter_bar {
-    display: flex;
     align-items: center;
-    gap: 12px;
     background: #fff;
     border-radius: 12px;
-    padding: 10px 16px;
+    display: flex;
     flex-wrap: wrap;
+    gap: 12px;
+    padding: 8px 16px;
   }
 
   /* Panel filters (inside the overlay panel) */
@@ -192,7 +192,7 @@
   .cmp_filter_group_label {
     font-size: var(--un-font-size-xxxs);
     font-weight: var(--un-font-weight-bold);
-    color: var(--un-color-grey-text);
+    color: #000;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     margin-right: 4px;
@@ -200,13 +200,13 @@
   }
 
   .cmp_filter_pill {
-    padding: 4px 12px;
+    background: transparent;
     border-radius: 100px;
     border: none;
-    background: transparent;
-    font-size: var(--un-font-size-xxs);
     color: var(--un-color-grey-dark);
     cursor: pointer;
+    font-size: var(--un-font-size-xxs);
+    padding: 4px 10px;
     transition:
       background 0.12s,
       color 0.12s;
@@ -234,36 +234,43 @@
   /* Backdrop – closes panel when clicking outside */
 
   .cmp_backdrop {
-    position: fixed;
-    inset: 0;
-    z-index: 9;
     background: rgba(0, 0, 0, 0.18);
+    border: none;
     cursor: default;
+    inset: 0;
+    padding: 0;
+    position: fixed;
+    z-index: 9;
   }
 
   /* Left panel: absolute overlay */
 
   .cmp_col_left {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 352px;
-    max-height: calc(100vh - 200px);
-    z-index: 10;
-    visibility: visible;
-    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s;
-    transform: translateX(0);
-    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.14);
     border-radius: 0 16px 16px 0;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.14);
     display: flex;
     flex-direction: column;
+    left: 0;
+    max-height: calc(100vh - 200px);
     overflow: hidden;
+    position: absolute;
+    top: 0;
+    transform: translateX(0);
+    visibility: visible;
+    max-width: 360px;
+    width: 100%;
+    z-index: 10;
+    transition:
+      transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 0s;
   }
 
   .cmp_col_left--closed {
     transform: translateX(calc(-100% - 16px));
     visibility: hidden;
-    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s 0.28s;
+    transition:
+      transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 0s 0.28s;
     pointer-events: none;
   }
 
@@ -308,7 +315,7 @@
     min-width: 0;
   }
 
-.cmp_placeholder {
+  .cmp_placeholder {
     background: #fff;
     border-radius: 16px;
     padding: 48px 24px;

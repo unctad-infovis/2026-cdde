@@ -64,8 +64,8 @@ export default function DependenceByGroup({ insight, note, source, subtitle, tit
 
   if (!data) {
     return (
-      <div className="gbc_container cdde_reveal" ref={visRef}>
-        <div className="gbc_loading" />
+      <div className="dbg_container cdde_reveal" ref={visRef}>
+        <div className="dbg_loading" />
       </div>
     );
   }
@@ -92,28 +92,28 @@ export default function DependenceByGroup({ insight, note, source, subtitle, tit
   }
 
   return (
-    <div className="gbc_container cdde_reveal" ref={visRef}>
+    <div className="dbg_container cdde_reveal" ref={visRef}>
       <ChartHeader title={title} subtitle={subtitle} large />
 
       {insight && <p className="cdde_insight">{insight}</p>}
 
-      <div className="gbc_legend">
+      <div className="cdde_legend_row">
         {BANDS.map(b => (
-          <span key={b.key} className="gbc_legend_item">
-            <span className="gbc_legend_dot" style={{ background: b.color }} />
+          <span key={b.key} className="cdde_legend_item">
+            <span className="cdde_legend_dot cdde_legend_dot--sq" style={{ background: b.color }} />
             {b.label}
           </span>
         ))}
       </div>
 
-      <div className="gbc_chart_wrap" ref={wrapRef}>
-        <svg viewBox={`0 0 ${svgW} ${H}`} className={`gbc_svg${animated ? ' gbc_svg--animated' : ''}`} aria-label="Stacked bar chart of commodity dependence by country group" onMouseLeave={handleMouseLeave}>
+      <div className="dbg_chart_wrap" ref={wrapRef}>
+        <svg viewBox={`0 0 ${svgW} ${H}`} className={`dbg_svg${animated ? ' dbg_svg--animated' : ''}`} aria-label="Stacked bar chart of commodity dependence by country group" onMouseLeave={handleMouseLeave}>
           <g transform={`translate(${PAD.left},${PAD.top})`}>
             {/* Y grid lines and labels */}
             {yTicks.map(v => (
               <g key={v} transform={`translate(0,${yScale(v)})`}>
                 <line x1={0} x2={chartW} stroke="var(--un-color-grey-lighest)" strokeWidth={1} />
-                <text x={-6} y={4} textAnchor="end" className="gbc_axis_label">
+                <text x={-6} y={4} textAnchor="end" className="dbg_axis_label">
                   {v}
                 </text>
               </g>
@@ -124,6 +124,7 @@ export default function DependenceByGroup({ insight, note, source, subtitle, tit
               const x = barX(i);
               let yOffset = chartH;
               return (
+                // biome-ignore lint/a11y/noStaticElementInteractions: SVG bar group hover target
                 <g key={d.group} onMouseMove={e => handleMouseMove(e, d)}>
                   {BANDS.map(band => {
                     const h = (d[band.key] / yMax) * chartH;
@@ -133,7 +134,7 @@ export default function DependenceByGroup({ insight, note, source, subtitle, tit
                       <g key={band.key}>
                         <rect x={x} y={yOffset} width={barW} height={h} fill={band.color} style={{ transitionDelay: `${500 + i * 80}ms` }} />
                         {showLabel && h > 14 && (
-                          <text x={x + barW / 2} y={yOffset + h / 2 + 4} textAnchor="middle" className="gbc_bar_label" style={{ transitionDelay: `${500 + i * 80 + 480}ms` }}>
+                          <text x={x + barW / 2} y={yOffset + h / 2 + 4} textAnchor="middle" className="dbg_bar_label" style={{ transitionDelay: `${500 + i * 80 + 480}ms` }}>
                             {d[band.key]}
                           </text>
                         )}
@@ -142,9 +143,9 @@ export default function DependenceByGroup({ insight, note, source, subtitle, tit
                   })}
 
                   {/* X axis label */}
-                  <text x={x + barW / 2} y={chartH + 14} textAnchor="middle" className="gbc_x_label">
+                  <text x={x + barW / 2} y={chartH + 14} textAnchor="middle" className="dbg_x_label">
                     {d.group_short.split('\n').map((line, li) => (
-                      <tspan key={line} x={x + barW / 2} dy={li === 0 ? 0 : '1.2em'}>
+                      <tspan key={line} x={x + barW / 2} dy={li === 0 ? '0.2em' : '1.2em'}>
                         {line}
                       </tspan>
                     ))}
@@ -157,17 +158,17 @@ export default function DependenceByGroup({ insight, note, source, subtitle, tit
 
         {tooltip && (
           <ChartTooltip left={tooltip.left} top={tooltip.top} flip={!!(wrapRef.current && tooltip.left > wrapRef.current.clientWidth * 0.6)}>
-            <div className="gbc_tt_name">{tooltip.d.group}</div>
+            <div className="dbg_tt_name">{tooltip.d.group}</div>
             {BANDS.map(band => (
-              <div key={band.key} className="gbc_tt_row">
-                <span className="gbc_tt_dot" style={{ background: band.color }} />
-                <span className="gbc_tt_label">{band.label}</span>
-                <span className="gbc_tt_val">{tooltip.d[band.key]}</span>
+              <div key={band.key} className="dbg_tt_row">
+                <span className="dbg_tt_dot" style={{ background: band.color }} />
+                <span className="dbg_tt_label">{band.label}</span>
+                <span className="dbg_tt_val">{tooltip.d[band.key]}</span>
               </div>
             ))}
-            <div className="gbc_tt_total">
-              <span className="gbc_tt_label">Total</span>
-              <span className="gbc_tt_val">{tooltip.d.total}</span>
+            <div className="dbg_tt_total">
+              <span className="dbg_tt_label">Total</span>
+              <span className="dbg_tt_val">{tooltip.d.total}</span>
             </div>
           </ChartTooltip>
         )}

@@ -36,8 +36,8 @@ export default function DependenceByLevel({ insight, note, source, subtitle, tit
 
   if (!data) {
     return (
-      <div className="alc_container cdde_reveal" ref={visRef}>
-        <div className="alc_loading" />
+      <div className="dbl_container cdde_reveal" ref={visRef}>
+        <div className="dbl_loading" />
       </div>
     );
   }
@@ -45,38 +45,38 @@ export default function DependenceByLevel({ insight, note, source, subtitle, tit
   const thresholdPct = (THRESHOLD / MAX_PCT) * 100;
 
   return (
-    <div className="alc_container cdde_reveal" ref={visRef}>
+    <div className="dbl_container cdde_reveal" ref={visRef}>
       <ChartHeader title={title} subtitle={subtitle} large />
 
       {insight && <p className="cdde_insight">{insight}</p>}
 
-      <div className="alc_chart">
-        <div className="alc_threshold_wrap">
-          <div className="alc_threshold_label" style={{ left: `${thresholdPct}%` }}>
+      <div className="dbl_chart">
+        <div className="dbl_threshold_wrap">
+          <div className="dbl_threshold_label" style={{ left: `${thresholdPct}%` }}>
             60% threshold
           </div>
         </div>
 
-        <div className="alc_bars">
+        <div className="dbl_bars">
           {data.map((row, idx) => {
             const barPct = (row.avg_pct / MAX_PCT) * 100;
             const isBlue = row.color !== 'green';
             const delay = `${500 + idx * 80}ms`;
             return (
-              <div key={row.group} className="alc_row">
-                <div className="alc_row_meta">
-                  <span className="alc_row_group">{row.group}</span>
-                  <span className="alc_row_economies">{row.economies} economies</span>
+              <div key={row.group} className="dbl_row">
+                <div className="dbl_row_meta">
+                  <span className="dbl_row_group">{row.group}</span>
+                  <span className="dbl_row_economies">{row.economies} economies</span>
                 </div>
-                <div className="alc_bar_track">
+                <div className="dbl_bar_track">
                   <div
-                    className={`alc_bar${isBlue ? '' : ' alc_bar--green'}`}
+                    className={`dbl_bar${isBlue ? '' : ' dbl_bar--green'}`}
                     style={{ width: animated ? `${barPct}%` : '0%', transitionDelay: delay }}
                   />
-                  <div className="alc_threshold_line" style={{ left: `${thresholdPct}%` }} />
+                  <div className="dbl_threshold_line" style={{ left: `${thresholdPct}%` }} />
                 </div>
                 <span
-                  className="alc_row_value"
+                  className="dbl_row_value"
                   style={{ opacity: animated ? 1 : 0, transition: 'opacity 0.3s ease', transitionDelay: `${500 + idx * 80 + 480}ms` }}
                 >
                   {row.avg_pct.toFixed(1)}%

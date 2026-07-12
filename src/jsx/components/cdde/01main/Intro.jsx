@@ -4,7 +4,7 @@ const GROUPS = [
   { color: 'var(--un-color-green)', label: 'Agricultural products' },
   { color: 'var(--un-color-green-dark)', label: 'Raw materials' },
   { color: 'var(--un-color-blue)', label: 'Energy' },
-  { color: 'var(--un-color-yellow)', label: 'Mining & metals' }
+  { color: 'var(--un-color-yellow)', label: 'Mining' }
 ];
 
 export default function Intro() {

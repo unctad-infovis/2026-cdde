@@ -6,10 +6,10 @@
   }
 
   .lct_svg {
-    width: 100%;
-    height: auto;
     display: block;
+    height: auto;
     overflow: visible;
+    width: 100%;
   }
 
   .lct_grid {
@@ -18,9 +18,9 @@
   }
 
   .lct_tick_label {
-    font-size: var(--un-font-size-xxxs);
     fill: var(--un-color-grey-text);
     font-family: Inter, Arial, sans-serif;
+    font-size: var(--un-font-size-xxxs);
   }
 
   .lct_axis {
@@ -34,40 +34,23 @@
   }
 
   .lct_callout_label {
-    font-size: var(--un-font-size-xxs);
-    font-weight: 700;
     fill: #fff;
     font-family: Inter, Arial, sans-serif;
+    font-size: var(--un-font-size-xs);
+    font-weight: var(--un-font-weight-boldest);
   }
 
   .lct_cursor {
+    pointer-events: none;
     stroke: var(--un-color-grey-dark);
-    stroke-width: 1px;
     stroke-dasharray: 3 2;
-    pointer-events: none;
-  }
-
-  .lct_tooltip {
-    position: absolute;
-    pointer-events: none;
-    background: #fff;
-    border: 1px solid var(--un-color-grey-light);
-    border-radius: 8px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-    padding: 8px 12px;
-    transform: translate(12px, -50%);
-    z-index: 300;
-    white-space: nowrap;
-  }
-
-  .lct_tooltip--flip {
-    transform: translate(calc(-100% - 12px), -50%);
+    stroke-width: 1px;
   }
 
   .lct_tt_year {
+    color: var(--un-color-blue-darkest);
     font-size: var(--un-font-size-xxs);
     font-weight: var(--un-font-weight-boldest);
-    color: var(--un-color-blue-darkest);
   }
 
   .lct_tt_val {

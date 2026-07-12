@@ -1,12 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import CSVtoJSON from '../../../helpers/CsvToJson';
 import loadFile from '../../../helpers/LoadFile';
-import CompareBar from './CompareBar';
 import CompareView from './CompareView';
 import CountryList from './CountryList';
 import CountryProfile from './CountryProfile';
 import CountryRankings from './CountryRankings';
-import DependenceStandings from './DependenceStandings';
+import EconomyBubbleChart from './EconomyBubbleChart';
 
 import { REGION_GROUPS } from '../shared/cdde-constants';
 import './Compare.css';
@@ -29,7 +28,7 @@ export default function Compare({ content = {} }) {
   const [region, setRegion] = useState('All');
   const [threshold, setThreshold] = useState('All');
   const [compareList, setCompareList] = useState(['NGA', 'CHL', 'AUS']);
-  const [panelOpen, setPanelOpen] = useState(true);
+  const [panelOpen, setPanelOpen] = useState(!new URLSearchParams(window.location.search).get('country'));
   const filtersMounted = useRef(false);
 
   useEffect(() => {
@@ -38,20 +37,25 @@ export default function Compare({ content = {} }) {
       .then(text => {
         if (!text) return;
         const rows = CSVtoJSON(text)
-          .filter(r => r.iso3)
+          .filter(r => r.iso3 && r.iso3 !== 'LIE')
           .map(r => ({
             ...r,
             export_dependence: +r.export_dependence
           }));
         const sorted = [...rows].sort((a, b) => a.name.localeCompare(b.name));
         setAllCountries(sorted);
-        setSelected(sorted[0]);
+        const preselect = new URLSearchParams(window.location.search).get('country');
+        const initial = (preselect && sorted.find(r => r.iso3 === preselect)) || sorted[0];
+        setSelected(initial);
       });
   }, []);
 
   // Auto-open panel when filters change (skip initial mount)
   useEffect(() => {
-    if (!filtersMounted.current) { filtersMounted.current = true; return; }
+    if (!filtersMounted.current) {
+      filtersMounted.current = true;
+      return;
+    }
     setPanelOpen(true);
   }, [search, region, threshold]);
 
@@ -95,13 +99,13 @@ export default function Compare({ content = {} }) {
                 <rect x="1" y="6.25" width="12" height="1.5" rx="0.75" fill="currentColor" />
                 <rect x="1" y="10.5" width="12" height="1.5" rx="0.75" fill="currentColor" />
               </svg>
-              <span>{filtered.length} member States</span>
+              <span>Select another country</span>
             </button>
           </div>
 
           <div className="cmp_body">
             {/* Backdrop – closes panel when clicking outside */}
-            {panelOpen && <div className="cmp_backdrop" onClick={() => setPanelOpen(false)} />}
+            {panelOpen && <button type="button" className="cmp_backdrop" aria-label="Close country list" onClick={() => setPanelOpen(false)} />}
 
             {/* Collapsible overlay panel */}
             <div className={`cmp_col_left${panelOpen ? '' : ' cmp_col_left--closed'}`}>
@@ -140,14 +144,23 @@ export default function Compare({ content = {} }) {
               </div>
 
               <div className="cmp_list_wrap">
-                {allCountries ? <CountryList countries={filtered} selected={selected} onSelect={c => { setSelected(c); setPanelOpen(false); }} /> : <div className="cmp_list_loading" />}
+                {allCountries ? (
+                  <CountryList
+                    countries={filtered}
+                    selected={selected}
+                    onSelect={c => {
+                      setSelected(c);
+                      setPanelOpen(false);
+                    }}
+                  />
+                ) : (
+                  <div className="cmp_list_loading" />
+                )}
               </div>
             </div>
 
             {/* Right: always full width */}
-            <div className="cmp_col_right">
-{selected ? <CountryProfile country={selected} content={content.profile ?? {}} /> : <p className="cmp_placeholder">Select a country to view its profile.</p>}
-            </div>
+            <div className="cmp_col_right">{selected ? <CountryProfile country={selected} content={content.profile ?? {}} /> : <p className="cmp_placeholder">Select a country to view its profile.</p>}</div>
           </div>
         </>
       )}
@@ -155,9 +168,8 @@ export default function Compare({ content = {} }) {
       {/* Tab 02: dot plot + compare bar */}
       {activeTool === '02' && (
         <>
-          <DependenceStandings countries={allCountries} {...content.standings} />
-          <CompareBar countries={allCountries} compareList={compareList} onCompareChange={setCompareList} />
-          <CompareView compareList={compareList} countries={allCountries} {...content.compareView} />
+          <EconomyBubbleChart countries={allCountries} {...content.standings} />
+          <CompareView compareList={compareList} countries={allCountries} onCompareChange={setCompareList} {...content.compareView} />
         </>
       )}
 

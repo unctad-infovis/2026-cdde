@@ -1,368 +1,1148 @@
 {
   "AFG": {
-    "agri": 64,
-    "energy": 8,
-    "mining": 12,
-    "other": 16
+    "agri": 77.5,
+    "energy": 11.8,
+    "mining": 5.9,
+    "other": 4.8
+  },
+  "ALB": {
+    "agri": 12.2,
+    "energy": 10.8,
+    "mining": 9.1,
+    "other": 67.9
   },
   "DZA": {
-    "agri": 2,
-    "energy": 78,
-    "mining": 8,
-    "other": 12
+    "agri": 1.4,
+    "energy": 93.8,
+    "mining": 0.8,
+    "other": 4.0
+  },
+  "AND": {
+    "agri": 4.1,
+    "energy": 0.1,
+    "mining": 3.9,
+    "other": 91.9
   },
   "AGO": {
-    "agri": 4,
-    "energy": 82,
-    "mining": 6,
-    "other": 8
+    "agri": 0.3,
+    "energy": 90.1,
+    "mining": 5.8,
+    "other": 3.9
+  },
+  "ATG": {
+    "agri": 9.4,
+    "energy": 29.3,
+    "mining": 1.3,
+    "other": 60.0
   },
   "ARG": {
-    "agri": 52,
-    "energy": 16,
-    "mining": 8,
-    "other": 24
+    "agri": 68.4,
+    "energy": 10.0,
+    "mining": 2.6,
+    "other": 19.1
+  },
+  "ARM": {
+    "agri": 18.6,
+    "energy": 0.6,
+    "mining": 55.5,
+    "other": 25.3
   },
   "AUS": {
-    "agri": 14,
-    "energy": 36,
-    "mining": 32,
-    "other": 18
+    "agri": 14.6,
+    "energy": 33.3,
+    "mining": 43.7,
+    "other": 8.4
+  },
+  "AUT": {
+    "agri": 10.0,
+    "energy": 3.6,
+    "mining": 4.6,
+    "other": 81.8
   },
   "AZE": {
-    "agri": 8,
-    "energy": 72,
-    "mining": 6,
-    "other": 14
+    "agri": 3.9,
+    "energy": 90.2,
+    "mining": 1.6,
+    "other": 4.3
+  },
+  "BHS": {
+    "agri": 8.5,
+    "energy": 42.7,
+    "mining": 2.5,
+    "other": 46.3
+  },
+  "BHR": {
+    "agri": 4.9,
+    "energy": 30.1,
+    "mining": 38.3,
+    "other": 26.7
+  },
+  "BGD": {
+    "agri": 3.9,
+    "energy": 0.3,
+    "mining": 0.4,
+    "other": 95.4
+  },
+  "BRB": {
+    "agri": 34.7,
+    "energy": 12.4,
+    "mining": 4.5,
+    "other": 48.3
+  },
+  "BLR": {
+    "agri": 30.3,
+    "energy": 5.4,
+    "mining": 1.6,
+    "other": 62.6
+  },
+  "BEL": {
+    "agri": 12.4,
+    "energy": 15.4,
+    "mining": 6.7,
+    "other": 65.6
+  },
+  "BLZ": {
+    "agri": 81.7,
+    "energy": 6.1,
+    "mining": 1.5,
+    "other": 10.7
+  },
+  "BEN": {
+    "agri": 67.4,
+    "energy": 3.3,
+    "mining": 22.0,
+    "other": 7.3
+  },
+  "BTN": {
+    "agri": 6.2,
+    "energy": 37.5,
+    "mining": 12.2,
+    "other": 44.1
   },
   "BOL": {
-    "agri": 18,
-    "energy": 38,
-    "mining": 26,
-    "other": 18
+    "agri": 24.5,
+    "energy": 20.7,
+    "mining": 49.5,
+    "other": 5.3
+  },
+  "BIH": {
+    "agri": 10.4,
+    "energy": 8.6,
+    "mining": 8.3,
+    "other": 72.7
   },
   "BWA": {
-    "agri": 4,
-    "energy": 2,
-    "mining": 72,
-    "other": 22
+    "agri": 2.0,
+    "energy": 1.0,
+    "mining": 90.9,
+    "other": 6.0
   },
   "BRA": {
-    "agri": 38,
-    "energy": 12,
-    "mining": 24,
-    "other": 26
+    "agri": 45.5,
+    "energy": 16.7,
+    "mining": 13.6,
+    "other": 24.1
   },
-  "CMR": {
-    "agri": 42,
-    "energy": 34,
-    "mining": 8,
-    "other": 16
+  "BRN": {
+    "agri": 0.3,
+    "energy": 78.5,
+    "mining": 0.2,
+    "other": 21.0
   },
-  "CHL": {
-    "agri": 11,
-    "energy": 16,
-    "mining": 37,
-    "other": 36
-  },
-  "COD": {
-    "agri": 12,
-    "energy": 8,
-    "mining": 68,
-    "other": 12
-  },
-  "COG": {
-    "agri": 4,
-    "energy": 78,
-    "mining": 6,
-    "other": 12
-  },
-  "CIV": {
-    "agri": 56,
-    "energy": 12,
-    "mining": 14,
-    "other": 18
-  },
-  "COL": {
-    "agri": 18,
-    "energy": 42,
-    "mining": 24,
-    "other": 16
-  },
-  "ECU": {
-    "agri": 34,
-    "energy": 36,
-    "mining": 8,
-    "other": 22
-  },
-  "ETH": {
-    "agri": 72,
-    "energy": 2,
-    "mining": 8,
-    "other": 18
-  },
-  "GHA": {
-    "agri": 22,
-    "energy": 32,
-    "mining": 28,
-    "other": 18
-  },
-  "GIN": {
-    "agri": 12,
-    "energy": 6,
-    "mining": 68,
-    "other": 14
-  },
-  "IDN": {
-    "agri": 10,
-    "energy": 16,
-    "mining": 32,
-    "other": 42
-  },
-  "IRQ": {
-    "agri": 2,
-    "energy": 88,
-    "mining": 4,
-    "other": 6
-  },
-  "KAZ": {
-    "agri": 12,
-    "energy": 62,
-    "mining": 16,
-    "other": 10
-  },
-  "KEN": {
-    "agri": 64,
-    "energy": 2,
-    "mining": 12,
-    "other": 22
-  },
-  "MLI": {
-    "agri": 18,
-    "energy": 2,
-    "mining": 62,
-    "other": 18
-  },
-  "MNG": {
-    "agri": 6,
-    "energy": 18,
-    "mining": 68,
-    "other": 8
-  },
-  "MOZ": {
-    "agri": 22,
-    "energy": 42,
-    "mining": 18,
-    "other": 18
-  },
-  "NGA": {
-    "agri": 8,
-    "energy": 76,
-    "mining": 4,
-    "other": 12
-  },
-  "NOR": {
-    "agri": 9,
-    "energy": 54,
-    "mining": 14,
-    "other": 23
-  },
-  "PER": {
-    "agri": 16,
-    "energy": 8,
-    "mining": 56,
-    "other": 20
-  },
-  "RUS": {
-    "agri": 16,
-    "energy": 52,
-    "mining": 18,
-    "other": 14
-  },
-  "SAU": {
-    "agri": 2,
-    "energy": 82,
-    "mining": 6,
-    "other": 10
-  },
-  "TZA": {
-    "agri": 48,
-    "energy": 12,
-    "mining": 22,
-    "other": 18
-  },
-  "ZAF": {
-    "agri": 8,
-    "energy": 24,
-    "mining": 46,
-    "other": 22
-  },
-  "ZMB": {
-    "agri": 12,
-    "energy": 4,
-    "mining": 68,
-    "other": 16
-  },
-  "ZWE": {
-    "agri": 24,
-    "energy": 6,
-    "mining": 48,
-    "other": 22
+  "BGR": {
+    "agri": 16.9,
+    "energy": 11.8,
+    "mining": 14.7,
+    "other": 56.6
   },
   "BFA": {
-    "agri": 14,
-    "energy": 2,
-    "mining": 72,
-    "other": 12
+    "agri": 16.0,
+    "energy": 0.6,
+    "mining": 79.4,
+    "other": 4.0
+  },
+  "BDI": {
+    "agri": 41.1,
+    "energy": 2.4,
+    "mining": 46.0,
+    "other": 10.5
+  },
+  "CPV": {
+    "agri": 43.6,
+    "energy": 27.7,
+    "mining": 3.1,
+    "other": 25.6
+  },
+  "KHM": {
+    "agri": 15.6,
+    "energy": 0.0,
+    "mining": 4.6,
+    "other": 79.8
+  },
+  "CMR": {
+    "agri": 33.9,
+    "energy": 52.0,
+    "mining": 7.8,
+    "other": 6.3
+  },
+  "CAN": {
+    "agri": 16.0,
+    "energy": 28.1,
+    "mining": 11.7,
+    "other": 44.2
   },
   "CAF": {
-    "agri": 28,
-    "energy": 4,
-    "mining": 52,
-    "other": 16
+    "agri": 28.3,
+    "energy": 0.1,
+    "mining": 61.4,
+    "other": 10.1
   },
   "TCD": {
-    "agri": 8,
-    "energy": 76,
-    "mining": 6,
-    "other": 10
+    "agri": 7.1,
+    "energy": 65.4,
+    "mining": 27.3,
+    "other": 0.2
+  },
+  "CHL": {
+    "agri": 27.5,
+    "energy": 1.6,
+    "mining": 53.7,
+    "other": 17.2
+  },
+  "CHN": {
+    "agri": 2.8,
+    "energy": 1.7,
+    "mining": 1.7,
+    "other": 93.7
+  },
+  "COL": {
+    "agri": 21.8,
+    "energy": 50.0,
+    "mining": 8.3,
+    "other": 19.9
+  },
+  "COM": {
+    "agri": 47.5,
+    "energy": 0.1,
+    "mining": 3.0,
+    "other": 49.4
+  },
+  "COG": {
+    "agri": 5.7,
+    "energy": 68.6,
+    "mining": 22.2,
+    "other": 3.5
+  },
+  "COD": {
+    "agri": 1.1,
+    "energy": 1.9,
+    "mining": 87.7,
+    "other": 9.3
+  },
+  "CRI": {
+    "agri": 33.3,
+    "energy": 0.0,
+    "mining": 1.4,
+    "other": 65.3
+  },
+  "CIV": {
+    "agri": 62.2,
+    "energy": 17.2,
+    "mining": 12.5,
+    "other": 8.1
+  },
+  "HRV": {
+    "agri": 19.0,
+    "energy": 14.9,
+    "mining": 4.7,
+    "other": 61.4
+  },
+  "CUB": {
+    "agri": 52.4,
+    "energy": 3.3,
+    "mining": 30.6,
+    "other": 13.7
+  },
+  "CYP": {
+    "agri": 14.0,
+    "energy": 31.6,
+    "mining": 2.9,
+    "other": 51.5
+  },
+  "CZE": {
+    "agri": 6.3,
+    "energy": 2.4,
+    "mining": 1.6,
+    "other": 89.7
+  },
+  "DNK": {
+    "agri": 22.3,
+    "energy": 5.7,
+    "mining": 2.1,
+    "other": 69.9
+  },
+  "DJI": {
+    "agri": 44.9,
+    "energy": 1.8,
+    "mining": 0.9,
+    "other": 52.4
+  },
+  "DMA": {
+    "agri": 26.4,
+    "energy": 1.2,
+    "mining": 9.9,
+    "other": 62.5
+  },
+  "DOM": {
+    "agri": 23.6,
+    "energy": 0.9,
+    "mining": 14.4,
+    "other": 61.2
+  },
+  "ECU": {
+    "agri": 54.0,
+    "energy": 30.8,
+    "mining": 10.2,
+    "other": 5.0
+  },
+  "EGY": {
+    "agri": 19.0,
+    "energy": 24.8,
+    "mining": 9.1,
+    "other": 47.2
+  },
+  "SLV": {
+    "agri": 23.1,
+    "energy": 3.5,
+    "mining": 1.1,
+    "other": 72.3
+  },
+  "GNQ": {
+    "agri": 1.6,
+    "energy": 93.3,
+    "mining": 0.4,
+    "other": 4.7
+  },
+  "ERI": {
+    "agri": 37.5,
+    "energy": 0.0,
+    "mining": 55.6,
+    "other": 6.9
+  },
+  "EST": {
+    "agri": 19.8,
+    "energy": 13.2,
+    "mining": 2.8,
+    "other": 64.2
+  },
+  "SWZ": {
+    "agri": 32.1,
+    "energy": 7.9,
+    "mining": 1.0,
+    "other": 59.1
+  },
+  "ETH": {
+    "agri": 75.3,
+    "energy": 1.3,
+    "mining": 7.9,
+    "other": 15.5
+  },
+  "FJI": {
+    "agri": 59.7,
+    "energy": 17.1,
+    "mining": 6.6,
+    "other": 16.5
+  },
+  "FIN": {
+    "agri": 10.7,
+    "energy": 10.0,
+    "mining": 8.4,
+    "other": 70.9
+  },
+  "FRA": {
+    "agri": 14.5,
+    "energy": 5.0,
+    "mining": 3.1,
+    "other": 77.4
+  },
+  "GAB": {
+    "agri": 6.0,
+    "energy": 63.5,
+    "mining": 18.2,
+    "other": 12.4
+  },
+  "GMB": {
+    "agri": 67.5,
+    "energy": 9.3,
+    "mining": 12.1,
+    "other": 11.1
+  },
+  "GEO": {
+    "agri": 24.3,
+    "energy": 2.5,
+    "mining": 14.1,
+    "other": 59.0
+  },
+  "DEU": {
+    "agri": 6.9,
+    "energy": 2.7,
+    "mining": 3.7,
+    "other": 86.8
+  },
+  "GHA": {
+    "agri": 22.4,
+    "energy": 24.1,
+    "mining": 48.3,
+    "other": 5.2
+  },
+  "GRC": {
+    "agri": 21.3,
+    "energy": 33.8,
+    "mining": 8.3,
+    "other": 36.6
+  },
+  "GRD": {
+    "agri": 49.9,
+    "energy": 0.0,
+    "mining": 4.3,
+    "other": 45.7
+  },
+  "GTM": {
+    "agri": 53.2,
+    "energy": 2.0,
+    "mining": 1.5,
+    "other": 43.4
+  },
+  "GIN": {
+    "agri": 4.3,
+    "energy": 5.9,
+    "mining": 87.3,
+    "other": 2.5
+  },
+  "GNB": {
+    "agri": 91.7,
+    "energy": 0.0,
+    "mining": 6.3,
+    "other": 2.1
   },
   "GUY": {
-    "agri": 22,
-    "energy": 28,
-    "mining": 36,
-    "other": 14
+    "agri": 2.5,
+    "energy": 85.3,
+    "mining": 7.8,
+    "other": 4.4
+  },
+  "HTI": {
+    "agri": 4.2,
+    "energy": 0.0,
+    "mining": 2.5,
+    "other": 93.3
+  },
+  "HND": {
+    "agri": 48.1,
+    "energy": 0.9,
+    "mining": 4.5,
+    "other": 46.5
+  },
+  "HUN": {
+    "agri": 9.4,
+    "energy": 3.1,
+    "mining": 1.5,
+    "other": 85.9
+  },
+  "ISL": {
+    "agri": 44.2,
+    "energy": 2.3,
+    "mining": 38.0,
+    "other": 15.5
+  },
+  "IND": {
+    "agri": 12.0,
+    "energy": 19.9,
+    "mining": 8.6,
+    "other": 59.5
+  },
+  "IDN": {
+    "agri": 24.9,
+    "energy": 21.6,
+    "mining": 9.0,
+    "other": 44.5
   },
   "IRN": {
-    "agri": 8,
-    "energy": 72,
-    "mining": 8,
-    "other": 12
+    "agri": 18.3,
+    "energy": 25.0,
+    "mining": 8.1,
+    "other": 48.6
+  },
+  "IRQ": {
+    "agri": 0.6,
+    "energy": 96.5,
+    "mining": 2.4,
+    "other": 0.5
+  },
+  "IRL": {
+    "agri": 8.5,
+    "energy": 0.6,
+    "mining": 0.7,
+    "other": 90.3
+  },
+  "ISR": {
+    "agri": 4.4,
+    "energy": 2.1,
+    "mining": 14.5,
+    "other": 79.0
+  },
+  "ITA": {
+    "agri": 11.0,
+    "energy": 3.8,
+    "mining": 3.5,
+    "other": 81.7
+  },
+  "JAM": {
+    "agri": 24.1,
+    "energy": 44.5,
+    "mining": 26.2,
+    "other": 5.2
+  },
+  "JPN": {
+    "agri": 1.9,
+    "energy": 2.0,
+    "mining": 5.8,
+    "other": 90.2
+  },
+  "JOR": {
+    "agri": 13.9,
+    "energy": 0.9,
+    "mining": 11.0,
+    "other": 74.2
+  },
+  "KAZ": {
+    "agri": 6.6,
+    "energy": 64.7,
+    "mining": 13.2,
+    "other": 15.5
+  },
+  "KEN": {
+    "agri": 56.6,
+    "energy": 3.5,
+    "mining": 9.8,
+    "other": 30.1
+  },
+  "KIR": {
+    "agri": 88.6,
+    "energy": 0.2,
+    "mining": 0.1,
+    "other": 11.2
+  },
+  "PRK": {
+    "agri": 4.2,
+    "energy": 8.2,
+    "mining": 11.2,
+    "other": 76.4
+  },
+  "KOR": {
+    "agri": 2.4,
+    "energy": 8.6,
+    "mining": 2.9,
+    "other": 86.2
   },
   "KWT": {
-    "agri": 2,
-    "energy": 88,
-    "mining": 4,
-    "other": 6
+    "agri": 3.2,
+    "energy": 77.2,
+    "mining": 1.7,
+    "other": 17.9
+  },
+  "KGZ": {
+    "agri": 13.1,
+    "energy": 7.1,
+    "mining": 56.5,
+    "other": 23.4
   },
   "LAO": {
-    "agri": 22,
-    "energy": 28,
-    "mining": 38,
-    "other": 12
+    "agri": 27.5,
+    "energy": 20.1,
+    "mining": 22.2,
+    "other": 30.2
+  },
+  "LVA": {
+    "agri": 33.7,
+    "energy": 10.1,
+    "mining": 2.1,
+    "other": 54.1
+  },
+  "LBN": {
+    "agri": 22.0,
+    "energy": 1.6,
+    "mining": 25.5,
+    "other": 50.8
+  },
+  "LSO": {
+    "agri": 13.6,
+    "energy": 0.0,
+    "mining": 37.8,
+    "other": 48.6
   },
   "LBR": {
-    "agri": 36,
-    "energy": 2,
-    "mining": 48,
-    "other": 14
+    "agri": 18.5,
+    "energy": 7.7,
+    "mining": 53.4,
+    "other": 20.3
   },
   "LBY": {
-    "agri": 2,
-    "energy": 88,
-    "mining": 4,
-    "other": 6
+    "agri": 0.2,
+    "energy": 94.4,
+    "mining": 4.0,
+    "other": 1.4
+  },
+  "LTU": {
+    "agri": 21.0,
+    "energy": 15.4,
+    "mining": 2.0,
+    "other": 61.5
+  },
+  "LUX": {
+    "agri": 10.4,
+    "energy": 0.7,
+    "mining": 7.4,
+    "other": 81.4
+  },
+  "MDG": {
+    "agri": 33.2,
+    "energy": 0.9,
+    "mining": 39.3,
+    "other": 26.6
+  },
+  "MWI": {
+    "agri": 83.8,
+    "energy": 0.0,
+    "mining": 1.0,
+    "other": 15.2
+  },
+  "MYS": {
+    "agri": 11.4,
+    "energy": 16.1,
+    "mining": 4.2,
+    "other": 68.3
+  },
+  "MDV": {
+    "agri": 63.4,
+    "energy": 8.7,
+    "mining": 3.8,
+    "other": 24.0
+  },
+  "MLI": {
+    "agri": 11.1,
+    "energy": 0.6,
+    "mining": 84.1,
+    "other": 4.2
+  },
+  "MLT": {
+    "agri": 7.2,
+    "energy": 21.6,
+    "mining": 1.5,
+    "other": 69.6
+  },
+  "MHL": {
+    "agri": 5.9,
+    "energy": 7.9,
+    "mining": 0.1,
+    "other": 86.2
   },
   "MRT": {
-    "agri": 28,
-    "energy": 8,
-    "mining": 48,
-    "other": 16
+    "agri": 25.6,
+    "energy": 0.6,
+    "mining": 71.6,
+    "other": 2.2
+  },
+  "MUS": {
+    "agri": 38.1,
+    "energy": 0.9,
+    "mining": 9.1,
+    "other": 51.9
+  },
+  "MEX": {
+    "agri": 8.9,
+    "energy": 5.9,
+    "mining": 3.0,
+    "other": 82.3
+  },
+  "FSM": {
+    "agri": 97.8,
+    "energy": 0.0,
+    "mining": 0.2,
+    "other": 2.1
+  },
+  "MDA": {
+    "agri": 43.7,
+    "energy": 10.5,
+    "mining": 1.7,
+    "other": 44.1
+  },
+  "MNG": {
+    "agri": 7.0,
+    "energy": 40.7,
+    "mining": 51.2,
+    "other": 1.2
+  },
+  "MNE": {
+    "agri": 19.6,
+    "energy": 30.8,
+    "mining": 21.4,
+    "other": 28.2
+  },
+  "MAR": {
+    "agri": 21.2,
+    "energy": 0.7,
+    "mining": 4.4,
+    "other": 73.7
+  },
+  "MOZ": {
+    "agri": 14.0,
+    "energy": 47.0,
+    "mining": 35.5,
+    "other": 3.5
   },
   "MMR": {
-    "agri": 38,
-    "energy": 18,
-    "mining": 28,
-    "other": 16
+    "agri": 28.4,
+    "energy": 18.1,
+    "mining": 9.3,
+    "other": 44.2
   },
   "NAM": {
-    "agri": 12,
-    "energy": 2,
-    "mining": 72,
-    "other": 14
+    "agri": 23.6,
+    "energy": 5.7,
+    "mining": 53.1,
+    "other": 17.5
+  },
+  "NRU": {
+    "agri": 77.5,
+    "energy": 0.0,
+    "mining": 17.4,
+    "other": 5.1
+  },
+  "NPL": {
+    "agri": 46.6,
+    "energy": 0.0,
+    "mining": 1.5,
+    "other": 51.9
+  },
+  "NLD": {
+    "agri": 19.3,
+    "energy": 15.7,
+    "mining": 2.9,
+    "other": 62.2
+  },
+  "NZL": {
+    "agri": 75.2,
+    "energy": 1.4,
+    "mining": 4.4,
+    "other": 19.0
+  },
+  "NIC": {
+    "agri": 42.0,
+    "energy": 0.8,
+    "mining": 15.0,
+    "other": 42.1
   },
   "NER": {
-    "agri": 16,
-    "energy": 8,
-    "mining": 62,
-    "other": 14
+    "agri": 20.5,
+    "energy": 10.0,
+    "mining": 55.2,
+    "other": 14.2
+  },
+  "NGA": {
+    "agri": 5.1,
+    "energy": 88.3,
+    "mining": 3.3,
+    "other": 3.3
+  },
+  "MKD": {
+    "agri": 8.9,
+    "energy": 4.8,
+    "mining": 4.2,
+    "other": 82.1
+  },
+  "NOR": {
+    "agri": 9.0,
+    "energy": 74.3,
+    "mining": 4.9,
+    "other": 11.8
   },
   "OMN": {
-    "agri": 4,
-    "energy": 78,
-    "mining": 8,
-    "other": 10
+    "agri": 5.1,
+    "energy": 58.0,
+    "mining": 7.5,
+    "other": 29.3
+  },
+  "PAK": {
+    "agri": 23.0,
+    "energy": 1.2,
+    "mining": 4.4,
+    "other": 71.4
+  },
+  "PLW": {
+    "agri": 26.3,
+    "energy": 0.3,
+    "mining": 7.5,
+    "other": 65.9
+  },
+  "PAN": {
+    "agri": 22.0,
+    "energy": 6.9,
+    "mining": 38.9,
+    "other": 32.2
   },
   "PNG": {
-    "agri": 22,
-    "energy": 38,
-    "mining": 28,
-    "other": 12
+    "agri": 17.1,
+    "energy": 51.7,
+    "mining": 30.3,
+    "other": 0.9
+  },
+  "PRY": {
+    "agri": 69.0,
+    "energy": 13.7,
+    "mining": 2.0,
+    "other": 15.2
+  },
+  "PER": {
+    "agri": 22.9,
+    "energy": 7.1,
+    "mining": 61.9,
+    "other": 8.1
+  },
+  "PHL": {
+    "agri": 10.6,
+    "energy": 1.3,
+    "mining": 9.3,
+    "other": 78.8
+  },
+  "POL": {
+    "agri": 15.3,
+    "energy": 3.1,
+    "mining": 3.3,
+    "other": 78.3
+  },
+  "PRT": {
+    "agri": 15.6,
+    "energy": 7.3,
+    "mining": 2.9,
+    "other": 74.2
   },
   "QAT": {
-    "agri": 2,
-    "energy": 86,
-    "mining": 4,
-    "other": 8
+    "agri": 0.1,
+    "energy": 85.7,
+    "mining": 2.9,
+    "other": 11.2
   },
-  "SDN": {
-    "agri": 18,
-    "energy": 62,
-    "mining": 8,
-    "other": 12
+  "ROU": {
+    "agri": 13.6,
+    "energy": 6.0,
+    "mining": 2.8,
+    "other": 77.6
+  },
+  "RUS": {
+    "agri": 10.7,
+    "energy": 55.2,
+    "mining": 9.8,
+    "other": 24.3
+  },
+  "RWA": {
+    "agri": 31.5,
+    "energy": 4.6,
+    "mining": 53.0,
+    "other": 10.9
+  },
+  "KNA": {
+    "agri": 17.8,
+    "energy": 0.6,
+    "mining": 1.0,
+    "other": 80.6
+  },
+  "LCA": {
+    "agri": 33.4,
+    "energy": 28.0,
+    "mining": 5.8,
+    "other": 32.8
+  },
+  "VCT": {
+    "agri": 38.3,
+    "energy": 6.7,
+    "mining": 1.2,
+    "other": 53.8
+  },
+  "WSM": {
+    "agri": 34.9,
+    "energy": 10.4,
+    "mining": 1.9,
+    "other": 52.8
+  },
+  "STP": {
+    "agri": 49.6,
+    "energy": 17.0,
+    "mining": 0.6,
+    "other": 32.8
+  },
+  "SAU": {
+    "agri": 2.3,
+    "energy": 72.2,
+    "mining": 2.6,
+    "other": 23.0
+  },
+  "SEN": {
+    "agri": 24.7,
+    "energy": 25.1,
+    "mining": 24.0,
+    "other": 26.2
+  },
+  "SRB": {
+    "agri": 17.5,
+    "energy": 5.1,
+    "mining": 10.6,
+    "other": 66.8
+  },
+  "SYC": {
+    "agri": 75.5,
+    "energy": 13.5,
+    "mining": 2.5,
+    "other": 8.6
   },
   "SLE": {
-    "agri": 18,
-    "energy": 2,
-    "mining": 68,
-    "other": 12
+    "agri": 17.3,
+    "energy": 0.5,
+    "mining": 66.6,
+    "other": 15.5
+  },
+  "SGP": {
+    "agri": 4.2,
+    "energy": 15.7,
+    "mining": 4.7,
+    "other": 75.4
+  },
+  "SVK": {
+    "agri": 5.3,
+    "energy": 4.2,
+    "mining": 1.8,
+    "other": 88.6
+  },
+  "SVN": {
+    "agri": 5.4,
+    "energy": 6.2,
+    "mining": 3.6,
+    "other": 84.9
+  },
+  "SLB": {
+    "agri": 81.2,
+    "energy": 1.7,
+    "mining": 14.0,
+    "other": 3.1
+  },
+  "SOM": {
+    "agri": 67.7,
+    "energy": 0.0,
+    "mining": 25.7,
+    "other": 6.6
+  },
+  "ZAF": {
+    "agri": 13.4,
+    "energy": 11.6,
+    "mining": 37.6,
+    "other": 37.3
+  },
+  "SSD": {
+    "agri": 6.1,
+    "energy": 87.2,
+    "mining": 5.2,
+    "other": 1.5
+  },
+  "ESP": {
+    "agri": 19.1,
+    "energy": 7.4,
+    "mining": 4.4,
+    "other": 69.1
+  },
+  "LKA": {
+    "agri": 26.6,
+    "energy": 2.1,
+    "mining": 4.9,
+    "other": 66.4
+  },
+  "PSE": {
+    "agri": 21.2,
+    "energy": 0.1,
+    "mining": 14.6,
+    "other": 64.1
+  },
+  "SDN": {
+    "agri": 40.8,
+    "energy": 9.8,
+    "mining": 47.6,
+    "other": 1.8
+  },
+  "SUR": {
+    "agri": 16.5,
+    "energy": 6.7,
+    "mining": 72.3,
+    "other": 4.4
+  },
+  "SWE": {
+    "agri": 11.0,
+    "energy": 8.6,
+    "mining": 6.1,
+    "other": 74.3
+  },
+  "CHE": {
+    "agri": 2.7,
+    "energy": 1.7,
+    "mining": 27.9,
+    "other": 67.7
+  },
+  "SYR": {
+    "agri": 54.6,
+    "energy": 6.6,
+    "mining": 5.9,
+    "other": 32.9
+  },
+  "TJK": {
+    "agri": 18.6,
+    "energy": 4.9,
+    "mining": 61.6,
+    "other": 14.9
+  },
+  "TZA": {
+    "agri": 31.0,
+    "energy": 7.7,
+    "mining": 50.8,
+    "other": 10.5
+  },
+  "THA": {
+    "agri": 18.6,
+    "energy": 3.7,
+    "mining": 6.3,
+    "other": 71.4
   },
   "TLS": {
-    "agri": 42,
-    "energy": 42,
-    "mining": 4,
-    "other": 12
+    "agri": 19.0,
+    "energy": 75.5,
+    "mining": 0.4,
+    "other": 5.2
+  },
+  "TGO": {
+    "agri": 31.5,
+    "energy": 22.2,
+    "mining": 29.0,
+    "other": 17.4
+  },
+  "TON": {
+    "agri": 51.3,
+    "energy": 7.7,
+    "mining": 18.1,
+    "other": 23.0
   },
   "TTO": {
-    "agri": 4,
-    "energy": 78,
-    "mining": 6,
-    "other": 12
+    "agri": 4.9,
+    "energy": 43.8,
+    "mining": 1.0,
+    "other": 50.4
   },
   "TUN": {
-    "agri": 12,
-    "energy": 36,
-    "mining": 24,
-    "other": 28
+    "agri": 12.8,
+    "energy": 7.4,
+    "mining": 1.6,
+    "other": 78.2
+  },
+  "TUR": {
+    "agri": 12.8,
+    "energy": 6.4,
+    "mining": 5.9,
+    "other": 74.9
   },
   "TKM": {
-    "agri": 8,
-    "energy": 78,
-    "mining": 4,
-    "other": 10
+    "agri": 10.7,
+    "energy": 76.4,
+    "mining": 1.0,
+    "other": 11.8
+  },
+  "TUV": {
+    "agri": 65.5,
+    "energy": 0.0,
+    "mining": 0.1,
+    "other": 34.4
   },
   "UGA": {
-    "agri": 58,
-    "energy": 8,
-    "mining": 18,
-    "other": 16
+    "agri": 57.2,
+    "energy": 1.7,
+    "mining": 20.7,
+    "other": 20.3
+  },
+  "UKR": {
+    "agri": 59.1,
+    "energy": 1.3,
+    "mining": 7.5,
+    "other": 32.0
   },
   "ARE": {
-    "agri": 2,
-    "energy": 62,
-    "mining": 14,
-    "other": 22
+    "agri": 5.1,
+    "energy": 43.0,
+    "mining": 22.3,
+    "other": 29.6
+  },
+  "GBR": {
+    "agri": 6.8,
+    "energy": 9.2,
+    "mining": 19.1,
+    "other": 64.8
+  },
+  "USA": {
+    "agri": 11.1,
+    "energy": 18.2,
+    "mining": 6.0,
+    "other": 64.8
+  },
+  "URY": {
+    "agri": 78.9,
+    "energy": 1.3,
+    "mining": 0.8,
+    "other": 19.0
+  },
+  "UZB": {
+    "agri": 12.3,
+    "energy": 7.6,
+    "mining": 44.4,
+    "other": 35.7
+  },
+  "VUT": {
+    "agri": 79.8,
+    "energy": 2.0,
+    "mining": 6.1,
+    "other": 12.1
   },
   "VEN": {
-    "agri": 2,
-    "energy": 82,
-    "mining": 8,
-    "other": 8
+    "agri": 5.7,
+    "energy": 72.8,
+    "mining": 2.7,
+    "other": 18.8
+  },
+  "VNM": {
+    "agri": 11.2,
+    "energy": 1.0,
+    "mining": 1.3,
+    "other": 86.5
   },
   "YEM": {
-    "agri": 8,
-    "energy": 72,
-    "mining": 8,
-    "other": 12
+    "agri": 23.6,
+    "energy": 54.7,
+    "mining": 14.1,
+    "other": 7.7
+  },
+  "ZMB": {
+    "agri": 9.1,
+    "energy": 2.1,
+    "mining": 77.6,
+    "other": 11.2
+  },
+  "ZWE": {
+    "agri": 24.6,
+    "energy": 4.1,
+    "mining": 62.1,
+    "other": 9.2
   }
 }

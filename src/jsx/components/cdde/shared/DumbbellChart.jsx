@@ -1,9 +1,8 @@
 import { useId } from 'react';
 import basePath from '../../../helpers/BasePath';
+import { C_BLUE, C_YELLOW } from './cdde-constants';
 import './DumbbellChart.css';
 
-const C_YELLOW = '#fbaf17';
-const C_BLUE = '#009edb';
 const REDUCED_MOTION = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 const ROW_H = 34;
@@ -53,7 +52,7 @@ export default function DumbbellChart({ data, xMin, xMax, nameW = 140, badgeW = 
         const anchor = i === 0 ? 'start' : i === ticks.length - 1 ? 'end' : 'middle';
         return (
           <text key={v} x={xScale(v)} y={14} textAnchor={anchor} className="db_axis_label">
-            {v}%
+            {i === ticks.length - 1 ? `${v}%` : v}
           </text>
         );
       })}
@@ -89,8 +88,8 @@ export default function DumbbellChart({ data, xMin, xMax, nameW = 140, badgeW = 
         const changeRounded = Math.round(row.change * 10) / 10;
         const changeStr = Number.isInteger(changeRounded) ? String(changeRounded) : changeRounded.toFixed(1);
         const bLabel = row.change > 0 ? `+${changeStr}pp` : `${changeStr}pp`;
-        const badgeBg = row.change > 0 ? '#fff4bf' : '#e3edf6';
-        const badgeColor = row.change > 0 ? '#b06e2a' : '#005392';
+        const badgeBg = row.change > 0 ? 'var(--un-color-yellow-lighest)' : 'var(--un-color-blue-lightest)';
+        const badgeColor = row.change > 0 ? 'var(--un-color-yellow-darkest)' : 'var(--un-color-blue-text-dark)';
 
         const rowDelay = 500 + i * 60;
         const tr = s => (REDUCED_MOTION ? 'none' : s);
@@ -127,8 +126,8 @@ export default function DumbbellChart({ data, xMin, xMax, nameW = 140, badgeW = 
             <line x1={startX} y1={y} x2={lineEnd} y2={y} pathLength="1" stroke={color} strokeWidth={STROKE_W} strokeLinecap="round" style={shaftStyle} />
             <polyline points={arrowPts} pathLength="1" fill="none" stroke={color} strokeWidth={STROKE_W} strokeLinecap="round" strokeLinejoin="round" style={tipStyle} />
             <circle cx={startX} cy={y} r={DOT_R} fill="#fff" stroke={color} strokeWidth={STROKE_W} style={dotStyle} />
-            <rect x={bx} y={y - 10} width={badgeW - 8} height={20} rx={4} fill={badgeBg} />
-            <text x={bx + (badgeW - 8) / 2} y={y + 4} textAnchor="middle" fill={badgeColor} className="db_badge_label">
+            <rect x={bx} y={y - 10} width={badgeW - 8} height={20} rx={4} style={{ fill: badgeBg }} />
+            <text x={bx + (badgeW - 8) / 2} y={y + 4} textAnchor="middle" style={{ fill: badgeColor }} className="db_badge_label">
               {bLabel}
             </text>
           </g>

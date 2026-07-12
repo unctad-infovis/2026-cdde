@@ -1,7 +1,7 @@
 import basePath from './../../../helpers/BasePath';
-import './DecadeShift.css';
+import './SectionDivider.css';
 
-export default function DecadeShift({ children, eyebrow, panel_description, panel_eyebrow, panel_title, photo_credit = 'Unsplash', spotlight, title }) {
+export default function SectionDivider({ children, eyebrow, panel_description, panel_eyebrow, panel_title, photo_credit = 'Unsplash', spotlight, title }) {
   return (
     <section className="ds_section cdde_reveal">
       {/* Light text area */}

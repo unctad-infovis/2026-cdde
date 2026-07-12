@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import loadFile from '../../../helpers/LoadFile';
 import ChartHeader from '../shared/ChartHeader';
 import ChartMeta from '../shared/ChartMeta';
+import ChartTooltip from '../shared/ChartTooltip';
+import { C_BLUE } from '../shared/cdde-constants';
 
 import './DependenceOverTime.css';
 
@@ -17,7 +19,7 @@ const PILL_ARROW = 4;
 
 export default function DependenceOverTime({ iso3, title, subtitle, description, source, note }) {
   const [allData, setAllData] = useState(null);
-  const lineColor = '#009edb';
+  const lineColor = C_BLUE;
 
   const wrapRef = useRef(null);
   const [svgW, setSvgW] = useState(560);
@@ -88,14 +90,14 @@ export default function DependenceOverTime({ iso3, title, subtitle, description,
     <div className="cdde_card">
       <ChartHeader title={title} subtitle={subtitle} description={description} />
 
-      <div className="dot_chart_wrap" ref={wrapRef} onMouseMove={handleMouseMove} onMouseLeave={() => setTooltip(null)}>
+      <button type="button" className="dot_chart_wrap" ref={wrapRef} onMouseMove={handleMouseMove} onMouseLeave={() => setTooltip(null)}>
         <svg viewBox={`0 0 ${svgW} ${H}`} className="dot_svg" aria-label="Line chart of commodity export dependence over time">
           <g transform={`translate(${M.left},${M.top})`}>
-            {yTicks.map(v => (
+            {yTicks.map((v, i) => (
               <g key={v} transform={`translate(0,${yScale(v)})`}>
                 <line x1={0} x2={CHART_W} className="dot_grid" />
                 <text x={-6} y={4} textAnchor="end" className="dot_tick_label">
-                  {v}%
+                  {i === yTicks.length - 1 ? `${v}%` : v}
                 </text>
               </g>
             ))}
@@ -136,12 +138,12 @@ export default function DependenceOverTime({ iso3, title, subtitle, description,
         </svg>
 
         {tooltip && (
-          <div className={`dot_tooltip${tooltip.flip ? ' dot_tooltip--flip' : ''}`} style={{ left: tooltip.x, top: tooltip.domY }}>
+          <ChartTooltip left={tooltip.x} top={tooltip.domY} flip={tooltip.flip}>
             <div className="dot_tt_year">{tooltip.year}</div>
             <div className="dot_tt_val">{tooltip.pct}%</div>
-          </div>
+          </ChartTooltip>
         )}
-      </div>
+      </button>
 
       <ChartMeta source={source} note={note} />
     </div>

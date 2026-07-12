@@ -1,0 +1,977 @@
+{
+  "AFG": {
+    "commodity_exports": 445.38,
+    "food_imports": 1472.008,
+    "energy_imports": 543.317
+  },
+  "ALB": {
+    "commodity_exports": 1089.543,
+    "food_imports": 792.41,
+    "energy_imports": 587.987
+  },
+  "DZA": {
+    "commodity_exports": 54438.291,
+    "food_imports": 9525.693,
+    "energy_imports": 1973.592
+  },
+  "AND": {
+    "commodity_exports": 23.828,
+    "food_imports": 284.038,
+    "energy_imports": 195.025
+  },
+  "AGO": {
+    "commodity_exports": 41718.732,
+    "food_imports": 2505.151,
+    "energy_imports": 2370.98
+  },
+  "ATG": {
+    "commodity_exports": 11.161,
+    "food_imports": 72.417,
+    "energy_imports": 284.46
+  },
+  "ARG": {
+    "commodity_exports": 49648.196,
+    "food_imports": 5942.879,
+    "energy_imports": 8107.335
+  },
+  "ARM": {
+    "commodity_exports": 6704.222,
+    "food_imports": 1507.85,
+    "energy_imports": 1327.133
+  },
+  "AUS": {
+    "commodity_exports": 340677.537,
+    "food_imports": 16020.107,
+    "energy_imports": 43061.235
+  },
+  "AUT": {
+    "commodity_exports": 36276.65,
+    "food_imports": 16406.683,
+    "energy_imports": 21151.344
+  },
+  "AZE": {
+    "commodity_exports": 31342.525,
+    "food_imports": 2460.254,
+    "energy_imports": 1707.816
+  },
+  "BHS": {
+    "commodity_exports": 268.116,
+    "food_imports": 405.902,
+    "energy_imports": 1473.407
+  },
+  "BHR": {
+    "commodity_exports": 19188.713,
+    "food_imports": 1885.599,
+    "energy_imports": 513.982
+  },
+  "BGD": {
+    "commodity_exports": 2142.524,
+    "food_imports": 14010.134,
+    "energy_imports": 5179.079
+  },
+  "BRB": {
+    "commodity_exports": 248.749,
+    "food_imports": 379.06,
+    "energy_imports": 514.792
+  },
+  "BLR": {
+    "commodity_exports": 14802.741,
+    "food_imports": 4046.385,
+    "energy_imports": 13238.738
+  },
+  "BEL": {
+    "commodity_exports": 140793.669,
+    "food_imports": 37067.68,
+    "energy_imports": 82963.13
+  },
+  "BLZ": {
+    "commodity_exports": 439.507,
+    "food_imports": 173.926,
+    "energy_imports": 231.542
+  },
+  "BEN": {
+    "commodity_exports": 3565.321,
+    "food_imports": 1701.27,
+    "energy_imports": 396.233
+  },
+  "BTN": {
+    "commodity_exports": 390.121,
+    "food_imports": 196.687,
+    "energy_imports": 269.264
+  },
+  "BOL": {
+    "commodity_exports": 10600.502,
+    "food_imports": 807.1,
+    "energy_imports": 2561.595
+  },
+  "BIH": {
+    "commodity_exports": 2500.789,
+    "food_imports": 2057.838,
+    "energy_imports": 1996.429
+  },
+  "BWA": {
+    "commodity_exports": 5745.732,
+    "food_imports": 785.269,
+    "energy_imports": 1398.597
+  },
+  "BRA": {
+    "commodity_exports": 255681.332,
+    "food_imports": 13437.063,
+    "energy_imports": 42498.714
+  },
+  "BRN": {
+    "commodity_exports": 9658.902,
+    "food_imports": 552.831,
+    "energy_imports": 4923.858
+  },
+  "BGR": {
+    "commodity_exports": 20093.102,
+    "food_imports": 5838.839,
+    "energy_imports": 6862.087
+  },
+  "BFA": {
+    "commodity_exports": 4686.937,
+    "food_imports": 697.165,
+    "energy_imports": 1955.492
+  },
+  "BDI": {
+    "commodity_exports": 176.323,
+    "food_imports": 145.867,
+    "energy_imports": 152.079
+  },
+  "CPV": {
+    "commodity_exports": 44.295,
+    "food_imports": 391.669,
+    "energy_imports": 645.091
+  },
+  "KHM": {
+    "commodity_exports": 4501.05,
+    "food_imports": 1809.748,
+    "energy_imports": 2919.585
+  },
+  "CMR": {
+    "commodity_exports": 5159.258,
+    "food_imports": 1847.627,
+    "energy_imports": 1204.681
+  },
+  "CAN": {
+    "commodity_exports": 302705.336,
+    "food_imports": 42632.388,
+    "energy_imports": 38748.167
+  },
+  "CAF": {
+    "commodity_exports": 135.732,
+    "food_imports": 70.758,
+    "energy_imports": 82.921
+  },
+  "TCD": {
+    "commodity_exports": 4497.416,
+    "food_imports": 230.808,
+    "energy_imports": 180.599
+  },
+  "CHL": {
+    "commodity_exports": 80755.876,
+    "food_imports": 10042.062,
+    "energy_imports": 19125.279
+  },
+  "CHN": {
+    "commodity_exports": 216745.469,
+    "food_imports": 206409.048,
+    "energy_imports": 518394.669
+  },
+  "COL": {
+    "commodity_exports": 41760.357,
+    "food_imports": 8935.681,
+    "energy_imports": 6363.805
+  },
+  "COM": {
+    "commodity_exports": 19.258,
+    "food_imports": 90.33,
+    "energy_imports": 44.706
+  },
+  "COG": {
+    "commodity_exports": 7834.285,
+    "food_imports": 828.797,
+    "energy_imports": 109.121
+  },
+  "COD": {
+    "commodity_exports": 22152.7,
+    "food_imports": 1833.199,
+    "energy_imports": 5616.948
+  },
+  "CRI": {
+    "commodity_exports": 6111.693,
+    "food_imports": 2652.94,
+    "energy_imports": 2369.535
+  },
+  "CIV": {
+    "commodity_exports": 16812.621,
+    "food_imports": 2853.134,
+    "energy_imports": 4675.773
+  },
+  "HRV": {
+    "commodity_exports": 9768.236,
+    "food_imports": 5144.904,
+    "energy_imports": 8390.771
+  },
+  "CUB": {
+    "commodity_exports": 1186.863,
+    "food_imports": 3069.979,
+    "energy_imports": 545.175
+  },
+  "CYP": {
+    "commodity_exports": 2198.044,
+    "food_imports": 1550.155,
+    "energy_imports": 2970.918
+  },
+  "CZE": {
+    "commodity_exports": 25772.028,
+    "food_imports": 12662.144,
+    "energy_imports": 16194.6
+  },
+  "DNK": {
+    "commodity_exports": 37292.94,
+    "food_imports": 15115.161,
+    "energy_imports": 10103.91
+  },
+  "DJI": {
+    "commodity_exports": 2286.384,
+    "food_imports": 1431.892,
+    "energy_imports": 645.304
+  },
+  "DMA": {
+    "commodity_exports": 8.939,
+    "food_imports": 48.128,
+    "energy_imports": 44.966
+  },
+  "DOM": {
+    "commodity_exports": 4860.051,
+    "food_imports": 4270.454,
+    "energy_imports": 5386.463
+  },
+  "ECU": {
+    "commodity_exports": 31020.471,
+    "food_imports": 3784.213,
+    "energy_imports": 7625.465
+  },
+  "EGY": {
+    "commodity_exports": 24413.836,
+    "food_imports": 18112.265,
+    "energy_imports": 12451.881
+  },
+  "SLV": {
+    "commodity_exports": 1825.987,
+    "food_imports": 2997.266,
+    "energy_imports": 2438.532
+  },
+  "GNQ": {
+    "commodity_exports": 3940.786,
+    "food_imports": 319.522,
+    "energy_imports": 21.562
+  },
+  "ERI": {
+    "commodity_exports": 499.406,
+    "food_imports": 172.279,
+    "energy_imports": 10.7
+  },
+  "EST": {
+    "commodity_exports": 7209.884,
+    "food_imports": 2915.333,
+    "energy_imports": 2879.629
+  },
+  "SWZ": {
+    "commodity_exports": 872.103,
+    "food_imports": 340.159,
+    "energy_imports": 376.121
+  },
+  "ETH": {
+    "commodity_exports": 3301.47,
+    "food_imports": 3395.26,
+    "energy_imports": 1987.912
+  },
+  "FJI": {
+    "commodity_exports": 900.191,
+    "food_imports": 550.575,
+    "energy_imports": 734.291
+  },
+  "FIN": {
+    "commodity_exports": 22008.418,
+    "food_imports": 6432.864,
+    "energy_imports": 13426.654
+  },
+  "FRA": {
+    "commodity_exports": 141016.308,
+    "food_imports": 70458.302,
+    "energy_imports": 118026.139
+  },
+  "GAB": {
+    "commodity_exports": 10585.651,
+    "food_imports": 714.082,
+    "energy_imports": 187.393
+  },
+  "GMB": {
+    "commodity_exports": 174.533,
+    "food_imports": 347.739,
+    "energy_imports": 199.018
+  },
+  "GEO": {
+    "commodity_exports": 2479.46,
+    "food_imports": 1663.945,
+    "energy_imports": 1871.035
+  },
+  "DEU": {
+    "commodity_exports": 216797.94,
+    "food_imports": 107612.156,
+    "energy_imports": 148816.955
+  },
+  "GHA": {
+    "commodity_exports": 17229.323,
+    "food_imports": 1997.385,
+    "energy_imports": 2219.205
+  },
+  "GRC": {
+    "commodity_exports": 34445.563,
+    "food_imports": 9899.714,
+    "energy_imports": 27404.49
+  },
+  "GRD": {
+    "commodity_exports": 20.585,
+    "food_imports": 129.995,
+    "energy_imports": 121.361
+  },
+  "GTM": {
+    "commodity_exports": 8393.637,
+    "food_imports": 4924.894,
+    "energy_imports": 5247.026
+  },
+  "GIN": {
+    "commodity_exports": 8961.751,
+    "food_imports": 1040.594,
+    "energy_imports": 481.724
+  },
+  "GNB": {
+    "commodity_exports": 238.643,
+    "food_imports": 142.413,
+    "energy_imports": 86.285
+  },
+  "GUY": {
+    "commodity_exports": 14032.572,
+    "food_imports": 475.469,
+    "energy_imports": 879.2
+  },
+  "HTI": {
+    "commodity_exports": 64.958,
+    "food_imports": 1296.641,
+    "energy_imports": 510.459
+  },
+  "VAT": {
+    "commodity_exports": 0.0,
+    "food_imports": 0.0,
+    "energy_imports": 0.0
+  },
+  "HND": {
+    "commodity_exports": 6147.594,
+    "food_imports": 2909.884,
+    "energy_imports": 2540.826
+  },
+  "HUN": {
+    "commodity_exports": 21939.183,
+    "food_imports": 9337.163,
+    "energy_imports": 17323.727
+  },
+  "ISL": {
+    "commodity_exports": 5910.586,
+    "food_imports": 932.138,
+    "energy_imports": 1272.495
+  },
+  "IND": {
+    "commodity_exports": 177613.54,
+    "food_imports": 32067.464,
+    "energy_imports": 216331.264
+  },
+  "IDN": {
+    "commodity_exports": 150825.162,
+    "food_imports": 25487.125,
+    "energy_imports": 37611.88
+  },
+  "IRN": {
+    "commodity_exports": 52691.899,
+    "food_imports": 17077.606,
+    "energy_imports": 712.474
+  },
+  "IRQ": {
+    "commodity_exports": 111777.136,
+    "food_imports": 15498.789,
+    "energy_imports": 2623.799
+  },
+  "IRL": {
+    "commodity_exports": 21829.888,
+    "food_imports": 11393.726,
+    "energy_imports": 11229.677
+  },
+  "ISR": {
+    "commodity_exports": 13079.541,
+    "food_imports": 8552.718,
+    "energy_imports": 7449.685
+  },
+  "ITA": {
+    "commodity_exports": 118824.763,
+    "food_imports": 60963.921,
+    "energy_imports": 104773.902
+  },
+  "JAM": {
+    "commodity_exports": 1819.64,
+    "food_imports": 1455.9,
+    "energy_imports": 2094.744
+  },
+  "JPN": {
+    "commodity_exports": 65064.928,
+    "food_imports": 66781.277,
+    "energy_imports": 205931.737
+  },
+  "JOR": {
+    "commodity_exports": 3325.142,
+    "food_imports": 5344.907,
+    "energy_imports": 3667.927
+  },
+  "KAZ": {
+    "commodity_exports": 66876.469,
+    "food_imports": 4604.526,
+    "energy_imports": 1298.801
+  },
+  "KEN": {
+    "commodity_exports": 5280.617,
+    "food_imports": 3303.612,
+    "energy_imports": 3880.378
+  },
+  "KIR": {
+    "commodity_exports": 14.256,
+    "food_imports": 79.464,
+    "energy_imports": 26.565
+  },
+  "PRK": {
+    "commodity_exports": 66.159,
+    "food_imports": 366.304,
+    "energy_imports": 171.925
+  },
+  "KOR": {
+    "commodity_exports": 92173.537,
+    "food_imports": 39820.282,
+    "energy_imports": 184043.04
+  },
+  "KWT": {
+    "commodity_exports": 70987.591,
+    "food_imports": 5870.415,
+    "energy_imports": 217.37
+  },
+  "KGZ": {
+    "commodity_exports": 2394.683,
+    "food_imports": 957.0,
+    "energy_imports": 1095.96
+  },
+  "LAO": {
+    "commodity_exports": 5831.683,
+    "food_imports": 890.591,
+    "energy_imports": 1219.987
+  },
+  "LVA": {
+    "commodity_exports": 9353.435,
+    "food_imports": 3577.69,
+    "energy_imports": 3800.49
+  },
+  "LBN": {
+    "commodity_exports": 2154.49,
+    "food_imports": 2843.379,
+    "energy_imports": 4691.639
+  },
+  "LSO": {
+    "commodity_exports": 467.099,
+    "food_imports": 378.001,
+    "energy_imports": 324.288
+  },
+  "LBR": {
+    "commodity_exports": 909.248,
+    "food_imports": 152.645,
+    "energy_imports": 300.306
+  },
+  "LBY": {
+    "commodity_exports": 33014.98,
+    "food_imports": 3567.866,
+    "energy_imports": 3813.906
+  },
+  "LTU": {
+    "commodity_exports": 16153.601,
+    "food_imports": 4906.5,
+    "energy_imports": 10996.444
+  },
+  "LUX": {
+    "commodity_exports": 2943.699,
+    "food_imports": 2388.838,
+    "energy_imports": 2936.292
+  },
+  "MDG": {
+    "commodity_exports": 2329.86,
+    "food_imports": 863.37,
+    "energy_imports": 878.831
+  },
+  "MWI": {
+    "commodity_exports": 795.003,
+    "food_imports": 212.926,
+    "energy_imports": 408.715
+  },
+  "MYS": {
+    "commodity_exports": 104378.264,
+    "food_imports": 23124.507,
+    "energy_imports": 51547.058
+  },
+  "MDV": {
+    "commodity_exports": 303.667,
+    "food_imports": 648.046,
+    "energy_imports": 783.976
+  },
+  "MLI": {
+    "commodity_exports": 5224.708,
+    "food_imports": 979.841,
+    "energy_imports": 2289.957
+  },
+  "MLT": {
+    "commodity_exports": 1042.276,
+    "food_imports": 636.739,
+    "energy_imports": 1835.668
+  },
+  "MHL": {
+    "commodity_exports": 10.24,
+    "food_imports": 0.332,
+    "energy_imports": 14.46
+  },
+  "MRT": {
+    "commodity_exports": 3905.853,
+    "food_imports": 1263.481,
+    "energy_imports": 1153.33
+  },
+  "MUS": {
+    "commodity_exports": 1125.445,
+    "food_imports": 1273.559,
+    "energy_imports": 1414.012
+  },
+  "MEX": {
+    "commodity_exports": 98092.987,
+    "food_imports": 36764.031,
+    "energy_imports": 43648.736
+  },
+  "FSM": {
+    "commodity_exports": 130.841,
+    "food_imports": 62.894,
+    "energy_imports": 102.067
+  },
+  "MDA": {
+    "commodity_exports": 2222.716,
+    "food_imports": 1143.838,
+    "energy_imports": 2039.137
+  },
+  "MCO": {
+    "commodity_exports": 0.0,
+    "food_imports": 0.0,
+    "energy_imports": 0.0
+  },
+  "MNG": {
+    "commodity_exports": 14352.357,
+    "food_imports": 1124.749,
+    "energy_imports": 2119.789
+  },
+  "MNE": {
+    "commodity_exports": 507.377,
+    "food_imports": 798.578,
+    "energy_imports": 513.999
+  },
+  "MAR": {
+    "commodity_exports": 11400.711,
+    "food_imports": 9402.293,
+    "energy_imports": 12821.504
+  },
+  "MOZ": {
+    "commodity_exports": 7919.922,
+    "food_imports": 1371.097,
+    "energy_imports": 2693.151
+  },
+  "MMR": {
+    "commodity_exports": 8512.799,
+    "food_imports": 1705.25,
+    "energy_imports": 5032.09
+  },
+  "NAM": {
+    "commodity_exports": 4880.844,
+    "food_imports": 894.981,
+    "energy_imports": 1372.072
+  },
+  "NRU": {
+    "commodity_exports": 36.314,
+    "food_imports": 14.556,
+    "energy_imports": 2.998
+  },
+  "NPL": {
+    "commodity_exports": 600.781,
+    "food_imports": 2409.783,
+    "energy_imports": 2379.757
+  },
+  "NLD": {
+    "commodity_exports": 338823.294,
+    "food_imports": 89177.697,
+    "energy_imports": 159183.158
+  },
+  "NZL": {
+    "commodity_exports": 34409.752,
+    "food_imports": 5278.269,
+    "energy_imports": 6641.915
+  },
+  "NIC": {
+    "commodity_exports": 4226.772,
+    "food_imports": 1581.844,
+    "energy_imports": 1346.91
+  },
+  "NER": {
+    "commodity_exports": 1071.039,
+    "food_imports": 707.777,
+    "energy_imports": 212.073
+  },
+  "NGA": {
+    "commodity_exports": 54917.957,
+    "food_imports": 5187.332,
+    "energy_imports": 14818.094
+  },
+  "MKD": {
+    "commodity_exports": 1546.352,
+    "food_imports": 1146.969,
+    "energy_imports": 1743.557
+  },
+  "NOR": {
+    "commodity_exports": 176203.128,
+    "food_imports": 9007.644,
+    "energy_imports": 8578.201
+  },
+  "OMN": {
+    "commodity_exports": 44235.582,
+    "food_imports": 5149.116,
+    "energy_imports": 8144.921
+  },
+  "PAK": {
+    "commodity_exports": 8754.458,
+    "food_imports": 8400.824,
+    "energy_imports": 19752.831
+  },
+  "PLW": {
+    "commodity_exports": 1.926,
+    "food_imports": 23.103,
+    "energy_imports": 31.925
+  },
+  "PAN": {
+    "commodity_exports": 9490.088,
+    "food_imports": 1751.642,
+    "energy_imports": 10472.814
+  },
+  "PNG": {
+    "commodity_exports": 11998.177,
+    "food_imports": 1047.253,
+    "energy_imports": 762.419
+  },
+  "PRY": {
+    "commodity_exports": 9246.874,
+    "food_imports": 836.452,
+    "energy_imports": 2322.678
+  },
+  "PER": {
+    "commodity_exports": 60000.371,
+    "food_imports": 6334.913,
+    "energy_imports": 8932.377
+  },
+  "PHL": {
+    "commodity_exports": 15876.039,
+    "food_imports": 18903.898,
+    "energy_imports": 22339.853
+  },
+  "POL": {
+    "commodity_exports": 81578.525,
+    "food_imports": 31472.37,
+    "energy_imports": 33161.117
+  },
+  "PRT": {
+    "commodity_exports": 21418.651,
+    "food_imports": 15750.693,
+    "energy_imports": 14918.301
+  },
+  "QAT": {
+    "commodity_exports": 93436.667,
+    "food_imports": 3287.29,
+    "energy_imports": 778.172
+  },
+  "ROU": {
+    "commodity_exports": 21946.683,
+    "food_imports": 12695.846,
+    "energy_imports": 12870.612
+  },
+  "RUS": {
+    "commodity_exports": 364348.783,
+    "food_imports": 39087.44,
+    "energy_imports": 3966.647
+  },
+  "RWA": {
+    "commodity_exports": 2203.858,
+    "food_imports": 1117.81,
+    "energy_imports": 599.511
+  },
+  "KNA": {
+    "commodity_exports": 5.224,
+    "food_imports": 60.731,
+    "energy_imports": 31.447
+  },
+  "LCA": {
+    "commodity_exports": 56.333,
+    "food_imports": 104.062,
+    "energy_imports": 596.889
+  },
+  "VCT": {
+    "commodity_exports": 21.886,
+    "food_imports": 93.256,
+    "energy_imports": 63.23
+  },
+  "WSM": {
+    "commodity_exports": 18.414,
+    "food_imports": 121.441,
+    "energy_imports": 90.828
+  },
+  "SMR": {
+    "commodity_exports": 0.0,
+    "food_imports": 0.0,
+    "energy_imports": 0.0
+  },
+  "STP": {
+    "commodity_exports": 16.84,
+    "food_imports": 36.962,
+    "energy_imports": 42.556
+  },
+  "SAU": {
+    "commodity_exports": 265712.694,
+    "food_imports": 28152.806,
+    "energy_imports": 12554.714
+  },
+  "SEN": {
+    "commodity_exports": 4268.071,
+    "food_imports": 2197.054,
+    "energy_imports": 2947.932
+  },
+  "SRB": {
+    "commodity_exports": 10189.098,
+    "food_imports": 3039.039,
+    "energy_imports": 5915.808
+  },
+  "SYC": {
+    "commodity_exports": 500.497,
+    "food_imports": 277.726,
+    "energy_imports": 214.748
+  },
+  "SLE": {
+    "commodity_exports": 1101.598,
+    "food_imports": 513.717,
+    "energy_imports": 58.807
+  },
+  "SGP": {
+    "commodity_exports": 118080.624,
+    "food_imports": 14355.411,
+    "energy_imports": 91809.322
+  },
+  "SVK": {
+    "commodity_exports": 12798.97,
+    "food_imports": 6703.614,
+    "energy_imports": 11748.033
+  },
+  "SVN": {
+    "commodity_exports": 11064.236,
+    "food_imports": 3312.292,
+    "energy_imports": 6239.25
+  },
+  "SLB": {
+    "commodity_exports": 411.578,
+    "food_imports": 126.829,
+    "energy_imports": 116.424
+  },
+  "SOM": {
+    "commodity_exports": 880.895,
+    "food_imports": 1553.333,
+    "energy_imports": 82.855
+  },
+  "ZAF": {
+    "commodity_exports": 71346.778,
+    "food_imports": 6220.365,
+    "energy_imports": 22521.468
+  },
+  "SSD": {
+    "commodity_exports": 873.869,
+    "food_imports": 323.976,
+    "energy_imports": 15.633
+  },
+  "ESP": {
+    "commodity_exports": 121369.651,
+    "food_imports": 51770.428,
+    "energy_imports": 74659.519
+  },
+  "LKA": {
+    "commodity_exports": 4211.513,
+    "food_imports": 2344.364,
+    "energy_imports": 3778.746
+  },
+  "PSE": {
+    "commodity_exports": 544.258,
+    "food_imports": 2211.385,
+    "energy_imports": 1742.865
+  },
+  "SDN": {
+    "commodity_exports": 3785.823,
+    "food_imports": 2007.592,
+    "energy_imports": 874.218
+  },
+  "SUR": {
+    "commodity_exports": 2093.869,
+    "food_imports": 231.117,
+    "energy_imports": 166.333
+  },
+  "SWE": {
+    "commodity_exports": 48449.316,
+    "food_imports": 18965.561,
+    "energy_imports": 23205.157
+  },
+  "CHE": {
+    "commodity_exports": 136143.106,
+    "food_imports": 13122.802,
+    "energy_imports": 16272.979
+  },
+  "LIE": {
+    "commodity_exports": 0.0,
+    "food_imports": 0.0,
+    "energy_imports": 0.0
+  },
+  "SYR": {
+    "commodity_exports": 1874.905,
+    "food_imports": 1830.507,
+    "energy_imports": 499.252
+  },
+  "TJK": {
+    "commodity_exports": 1853.172,
+    "food_imports": 1030.316,
+    "energy_imports": 571.64
+  },
+  "TZA": {
+    "commodity_exports": 6793.312,
+    "food_imports": 1251.081,
+    "energy_imports": 2940.632
+  },
+  "THA": {
+    "commodity_exports": 83340.094,
+    "food_imports": 19137.291,
+    "energy_imports": 54513.598
+  },
+  "TLS": {
+    "commodity_exports": 195.829,
+    "food_imports": 220.861,
+    "energy_imports": 161.362
+  },
+  "TGO": {
+    "commodity_exports": 1221.024,
+    "food_imports": 348.582,
+    "energy_imports": 1277.538
+  },
+  "TON": {
+    "commodity_exports": 8.284,
+    "food_imports": 70.439,
+    "energy_imports": 55.372
+  },
+  "TTO": {
+    "commodity_exports": 4722.408,
+    "food_imports": 1084.281,
+    "energy_imports": 1517.074
+  },
+  "TUN": {
+    "commodity_exports": 4239.301,
+    "food_imports": 3211.106,
+    "energy_imports": 4923.141
+  },
+  "TUR": {
+    "commodity_exports": 63497.471,
+    "food_imports": 20998.897,
+    "energy_imports": 30525.592
+  },
+  "TKM": {
+    "commodity_exports": 11851.065,
+    "food_imports": 378.56,
+    "energy_imports": 45.329
+  },
+  "TUV": {
+    "commodity_exports": 0.055,
+    "food_imports": 3.815,
+    "energy_imports": 4.362
+  },
+  "UGA": {
+    "commodity_exports": 4714.258,
+    "food_imports": 1551.476,
+    "energy_imports": 1856.145
+  },
+  "UKR": {
+    "commodity_exports": 27665.292,
+    "food_imports": 5549.819,
+    "energy_imports": 10687.455
+  },
+  "ARE": {
+    "commodity_exports": 394247.389,
+    "food_imports": 30034.858,
+    "energy_imports": 32789.265
+  },
+  "GBR": {
+    "commodity_exports": 174914.465,
+    "food_imports": 68273.442,
+    "energy_imports": 103629.284
+  },
+  "USA": {
+    "commodity_exports": 658457.272,
+    "food_imports": 189421.01,
+    "energy_imports": 280081.243
+  },
+  "URY": {
+    "commodity_exports": 8254.51,
+    "food_imports": 1754.485,
+    "energy_imports": 1886.345
+  },
+  "UZB": {
+    "commodity_exports": 12003.722,
+    "food_imports": 3707.125,
+    "energy_imports": 2329.233
+  },
+  "VUT": {
+    "commodity_exports": 50.239,
+    "food_imports": 77.657,
+    "energy_imports": 97.317
+  },
+  "VEN": {
+    "commodity_exports": 7194.455,
+    "food_imports": 1986.965,
+    "energy_imports": 495.676
+  },
+  "VNM": {
+    "commodity_exports": 50253.076,
+    "food_imports": 29880.06,
+    "energy_imports": 25207.684
+  },
+  "YEM": {
+    "commodity_exports": 352.198,
+    "food_imports": 1934.046,
+    "energy_imports": 448.641
+  },
+  "ZMB": {
+    "commodity_exports": 9842.47,
+    "food_imports": 686.347,
+    "energy_imports": 1222.349
+  },
+  "ZWE": {
+    "commodity_exports": 6363.411,
+    "food_imports": 1243.958,
+    "energy_imports": 1405.837
+  }
+}

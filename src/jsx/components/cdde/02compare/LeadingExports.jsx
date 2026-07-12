@@ -4,13 +4,15 @@ import ChartHeader from '../shared/ChartHeader';
 import ChartMeta from '../shared/ChartMeta';
 import ColChart from '../shared/ColChart';
 
-export default function LeadingExports({ iso3, dominantGroup, title, subtitle, description, source, note }) {
+export default function LeadingExports({ iso3, title, subtitle, description, source, note }) {
   const [allData, setAllData] = useState(null);
 
   useEffect(() => {
     loadFile('assets/data/cdde_leading_exports.json')
       .then(r => r?.json())
-      .then(d => { if (d) setAllData(d); });
+      .then(d => {
+        if (d) setAllData(d);
+      });
   }, []);
 
   const exports = allData?.[iso3] ?? null;

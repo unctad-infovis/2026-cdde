@@ -14,14 +14,8 @@ import MacroContext from './MacroContext';
 import SocialContext from './SocialContext';
 import TopMarkets from './TopMarkets';
 
+import { GROUP_COLORS, depColor } from '../shared/cdde-constants';
 import './CountryProfile.css';
-
-const GROUP_COLORS = {
-  agri: '#72bf44',
-  energy: '#a05fb4',
-  mining: '#fbaf17',
-  'non-dependent': '#9e9e9e'
-};
 
 const GROUP_TEXT_COLORS = {
   agri: 'var(--un-color-green-text)',
@@ -31,25 +25,25 @@ const GROUP_TEXT_COLORS = {
 };
 
 const GROUP_INSIGHT = {
-  agri: 'agricultural commodities, exposing the economy to weather, price and policy shocks across food markets',
+  agri: 'agricultural commodities, exposing the economy to weather, price and policy shocks across these markets',
   energy: 'energy commodities, leaving the economy highly exposed to oil and gas price cycles and geopolitical supply risks',
   mining: 'mineral and mining resources, making the economy sensitive to global metals demand and price volatility',
   'non-dependent': 'a diversified export basket, which reduces vulnerability to single-commodity price swings'
 };
 
-function depColor(pct) {
-  if (pct > 80) return '#a71f36';
-  if (pct > 60) return '#fbaf17';
-  return '#009edb';
-}
+const SMALL_ECONOMIES = new Set([
+  'KIR', 'MHL', 'FSM', 'NRU', 'PLW', 'KNA', 'LCA', 'VCT',
+  'STP', 'SLB', 'SOM', 'TKM', 'TLS', 'TON', 'TUV', 'VUT'
+]);
 
 export default function CountryProfile({ country, content = {} }) {
   const { iso3, iso2, name, region, export_dependence: pct, dominant_group, agri_pct, energy_pct, mining_pct } = country;
+  const isSmall = SMALL_ECONOMIES.has(iso3);
 
   const categories = [
     { key: 'agri', label: 'Agriculture', val: agri_pct != null ? +agri_pct : 0 },
     { key: 'energy', label: 'Energy', val: energy_pct != null ? +energy_pct : 0 },
-    { key: 'mining', label: 'Mining & metals', val: mining_pct != null ? +mining_pct : 0 }
+    { key: 'mining', label: 'Mining', val: mining_pct != null ? +mining_pct : 0 }
   ].sort((a, b) => b.val - a.val);
 
   const [stats, setStats] = useState(null);
@@ -119,7 +113,7 @@ export default function CountryProfile({ country, content = {} }) {
       <h3 className="cp_section_head cp_section_head--sep">{content.exportsHeading ?? 'Exports'}</h3>
 
       <DependenceOverTime iso3={iso3} currentPct={safePct} dominantGroup={dominant_group} {...content.dependenceOverTime} />
-      <ExportsOverTime iso3={iso3} dominantGroup={dominant_group} {...content.exportsOverTime} />
+      <ExportsOverTime iso3={iso3} dominantGroup={dominant_group} useMillions={isSmall} {...content.exportsOverTime} />
 
       <div className="cp_chart_row">
         <LeadingExports iso3={iso3} dominantGroup={dominant_group} {...content.leadingExports} />
@@ -129,16 +123,16 @@ export default function CountryProfile({ country, content = {} }) {
       {/* Imports section */}
       <h3 className="cp_section_head cp_section_head--sep">{content.importsHeading ?? 'Imports'}</h3>
 
-      <ImportsOverTime iso3={iso3} {...content.importsOverTime} />
+      <ImportsOverTime iso3={iso3} useMillions={isSmall || iso3 === 'SSD'} {...content.importsOverTime} />
 
       <div className="cp_chart_row">
-        <FoodImportsOverTime iso3={iso3} {...content.foodImportsOverTime} />
-        <EnergyImportsOverTime iso3={iso3} {...content.energyImportsOverTime} />
+        <FoodImportsOverTime iso3={iso3} useMillions={isSmall || iso3 === 'SSD' || iso3 === 'PSE'} {...content.foodImportsOverTime} />
+        <EnergyImportsOverTime iso3={iso3} useMillions={isSmall || iso3 === 'SSD' || iso3 === 'PSE'} {...content.energyImportsOverTime} />
       </div>
 
       <div className="cp_chart_row">
-        <FoodNetImports iso3={iso3} {...content.foodNetImports} />
-        <EnergyNetImports iso3={iso3} {...content.energyNetImports} />
+        <FoodNetImports iso3={iso3} countryName={name} {...content.foodNetImports} />
+        <EnergyNetImports iso3={iso3} countryName={name} {...content.energyNetImports} />
       </div>
 
       {/* Context section */}

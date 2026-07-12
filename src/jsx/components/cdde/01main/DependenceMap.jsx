@@ -11,6 +11,7 @@ import ChartTooltip from '../shared/ChartTooltip';
 import CountrySearch from '../shared/CountrySearch';
 
 import ChartMeta from '../shared/ChartMeta';
+import { DEP_COLOR_SCALE, GROUP_COLORS, NO_DATA_FILL } from '../shared/cdde-constants';
 import './DependenceMap.css';
 
 const MAX_H = 480;
@@ -19,38 +20,21 @@ const MAX_H = 480;
 const CHINA_GROUP = new Set(['CHN', 'HKG', 'TWN', 'MAC']);
 const CHINA_DELEGATE = new Set(['HKG', 'TWN', 'MAC']);
 
-// Export dependence: gray below 60% threshold, UNCTAD blue at/above
-const EXP_COLORS = [
-  { threshold: 0, color: '#d8d8d8' },
-  { threshold: 20, color: '#b0b0b0' },
-  { threshold: 40, color: '#7c7c7c' },
-  { threshold: 60, color: '#0077b8' },
-  { threshold: 80, color: '#004987' }
-];
-
 // Legend split at the 60% dependency threshold
 const EXP_LEGEND_BELOW = [
-  { label: '0–20%', color: '#d8d8d8' },
-  { label: '20–40%', color: '#b0b0b0' },
-  { label: '40–60%', color: '#7c7c7c' }
+  { label: '0–20%', color: DEP_COLOR_SCALE[0].color },
+  { label: '20–40%', color: DEP_COLOR_SCALE[1].color },
+  { label: '40–60%', color: DEP_COLOR_SCALE[2].color }
 ];
 const EXP_LEGEND_ABOVE = [
   { label: '60–80%', color: 'var(--un-color-blue-dark)' },
   { label: '80–100%', color: 'var(--un-color-blue-darkest)' }
 ];
 
-// Dominant group: categorical colors
-const GROUP_COLORS = {
-  agri: '#72bf44',
-  energy: '#009edb',
-  mining: '#fbaf17',
-  'non-dependent': '#aea29a'
-};
-
 const GROUP_LABELS = {
   agri: 'Agriculture',
   energy: 'Energy',
-  mining: 'Mining & metals',
+  mining: 'Mining',
   'non-dependent': 'Non-commodity-dependent'
 };
 
@@ -61,13 +45,12 @@ const GROUP_NOTES = {
   'non-dependent': 'Below 60% threshold'
 };
 
-const NO_DATA_FILL = '#f0f0f0';
 const REDUCED_MOTION = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 function getExpColor(pct) {
   if (pct === null || pct === undefined) return NO_DATA_FILL;
-  let color = EXP_COLORS[0].color;
-  for (const step of EXP_COLORS) {
+  let color = DEP_COLOR_SCALE[0].color;
+  for (const step of DEP_COLOR_SCALE) {
     if (pct >= step.threshold) color = step.color;
   }
   return color;
@@ -247,7 +230,7 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
     setTimeout(() => {
       setView(newView);
       requestAnimationFrame(() => requestAnimationFrame(() => setSwitching(false)));
-    }, 200);
+    }, 80);
   }
 
   function getFill(iso3) {
@@ -258,7 +241,7 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
   }
 
   function handleCountryClick(iso3) {
-    if (!mapData) return;
+    if (!mapData || iso3 === 'LIE') return;
     const lookup = CHINA_DELEGATE.has(iso3) ? 'CHN' : iso3;
     const row = mapData[lookup];
     if (row) {
@@ -267,7 +250,7 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
     }
   }
 
-  const mapCountryList = useMemo(() => (mapData ? Object.values(mapData).sort((a, b) => a.name.localeCompare(b.name)) : []), [mapData]);
+  const mapCountryList = useMemo(() => (mapData ? Object.values(mapData).filter(r => r.iso3 !== 'LIE').sort((a, b) => a.name.localeCompare(b.name)) : []), [mapData]);
 
   function closePanel() {
     setSelectedCountry(null);
@@ -378,9 +361,9 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
             </g>
           </svg>
 
-          {/* Legend overlay — top-left corner */}
-          <div className="cmap_legend">
-            {view === 'export' ? (
+          {/* Legend overlay — top-left corner, export view only */}
+          {view === 'export' && (
+            <div className="cmap_legend">
               <div className="cmap_legend_export">
                 <span className="cmap_legend_label">Export share</span>
                 {EXP_LEGEND_BELOW.map(step => (
@@ -397,8 +380,8 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
                   </div>
                 ))}
               </div>
-            ) : null}
-          </div>
+            </div>
+          )}
 
           {/* Country info panel — overlaid on right side of map */}
           {selectedCountry && (
@@ -432,7 +415,7 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
                         {[
                           { key: 'agri', label: 'Agriculture', val: selectedCountry.agri_pct },
                           { key: 'energy', label: 'Energy', val: selectedCountry.energy_pct },
-                          { key: 'mining', label: 'Mining & metals', val: selectedCountry.mining_pct }
+                          { key: 'mining', label: 'Mining', val: selectedCountry.mining_pct }
                         ].map(cat => (
                           <div key={cat.key} className={`cmap_tt_cat_row${selectedCountry.dominant_group === cat.key ? ' cmap_tt_cat_row--dominant' : ''}`}>
                             <span className="cmap_tt_group_dot" style={{ background: GROUP_COLORS[cat.key] }} />
@@ -444,7 +427,7 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
                     )}
                   </div>
 
-                  <a className="cmap_panel_profile_link" href="./compare.html">
+                  <a className="cmap_panel_profile_link" href={`./compare.html?country=${selectedCountry.iso3}`}>
                     Open full country profile →
                   </a>
                 </>
@@ -482,7 +465,7 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
                       {[
                         { key: 'agri', label: 'Agriculture', val: row.agri_pct },
                         { key: 'energy', label: 'Energy', val: row.energy_pct },
-                        { key: 'mining', label: 'Mining & metals', val: row.mining_pct }
+                        { key: 'mining', label: 'Mining', val: row.mining_pct }
                       ].map(cat => (
                         <div key={cat.key} className={`cmap_tt_cat_row${row.dominant_group === cat.key ? ' cmap_tt_cat_row--dominant' : ''}`}>
                           <span className="cmap_tt_group_dot" style={{ background: GROUP_COLORS[cat.key] }} />

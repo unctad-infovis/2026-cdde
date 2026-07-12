@@ -1,3 +1,8 @@
+@keyframes rt_bar_grow {
+  from { width: 0%; }
+  to { width: var(--rt-bar-pct); }
+}
+
 #app-root-2026-cdde .app {
   /* Responsive */
 
@@ -78,33 +83,10 @@
     pointer-events: none;
   }
 
-  /* Legend */
+  /* Legend — inline in controls bar */
 
   .rt_legend {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .rt_legend_dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  .rt_legend_dot--dev {
-    background: var(--un-color-blue);
-  }
-
-  .rt_legend_dot--devg {
-    background: var(--un-color-yellow);
-  }
-
-  .rt_legend_lbl {
-    font-size: var(--un-font-size-xxs);
-    color: var(--un-color-grey-text);
-    margin-right: 8px;
+    margin-bottom: 0;
   }
 
   /* CSV button */
@@ -190,7 +172,7 @@
   /* Rank */
 
   .rt_rank {
-    font-size: var(--un-font-size-l);
+    font-size: var(--un-font-size-xl);
     font-weight: var(--un-font-weight-boldest);
     color: var(--un-color-grey-light);
     line-height: 1;
@@ -230,7 +212,7 @@
   }
 
   .rt_pill {
-    font-size: 9px;
+    font-size: var(--un-font-size-xxxxs);
     font-weight: var(--un-font-weight-boldest);
     letter-spacing: 0.06em;
     padding: 2px 7px;
@@ -240,7 +222,7 @@
 
   .rt_pill--devg {
     background: var(--un-color-yellow);
-    color: #3a2800;
+    color: var(--un-color-grey-darkest);
   }
 
   .rt_pill--dev {
@@ -268,9 +250,16 @@
   }
 
   .rt_bar_fill {
-    height: 100%;
+    animation: rt_bar_grow 0.5s ease forwards;
     border-radius: 5px;
-    transition: width 0.4s ease;
+    height: 100%;
+    width: var(--rt-bar-pct);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rt_bar_fill {
+      animation: none;
+    }
   }
 
   /* Value */

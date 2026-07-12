@@ -13,24 +13,22 @@
   }
 
   .pcc_grid {
-    stroke-width: 1px;
     stroke: var(--un-color-grey-lighest);
+    stroke-width: 1px;
   }
 
   .pcc_zero {
-    stroke-width: 1.5px;
     stroke: var(--un-color-grey-light);
+    stroke-width: 1.5px;
   }
 
   .pcc_tick_label {
     fill: var(--un-color-grey-text);
-    font-family: Inter, Arial, sans-serif;
-    font-size: var(--un-font-size-xxxs);
+    font-size: var(--un-font-size-xxs);
   }
 
   .pcc_val_label {
     fill: #000;
-    font-family: Inter, Arial, sans-serif;
     font-size: var(--un-font-size-xxs);
     font-weight: var(--un-font-weight-bold);
   }
@@ -57,10 +55,5 @@
     width: 12px;
   }
 
-  .pcc_no_data {
-    color: var(--un-color-grey-text);
-    font-size: var(--un-font-size-xxs);
-    padding: 32px 0;
-    text-align: center;
-  }
 }
+

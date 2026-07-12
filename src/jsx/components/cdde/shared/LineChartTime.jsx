@@ -1,5 +1,7 @@
 import * as d3 from 'd3';
 import { useEffect, useRef, useState } from 'react';
+import ChartTooltip from './ChartTooltip';
+import { C_BLUE, axisFmt } from './cdde-constants';
 
 import './LineChartTime.css';
 
@@ -9,13 +11,12 @@ const CHART_H = H - M.top - M.bottom;
 
 function fmtBillions(v) {
   if (v === 0) return '0';
-  if (v >= 100) return `${Math.round(v)}`;
-  if (v >= 10) return `${v.toFixed(0)}`;
-  if (v >= 1) return `${parseFloat(v.toFixed(1))}`;
+  if (v >= 1) return `${v.toFixed(1)}`;
   return `${parseFloat(v.toFixed(2))}`;
 }
 
 function niceStep(raw) {
+  if (!Number.isFinite(raw) || raw <= 0) return 1;
   const mag = Math.pow(10, Math.floor(Math.log10(raw)));
   const frac = raw / mag;
   if (frac <= 1) return mag;
@@ -24,14 +25,7 @@ function niceStep(raw) {
   return 10 * mag;
 }
 
-function axisFmt(v, step) {
-  if (v === 0) return '0';
-  if (step >= 1) return `${Math.round(v)}`;
-  if (step >= 0.1) return v.toFixed(1);
-  return v.toFixed(2);
-}
-
-export default function LineChartTime({ series, lineColor = '#009edb', yFmt = fmtBillions, tooltipUnit = 'bn USD', ariaLabel = 'Line chart over time' }) {
+export default function LineChartTime({ series, lineColor = C_BLUE, yFmt = fmtBillions, tooltipUnit = 'bn USD', ariaLabel = 'Line chart over time' }) {
   const wrapRef = useRef(null);
   const pathRef = useRef(null);
   const [svgW, setSvgW] = useState(560);
@@ -53,7 +47,12 @@ export default function LineChartTime({ series, lineColor = '#009edb', yFmt = fm
     const el = wrapRef.current;
     if (!el) return;
     const io = new IntersectionObserver(
-      ([e]) => { if (e.isIntersecting) { setRevealed(true); io.disconnect(); } },
+      ([e]) => {
+        if (e.isIntersecting) {
+          setRevealed(true);
+          io.disconnect();
+        }
+      },
       { threshold: 0.15 }
     );
     io.observe(el);
@@ -95,20 +94,21 @@ export default function LineChartTime({ series, lineColor = '#009edb', yFmt = fm
   const lastX = lastPt ? xScale(lastPt.year) : 0;
   const lastY = lastPt ? yScale(lastPt.val) : 0;
   const calloutText = lastPt ? yFmt(lastPt.val) : '';
-  const calloutW = Math.max(36, calloutText.length * 7 + 12);
+  const calloutW = Math.max(36, calloutText.length * 7 + 16);
 
   // Dash animation: invisible until pathLen known, then draw in on reveal
-  const pathStyle = pathLen != null
-    ? {
-        strokeDasharray: pathLen,
-        strokeDashoffset: revealed ? 0 : pathLen,
-        transition: revealed ? 'stroke-dashoffset 1.4s ease 0.2s' : 'none',
-      }
-    : { visibility: 'hidden' };
+  const pathStyle =
+    pathLen != null
+      ? {
+          strokeDasharray: pathLen,
+          strokeDashoffset: revealed ? 0 : pathLen,
+          transition: revealed ? 'stroke-dashoffset 1.4s ease 0.2s' : 'none'
+        }
+      : { visibility: 'hidden' };
 
   const endpointStyle = {
     opacity: revealed ? 1 : 0,
-    transition: revealed ? 'opacity 0.3s ease 1.4s' : 'none',
+    transition: revealed ? 'opacity 0.3s ease 1.4s' : 'none'
   };
 
   function handleMouseMove(e) {
@@ -129,6 +129,14 @@ export default function LineChartTime({ series, lineColor = '#009edb', yFmt = fm
     setTooltip({ x: mouseX, cursorX: xScale(pt.year), domY, year: pt.year, val: pt.val, flip: mouseX > rect.width * 0.65 });
   }
 
+  if (!series.length) {
+    return (
+      <div className="lct_wrap" ref={wrapRef}>
+        <p className="cdde_no_data">Data not available</p>
+      </div>
+    );
+  }
+
   return (
     <div className="lct_wrap" ref={wrapRef} onMouseMove={handleMouseMove} onMouseLeave={() => setTooltip(null)}>
       <svg viewBox={`0 0 ${svgW} ${H}`} className="lct_svg" aria-label={ariaLabel}>
@@ -142,24 +150,13 @@ export default function LineChartTime({ series, lineColor = '#009edb', yFmt = fm
             </g>
           ))}
 
-          {linePath && (
-            <path
-              ref={pathRef}
-              d={linePath}
-              fill="none"
-              stroke={lineColor}
-              strokeWidth={3}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              style={pathStyle}
-            />
-          )}
+          {linePath && <path ref={pathRef} d={linePath} fill="none" stroke={lineColor} strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" style={pathStyle} />}
 
           {lastPt && (
             <g style={endpointStyle}>
               <circle cx={lastX} cy={lastY} r={4} fill={lineColor} />
-              <rect x={lastX - calloutW / 2} y={lastY - 26} width={calloutW} height={20} rx={6} fill={lineColor} />
-              <text x={lastX} y={lastY - 11} textAnchor="middle" className="lct_callout_label">
+              <rect x={lastX - calloutW / 2} y={lastY - 32} width={calloutW} height={24} rx={6} fill={lineColor} />
+              <text x={lastX} y={lastY - 14} textAnchor="middle" className="lct_callout_label">
                 {calloutText}
               </text>
             </g>
@@ -180,12 +177,12 @@ export default function LineChartTime({ series, lineColor = '#009edb', yFmt = fm
       </svg>
 
       {tooltip && (
-        <div className={`lct_tooltip${tooltip.flip ? ' lct_tooltip--flip' : ''}`} style={{ left: tooltip.x, top: tooltip.domY }}>
+        <ChartTooltip left={tooltip.x} top={tooltip.domY} flip={tooltip.flip}>
           <div className="lct_tt_year">{tooltip.year}</div>
           <div className="lct_tt_val" style={{ color: lineColor }}>
             {yFmt(tooltip.val)} {tooltipUnit}
           </div>
-        </div>
+        </ChartTooltip>
       )}
     </div>
   );

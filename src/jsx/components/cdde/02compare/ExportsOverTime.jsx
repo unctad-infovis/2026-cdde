@@ -4,21 +4,25 @@ import ChartHeader from '../shared/ChartHeader';
 import ChartMeta from '../shared/ChartMeta';
 import LineChartTime from '../shared/LineChartTime';
 
-export default function ExportsOverTime({ iso3, dominantGroup, title, subtitle, description, source, note }) {
+export default function ExportsOverTime({ iso3, title, subtitle, description, source, note, useMillions = false }) {
   const [allData, setAllData] = useState(null);
 
   useEffect(() => {
     loadFile('assets/data/cdde_exports_over_time.json')
       .then(r => r?.json())
-      .then(d => { if (d) setAllData(d); });
+      .then(d => {
+        setAllData(d);
+      });
   }, []);
 
-  const series = allData?.[iso3] ?? [];
+  const raw = allData?.[iso3] ?? [];
+  const series = useMillions ? raw.map(d => ({ ...d, val: d.val * 1000 })) : raw;
+  const effectiveSubtitle = useMillions ? subtitle?.replace('Billions', 'Millions') : subtitle;
 
   return (
     <div className="cdde_card">
-      <ChartHeader title={title} subtitle={subtitle} description={description} />
-      <LineChartTime series={series} ariaLabel="Line chart of commodity exports over time" />
+      <ChartHeader title={title} subtitle={effectiveSubtitle} description={description} />
+      <LineChartTime series={series} ariaLabel="Line chart of commodity exports over time" tooltipUnit={useMillions ? 'mn USD' : 'bn USD'} />
       <ChartMeta source={source} note={note} />
     </div>
   );

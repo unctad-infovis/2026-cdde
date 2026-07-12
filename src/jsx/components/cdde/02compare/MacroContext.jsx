@@ -28,8 +28,8 @@ export default function MacroContext({ iso3, title, subtitle, description, sourc
   const d = allData?.[iso3] ?? null;
 
   const items = d ? [
-    { label: 'GDP', value: fmtGdp(d.gdp), note: 'Constant 2015 USD' },
-    { label: 'GDP per capita', value: fmtPerCapita(d.gdp_per_capita), note: 'Constant 2015 USD' },
+    { label: 'GDP', value: fmtGdp(d.gdp), note: 'Constant 2020 USD' },
+    { label: 'GDP per capita', value: fmtPerCapita(d.gdp_per_capita), note: 'Constant 2020 USD' },
   ] : [];
 
   return (

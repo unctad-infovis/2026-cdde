@@ -2,10 +2,8 @@ import { useEffect, useRef } from 'react';
 import Article from '../Main.mdx';
 
 // cdde/01main
-import BigPicture from './components/cdde/01main/BigPicture.jsx';
 import CommodityGroups from './components/cdde/01main/CommodityGroups.jsx';
 import CommodityPrices from './components/cdde/01main/CommodityPrices.jsx';
-import DecadeShift from './components/cdde/01main/DecadeShift.jsx';
 import DependenceByGroup from './components/cdde/01main/DependenceByGroup.jsx';
 import DependenceByLevel from './components/cdde/01main/DependenceByLevel.jsx';
 import DependenceMap from './components/cdde/01main/DependenceMap.jsx';
@@ -14,27 +12,29 @@ import ExportsByRegion from './components/cdde/01main/ExportsByRegion.jsx';
 import Header from './components/cdde/01main/Header.jsx';
 import Intro from './components/cdde/01main/Intro.jsx';
 import KnowMore from './components/cdde/01main/KnowMore.jsx';
-import ThresholdCrossers from './components/cdde/01main/ThresholdCrossers.jsx';
+import NarrativeIntro from './components/cdde/01main/NarrativeIntro.jsx';
+import SectionDivider from './components/cdde/01main/SectionDivider.jsx';
+import StatusChangers from './components/cdde/01main/StatusChangers.jsx';
 import Nav from './components/cdde/shared/Nav.jsx';
 
 import './../styles/styles.css';
 import './components/cdde/shared/cdde-patterns.css';
 
 const components = {
-  BigPicture,
-  Header,
-  Intro,
-  Nav,
-  DependenceByLevel,
+  BigPicture: NarrativeIntro,
   CommodityGroups,
+  CommodityPrices,
+  DecadeShift: SectionDivider,
+  DependenceByGroup,
+  DependenceByLevel,
   DependenceMap,
-  KnowMore,
-  DecadeShift,
   DependenceMovers,
   ExportsByRegion,
-  DependenceByGroup,
-  CommodityPrices,
-  ThresholdCrossers
+  Header,
+  Intro,
+  KnowMore,
+  Nav,
+  ThresholdCrossers: StatusChangers,
 };
 
 const App = ({ meta }) => {

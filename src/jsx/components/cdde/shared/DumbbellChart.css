@@ -1,61 +1,55 @@
 #app-root-2026-cdde .app {
   .db_svg {
-    width: 100%;
-    height: auto;
     display: block;
+    height: auto;
     overflow: visible;
+    width: 100%;
   }
-
   .db_axis_label {
-    font-size: var(--un-font-size-xxxs);
     fill: var(--un-color-grey-text);
     font-family: Inter, Arial, sans-serif;
+    font-size: var(--un-font-size-xxxs);
   }
-
   .db_ref_badge {
-    position: relative;
     background: var(--un-color-yellow);
+    border-radius: 4px;
     color: #fff;
+    display: inline-block;
     font-size: var(--un-font-size-xxxs);
     padding: 2px 8px;
-    border-radius: 4px;
-    white-space: nowrap;
     pointer-events: none;
+    position: relative;
     transform: translateX(-50%);
-    display: inline-block;
+    white-space: nowrap;
 
     &::after {
-      content: '';
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
       border-left: 5px solid transparent;
       border-right: 5px solid transparent;
       border-top: 5px solid var(--un-color-yellow);
+      content: '';
+      left: 50%;
+      position: absolute;
+      top: 100%;
+      transform: translateX(-50%);
     }
   }
-
   .db_ref_line {
-    stroke: var(--un-color-grey-light);
-    stroke-width: 1px;
     stroke-dasharray: 3 3;
-  }
-
-  .db_track {
-    stroke: var(--un-color-grey-lighest);
     stroke-width: 1px;
+    stroke: var(--un-color-grey-light);
   }
-
+  .db_track {
+    stroke-width: 1px;
+    stroke: var(--un-color-grey-lighest);
+  }
   .db_row_name {
-    font-size: var(--un-font-size-xxs);
     fill: var(--un-color-blue-darkest);
     font-family: Inter, Arial, sans-serif;
+    font-size: var(--un-font-size-xxs);
   }
-
   .db_badge_label {
-    font-size: var(--un-font-size-xxxs);
-    font-weight: 700;
     font-family: Inter, Arial, sans-serif;
+    font-size: var(--un-font-size-xxxs);
+    font-weight: var(--un-font-weight-bolder);
   }
 }

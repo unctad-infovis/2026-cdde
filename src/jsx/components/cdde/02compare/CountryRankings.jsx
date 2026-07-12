@@ -16,6 +16,11 @@ const fmtGdp = v => {
   return b >= 1000 ? `$${(b / 1000).toFixed(1)} trillion` : `$${b.toFixed(1)} billion`;
 };
 const fmtHdi = v => Number(v).toFixed(3);
+const fmtMillions = v => {
+  const n = Number(v);
+  if (n >= 1000) return `$${(n / 1000).toFixed(1)} bn`;
+  return `$${Math.round(n)} mn`;
+};
 
 const RANK_OPTIONS = [
   {
@@ -27,6 +32,14 @@ const RANK_OPTIONS = [
     src: 'country'
   },
   {
+    key: 'commodity_exports',
+    label: 'Commodity exports',
+    colHeader: 'COMMODITY EXPORTS',
+    unit: 'Millions of dollars, 2022–2024',
+    fmt: fmtMillions,
+    src: 'additional'
+  },
+  {
     key: 'leading_commodity',
     label: 'Three leading commodity exports',
     colHeader: 'LEADING COMMODITIES',
@@ -35,10 +48,44 @@ const RANK_OPTIONS = [
     src: 'stats'
   },
   {
+    key: 'food_imports',
+    label: 'Food imports',
+    colHeader: 'FOOD IMPORTS',
+    unit: 'Millions of dollars, 2022–2024',
+    fmt: fmtMillions,
+    src: 'additional'
+  },
+  {
+    key: 'energy_imports',
+    label: 'Energy imports',
+    colHeader: 'ENERGY IMPORTS',
+    unit: 'Millions of dollars, 2022–2024',
+    fmt: fmtMillions,
+    src: 'additional'
+  },
+  {
+    key: 'net_food_imports',
+    label: 'Net food imports',
+    colHeader: 'NET FOOD IMPORTS',
+    unit: 'Per cent of merchandise trade, 2022–2024',
+    fmt: fmtPct,
+    src: 'netImports',
+    netKey: 'food_recent'
+  },
+  {
+    key: 'net_energy_imports',
+    label: 'Net energy imports',
+    colHeader: 'NET ENERGY IMPORTS',
+    unit: 'Per cent of merchandise trade, 2022–2024',
+    fmt: fmtPct,
+    src: 'netImports',
+    netKey: 'energy_recent'
+  },
+  {
     key: 'gdp_per_capita',
     label: 'GDP per capita',
     colHeader: 'GDP PER CAPITA',
-    unit: 'Constant 2015 USD',
+    unit: 'Constant 2020 USD',
     fmt: fmtGdpPc,
     src: 'macro'
   },
@@ -46,7 +93,7 @@ const RANK_OPTIONS = [
     key: 'gdp',
     label: 'GDP (total)',
     colHeader: 'GDP TOTAL',
-    unit: 'Millions USD, constant 2015',
+    unit: 'Millions USD, constant 2020',
     fmt: fmtGdp,
     src: 'macro'
   },
@@ -94,11 +141,15 @@ export default function CountryRankings({ countries }) {
   const [macroData, setMacroData] = useState(null);
   const [socialData, setSocialData] = useState(null);
   const [statsData, setStatsData] = useState(null);
+  const [additionalData, setAdditionalData] = useState(null);
+  const [netImportsData, setNetImportsData] = useState(null);
 
   useEffect(() => {
     loadFile('assets/data/cdde_macro_context.json').then(r => r?.json()).then(d => d && setMacroData(d));
     loadFile('assets/data/cdde_social_context.json').then(r => r?.json()).then(d => d && setSocialData(d));
     loadFile('assets/data/cdde_profile_stats.json').then(r => r?.json()).then(d => d && setStatsData(d));
+    loadFile('assets/data/cdde_additional_comparison.json').then(r => r?.json()).then(d => d && setAdditionalData(d));
+    loadFile('assets/data/cdde_net_imports.json').then(r => r?.json()).then(d => d && setNetImportsData(d));
   }, []);
 
   const opt = RANK_OPTIONS.find(o => o.key === rankBy);
@@ -108,6 +159,8 @@ export default function CountryRankings({ countries }) {
     if (opt.src === 'macro') return macroData?.[c.iso3]?.[opt.key] ?? null;
     if (opt.src === 'social') return socialData?.[c.iso3]?.[opt.key] ?? null;
     if (opt.src === 'stats') return statsData?.[c.iso3]?.[opt.key] ?? null;
+    if (opt.src === 'additional') return additionalData?.[c.iso3]?.[opt.key] ?? null;
+    if (opt.src === 'netImports') return netImportsData?.[c.iso3]?.[opt.netKey] ?? null;
     return null;
   }
 
@@ -127,12 +180,17 @@ export default function CountryRankings({ countries }) {
   });
   const maxVal = sorted.find(c => c._val != null)?._val ?? 1;
 
-  const dataLoaded = opt.src === 'country' || (opt.src === 'macro' && macroData) || (opt.src === 'social' && socialData) || (opt.src === 'stats' && statsData);
-
-  if (!countries || !dataLoaded) return <div className="cdde_loading" style={{ height: 400 }} />;
+  const dataLoaded = opt.src === 'country'
+    || (opt.src === 'macro' && macroData)
+    || (opt.src === 'social' && socialData)
+    || (opt.src === 'stats' && statsData)
+    || (opt.src === 'additional' && additionalData)
+    || (opt.src === 'netImports' && netImportsData);
 
   return (
     <div className="rt_wrap">
+      {(!countries || !dataLoaded) && <div className="cdde_loading" style={{ height: 400 }} />}
+      {countries && dataLoaded && (<>
       {/* ── Controls ── */}
       <div className="rt_controls">
         <div className="rt_controls_left">
@@ -166,11 +224,15 @@ export default function CountryRankings({ countries }) {
         </div>
 
         <div className="rt_controls_right">
-          <div className="rt_legend">
-            <span className="rt_legend_dot rt_legend_dot--dev" />
-            <span className="rt_legend_lbl">Developed</span>
-            <span className="rt_legend_dot rt_legend_dot--devg" />
-            <span className="rt_legend_lbl">Developing</span>
+          <div className="cdde_legend_row rt_legend">
+            <span className="cdde_legend_item">
+              <span className="cdde_legend_dot" style={{ background: 'var(--un-color-blue)' }} />
+              Developed
+            </span>
+            <span className="cdde_legend_item">
+              <span className="cdde_legend_dot" style={{ background: 'var(--un-color-yellow)' }} />
+              Developing
+            </span>
           </div>
           <button type="button" className="rt_csv_btn" onClick={() => downloadCSV(sorted, opt)}>
             ↓ .csv
@@ -214,7 +276,14 @@ export default function CountryRankings({ countries }) {
               <div className="rt_bar_col">
                 {c._val != null && (
                   <div className="rt_bar_track">
-                    <div className="rt_bar_fill" style={{ width: `${pct}%`, background: barColor }} />
+                    <div
+                      className="rt_bar_fill"
+                      style={{
+                        '--rt-bar-pct': `${pct}%`,
+                        animationDelay: `${i * 8}ms`,
+                        background: barColor
+                      }}
+                    />
                   </div>
                 )}
               </div>
@@ -224,6 +293,7 @@ export default function CountryRankings({ countries }) {
           );
         })}
       </div>
+      </>)}
     </div>
   );
 }

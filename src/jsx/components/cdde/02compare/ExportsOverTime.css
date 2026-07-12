@@ -34,8 +34,8 @@
   }
 
   .exv_callout_label {
-    font-size: 10px;
-    font-weight: 700;
+    font-size: var(--un-font-size-xxxxs);
+    font-weight: var(--un-font-weight-bolder);
     fill: #fff;
     font-family: Inter, Arial, sans-serif;
   }
@@ -47,33 +47,4 @@
     pointer-events: none;
   }
 
-  .exv_tooltip {
-    position: absolute;
-    pointer-events: none;
-    background: #fff;
-    border: 1px solid var(--un-color-grey-light);
-    border-radius: 8px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-    padding: 8px 12px;
-    transform: translate(12px, -50%);
-    z-index: 300;
-    white-space: nowrap;
-  }
-
-  .exv_tooltip--flip {
-    transform: translate(calc(-100% - 12px), -50%);
-  }
-
-  .exv_tt_year {
-    font-size: var(--un-font-size-xxs);
-    font-weight: var(--un-font-weight-boldest);
-    color: var(--un-color-blue-darkest);
-  }
-
-  .exv_tt_val {
-    font-size: var(--un-font-size-xs);
-    font-weight: var(--un-font-weight-boldest);
-    color: var(--un-color-blue);
-    margin-top: 2px;
-  }
 }

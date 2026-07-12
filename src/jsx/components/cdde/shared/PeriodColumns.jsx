@@ -1,5 +1,6 @@
 import * as d3 from 'd3';
 import { useEffect, useRef, useState } from 'react';
+import { C_BLUE, C_YELLOW, axisFmt } from './cdde-constants';
 
 import './PeriodColumns.css';
 
@@ -7,8 +8,8 @@ const H = 220;
 const M = { top: 28, right: 16, bottom: 44, left: 44 };
 const CHART_H = H - M.top - M.bottom;
 
-const COLOR1 = '#fbaf17'; // var(--un-color-yellow)
-const COLOR2 = '#009edb'; // var(--un-color-blue)
+const COLOR1 = C_YELLOW;
+const COLOR2 = C_BLUE;
 const LABEL1 = '2012–2014';
 const LABEL2 = '2022–2024';
 
@@ -20,13 +21,6 @@ function niceStep(raw) {
   if (frac <= 2) return 2 * mag;
   if (frac <= 5) return 5 * mag;
   return 10 * mag;
-}
-
-function axisFmt(v, step) {
-  if (v === 0) return '0';
-  if (step >= 1) return `${Math.round(v)}`;
-  if (step >= 0.1) return v.toFixed(1);
-  return v.toFixed(2);
 }
 
 function fmtPct(v) {
@@ -107,14 +101,14 @@ export default function PeriodColumns({ val1, val2 }) {
   function valLabelY(val) {
     if (val == null) return 0;
     if (val >= 0) return Math.max(yScale(val) - 6, 4);
-    return Math.min(yScale(val) + 14, CHART_H - 4);
+    return Math.min(yScale(val) + 14, CHART_H + 12);
   }
 
   const labelOpacity = Math.max(0, (progress - 0.75) / 0.25);
 
   return (
     <div className="pcc_wrap" ref={wrapRef}>
-      {!hasData && <div className="pcc_no_data">Data not available</div>}
+      {!hasData && <p className="cdde_no_data">Data not available</p>}
       <svg viewBox={`0 0 ${svgW} ${H}`} className="pcc_svg" aria-label="Column chart comparing two time periods">
         <g transform={`translate(${M.left},${M.top})`}>
           {yTicks.map(v => (

@@ -95,6 +95,13 @@
       line-height: var(--un-line-height-normal);
       padding: 0 24px;
       max-width: none;
+      a {
+        color: var(--un-color-grey-text);
+        text-decoration: underline;
+        &:hover {
+          text-decoration: none;
+        }
+      }
     }
     .parallax_container {
       position: relative;
@@ -105,8 +112,8 @@
 
     @media (max-width: 600px) {
       .width_wide {
-        padding-left: 8px !important;
-        padding-right: 8px !important;
+        padding-left: 8px;
+        padding-right: 8px;
       }
     }
   }

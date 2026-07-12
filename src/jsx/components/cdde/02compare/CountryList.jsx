@@ -1,10 +1,5 @@
+import { depColor } from '../shared/cdde-constants';
 import './CountryList.css';
-
-function dotColor(pct) {
-  if (pct > 80) return '#a71f36';
-  if (pct > 60) return '#fbaf17';
-  return '#009edb';
-}
 
 export default function CountryList({ countries, selected, onSelect }) {
   return (
@@ -23,7 +18,7 @@ export default function CountryList({ countries, selected, onSelect }) {
             <button type="button" key={c.iso3} className={`cl_tile${isSelected ? ' cl_tile--selected' : ''}`} onClick={() => onSelect(c)}>
               <span className="cl_tile_name">{c.name}</span>
               <span className="cl_tile_dep">
-                <span className="cl_dot" style={{ background: dotColor(c.export_dependence) }} />
+                <span className="cl_dot" style={{ background: depColor(c.export_dependence) }} />
                 {c.export_dependence.toFixed(1)}%
               </span>
             </button>

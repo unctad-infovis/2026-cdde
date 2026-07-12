@@ -5,13 +5,12 @@ import ChartHeader from '../shared/ChartHeader';
 import ChartMeta from '../shared/ChartMeta';
 import DumbbellChart from '../shared/DumbbellChart';
 
-import './ThresholdCrossers.css';
+import { C_BLUE, C_YELLOW } from '../shared/cdde-constants';
+import './StatusChangers.css';
 
-const C_YELLOW = '#fbaf17';
-const C_BLUE = '#009edb';
 const REDUCED_MOTION = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-export default function ThresholdCrossers({ insight, note, source, subtitle, title }) {
+export default function StatusChangers({ insight, note, source, subtitle, title }) {
   const [data, setData] = useState(null);
   const [visRef, isVisible] = useIsVisible(0.15);
   const animated = isVisible || REDUCED_MOTION;

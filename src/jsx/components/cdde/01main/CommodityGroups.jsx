@@ -4,7 +4,7 @@ const GROUPS = [
   { color: 'var(--un-color-green)', label: 'Agricultural products', note: 'Food and raw materials' },
   { color: 'var(--un-color-green-dark)', label: 'Raw materials', note: 'Part of agricultural group' },
   { color: 'var(--un-color-blue)', label: 'Energy', note: 'Oil, gas, coal' },
-  { color: 'var(--un-color-yellow)', label: 'Mining & metals', note: 'Ores and precious metals' }
+  { color: 'var(--un-color-yellow)', label: 'Mining', note: 'Ores and precious metals' }
 ];
 
 export default function CommodityGroups({ methodology_url }) {

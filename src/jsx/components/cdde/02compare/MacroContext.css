@@ -25,7 +25,7 @@
   }
 
   .mac_triangle {
-    font-size: 18px;
+    font-size: var(--un-font-size-normal);
     line-height: 1;
   }
 

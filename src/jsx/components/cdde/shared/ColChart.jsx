@@ -52,7 +52,13 @@ export default function ColChart({ items, color = 'var(--un-color-blue)' }) {
     return () => io.disconnect();
   }, []);
 
-  if (!items?.length) return null;
+  if (!items?.length) {
+    return (
+      <div className="cdde_col_wrap" ref={wrapRef}>
+        <p className="cdde_no_data">Data not available</p>
+      </div>
+    );
+  }
 
   const CHART_W = svgW - M.left - M.right;
   const n = items.length;

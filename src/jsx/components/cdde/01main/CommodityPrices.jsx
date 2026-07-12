@@ -23,7 +23,7 @@ const SERIES = [
   { key: 'energy', label: 'Energy', color: '#009edb' },
   { key: 'agri', label: 'Agricultural', color: '#72bf44' },
   { key: 'mining', label: 'Mining', color: '#fbaf17' },
-  { key: 'precious', label: 'Precious metals', color: '#9b59b6' }
+  { key: 'precious', label: 'Precious metals', color: '#a05fb4' }
 ];
 
 const FILTERS = ['All', ...SERIES.map(s => s.label)];
@@ -160,54 +160,54 @@ export default function CommodityPrices({ insight, note, source, subtitle, title
   const animated = isVisible || REDUCED_MOTION;
 
   return (
-    <div className="pic_container cdde_reveal" ref={visRef}>
-      <div className="pic_header_row">
+    <div className="cprices_container cdde_reveal" ref={visRef}>
+      <div className="cprices_header_row">
         <ChartHeader title={title} subtitle={subtitle} large />
-        <div className="pic_filters">
+        <div className="cprices_filters">
           {FILTERS.map(f => (
-            <button type="button" key={f} className={`pic_filter_btn${activeFilter === f ? ' active' : ''}`} onClick={() => setActiveFilter(f)}>
+            <button type="button" key={f} className={`cprices_filter_btn${activeFilter === f ? ' active' : ''}`} onClick={() => setActiveFilter(f)}>
               {f}
             </button>
           ))}
         </div>
       </div>
 
-      {insight && <p className="cdde_insight pic_insight">{insight}</p>}
+      {insight && <p className="cdde_insight cprices_insight">{insight}</p>}
 
       {/* ── Legend — now above the chart ── */}
-      <div className="pic_legend">
+      <div className="cdde_legend_row">
         {SERIES.map(s => (
-          <span key={s.key} className="pic_legend_item">
-            <span className="pic_legend_line" style={{ background: s.color }} />
+          <span key={s.key} className="cdde_legend_item">
+            <span className="cdde_legend_line" style={{ background: s.color }} />
             {s.label}
           </span>
         ))}
       </div>
-      <div className="pic_anno_key">
+      <div className="cprices_anno_key">
         {ANNOTATIONS.map((a, i) => (
-          <span key={a.label} className="pic_anno_key_item">
-            <span className="pic_anno_key_num">{i + 1}</span>
+          <span key={a.label} className="cprices_anno_key_item">
+            <span className="cprices_anno_key_num">{i + 1}</span>
             {a.label}
           </span>
         ))}
       </div>
 
       {/* ── Chart ── */}
-      <div className="pic_chart_wrap" ref={wrapRef}>
+      <div className="cprices_chart_wrap" ref={wrapRef}>
         {!chart ? (
-          <div className="pic_loading" />
+          <div className="cprices_loading" />
         ) : (
           <>
-            <svg ref={svgRef} viewBox={`0 0 ${svgW} ${H}`} className={`pic_svg${animated ? ' pic_svg--animated' : ''}`} aria-label="Line chart of commodity price indices 1995–2026" onMouseLeave={handleMouseLeave}>
+            <svg ref={svgRef} viewBox={`0 0 ${svgW} ${H}`} className={`cprices_svg${animated ? ' cprices_svg--animated' : ''}`} aria-label="Line chart of commodity price indices 1995–2026" onMouseLeave={handleMouseLeave}>
               <g transform={`translate(${M.left},${M.top})`}>
                 {/* Post-2022 shaded band */}
-                <rect x={chart.correctionX} y={0} width={CHART_W - chart.correctionX} height={CHART_H} className="pic_correction_band" />
+                <rect x={chart.correctionX} y={0} width={CHART_W - chart.correctionX} height={CHART_H} className="cprices_correction_band" />
 
                 {/* Y grid */}
                 {chart.yTicks.map(v => (
                   <g key={v} transform={`translate(0,${chart.yScale(v)})`}>
-                    <line x1={0} x2={CHART_W} className="pic_grid_h" />
-                    <text x={-8} y={4} textAnchor="end" className="pic_y_label">
+                    <line x1={0} x2={CHART_W} className="cprices_grid_h" />
+                    <text x={-8} y={4} textAnchor="end" className="cprices_y_label">
                       {v}
                     </text>
                   </g>
@@ -215,7 +215,7 @@ export default function CommodityPrices({ insight, note, source, subtitle, title
 
                 {/* Annotation dashed lines */}
                 {chart.annoPositions.map(a => (
-                  <line key={a.num} x1={a.x} y1={0} x2={a.x} y2={CHART_H} className="pic_anno_line" />
+                  <line key={a.num} x1={a.x} y1={0} x2={a.x} y2={CHART_H} className="cprices_anno_line" />
                 ))}
 
                 {/* Series paths — pointer-events:none so overlay captures */}
@@ -230,20 +230,22 @@ export default function CommodityPrices({ insight, note, source, subtitle, title
                     opacity={lineOpacity(s.label)}
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="pic_line"
+                    className="cprices_line"
                     style={{ pointerEvents: 'none', transitionDelay: `${500 + i * 80}ms` }}
                   />
                 ))}
 
                 {/* Transparent overlay — captures mouse for crosshair */}
+                {/* biome-ignore lint/a11y/noStaticElementInteractions: SVG chart interaction overlay */}
                 <rect x={0} y={0} width={CHART_W} height={CHART_H} fill="transparent" style={{ cursor: 'crosshair' }} onMouseMove={handleMouseMove} />
 
                 {/* Annotation circles — rendered after overlay so they capture mouse */}
                 {chart.annoPositions.map(a => (
+                  // biome-ignore lint/a11y/noStaticElementInteractions: SVG annotation hover target
                   <g key={a.num} transform={`translate(${a.x}, 0)`} style={{ cursor: 'help' }} onMouseEnter={e => handleAnnoEnter(e, a)} onMouseLeave={handleAnnoLeave}>
                     <circle cx={0} cy={-4} r={12} fill="transparent" />
                     <circle cx={0} cy={-4} r={10} fill="#fff" stroke={C_ANNO} strokeWidth={1.5} />
-                    <text x={0} y={-3} textAnchor="middle" dominantBaseline="central" className="pic_anno_num">
+                    <text x={0} y={-3} textAnchor="middle" dominantBaseline="central" className="cprices_anno_num">
                       {a.num}
                     </text>
                   </g>
@@ -261,18 +263,18 @@ export default function CommodityPrices({ insight, note, source, subtitle, title
                   })}
 
                 {/* X axis */}
-                <line x1={0} y1={CHART_H} x2={CHART_W} y2={CHART_H} className="pic_axis_line" />
+                <line x1={0} y1={CHART_H} x2={CHART_W} y2={CHART_H} className="cprices_axis_line" />
                 {chart.xTicks.map(t => (
                   <g key={t} transform={`translate(${chart.xScale(t)},${CHART_H})`}>
-                    <line y2={5} className="pic_tick" />
-                    <text y={18} textAnchor="middle" className="pic_x_label">
+                    <line y2={5} className="cprices_tick" />
+                    <text y={18} textAnchor="middle" className="cprices_x_label">
                       {formatYear(t)}
                     </text>
                   </g>
                 ))}
 
                 {/* Post-2022 label — moved to bottom */}
-                <text x={chart.correctionX + (CHART_W - chart.correctionX) / 2} y={CHART_H + 38} textAnchor="middle" className="pic_correction_label">
+                <text x={chart.correctionX + (CHART_W - chart.correctionX) / 2} y={CHART_H + 38} textAnchor="middle" className="cprices_correction_label">
                   post-2022 correction
                 </text>
               </g>
@@ -283,20 +285,20 @@ export default function CommodityPrices({ insight, note, source, subtitle, title
               <ChartTooltip left={tooltip.left} top={tooltip.top} flip={flipTT}>
                 {tooltip.type === 'cross' && (
                   <>
-                    <div className="pic_tt_date">{fmtMonth(tooltip.d.date)}</div>
+                    <div className="cprices_tt_date">{fmtMonth(tooltip.d.date)}</div>
                     {SERIES.map(
                       s =>
                         tooltip.d[s.key] != null && (
-                          <div key={s.key} className="pic_tt_row">
-                            <span className="pic_tt_dot" style={{ background: s.color }} />
-                            <span className="pic_tt_label">{s.label}</span>
-                            <span className="pic_tt_val">{tooltip.d[s.key].toFixed(1)}</span>
+                          <div key={s.key} className="cprices_tt_row">
+                            <span className="cprices_tt_dot" style={{ background: s.color }} />
+                            <span className="cprices_tt_label">{s.label}</span>
+                            <span className="cprices_tt_val">{tooltip.d[s.key].toFixed(1)}</span>
                           </div>
                         )
                     )}
                   </>
                 )}
-                {tooltip.type === 'anno' && <div className="pic_tt_anno">{tooltip.label}</div>}
+                {tooltip.type === 'anno' && <div className="cprices_tt_anno">{tooltip.label}</div>}
               </ChartTooltip>
             )}
           </>
