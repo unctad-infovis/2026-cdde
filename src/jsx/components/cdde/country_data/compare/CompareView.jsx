@@ -112,7 +112,7 @@ export default function CompareView({ compareList, countries, onCompareChange, d
   const [netImportsData, setNetImportsData] = useState(null);
 
   useEffect(() => {
-    loadFile('assets/data/cdde_group_breakdown.json')
+    loadFile('assets/data/cdde_export_composition.json')
       .then(r => r?.json())
       .then(d => d && setGroupData(d));
     loadFile('assets/data/cdde_profile_stats.json')

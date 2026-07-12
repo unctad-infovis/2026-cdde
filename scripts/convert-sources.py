@@ -166,7 +166,7 @@ def write_json(data, filename):
         print(f'Wrote {path}')
 
 write_json(sources, 'cdde_sources.json')
-write_json(groupings, 'cdde_groupings.json')
+write_json(groupings, 'cdde_commodity_groups.json')
 write_json(sitc3, 'cdde_sitc3.json')
 
 print(f'\nDone. {len(sources)} source entries, {len(geographic)} geographic groups, {len(special)} special categories, {len(sections)} SITC sections.')

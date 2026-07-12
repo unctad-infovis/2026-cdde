@@ -152,7 +152,7 @@ export default function CountryRankings({ countries }) {
     loadFile('assets/data/cdde_profile_stats.json')
       .then(r => r?.json())
       .then(d => d && setStatsData(d));
-    loadFile('assets/data/cdde_additional_comparison.json')
+    loadFile('assets/data/cdde_ranking_indicators.json')
       .then(r => r?.json())
       .then(d => d && setAdditionalData(d));
     loadFile('assets/data/cdde_net_imports.json')

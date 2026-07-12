@@ -95,7 +95,7 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
   }, [H, svgW]);
 
   useEffect(() => {
-    Promise.all([loadFile('assets/data/world_topojson.json').then(r => r?.json()), loadFile('assets/data/worldmap-economies-4326.topo.json').then(r => r?.json())]).then(([topo, borders]) => {
+    Promise.all([loadFile('assets/data/world_countries.json').then(r => r?.json()), loadFile('assets/data/world_borders.json').then(r => r?.json())]).then(([topo, borders]) => {
       if (topo && borders) {
         // The UNCTAD border TopoJSON encodes coordinates ~11.314° west of their true
         // WGS84 positions. Correct the transform once at load time so features decode

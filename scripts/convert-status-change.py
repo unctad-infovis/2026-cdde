@@ -41,7 +41,7 @@ now_dep = sorted([r for r in rows if r["status"] == "now_dependent"], key=lambda
 no_longer = sorted([r for r in rows if r["status"] == "no_longer"], key=lambda r: r["change"])
 out = now_dep + no_longer
 
-out_path = "public/assets/data/cdde_threshold_crossers.json"
+out_path = "public/assets/data/cdde_status_changers.json"
 with open(out_path, "w") as f:
     json.dump(out, f, indent=2, ensure_ascii=False)
 print(f"Written {len(out)} rows → {out_path}")

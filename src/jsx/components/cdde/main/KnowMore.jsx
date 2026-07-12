@@ -165,7 +165,7 @@ export default function KnowMore() {
     loadFile('assets/data/cdde_sources.json')
       .then(r => r?.json())
       .then(d => d && setSources(d));
-    loadFile('assets/data/cdde_groupings.json')
+    loadFile('assets/data/cdde_commodity_groups.json')
       .then(r => r?.json())
       .then(d => d && setGroupings(d));
     loadFile('assets/data/cdde_sitc3.json')

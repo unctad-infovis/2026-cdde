@@ -1,7 +1,7 @@
 """
 Convert data/Commodity dependence(MAPS).xlsx
-  → public/assets/data/cdde_group_breakdown.json
-     dist/assets/data/cdde_group_breakdown.json
+  → public/assets/data/cdde_export_composition.json
+     dist/assets/data/cdde_export_composition.json
 
 Columns used:
   ISO Alpha 3 (col B)
@@ -65,8 +65,8 @@ for row in ws.iter_rows(min_row=2, values_only=True):
 json_str = json.dumps(out, indent=2, ensure_ascii=False)
 
 for dest in [
-    ROOT / "public" / "assets" / "data" / "cdde_group_breakdown.json",
-    ROOT / "dist"   / "assets" / "data" / "cdde_group_breakdown.json",
+    ROOT / "public" / "assets" / "data" / "cdde_export_composition.json",
+    ROOT / "dist"   / "assets" / "data" / "cdde_export_composition.json",
 ]:
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(json_str, encoding="utf-8")

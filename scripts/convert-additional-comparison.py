@@ -1,7 +1,7 @@
 """
 Convert data/Additional_Data_For_Comparison.xlsx
-  → public/assets/data/cdde_additional_comparison.json
-  → dist/assets/data/cdde_additional_comparison.json
+  → public/assets/data/cdde_ranking_indicators.json
+  → dist/assets/data/cdde_ranking_indicators.json
 
 Sheets:
   'Commo Xs 2022-2024'    → commodity_exports (millions USD, 2022-2024 avg)
@@ -54,8 +54,8 @@ for sheet_name, field in SHEET_MAP.items():
 json_str = json.dumps(out, indent=2, ensure_ascii=False)
 
 for dest in [
-    ROOT / "public" / "assets" / "data" / "cdde_additional_comparison.json",
-    ROOT / "dist"   / "assets" / "data" / "cdde_additional_comparison.json",
+    ROOT / "public" / "assets" / "data" / "cdde_ranking_indicators.json",
+    ROOT / "dist"   / "assets" / "data" / "cdde_ranking_indicators.json",
 ]:
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(json_str, encoding="utf-8")

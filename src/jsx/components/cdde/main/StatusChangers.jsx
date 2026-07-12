@@ -16,7 +16,7 @@ export default function StatusChangers({ insight, note, source, subtitle, title 
   const animated = isVisible || REDUCED_MOTION;
 
   useEffect(() => {
-    loadFile('assets/data/cdde_threshold_crossers.json')
+    loadFile('assets/data/cdde_status_changers.json')
       .then(r => r?.json())
       .then(d => {
         if (d) setData(d);
