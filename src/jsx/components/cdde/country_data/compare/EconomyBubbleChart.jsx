@@ -29,7 +29,7 @@ export default function EconomyBubbleChart({ countries, title, subtitle, descrip
   const hlRef = useRef();
   const highlightRef = useRef(highlight);
   useEffect(() => {
-    lightRef.current = highlight;
+    highlightRef.current = highlight;
   }, [highlight]);
 
   useEffect(() => {
