@@ -1,22 +1,17 @@
 #app-root-2026-cdde .app {
   /* ── Outer section ──────────────────────────────────────────── */
-
   .km_section {
     background: var(--un-color-blue-lightest);
   }
-
   /* ── Header band ────────────────────────────────────────────── */
-
   .km_header {
     padding: clamp(40px, 6vw, 72px) clamp(20px, 6vw, 80px) 32px;
     background: var(--un-color-blue-lightest);
   }
-
   .km_header_inner {
     max-width: 1200px;
     margin: 0 auto;
   }
-
   .km_eyebrow {
     display: flex;
     align-items: center;
@@ -28,7 +23,6 @@
     text-transform: uppercase;
     margin-bottom: 16px;
   }
-
   .km_eyebrow_line {
     display: block;
     width: 28px;
@@ -36,7 +30,6 @@
     background: var(--un-color-blue-dark);
     flex-shrink: 0;
   }
-
   .km_title {
     font-size: var(--un-font-size-xxl);
     font-weight: var(--un-font-weight-boldest);
@@ -46,7 +39,6 @@
     padding: 0;
     max-width: none;
   }
-
   .km_subtitle {
     font-size: var(--un-font-size-xs);
     color: var(--un-color-grey-darkest);
@@ -55,9 +47,7 @@
     padding: 0;
     max-width: none;
   }
-
   /* ── Sticky nav ─────────────────────────────────────────────── */
-
   .km_sticky_nav {
     position: sticky;
     top: 0;
@@ -66,7 +56,6 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     padding: 0 clamp(20px, 6vw, 80px);
   }
-
   .km_nav_inner {
     max-width: 1200px;
     margin: 0 auto;
@@ -75,12 +64,10 @@
     padding: 10px 0;
     overflow-x: auto;
     scrollbar-width: none;
-
     &::-webkit-scrollbar {
       display: none;
     }
   }
-
   .km_nav_pill {
     flex-shrink: 0;
     border: 1.5px solid var(--un-color-blue-light);
@@ -95,37 +82,30 @@
       background 0.15s,
       color 0.15s,
       border-color 0.15s;
-
     &:hover {
       background: var(--un-color-blue-light);
       color: var(--un-color-blue-darkest);
     }
   }
-
   .km_nav_pill--active {
     background: var(--un-color-blue);
     border-color: var(--un-color-blue);
     color: #fff;
-
     &:hover {
       background: var(--un-color-blue-dark);
       border-color: var(--un-color-blue-dark);
       color: #fff;
     }
   }
-
   /* ── Content area ───────────────────────────────────────────── */
-
   .km_content {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 clamp(20px, 6vw, 80px) clamp(40px, 6vw, 72px);
   }
-
   .km_sub_section {
     padding-top: 48px;
   }
-
   .km_sub_heading {
     font-size: var(--un-font-size-xl);
     font-weight: var(--un-font-weight-boldest);
@@ -136,14 +116,11 @@
     border-bottom: 2px solid var(--un-color-blue-light);
     padding-bottom: 12px;
   }
-
   .km_loading_block {
     height: 200px;
     border-radius: 12px;
   }
-
   /* ── Accordion ──────────────────────────────────────────────── */
-
   .km_accordion {
     display: flex;
     flex-direction: column;
@@ -153,15 +130,12 @@
     border: 1px solid var(--un-color-blue-light);
     background: #fff;
   }
-
   .km_acc_item {
     border-bottom: 1px solid var(--un-color-blue-lightest);
-
     &:last-child {
       border-bottom: none;
     }
   }
-
   .km_acc_trigger {
     width: 100%;
     display: flex;
@@ -174,23 +148,19 @@
     cursor: pointer;
     text-align: left;
     transition: background 0.12s;
-
     &:hover {
       background: var(--un-color-blue-lightest);
     }
   }
-
   .km_acc_item--open .km_acc_trigger {
     background: #fff;
   }
-
   .km_acc_title {
     font-size: var(--un-font-size-xs);
     font-weight: var(--un-font-weight-bold);
     color: var(--un-color-blue-darkest);
     line-height: var(--un-line-height-small);
   }
-
   .km_acc_chevron {
     width: 12px;
     height: 8px;
@@ -198,17 +168,14 @@
     flex-shrink: 0;
     transition: transform 0.2s;
   }
-
   .km_acc_item--open .km_acc_chevron {
     transform: rotate(180deg);
   }
-
   .km_acc_body {
     padding: 0 20px 20px;
     background: #fff;
     border-top: 1px solid var(--un-color-blue-light);
   }
-
   .km_acc_definition {
     font-size: var(--un-font-size-xs);
     color: var(--un-color-blue-darkest);
@@ -217,7 +184,6 @@
     padding: 0;
     max-width: none;
   }
-
   .km_acc_meta {
     display: flex;
     flex-direction: column;
@@ -225,14 +191,12 @@
     border-top: 1px solid var(--un-color-blue-light);
     padding-top: 12px;
   }
-
   .km_acc_meta_row {
     display: grid;
     grid-template-columns: 90px 1fr;
     gap: 8px;
     align-items: baseline;
   }
-
   .km_acc_meta_label {
     font-size: var(--un-font-size-xxxs);
     font-weight: var(--un-font-weight-bold);
@@ -240,36 +204,29 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
   }
-
   .km_acc_meta_val {
     font-size: var(--un-font-size-xxs);
     color: var(--un-color-blue-darkest);
     line-height: var(--un-line-height-normal);
   }
-
   .km_acc_meta_val--note {
     color: var(--un-color-grey-text);
     font-style: italic;
   }
-
   .km_acc_link {
     color: var(--un-color-blue);
     text-decoration: none;
     font-weight: var(--un-font-weight-bold);
-
     &:hover {
       text-decoration: underline;
     }
   }
-
   /* ── Country groupings ──────────────────────────────────────── */
-
   .km_groupings {
     display: flex;
     flex-direction: column;
     gap: 40px;
   }
-
   .km_groupings_sub_heading {
     font-size: var(--un-font-size-xs);
     font-weight: var(--un-font-weight-bold);
@@ -278,7 +235,6 @@
     padding: 0;
     max-width: none;
   }
-
   .km_table {
     width: 100%;
     border-collapse: collapse;
@@ -288,7 +244,6 @@
     border: 1px solid var(--un-color-blue-light);
     font-size: var(--un-font-size-xxs);
   }
-
   .km_th {
     background: #fff;
     color: var(--un-color-blue);
@@ -300,19 +255,15 @@
     text-align: left;
     border-bottom: 2px solid var(--un-color-blue-light);
   }
-
   .km_tr {
     border-bottom: 1px solid var(--un-color-blue-lightest);
-
     &:last-child {
       border-bottom: none;
     }
-
     &:hover .km_td {
       background: var(--un-color-blue-lightest);
     }
   }
-
   .km_td {
     padding: 9px 14px;
     color: var(--un-color-blue-darkest);
@@ -320,43 +271,36 @@
     line-height: var(--un-line-height-normal);
     transition: background 0.1s;
   }
-
   .km_td--region {
     font-weight: var(--un-font-weight-bold);
     width: 110px;
     border-right: 1px solid var(--un-color-blue-lightest);
   }
-
   .km_td--subregion {
     width: 160px;
     color: var(--un-color-grey-darkest);
     border-right: 1px solid var(--un-color-blue-lightest);
   }
-
   .km_td--countries {
     color: var(--un-color-grey-darkest);
   }
-
   .km_special_grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 12px;
   }
-
   .km_special_card {
     background: #fff;
     border: 1px solid var(--un-color-blue-light);
     border-radius: 12px;
     padding: 16px;
   }
-
   .km_special_label {
     font-size: var(--un-font-size-xs);
     font-weight: var(--un-font-weight-bold);
     color: var(--un-color-blue-darkest);
     margin-bottom: 4px;
   }
-
   .km_special_count {
     font-size: var(--un-font-size-xxxs);
     font-weight: var(--un-font-weight-bold);
@@ -365,35 +309,29 @@
     text-transform: uppercase;
     margin-bottom: 10px;
   }
-
   .km_special_countries {
     font-size: var(--un-font-size-xxs);
     color: var(--un-color-grey-darkest);
     line-height: var(--un-line-height-normal);
   }
-
   /* ── SITC 3 classification ──────────────────────────────────── */
-
   .km_sitc {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 16px;
     align-items: start;
   }
-
   .km_sitc_section {
     background: #fff;
     border: 1px solid var(--un-color-blue-light);
     border-radius: 12px;
     padding: 16px;
   }
-
   .km_sitc_section--other {
     border-color: var(--un-color-grey-light);
     background: var(--un-color-grey-lighest);
     grid-column: 1 / -1;
   }
-
   .km_sitc_heading {
     font-size: var(--un-font-size-xs);
     font-weight: var(--un-font-weight-bold);
@@ -403,11 +341,9 @@
     max-width: none;
     border-bottom: 1px solid var(--un-color-blue-lightest);
   }
-
   .km_sitc_section--other .km_sitc_heading {
     border-bottom-color: var(--un-color-grey-light);
   }
-
   .km_sitc_list {
     list-style: none;
     margin: 0;
@@ -416,13 +352,11 @@
     flex-direction: column;
     gap: 6px;
   }
-
   .km_sitc_item {
     display: flex;
     align-items: baseline;
     gap: 8px;
   }
-
   .km_code_badge {
     flex-shrink: 0;
     font-family: 'Courier New', Courier, monospace;
@@ -433,22 +367,18 @@
     padding: 2px 5px;
     white-space: nowrap;
   }
-
   .km_sitc_section--other .km_code_badge {
     color: var(--un-color-grey-text);
     background: var(--un-color-grey-light);
   }
-
   .km_sitc_label {
     font-size: var(--un-font-size-xxs);
     color: var(--un-color-blue-darkest);
     line-height: var(--un-line-height-normal);
   }
-
   .km_sitc_section--other .km_sitc_label {
     color: var(--un-color-grey-darkest);
   }
-
   .km_sitc_abbr {
     grid-column: 1 / -1;
     font-size: var(--un-font-size-xxxs);
@@ -458,20 +388,16 @@
     max-width: none;
     font-style: italic;
   }
-
   /* ── Responsive ─────────────────────────────────────────────── */
-
   @media (max-width: 700px) {
     .km_acc_meta_row {
       grid-template-columns: 1fr;
       gap: 2px;
     }
-
     .km_td--subregion,
     .km_td--region {
       width: auto;
     }
-
     .km_sitc {
       grid-template-columns: 1fr;
     }

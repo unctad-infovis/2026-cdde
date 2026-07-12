@@ -6,7 +6,6 @@
     flex-direction: column;
     gap: 0;
     padding: 24px 24px 20px;
-
     > .cdde_insight {
       margin-top: 10px;
     }
@@ -41,7 +40,6 @@
       align-items: center;
       display: flex;
       position: relative;
-
       .ebc_chevron {
         color: var(--un-color-grey-text);
         height: 8px;
@@ -63,7 +61,6 @@
       min-width: 120px;
       outline: none;
       padding: 7px 34px 7px 12px;
-
       &:hover {
         border-color: var(--un-color-blue);
       }
@@ -194,7 +191,6 @@
       outline: none;
       padding: 8px 14px;
       width: 100%;
-
       &::placeholder {
         color: var(--un-color-grey-text);
       }
@@ -225,7 +221,6 @@
       padding: 8px 14px;
       text-align: left;
       width: 100%;
-
       &:hover {
         background: var(--un-color-blue-lightest);
       }
@@ -239,12 +234,10 @@
       font-size: var(--un-font-size-xxs);
       padding: 4px 0;
       white-space: nowrap;
-
       &:hover {
         color: var(--un-color-blue-darkest);
       }
     }
-
     @media (max-width: 700px) {
       .ebc_controls {
         align-items: flex-start;
@@ -253,7 +246,6 @@
       }
     }
   }
-
   @media (max-width: 600px) {
     .ebc_card {
       padding: 16px 12px 14px;

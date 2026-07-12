@@ -2,13 +2,11 @@
   .ni_container {
     background: var(--un-color-blue-lightest);
     box-sizing: border-box;
-
     .ni_hero {
       background: #0b1627;
       box-sizing: border-box;
       padding: clamp(40px, 6vw, 60px) clamp(24px, 6vw, 80px) clamp(40px, 6vw, 40px) clamp(40px, 6vw, 80px);
       position: relative;
-
       &:before {
         background-image: radial-gradient(oklch(1 0 0 / 0.9) 1px, transparent 1px);
         background-size: 4px 4px;

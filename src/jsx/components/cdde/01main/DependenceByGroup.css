@@ -8,7 +8,6 @@
     gap: 0;
     height: 100%;
     padding: 28px 24px 20px;
-
     .dbg_loading {
       animation: cdde_pulse 1.4s ease infinite;
       background: var(--un-color-blue-lightest);
@@ -64,7 +63,6 @@
       height: auto;
       overflow: visible;
       width: 100%;
-
       rect {
         transform-box: fill-box;
         transform-origin: 50% 100%;
@@ -92,7 +90,6 @@
     .dbg_svg--animated .dbg_bar_label {
       opacity: 1;
     }
-
     @media (prefers-reduced-motion: reduce) {
       .dbg_svg rect {
         transform: scaleY(1);
@@ -104,7 +101,6 @@
       }
     }
   }
-
   @media (max-width: 600px) {
     .dbg_container {
       padding: 16px 12px 12px;

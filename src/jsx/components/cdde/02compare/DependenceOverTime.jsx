@@ -116,9 +116,9 @@ export default function DependenceOverTime({ iso3, title, subtitle, description,
             {lastPt && (
               <>
                 <circle cx={lastX} cy={lastY} r={4} fill={lineColor} />
-                <rect x={lastX - 22} y={lastY - 24} width={44} height={18} rx={4} fill={lineColor} />
-                <text x={lastX} y={lastY - 11} textAnchor="middle" className="dot_callout_label">
-                  {lastPt.pct}%
+                <rect x={lastX - 24} y={lastY - 30} width={48} height={22} rx={4} fill={lineColor} />
+                <text x={lastX} y={lastY - 13} textAnchor="middle" className="dot_callout_label">
+                  {lastPt.pct}
                 </text>
               </>
             )}

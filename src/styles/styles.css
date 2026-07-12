@@ -1,6 +1,5 @@
 @import 'colors.css';
 @import 'basics.css';
-
 #app-root-2026-cdde {
   .app {
     box-sizing: border-box;
@@ -44,7 +43,6 @@
       max-width: 700px;
       padding: 0 10px;
     }
-
     /* Layouts */
     .width_100vw {
       margin: auto auto;
@@ -109,7 +107,6 @@
         opacity 3s,
         top 1s ease;
     }
-
     @media (max-width: 600px) {
       .width_wide {
         padding-left: 8px;

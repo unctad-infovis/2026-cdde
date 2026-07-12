@@ -3,7 +3,6 @@
     position: relative;
     padding-left: 45px;
     margin-bottom: 10px;
-
     &::before {
       background-color: var(--un-color-blue);
       content: '';
@@ -16,7 +15,6 @@
       position: absolute;
       width: 35px;
     }
-
     .cdde_header_title {
       font-size: var(--un-font-size-xl);
       font-weight: var(--un-font-weight-boldest);
@@ -26,11 +24,9 @@
       padding: 0;
       max-width: none;
     }
-
     .cdde_header_title--lg {
       font-size: var(--un-font-size-xxl);
     }
-
     .cdde_header_subtitle {
       font-size: var(--un-font-size-xs);
       color: var(--un-color-grey-text);

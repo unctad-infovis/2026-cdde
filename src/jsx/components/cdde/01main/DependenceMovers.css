@@ -8,13 +8,11 @@
     gap: 0;
     height: 100%;
     box-sizing: border-box;
-
     /* insight spacing override — cards are in stretch layout */
     .cdde_insight {
       margin-top: 10px;
       margin-bottom: 16px;
     }
-
     /* source margin override */
     .cdde_source {
       margin-top: 14px;

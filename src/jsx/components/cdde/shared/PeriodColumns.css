@@ -4,34 +4,27 @@
     margin-top: 8px;
     position: relative;
   }
-
   .pcc_svg {
     display: block;
     height: auto;
     overflow: visible;
     width: 100%;
   }
-
   .pcc_grid {
     stroke: var(--un-color-grey-lighest);
     stroke-width: 1px;
   }
-
   .pcc_zero {
     stroke: var(--un-color-grey-light);
     stroke-width: 1.5px;
   }
-
   .pcc_tick_label {
     fill: var(--un-color-grey-text);
     font-size: var(--un-font-size-xxs);
   }
-
   .pcc_val_label {
     fill: #000;
     font-size: var(--un-font-size-xxs);
     font-weight: var(--un-font-weight-bold);
   }
-
 }
-

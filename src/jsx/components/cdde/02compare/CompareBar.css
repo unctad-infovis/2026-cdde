@@ -8,7 +8,6 @@
     gap: 16px;
     flex-wrap: wrap;
   }
-
   .cb_label {
     font-size: var(--un-font-size-xxxs);
     font-weight: var(--un-font-weight-bold);
@@ -18,13 +17,11 @@
     white-space: nowrap;
     flex-shrink: 0;
   }
-
   .cb_slot_group {
     display: flex;
     align-items: center;
     gap: 12px;
   }
-
   .cb_vs {
     font-size: var(--un-font-size-xxxs);
     font-weight: var(--un-font-weight-bold);
@@ -32,13 +29,11 @@
     letter-spacing: 0.06em;
     flex-shrink: 0;
   }
-
   .cb_select_wrap {
     position: relative;
     display: flex;
     align-items: center;
   }
-
   .cb_select {
     appearance: none;
     -webkit-appearance: none;
@@ -52,17 +47,14 @@
     cursor: pointer;
     outline: none;
     min-width: 180px;
-
     &:hover {
       border-color: var(--un-color-blue);
     }
-
     &:focus {
       border-color: var(--un-color-blue);
       box-shadow: 0 0 0 2px rgba(0, 158, 219, 0.15);
     }
   }
-
   .cb_chevron {
     position: absolute;
     right: 11px;

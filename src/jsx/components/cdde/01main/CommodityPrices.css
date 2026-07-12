@@ -3,7 +3,6 @@
     background: #fff;
     border-radius: 16px;
     padding: 28px 24px 20px;
-
     .cprices_header_row {
       align-items: flex-start;
       display: flex;
@@ -35,7 +34,6 @@
         background 0.15s,
         color 0.15s;
       white-space: nowrap;
-
       &.active {
         background: #fff;
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
@@ -188,7 +186,6 @@
       line-height: 1;
       width: 16px;
     }
-
     @media (prefers-reduced-motion: reduce) {
       .cprices_line {
         stroke-dasharray: none;
@@ -209,7 +206,6 @@
       }
     }
   }
-
   @media (max-width: 600px) {
     .cprices_container {
       padding: 16px 8px 12px;

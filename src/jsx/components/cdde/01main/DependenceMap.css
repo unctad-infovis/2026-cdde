@@ -9,12 +9,10 @@
     transform: scale(1.5);
   }
 }
-
 #app-root-2026-cdde .app {
   .cmap_section {
     background: #fff;
     padding: 60px 0;
-
     .cmap_inner {
       margin: 0 auto;
       max-width: 1100px;
@@ -31,7 +29,6 @@
     }
     .cmap_search {
       flex: 0 0 240px;
-
       .cs_wrap {
         flex: none;
         width: 100%;
@@ -58,7 +55,6 @@
         background 0.15s,
         color 0.15s;
       white-space: nowrap;
-
       &.active {
         background: #fff;
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
@@ -115,7 +111,6 @@
       display: block;
       height: auto;
       width: 100%;
-
       &:active {
         cursor: grabbing;
       }
@@ -253,7 +248,6 @@
         background 0.15s,
         opacity 0.15s;
       width: 30px;
-
       &:hover:not(:disabled) {
         background: #fff;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.14);
@@ -313,7 +307,6 @@
     .cmap_tt_cat_row--dominant {
       font-weight: var(--un-font-weight-bold);
       opacity: 1;
-
       .cmap_tt_label,
       .cmap_tt_val {
         color: #000;

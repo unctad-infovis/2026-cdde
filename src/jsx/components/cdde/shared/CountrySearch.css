@@ -3,7 +3,6 @@
     flex: 1;
     min-width: 160px;
     position: relative;
-
     .cs_field {
       align-items: center;
       background: var(--un-color-grey-lighest);
@@ -17,7 +16,6 @@
       transition:
         background 0.15s,
         border-color 0.15s;
-
       &::after {
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%237c7067' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C%2Fsvg%3E");
         background-repeat: no-repeat;
@@ -36,7 +34,6 @@
     .cs_field--open {
       background: #fff;
       border-color: var(--un-color-blue);
-
       &::after {
         transform: translateY(-50%) rotate(180deg);
       }
@@ -56,7 +53,6 @@
       min-width: 0;
       outline: none;
       padding: 8px 20px 8px 0;
-
       &::placeholder {
         color: var(--un-color-grey-text);
         font-weight: var(--un-font-weight-normal);
@@ -73,7 +69,6 @@
       font-size: var(--un-font-size-normal);
       line-height: 1;
       padding: 0;
-
       &:hover {
         color: var(--un-color-blue-darkest);
       }

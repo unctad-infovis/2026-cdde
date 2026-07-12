@@ -3,7 +3,6 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
-
     /* Header cards */
     .cv_cards {
       display: grid;
@@ -17,7 +16,6 @@
       min-height: 190px;
       padding: 24px;
       position: relative;
-
       &::after {
         background: rgba(255, 255, 255, 0.06);
         border-radius: 50%;
@@ -42,7 +40,6 @@
     .cv_card .cs_field {
       background: rgba(255, 255, 255, 0.15);
       border-color: rgba(255, 255, 255, 0.2);
-
       &:hover {
         border-color: rgba(255, 255, 255, 0.4);
       }
@@ -56,7 +53,6 @@
     }
     .cv_card .cs_input {
       color: #fff;
-
       &::placeholder {
         color: rgba(255, 255, 255, 0.55);
         font-weight: var(--un-font-weight-normal);
@@ -64,7 +60,6 @@
     }
     .cv_card .cs_clear {
       color: rgba(255, 255, 255, 0.65);
-
       &:hover {
         color: #fff;
       }
@@ -222,7 +217,6 @@
       gap: 0;
       grid-template-columns: 200px repeat(3, 1fr);
       padding: 18px 0;
-
       &:last-child {
         border-bottom: none;
       }
@@ -303,7 +297,6 @@
       font-size: var(--un-font-size-xs);
       font-weight: var(--un-font-weight-bold);
     }
-
     @media (max-width: 900px) {
       .cv_cards {
         grid-template-columns: 1fr;

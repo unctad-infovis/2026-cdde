@@ -5,7 +5,6 @@
     justify-content: space-between;
     gap: 12px;
   }
-
   .tm_toggle_btn {
     flex-shrink: 0;
     margin-top: 4px;
@@ -22,33 +21,27 @@
       color 0.15s,
       border-color 0.15s;
     white-space: nowrap;
-
     &:hover {
       background: var(--un-color-grey-lighest);
       color: var(--un-color-blue-darkest);
       border-color: var(--un-color-grey-light);
     }
   }
-
   .tm_wrap {
     position: relative;
     margin-top: 8px;
   }
-
   .tm_svg {
     width: 100%;
     height: auto;
     display: block;
   }
-
   .tm_cell {
     cursor: default;
-
     &:hover rect {
       opacity: 0.85;
     }
   }
-
   .tm_label {
     fill: #fff;
     font-family: Inter, Arial, sans-serif;
@@ -56,11 +49,9 @@
     font-weight: var(--un-font-weight-bold);
     pointer-events: none;
   }
-
   .tm_label--sm {
     font-size: var(--un-font-size-xxxxs);
   }
-
   .tm_pct {
     fill: rgba(255, 255, 255, 0.85);
     font-family: Inter, Arial, sans-serif;
@@ -68,9 +59,7 @@
     font-weight: var(--un-font-weight-normal);
     pointer-events: none;
   }
-
   .tm_pct--sm {
     font-size: var(--un-font-size-xxxxs);
   }
-
 }

@@ -6,49 +6,40 @@
     flex-direction: column;
     gap: 18px;
   }
-
   .mac_gdp_row {
     display: flex;
     align-items: flex-start;
   }
-
   .mac_gdp_block {
     display: flex;
     flex-direction: column;
     gap: 2px;
   }
-
   .mac_gdp_val_row {
     display: flex;
     align-items: baseline;
     gap: 6px;
   }
-
   .mac_triangle {
     font-size: var(--un-font-size-normal);
     line-height: 1;
   }
-
   .mac_triangle--up {
     color: var(--un-color-green-text);
   }
-
   .mac_triangle--down {
     color: var(--un-color-red-dark);
   }
-
   .mac_gdp_pct {
     font-size: var(--un-font-size-xxl);
     font-weight: var(--un-font-weight-boldest);
     color: var(--un-color-blue-darkest);
     line-height: 1;
   }
-
   .mac_gdp_note {
     font-size: var(--un-font-size-xxxs);
     color: var(--un-color-grey-text);
   }
-
   .mac_section {
     display: flex;
     flex-direction: column;

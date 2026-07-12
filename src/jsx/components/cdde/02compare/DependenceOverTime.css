@@ -7,31 +7,26 @@
     border: 0;
     background: none;
   }
-
   .dot_svg {
     display: block;
     height: auto;
     overflow: visible;
     width: 100%;
   }
-
   .dot_grid {
     stroke: var(--un-color-grey-lighest);
     stroke-width: 1px;
   }
-
   .dot_tick_label {
     fill: var(--un-color-grey-text);
     font-family: Inter, Arial, sans-serif;
     font-size: var(--un-font-size-xxxs);
   }
-
   .dot_threshold {
     stroke: var(--un-color-yellow);
     stroke-dasharray: 4 3;
     stroke-width: 1.5px;
   }
-
   .dot_pill_label {
     fill: #fff;
     font-family: Inter, Arial, sans-serif;
@@ -39,37 +34,31 @@
     font-weight: var(--un-font-weight-bold);
     line-height: var(--un-font-size-xxs);
   }
-
   .dot_axis {
     stroke: var(--un-color-grey-light);
     stroke-width: 1px;
   }
-
   .dot_tick {
     stroke: var(--un-color-grey-light);
     stroke-width: 1px;
   }
-
   .dot_callout_label {
     fill: #fff;
     font-family: Inter, Arial, sans-serif;
-    font-size: var(--un-font-size-xxxxs);
+    font-size: var(--un-font-size-xs);
     font-weight: var(--un-font-weight-boldest);
   }
-
   .dot_cursor {
     pointer-events: none;
     stroke: var(--un-color-grey-dark);
     stroke-dasharray: 3 2;
     stroke-width: 1px;
   }
-
   .dot_tt_year {
     color: var(--un-color-blue-darkest);
     font-size: var(--un-font-size-xxs);
     font-weight: var(--un-font-weight-boldest);
   }
-
   .dot_tt_val {
     color: var(--un-color-blue);
     font-size: var(--un-font-size-xs);

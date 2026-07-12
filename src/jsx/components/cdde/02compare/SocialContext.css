@@ -6,15 +6,12 @@
     flex-direction: column;
     gap: 18px;
   }
-
   .soc_section {
     display: flex;
     flex-direction: column;
     gap: 6px;
   }
-
   /* HDI */
-
   .soc_hdi_header {
     display: flex;
     align-items: baseline;
@@ -22,43 +19,36 @@
     flex-wrap: wrap;
     gap: 4px;
   }
-
   .soc_hdi_vals {
     display: flex;
     align-items: baseline;
     gap: 8px;
   }
-
   .soc_hdi_num {
     font-size: var(--un-font-size-xl);
     font-weight: var(--un-font-weight-boldest);
     color: var(--un-color-blue-darkest);
     line-height: 1;
   }
-
   .soc_hdi_cat {
     font-size: var(--un-font-size-xxs);
     font-weight: var(--un-font-weight-bold);
     color: var(--un-color-blue-darkest);
   }
-
   .soc_hdi_rank {
     font-size: var(--un-font-size-xxxs);
     color: var(--un-color-grey-text);
   }
-
   .soc_hdi_track {
     position: relative;
     height: 16px;
     border-radius: 8px;
     overflow: visible;
   }
-
   .soc_hdi_gradient {
     height: 100%;
     border-radius: 8px;
   }
-
   .soc_hdi_marker {
     position: absolute;
     top: 50%;
@@ -70,7 +60,6 @@
     border-radius: 50%;
     pointer-events: none;
   }
-
   .soc_hdi_axis {
     display: flex;
     justify-content: space-between;
