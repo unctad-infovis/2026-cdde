@@ -1,6 +1,6 @@
 export function netImportInsight(name, early, recent, type) {
   if (early == null || recent == null) return null;
-  const fmt = v => `${Math.abs(v).toFixed(1)} per cent`;
+  const fmt = v => `${parseFloat(Math.abs(v).toFixed(1))} per cent`;
   const commodity = type === 'food' ? 'food' : 'energy';
   const market = type === 'food' ? 'agricultural' : 'energy';
   const wasImporter = early > 0;

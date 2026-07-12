@@ -10,9 +10,8 @@ const M = { top: 20, right: 24, bottom: 32, left: 52 };
 const CHART_H = H - M.top - M.bottom;
 
 function fmtBillions(v) {
-  if (v === 0) return '0';
-  if (v >= 1) return `${v.toFixed(1)}`;
-  return `${parseFloat(v.toFixed(2))}`;
+  if (v < 1) return v.toFixed(2);
+  return v.toFixed(1);
 }
 
 function niceStep(raw) {
@@ -129,16 +128,10 @@ export default function LineChartTime({ series, lineColor = C_BLUE, yFmt = fmtBi
     setTooltip({ x: mouseX, cursorX: xScale(pt.year), domY, year: pt.year, val: pt.val, flip: mouseX > rect.width * 0.65 });
   }
 
-  if (!series.length) {
-    return (
-      <div className="lct_wrap" ref={wrapRef}>
-        <p className="cdde_no_data">Data not available</p>
-      </div>
-    );
-  }
-
   return (
-    <button type="button" className="lct_wrap" ref={wrapRef} onMouseMove={handleMouseMove} onMouseLeave={() => setTooltip(null)}>
+    <button type="button" className="lct_wrap" ref={wrapRef} onMouseMove={series.length ? handleMouseMove : undefined} onMouseLeave={() => setTooltip(null)}>
+      {!series.length && <p className="cdde_no_data">Data not available</p>}
+      {!!series.length && <>
       <svg viewBox={`0 0 ${svgW} ${H}`} className="lct_svg" aria-label={ariaLabel}>
         <g transform={`translate(${M.left},${M.top})`}>
           {yTicks.map(v => (
@@ -184,6 +177,7 @@ export default function LineChartTime({ series, lineColor = C_BLUE, yFmt = fmtBi
           </div>
         </ChartTooltip>
       )}
+      </>}
     </button>
   );
 }

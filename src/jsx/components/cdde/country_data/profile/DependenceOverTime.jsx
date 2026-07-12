@@ -118,7 +118,7 @@ export default function DependenceOverTime({ iso3, title, subtitle, description,
                 <circle cx={lastX} cy={lastY} r={4} fill={lineColor} />
                 <rect x={lastX - 24} y={lastY - 30} width={48} height={22} rx={4} fill={lineColor} />
                 <text x={lastX} y={lastY - 13} textAnchor="middle" className="dot_callout_label">
-                  {lastPt.pct}
+                  {lastPt.pct.toFixed(1)}
                 </text>
               </>
             )}
@@ -140,7 +140,7 @@ export default function DependenceOverTime({ iso3, title, subtitle, description,
         {tooltip && (
           <ChartTooltip left={tooltip.x} top={tooltip.domY} flip={tooltip.flip}>
             <div className="dot_tt_year">{tooltip.year}</div>
-            <div className="dot_tt_val">{tooltip.pct}%</div>
+            <div className="dot_tt_val">{tooltip.pct.toFixed(1)}%</div>
           </ChartTooltip>
         )}
       </button>

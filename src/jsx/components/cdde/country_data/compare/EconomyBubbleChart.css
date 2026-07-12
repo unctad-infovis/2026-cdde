@@ -68,7 +68,7 @@
     /* Chart area */
     .ebc_chart_wrap {
       margin-top: 8px;
-      min-height: 200px;
+      min-height: 300px;
       position: relative;
     }
     .ebc_loading {

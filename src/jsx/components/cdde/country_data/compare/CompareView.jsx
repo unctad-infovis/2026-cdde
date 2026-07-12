@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import loadFile from '../../../../helpers/LoadFile';
 import CircleFlag from '../../../general/CircleFlag';
 import ChartHeader from '../../shared/ChartHeader';
@@ -104,6 +104,8 @@ const ROWS = [
 ];
 
 export default function CompareView({ compareList, countries, onCompareChange, dnaTitle, dnaSubtitle, dnaDescription }) {
+  const tablePanelRef = useRef(null);
+  const [tableRevealed, setTableRevealed] = useState(false);
   const [groupData, setGroupData] = useState(null);
   const [statsData, setStatsData] = useState(null);
   const [macroData, setMacroData] = useState(null);
@@ -130,6 +132,21 @@ export default function CompareView({ compareList, countries, onCompareChange, d
     loadFile('assets/data/cdde_net_imports.json')
       .then(r => r?.json())
       .then(d => d && setNetImportsData(d));
+  }, []);
+
+  useEffect(() => {
+    const el = tablePanelRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([e]) => {
+        if (!e.isIntersecting) return;
+        io.disconnect();
+        setTableRevealed(true);
+      },
+      { threshold: 0.1 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
   }, []);
 
   function getMerged(iso3) {
@@ -240,7 +257,7 @@ export default function CompareView({ compareList, countries, onCompareChange, d
       </div>
 
       {/* ── Indicator table ── */}
-      <div className="cv_panel">
+      <div className="cv_panel" ref={tablePanelRef}>
         <div className="cv_tbl_hdr">
           <div className="cv_tbl_hdr_ind">INDICATOR</div>
           {slots.map(({ country, slot, i }) => (
@@ -306,7 +323,7 @@ export default function CompareView({ compareList, countries, onCompareChange, d
                           <span className="cv_val_num">{row.fmt(val)}</span>
                         </div>
                         <div className="cv_bar_track">
-                          <div className="cv_bar_fill" style={{ width: `${barPct}%`, background: slot.bar }} />
+                          <div className="cv_bar_fill" style={{ width: tableRevealed ? `${barPct}%` : '0%', background: slot.bar }} />
                         </div>
                       </>
                     ) : (

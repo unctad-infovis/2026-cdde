@@ -24,7 +24,7 @@ function niceStep(raw) {
 }
 
 function fmtPct(v) {
-  return `${parseFloat(v.toFixed(1))}%`;
+  return `${v.toFixed(1)}%`;
 }
 
 export default function PeriodColumns({ val1, val2 }) {

@@ -63,7 +63,7 @@ export default function EconomyBubbleChart({ countries, title, subtitle, descrip
     if (!chartW || !visible.length || !svgRef.current) return;
 
     const W = chartW;
-    const H = 220;
+    const H = 300;
     const M = { top: 40, right: 16, bottom: 28, left: 16 };
     const iW = W - M.left - M.right;
     const iH = H - M.top - M.bottom;
@@ -72,7 +72,7 @@ export default function EconomyBubbleChart({ countries, title, subtitle, descrip
 
     const getPop = c => socialData?.[c.iso3]?.population ?? 5000;
     const maxPop = d3.max(visible, c => getPop(c)) || 1400000;
-    const maxR = W < 420 ? 10 : W < 600 ? 15 : 24;
+    const maxR = W < 420 ? 10 : W < 600 ? 15 : 50;
     const rScale = d3.scaleSqrt().domain([0, maxPop]).range([2, maxR]);
 
     const nodes = visible.map(c => ({
