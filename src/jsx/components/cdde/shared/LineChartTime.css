@@ -1,52 +1,55 @@
 #app-root-2026-cdde .app {
   .lct_wrap {
+    background: none;
+    border: 0;
     flex: 1;
     margin-top: 8px;
     position: relative;
-  }
-  .lct_svg {
-    display: block;
-    height: auto;
-    overflow: visible;
-    width: 100%;
-  }
-  .lct_grid {
-    stroke: var(--un-color-grey-lighest);
-    stroke-width: 1px;
-  }
-  .lct_tick_label {
-    fill: var(--un-color-grey-text);
-    font-family: Inter, Arial, sans-serif;
-    font-size: var(--un-font-size-xxxs);
-  }
-  .lct_axis {
-    stroke: var(--un-color-grey-light);
-    stroke-width: 1px;
-  }
-  .lct_tick {
-    stroke: var(--un-color-grey-light);
-    stroke-width: 1px;
-  }
-  .lct_callout_label {
-    fill: #fff;
-    font-family: Inter, Arial, sans-serif;
-    font-size: var(--un-font-size-xs);
-    font-weight: var(--un-font-weight-boldest);
-  }
-  .lct_cursor {
-    pointer-events: none;
-    stroke: var(--un-color-grey-dark);
-    stroke-dasharray: 3 2;
-    stroke-width: 1px;
-  }
-  .lct_tt_year {
-    color: var(--un-color-blue-darkest);
-    font-size: var(--un-font-size-xxs);
-    font-weight: var(--un-font-weight-boldest);
-  }
-  .lct_tt_val {
-    font-size: var(--un-font-size-xs);
-    font-weight: var(--un-font-weight-boldest);
-    margin-top: 2px;
+    text-align: left;
+    .lct_svg {
+      display: block;
+      height: auto;
+      overflow: visible;
+      width: 100%;
+    }
+    .lct_grid {
+      stroke: var(--un-color-grey-lighest);
+      stroke-width: 1px;
+    }
+    .lct_tick_label {
+      fill: var(--un-color-grey-text);
+      font-family: Inter, Arial, sans-serif;
+      font-size: var(--un-font-size-xxxs);
+    }
+    .lct_axis {
+      stroke: var(--un-color-grey-light);
+      stroke-width: 1px;
+    }
+    .lct_tick {
+      stroke: var(--un-color-grey-light);
+      stroke-width: 1px;
+    }
+    .lct_callout_label {
+      fill: #fff;
+      font-family: Inter, Arial, sans-serif;
+      font-size: var(--un-font-size-xs);
+      font-weight: var(--un-font-weight-boldest);
+    }
+    .lct_cursor {
+      pointer-events: none;
+      stroke: var(--un-color-grey-dark);
+      stroke-dasharray: 3 2;
+      stroke-width: 1px;
+    }
+    .lct_tt_year {
+      color: var(--un-color-blue-darkest);
+      font-size: var(--un-font-size-xxs);
+      font-weight: var(--un-font-weight-boldest);
+    }
+    .lct_tt_val {
+      font-size: var(--un-font-size-xs);
+      font-weight: var(--un-font-weight-boldest);
+      margin-top: 2px;
+    }
   }
 }

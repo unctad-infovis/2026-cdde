@@ -7,10 +7,10 @@ import loadFile from '../../../helpers/LoadFile';
 import useIsVisible from '../../../helpers/UseIsVisible';
 import CircleFlag from '../../general/CircleFlag';
 import ChartHeader from '../shared/ChartHeader';
+import ChartMeta from '../shared/ChartMeta';
 import ChartTooltip from '../shared/ChartTooltip';
 import CountrySearch from '../shared/CountrySearch';
 
-import ChartMeta from '../shared/ChartMeta';
 import { DEP_COLOR_SCALE, GROUP_COLORS, NO_DATA_FILL } from '../shared/cdde-constants';
 import './DependenceMap.css';
 
@@ -87,9 +87,12 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
 
   useEffect(() => {
     if (zoomRef.current) {
-      zoomRef.current.translateExtent([[0, 0], [svgW, H]]);
+      zoomRef.current.translateExtent([
+        [0, 0],
+        [svgW, H]
+      ]);
     }
-  }, [svgW]);
+  }, [H, svgW]);
 
   useEffect(() => {
     Promise.all([loadFile('assets/data/world_topojson.json').then(r => r?.json()), loadFile('assets/data/worldmap-economies-4326.topo.json').then(r => r?.json())]).then(([topo, borders]) => {
@@ -143,7 +146,7 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
     return () => {
       svg.on('.zoom', null);
     };
-  }, []);
+  }, [H, svgW]);
 
   const ZOOM_STEP = Math.sqrt(3); // two presses → full 3× range
 
@@ -196,7 +199,7 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
     }).filter(Boolean);
 
     return { countryPaths, solidBorderPath, dashedBorderPath, dottedBorderPath, dashDotBorderPath, islandDots };
-  }, [geoData, svgW]);
+  }, [geoData, H, svgW]);
 
   const smallIslandSet = useMemo(() => new Set(SMALL_ISLAND_DOTS.map(s => s.iso3)), []);
 
@@ -250,7 +253,15 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
     }
   }
 
-  const mapCountryList = useMemo(() => (mapData ? Object.values(mapData).filter(r => r.iso3 !== 'LIE').sort((a, b) => a.name.localeCompare(b.name)) : []), [mapData]);
+  const mapCountryList = useMemo(
+    () =>
+      mapData
+        ? Object.values(mapData)
+            .filter(r => r.iso3 !== 'LIE')
+            .sort((a, b) => a.name.localeCompare(b.name))
+        : [],
+    [mapData]
+  );
 
   function closePanel() {
     setSelectedCountry(null);
@@ -333,10 +344,10 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
             <g transform={`translate(${zt.x},${zt.y}) scale(${zt.k})`}>
               {/* Country fills */}
               <g className="cmap_countries" style={{ opacity: revealed ? (switching ? 0.85 : 1) : 0, transition: REDUCED_MOTION ? 'none' : switching ? 'opacity 0.2s ease' : 'opacity 0.7s ease' }}>
-                {computed?.countryPaths?.map(({ id, d }, i) => {
+                {computed?.countryPaths?.map(({ id, d }) => {
                   if (smallIslandSet.has(id)) return null;
                   const inActiveGroup = hoverTooltip?.iso3 && CHINA_GROUP.has(hoverTooltip.iso3) && CHINA_GROUP.has(id);
-                  return <path key={`${id}_${i}`} d={d} className={`cmap_country${inActiveGroup ? ' cmap_country--active' : ''}`} style={{ fill: getFill(id) }} onClick={() => handleCountryClick(id)} data-iso={id} />;
+                  return <path key={`${id}_${d}`} d={d} className={`cmap_country${inActiveGroup ? ' cmap_country--active' : ''}`} style={{ fill: getFill(id) }} onClick={() => handleCountryClick(id)} data-iso={id} />;
                 })}
               </g>
 

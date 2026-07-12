@@ -107,7 +107,7 @@ export default function CommodityPrices({ insight, note, source, subtitle, title
       annoPositions,
       correctionX
     };
-  }, [rawData, svgW]);
+  }, [CHART_W, rawData]);
 
   function lineOpacity(label) {
     if (activeFilter === 'All') return 1;

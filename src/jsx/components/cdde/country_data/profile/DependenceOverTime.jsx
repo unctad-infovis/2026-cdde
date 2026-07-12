@@ -1,10 +1,10 @@
 import * as d3 from 'd3';
 import { useEffect, useRef, useState } from 'react';
-import loadFile from '../../../helpers/LoadFile';
-import ChartHeader from '../shared/ChartHeader';
-import ChartMeta from '../shared/ChartMeta';
-import ChartTooltip from '../shared/ChartTooltip';
-import { C_BLUE } from '../shared/cdde-constants';
+import loadFile from '../../../../helpers/LoadFile';
+import ChartHeader from '../../shared/ChartHeader';
+import ChartMeta from '../../shared/ChartMeta';
+import ChartTooltip from '../../shared/ChartTooltip';
+import { C_BLUE } from '../../shared/cdde-constants';
 
 import './DependenceOverTime.css';
 

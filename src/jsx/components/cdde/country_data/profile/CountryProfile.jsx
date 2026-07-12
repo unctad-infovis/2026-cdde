@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
-import loadFile from '../../../helpers/LoadFile';
-import CircleFlag from '../../general/CircleFlag';
-import RollingNumber from '../shared/RollingNumber';
+import loadFile from '../../../../helpers/LoadFile';
+import CircleFlag from '../../../general/CircleFlag';
+import { depColor, GROUP_COLORS } from '../../shared/cdde-constants';
+import RollingNumber from '../../shared/RollingNumber';
 import DependenceOverTime from './DependenceOverTime';
 import EnergyNetImports from './EnergyNetImports';
 import FoodNetImports from './FoodNetImports';
 import LeadingExports from './LeadingExports';
-import TimeSeriesChart from './TimeSeriesChart';
 import MacroContext from './MacroContext';
 import SocialContext from './SocialContext';
+import TimeSeriesChart from './TimeSeriesChart';
 import TopMarkets from './TopMarkets';
 
-import { GROUP_COLORS, depColor } from '../shared/cdde-constants';
 import './CountryProfile.css';
 
 const GROUP_TEXT_COLORS = {
@@ -28,10 +28,7 @@ const GROUP_INSIGHT = {
   'non-dependent': 'a diversified export basket, which reduces vulnerability to single-commodity price swings'
 };
 
-const SMALL_ECONOMIES = new Set([
-  'KIR', 'MHL', 'FSM', 'NRU', 'PLW', 'KNA', 'LCA', 'VCT',
-  'STP', 'SLB', 'SOM', 'TKM', 'TLS', 'TON', 'TUV', 'VUT'
-]);
+const SMALL_ECONOMIES = new Set(['KIR', 'MHL', 'FSM', 'NRU', 'PLW', 'KNA', 'LCA', 'VCT', 'STP', 'SLB', 'SOM', 'TKM', 'TLS', 'TON', 'TUV', 'VUT']);
 
 export default function CountryProfile({ country, content = {} }) {
   const { iso3, iso2, name, region, export_dependence: pct, dominant_group, agri_pct, energy_pct, mining_pct } = country;
@@ -78,11 +75,7 @@ export default function CountryProfile({ country, content = {} }) {
       {/* Key stats row – keyed on iso3 so RollingNumber re-animates on country change */}
       <div className="cp_stats_row" key={iso3}>
         <div className="cp_stat">
-          <RollingNumber
-            value={countryStats?.commodity_dependence != null ? `${countryStats.commodity_dependence}%` : '–'}
-            className="cp_stat_value"
-            style={{ color: safePct != null ? depColor(safePct) : 'var(--un-color-blue-darkest)' }}
-          />
+          <RollingNumber value={countryStats?.commodity_dependence != null ? `${countryStats.commodity_dependence}%` : '–'} className="cp_stat_value" style={{ color: safePct != null ? depColor(safePct) : 'var(--un-color-blue-darkest)' }} />
           <span className="cp_stat_label">Commodity dependence</span>
           <div className="cp_stat_cats">
             {categories.map(cat => (

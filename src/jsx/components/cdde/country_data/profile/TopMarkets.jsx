@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import loadFile from '../../../helpers/LoadFile';
-import ChartHeader from '../shared/ChartHeader';
-import ChartMeta from '../shared/ChartMeta';
-import ColChart from '../shared/ColChart';
+import loadFile from '../../../../helpers/LoadFile';
+import ChartHeader from '../../shared/ChartHeader';
+import ChartMeta from '../../shared/ChartMeta';
+import ColChart from '../../shared/ColChart';
 
 export default function TopMarkets({ iso3, title, subtitle, description, source, note }) {
   const [allData, setAllData] = useState(null);

@@ -1,20 +1,19 @@
 import { useEffect, useRef } from 'react';
 import Article from '../Main.mdx';
 
-// cdde/01main
-import CommodityGroups from './components/cdde/01main/CommodityGroups.jsx';
-import CommodityPrices from './components/cdde/01main/CommodityPrices.jsx';
-import DependenceByGroup from './components/cdde/01main/DependenceByGroup.jsx';
-import DependenceByLevel from './components/cdde/01main/DependenceByLevel.jsx';
-import DependenceMap from './components/cdde/01main/DependenceMap.jsx';
-import DependenceMovers from './components/cdde/01main/DependenceMovers.jsx';
-import ExportsByRegion from './components/cdde/01main/ExportsByRegion.jsx';
-import Header from './components/cdde/01main/Header.jsx';
-import Intro from './components/cdde/01main/Intro.jsx';
-import KnowMore from './components/cdde/01main/KnowMore.jsx';
-import NarrativeIntro from './components/cdde/01main/NarrativeIntro.jsx';
-import SectionDivider from './components/cdde/01main/SectionDivider.jsx';
-import StatusChangers from './components/cdde/01main/StatusChangers.jsx';
+// cdde/main
+import CommodityGroups from './components/cdde/main/CommodityGroups.jsx';
+import CommodityPrices from './components/cdde/main/CommodityPrices.jsx';
+import DependenceByGroup from './components/cdde/main/DependenceByGroup.jsx';
+import DependenceByLevel from './components/cdde/main/DependenceByLevel.jsx';
+import DependenceMap from './components/cdde/main/DependenceMap.jsx';
+import DependenceMovers from './components/cdde/main/DependenceMovers.jsx';
+import ExportsByRegion from './components/cdde/main/ExportsByRegion.jsx';
+import Header from './components/cdde/main/Header.jsx';
+import KnowMore from './components/cdde/main/KnowMore.jsx';
+import NarrativeIntro from './components/cdde/main/NarrativeIntro.jsx';
+import SectionDivider from './components/cdde/main/SectionDivider.jsx';
+import StatusChangers from './components/cdde/main/StatusChangers.jsx';
 import Nav from './components/cdde/shared/Nav.jsx';
 
 import './../styles/styles.css';
@@ -31,7 +30,6 @@ const components = {
   DependenceMovers,
   ExportsByRegion,
   Header,
-  Intro,
   KnowMore,
   Nav,
   ThresholdCrossers: StatusChangers,

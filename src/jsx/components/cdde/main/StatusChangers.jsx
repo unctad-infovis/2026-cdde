@@ -3,9 +3,9 @@ import loadFile from '../../../helpers/LoadFile';
 import useIsVisible from '../../../helpers/UseIsVisible';
 import ChartHeader from '../shared/ChartHeader';
 import ChartMeta from '../shared/ChartMeta';
+import { C_BLUE, C_YELLOW } from '../shared/cdde-constants';
 import DumbbellChart from '../shared/DumbbellChart';
 
-import { C_BLUE, C_YELLOW } from '../shared/cdde-constants';
 import './StatusChangers.css';
 
 const REDUCED_MOTION = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;

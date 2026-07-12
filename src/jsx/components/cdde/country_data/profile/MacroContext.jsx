@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import loadFile from '../../../helpers/LoadFile';
-import ChartHeader from '../shared/ChartHeader';
-import ChartMeta from '../shared/ChartMeta';
-import StatList from '../shared/StatList';
+import loadFile from '../../../../helpers/LoadFile';
+import ChartHeader from '../../shared/ChartHeader';
+import ChartMeta from '../../shared/ChartMeta';
+import StatList from '../../shared/StatList';
 
 function fmtGdp(millions) {
   if (millions == null) return '–';

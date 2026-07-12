@@ -57,27 +57,27 @@
     padding: 0 clamp(20px, 6vw, 80px);
   }
   .km_nav_inner {
-    max-width: 1200px;
-    margin: 0 auto;
     display: flex;
     gap: 6px;
-    padding: 10px 0;
+    margin: 0 auto;
+    max-width: 1200px;
     overflow-x: auto;
+    padding: 10px 0;
     scrollbar-width: none;
     &::-webkit-scrollbar {
       display: none;
     }
   }
   .km_nav_pill {
-    flex-shrink: 0;
-    border: 1.5px solid var(--un-color-blue-light);
-    background: transparent;
-    color: var(--un-color-blue-dark);
+    background: #fff;
     border-radius: 20px;
-    padding: 6px 16px;
+    border: 1.5px solid var(--un-color-blue-light);
+    color: var(--un-color-blue-dark);
+    cursor: pointer;
+    flex-shrink: 0;
     font-size: var(--un-font-size-xxs);
     font-weight: var(--un-font-weight-bold);
-    cursor: pointer;
+    padding: 6px 16px;
     transition:
       background 0.15s,
       color 0.15s,

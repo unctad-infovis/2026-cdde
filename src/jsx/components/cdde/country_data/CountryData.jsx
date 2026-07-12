@@ -1,14 +1,14 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import CSVtoJSON from '../../../helpers/CsvToJson';
 import loadFile from '../../../helpers/LoadFile';
-import CompareView from './CompareView';
-import CountryList from './CountryList';
-import CountryProfile from './CountryProfile';
-import CountryRankings from './CountryRankings';
-import EconomyBubbleChart from './EconomyBubbleChart';
-
 import { REGION_GROUPS } from '../shared/cdde-constants';
-import './Compare.css';
+import CountryList from './CountryList';
+import CompareView from './compare/CompareView';
+import EconomyBubbleChart from './compare/EconomyBubbleChart';
+import CountryProfile from './profile/CountryProfile';
+import CountryRankings from './ranking/CountryRankings';
+
+import './CountryData.css';
 
 const DEFAULT_TOOLS = [
   { id: '01', label: 'Country profile', desc: 'Deep-dive on one economy' },
@@ -57,7 +57,7 @@ export default function Compare({ content = {} }) {
       return;
     }
     setPanelOpen(true);
-  }, [search, region, threshold]);
+  }, []);
 
   const filtered = useMemo(() => {
     if (!allCountries) return [];

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import loadFile from '../../../helpers/LoadFile';
-import ChartHeader from '../shared/ChartHeader';
-import ChartMeta from '../shared/ChartMeta';
-import LineChartTime from '../shared/LineChartTime';
+import loadFile from '../../../../helpers/LoadFile';
+import ChartHeader from '../../shared/ChartHeader';
+import ChartMeta from '../../shared/ChartMeta';
+import LineChartTime from '../../shared/LineChartTime';
 
 export default function TimeSeriesChart({ iso3, dataFile, lineColor, ariaLabel, title, subtitle, description, source, note, useMillions = false }) {
   const [allData, setAllData] = useState(null);

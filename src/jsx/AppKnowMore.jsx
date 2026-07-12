@@ -1,4 +1,4 @@
-import KnowMore from './components/cdde/01main/KnowMore.jsx';
+import KnowMore from './components/cdde/main/KnowMore.jsx';
 import MiniHeader from './components/cdde/shared/MiniHeader.jsx';
 
 import './../styles/styles.css';

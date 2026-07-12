@@ -1,4 +1,4 @@
-import CountrySearch from '../shared/CountrySearch';
+import CountrySearch from '../../shared/CountrySearch';
 import './CompareBar.css';
 
 export default function CompareBar({ countries, compareList, onCompareChange }) {

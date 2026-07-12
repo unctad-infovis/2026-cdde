@@ -1,10 +1,10 @@
 import * as d3 from 'd3';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import loadFile from '../../../helpers/LoadFile';
-import ChartHeader from '../shared/ChartHeader';
-import ChartMeta from '../shared/ChartMeta';
-import ChartTooltip from '../shared/ChartTooltip';
-import { C_BLUE, C_YELLOW, DEVELOPED, REGION_GROUPS } from '../shared/cdde-constants';
+import loadFile from '../../../../helpers/LoadFile';
+import ChartHeader from '../../shared/ChartHeader';
+import ChartMeta from '../../shared/ChartMeta';
+import ChartTooltip from '../../shared/ChartTooltip';
+import { C_BLUE, C_YELLOW, DEVELOPED, REGION_GROUPS } from '../../shared/cdde-constants';
 
 import './EconomyBubbleChart.css';
 
@@ -28,7 +28,9 @@ export default function EconomyBubbleChart({ countries, title, subtitle, descrip
   const wrapRef = useRef();
   const hlRef = useRef();
   const highlightRef = useRef(highlight);
-  useEffect(() => { highlightRef.current = highlight; }, [highlight]);
+  useEffect(() => {
+    lightRef.current = highlight;
+  }, [highlight]);
 
   useEffect(() => {
     loadFile('assets/data/cdde_social_context.json')
@@ -57,7 +59,6 @@ export default function EconomyBubbleChart({ countries, title, subtitle, descrip
     return () => ro.disconnect();
   }, []);
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: highlight updates handled by separate effect
   useEffect(() => {
     if (!chartW || !visible.length || !svgRef.current) return;
 

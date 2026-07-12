@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import loadFile from '../../../helpers/LoadFile';
-import { netImportInsight } from '../../../helpers/NetImportInsight';
-import ChartHeader from '../shared/ChartHeader';
-import ChartMeta from '../shared/ChartMeta';
-import PeriodColumns from '../shared/PeriodColumns';
+import loadFile from '../../../../helpers/LoadFile';
+import { netImportInsight } from '../../../../helpers/NetImportInsight';
+import ChartHeader from '../../shared/ChartHeader';
+import ChartMeta from '../../shared/ChartMeta';
+import PeriodColumns from '../../shared/PeriodColumns';
 
 export default function EnergyNetImports({ iso3, countryName, title, subtitle, source, note }) {
   const [allData, setAllData] = useState(null);

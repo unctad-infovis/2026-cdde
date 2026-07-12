@@ -171,7 +171,7 @@ export default function ExportsByRegion({ insight, note, source, subtitle: overv
           {drill && drillView && (
             <defs>
               {drillView.nodes.map((node, i) => (
-                <clipPath key={i} id={`exc_cp_${i}`}>
+                <clipPath key={node} id={`exc_cp_${i}`}>
                   <rect x={node.x0 + 2} y={node.y0 + 2} width={node.x1 - node.x0 - 4} height={node.y1 - node.y0 - 4} />
                 </clipPath>
               ))}

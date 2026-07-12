@@ -29,7 +29,7 @@ export default function DependenceByGroup({ insight, note, source, subtitle, tit
     const ro = new ResizeObserver(([entry]) => setSvgW(entry.contentRect.width));
     ro.observe(el);
     return () => ro.disconnect();
-  }, [data]);
+  }, []);
 
   function handleMouseMove(e, d) {
     if (!wrapRef.current) return;

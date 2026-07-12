@@ -5,7 +5,7 @@ import './KnowMore.css';
 const NAV_ITEMS = [
   { id: 'km-sources', label: 'Sources & definitions' },
   { id: 'km-groupings', label: 'Country groupings' },
-  { id: 'km-classification', label: 'Classification SITC 3' },
+  { id: 'km-classification', label: 'Classification SITC 3' }
 ];
 
 function scrollTo(id) {
@@ -23,7 +23,7 @@ function SourcesAccordion({ items }) {
       {items.map((item, i) => {
         const isOpen = open === i;
         return (
-          <div key={i} className={`km_acc_item${isOpen ? ' km_acc_item--open' : ''}`}>
+          <div key={item} className={`km_acc_item${isOpen ? ' km_acc_item--open' : ''}`}>
             <button type="button" className="km_acc_trigger" onClick={() => setOpen(isOpen ? -1 : i)} aria-expanded={isOpen}>
               <span className="km_acc_title">{item.title}</span>
               <svg className="km_acc_chevron" viewBox="0 0 12 8" fill="none" aria-hidden="true">
@@ -97,9 +97,11 @@ function GroupingsSection({ data }) {
             {regions.map(region => {
               const subgroups = data.geographic.filter(g => g.region === region);
               return subgroups.map((sg, si) => (
-                <tr key={`${region}-${si}`} className="km_tr">
+                <tr key={`${region}-${s}`} className="km_tr">
                   {si === 0 && (
-                    <td className="km_td km_td--region" rowSpan={subgroups.length}>{region}</td>
+                    <td className="km_td km_td--region" rowSpan={subgroups.length}>
+                      {region}
+                    </td>
                   )}
                   <td className="km_td km_td--subregion">{sg.subregion}</td>
                   <td className="km_td km_td--countries">{sg.countries.join(', ')}</td>
@@ -113,8 +115,8 @@ function GroupingsSection({ data }) {
       <div className="km_groupings_special">
         <h4 className="km_groupings_sub_heading">Development status & special categories</h4>
         <div className="km_special_grid">
-          {data.special.map((cat, i) => (
-            <div key={i} className="km_special_card">
+          {data.special.map(cat => (
+            <div key={cat.label} className="km_special_card">
               <div className="km_special_label">{cat.label}</div>
               <div className="km_special_count">{cat.countries.length} economies</div>
               <div className="km_special_countries">{cat.countries.join(', ')}</div>
@@ -133,12 +135,12 @@ function SitcSection({ data }) {
 
   return (
     <div className="km_sitc">
-      {data.sections.map((sec, i) => (
-        <div key={i} className={`km_sitc_section${isNonCommodity(sec) ? ' km_sitc_section--other' : ''}`}>
+      {data.sections.map(sec => (
+        <div key={sec.heading} className={`km_sitc_section${isNonCommodity(sec) ? ' km_sitc_section--other' : ''}`}>
           <h4 className="km_sitc_heading">{sec.heading}</h4>
           <ul className="km_sitc_list">
-            {sec.items.map((item, j) => (
-              <li key={j} className="km_sitc_item">
+            {sec.items.map(item => (
+              <li key={item.label} className="km_sitc_item">
                 <span className="km_code_badge">[{item.code}]</span>
                 <span className="km_sitc_label">{item.label}</span>
               </li>
@@ -160,9 +162,15 @@ export default function KnowMore() {
   const [activeSection, setActiveSection] = useState('km-sources');
 
   useEffect(() => {
-    loadFile('assets/data/cdde_sources.json').then(r => r?.json()).then(d => d && setSources(d));
-    loadFile('assets/data/cdde_groupings.json').then(r => r?.json()).then(d => d && setGroupings(d));
-    loadFile('assets/data/cdde_sitc3.json').then(r => r?.json()).then(d => d && setSitc3(d));
+    loadFile('assets/data/cdde_sources.json')
+      .then(r => r?.json())
+      .then(d => d && setSources(d));
+    loadFile('assets/data/cdde_groupings.json')
+      .then(r => r?.json())
+      .then(d => d && setGroupings(d));
+    loadFile('assets/data/cdde_sitc3.json')
+      .then(r => r?.json())
+      .then(d => d && setSitc3(d));
   }, []);
 
   // Track which section is in view
@@ -171,14 +179,16 @@ export default function KnowMore() {
       const el = document.getElementById(id);
       if (!el) return null;
       const obs = new IntersectionObserver(
-        ([entry]) => { if (entry.isIntersecting) setActiveSection(id); },
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveSection(id);
+        },
         { rootMargin: '-20% 0px -70% 0px' }
       );
       obs.observe(el);
       return obs;
     });
-    return () => observers.forEach(o => o?.disconnect());
-  }, [sources, groupings, sitc3]);
+    return () => { for (const o of observers) o?.disconnect(); };
+  }, []);
 
   return (
     <section className="km_section" id="know-more">
@@ -196,12 +206,7 @@ export default function KnowMore() {
       <div className="km_sticky_nav">
         <div className="km_nav_inner">
           {NAV_ITEMS.map(({ id, label }) => (
-            <button
-              key={id}
-              type="button"
-              className={`km_nav_pill${activeSection === id ? ' km_nav_pill--active' : ''}`}
-              onClick={() => scrollTo(id)}
-            >
+            <button key={id} type="button" className={`km_nav_pill${activeSection === id ? ' km_nav_pill--active' : ''}`} onClick={() => scrollTo(id)}>
               {label}
             </button>
           ))}

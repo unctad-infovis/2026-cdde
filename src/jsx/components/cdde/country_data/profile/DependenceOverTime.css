@@ -1,11 +1,12 @@
 #app-root-2026-cdde .app {
   .dot_chart_wrap {
+    appearance: none;
+    background: none;
+    border: 0;
     flex: 1;
     margin-top: 8px;
     position: relative;
-    appearance: none;
-    border: 0;
-    background: none;
+    text-align: left;
   }
   .dot_svg {
     display: block;

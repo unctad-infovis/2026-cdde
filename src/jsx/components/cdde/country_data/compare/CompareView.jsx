@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import loadFile from '../../../helpers/LoadFile';
-import CircleFlag from '../../general/CircleFlag';
-import ChartHeader from '../shared/ChartHeader';
-import CountrySearch from '../shared/CountrySearch';
-import StackedBar from '../shared/StackedBar';
-import { GROUP_COLORS } from '../shared/cdde-constants';
+import loadFile from '../../../../helpers/LoadFile';
+import CircleFlag from '../../../general/CircleFlag';
+import ChartHeader from '../../shared/ChartHeader';
+import CountrySearch from '../../shared/CountrySearch';
+import { GROUP_COLORS } from '../../shared/cdde-constants';
+import StackedBar from '../../shared/StackedBar';
 
 import './CompareView.css';
 
@@ -112,12 +112,24 @@ export default function CompareView({ compareList, countries, onCompareChange, d
   const [netImportsData, setNetImportsData] = useState(null);
 
   useEffect(() => {
-    loadFile('assets/data/cdde_group_breakdown.json').then(r => r?.json()).then(d => d && setGroupData(d));
-    loadFile('assets/data/cdde_profile_stats.json').then(r => r?.json()).then(d => d && setStatsData(d));
-    loadFile('assets/data/cdde_macro_context.json').then(r => r?.json()).then(d => d && setMacroData(d));
-    loadFile('assets/data/cdde_social_context.json').then(r => r?.json()).then(d => d && setSocialData(d));
-    loadFile('assets/data/cdde_additional_comparison.json').then(r => r?.json()).then(d => d && setAdditionalData(d));
-    loadFile('assets/data/cdde_net_imports.json').then(r => r?.json()).then(d => d && setNetImportsData(d));
+    loadFile('assets/data/cdde_group_breakdown.json')
+      .then(r => r?.json())
+      .then(d => d && setGroupData(d));
+    loadFile('assets/data/cdde_profile_stats.json')
+      .then(r => r?.json())
+      .then(d => d && setStatsData(d));
+    loadFile('assets/data/cdde_macro_context.json')
+      .then(r => r?.json())
+      .then(d => d && setMacroData(d));
+    loadFile('assets/data/cdde_social_context.json')
+      .then(r => r?.json())
+      .then(d => d && setSocialData(d));
+    loadFile('assets/data/cdde_additional_comparison.json')
+      .then(r => r?.json())
+      .then(d => d && setAdditionalData(d));
+    loadFile('assets/data/cdde_net_imports.json')
+      .then(r => r?.json())
+      .then(d => d && setNetImportsData(d));
   }, []);
 
   function getMerged(iso3) {
@@ -136,7 +148,7 @@ export default function CompareView({ compareList, countries, onCompareChange, d
       food_imports: add.food_imports ?? null,
       energy_imports: add.energy_imports ?? null,
       net_food_imports: net.food_recent ?? null,
-      net_energy_imports: net.energy_recent ?? null,
+      net_energy_imports: net.energy_recent ?? null
     };
   }
 
@@ -262,7 +274,7 @@ export default function CompareView({ compareList, countries, onCompareChange, d
                 <span className="cv_tbl_ind_desc">{row.desc}</span>
               </div>
 
-              {slots.map(({ country, slot, i }) => {
+              {slots.map(({ _country, slot, i }) => {
                 const val = vals[i];
 
                 if (row.fmt === null) {

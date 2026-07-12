@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import loadFile from '../../../helpers/LoadFile';
-import ChartHeader from '../shared/ChartHeader';
-import ChartMeta from '../shared/ChartMeta';
-import StatList from '../shared/StatList';
+import loadFile from '../../../../helpers/LoadFile';
+import ChartHeader from '../../shared/ChartHeader';
+import ChartMeta from '../../shared/ChartMeta';
+import StatList from '../../shared/StatList';
 
 const EMP_YEAR = { LBN: 2023, SSD: 2023, PSE: 2022, SDN: 2022, UKR: 2021 };
 

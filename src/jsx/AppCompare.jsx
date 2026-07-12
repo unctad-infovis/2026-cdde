@@ -1,7 +1,7 @@
 import { useRef } from 'react';
-import CompareArticle from '../Compare.mdx';
+import CompareArticle from '../CountryData.mdx';
 
-import Compare from './components/cdde/02compare/Compare.jsx';
+import Compare from './components/cdde/country_data/CountryData.jsx';
 import MiniHeader from './components/cdde/shared/MiniHeader.jsx';
 
 import './../styles/styles.css';

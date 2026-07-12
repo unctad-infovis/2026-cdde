@@ -1,7 +1,7 @@
 import * as d3 from 'd3';
 import { useEffect, useRef, useState } from 'react';
 import ChartTooltip from './ChartTooltip';
-import { C_BLUE, axisFmt } from './cdde-constants';
+import { axisFmt, C_BLUE } from './cdde-constants';
 
 import './LineChartTime.css';
 
@@ -17,7 +17,7 @@ function fmtBillions(v) {
 
 function niceStep(raw) {
   if (!Number.isFinite(raw) || raw <= 0) return 1;
-  const mag = Math.pow(10, Math.floor(Math.log10(raw)));
+  const mag = 10 ** Math.floor(Math.log10(raw));
   const frac = raw / mag;
   if (frac <= 1) return mag;
   if (frac <= 2) return 2 * mag;
@@ -86,7 +86,7 @@ export default function LineChartTime({ series, lineColor = C_BLUE, yFmt = fmtBi
     if (pathRef.current && linePath) {
       setPathLen(pathRef.current.getTotalLength());
     }
-  }, [linePath, svgW]);
+  }, [linePath]);
 
   const xTicks = [xMin, 2000, 2005, 2010, 2015, 2020, xMax].filter((y, i, a) => y >= xMin && y <= xMax && a.indexOf(y) === i);
 
@@ -138,7 +138,7 @@ export default function LineChartTime({ series, lineColor = C_BLUE, yFmt = fmtBi
   }
 
   return (
-    <div className="lct_wrap" ref={wrapRef} onMouseMove={handleMouseMove} onMouseLeave={() => setTooltip(null)}>
+    <button type="button" className="lct_wrap" ref={wrapRef} onMouseMove={handleMouseMove} onMouseLeave={() => setTooltip(null)}>
       <svg viewBox={`0 0 ${svgW} ${H}`} className="lct_svg" aria-label={ariaLabel}>
         <g transform={`translate(${M.left},${M.top})`}>
           {yTicks.map(v => (
@@ -184,6 +184,6 @@ export default function LineChartTime({ series, lineColor = C_BLUE, yFmt = fmtBi
           </div>
         </ChartTooltip>
       )}
-    </div>
+    </button>
   );
 }
