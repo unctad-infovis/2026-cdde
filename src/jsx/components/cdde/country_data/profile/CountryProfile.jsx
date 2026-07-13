@@ -67,25 +67,29 @@ export default function CountryProfile({ country, content = {} }) {
       </div>
 
       {/* Insight */}
-      <p className="cp_insight">
-        {name}'s exports remain anchored in <strong style={{ color: groupColor }}>{insightDesc.split(',')[0]}</strong>
-        {insightDesc.includes(',') ? `,${insightDesc.split(',').slice(1).join(',')}` : ''}.
-      </p>
+      {safePct != null && (
+        <p className="cp_insight">
+          {name}'s exports remain anchored in <strong style={{ color: groupColor }}>{insightDesc.split(',')[0]}</strong>
+          {insightDesc.includes(',') ? `,${insightDesc.split(',').slice(1).join(',')}` : ''}.
+        </p>
+      )}
 
       {/* Key stats row – keyed on iso3 so RollingNumber re-animates on country change */}
       <div className="cp_stats_row" key={iso3}>
         <div className="cp_stat">
           <RollingNumber value={countryStats?.commodity_dependence != null ? `${countryStats.commodity_dependence}%` : '–'} className="cp_stat_value" style={{ color: safePct != null ? depColor(safePct) : 'var(--un-color-blue-darkest)' }} />
           <span className="cp_stat_label">Commodity dependence</span>
-          <div className="cp_stat_cats">
-            {categories.map(cat => (
-              <div key={cat.key} className={`cp_stat_cat_row${dominant_group === cat.key ? ' cp_stat_cat_row--dominant' : ''}`}>
-                <span className="cp_stat_cat_dot" style={{ background: GROUP_COLORS[cat.key] }} />
-                <span className="cp_stat_cat_label">{cat.label}</span>
-                <span className="cp_stat_cat_val">{cat.val}%</span>
-              </div>
-            ))}
-          </div>
+          {safePct != null && (
+            <div className="cp_stat_cats">
+              {categories.map(cat => (
+                <div key={cat.key} className={`cp_stat_cat_row${dominant_group === cat.key ? ' cp_stat_cat_row--dominant' : ''}`}>
+                  <span className="cp_stat_cat_dot" style={{ background: GROUP_COLORS[cat.key] }} />
+                  <span className="cp_stat_cat_label">{cat.label}</span>
+                  <span className="cp_stat_cat_val">{cat.val}%</span>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
         <div className="cp_stat">
           <RollingNumber value={countryStats?.leading_market != null ? `${countryStats.leading_market}%` : '–'} className="cp_stat_value" />

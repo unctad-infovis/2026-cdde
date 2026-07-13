@@ -197,7 +197,7 @@ export default function CompareView({ compareList, countries, onCompareChange, d
             {country && (
               <>
                 <p className="cv_card_meta">{country.region}</p>
-                <div className="cv_card_pct">{country.export_dependence.toFixed(1)}%</div>
+                <div className="cv_card_pct">{country.export_dependence != null ? `${country.export_dependence.toFixed(1)}%` : 'No data'}</div>
                 <p className="cv_card_dep_label">COMMODITY EXPORT DEPENDENCE</p>
               </>
             )}

@@ -1,4 +1,4 @@
-import { depColor } from '../shared/cdde-constants';
+import { depColor, NO_DATA_FILL } from '../shared/cdde-constants';
 import './CountryList.css';
 
 export default function CountryList({ countries, selected, onSelect }) {
@@ -18,8 +18,8 @@ export default function CountryList({ countries, selected, onSelect }) {
             <button type="button" key={c.iso3} className={`cl_tile${isSelected ? ' cl_tile--selected' : ''}`} onClick={() => onSelect(c)}>
               <span className="cl_tile_name">{c.name}</span>
               <span className="cl_tile_dep">
-                <span className="cl_dot" style={{ background: depColor(c.export_dependence) }} />
-                {c.export_dependence.toFixed(1)}%
+                <span className="cl_dot" style={{ background: c.export_dependence != null ? depColor(c.export_dependence) : NO_DATA_FILL }} />
+                {c.export_dependence != null ? `${c.export_dependence.toFixed(1)}%` : 'No data'}
               </span>
             </button>
           );

@@ -40,7 +40,11 @@ export default function Compare({ content = {} }) {
           .filter(r => r.iso3)
           .map(r => ({
             ...r,
-            export_dependence: +r.export_dependence
+            export_dependence: r.export_dependence !== '' ? +r.export_dependence : null,
+            dominant_group: r.dominant_group || null,
+            agri_pct: r.agri_pct !== '' ? +r.agri_pct : null,
+            energy_pct: r.energy_pct !== '' ? +r.energy_pct : null,
+            mining_pct: r.mining_pct !== '' ? +r.mining_pct : null,
           }));
         const sorted = [...rows].sort((a, b) => a.name.localeCompare(b.name));
         setAllCountries(sorted);

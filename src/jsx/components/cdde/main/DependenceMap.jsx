@@ -432,7 +432,7 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
                   {/* Hero — export share + dominant group combined */}
                   <div className="cmap_panel_hero">
                     <span className="cmap_panel_hero_label">Commodity dependence share</span>
-                    <span className="cmap_panel_hero_value">{selectedCountry.export_dependence}%</span>
+                    <span className="cmap_panel_hero_value">{selectedCountry.export_dependence != null ? `${selectedCountry.export_dependence}%` : 'Data not available'}</span>
                     {selectedCountry.dominant_group && selectedCountry.dominant_group !== 'non-dependent' && (
                       <span className="cmap_panel_stat_group" style={{ background: GROUP_COLORS[selectedCountry.dominant_group] }}>
                         {GROUP_LABELS[selectedCountry.dominant_group] || selectedCountry.dominant_group}

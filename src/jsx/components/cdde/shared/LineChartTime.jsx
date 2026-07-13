@@ -176,7 +176,7 @@ export default function LineChartTime({ series, lineColor = C_BLUE, yFmt = fmtBi
             <ChartTooltip left={tooltip.x} top={tooltip.domY} flip={tooltip.flip}>
               <div className="lct_tt_year">{tooltip.year}</div>
               <div className="lct_tt_val" style={{ color: lineColor }}>
-                {yFmt(tooltip.val)} {tooltipUnit}
+                {yFmt(tooltip.val)}
               </div>
             </ChartTooltip>
           )}
