@@ -71,6 +71,10 @@
       flex-wrap: wrap;
       gap: 4px 20px;
       padding: 10px 0 14px;
+      @media all and (max-width: 700px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
     }
     .cmap_gt_item {
       align-items: center;
@@ -178,17 +182,34 @@
       gap: 8px;
       left: 12px;
       padding: 8px 12px;
-      pointer-events: none;
       position: absolute;
       top: 12px;
+    }
+    .cmap_legend--collapsed {
+      gap: 0;
+    }
+    .cmap_legend_header {
+      align-items: center;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      gap: 8px;
+      justify-content: space-between;
+      padding: 0;
+      width: 100%;
     }
     .cmap_legend_label {
       color: var(--un-color-grey-text);
       font-size: var(--un-font-size-xxxs);
       font-weight: var(--un-font-weight-bold);
       letter-spacing: 0.05em;
-      margin-bottom: 2px;
       text-transform: uppercase;
+    }
+    .cmap_legend_toggle_icon {
+      color: var(--un-color-grey-text);
+      flex-shrink: 0;
+      font-size: var(--un-font-size-xxs);
     }
     .cmap_legend_export {
       display: flex;
@@ -451,7 +472,7 @@
         padding: 0 8px;
       }
       .cmap_controls {
-        align-items: stretch;
+        align-items: flex-start;
         flex-direction: column;
       }
       .cmap_search {

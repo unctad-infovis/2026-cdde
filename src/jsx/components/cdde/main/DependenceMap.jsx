@@ -66,6 +66,7 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
   const [view, setView] = useState('export');
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [panelCollapsed, setPanelCollapsed] = useState(false);
+  const [legendCollapsed, setLegendCollapsed] = useState(false);
   const [hoverTooltip, setHoverTooltip] = useState(null);
   const [zt, setZt] = useState({ x: 0, y: 0, k: 1 });
   const [svgW, setSvgW] = useState(960);
@@ -374,23 +375,28 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
 
           {/* Legend overlay — top-left corner, export view only */}
           {view === 'export' && (
-            <div className="cmap_legend">
-              <div className="cmap_legend_export">
+            <div className={`cmap_legend${legendCollapsed ? ' cmap_legend--collapsed' : ''}`}>
+              <button type="button" className="cmap_legend_header" onClick={() => setLegendCollapsed(c => !c)} aria-label={legendCollapsed ? 'Expand legend' : 'Collapse legend'}>
                 <span className="cmap_legend_label">Export share</span>
-                {EXP_LEGEND_BELOW.map(step => (
-                  <div key={step.label} className="cmap_legend_group_item">
-                    <span className="cmap_legend_step_dot" style={{ background: step.color }} />
-                    <span>{step.label}</span>
-                  </div>
-                ))}
-                <div className="cmap_legend_threshold_divider">≥ 60% dependent</div>
-                {EXP_LEGEND_ABOVE.map(step => (
-                  <div key={step.label} className="cmap_legend_group_item">
-                    <span className="cmap_legend_step_dot" style={{ background: step.color }} />
-                    <span>{step.label}</span>
-                  </div>
-                ))}
-              </div>
+                <span className="cmap_legend_toggle_icon">{legendCollapsed ? '▾' : '▴'}</span>
+              </button>
+              {!legendCollapsed && (
+                <div className="cmap_legend_export">
+                  {EXP_LEGEND_BELOW.map(step => (
+                    <div key={step.label} className="cmap_legend_group_item">
+                      <span className="cmap_legend_step_dot" style={{ background: step.color }} />
+                      <span>{step.label}</span>
+                    </div>
+                  ))}
+                  <div className="cmap_legend_threshold_divider">≥ 60% dependent</div>
+                  {EXP_LEGEND_ABOVE.map(step => (
+                    <div key={step.label} className="cmap_legend_group_item">
+                      <span className="cmap_legend_step_dot" style={{ background: step.color }} />
+                      <span>{step.label}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           )}
 
