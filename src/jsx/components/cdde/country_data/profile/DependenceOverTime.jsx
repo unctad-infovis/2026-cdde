@@ -42,6 +42,7 @@ export default function DependenceOverTime({ iso3, title, subtitle, description,
   }, []);
 
   const series = allData?.[iso3] ?? [];
+  const hasData = series.length > 0 && series.some(d => d.pct);
 
   const CHART_W = svgW - M.left - M.right;
 
@@ -90,8 +91,9 @@ export default function DependenceOverTime({ iso3, title, subtitle, description,
     <div className="cdde_card">
       <ChartHeader title={title} subtitle={subtitle} description={description} />
 
-      <button type="button" className="dot_chart_wrap" ref={wrapRef} onMouseMove={handleMouseMove} onMouseLeave={() => setTooltip(null)}>
-        <svg viewBox={`0 0 ${svgW} ${H}`} className="dot_svg" aria-label="Line chart of commodity export dependence over time">
+      <button type="button" className="dot_chart_wrap" ref={wrapRef} onMouseMove={hasData ? handleMouseMove : undefined} onMouseLeave={() => setTooltip(null)}>
+        {!hasData && <p className="cdde_no_data">Data not available</p>}
+        {hasData && <svg viewBox={`0 0 ${svgW} ${H}`} className="dot_svg" aria-label="Line chart of commodity export dependence over time">
           <g transform={`translate(${M.left},${M.top})`}>
             {yTicks.map((v, i) => (
               <g key={v} transform={`translate(0,${yScale(v)})`}>
@@ -135,7 +137,7 @@ export default function DependenceOverTime({ iso3, title, subtitle, description,
               </g>
             ))}
           </g>
-        </svg>
+        </svg>}
 
         {tooltip && (
           <ChartTooltip left={tooltip.x} top={tooltip.domY} flip={tooltip.flip}>
