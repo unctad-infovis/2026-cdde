@@ -190,12 +190,12 @@ export default function ExportsByRegion({ insight, note, source, subtitle: overv
                   <g key={node.data.name} onClick={() => handleCellClick(node)} onMouseMove={e => handleMouseMove(e, { name: node.data.name, value: node.data.value, region: node.parent?.data?.name })} className="exc_cell">
                     <rect x={node.x0} y={node.y0} width={w} height={h} fill={fill} />
                     {w > 90 && h > 46 && (
-                      <text x={node.x0 + w / 2} y={node.y0 + h / 2 - (w > 60 && h > 26 ? 9 : 0)} textAnchor="middle" dominantBaseline="middle" className="exc_cell_name" style={textStyle}>
+                      <text x={node.x0 + w / 2} y={node.y0 + h / 2 - (w > 60 && h > 26 ? 0 : 0)} textAnchor="middle" dominantBaseline="middle" className="exc_cell_name" style={textStyle}>
                         {node.data.name}
                       </text>
                     )}
                     {w > 60 && h > 26 && (
-                      <text x={node.x0 + w / 2} y={node.y0 + h / 2 + (w > 90 && h > 46 ? 11 : 0)} textAnchor="middle" dominantBaseline="middle" className="exc_cell_value" style={textStyle}>
+                      <text x={node.x0 + w / 2} y={node.y0 + h / 2 + (w > 90 && h > 46 ? 15 : 0)} textAnchor="middle" dominantBaseline="middle" className="exc_cell_value" style={textStyle}>
                         {fmt(node.data.displayValue ?? node.data.value)}
                       </text>
                     )}
@@ -203,7 +203,7 @@ export default function ExportsByRegion({ insight, note, source, subtitle: overv
                 );
               })}
               {overview.regionNodes.map((rNode, j) => (
-                <text key={rNode.data.name} x={rNode.x0 + 10} y={rNode.y0 + 22} className="exc_region_label" style={{ pointerEvents: 'none', opacity: animated ? 1 : 0, transition: 'opacity 0.5s ease', transitionDelay: `${500 + j * 60}ms` }}>
+                <text key={rNode.data.name} x={rNode.x0 + 10} y={rNode.y0 + 27} className="exc_region_label" style={{ pointerEvents: 'none', opacity: animated ? 1 : 0, transition: 'opacity 0.5s ease', transitionDelay: `${500 + j * 60}ms` }}>
                   {rNode.data.name}
                 </text>
               ))}

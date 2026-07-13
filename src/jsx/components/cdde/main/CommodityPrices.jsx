@@ -26,8 +26,6 @@ const SERIES = [
   { key: 'precious', label: 'Precious metals', color: '#a05fb4' }
 ];
 
-const FILTERS = ['All', ...SERIES.map(s => s.label)];
-
 const H = 396;
 const M = { top: 30, right: 20, bottom: 52, left: 50 };
 const CHART_H = H - M.top - M.bottom;
@@ -46,6 +44,7 @@ export default function CommodityPrices({ insight, note, source, subtitle, title
   const [activeFilter, setActiveFilter] = useState('All');
   const [tooltip, setTooltip] = useState(null);
   const [svgW, setSvgW] = useState(960);
+  const [hasAnimated, setHasAnimated] = useState(REDUCED_MOTION);
 
   const svgRef = useRef(null);
   const wrapRef = useRef(null);
@@ -66,6 +65,13 @@ export default function CommodityPrices({ insight, note, source, subtitle, title
         if (d) setRawData(d.map(row => ({ ...row, date: parseDate(row.date) })));
       });
   }, []);
+
+  // After all lines finish drawing, remove staggered delays so filter changes are instant
+  useEffect(() => {
+    if (!isVisible || hasAnimated) return;
+    const t = setTimeout(() => setHasAnimated(true), 3200);
+    return () => clearTimeout(t);
+  }, [isVisible, hasAnimated]);
 
   const CHART_W = svgW - M.left - M.right;
 
@@ -114,6 +120,10 @@ export default function CommodityPrices({ insight, note, source, subtitle, title
     return activeFilter === label ? 1 : 0.08;
   }
 
+  function toggleFilter(label) {
+    setActiveFilter(prev => (prev === label ? 'All' : label));
+  }
+
   // ── Tooltip handlers ──────────────────────────────────────────
   function handleMouseMove(e) {
     if (!chart || !rawData || !svgRef.current || !wrapRef.current) return;
@@ -154,34 +164,33 @@ export default function CommodityPrices({ insight, note, source, subtitle, title
     setTooltip(t => (t?.type === 'anno' ? null : t));
   }
 
-  // Flip tooltip to left when near right edge
   const flipTT = tooltip && wrapRef.current ? tooltip.left > wrapRef.current.clientWidth * 0.6 : false;
 
   const animated = isVisible || REDUCED_MOTION;
+  const hasFilter = activeFilter !== 'All';
 
   return (
     <div className="cprices_container cdde_reveal" ref={visRef}>
-      <div className="cprices_header_row">
-        <ChartHeader title={title} subtitle={subtitle} large />
-        <div className="cprices_filters">
-          {FILTERS.map(f => (
-            <button type="button" key={f} className={`cprices_filter_btn${activeFilter === f ? ' active' : ''}`} onClick={() => setActiveFilter(f)}>
-              {f}
-            </button>
-          ))}
-        </div>
-      </div>
+      <ChartHeader title={title} subtitle={subtitle} large />
 
       {insight && <p className="cdde_insight cprices_insight">{insight}</p>}
 
-      {/* ── Legend — now above the chart ── */}
+      {/* ── Interactive legend – clicking a series filters to it; clicking again clears ── */}
       <div className="cdde_legend_row">
-        {SERIES.map(s => (
-          <span key={s.key} className="cdde_legend_item">
-            <span className="cdde_legend_line" style={{ background: s.color }} />
-            {s.label}
-          </span>
-        ))}
+        {SERIES.map(s => {
+          const isActive = activeFilter === s.label;
+          return (
+            <button
+              key={s.key}
+              type="button"
+              className={`cdde_legend_item cprices_legend_btn${isActive ? ' cprices_legend_btn--active' : ''}${hasFilter && !isActive ? ' cprices_legend_btn--faded' : ''}`}
+              onClick={() => toggleFilter(s.label)}
+            >
+              <span className="cdde_legend_line" style={{ background: s.color }} />
+              {s.label}
+            </button>
+          );
+        })}
       </div>
       <div className="cprices_anno_key">
         {ANNOTATIONS.map((a, i) => (
@@ -218,7 +227,7 @@ export default function CommodityPrices({ insight, note, source, subtitle, title
                   <line key={a.num} x1={a.x} y1={0} x2={a.x} y2={CHART_H} className="cprices_anno_line" />
                 ))}
 
-                {/* Series paths — pointer-events:none so overlay captures */}
+                {/* Series paths — transitionDelay removed after first draw so filter changes are instant */}
                 {SERIES.map((s, i) => (
                   <path
                     key={s.key}
@@ -231,7 +240,7 @@ export default function CommodityPrices({ insight, note, source, subtitle, title
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     className="cprices_line"
-                    style={{ pointerEvents: 'none', transitionDelay: `${500 + i * 80}ms` }}
+                    style={{ pointerEvents: 'none', transitionDelay: hasAnimated ? '0ms' : `${500 + i * 80}ms` }}
                   />
                 ))}
 
@@ -273,7 +282,7 @@ export default function CommodityPrices({ insight, note, source, subtitle, title
                   </g>
                 ))}
 
-                {/* Post-2022 label — moved to bottom */}
+                {/* Post-2022 label */}
                 <text x={chart.correctionX + (CHART_W - chart.correctionX) / 2} y={CHART_H + 38} textAnchor="middle" className="cprices_correction_label">
                   post-2022 correction
                 </text>
@@ -305,7 +314,6 @@ export default function CommodityPrices({ insight, note, source, subtitle, title
         )}
       </div>
 
-      {/* ── Annotation key — stays at bottom ── */}
       <ChartMeta source={source} note={note} />
     </div>
   );

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import CSVtoJSON from '../../../helpers/CsvToJson';
 import loadFile from '../../../helpers/LoadFile';
 import useIsVisible from '../../../helpers/UseIsVisible';
@@ -23,13 +23,16 @@ export default function DependenceByGroup({ insight, note, source, subtitle, tit
   const [visRef, isVisible] = useIsVisible(0.2);
   const [svgW, setSvgW] = useState(400);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    if (!data) return;
     const el = wrapRef.current;
     if (!el) return;
+    const w = el.getBoundingClientRect().width;
+    if (w > 0) setSvgW(w);
     const ro = new ResizeObserver(([entry]) => setSvgW(entry.contentRect.width));
     ro.observe(el);
     return () => ro.disconnect();
-  }, []);
+  }, [data]);
 
   function handleMouseMove(e, d) {
     if (!wrapRef.current) return;

@@ -3,51 +3,28 @@
     background: #fff;
     border-radius: 16px;
     padding: 28px 24px 20px;
-    .cprices_header_row {
-      align-items: flex-start;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      justify-content: space-between;
-      margin-bottom: 12px;
-    }
-    /* Filter tabs */
-    .cprices_filters {
-      align-self: flex-start;
-      background: var(--un-color-grey-lighest);
-      border-radius: 8px;
-      display: flex;
-      flex-shrink: 0;
-      gap: 2px;
-      padding: 3px;
-    }
-    .cprices_filter_btn {
-      background: transparent;
-      border-radius: 6px;
-      border: none;
-      color: var(--un-color-grey-dark);
-      cursor: pointer;
-      font-size: var(--un-font-size-xxs);
-      font-weight: var(--un-font-weight-bold);
-      padding: 5px 12px;
-      transition:
-        background 0.15s,
-        color 0.15s;
-      white-space: nowrap;
-      &.active {
-        background: #fff;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-        color: var(--un-color-blue-darkest);
-      }
-      &:hover:not(.active) {
-        background: rgba(255, 255, 255, 0.6);
-        color: var(--un-color-blue-darkest);
-      }
-    }
-    /* Insight override for full-width container */
+    /* Insight */
     .cprices_insight {
       margin-bottom: 20px;
-      max-width: 720px;
+    }
+    /* Interactive legend buttons */
+    .cprices_legend_btn {
+      background: none;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      padding: 2px 4px;
+      transition: opacity 0.15s;
+      &:hover {
+        background: var(--un-color-grey-lighest);
+      }
+    }
+    .cprices_legend_btn--active {
+      color: var(--un-color-blue-darkest);
+      font-weight: var(--un-font-weight-bold);
+    }
+    .cprices_legend_btn--faded {
+      opacity: 0.4;
     }
     /* Chart */
     .cprices_loading {
@@ -194,9 +171,6 @@
       }
     }
     @media (max-width: 700px) {
-      .cprices_header_row {
-        flex-direction: column;
-      }
       .cdde_header_title--lg {
         font-size: var(--un-font-size-xl);
       }

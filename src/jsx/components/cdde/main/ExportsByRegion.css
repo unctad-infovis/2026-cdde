@@ -53,7 +53,7 @@
     }
     .exc_cell_name {
       fill: #fff;
-      font-size: var(--un-font-size-xxxs);
+      font-size: var(--un-font-size-xxs);
       font-weight: var(--un-font-weight-bold);
       pointer-events: none;
     }
