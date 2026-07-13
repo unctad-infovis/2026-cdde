@@ -46,6 +46,18 @@ Content is authored in MDX and rendered as a standalone React application embedd
 </div>
 ```
 
+### Header
+
+A standalone hero header with the publication title and navigation bar, intended for embedding at the top of a Drupal page that hosts the main publication.
+
+```html
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-cdde/js/2026-cdde-header.min.js?v=1"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-cdde/css/2026-cdde.min.css?v=1">
+<div class="app-root-2026-cdde" id="app-root-2026-cdde">
+  Loading...
+</div>
+```
+
 Update the `?v=` query parameter to match the current build version to bust the cache.
 
 ## Rights of usage
