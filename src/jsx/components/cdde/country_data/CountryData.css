@@ -112,7 +112,7 @@
     font-size: var(--un-font-size-xxs);
     font-weight: var(--un-font-weight-bold);
     gap: 7px;
-    padding: 6px 12px;
+    padding: 12px 20px;
     transition:
       background 0.12s,
       color 0.12s,

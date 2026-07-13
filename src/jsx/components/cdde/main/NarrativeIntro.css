@@ -17,16 +17,18 @@
         position: absolute;
       }
     }
-    .ni_hero--split {
-      align-items: start;
-      display: grid;
-      gap: 0;
-      grid-template-columns: 1fr 1fr;
-    }
     .ni_hero_content {
       max-width: 560px;
       position: relative;
       z-index: 1;
+    }
+    .ni_hero_inner {
+      align-items: start;
+      display: grid;
+      gap: 0;
+      grid-template-columns: 1fr 1fr;
+      margin: auto auto;
+      max-width: 1350px;
     }
     .ni_def {
       border-left: 1px solid rgba(255, 255, 255, 0.12);

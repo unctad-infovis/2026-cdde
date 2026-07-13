@@ -151,24 +151,21 @@ export default function ExportsByRegion({ insight, note, source, subtitle: overv
     setTooltip(null);
   }
 
-  const title = drill ? `${drill.subregionName} – Member States` : overviewTitle;
-  const subtitle = drill ? `${drill.regionName} › ${drill.subregionName} (${drillView?.countryCount ?? '–'} countries)` : overviewSubtitle;
+  const title = drill ? `${drill.subregionName}` : overviewTitle;
+  const subtitle = drill ? `${drill.regionName} › ${drill.subregionName} (${drillView?.countryCount ?? '–'} economies)` : overviewSubtitle;
 
   return (
     <div className="exc_container cdde_reveal width_wide" ref={visRef}>
       <div className="exc_container_inner">
         <ChartHeader title={title} subtitle={subtitle} large />
-
         {!drill && insight && <p className="cdde_insight">{insight}</p>}
-
         <div className="exc_chart_wrap" ref={wrapRef}>
           {drill && (
             <button type="button" className="exc_back_btn" onClick={() => setDrill(null)}>
               ◄ Back to overview
             </button>
           )}
-
-          <svg viewBox={`0 0 ${svgW} ${H}`} className="exc_svg" aria-label={drill ? `Treemap of ${drill.subregionName} countries` : 'Treemap of commodity exports by sub-region'} onMouseLeave={handleMouseLeave}>
+          <svg viewBox={`0 0 ${svgW} ${H}`} className="exc_svg" aria-label={drill ? `Treemap of ${drill.subregionName} economies` : 'Treemap of commodity exports by sub-region'} onMouseLeave={handleMouseLeave}>
             {drill && drillView && (
               <defs>
                 {drillView.nodes.map((node, i) => (
@@ -210,7 +207,6 @@ export default function ExportsByRegion({ insight, note, source, subtitle: overv
                 ))}
               </>
             )}
-
             {drill &&
               drillView?.nodes.map((node, i) => {
                 const w = node.x1 - node.x0;
@@ -239,7 +235,6 @@ export default function ExportsByRegion({ insight, note, source, subtitle: overv
                 );
               })}
           </svg>
-
           {tooltip && (
             <ChartTooltip left={tooltip.left} top={tooltip.top} flip={!!(wrapRef.current && tooltip.left > wrapRef.current.clientWidth * 0.6)}>
               <div className="exc_tt_name">{tooltip.data.name}</div>
@@ -248,9 +243,7 @@ export default function ExportsByRegion({ insight, note, source, subtitle: overv
             </ChartTooltip>
           )}
         </div>
-
         {drill && <p className="exc_drill_note">Tile size uses a minimum share of the sub-region total so every member economy is visible; dollar amounts are actual commodity exports (2022–2024 average $M). * indicates no reported value in the source data for this period.</p>}
-
         <ChartMeta source={source} note={note} sourceKey="Commodity Exports, 2022–2024" />
       </div>
     </div>
