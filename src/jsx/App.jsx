@@ -10,16 +10,18 @@ import DependenceMap from './components/cdde/main/DependenceMap.jsx';
 import DependenceMovers from './components/cdde/main/DependenceMovers.jsx';
 import ExportsByRegion from './components/cdde/main/ExportsByRegion.jsx';
 import Header from './components/cdde/main/Header.jsx';
-import KnowMore from './components/cdde/main/KnowMore.jsx';
+import KnowMore from './components/cdde/know_more/KnowMore.jsx';
 import NarrativeIntro from './components/cdde/main/NarrativeIntro.jsx';
 import SectionDivider from './components/cdde/main/SectionDivider.jsx';
 import StatusChangers from './components/cdde/main/StatusChangers.jsx';
 import Nav from './components/cdde/shared/Nav.jsx';
+import BackToTop from './components/general/BackToTop.jsx';
 
 import './../styles/styles.css';
 import './components/cdde/shared/cdde-patterns.css';
 
 const components = {
+  BackToTop,
   BigPicture: NarrativeIntro,
   CommodityGroups,
   CommodityPrices,
@@ -32,11 +34,12 @@ const components = {
   Header,
   KnowMore,
   Nav,
-  ThresholdCrossers: StatusChangers,
+  ThresholdCrossers: StatusChangers
 };
 
 const App = ({ meta }) => {
   const appRef = useRef(null);
+  window.appRef = appRef;
 
   useEffect(() => {
     if (!appRef.current) return;
@@ -65,7 +68,10 @@ const App = ({ meta }) => {
     attach();
     // Re-run after data-driven components have finished their async renders
     const t = setTimeout(attach, 600);
-    return () => { observer.disconnect(); clearTimeout(t); };
+    return () => {
+      observer.disconnect();
+      clearTimeout(t);
+    };
   }, []);
 
   return (

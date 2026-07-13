@@ -1,4 +1,5 @@
 import basePath from './../../../helpers/BasePath';
+import ButtonShare from './../../general/ButtonShare.jsx';
 import Nav from './../shared/Nav.jsx';
 import RollingNumber from './../shared/RollingNumber.jsx';
 import './Header.css';
@@ -28,6 +29,7 @@ export default function Header({ nav, stats, subtitle, title, title_highlight })
 
       <div className="header_content">
         <h1 className="header_title">{renderTitle()}</h1>
+        <ButtonShare url={typeof window !== 'undefined' ? window.location.href : ''} defaultOpen position="static" iconBg="rgba(0,0,0,0.45)" iconHoverBg="rgba(251, 175, 23, 0.75)" iconColor="#fff" iconHoverColor="#000" size={36} />
         <p className="header_subtitle">{subtitle}</p>
 
         {stats?.length > 0 && (

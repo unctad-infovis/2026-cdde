@@ -21,12 +21,12 @@
       box-shadow: 0 0 10px #000;
       color: #000;
       cursor: pointer;
-      font-size: var(--un-font-size-xxxs);
+      font-size: var(--un-font-size-xxxxs);
       font-weight: var(--un-font-weight-bold);
-      height: 50px;
+      height: 45px;
       line-height: var(--un-line-height-normal);
       position: relative;
-      width: 50px;
+      width: 45px;
       &:hover {
         background-color: var(--un-color-blue-dark);
         color: #fff;

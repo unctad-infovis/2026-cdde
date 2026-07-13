@@ -11,7 +11,7 @@
   description2="This snapshot draws on UNCTADstat trade statistics for the 2022–2024 reference period, the latest three-year window for which consolidated international trade data is available. Each indicator is computed for all 195 UNCTAD member States and benchmarked against the 60 per cent commodity-dependence threshold."
   def_title={'What does "commodity-dependent" mean?'}
   def_badge="60%"
-  def_attribution="Threshold determined econometrically by Nkurunziza, Tsowou and Cazzaniga (2017) using a quantile regression of human development on commodity export shares. The platform classifies 195 UNCTAD member States against this benchmark every year."
+  def_attribution="Threshold examined and supported by econometric analysis in Nkurunziza, Tsowou and Cazzaniga (2017) using a quantile regression of human development on commodity export shares. The platform classifies 195 UNCTAD member States against this benchmark every year."
   cards={[
     {
       description: "of UNCTAD member States are commodity-dependent",
@@ -36,6 +36,7 @@
   ]}
 />
 <div style={{ backgroundColor: '#e3edf6', padding: '20px 0 40px 0'}}>
+  <BackToTop selector=".header_container" />
   <DependenceMap
     title="Who depends on commodities – and what kind?"
     subtitle="Commodity export dependence by country, 2022–2024"
@@ -56,13 +57,15 @@
         title="Severity of commodity dependence"
         subtitle="By development level, per cent, 2022–2024"
         insight={<><strong className="cdde_insight_bold">Developing economies dominate</strong> the ranks of countries exceeding the 80 per cent commodity-dependence threshold, while developed nations remain the exception.</>}
-        source={<>UN Trade and Development (UNCTAD) secretariat calculations, based on <a href="https://unctadstat.unctad.org/datacentre/" target="_blank" rel="noopener">UNCTADstat</a> (2025). UN Trade and Development (UNCTAD) development groupings. LDC: least developed countries. LLDC: landlocked developing countries. SIDS: small island developing States. For further information on the composition of the country groups, please refer to the <a href="./know-more.html">Know more</a> section provided within this application.</>}
+        source={<>UN Trade and Development (UNCTAD) secretariat calculations, based on <a href="https://unctadstat.unctad.org/datacentre/" target="_blank" rel="noopener">UNCTADstat</a> (2025).</>}
+        note={<>UN Trade and Development (UNCTAD) development groupings. LDC: least developed countries. LLDC: landlocked developing countries. SIDS: small island developing States. Groups are not all mutually exclusive. For further information on the composition of the country groups, please refer to the <a href="./know-more.html">Know more</a> section provided within this application.</>}
       />
       <DependenceByLevel
-        title="Average dependence by development level"
+        title="Average dependence by development group"
         subtitle="Mean commodity export share across economies, 2022–2024"
         insight={<>Across all country groups, the highest levels of commodity dependence are concentrated in the <strong className="cdde_insight_bold">most vulnerable economies</strong>.</>}
         source="UN Trade and Development (UNCTAD) secretariat calculations, based on UNCTADstat (2025)."
+        note={<>UN Trade and Development (UNCTAD) development groupings. LDC: least developed countries. LLDC: landlocked developing countries. SIDS: small island developing States. Groups are not all mutually exclusive. For further information on the composition of the country groups, please refer to the <a href="./know-more.html">Know more</a> section provided within this application.</>}
       />
     </div>
   </div>

@@ -72,7 +72,7 @@
     .ni_def_badge {
       background: var(--un-color-yellow);
       border-radius: 5px;
-      color: var(--un-color-blue-darkest);
+      color: #000;
       display: inline-block;
       font-size: var(--un-font-size-xl);
       font-weight: var(--un-font-weight-boldest);

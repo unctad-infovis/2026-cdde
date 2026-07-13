@@ -43,6 +43,12 @@
       padding: 0;
       text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
     }
+    .share_wrapper {
+      margin: 0 0 10px 0;
+      .share_label {
+        color: #fff;
+      }
+    }
     .header_title_highlight {
       color: var(--un-color-yellow);
     }

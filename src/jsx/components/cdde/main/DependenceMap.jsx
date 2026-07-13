@@ -283,7 +283,7 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
   }
 
   return (
-    <section className="cmap_section width_wide" ref={visRef}>
+    <section className="cmap_section width_wide cdde_reveal" ref={visRef}>
       <div className="cmap_inner">
         <ChartHeader title={title} subtitle={subtitle} large />
 
