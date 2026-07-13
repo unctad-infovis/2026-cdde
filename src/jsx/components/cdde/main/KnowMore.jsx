@@ -23,7 +23,7 @@ function SourcesAccordion({ items }) {
       {items.map((item, i) => {
         const isOpen = open === i;
         return (
-          <div key={item} className={`km_acc_item${isOpen ? ' km_acc_item--open' : ''}`}>
+          <div key={item.title} className={`km_acc_item${isOpen ? ' km_acc_item--open' : ''}`}>
             <button type="button" className="km_acc_trigger" onClick={() => setOpen(isOpen ? -1 : i)} aria-expanded={isOpen}>
               <span className="km_acc_title">{item.title}</span>
               <svg className="km_acc_chevron" viewBox="0 0 12 8" fill="none" aria-hidden="true">
@@ -97,7 +97,7 @@ function GroupingsSection({ data }) {
             {regions.map(region => {
               const subgroups = data.geographic.filter(g => g.region === region);
               return subgroups.map((sg, si) => (
-                <tr key={`${region}-${s}`} className="km_tr">
+                <tr key={`${region}-${sg.subregion}`} className="km_tr">
                   {si === 0 && (
                     <td className="km_td km_td--region" rowSpan={subgroups.length}>
                       {region}
@@ -187,7 +187,9 @@ export default function KnowMore() {
       obs.observe(el);
       return obs;
     });
-    return () => { for (const o of observers) o?.disconnect(); };
+    return () => {
+      for (const o of observers) o?.disconnect();
+    };
   }, []);
 
   return (
