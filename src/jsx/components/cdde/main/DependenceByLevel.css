@@ -1,13 +1,18 @@
 #app-root-2026-cdde .app {
   .dbl_container {
     background: #fff;
-    border-radius: 16px;
+    border-radius: 20px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     gap: 0;
     height: 100%;
     padding: 28px 24px 20px;
+    width: 100%;
+    @media all and (max-width: 700px) {
+      margin: auto auto;
+      max-width: 600px;
+    }
     .cdde_insight {
       margin-bottom: 24px;
     }
@@ -17,7 +22,7 @@
     .dbl_loading {
       animation: cdde_pulse 1.4s ease infinite;
       background: var(--un-color-blue-lightest);
-      border-radius: 16px;
+      border-radius: 20px;
       height: 400px;
     }
     .dbl_chart {

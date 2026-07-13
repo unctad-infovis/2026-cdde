@@ -10,7 +10,7 @@
   .cv_wrap {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 28px;
     /* Header cards */
     .cv_cards {
       display: grid;
@@ -18,7 +18,7 @@
       grid-template-columns: repeat(3, 1fr);
     }
     .cv_card {
-      border-radius: 16px;
+      border-radius: 20px;
       display: flex;
       flex-direction: column;
       min-height: 190px;
@@ -118,7 +118,7 @@
     /* Shared panel style */
     .cv_panel {
       background: #fff;
-      border-radius: 16px;
+      border-radius: 20px;
       padding: 24px;
     }
     .cv_panel_title {

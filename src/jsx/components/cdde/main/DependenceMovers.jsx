@@ -43,7 +43,7 @@ export default function DependenceMovers({ insight, note, source, subtitle, titl
 
       <div className="dm_chart_wrap" ref={wrapRef}>{data ? <DumbbellChart data={data} xMin={0} xMax={100} nameW={144} badgeW={56} svgW={svgW} referencePct={60} referenceLabel="60% threshold" xTickValues={[0, 50, 100]} animated={animated} /> : <div className="dm_loading" />}</div>
 
-      <ChartMeta source={source} note={note} />
+      <ChartMeta source={source} note={note} sourceKey="Commodity Dependence, 2022–2024" />
     </div>
   );
 }

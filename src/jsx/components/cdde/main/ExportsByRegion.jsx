@@ -155,102 +155,104 @@ export default function ExportsByRegion({ insight, note, source, subtitle: overv
   const subtitle = drill ? `${drill.regionName} › ${drill.subregionName} (${drillView?.countryCount ?? '–'} countries)` : overviewSubtitle;
 
   return (
-    <div className="exc_container cdde_reveal" ref={visRef}>
-      <ChartHeader title={title} subtitle={subtitle} large />
+    <div className="exc_container cdde_reveal width_wide" ref={visRef}>
+      <div className="exc_container_inner">
+        <ChartHeader title={title} subtitle={subtitle} large />
 
-      {!drill && insight && <p className="cdde_insight">{insight}</p>}
+        {!drill && insight && <p className="cdde_insight">{insight}</p>}
 
-      <div className="exc_chart_wrap" ref={wrapRef}>
-        {drill && (
-          <button type="button" className="exc_back_btn" onClick={() => setDrill(null)}>
-            ◄ Back to overview
-          </button>
-        )}
-
-        <svg viewBox={`0 0 ${svgW} ${H}`} className="exc_svg" aria-label={drill ? `Treemap of ${drill.subregionName} countries` : 'Treemap of commodity exports by sub-region'} onMouseLeave={handleMouseLeave}>
-          {drill && drillView && (
-            <defs>
-              {drillView.nodes.map((node, i) => (
-                <clipPath key={node} id={`exc_cp_${i}`}>
-                  <rect x={node.x0 + 2} y={node.y0 + 2} width={node.x1 - node.x0 - 4} height={node.y1 - node.y0 - 4} />
-                </clipPath>
-              ))}
-            </defs>
+        <div className="exc_chart_wrap" ref={wrapRef}>
+          {drill && (
+            <button type="button" className="exc_back_btn" onClick={() => setDrill(null)}>
+              ◄ Back to overview
+            </button>
           )}
-          {!drill && (
-            <>
-              {overview.leaves.map((node, i) => {
-                const colorKey = node.parent?.data?.color_key;
-                const fill = COLOR_MAP[colorKey] || '#ccc';
+
+          <svg viewBox={`0 0 ${svgW} ${H}`} className="exc_svg" aria-label={drill ? `Treemap of ${drill.subregionName} countries` : 'Treemap of commodity exports by sub-region'} onMouseLeave={handleMouseLeave}>
+            {drill && drillView && (
+              <defs>
+                {drillView.nodes.map((node, i) => (
+                  <clipPath key={node} id={`exc_cp_${i}`}>
+                    <rect x={node.x0 + 2} y={node.y0 + 2} width={node.x1 - node.x0 - 4} height={node.y1 - node.y0 - 4} />
+                  </clipPath>
+                ))}
+              </defs>
+            )}
+            {!drill && (
+              <>
+                {overview.leaves.map((node, i) => {
+                  const colorKey = node.parent?.data?.color_key;
+                  const fill = COLOR_MAP[colorKey] || '#ccc';
+                  const w = node.x1 - node.x0;
+                  const h = node.y1 - node.y0;
+                  const textStyle = { opacity: animated ? 1 : 0, transition: 'opacity 0.5s ease', transitionDelay: `${500 + Math.min(i * 20, 300)}ms` };
+                  return (
+                    // biome-ignore lint/a11y/noStaticElementInteractions: SVG treemap cell interaction
+                    <g key={node.data.name} onClick={() => handleCellClick(node)} onMouseMove={e => handleMouseMove(e, { name: node.data.name, value: node.data.value, region: node.parent?.data?.name })} className="exc_cell">
+                      <rect x={node.x0} y={node.y0} width={w} height={h} fill={fill} />
+                      {w > 90 && h > 46 && (
+                        <text x={node.x0 + w / 2} y={node.y0 + h / 2 - (w > 60 && h > 26 ? 0 : 0)} textAnchor="middle" dominantBaseline="middle" className="exc_cell_name" style={textStyle}>
+                          {node.data.name}
+                        </text>
+                      )}
+                      {w > 60 && h > 26 && (
+                        <text x={node.x0 + w / 2} y={node.y0 + h / 2 + (w > 90 && h > 46 ? 15 : 0)} textAnchor="middle" dominantBaseline="middle" className="exc_cell_value" style={textStyle}>
+                          {fmt(node.data.displayValue ?? node.data.value)}
+                        </text>
+                      )}
+                    </g>
+                  );
+                })}
+                {overview.regionNodes.map((rNode, j) => (
+                  <text key={rNode.data.name} x={rNode.x0 + 10} y={rNode.y0 + 27} className="exc_region_label" style={{ pointerEvents: 'none', opacity: animated ? 1 : 0, transition: 'opacity 0.5s ease', transitionDelay: `${500 + j * 60}ms` }}>
+                    {rNode.data.name}
+                  </text>
+                ))}
+              </>
+            )}
+
+            {drill &&
+              drillView?.nodes.map((node, i) => {
                 const w = node.x1 - node.x0;
                 const h = node.y1 - node.y0;
-                const textStyle = { opacity: animated ? 1 : 0, transition: 'opacity 0.5s ease', transitionDelay: `${500 + Math.min(i * 20, 300)}ms` };
+                const hasValue = node.data.value > 0;
+                const fill = hasValue ? COLOR_MAP[drillView.colorKey] : COLOR_DARK[drillView.colorKey];
+                const showName = w > 48 && h > 22;
+                const showValue = w > 52 && h > 38;
+                const clip = `url(#exc_cp_${i})`;
                 return (
-                  // biome-ignore lint/a11y/noStaticElementInteractions: SVG treemap cell interaction
-                  <g key={node.data.name} onClick={() => handleCellClick(node)} onMouseMove={e => handleMouseMove(e, { name: node.data.name, value: node.data.value, region: node.parent?.data?.name })} className="exc_cell">
+                  // biome-ignore lint/a11y/noStaticElementInteractions: SVG treemap cell hover target
+                  <g key={node.data.name} className="exc_cell exc_cell--country" onMouseMove={e => handleMouseMove(e, { name: node.data.name, value: hasValue ? node.data.value : null, region: drill.subregionName })}>
                     <rect x={node.x0} y={node.y0} width={w} height={h} fill={fill} />
-                    {w > 90 && h > 46 && (
-                      <text x={node.x0 + w / 2} y={node.y0 + h / 2 - (w > 60 && h > 26 ? 0 : 0)} textAnchor="middle" dominantBaseline="middle" className="exc_cell_name" style={textStyle}>
+                    {showName && (
+                      <text x={node.x0 + w / 2} y={node.y0 + h / 2 - (showValue ? 9 : 0)} textAnchor="middle" dominantBaseline="middle" className="exc_cell_name" clipPath={clip}>
                         {node.data.name}
+                        {!hasValue ? '*' : ''}
                       </text>
                     )}
-                    {w > 60 && h > 26 && (
-                      <text x={node.x0 + w / 2} y={node.y0 + h / 2 + (w > 90 && h > 46 ? 15 : 0)} textAnchor="middle" dominantBaseline="middle" className="exc_cell_value" style={textStyle}>
-                        {fmt(node.data.displayValue ?? node.data.value)}
+                    {showValue && (
+                      <text x={node.x0 + w / 2} y={node.y0 + h / 2 + (showName ? 11 : 0)} textAnchor="middle" dominantBaseline="middle" className="exc_cell_value" clipPath={clip}>
+                        {fmt(node.data.value)}
                       </text>
                     )}
                   </g>
                 );
               })}
-              {overview.regionNodes.map((rNode, j) => (
-                <text key={rNode.data.name} x={rNode.x0 + 10} y={rNode.y0 + 27} className="exc_region_label" style={{ pointerEvents: 'none', opacity: animated ? 1 : 0, transition: 'opacity 0.5s ease', transitionDelay: `${500 + j * 60}ms` }}>
-                  {rNode.data.name}
-                </text>
-              ))}
-            </>
+          </svg>
+
+          {tooltip && (
+            <ChartTooltip left={tooltip.left} top={tooltip.top} flip={!!(wrapRef.current && tooltip.left > wrapRef.current.clientWidth * 0.6)}>
+              <div className="exc_tt_name">{tooltip.data.name}</div>
+              <div className="exc_tt_region">{tooltip.data.region}</div>
+              <div className="exc_tt_val">{tooltip.data.value != null ? fmt(tooltip.data.value) : 'No data'}</div>
+            </ChartTooltip>
           )}
+        </div>
 
-          {drill &&
-            drillView?.nodes.map((node, i) => {
-              const w = node.x1 - node.x0;
-              const h = node.y1 - node.y0;
-              const hasValue = node.data.value > 0;
-              const fill = hasValue ? COLOR_MAP[drillView.colorKey] : COLOR_DARK[drillView.colorKey];
-              const showName = w > 48 && h > 22;
-              const showValue = w > 52 && h > 38;
-              const clip = `url(#exc_cp_${i})`;
-              return (
-                // biome-ignore lint/a11y/noStaticElementInteractions: SVG treemap cell hover target
-                <g key={node.data.name} className="exc_cell exc_cell--country" onMouseMove={e => handleMouseMove(e, { name: node.data.name, value: hasValue ? node.data.value : null, region: drill.subregionName })}>
-                  <rect x={node.x0} y={node.y0} width={w} height={h} fill={fill} />
-                  {showName && (
-                    <text x={node.x0 + w / 2} y={node.y0 + h / 2 - (showValue ? 9 : 0)} textAnchor="middle" dominantBaseline="middle" className="exc_cell_name" clipPath={clip}>
-                      {node.data.name}
-                      {!hasValue ? '*' : ''}
-                    </text>
-                  )}
-                  {showValue && (
-                    <text x={node.x0 + w / 2} y={node.y0 + h / 2 + (showName ? 11 : 0)} textAnchor="middle" dominantBaseline="middle" className="exc_cell_value" clipPath={clip}>
-                      {fmt(node.data.value)}
-                    </text>
-                  )}
-                </g>
-              );
-            })}
-        </svg>
+        {drill && <p className="exc_drill_note">Tile size uses a minimum share of the sub-region total so every member economy is visible; dollar amounts are actual commodity exports (2022–2024 average $M). * indicates no reported value in the source data for this period.</p>}
 
-        {tooltip && (
-          <ChartTooltip left={tooltip.left} top={tooltip.top} flip={!!(wrapRef.current && tooltip.left > wrapRef.current.clientWidth * 0.6)}>
-            <div className="exc_tt_name">{tooltip.data.name}</div>
-            <div className="exc_tt_region">{tooltip.data.region}</div>
-            <div className="exc_tt_val">{tooltip.data.value != null ? fmt(tooltip.data.value) : 'No data'}</div>
-          </ChartTooltip>
-        )}
+        <ChartMeta source={source} note={note} sourceKey="Commodity Exports, 2022–2024" />
       </div>
-
-      {drill && <p className="exc_drill_note">Tile size uses a minimum share of the sub-region total so every member economy is visible; dollar amounts are actual commodity exports (2022–2024 average $M). * indicates no reported value in the source data for this period.</p>}
-
-      <ChartMeta source={source} note={note} />
     </div>
   );
 }

@@ -35,76 +35,75 @@
     }
   ]}
 />
-<DependenceMap
-  title="Who depends on commodities – and what kind?"
-  subtitle="Commodity export dependence by country, 2022–2024"
-  insight={<><strong className="cdde_insight_bold">Commodity dependence is the norm across the developing world – but the type differs sharply</strong>, with energy states clustering in the Gulf and Central Asia, mining economies ringing sub-Saharan Africa, and agricultural dependence spanning the broadest geography of all.</>}
-  source="UN Trade and Development (UNCTAD), based on UNCTADStat."
-  note={<>Small island and coastal states with a land area too small to display as polygons at this scale are represented by dots. Their position reflects the country's geographic location; dot size does not indicate area or population. <a href="https://unctad.org/map-disclaimer" target="_blank" rel="noopener">Map disclaimer</a>.</>}
-/>
-<ExportsByRegion
-  title="Where commodity exports concentrate"
-  subtitle="Commodity exports by sub-region, millions of dollars, 2022–2024 average"
-  insight={<>Global commodity exports are heavily concentrated in a few regions, with <strong className="cdde_insight_bold">Asia and Europe dominating the landscape</strong>.</>}
-  source="UN Trade and Development (UNCTAD) secretariat calculations, based on UNCTADstat (2025)."
-  note="Not all labels are displayed due to space constraints. Hover over or tap any area to reveal the full name and value."
-/>
-<div className="width_wide">
-  <div className="two_column">
-    <DependenceByGroup
-      title="Severity of commodity dependence"
-      subtitle="By development level, per cent, 2022–2024"
-      insight={<><strong className="cdde_insight_bold">Developing economies dominate</strong> the ranks of countries exceeding the 80 per cent commodity-dependence threshold, while developed nations remain the exception.</>}
-      source="UN Trade and Development (UNCTAD) secretariat calculations, based on UNCTADstat (2025)."
-    />
-    <DependenceByLevel
-      title="Average dependence by development level"
-      subtitle="Mean commodity export share across economies, 2022–2024"
-      insight={<>Across all country groups, the highest levels of commodity dependence are concentrated in the <strong className="cdde_insight_bold">most vulnerable economies</strong>.</>}
-      source="UN Trade and Development (UNCTAD) secretariat calculations, based on UNCTADstat (2025)."
-    />
-  </div>
-  <p className="cdde_group_note">UN Trade and Development (UNCTAD) development groupings. LDC: least developed countries. LLDC: landlocked developing countries. SIDS: small island developing States. For further information on the composition of the country groups, please refer to the <a href="./know-more.html">Know more</a> section provided within this application.</p>
-</div>
-<DecadeShift
-  eyebrow="Key shifts at a glance"
-  title="What changed between 2012/14 and 2022/24"
->
-
-A decade of trade data tells a moving story. Some economies have **climbed above the 60 per cent threshold** and joined the ranks of commodity-dependent countries; others have **diversified their way out**. Behind these movements lie major price cycles, geopolitical shocks and structural transformations.
-
-The next three views compare the 2012–2014 reference period with 2022–2024: which countries crossed the threshold in either direction, where dependence rose or eased the most, and how global commodity prices behaved over the entire 1995–2025 window.
-
-</DecadeShift>
-<div className="width_wide" style={{ padding: '40px 24px 0' }}>
-  <div className="two_column" style={{ alignItems: 'stretch' }}>
-    <ThresholdCrossers
-      title="Countries that changed commodity dependence status"
-      subtitle="Crossed the 60 per cent threshold, 2012/14 vs 2022/24"
-      insight={<><strong className="cdde_insight_bold">13 countries</strong> have shifted their commodity-dependence status – some, like <strong className="cdde_insight_bold">Panama or Ukraine</strong>, moved above the 60 per cent threshold; others, such as <strong className="cdde_insight_bold">Indonesia or Myanmar</strong>, fell below it.</>}
-      source="UN Trade and Development (UNCTAD) secretariat calculations, based on UNCTADstat (2025)."
-    />
-    <DependenceMovers
-      title="Where did the level of commodity dependence increase or decrease?"
-      subtitle="Top 10 movers, 2012/14 vs 2022/24"
-      insight={<>Global shifts reveal a split picture – with rises in countries such as <strong className="cdde_insight_bold">Niger or Argentina</strong>, while major exporters like <strong className="cdde_insight_bold">Maldives or Brunei Darussalam</strong> have moved in the opposite direction.</>}
-      source="UN Trade and Development (UNCTAD) secretariat calculations, based on UNCTADstat (2025)."
-    />
-  </div>
-</div>
-<DecadeShift
-  eyebrow="Prices in context"
-  title="A decade of price volatility"
->
-
-Behind the shifts in commodity dependence lies a turbulent price cycle. The 2008 financial crisis, the 2014 oil collapse, the COVID-19 shock and Russia's 2022 invasion of Ukraine each sent commodity prices sharply higher or lower – reshaping which countries earn enough from commodities to cross the dependence threshold.
-
-</DecadeShift>
-<div className="width_wide" style={{ padding: '40px 24px 0' }}>
-  <CommodityPrices
-    title="Commodity Price Indices"
-    subtitle="Monthly, nominal dollars, 2010 = 100, 1995–2026"
-    insight={<>Commodity prices have remained <strong className="cdde_insight_bold">highly volatile</strong> in recent years – the post-2022 correction followed one of the sharpest surges in decades, a reminder of how quickly external shocks can reshape commodity export dependence.</>}
-    source="UN Trade and Development (UNCTAD) based on World Bank"
+<div style={{ backgroundColor: '#e3edf6', padding: '20px 0 40px 0'}}>
+  <DependenceMap
+    title="Who depends on commodities – and what kind?"
+    subtitle="Commodity export dependence by country, 2022–2024"
+    insight={<><strong className="cdde_insight_bold">Commodity dependence is the norm across the developing world – but the type differs sharply</strong>, with energy states clustering in the Gulf and Central Asia, mining economies ringing sub-Saharan Africa, and agricultural dependence spanning the broadest geography of all.</>}
+    source="UN Trade and Development (UNCTAD), based on UNCTADstat."
+    note={<>Small island and coastal states with a land area too small to display as polygons at this scale are represented by dots. Their position reflects the country's geographic location; dot size does not indicate area or population. <a href="https://unctad.org/map-disclaimer" target="_blank" rel="noopener">Map disclaimer</a>.</>}
   />
+  <ExportsByRegion
+    title="Where commodity exports concentrate"
+    subtitle="Commodity exports by sub-region, millions of dollars, 2022–2024 average"
+    insight={<>Global commodity exports are heavily concentrated in a few regions, with <strong className="cdde_insight_bold">Asia and Europe dominating the landscape</strong>.</>}
+    source="UN Trade and Development (UNCTAD) secretariat calculations, based on UNCTADstat (2025)."
+    note="Not all labels are displayed due to space constraints. Hover over or tap any area to reveal the full name and value."
+  />
+  <div>
+    <div className="two_column width_wide">
+      <DependenceByGroup
+        title="Severity of commodity dependence"
+        subtitle="By development level, per cent, 2022–2024"
+        insight={<><strong className="cdde_insight_bold">Developing economies dominate</strong> the ranks of countries exceeding the 80 per cent commodity-dependence threshold, while developed nations remain the exception.</>}
+        source={<>UN Trade and Development (UNCTAD) secretariat calculations, based on <a href="https://unctadstat.unctad.org/datacentre/" target="_blank" rel="noopener">UNCTADstat</a> (2025). UN Trade and Development (UNCTAD) development groupings. LDC: least developed countries. LLDC: landlocked developing countries. SIDS: small island developing States. For further information on the composition of the country groups, please refer to the <a href="./know-more.html">Know more</a> section provided within this application.</>}
+      />
+      <DependenceByLevel
+        title="Average dependence by development level"
+        subtitle="Mean commodity export share across economies, 2022–2024"
+        insight={<>Across all country groups, the highest levels of commodity dependence are concentrated in the <strong className="cdde_insight_bold">most vulnerable economies</strong>.</>}
+        source="UN Trade and Development (UNCTAD) secretariat calculations, based on UNCTADstat (2025)."
+      />
+    </div>
+  </div>
+  <DecadeShift
+    eyebrow="Key shifts at a glance"
+    title="What changed between 2012/14 and 2022/24"
+  >
+
+  A decade of trade data tells a moving story. Some economies have **climbed above the 60 per cent threshold** and joined the ranks of commodity-dependent countries; others have **diversified their way out**. Behind these movements lie major price cycles, geopolitical shocks and structural transformations.
+
+  The next three views compare the 2012–2014 reference period with 2022–2024: which countries crossed the threshold in either direction, where dependence rose or eased the most, and how global commodity prices behaved over the entire 1995–2025 window.
+
+  </DecadeShift>
+    <div className="two_column width_wide">
+      <ThresholdCrossers
+        title="Countries that changed commodity dependence status"
+        subtitle="Crossed the 60 per cent threshold, 2012/14 vs 2022/24"
+        insight={<><strong className="cdde_insight_bold">13 countries</strong> have shifted their commodity-dependence status – some, like <strong className="cdde_insight_bold">Panama or Ukraine</strong>, moved above the 60 per cent threshold; others, such as <strong className="cdde_insight_bold">Indonesia or Myanmar</strong>, fell below it.</>}
+        source="UN Trade and Development (UNCTAD) secretariat calculations, based on UNCTADstat (2025)."
+      />
+      <DependenceMovers
+        title="Where did the level of commodity dependence increase or decrease?"
+        subtitle="Top 10 movers, 2012/14 vs 2022/24"
+        insight={<>Global shifts reveal a split picture – with rises in countries such as <strong className="cdde_insight_bold">Niger or Argentina</strong>, while major exporters like <strong className="cdde_insight_bold">Maldives or Brunei Darussalam</strong> have moved in the opposite direction.</>}
+        source="UN Trade and Development (UNCTAD) secretariat calculations, based on UNCTADstat (2025)."
+      />
+    </div>
+  <DecadeShift
+    eyebrow="Prices in context"
+    title="A decade of price volatility"
+  >
+
+  Behind the shifts in commodity dependence lies a turbulent price cycle. The 2008 financial crisis, the 2014 oil collapse, the COVID-19 shock and Russia's 2022 invasion of Ukraine each sent commodity prices sharply higher or lower – reshaping which countries earn enough from commodities to cross the dependence threshold.
+
+  </DecadeShift>
+    <div className="width_wide">
+      <CommodityPrices
+        title="Commodity Price Indices"
+        subtitle="Monthly, nominal dollars, 2010 = 100, 1995–2026"
+        insight={<>Commodity prices have remained <strong className="cdde_insight_bold">highly volatile</strong> in recent years – the post-2022 correction followed one of the sharpest surges in decades, a reminder of how quickly external shocks can reshape commodity export dependence.</>}
+        source="UN Trade and Development (UNCTAD) based on World Bank"
+      />
+    </div>
 </div>

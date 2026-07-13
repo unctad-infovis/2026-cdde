@@ -314,7 +314,7 @@ export default function CommodityPrices({ insight, note, source, subtitle, title
         )}
       </div>
 
-      <ChartMeta source={source} note={note} />
+      <ChartMeta source={source} note={note} sourceKey="Commodity Price Indices" />
     </div>
   );
 }

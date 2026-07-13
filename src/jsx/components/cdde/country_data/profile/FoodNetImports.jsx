@@ -23,7 +23,7 @@ export default function FoodNetImports({ iso3, countryName, title, subtitle, sou
         {insight}
       </ChartHeader>
       <PeriodColumns val1={d?.food_early ?? null} val2={d?.food_recent ?? null} />
-      <ChartMeta source={source} note={note} />
+      <ChartMeta source={source} note={note} sourceKey="Net Food Imports" />
     </div>
   );
 }

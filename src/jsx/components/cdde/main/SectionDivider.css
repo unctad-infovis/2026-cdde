@@ -1,7 +1,7 @@
 #app-root-2026-cdde .app {
   .sd_section {
     background: var(--un-color-blue-lightest);
-    padding: 60px 24px;
+    padding: 50px 24px 10px 24px;
     @media (max-width: 600px) {
       padding: 60px 20px 20px 20px;
     }
@@ -9,7 +9,7 @@
   /* ── Light text area ── */
   .sd_light {
     margin: 0 auto 40px;
-    max-width: 1100px;
+    max-width: 1350px;
   }
   .sd_light_inner {
     max-width: 100%;
@@ -113,7 +113,7 @@
     background-image: var(--sd-bg);
     background-position: center 40%;
     background-size: cover;
-    border-radius: 16px;
+    border-radius: 20px;
     display: flex;
     margin: 0 auto;
     max-width: 1100px;

@@ -44,7 +44,7 @@ export default function Compare({ content = {} }) {
             dominant_group: r.dominant_group || null,
             agri_pct: r.agri_pct !== '' ? +r.agri_pct : null,
             energy_pct: r.energy_pct !== '' ? +r.energy_pct : null,
-            mining_pct: r.mining_pct !== '' ? +r.mining_pct : null,
+            mining_pct: r.mining_pct !== '' ? +r.mining_pct : null
           }));
         const sorted = [...rows].sort((a, b) => a.name.localeCompare(b.name));
         setAllCountries(sorted);

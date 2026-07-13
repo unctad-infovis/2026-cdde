@@ -55,7 +55,7 @@ export default function StatusChangers({ insight, note, source, subtitle, title 
 
       <div className="sc_chart_wrap" ref={wrapRef}>{data ? <DumbbellChart data={data} xMin={0} xMax={100} nameW={172} badgeW={56} svgW={svgW} referencePct={60} referenceLabel="60% threshold" xTickValues={[0, 50, 100]} animated={animated} /> : <div className="sc_loading" />}</div>
 
-      <ChartMeta source={source} note={note} />
+      <ChartMeta source={source} note={note} sourceKey="Commodity Dependence, 2022–2024" />
     </div>
   );
 }

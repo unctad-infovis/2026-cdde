@@ -68,7 +68,9 @@ export default function DependenceByGroup({ insight, note, source, subtitle, tit
   if (!data) {
     return (
       <div className="dbg_container cdde_reveal" ref={visRef}>
-        <div className="dbg_loading" />
+        <div className="dbg_container_inner">
+          <div className="dbg_loading" />
+        </div>
       </div>
     );
   }
@@ -177,7 +179,7 @@ export default function DependenceByGroup({ insight, note, source, subtitle, tit
         )}
       </div>
 
-      <ChartMeta source={source} note={note} />
+      <ChartMeta source={source} note={note} sourceKey="Dependence by Product Groups" />
     </div>
   );
 }

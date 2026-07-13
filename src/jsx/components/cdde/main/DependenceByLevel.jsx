@@ -87,7 +87,7 @@ export default function DependenceByLevel({ insight, note, source, subtitle, tit
         </div>
       </div>
 
-      <ChartMeta source={source} note={note} />
+      <ChartMeta source={source} note={note} sourceKey="Commodity Dependence, 2022–2024" />
     </div>
   );
 }

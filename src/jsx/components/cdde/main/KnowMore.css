@@ -313,10 +313,10 @@
   }
   /* ── SITC 3 classification ──────────────────────────────────── */
   .km_sitc {
+    align-items: stretch;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 16px;
-    align-items: start;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   }
   .km_sitc_section {
     background: #fff;
@@ -326,7 +326,6 @@
   }
   .km_sitc_section--other {
     border-color: var(--un-color-grey-light);
-    background: var(--un-color-grey-lighest);
     grid-column: 1 / -1;
   }
   .km_sitc_heading {

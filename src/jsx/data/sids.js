@@ -1,6 +1,7 @@
-// Small island states too small to render as map polygons — shown as dots.
+// Small island states and microstates too small to render as map polygons — shown as dots.
 // lon/lat = centroid for dot placement.
 export const SMALL_ISLAND_DOTS = [
+  { iso3: 'AND', lon: 1.6, lat: 42.5 },
   { iso3: 'ATG', lon: -61.8, lat: 17.1 },
   { iso3: 'BHR', lon: 50.6, lat: 26.0 },
   { iso3: 'BRB', lon: -59.5, lat: 13.2 },
@@ -13,6 +14,8 @@ export const SMALL_ISLAND_DOTS = [
   { iso3: 'KIR', lon: 173.0, lat: 1.4 },
   { iso3: 'KNA', lon: -62.7, lat: 17.3 },
   { iso3: 'LCA', lon: -60.9, lat: 13.9 },
+  { iso3: 'LIE', lon: 9.5, lat: 47.2 },
+  { iso3: 'MCO', lon: 7.4, lat: 43.7 },
   { iso3: 'MDV', lon: 73.2, lat: 3.2 },
   { iso3: 'MHL', lon: 171.2, lat: 7.1 },
   { iso3: 'MUS', lon: 57.6, lat: -20.3 },
@@ -23,6 +26,7 @@ export const SMALL_ISLAND_DOTS = [
   { iso3: 'SYC', lon: 55.5, lat: -4.6 },
   { iso3: 'TON', lon: -175.2, lat: -21.2 },
   { iso3: 'TUV', lon: 177.1, lat: -7.5 },
+  { iso3: 'VAT', lon: 12.45, lat: 41.9 },
   { iso3: 'VCT', lon: -61.2, lat: 13.3 },
   { iso3: 'VUT', lon: 167.0, lat: -15.4 },
   { iso3: 'WSM', lon: -172.1, lat: -13.7 }

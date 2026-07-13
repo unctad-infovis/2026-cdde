@@ -298,7 +298,7 @@ export default function EconomyBubbleChart({ countries, title, subtitle, descrip
         </div>
       </div>
 
-      <ChartMeta source={source} note={note} />
+      <ChartMeta source={source} note={note} sourceKey={['Commodity Dependence, 2022–2024', 'Constant GDP']} />
     </div>
   );
 }

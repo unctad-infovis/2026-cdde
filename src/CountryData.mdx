@@ -1,90 +1,92 @@
-<Compare
-  content={{
-    tools: [
-      { id: '01', label: 'Country profile', desc: 'Deep-dive on one economy' },
-      { id: '02', label: 'Compare countries', desc: 'Up to 3 economies side by side' },
-      { id: '03', label: 'Variable ranking', desc: 'League table for any indicator' }
-    ],
-    standings: {
-      title: 'Where every economy stands',
-      subtitle: 'Commodity export dependence, per country and per region, per cent',
-      description: 'Each dot is one UNCTAD member State, sized by population and positioned by its value on the chosen criterion. Vertical clustering shows where most economies concentrate.',
-      source: 'UN Trade and Development (UNCTAD) calculations, based on UNCTADstat (2025).',
-    },
-    compareView: {
-      dnaTitle: 'Commodity DNA – what each economy exports',
-      dnaSubtitle: 'Share of merchandise exports by product group, 2022–2024',
-      dnaDescription: 'Share of agricultural, energy, mining and other merchandise exports. A larger commodity segment means greater dependence on raw materials.'
-    },
-    profile: {
-      exportsHeading: 'Exports',
-      importsHeading: 'Imports',
-      dependenceOverTime: {
-        title: 'Commodity export dependence over time',
-        subtitle: 'Annual share, per cent, 1995–2024',
-        description: 'The trajectory reveals how commodity export reliance has shifted over three decades – shaped by price cycles, structural change and global shocks.',
+<div style={{ backgroundColor: '#e3edf6'}}>
+  <Compare
+    content={{
+      tools: [
+        { id: '01', label: 'Country profile', desc: 'Deep-dive on one economy' },
+        { id: '02', label: 'Compare countries', desc: 'Up to 3 economies side by side' },
+        { id: '03', label: 'Variable ranking', desc: 'League table for any indicator' }
+      ],
+      standings: {
+        title: 'Where every economy stands',
+        subtitle: 'Commodity export dependence, per country and per region, per cent',
+        description: 'Each dot is one UNCTAD member State, sized by population and positioned by its value on the chosen criterion. Vertical clustering shows where most economies concentrate.',
         source: 'UN Trade and Development (UNCTAD) calculations, based on UNCTADstat (2025).',
       },
-      exportsOverTime: {
-        title: 'Commodity exports over time',
-        subtitle: 'Billions of dollars, 1995–2024',
-        description: 'Total commodity export value places the economy\'s raw-material trade in a long-run context, capturing the combined effect of price and volume changes.',
-        source: 'UN Trade and Development (UNCTAD) calculations, based on UNCTADstat (2025).',
+      compareView: {
+        dnaTitle: 'Commodity DNA – what each economy exports',
+        dnaSubtitle: 'Share of merchandise exports by product group, 2022–2024',
+        dnaDescription: 'Share of agricultural, energy, mining and other merchandise exports. A larger commodity segment means greater dependence on raw materials.'
       },
-      leadingExports: {
-        title: 'Three leading commodity exports',
-        subtitle: 'Per cent of all allocated product exports, 2022–2024',
-        description: 'Concentration in a small number of commodities amplifies exposure to sector-specific price shocks and supply disruptions.',
-        source: 'UN Trade and Development (UNCTAD) calculations, based on UNCTADstat (2025), SITC Rev. 3 classification.',
-      },
-      topMarkets: {
-        title: 'Top destination markets',
-        subtitle: 'Percentage of total merchandise exports, 2022–2024',
-        description: 'Geographic concentration of export destinations adds a second layer of vulnerability alongside product concentration.',
-        source: 'UN Trade and Development (UNCTAD) calculations, based on UNCTADstat (2025), bilateral trade flows.',
-      },
-      importsOverTime: {
-        title: 'Commodity imports over time',
-        subtitle: 'Billions of dollars, 1995–2024',
-        description: 'Total commodity import value tracks the economy\'s reliance on global commodity markets as a buyer, shaped by domestic demand, industrialisation and global price cycles.',
-        source: 'UN Trade and Development (UNCTAD) calculations, based on UNCTADstat (2025).',
-      },
-      foodImportsOverTime: {
-        title: 'Food imports over time',
-        subtitle: 'Billions of dollars, 1995–2024',
-        description: 'The long-run trajectory of food import values reveals how exposure to global agricultural markets – and the shocks that move them – has grown or receded over time.',
-        source: 'UN Trade and Development (UNCTAD) calculations, based on UNCTADstat (2025).',
-      },
-      energyImportsOverTime: {
-        title: 'Energy imports over time',
-        subtitle: 'Billions of dollars, 1996–2024',
-        description: 'Fuel import trends show how dependent the economy has become on global energy markets, with values driven by both volume and price cycles in oil and gas.',
-        source: 'UN Trade and Development (UNCTAD) calculations, based on UNCTADstat (2025).',
-      },
-      foodNetImports: {
-        title: 'Net food imports',
-        subtitle: 'Per cent of merchandise trade, 2012–2014 vs 2022–2024',
-        source: 'UN Trade and Development (UNCTAD) calculations, based on UNCTADstat (2025).',
-      },
-      energyNetImports: {
-        title: 'Net energy imports',
-        subtitle: 'Per cent of merchandise trade, 2012–2014 vs 2022–2024',
-        source: 'UN Trade and Development (UNCTAD) calculations, based on UNCTADstat (2025).',
-      },
-      contextHeading: 'Context',
-      macroContext: {
-        title: 'Macro context',
-        subtitle: 'GDP and income level',
-        description: 'The size and income level of the economy shapes how commodity dependence translates into development outcomes and fiscal vulnerability.',
-        source: 'UN Trade and Development (UNCTAD), based on UNCTADstat (2025).',
-      },
-      socialContext: {
-        title: 'Social context',
-        subtitle: 'Labour market and human development',
-        description: 'Employment patterns and human development outcomes reveal how the structure of the economy translates into living standards on the ground.',
-        source: 'UN Trade and Development (UNCTAD), based on UNCTADstat (2025), World Bank (2025), and UNDP (2025).',
+      profile: {
+        exportsHeading: 'Exports',
+        importsHeading: 'Imports',
+        dependenceOverTime: {
+          title: 'Commodity export dependence over time',
+          subtitle: 'Annual share, per cent, 1995–2024',
+          description: 'The trajectory reveals how commodity export reliance has shifted over three decades – shaped by price cycles, structural change and global shocks.',
+          source: 'UN Trade and Development (UNCTAD) calculations, based on UNCTADstat (2025).',
+        },
+        exportsOverTime: {
+          title: 'Commodity exports over time',
+          subtitle: 'Billions of dollars, 1995–2024',
+          description: 'Total commodity export value places the economy\'s raw-material trade in a long-run context, capturing the combined effect of price and volume changes.',
+          source: 'UN Trade and Development (UNCTAD) calculations, based on UNCTADstat (2025).',
+        },
+        leadingExports: {
+          title: 'Three leading commodity exports',
+          subtitle: 'Per cent of all allocated product exports, 2022–2024',
+          description: 'Concentration in a small number of commodities amplifies exposure to sector-specific price shocks and supply disruptions.',
+          source: 'UN Trade and Development (UNCTAD) calculations, based on UNCTADstat (2025), SITC Rev. 3 classification.',
+        },
+        topMarkets: {
+          title: 'Top destination markets',
+          subtitle: 'Percentage of total merchandise exports, 2022–2024',
+          description: 'Geographic concentration of export destinations adds a second layer of vulnerability alongside product concentration.',
+          source: 'UN Trade and Development (UNCTAD) calculations, based on UNCTADstat (2025), bilateral trade flows.',
+        },
+        importsOverTime: {
+          title: 'Commodity imports over time',
+          subtitle: 'Billions of dollars, 1995–2024',
+          description: 'Total commodity import value tracks the economy\'s reliance on global commodity markets as a buyer, shaped by domestic demand, industrialisation and global price cycles.',
+          source: 'UN Trade and Development (UNCTAD) calculations, based on UNCTADstat (2025).',
+        },
+        foodImportsOverTime: {
+          title: 'Food imports over time',
+          subtitle: 'Billions of dollars, 1995–2024',
+          description: 'The long-run trajectory of food import values reveals how exposure to global agricultural markets – and the shocks that move them – has grown or receded over time.',
+          source: 'UN Trade and Development (UNCTAD) calculations, based on UNCTADstat (2025).',
+        },
+        energyImportsOverTime: {
+          title: 'Energy imports over time',
+          subtitle: 'Billions of dollars, 1996–2024',
+          description: 'Fuel import trends show how dependent the economy has become on global energy markets, with values driven by both volume and price cycles in oil and gas.',
+          source: 'UN Trade and Development (UNCTAD) calculations, based on UNCTADstat (2025).',
+        },
+        foodNetImports: {
+          title: 'Net food imports',
+          subtitle: 'Per cent of merchandise trade, 2012–2014 vs 2022–2024',
+          source: 'UN Trade and Development (UNCTAD) calculations, based on UNCTADstat (2025).',
+        },
+        energyNetImports: {
+          title: 'Net energy imports',
+          subtitle: 'Per cent of merchandise trade, 2012–2014 vs 2022–2024',
+          source: 'UN Trade and Development (UNCTAD) calculations, based on UNCTADstat (2025).',
+        },
+        contextHeading: 'Context',
+        macroContext: {
+          title: 'Macro context',
+          subtitle: 'GDP and income level',
+          description: 'The size and income level of the economy shapes how commodity dependence translates into development outcomes and fiscal vulnerability.',
+          source: 'UN Trade and Development (UNCTAD), based on UNCTADstat (2025).',
+        },
+        socialContext: {
+          title: 'Social context',
+          subtitle: 'Labour market and human development',
+          description: 'Employment patterns and human development outcomes reveal how the structure of the economy translates into living standards on the ground.',
+          source: 'UN Trade and Development (UNCTAD), based on UNCTADstat (2025), World Bank (2025), and UNDP (2025).',
+        }
       }
-    }
-  }}
-  meta={props.meta}
-/>
+    }}
+    meta={props.meta}
+  />
+</div>

@@ -25,7 +25,7 @@ export default function TopMarkets({ iso3, title, subtitle, description, source,
       {allData && !markets && <p className="cdde_no_data">Destination market data not available for this country.</p>}
       {markets && <ColChart items={markets} />}
 
-      <ChartMeta source={source} note={note} />
+      <ChartMeta source={source} note={note} sourceKey="Three Leading Destination Markets" />
     </div>
   );
 }

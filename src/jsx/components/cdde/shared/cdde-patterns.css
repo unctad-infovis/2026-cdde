@@ -20,8 +20,8 @@
   }
   /* ── Insight block ─────────────────────────────────────────── */
   .cdde_insight {
-    border-left: 3px solid var(--un-color-grey-light);
-    color: var(--un-color-blue-darkest);
+    border-left: 3px solid var(--un-color-blue);
+    color: #000;
     font-size: var(--un-font-size-normal);
     line-height: var(--un-line-height-normal);
     margin: 0 0 16px;
@@ -43,12 +43,12 @@
   /* ── White card wrapper ────────────────────────────────────── */
   .cdde_card {
     background: #fff;
-    border-radius: 16px;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     gap: 0;
     min-width: 0;
-    padding: 24px 20px 18px;
+    padding: 28px 24px 20px;
   }
   /* ── Stacked horizontal bar ────────────────────────────────── */
   .cdde_stacked_bar {

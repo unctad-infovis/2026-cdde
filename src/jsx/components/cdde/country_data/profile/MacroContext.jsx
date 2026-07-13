@@ -38,7 +38,7 @@ export default function MacroContext({ iso3, title, subtitle, description, sourc
       {!allData && <div className="cdde_loading" style={{ height: 120 }} />}
       {allData && !d && <p className="cdde_no_data">Macro data not available for this country.</p>}
       {d && <StatList items={items} columns={1} key={iso3} />}
-      <ChartMeta source={source} note={note} />
+      <ChartMeta source={source} note={note} sourceKey={['Constant GDP', 'Population']} />
     </div>
   );
 }

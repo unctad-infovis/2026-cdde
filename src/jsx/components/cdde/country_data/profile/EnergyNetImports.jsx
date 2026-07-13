@@ -26,7 +26,7 @@ export default function EnergyNetImports({ iso3, countryName, title, subtitle, s
         {insight}
       </ChartHeader>
       <PeriodColumns val1={d?.energy_early ?? null} val2={d?.energy_recent ?? null} />
-      <ChartMeta source={source} note={extraNote} />
+      <ChartMeta source={source} note={extraNote} sourceKey="Net Energy Imports" />
     </div>
   );
 }

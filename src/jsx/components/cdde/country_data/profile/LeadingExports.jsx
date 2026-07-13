@@ -25,7 +25,7 @@ export default function LeadingExports({ iso3, title, subtitle, description, sou
       {allData && !exports && <p className="cdde_no_data">Export breakdown data not available for this country.</p>}
       {exports && <ColChart items={exports} />}
 
-      <ChartMeta source={source} note={note} />
+      <ChartMeta source={source} note={note} sourceKey="Three Leading Commodity Exported" />
     </div>
   );
 }

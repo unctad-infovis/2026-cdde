@@ -20,15 +20,12 @@ const MAX_H = 480;
 const CHINA_GROUP = new Set(['CHN', 'HKG', 'TWN', 'MAC']);
 const CHINA_DELEGATE = new Set(['HKG', 'TWN', 'MAC']);
 
-// Legend split at the 60% dependency threshold
-const EXP_LEGEND_BELOW = [
+const EXP_LEGEND_ITEMS = [
   { label: '0–20%', color: DEP_COLOR_SCALE[0].color },
   { label: '20–40%', color: DEP_COLOR_SCALE[1].color },
-  { label: '40–60%', color: DEP_COLOR_SCALE[2].color }
-];
-const EXP_LEGEND_ABOVE = [
-  { label: '60–80%', color: 'var(--un-color-blue-dark)' },
-  { label: '80–100%', color: 'var(--un-color-blue-darkest)' }
+  { label: '40–60%', color: DEP_COLOR_SCALE[2].color },
+  { label: '60–80%', color: 'var(--un-color-blue-dark)', note: '≥ 60% commodity-dependent' },
+  { label: '80–100%', color: 'var(--un-color-blue-darkest)' },
 ];
 
 const GROUP_LABELS = {
@@ -66,7 +63,6 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
   const [view, setView] = useState('export');
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [panelCollapsed, setPanelCollapsed] = useState(false);
-  const [legendCollapsed, setLegendCollapsed] = useState(false);
   const [hoverTooltip, setHoverTooltip] = useState(null);
   const [zt, setZt] = useState({ x: 0, y: 0, k: 1 });
   const [svgW, setSvgW] = useState(960);
@@ -287,7 +283,7 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
   }
 
   return (
-    <section className="cmap_section" ref={visRef}>
+    <section className="cmap_section width_wide" ref={visRef}>
       <div className="cmap_inner">
         <ChartHeader title={title} subtitle={subtitle} large />
 
@@ -318,15 +314,31 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
         </div>
 
         <div className="cmap_groups_top">
-          {Object.entries(GROUP_LABELS).map(([key, label]) => (
-            <div className="cmap_gt_item" key={key}>
-              <span className="cmap_gt_dot" style={{ background: GROUP_COLORS[key] }} />
-              <span className="cmap_gt_text">
-                <span className="cmap_gt_label">{label}</span>
-                <span className="cmap_gt_note">{GROUP_NOTES[key]}</span>
-              </span>
-            </div>
-          ))}
+          {view === 'export' ? (
+            <>
+              {EXP_LEGEND_ITEMS.map(item => (
+                <div className="cmap_gt_item" key={item.label}>
+                  <span className="cmap_gt_dot" style={{ background: item.color }} />
+                  <span className="cmap_gt_text">
+                    <span className="cmap_gt_label">{item.label}</span>
+                    {item.note && <span className="cmap_gt_note">{item.note}</span>}
+                  </span>
+                </div>
+              ))}
+            </>
+          ) : (
+            <>
+              {Object.entries(GROUP_LABELS).map(([key, label]) => (
+                <div className="cmap_gt_item" key={key}>
+                  <span className="cmap_gt_dot" style={{ background: GROUP_COLORS[key] }} />
+                  <span className="cmap_gt_text">
+                    <span className="cmap_gt_label">{label}</span>
+                    <span className="cmap_gt_note">{GROUP_NOTES[key]}</span>
+                  </span>
+                </div>
+              ))}
+            </>
+          )}
           <div className="cmap_gt_item cmap_gt_item--nodata">
             <span className="cmap_gt_dot" style={{ background: NO_DATA_FILL }} />
             <span className="cmap_gt_text">
@@ -351,7 +363,7 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
             {/* Zoomable content */}
             <g transform={`translate(${zt.x},${zt.y}) scale(${zt.k})`}>
               {/* Country fills */}
-              <g className="cmap_countries" style={{ opacity: revealed ? (switching ? 0.85 : 1) : 0, transition: REDUCED_MOTION ? 'none' : switching ? 'opacity 0.2s ease' : 'opacity 0.7s ease' }}>
+              <g className={`cmap_countries${switching ? ' cmap_countries--switching' : ''}`} style={{ opacity: revealed ? (switching ? 0.85 : 1) : 0, transition: REDUCED_MOTION ? 'none' : switching ? 'opacity 0.2s ease' : 'opacity 0.7s ease' }}>
                 {computed?.countryPaths?.map(({ id, d }) => {
                   if (smallIslandSet.has(id)) return null;
                   if (id === 'xac') {
@@ -384,32 +396,6 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
             </g>
           </svg>
 
-          {/* Legend overlay — top-left corner, export view only */}
-          {view === 'export' && (
-            <div className={`cmap_legend${legendCollapsed ? ' cmap_legend--collapsed' : ''}`}>
-              <button type="button" className="cmap_legend_header" onClick={() => setLegendCollapsed(c => !c)} aria-label={legendCollapsed ? 'Expand legend' : 'Collapse legend'}>
-                <span className="cmap_legend_label">Export share</span>
-                <span className="cmap_legend_toggle_icon">{legendCollapsed ? '▾' : '▴'}</span>
-              </button>
-              {!legendCollapsed && (
-                <div className="cmap_legend_export">
-                  {EXP_LEGEND_BELOW.map(step => (
-                    <div key={step.label} className="cmap_legend_group_item">
-                      <span className="cmap_legend_step_dot" style={{ background: step.color }} />
-                      <span>{step.label}</span>
-                    </div>
-                  ))}
-                  <div className="cmap_legend_threshold_divider">≥ 60% dependent</div>
-                  {EXP_LEGEND_ABOVE.map(step => (
-                    <div key={step.label} className="cmap_legend_group_item">
-                      <span className="cmap_legend_step_dot" style={{ background: step.color }} />
-                      <span>{step.label}</span>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          )}
 
           {/* Country info panel — overlaid on right side of map */}
           {selectedCountry && (
@@ -509,7 +495,7 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
         </div>
 
         <div className="cmap_footer">
-          <ChartMeta source={source} note={note} />
+          <ChartMeta source={source} note={note} sourceKey="Commodity Dependence, 2022–2024" />
         </div>
       </div>
     </section>

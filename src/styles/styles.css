@@ -64,6 +64,7 @@
     }
     .width_wide {
       margin: auto auto;
+      padding: 16px;
       max-width: 1100px;
       h3,
       h4,
@@ -75,30 +76,16 @@
     }
     .two_column {
       align-items: flex-start;
-      display: flex;
+      display: grid;
       gap: 20px;
+      grid-template-columns: 1fr 1fr;
       justify-content: center;
-      @media all and (max-width: 700px) {
+      @media all and (max-width: 900px) {
+        display: flex;
         flex-direction: column;
       }
       figure {
         margin: 0 0 20px 0;
-      }
-    }
-    .cdde_group_note {
-      font-size: var(--un-font-size-xxs);
-      color: var(--un-color-grey-text);
-      font-style: italic;
-      margin: 8px 0 0;
-      line-height: var(--un-line-height-normal);
-      padding: 0 24px;
-      max-width: none;
-      a {
-        color: var(--un-color-grey-text);
-        text-decoration: underline;
-        &:hover {
-          text-decoration: none;
-        }
       }
     }
     .parallax_container {

@@ -10,4 +10,11 @@
       margin-top: 5px;
     }
   }
+  a {
+    color: var(--un-color-grey-text);
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }

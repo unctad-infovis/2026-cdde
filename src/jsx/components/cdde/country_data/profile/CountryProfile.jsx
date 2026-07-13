@@ -58,51 +58,55 @@ export default function CountryProfile({ country, content = {} }) {
   return (
     <div className="cp_panel">
       {/* Country header */}
-      <div className="cp_header_card">
-        <CircleFlag countryCode={iso2} height={56} width={56} />
-        <div className="cp_header_info">
-          <h2 className="cp_country_name">{name}</h2>
-          <p className="cp_country_meta">{region}</p>
-          {iso3 === 'LIE' && (
-            <p className="cp_country_note">Trade data is reported together with Switzerland. <a href="./compare.html?country=CHE">View Switzerland's profile →</a></p>
-          )}
+      <div className="content_wrapper">
+        <div className="cp_header_card">
+          <CircleFlag countryCode={iso2} height={56} width={56} />
+          <div className="cp_header_info">
+            <h2 className="cp_country_name">{name}</h2>
+            <p className="cp_country_meta">{region}</p>
+            {iso3 === 'LIE' && (
+              <p className="cp_country_note">
+                Trade data is reported together with Switzerland. <a href="./compare.html?country=CHE">View Switzerland's profile →</a>
+              </p>
+            )}
+          </div>
         </div>
-      </div>
 
-      {/* Insight */}
-      {safePct != null && (
-        <p className="cp_insight">
-          {name}'s exports remain anchored in <strong style={{ color: groupColor }}>{insightDesc.split(',')[0]}</strong>
-          {insightDesc.includes(',') ? `,${insightDesc.split(',').slice(1).join(',')}` : ''}.
-        </p>
-      )}
+        {/* Insight */}
+        {safePct != null && (
+          <p className="cp_insight">
+            {name}'s exports remain anchored in <strong style={{ color: groupColor }}>{insightDesc.split(',')[0]}</strong>
+            {insightDesc.includes(',') ? `,${insightDesc.split(',').slice(1).join(',')}` : ''}.
+          </p>
+        )}
 
-      {/* Key stats row – keyed on iso3 so RollingNumber re-animates on country change */}
-      <div className="cp_stats_row" key={iso3}>
-        <div className="cp_stat">
-          <RollingNumber value={countryStats?.commodity_dependence != null ? `${countryStats.commodity_dependence}%` : '–'} className="cp_stat_value" style={{ color: safePct != null ? depColor(safePct) : 'var(--un-color-blue-darkest)' }} />
-          <span className="cp_stat_label">Commodity dependence</span>
-          {safePct != null && (
-            <div className="cp_stat_cats">
-              {categories.map(cat => (
-                <div key={cat.key} className={`cp_stat_cat_row${dominant_group === cat.key ? ' cp_stat_cat_row--dominant' : ''}`}>
-                  <span className="cp_stat_cat_dot" style={{ background: GROUP_COLORS[cat.key] }} />
-                  <span className="cp_stat_cat_label">{cat.label}</span>
-                  <span className="cp_stat_cat_val">{cat.val}%</span>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-        <div className="cp_stat">
-          <RollingNumber value={countryStats?.leading_market != null ? `${countryStats.leading_market}%` : '–'} className="cp_stat_value" />
-          <span className="cp_stat_label">Leading destination markets</span>
-          <span className="cp_stat_note">Share of top 3 export destination countries</span>
-        </div>
-        <div className="cp_stat">
-          <RollingNumber value={countryStats?.leading_commodity != null ? `${countryStats.leading_commodity}%` : '–'} className="cp_stat_value" />
-          <span className="cp_stat_label">Leading commodities</span>
-          <span className="cp_stat_note">Share of top 3 commodities</span>
+        {/* Key stats row – keyed on iso3 so RollingNumber re-animates on country change */}
+        <div className="cp_stats_row" key={iso3}>
+          <div className="cp_stat">
+            <RollingNumber value={countryStats?.commodity_dependence != null ? `${countryStats.commodity_dependence}%` : '–'} className="cp_stat_value" style={{ color: safePct != null ? depColor(safePct) : 'var(--un-color-blue-darkest)' }} />
+            <span className="cp_stat_label">Commodity dependence</span>
+            {safePct != null && (
+              <div className="cp_stat_cats">
+                {categories.map(cat => (
+                  <div key={cat.key} className={`cp_stat_cat_row${dominant_group === cat.key ? ' cp_stat_cat_row--dominant' : ''}`}>
+                    <span className="cp_stat_cat_dot" style={{ background: GROUP_COLORS[cat.key] }} />
+                    <span className="cp_stat_cat_label">{cat.label}</span>
+                    <span className="cp_stat_cat_val">{cat.val}%</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+          <div className="cp_stat">
+            <RollingNumber value={countryStats?.leading_market != null ? `${countryStats.leading_market}%` : '–'} className="cp_stat_value" />
+            <span className="cp_stat_label">Leading destination markets</span>
+            <span className="cp_stat_note">Share of top 3 export destination countries</span>
+          </div>
+          <div className="cp_stat">
+            <RollingNumber value={countryStats?.leading_commodity != null ? `${countryStats.leading_commodity}%` : '–'} className="cp_stat_value" />
+            <span className="cp_stat_label">Leading commodities</span>
+            <span className="cp_stat_note">Share of top 3 commodities</span>
+          </div>
         </div>
       </div>
 
