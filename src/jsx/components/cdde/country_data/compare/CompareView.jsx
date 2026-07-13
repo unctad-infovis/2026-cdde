@@ -86,8 +86,12 @@ const ROWS = [
   {
     key: 'population_m',
     label: 'Population',
-    desc: 'Millions, 2024',
-    fmt: v => `${Number(v).toFixed(1)} million`
+    desc: '2024',
+    fmt: v => {
+      const m = Number(v);
+      if (m < 0.1) return `${Math.round(m * 1000)} thousand`;
+      return `${m.toFixed(1)} million`;
+    }
   },
   {
     key: 'hdi_value',
@@ -160,9 +164,9 @@ export default function CompareView({ compareList, countries, onCompareChange, d
       gdp_per_capita: m.gdp_per_capita ?? null,
       population_m: soc.population != null ? soc.population / 1000 : null,
       hdi_value: soc.hdi_value ?? null,
-      commodity_exports: add.commodity_exports ?? null,
-      food_imports: add.food_imports ?? null,
-      energy_imports: add.energy_imports ?? null,
+      commodity_exports: add.commodity_exports || null,
+      food_imports: add.food_imports || null,
+      energy_imports: add.energy_imports || null,
       net_food_imports: net.food_recent ?? null,
       net_energy_imports: net.energy_recent ?? null
     };
