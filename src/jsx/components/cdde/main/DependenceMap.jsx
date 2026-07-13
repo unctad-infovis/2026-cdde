@@ -338,6 +338,14 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
 
         <div className="cmap_map_area" ref={mapAreaRef}>
           <svg ref={svgRef} viewBox={`0 0 ${svgW} ${H}`} className="cmap_svg" aria-label="World choropleth map of commodity dependence" onMouseMove={handleSvgHover} onMouseLeave={handleSvgLeave}>
+            {/* Aksai Chin stripe pattern — alternates India and China fill colors, updates with view */}
+            <defs>
+              <pattern id="cmap_aksai_stripe" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
+                <rect width="4" height="8" fill={getFill('IND')} />
+                <rect x="4" width="4" height="8" fill={getFill('CHN')} />
+              </pattern>
+            </defs>
+
             {/* Ocean — fixed, always fills SVG */}
             <rect x={0} y={0} width={svgW} height={H} className="cmap_ocean" />
 
@@ -347,6 +355,10 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
               <g className="cmap_countries" style={{ opacity: revealed ? (switching ? 0.85 : 1) : 0, transition: REDUCED_MOTION ? 'none' : switching ? 'opacity 0.2s ease' : 'opacity 0.7s ease' }}>
                 {computed?.countryPaths?.map(({ id, d }) => {
                   if (smallIslandSet.has(id)) return null;
+                  if (id === 'xac') {
+                    // Aksai Chin — disputed between India and China; show as diagonal stripes
+                    return mapData ? <path key="xac" d={d} fill="url(#cmap_aksai_stripe)" style={{ pointerEvents: 'none' }} /> : null;
+                  }
                   const inActiveGroup = hoverTooltip?.iso3 && CHINA_GROUP.has(hoverTooltip.iso3) && CHINA_GROUP.has(id);
                   return <path key={`${id}_${d}`} d={d} className={`cmap_country${inActiveGroup ? ' cmap_country--active' : ''}`} style={{ fill: getFill(id) }} onClick={() => handleCountryClick(id)} data-iso={id} />;
                 })}
