@@ -128,10 +128,12 @@ export default function LineChartTime({ series, lineColor = C_BLUE, yFmt = fmtBi
     setTooltip({ x: mouseX, cursorX: xScale(pt.year), domY, year: pt.year, val: pt.val, flip: mouseX > rect.width * 0.65 });
   }
 
+  const hasData = series.length > 0 && series.some(d => d.val);
+
   return (
-    <button type="button" className="lct_wrap" ref={wrapRef} onMouseMove={series.length ? handleMouseMove : undefined} onMouseLeave={() => setTooltip(null)}>
-      {!series.length && <p className="cdde_no_data">Data not available</p>}
-      {!!series.length && (
+    <button type="button" className="lct_wrap" ref={wrapRef} onMouseMove={hasData ? handleMouseMove : undefined} onMouseLeave={() => setTooltip(null)}>
+      {!hasData && <p className="cdde_no_data">Data not available</p>}
+      {hasData && (
         <>
           <svg viewBox={`0 0 ${svgW} ${H}`} className="lct_svg" aria-label={ariaLabel}>
             <g transform={`translate(${M.left},${M.top})`}>

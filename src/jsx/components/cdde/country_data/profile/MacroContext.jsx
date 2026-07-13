@@ -5,14 +5,14 @@ import ChartMeta from '../../shared/ChartMeta';
 import StatList from '../../shared/StatList';
 
 function fmtGdp(millions) {
-  if (millions == null) return '–';
+  if (millions == null) return null;
   if (millions >= 1_000_000) return `$${(millions / 1_000_000).toFixed(1)} tn`;
   if (millions >= 1_000) return `$${(millions / 1_000).toFixed(1)} bn`;
   return `$${Math.round(millions)} mn`;
 }
 
 function fmtPerCapita(usd) {
-  if (usd == null) return '–';
+  if (usd == null) return null;
   return `$${Math.round(usd).toLocaleString('en-US')}`;
 }
 

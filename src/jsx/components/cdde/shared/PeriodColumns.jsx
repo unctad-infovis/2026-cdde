@@ -109,7 +109,7 @@ export default function PeriodColumns({ val1, val2 }) {
   return (
     <div className="pcc_wrap" ref={wrapRef}>
       {!hasData && <p className="cdde_no_data">Data not available</p>}
-      <svg viewBox={`0 0 ${svgW} ${H}`} className="pcc_svg" aria-label="Column chart comparing two time periods">
+      {hasData && <svg viewBox={`0 0 ${svgW} ${H}`} className="pcc_svg" aria-label="Column chart comparing two time periods">
         <g transform={`translate(${M.left},${M.top})`}>
           {yTicks.map(v => (
             <g key={v} transform={`translate(0,${yScale(v)})`}>
@@ -156,7 +156,7 @@ export default function PeriodColumns({ val1, val2 }) {
             {LABEL2}
           </text>
         </g>
-      </svg>
+      </svg>}
     </div>
   );
 }

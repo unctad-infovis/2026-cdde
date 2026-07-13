@@ -16,8 +16,11 @@ export default function StatList({ items, columns = 2 }) {
           }}
         >
           <span className="stl_label">{item.label}</span>
-          <span className="stl_value">{item.value ?? '–'}</span>
-          {item.note && <span className="stl_note">{item.note}</span>}
+          {item.value != null
+            ? <span className="stl_value">{item.value}</span>
+            : <span className="stl_unavailable">Data not available</span>
+          }
+          {item.value != null && item.note && <span className="stl_note">{item.note}</span>}
         </div>
       ))}
     </div>
