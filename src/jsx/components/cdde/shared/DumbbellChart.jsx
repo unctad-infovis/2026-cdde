@@ -80,9 +80,7 @@ export default function DumbbellChart({ data, xMin, xMax, nameW = 140, badgeW = 
         const goingRight = endX > startX;
         const lineEnd = goingRight ? endX - ARROW_TIP : endX + ARROW_TIP;
         const ax = endX;
-        const arrowPts = goingRight
-          ? `${ax - ARROW_TIP},${y - 4} ${ax},${y} ${ax - ARROW_TIP},${y + 4}`
-          : `${ax + ARROW_TIP},${y - 4} ${ax},${y} ${ax + ARROW_TIP},${y + 4}`;
+        const arrowPts = goingRight ? `${ax - ARROW_TIP},${y - 4} ${ax},${y} ${ax - ARROW_TIP},${y + 4}` : `${ax + ARROW_TIP},${y - 4} ${ax},${y} ${ax + ARROW_TIP},${y + 4}`;
 
         const bx = svgW - badgeW - TRACK_PAD_R + 4;
         const changeRounded = Math.round(row.change * 10) / 10;
@@ -112,16 +110,7 @@ export default function DumbbellChart({ data, xMin, xMax, nameW = 140, badgeW = 
             <text x={textEndX} y={y + 4} textAnchor="end" className="db_row_name">
               {row.name}
             </text>
-            {row.iso2 && (
-              <image
-                href={`${bp}assets/img/flags/${row.iso2.toLowerCase()}.svg`}
-                x={flagCX - FLAG_R}
-                y={y - FLAG_R}
-                width={FLAG_R * 2}
-                height={FLAG_R * 2}
-                clipPath={`url(#${uid}_f${i})`}
-              />
-            )}
+            {row.iso2 && <image href={`${bp}assets/img/flags/${row.iso2.toLowerCase()}.svg`} x={flagCX - FLAG_R} y={y - FLAG_R} width={FLAG_R * 2} height={FLAG_R * 2} clipPath={`url(#${uid}_f${i})`} />}
             <line x1={nameW} y1={y} x2={nameW + trackW} y2={y} className="db_track" />
             <line x1={startX} y1={y} x2={lineEnd} y2={y} pathLength="1" stroke={color} strokeWidth={STROKE_W} strokeLinecap="round" style={shaftStyle} />
             <polyline points={arrowPts} pathLength="1" fill="none" stroke={color} strokeWidth={STROKE_W} strokeLinecap="round" strokeLinejoin="round" style={tipStyle} />

@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     height: calc(100svh - 200px);
-    min-height: 480px;
+    min-height: 750px;
     justify-content: flex-end;
     padding: clamp(20px, 4vw, 80px);
     position: relative;

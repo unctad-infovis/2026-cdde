@@ -12,9 +12,7 @@ export default function StatList({ items, columns = 2 }) {
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'none' : 'translateY(10px)',
-            transition: isVisible
-              ? `opacity 0.5s ease ${0.25 + i * 0.15}s, transform 0.5s ease ${0.25 + i * 0.15}s`
-              : 'none',
+            transition: isVisible ? `opacity 0.5s ease ${0.25 + i * 0.15}s, transform 0.5s ease ${0.25 + i * 0.15}s` : 'none'
           }}
         >
           <span className="stl_label">{item.label}</span>

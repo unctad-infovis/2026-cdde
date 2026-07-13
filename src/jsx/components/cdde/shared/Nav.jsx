@@ -16,20 +16,38 @@ function scrollToY() {
   requestAnimationFrame(step);
 }
 
+function isCurrentPage(href) {
+  if (!href || href.startsWith('#')) return false;
+  const pathname = typeof window !== 'undefined' ? window.location.pathname : '';
+  const normalized = href.replace(/^\.\//, '');
+  return pathname.endsWith(`/${normalized}`) || pathname.endsWith(`/${normalized.replace('.html', '')}`);
+}
+
 export default function Nav({ items = [] }) {
   return (
     <nav className="nav_container">
-      {items.map(item =>
-        item.href ? (
-          <a className={`nav_btn${item.primary ? ' nav_btn--primary' : ''}`} href={item.href} key={item.label}>
-            {item.label}
-          </a>
-        ) : (
-          <button className={`nav_btn${item.primary ? ' nav_btn--primary' : ''}`} key={item.label} onClick={scrollToY} type="button">
+      {items.map(item => {
+        const active = isCurrentPage(item.href);
+        const cls = `nav_btn${item.primary ? ' nav_btn--primary' : ''}${active ? ' nav_btn--active' : ''}`;
+        if (item.href) {
+          return (
+            <a
+              className={cls}
+              href={item.href}
+              key={item.label}
+              rel={item.external ? 'noopener noreferrer' : undefined}
+              target={item.external ? '_blank' : undefined}
+            >
+              {item.label}
+            </a>
+          );
+        }
+        return (
+          <button className={cls} key={item.label} onClick={scrollToY} type="button">
             {item.label}
           </button>
-        )
-      )}
+        );
+      })}
     </nav>
   );
 }

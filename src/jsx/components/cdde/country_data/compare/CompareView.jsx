@@ -10,8 +10,8 @@ import './CompareView.css';
 
 const SLOTS = [
   { bg: 'linear-gradient(135deg, #1a2d4a 0%, #2a5878 100%)', bar: '#009edb' },
-  { bg: 'linear-gradient(135deg, #6a3c00 0%, #b07010 100%)', bar: '#fbaf17' },
-  { bg: 'linear-gradient(135deg, #174d17 0%, #32803a 100%)', bar: '#72bf44' }
+  { bg: 'linear-gradient(135deg, #6a3c00 0%, #b07010 100%)', bar: '#009edb' },
+  { bg: 'linear-gradient(135deg, #174d17 0%, #32803a 100%)', bar: '#009edb' }
 ];
 
 const DNA_COLORS = {
@@ -235,8 +235,8 @@ export default function CompareView({ compareList, countries, onCompareChange, d
                 </div>
                 {d ? (
                   <StackedBar
+                    height={40}
                     showLegend={false}
-                    height={34}
                     segments={[
                       { key: 'agri', label: 'Agricultural', color: DNA_COLORS.agri, pct: d.agri },
                       { key: 'energy', label: 'Energy', color: DNA_COLORS.energy, pct: d.energy },
@@ -259,14 +259,12 @@ export default function CompareView({ compareList, countries, onCompareChange, d
       <div className="cv_panel" ref={tablePanelRef}>
         <div className="cv_tbl_hdr">
           <div className="cv_tbl_hdr_ind">INDICATOR</div>
-          {slots.map(({ country, slot, i }) => (
+          {slots.map(({ country, _slot, i }) => (
             <div key={i} className="cv_tbl_hdr_col">
               {country && (
                 <>
                   <CircleFlag countryCode={country.iso2} width={20} height={20} />
-                  <span className="cv_tbl_hdr_name" style={{ color: slot.bar }}>
-                    {country.name.toUpperCase()}
-                  </span>
+                  <span className="cv_tbl_hdr_name">{country.name.toUpperCase()}</span>
                 </>
               )}
             </div>

@@ -1,6 +1,6 @@
 import * as d3 from 'd3';
 import { useEffect, useRef, useState } from 'react';
-import { C_BLUE, C_YELLOW, axisFmt } from './cdde-constants';
+import { axisFmt, C_BLUE, C_YELLOW } from './cdde-constants';
 
 import './PeriodColumns.css';
 
@@ -15,7 +15,7 @@ const LABEL2 = '2022–2024';
 
 function niceStep(raw) {
   if (raw <= 0) return 1;
-  const mag = Math.pow(10, Math.floor(Math.log10(raw)));
+  const mag = 10 ** Math.floor(Math.log10(raw));
   const frac = raw / mag;
   if (frac <= 1) return mag;
   if (frac <= 2) return 2 * mag;
@@ -73,9 +73,9 @@ export default function PeriodColumns({ val1, val2 }) {
   const dataMin = Math.min(...allVals, 0);
   const dataMax = Math.max(...allVals, 0);
   const range = Math.max(dataMax, -dataMin, 0.1);
-  const step = niceStep(range * 1.2 / 4);
-  const yMin = dataMin < 0 ? Math.floor(dataMin * 1.15 / step) * step : 0;
-  const yMax = dataMax > 0 ? Math.ceil(dataMax * 1.15 / step) * step : step;
+  const step = niceStep((range * 1.2) / 4);
+  const yMin = dataMin < 0 ? Math.floor((dataMin * 1.15) / step) * step : 0;
+  const yMax = dataMax > 0 ? Math.ceil((dataMax * 1.15) / step) * step : step;
 
   const yScale = d3.scaleLinear().domain([yMin, yMax]).range([CHART_H, 0]);
   const zeroY = yScale(0);
@@ -123,35 +123,40 @@ export default function PeriodColumns({ val1, val2 }) {
           {/* Zero baseline serves as x-axis */}
           <line x1={0} y1={zeroY} x2={CHART_W} y2={zeroY} className="pcc_zero" />
 
-          {val1 != null && (() => {
-            const b = animBarProps(val1);
-            return (
-              <>
-                <rect x={x1} y={b.y} width={barW} height={b.height} fill={COLOR1} rx={3} />
-                <text x={x1 + barW / 2} y={valLabelY(val1)} textAnchor="middle" className="pcc_val_label" style={{ opacity: labelOpacity }}>
-                  {fmtPct(val1)}
-                </text>
-              </>
-            );
-          })()}
+          {val1 != null &&
+            (() => {
+              const b = animBarProps(val1);
+              return (
+                <>
+                  <rect x={x1} y={b.y} width={barW} height={b.height} fill={COLOR1} rx={3} />
+                  <text x={x1 + barW / 2} y={valLabelY(val1)} textAnchor="middle" className="pcc_val_label" style={{ opacity: labelOpacity }}>
+                    {fmtPct(val1)}
+                  </text>
+                </>
+              );
+            })()}
 
-          {val2 != null && (() => {
-            const b = animBarProps(val2);
-            return (
-              <>
-                <rect x={x2} y={b.y} width={barW} height={b.height} fill={COLOR2} rx={3} />
-                <text x={x2 + barW / 2} y={valLabelY(val2)} textAnchor="middle" className="pcc_val_label" style={{ opacity: labelOpacity }}>
-                  {fmtPct(val2)}
-                </text>
-              </>
-            );
-          })()}
+          {val2 != null &&
+            (() => {
+              const b = animBarProps(val2);
+              return (
+                <>
+                  <rect x={x2} y={b.y} width={barW} height={b.height} fill={COLOR2} rx={3} />
+                  <text x={x2 + barW / 2} y={valLabelY(val2)} textAnchor="middle" className="pcc_val_label" style={{ opacity: labelOpacity }}>
+                    {fmtPct(val2)}
+                  </text>
+                </>
+              );
+            })()}
 
-          <text x={x1 + barW / 2} y={CHART_H + 16} textAnchor="middle" className="pcc_tick_label">{LABEL1}</text>
-          <text x={x2 + barW / 2} y={CHART_H + 16} textAnchor="middle" className="pcc_tick_label">{LABEL2}</text>
+          <text x={x1 + barW / 2} y={CHART_H + 16} textAnchor="middle" className="pcc_tick_label">
+            {LABEL1}
+          </text>
+          <text x={x2 + barW / 2} y={CHART_H + 16} textAnchor="middle" className="pcc_tick_label">
+            {LABEL2}
+          </text>
         </g>
       </svg>
-
     </div>
   );
 }

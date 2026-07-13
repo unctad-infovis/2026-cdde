@@ -31,5 +31,20 @@
         background: rgba(255, 255, 255, 0.88);
       }
     }
+    &.nav_btn--active {
+      border-color: rgba(255, 255, 255, 0.8);
+      position: relative;
+      &::after {
+        background: #fff;
+        border-radius: 2px;
+        bottom: -7px;
+        content: '';
+        height: 3px;
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+        width: 20px;
+      }
+    }
   }
 }

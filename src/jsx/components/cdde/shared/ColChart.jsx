@@ -6,7 +6,7 @@ const CHART_H = H - M.top - M.bottom;
 
 function niceStep(raw) {
   if (raw <= 0) return 10;
-  const mag = Math.pow(10, Math.floor(Math.log10(raw)));
+  const mag = 10 ** Math.floor(Math.log10(raw));
   const frac = raw / mag;
   if (frac <= 1) return mag;
   if (frac <= 2) return 2 * mag;
@@ -66,8 +66,8 @@ export default function ColChart({ items, color = 'var(--un-color-blue)' }) {
   const barW = Math.min(slotW * 0.55, 64);
 
   const dataMax = Math.max(...items.map(d => d.pct));
-  const step = niceStep(dataMax * 1.15 / 4);
-  const yMax = Math.ceil(dataMax * 1.15 / step) * step;
+  const step = niceStep((dataMax * 1.15) / 4);
+  const yMax = Math.ceil((dataMax * 1.15) / step) * step;
 
   const yTicks = [];
   for (let v = 0; v <= yMax + step * 0.01; v += step) yTicks.push(+v.toFixed(10));

@@ -131,53 +131,55 @@ export default function LineChartTime({ series, lineColor = C_BLUE, yFmt = fmtBi
   return (
     <button type="button" className="lct_wrap" ref={wrapRef} onMouseMove={series.length ? handleMouseMove : undefined} onMouseLeave={() => setTooltip(null)}>
       {!series.length && <p className="cdde_no_data">Data not available</p>}
-      {!!series.length && <>
-      <svg viewBox={`0 0 ${svgW} ${H}`} className="lct_svg" aria-label={ariaLabel}>
-        <g transform={`translate(${M.left},${M.top})`}>
-          {yTicks.map(v => (
-            <g key={v} transform={`translate(0,${yScale(v)})`}>
-              <line x1={0} x2={CHART_W} className="lct_grid" />
-              <text x={-6} y={4} textAnchor="end" className="lct_tick_label">
-                {axisFmt(v, step)}
-              </text>
-            </g>
-          ))}
+      {!!series.length && (
+        <>
+          <svg viewBox={`0 0 ${svgW} ${H}`} className="lct_svg" aria-label={ariaLabel}>
+            <g transform={`translate(${M.left},${M.top})`}>
+              {yTicks.map(v => (
+                <g key={v} transform={`translate(0,${yScale(v)})`}>
+                  <line x1={0} x2={CHART_W} className="lct_grid" />
+                  <text x={-6} y={4} textAnchor="end" className="lct_tick_label">
+                    {axisFmt(v, step)}
+                  </text>
+                </g>
+              ))}
 
-          {linePath && <path ref={pathRef} d={linePath} fill="none" stroke={lineColor} strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" style={pathStyle} />}
+              {linePath && <path ref={pathRef} d={linePath} fill="none" stroke={lineColor} strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" style={pathStyle} />}
 
-          {lastPt && (
-            <g style={endpointStyle}>
-              <circle cx={lastX} cy={lastY} r={4} fill={lineColor} />
-              <rect x={lastX - calloutW / 2} y={lastY - 32} width={calloutW} height={24} rx={6} fill={lineColor} />
-              <text x={lastX} y={lastY - 14} textAnchor="middle" className="lct_callout_label">
-                {calloutText}
-              </text>
+              {lastPt && (
+                <g style={endpointStyle}>
+                  <circle cx={lastX} cy={lastY} r={4} fill={lineColor} />
+                  <rect x={lastX - calloutW / 2} y={lastY - 32} width={calloutW} height={24} rx={6} fill={lineColor} />
+                  <text x={lastX} y={lastY - 14} textAnchor="middle" className="lct_callout_label">
+                    {calloutText}
+                  </text>
+                </g>
+              )}
+
+              {tooltip && <line x1={tooltip.cursorX} y1={0} x2={tooltip.cursorX} y2={CHART_H} className="lct_cursor" />}
+
+              <line x1={0} y1={CHART_H} x2={CHART_W} y2={CHART_H} className="lct_axis" />
+              {xTicks.map(t => (
+                <g key={t} transform={`translate(${xScale(t)},${CHART_H})`}>
+                  <line y2={4} className="lct_tick" />
+                  <text y={16} textAnchor={t === xMin ? 'start' : t === xMax ? 'end' : 'middle'} className="lct_tick_label">
+                    {t}
+                  </text>
+                </g>
+              ))}
             </g>
+          </svg>
+
+          {tooltip && (
+            <ChartTooltip left={tooltip.x} top={tooltip.domY} flip={tooltip.flip}>
+              <div className="lct_tt_year">{tooltip.year}</div>
+              <div className="lct_tt_val" style={{ color: lineColor }}>
+                {yFmt(tooltip.val)} {tooltipUnit}
+              </div>
+            </ChartTooltip>
           )}
-
-          {tooltip && <line x1={tooltip.cursorX} y1={0} x2={tooltip.cursorX} y2={CHART_H} className="lct_cursor" />}
-
-          <line x1={0} y1={CHART_H} x2={CHART_W} y2={CHART_H} className="lct_axis" />
-          {xTicks.map(t => (
-            <g key={t} transform={`translate(${xScale(t)},${CHART_H})`}>
-              <line y2={4} className="lct_tick" />
-              <text y={16} textAnchor={t === xMin ? 'start' : t === xMax ? 'end' : 'middle'} className="lct_tick_label">
-                {t}
-              </text>
-            </g>
-          ))}
-        </g>
-      </svg>
-
-      {tooltip && (
-        <ChartTooltip left={tooltip.x} top={tooltip.domY} flip={tooltip.flip}>
-          <div className="lct_tt_year">{tooltip.year}</div>
-          <div className="lct_tt_val" style={{ color: lineColor }}>
-            {yFmt(tooltip.val)} {tooltipUnit}
-          </div>
-        </ChartTooltip>
+        </>
       )}
-      </>}
     </button>
   );
 }

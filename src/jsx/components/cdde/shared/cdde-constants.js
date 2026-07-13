@@ -13,15 +13,15 @@ export const GROUP_COLORS = {
   agri: '#72bf44',
   energy: '#a05fb4',
   mining: C_YELLOW,
-  'non-dependent': '#aea29a',
+  'non-dependent': '#aea29a'
 };
 
 export const DEP_COLOR_SCALE = [
-  { threshold: 0,  color: '#d8d8d8' },
+  { threshold: 0, color: '#d8d8d8' },
   { threshold: 20, color: '#b0b0b0' },
   { threshold: 40, color: '#7c7c7c' },
   { threshold: 60, color: '#0077b8' },
-  { threshold: 80, color: '#004987' },
+  { threshold: 80, color: '#004987' }
 ];
 
 export const NO_DATA_FILL = '#f0f0f0';

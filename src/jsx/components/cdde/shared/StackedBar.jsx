@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-export default function StackedBar({ segments, height = 28, showLegend = true }) {
+export default function StackedBar({ height = 28, showLegend = true, segments }) {
   const wrapRef = useRef(null);
   const [progress, setProgress] = useState(0);
 
@@ -12,7 +12,7 @@ export default function StackedBar({ segments, height = 28, showLegend = true })
         if (!e.isIntersecting) return;
         io.disconnect();
         const start = performance.now();
-        const dur = 700;
+        const dur = 500;
         const tick = now => {
           const p = Math.min((now - start) / dur, 1);
           const eased = 1 - (1 - p) ** 3;
@@ -36,12 +36,7 @@ export default function StackedBar({ segments, height = 28, showLegend = true })
         {segments.map(
           s =>
             s.pct > 0 && (
-              <div
-                key={s.key}
-                className="cdde_stacked_seg"
-                style={{ width: `${s.pct * progress}%`, background: s.color }}
-                title={`${s.label}: ${s.pct}%`}
-              >
+              <div key={s.key} className="cdde_stacked_seg" style={{ width: `${s.pct * progress}%`, background: s.color }} title={`${s.label}: ${s.pct}%`}>
                 {s.pct >= 8 && (
                   <span className="cdde_stacked_seg_lbl" style={{ opacity: labelOpacity }}>
                     {s.pct}%
