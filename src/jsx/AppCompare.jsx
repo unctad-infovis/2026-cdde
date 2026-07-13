@@ -16,7 +16,8 @@ const AppCompare = ({ meta }) => {
 
   const nav = (meta?.nav || []).map(item => ({
     ...item,
-    href: item.href ? (item.href.startsWith('#') ? `./index.html${item.href}` : item.href) : './index.html'
+    href: item.href ? (item.href.startsWith('#') ? `./index.html${item.href}` : item.href) : './index.html',
+    label: item.primary ? '← Main page' : item.label,
   }));
 
   return (

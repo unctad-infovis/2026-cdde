@@ -11,7 +11,8 @@ const AppKnowMore = ({ meta }) => {
       ? item.href.startsWith('#')
         ? `./index.html${item.href}`
         : item.href
-      : './index.html'
+      : './index.html',
+    label: item.primary ? '← Main page' : item.label,
   }));
 
   return (
