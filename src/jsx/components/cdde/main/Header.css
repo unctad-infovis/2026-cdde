@@ -3,7 +3,7 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    height: calc(100svh - 200px);
+    height: calc(100svh - 300px);
     min-height: 750px;
     justify-content: flex-end;
     padding: clamp(20px, 4vw, 80px);
@@ -32,7 +32,7 @@
     }
     .header_title {
       color: #fff;
-      font-size: clamp(36px, 6vw, 80px);
+      font-size: clamp(50px, 6vw, 80px);
       font-weight: var(--un-font-weight-boldest);
       line-height: var(--un-line-height-smallest);
       margin: 0 0 16px 0;
@@ -45,7 +45,7 @@
     }
     .header_subtitle {
       color: rgba(255, 255, 255, 0.92);
-      font-size: clamp(var(--un-font-size-xs), 1.6vw, var(--un-font-size-xl));
+      font-size: clamp(var(--un-font-size-xl), 1.6vw, var(--un-font-size-xxl));
       font-weight: var(--un-font-weight-bolder);
       line-height: var(--un-line-height-normal);
       margin: 0 0 32px 0;
@@ -66,7 +66,7 @@
     }
     .header_stat_value {
       color: #fff;
-      font-size: clamp(28px, 3.5vw, var(--un-font-size-xxxxl));
+      font-size: clamp(40px, 3.5vw, var(--un-font-size-xxxxl));
       font-weight: var(--un-font-weight-boldest);
       line-height: 1;
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
@@ -81,30 +81,31 @@
     @media (max-width: 768px) {
       padding: 24px 20px;
       .header_stats {
-        gap: 20px 32px;
+        display: grid;
+        gap: 20px 12px;
+        grid-template-columns: 1fr 1fr;
       }
     }
     @media (max-width: 600px) {
-      height: auto;
-      min-height: 0;
-      padding: 24px 20px;
+      height: calc(100svh - 400px);
+      padding: 60px 20px;
       .header_title {
-        font-size: var(--un-font-size-xxl);
         margin-bottom: 10px;
       }
       .header_subtitle {
-        font-size: var(--un-font-size-xxs);
         margin-bottom: 16px;
       }
       .header_stats {
         gap: 12px 24px;
         margin-bottom: 20px;
       }
-      .header_stat_value {
-        font-size: var(--un-font-size-xl);
-      }
     }
     @media (max-width: 480px) {
+      .header_stats {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      min-height: calc(100svh - 200px);
       .header_title {
         margin-bottom: 12px;
       }

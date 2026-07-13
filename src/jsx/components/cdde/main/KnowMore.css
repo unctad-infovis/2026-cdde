@@ -260,9 +260,6 @@
     &:last-child {
       border-bottom: none;
     }
-    &:hover .km_td {
-      background: var(--un-color-blue-lightest);
-    }
   }
   .km_td {
     padding: 9px 14px;

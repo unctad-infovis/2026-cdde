@@ -84,7 +84,7 @@ function GroupingsSection({ data }) {
   return (
     <div className="km_groupings">
       <div className="km_groupings_geo">
-        <h4 className="km_groupings_sub_heading">Geographic classification</h4>
+        <h4 className="km_groupings_sub_heading">Geographic classification according to the UN statistical classification.</h4>
         <table className="km_table">
           <thead>
             <tr>
@@ -113,7 +113,7 @@ function GroupingsSection({ data }) {
       </div>
 
       <div className="km_groupings_special">
-        <h4 className="km_groupings_sub_heading">Development status & special categories</h4>
+        <h4 className="km_groupings_sub_heading">Development status & special categories of economies covered in the dashboard</h4>
         <div className="km_special_grid">
           {data.special.map(cat => (
             <div key={cat.label} className="km_special_card">

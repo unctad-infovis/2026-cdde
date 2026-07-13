@@ -41,6 +41,13 @@
       display: flex;
       gap: 2px;
       padding: 3px;
+      @media all and (max-width: 600px) {
+        flex-direction: column;
+        text-align: left;
+        button {
+          text-align: left;
+        }
+      }
     }
     .cmap_toggle_btn {
       background: transparent;
@@ -71,9 +78,13 @@
       flex-wrap: wrap;
       gap: 4px 20px;
       padding: 10px 0 14px;
-      @media all and (max-width: 700px) {
+      @media all and (max-width: 800px) {
         display: grid;
         grid-template-columns: 1fr 1fr;
+      }
+      @media all and (max-width: 600px) {
+        display: grid;
+        grid-template-columns: 1fr;
       }
     }
     .cmap_gt_item {
@@ -89,6 +100,7 @@
     }
     .cmap_gt_item--nodata .cmap_gt_dot {
       border: 1px solid var(--un-color-grey-light);
+      box-sizing: border-box;
     }
     .cmap_gt_text {
       display: flex;
