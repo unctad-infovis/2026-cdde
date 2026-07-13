@@ -1,6 +1,10 @@
 @keyframes cv_bar_grow {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
 #app-root-2026-cdde .app {
   .cv_wrap {
@@ -147,7 +151,7 @@
     }
     .cv_dna_leg_lbl {
       color: var(--un-color-grey-text);
-      font-size: var(--un-font-size-xxs);
+      font-size: var(--un-font-size-xs);
       white-space: nowrap;
     }
     .cv_dna_rows {
@@ -276,9 +280,10 @@
       height: 100%;
       transform: scaleX(0);
       transform-origin: left center;
+      transition: width 0.6s ease;
     }
     .cv_panel--revealed .cv_bar_fill {
-      animation: cv_bar_grow 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation: cv_bar_grow 3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
     .cv_tbl_empty {
       color: var(--un-color-grey-text);
