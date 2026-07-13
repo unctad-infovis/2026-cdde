@@ -1,6 +1,8 @@
 import { depColor, NO_DATA_FILL } from '../shared/cdde-constants';
 import './CountryList.css';
 
+const HIDE_NO_DATA = new Set(['LIE', 'VAT', 'SMR', 'MCO']);
+
 export default function CountryList({ countries, selected, onSelect }) {
   return (
     <div className="cl_panel">
@@ -17,10 +19,12 @@ export default function CountryList({ countries, selected, onSelect }) {
           return (
             <button type="button" key={c.iso3} className={`cl_tile${isSelected ? ' cl_tile--selected' : ''}`} onClick={() => onSelect(c)}>
               <span className="cl_tile_name">{c.name}</span>
-              <span className="cl_tile_dep">
-                <span className="cl_dot" style={{ background: c.export_dependence != null ? depColor(c.export_dependence) : NO_DATA_FILL }} />
-                {c.export_dependence != null ? `${c.export_dependence.toFixed(1)}%` : 'No data'}
-              </span>
+              {!HIDE_NO_DATA.has(c.iso3) && (
+                <span className="cl_tile_dep">
+                  <span className="cl_dot" style={{ background: c.export_dependence != null ? depColor(c.export_dependence) : NO_DATA_FILL }} />
+                  {c.export_dependence != null ? `${c.export_dependence.toFixed(1)}%` : 'No data'}
+                </span>
+              )}
             </button>
           );
         })}
