@@ -245,7 +245,7 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
   }
 
   function handleCountryClick(iso3) {
-    if (!mapData || iso3 === 'LIE') return;
+    if (!mapData) return;
     const lookup = CHINA_DELEGATE.has(iso3) ? 'CHN' : iso3;
     const row = mapData[lookup];
     if (row) {
@@ -258,7 +258,6 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
     () =>
       mapData
         ? Object.values(mapData)
-            .filter(r => r.iso3 !== 'LIE')
             .sort((a, b) => a.name.localeCompare(b.name))
         : [],
     [mapData]

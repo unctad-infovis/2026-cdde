@@ -37,7 +37,7 @@ export default function Compare({ content = {} }) {
       .then(text => {
         if (!text) return;
         const rows = CSVtoJSON(text)
-          .filter(r => r.iso3 && r.iso3 !== 'LIE')
+          .filter(r => r.iso3)
           .map(r => ({
             ...r,
             export_dependence: +r.export_dependence
