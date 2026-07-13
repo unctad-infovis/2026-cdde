@@ -26,7 +26,7 @@ export default function StackedBar({ segments, height = 28, showLegend = true })
     );
     io.observe(el);
     return () => io.disconnect();
-  }, [segments]);
+  }, []);
 
   const labelOpacity = Math.max(0, (progress - 0.75) / 0.25);
 
