@@ -97,8 +97,11 @@
       height: 100%;
       transition: width 0.6s cubic-bezier(0.34, 1.1, 0.64, 1);
     }
-    .dbl_bar--green {
-      background: var(--un-color-green);
+    .dbl_bar--yellow {
+      background: var(--un-color-yellow);
+    }
+    .dbl_bar--red {
+      background: var(--un-color-red);
     }
     .dbl_threshold_line {
       border-left: 1px dashed var(--un-color-grey-dark);

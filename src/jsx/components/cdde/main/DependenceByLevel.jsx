@@ -22,12 +22,15 @@ export default function DependenceByLevel({ insight, note, source, subtitle, tit
         if (!text) return;
         const rows = CSVtoJSON(text).filter(r => r.group);
         setData(
-          rows.map(r => ({
-            group: r.group,
-            economies: +r.economies,
-            avg_pct: +r.avg_pct,
-            color: r.group === 'Developed' ? 'green' : 'blue'
-          }))
+          rows.map(r => {
+            const pct = +r.avg_pct;
+            return {
+              group: r.group,
+              economies: +r.economies,
+              avg_pct: pct,
+              color: pct >= 80 ? 'red' : pct >= 60 ? 'yellow' : 'blue'
+            };
+          })
         );
       });
   }, []);
@@ -60,7 +63,7 @@ export default function DependenceByLevel({ insight, note, source, subtitle, tit
         <div className="dbl_bars">
           {data.map((row, idx) => {
             const barPct = (row.avg_pct / MAX_PCT) * 100;
-            const isBlue = row.color !== 'green';
+            const colorClass = row.color === 'yellow' ? ' dbl_bar--yellow' : row.color === 'red' ? ' dbl_bar--red' : '';
             const delay = `${500 + idx * 80}ms`;
             return (
               <div key={row.group} className="dbl_row">
@@ -70,7 +73,7 @@ export default function DependenceByLevel({ insight, note, source, subtitle, tit
                 </div>
                 <div className="dbl_bar_track">
                   <div
-                    className={`dbl_bar${isBlue ? '' : ' dbl_bar--green'}`}
+                    className={`dbl_bar${colorClass}`}
                     style={{ width: animated ? `${barPct}%` : '0%', transitionDelay: delay }}
                   />
                   <div className="dbl_threshold_line" style={{ left: `${thresholdPct}%` }} />

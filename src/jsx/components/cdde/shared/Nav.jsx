@@ -1,5 +1,14 @@
 import './Nav.css';
 
+const ON_UNCTAD = typeof window !== 'undefined' && window.location.hostname.includes('unctad.org');
+const UNCTAD_CDDE_PREFIX = 'https://unctad.org/topic/commodities/state-of-commodity-dependence/';
+
+function resolveItem(item) {
+  if (ON_UNCTAD || !item.href?.startsWith(UNCTAD_CDDE_PREFIX)) return item;
+  const slug = item.href.slice(UNCTAD_CDDE_PREFIX.length);
+  return { ...item, href: `${slug}.html`, external: false };
+}
+
 function scrollToY() {
   const start = window.scrollY;
   const dist = Math.round(window.innerHeight) - start + 50;
@@ -26,7 +35,8 @@ function isCurrentPage(href) {
 export default function Nav({ items = [] }) {
   return (
     <nav className="nav_container">
-      {items.map(item => {
+      {items.map(rawItem => {
+        const item = resolveItem(rawItem);
         const active = isCurrentPage(item.href);
         const cls = `nav_btn${item.primary ? ' nav_btn--primary' : ''}${active ? ' nav_btn--active' : ''}`;
         if (item.href) {
