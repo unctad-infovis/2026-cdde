@@ -63,6 +63,9 @@ export default function CountryProfile({ country, content = {} }) {
         <div className="cp_header_info">
           <h2 className="cp_country_name">{name}</h2>
           <p className="cp_country_meta">{region}</p>
+          {iso3 === 'LIE' && (
+            <p className="cp_country_note">Trade data is reported together with Switzerland. <a href="./compare.html?country=CHE">View Switzerland's profile →</a></p>
+          )}
         </div>
       </div>
 

@@ -25,9 +25,13 @@
       color: var(--un-color-grey-text);
       font-size: var(--un-font-size-xxs);
       font-style: italic;
-      margin: 0 0 4px;
+      margin: 4px 0 0;
       max-width: none;
       padding: 0;
+      a {
+        color: var(--un-color-blue);
+        text-decoration: underline;
+      }
     }
     .cp_country_meta {
       color: var(--un-color-grey-text);
