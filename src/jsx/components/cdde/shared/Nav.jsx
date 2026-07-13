@@ -2,11 +2,17 @@ import './Nav.css';
 
 const ON_UNCTAD = typeof window !== 'undefined' && window.location.hostname.includes('unctad.org');
 const UNCTAD_CDDE_PREFIX = 'https://unctad.org/topic/commodities/state-of-commodity-dependence/';
+const LOCAL_SLUG_MAP = {
+  'country-profiles': 'compare.html',
+  'know-more': 'know-more.html',
+};
 
 function resolveItem(item) {
   if (ON_UNCTAD || !item.href?.startsWith(UNCTAD_CDDE_PREFIX)) return item;
   const slug = item.href.slice(UNCTAD_CDDE_PREFIX.length);
-  return { ...item, href: `${slug}.html`, external: false };
+  const localHref = LOCAL_SLUG_MAP[slug];
+  if (!localHref) return item;
+  return { ...item, href: localHref, external: false };
 }
 
 function scrollToY() {
