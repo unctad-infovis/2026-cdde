@@ -105,7 +105,6 @@ const ROWS = [
 
 export default function CompareView({ compareList, countries, onCompareChange, dnaTitle, dnaSubtitle, dnaDescription }) {
   const tablePanelRef = useRef(null);
-  const [tableRevealed, setTableRevealed] = useState(false);
   const [groupData, setGroupData] = useState(null);
   const [statsData, setStatsData] = useState(null);
   const [macroData, setMacroData] = useState(null);
@@ -126,7 +125,7 @@ export default function CompareView({ compareList, countries, onCompareChange, d
     loadFile('assets/data/cdde_social_context.json')
       .then(r => r?.json())
       .then(d => d && setSocialData(d));
-    loadFile('assets/data/cdde_additional_comparison.json')
+    loadFile('assets/data/cdde_ranking_indicators.json')
       .then(r => r?.json())
       .then(d => d && setAdditionalData(d));
     loadFile('assets/data/cdde_net_imports.json')
@@ -141,7 +140,7 @@ export default function CompareView({ compareList, countries, onCompareChange, d
       ([e]) => {
         if (!e.isIntersecting) return;
         io.disconnect();
-        setTableRevealed(true);
+        el.classList.add('cv_panel--revealed');
       },
       { threshold: 0.1 }
     );
@@ -323,7 +322,7 @@ export default function CompareView({ compareList, countries, onCompareChange, d
                           <span className="cv_val_num">{row.fmt(val)}</span>
                         </div>
                         <div className="cv_bar_track">
-                          <div className="cv_bar_fill" style={{ width: tableRevealed ? `${barPct}%` : '0%', background: slot.bar }} />
+                          <div className="cv_bar_fill" style={{ width: `${barPct}%`, background: slot.bar }} />
                         </div>
                       </>
                     ) : (
