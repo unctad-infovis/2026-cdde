@@ -30,15 +30,15 @@ const GROUP_INFO = {
 
 function fmtMillions(v) {
   const n = Number(v);
-  if (n >= 1000) return `$${(n / 1000).toFixed(1)} bn`;
-  return `$${Math.round(n)} mn`;
+  if (n >= 1000) return `$${(n / 1000).toFixed(1)} billion`;
+  return `$${Math.round(n)} million`;
 }
 
 const ROWS = [
   {
     key: 'commodity_exports',
     label: 'Commodity exports',
-    desc: 'Millions of dollars, 2022–2024',
+    desc: 'Dollars, 2022–2024',
     fmt: fmtMillions
   },
   {
@@ -56,13 +56,13 @@ const ROWS = [
   {
     key: 'food_imports',
     label: 'Food imports',
-    desc: 'Millions of dollars, 2022–2024',
+    desc: 'Dollars, 2022–2024',
     fmt: fmtMillions
   },
   {
     key: 'energy_imports',
     label: 'Energy imports',
-    desc: 'Millions of dollars, 2022–2024',
+    desc: 'Dollars, 2022–2024',
     fmt: fmtMillions
   },
   {
@@ -81,7 +81,7 @@ const ROWS = [
     key: 'gdp_per_capita',
     label: 'GDP per capita',
     desc: 'Constant 2020 USD',
-    fmt: v => `$${Math.round(v).toLocaleString('en-US')}`
+    fmt: v => `$${Math.round(v).toLocaleString('en-US').replace(/,/g, ' ')}`
   },
   {
     key: 'population_m',
