@@ -1,6 +1,6 @@
 [
   {
-    "title": "Commodity Dependence, 2022-2024 (and historical trend)",
+    "title": "Commodity Dependence, 2022–2024 (and historical trend)",
     "unit": "Percentage",
     "definition": "Ratio, expressed as a percentage, of commodity exports to total (all allocated) merchandise exports. Allocated exports correspond to the sum of all individual product lines at the three‑digit level.",
     "comments": "Data for this indicator are rounded to one decimal place",
@@ -9,7 +9,7 @@
     "date": "2025-11-10"
   },
   {
-    "title": "Three Leading Commodity Exported, 2022-2024",
+    "title": "Three Leading Commodity Exported, 2022–2024",
     "unit": "Percentage",
     "definition": "Three leading 3‑digit commodities (SITC Rev.3) exported by individual UNCTAD member States as a share of the country’s total (all allocated) merchandise exports. The percentage displayed at the top of each country profile corresponds to the combined share of these three commodities",
     "comments": "Data for this indicator are rounded to one decimal place",
@@ -27,7 +27,7 @@
     "date": "2025-11-10"
   },
   {
-    "title": "Dependence by Product Groups, 2022-2024",
+    "title": "Dependence by Product Groups, 2022–2024",
     "unit": "Percentage",
     "definition": "Dependence by Product Groups is calculated by expressing the total exports of each product group as a share of the country’s total (all allocated) merchandise exports.                                                                                                                   Product groups are defined as follows:\n[0 + 1 + 2 (less 27 and 28) + 4] Agricultural commodities \n[3] Energy commodities \n[27 + 28 + 667 + 68 + 971] Mining commodities                                                         [SITC 5 to 8 less 667 and 68] Manufactured goods",
     "comments": "Data for this indicator are rounded to one decimal place",
@@ -81,7 +81,7 @@
     "date": "2025-11-10"
   },
   {
-    "title": "Net Food Imports, 2012-2014 and 2022-2024",
+    "title": "Net Food Imports, 2012–2014 and 2022–2024",
     "unit": "Percentage",
     "definition": "[SITC 0 + 22 + 4] Food, basic imports minus [SITC 0 + 22 + 4] Food, basic exports expressed as a share of the country’s total (all allocated) merchandise imports",
     "comments": "Data for this indicator are rounded to one decimal place. The chart tindicates net food-importing countries with a positive symbol",
@@ -90,7 +90,7 @@
     "date": "2025-11-10"
   },
   {
-    "title": "Net Energy Imports, 2012-2014 and 2022-2024",
+    "title": "Net Energy Imports, 2012–2014 and 2022–2024",
     "unit": "Percentage",
     "definition": "[SITC 3] Energy commodities imports minus [SITC 3] Energy commodities exports expressed as a share of the country’s total (all allocated) merchandise imports",
     "comments": "Data for this indicator are rounded to one decimal place. The chart tindicates net energy-importing countries with a positive symbol",
