@@ -29,10 +29,6 @@ const ENTRIES = [
 
 const ALL_JS = [...ENTRIES, ...CHUNKS.map(c => path.join('dist/js', c))];
 
-function md5(filePath) {
-  return crypto.createHash('md5').update(fs.readFileSync(filePath)).digest('hex').slice(0, 8);
-}
-
 function escapeRe(s) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
@@ -47,22 +43,10 @@ function applyHashes(filePaths, hashes) {
   }
 }
 
-// PASS 1: hash original chunk content, then patch inter-chunk imports inside chunk files.
-// This changes the content of chunks that have inter-chunk imports.
-const pass1Hashes = {};
-for (const chunk of CHUNKS) {
-  pass1Hashes[chunk] = md5(path.join('dist/js', chunk));
-}
-applyHashes(ALL_JS, pass1Hashes);
+// One random hash per build — same value for all chunks so inter-chunk imports stay consistent.
+// A new hash on every build guarantees a CDN cache miss regardless of file content.
+const deployHash = crypto.randomBytes(4).toString('hex');
+const hashes = Object.fromEntries(CHUNKS.map(c => [c, deployHash]));
+applyHashes(ALL_JS, hashes);
 
-// PASS 2: recompute hashes from the now-patched chunk files.
-// Chunks that had inter-chunk imports added now have different content → different hash →
-// different CDN URL → guaranteed cache miss even if the CDN cached the previous version.
-const pass2Hashes = {};
-for (const chunk of CHUNKS) {
-  pass2Hashes[chunk] = md5(path.join('dist/js', chunk));
-}
-// Apply final hashes to all files (overwrites the pass-1 hashes already embedded).
-applyHashes(ALL_JS, pass2Hashes);
-
-console.log('postbuild: cache hashes applied —', Object.entries(pass2Hashes).map(([k, v]) => `${k}?v=${v}`).join(', '));
+console.log('postbuild: deploy hash', deployHash, '— applied to', CHUNKS.join(', '));
