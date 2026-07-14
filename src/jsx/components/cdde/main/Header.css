@@ -57,6 +57,7 @@
     .share_wrapper {
       margin: 0 0 10px 0;
       .share_label {
+        display: none;
         color: #fff;
       }
     }

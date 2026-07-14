@@ -52,6 +52,7 @@
       font-family: Inter, Arial, sans-serif;
       font-size: var(--un-font-size-xxxs);
       letter-spacing: 0.03em;
+      overflow: hidden;
     }
     .cprices_grid_h {
       stroke-width: 1px;
