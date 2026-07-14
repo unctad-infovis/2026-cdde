@@ -1,7 +1,7 @@
 import './BackToTop.css';
 
 const BackToTop = ({ selector }) => {
-  const handleClick = selector => {
+  const onClick = selector => {
     window.appRef.current.querySelector(selector)?.scrollIntoView({
       behavior: 'smooth',
       block: 'start'
@@ -10,7 +10,7 @@ const BackToTop = ({ selector }) => {
 
   return (
     <div className="container_back_to_top">
-      <button type="button" onClick={() => handleClick(selector)}>
+      <button aria-label="Back to top" type="button" onClick={() => onClick(selector)}>
         Back to top
       </button>
     </div>
