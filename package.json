@@ -20,7 +20,7 @@
     "data:all": "npm run data:dependence-map && npm run data:exports-by-region && npm run data:dependence-by-group && npm run data:dependence-by-level && npm run data:status-change && npm run data:dependence-movers",
     "push": "git push && git push unctad main",
     "sync-gh-pages": "git subtree push --prefix dist origin gh-pages",
-    "sync-prod": "azcopy copy \"dist/*\" \"https://${AZURE_STORAGE_NAME}.blob.core.windows.net/\\$web/${npm_package_name}/\" --include-path 'js;css;assets' --recursive --exclude-pattern '.DS_Store'"
+    "sync-prod": "node scripts/sync-prod.js"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.14",

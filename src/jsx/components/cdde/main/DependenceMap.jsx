@@ -14,6 +14,10 @@ import CountrySearch from '../shared/CountrySearch';
 import { DEP_COLOR_SCALE, GROUP_COLORS, NO_DATA_FILL } from '../shared/cdde-constants';
 import './DependenceMap.css';
 
+const ON_UNCTAD = typeof window !== 'undefined' && window.location.hostname.includes('unctad.org');
+const PROFILE_BASE = ON_UNCTAD
+  ? 'https://unctad.org/topic/commodities/state-of-commodity-dependence/country-profiles'
+  : './compare.html';
 const MAX_H = 480;
 
 // HKG, MAC, TWN share China's data and highlight together
@@ -427,7 +431,7 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
                     )}
                   </div>
 
-                  <a className="cmap_panel_profile_link" href={`./compare.html?country=${selectedCountry.iso3}`}>
+                  <a className="cmap_panel_profile_link" href={`${PROFILE_BASE}?country=${selectedCountry.iso3}`}>
                     Open full country profile →
                   </a>
                 </>

@@ -28,6 +28,7 @@ export default function Header({ nav, stats, subtitle, title, title_highlight })
         </defs>
       </svg>
 
+      <div className="header_grain" aria-hidden="true" />
       <div className="header_content">
         <h1 className="header_title">{renderTitle()}</h1>
         <ButtonShare url={typeof window !== 'undefined' ? window.location.href : ''} defaultOpen position="static" iconBg="rgba(0,0,0,0.45)" iconHoverBg="rgba(251, 175, 23, 0.75)" iconColor="#fff" iconHoverColor="#000" size={36} />
