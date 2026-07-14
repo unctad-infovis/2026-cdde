@@ -1,6 +1,6 @@
 #app-root-2026-cdde .app {
   .ni_container {
-    background: var(--un-color-blue-lightest);
+    background: #f6fbfe;
     box-sizing: border-box;
     .ni_hero {
       background: #0b1627;
@@ -131,7 +131,7 @@
     .ni_card {
       background: #fff;
       border-radius: 20px;
-      border: 1px solid var(--un-color-grey-lighest);
+      border: 1px solid var(--un-color-grey-lightest);
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
@@ -148,7 +148,7 @@
       text-transform: uppercase;
     }
     .ni_card_value {
-      color: var(--un-color-blue-text);
+      color: var(--un-color-yellow);
       display: block;
       font-size: var(--un-font-size-xxxxl);
       font-weight: var(--un-font-weight-boldest);

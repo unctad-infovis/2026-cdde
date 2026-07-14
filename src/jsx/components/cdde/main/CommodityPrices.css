@@ -16,7 +16,7 @@
       padding: 2px 4px;
       transition: opacity 0.15s;
       &:hover {
-        background: var(--un-color-grey-lighest);
+        background: var(--un-color-grey-lightest);
       }
     }
     .cprices_legend_btn--active {
@@ -44,7 +44,7 @@
       width: 100%;
     }
     .cprices_correction_band {
-      fill: var(--un-color-grey-lighest);
+      fill: var(--un-color-grey-lightest);
       opacity: 0.7;
     }
     .cprices_correction_label {
@@ -55,7 +55,7 @@
     }
     .cprices_grid_h {
       stroke-width: 1px;
-      stroke: var(--un-color-grey-lighest);
+      stroke: var(--un-color-grey-lightest);
     }
     .cprices_y_label {
       fill: var(--un-color-grey-text);

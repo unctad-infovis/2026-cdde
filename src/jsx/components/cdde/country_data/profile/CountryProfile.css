@@ -64,7 +64,7 @@
       overflow: hidden;
     }
     .cp_stat {
-      border-right: 1px solid var(--un-color-grey-lighest);
+      border-right: 1px solid var(--un-color-grey-lightest);
       display: flex;
       flex-direction: column;
       gap: 6px;
@@ -150,7 +150,7 @@
         grid-template-columns: 1fr;
       }
       .cp_stat {
-        border-bottom: 1px solid var(--un-color-grey-lighest);
+        border-bottom: 1px solid var(--un-color-grey-lightest);
         border-right: none;
       }
       .cp_chart_row {

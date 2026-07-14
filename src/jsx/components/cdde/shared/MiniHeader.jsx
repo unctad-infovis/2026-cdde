@@ -9,6 +9,7 @@ export default function MiniHeader({ title, title_highlight, nav }) {
     return (
       <>
         {before}
+        <br />
         <span className="mh_title_highlight">{title_highlight}</span>
         {after}
       </>

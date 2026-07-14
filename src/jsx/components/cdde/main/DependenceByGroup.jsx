@@ -117,7 +117,7 @@ export default function DependenceByGroup({ insight, note, source, subtitle, tit
             {/* Y grid lines and labels */}
             {yTicks.map(v => (
               <g key={v} transform={`translate(0,${yScale(v)})`}>
-                <line x1={0} x2={chartW} stroke="var(--un-color-grey-lighest)" strokeWidth={1} />
+                <line x1={0} x2={chartW} stroke="var(--un-color-grey-lightest)" strokeWidth={1} />
                 <text x={-6} y={4} textAnchor="end" className="dbg_axis_label">
                   {v}
                 </text>

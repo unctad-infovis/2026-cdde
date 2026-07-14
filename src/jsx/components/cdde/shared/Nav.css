@@ -20,6 +20,9 @@
     transition:
       background 0.2s ease,
       color 0.2s ease;
+    @media all and (max-width: 600px) {
+      font-size: var(--un-font-size-xxxs);
+    }
     &:hover {
       background: rgba(255, 255, 255, 0.22);
     }

@@ -22,7 +22,7 @@
       border-color 0.15s;
     white-space: nowrap;
     &:hover {
-      background: var(--un-color-grey-lighest);
+      background: var(--un-color-grey-lightest);
       color: var(--un-color-blue-darkest);
       border-color: var(--un-color-grey-light);
     }

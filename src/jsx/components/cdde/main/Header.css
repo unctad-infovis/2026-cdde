@@ -35,7 +35,7 @@
     }
     .header_title {
       color: #fff;
-      font-size: clamp(50px, 6vw, 80px);
+      font-size: clamp(50px, 6vw, 70px);
       font-weight: var(--un-font-weight-boldest);
       line-height: var(--un-line-height-smallest);
       margin: 0 0 16px 0;
@@ -58,7 +58,7 @@
       font-weight: var(--un-font-weight-bolder);
       line-height: var(--un-line-height-normal);
       margin: 0 0 32px 0;
-      max-width: 560px;
+      max-width: 600px;
       padding: 0;
       text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
     }

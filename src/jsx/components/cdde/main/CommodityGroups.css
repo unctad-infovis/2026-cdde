@@ -4,7 +4,7 @@
     padding: 20px clamp(20px, 6vw, 80px) 32px;
   }
   .cg_inner {
-    border-top: 1px solid var(--un-color-grey-lighest);
+    border-top: 1px solid var(--un-color-grey-lightest);
     margin: 0 auto;
     max-width: 1100px;
     padding-top: 20px;
@@ -18,7 +18,7 @@
   }
   .cg_group {
     align-items: center;
-    border-right: 1px solid var(--un-color-grey-lighest);
+    border-right: 1px solid var(--un-color-grey-lightest);
     display: flex;
     flex: 1;
     gap: 8px;

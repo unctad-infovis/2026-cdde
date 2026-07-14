@@ -11,6 +11,7 @@ export default function Header({ nav, stats, subtitle, title, title_highlight })
     return (
       <>
         {before}
+        <br />
         <span className="header_title_highlight">{title_highlight}</span>
         {after}
       </>

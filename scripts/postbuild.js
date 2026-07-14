@@ -11,8 +11,7 @@ for (const f of fs.readdirSync('dist').filter(f => f.endsWith('.html'))) {
   fs.writeFileSync(p, html.replace(/href="\/(?!\/)/g, 'href="./').replace(/src="\/(?!\/)/g, 'src="./'));
 }
 
-// Hash each chunk file and append ?v=<hash> to ALL references across entries AND chunks,
-// so inter-chunk imports also bust the CDN cache (prevents stale chunk mismatches).
+// Chunk files that are dynamically imported by entry files and/or by other chunks.
 const CHUNKS = [
   '2026-cdde.BackToTop.js',
   '2026-cdde.cdde-patterns.js',
@@ -21,29 +20,49 @@ const CHUNKS = [
   '2026-cdde.UNCTADSiteHeader.js',
 ];
 
-const hashes = {};
-for (const chunk of CHUNKS) {
-  const content = fs.readFileSync(path.join('dist/js', chunk));
-  hashes[chunk] = crypto.createHash('md5').update(content).digest('hex').slice(0, 8);
-}
-
-// Patch entries AND chunks — inter-chunk imports need version hashes too
-const ALL_JS = [
+const ENTRIES = [
   'dist/js/2026-cdde.min.js',
   'dist/js/2026-cdde-compare.min.js',
   'dist/js/2026-cdde-header.min.js',
   'dist/js/2026-cdde-know-more.min.js',
-  ...CHUNKS.map(c => path.join('dist/js', c)),
 ];
 
-for (const filePath of ALL_JS) {
-  let src = fs.readFileSync(filePath, 'utf8');
-  for (const [chunk, hash] of Object.entries(hashes)) {
-    // Escape all regex special chars in the filename
-    const escaped = chunk.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    src = src.replace(new RegExp(`${escaped}(?:\\?[^"']*)?`, 'g'), `${chunk}?v=${hash}`);
-  }
-  fs.writeFileSync(filePath, src);
+const ALL_JS = [...ENTRIES, ...CHUNKS.map(c => path.join('dist/js', c))];
+
+function md5(filePath) {
+  return crypto.createHash('md5').update(fs.readFileSync(filePath)).digest('hex').slice(0, 8);
 }
 
-console.log('postbuild: cache hashes applied —', Object.entries(hashes).map(([k, v]) => `${k}?v=${v}`).join(', '));
+function escapeRe(s) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function applyHashes(filePaths, hashes) {
+  for (const filePath of filePaths) {
+    let src = fs.readFileSync(filePath, 'utf8');
+    for (const [chunk, hash] of Object.entries(hashes)) {
+      src = src.replace(new RegExp(`${escapeRe(chunk)}(?:\\?[^"']*)?`, 'g'), `${chunk}?v=${hash}`);
+    }
+    fs.writeFileSync(filePath, src);
+  }
+}
+
+// PASS 1: hash original chunk content, then patch inter-chunk imports inside chunk files.
+// This changes the content of chunks that have inter-chunk imports.
+const pass1Hashes = {};
+for (const chunk of CHUNKS) {
+  pass1Hashes[chunk] = md5(path.join('dist/js', chunk));
+}
+applyHashes(ALL_JS, pass1Hashes);
+
+// PASS 2: recompute hashes from the now-patched chunk files.
+// Chunks that had inter-chunk imports added now have different content → different hash →
+// different CDN URL → guaranteed cache miss even if the CDN cached the previous version.
+const pass2Hashes = {};
+for (const chunk of CHUNKS) {
+  pass2Hashes[chunk] = md5(path.join('dist/js', chunk));
+}
+// Apply final hashes to all files (overwrites the pass-1 hashes already embedded).
+applyHashes(ALL_JS, pass2Hashes);
+
+console.log('postbuild: cache hashes applied —', Object.entries(pass2Hashes).map(([k, v]) => `${k}?v=${v}`).join(', '));

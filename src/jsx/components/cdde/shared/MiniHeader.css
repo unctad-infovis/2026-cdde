@@ -8,6 +8,9 @@
     padding: clamp(20px, 4vw, 56px);
     position: relative;
     overflow: hidden;
+    @media all and (max-width: 500px) {
+      height: auto;
+    }
     &::before {
       background: var(--hero-bg-url) center 40% / cover no-repeat;
       content: '';
@@ -34,7 +37,7 @@
   }
   .mh_title {
     color: #fff;
-    font-size: clamp(24px, 3.8vw, 52px);
+    font-size: clamp(40px, 3.8vw, 52px);
     font-weight: var(--un-font-weight-boldest);
     line-height: var(--un-line-height-smallest);
     margin: 0;

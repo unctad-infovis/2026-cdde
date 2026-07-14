@@ -17,7 +17,7 @@
   .cmp_tool_tab {
     align-items: center;
     background: #fff;
-    border: 1px solid var(--un-color-grey-lighest);
+    border: 1px solid var(--un-color-grey-lightest);
     border-radius: 12px;
     cursor: pointer;
     display: flex;
@@ -39,7 +39,7 @@
     }
   }
   .cmp_tool_num {
-    color: var(--un-color-grey-lighest);
+    color: var(--un-color-grey-lightest);
     flex-shrink: 0;
     font-size: var(--un-font-size-xxxl);
     font-weight: var(--un-font-weight-boldest);
@@ -87,7 +87,7 @@
   /* Panel filters (inside the overlay panel) */
   .cmp_panel_filters {
     background: #fff;
-    border-bottom: 1px solid var(--un-color-grey-lighest);
+    border-bottom: 1px solid var(--un-color-grey-lightest);
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
@@ -119,7 +119,7 @@
       border-color 0.12s;
     white-space: nowrap;
     &:hover {
-      background: var(--un-color-grey-lighest);
+      background: var(--un-color-grey-lightest);
       color: var(--un-color-blue-darkest);
     }
   }
@@ -185,7 +185,7 @@
       color 0.12s;
     white-space: nowrap;
     &:hover:not(.cmp_filter_pill--active) {
-      background: var(--un-color-grey-lighest);
+      background: var(--un-color-grey-lightest);
     }
   }
   .cmp_filter_pill--active {

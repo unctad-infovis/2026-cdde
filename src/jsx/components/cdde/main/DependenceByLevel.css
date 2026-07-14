@@ -85,7 +85,7 @@
       font-size: var(--un-font-size-xxxs);
     }
     .dbl_bar_track {
-      background: var(--un-color-grey-lighest);
+      background: var(--un-color-grey-lightest);
       border-radius: 3px;
       height: 20px;
       overflow: visible;

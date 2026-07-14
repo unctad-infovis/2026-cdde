@@ -1,12 +1,11 @@
 #app-root-2026-cdde .app {
   /* ── Outer section ──────────────────────────────────────────── */
   .km_section {
-    background: var(--un-color-blue-lightest);
+    background: #f6fbfe;
   }
   /* ── Header band ────────────────────────────────────────────── */
   .km_header {
     padding: clamp(40px, 6vw, 72px) clamp(20px, 6vw, 80px) 32px;
-    background: var(--un-color-blue-lightest);
   }
   .km_header_inner {
     max-width: 1200px;
@@ -49,12 +48,11 @@
   }
   /* ── Sticky nav ─────────────────────────────────────────────── */
   .km_sticky_nav {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 0 clamp(20px, 6vw, 80px);
     position: sticky;
     top: 0;
     z-index: 50;
-    background: var(--un-color-blue-lightest);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    padding: 0 clamp(20px, 6vw, 80px);
   }
   .km_nav_inner {
     display: flex;

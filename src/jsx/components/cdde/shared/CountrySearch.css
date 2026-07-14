@@ -5,7 +5,7 @@
     position: relative;
     .cs_field {
       align-items: center;
-      background: var(--un-color-grey-lighest);
+      background: var(--un-color-grey-lightest);
       border-radius: 8px;
       border: 1.5px solid transparent;
       cursor: text;

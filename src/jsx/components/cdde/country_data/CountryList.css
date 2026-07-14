@@ -10,7 +10,7 @@
     padding: 14px 12px 12px;
     .cl_panel_header {
       align-items: center;
-      border-bottom: 1px solid var(--un-color-grey-lighest);
+      border-bottom: 1px solid var(--un-color-grey-lightest);
       display: flex;
       flex-shrink: 0;
       justify-content: space-between;
@@ -71,10 +71,10 @@
           gap: 4px;
         }
         &:hover {
-          background: var(--un-color-grey-lighest);
+          background: var(--un-color-grey-lightest);
         }
         &.cl_tile--selected {
-          background: var(--un-color-yellow-lighest);
+          background: var(--un-color-yellow-lightest);
           border-radius: 6px;
           outline-offset: -2px;
           outline: 2px solid var(--un-color-blue);

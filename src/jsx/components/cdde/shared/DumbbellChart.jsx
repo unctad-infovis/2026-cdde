@@ -86,8 +86,8 @@ export default function DumbbellChart({ data, xMin, xMax, nameW = 140, badgeW = 
         const changeRounded = Math.round(row.change * 10) / 10;
         const changeStr = Number.isInteger(changeRounded) ? String(changeRounded) : changeRounded.toFixed(1);
         const bLabel = row.change > 0 ? `+${changeStr}pp` : `${changeStr}pp`;
-        const badgeBg = row.change > 0 ? 'var(--un-color-yellow-lighest)' : 'var(--un-color-blue-lightest)';
-        const badgeColor = row.change > 0 ? 'var(--un-color-yellow-darkest)' : 'var(--un-color-blue-text-dark)';
+        const badgeBg = row.change > 0 ? 'var(--un-color-yellow-light)' : 'var(--un-color-blue-light)';
+        const badgeColor = row.change > 0 ? '#000' : '#000';
 
         const rowDelay = 500 + i * 60;
         const tr = s => (REDUCED_MOTION ? 'none' : s);

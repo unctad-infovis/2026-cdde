@@ -11,7 +11,7 @@
     width: 100%;
   }
   .pcc_grid {
-    stroke: var(--un-color-grey-lighest);
+    stroke: var(--un-color-grey-lightest);
     stroke-width: 1px;
   }
   .pcc_zero {

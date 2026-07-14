@@ -55,7 +55,7 @@
     }
     .dbg_tt_total {
       align-items: center;
-      border-top: 1px solid var(--un-color-grey-lighest);
+      border-top: 1px solid var(--un-color-grey-lightest);
       color: var(--un-color-blue-darkest);
       display: flex;
       font-size: var(--un-font-size-xxs);

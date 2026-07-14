@@ -19,7 +19,7 @@
     justify-content: space-between;
     gap: 16px;
     padding: 16px 24px;
-    border-bottom: 1px solid var(--un-color-grey-lighest);
+    border-bottom: 1px solid var(--un-color-grey-lightest);
     flex-wrap: wrap;
   }
   .rt_controls_left {
@@ -48,7 +48,7 @@
   .rt_select {
     appearance: none;
     -webkit-appearance: none;
-    background: var(--un-color-grey-lighest);
+    background: var(--un-color-grey-lightest);
     border: none;
     border-radius: 8px;
     padding: 6px 32px 6px 12px;
@@ -90,7 +90,7 @@
       background 0.15s,
       color 0.15s;
     &:hover {
-      background: var(--un-color-grey-lighest);
+      background: var(--un-color-grey-lightest);
       color: var(--un-color-blue-darkest);
     }
   }
@@ -118,7 +118,7 @@
   .rt_thead {
     padding-top: 14px;
     padding-bottom: 10px;
-    border-bottom: 2px solid var(--un-color-grey-lighest);
+    border-bottom: 2px solid var(--un-color-grey-lightest);
   }
   .rt_th {
     font-size: var(--un-font-size-xxxs);
@@ -133,7 +133,7 @@
   .rt_row {
     padding-top: 14px;
     padding-bottom: 14px;
-    border-bottom: 1px solid var(--un-color-grey-lighest);
+    border-bottom: 1px solid var(--un-color-grey-lightest);
     &:last-child {
       border-bottom: none;
     }
@@ -202,7 +202,7 @@
   }
   .rt_bar_track {
     height: 10px;
-    background: var(--un-color-grey-lighest);
+    background: var(--un-color-grey-lightest);
     border-radius: 5px;
     overflow: hidden;
   }

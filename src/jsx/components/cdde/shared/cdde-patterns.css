@@ -118,7 +118,7 @@
     line-height: var(--un-line-height-small);
   }
   .cdde_hbar_track {
-    background: var(--un-color-grey-lighest);
+    background: var(--un-color-grey-lightest);
     border-radius: 3px;
     height: 14px;
     overflow: hidden;
@@ -186,7 +186,7 @@
     width: 100%;
   }
   .cdde_col_grid {
-    stroke: var(--un-color-grey-lighest);
+    stroke: var(--un-color-grey-lightest);
     stroke-width: 1px;
   }
   .cdde_col_axis {

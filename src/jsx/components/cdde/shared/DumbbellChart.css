@@ -39,10 +39,10 @@
   }
   .db_track {
     stroke-width: 1px;
-    stroke: var(--un-color-grey-lighest);
+    stroke: var(--un-color-grey-lightest);
   }
   .db_row_name {
-    fill: var(--un-color-blue-darkest);
+    fill: #000;
     font-family: Inter, Arial, sans-serif;
     font-size: var(--un-font-size-xxs);
   }
