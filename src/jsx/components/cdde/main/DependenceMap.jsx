@@ -25,7 +25,7 @@ const EXP_LEGEND_ITEMS = [
   { label: '20–40%', color: DEP_COLOR_SCALE[1].color },
   { label: '40–60%', color: DEP_COLOR_SCALE[2].color },
   { label: '60–80%', color: 'var(--un-color-blue-dark)', note: '≥ 60% commodity-dependent' },
-  { label: '80–100%', color: 'var(--un-color-blue-darkest)' },
+  { label: '80–100%', color: 'var(--un-color-blue-darkest)' }
 ];
 
 const GROUP_LABELS = {
@@ -250,14 +250,7 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
     }
   }
 
-  const mapCountryList = useMemo(
-    () =>
-      mapData
-        ? Object.values(mapData)
-            .sort((a, b) => a.name.localeCompare(b.name))
-        : [],
-    [mapData]
-  );
+  const mapCountryList = useMemo(() => (mapData ? Object.values(mapData).sort((a, b) => a.name.localeCompare(b.name)) : []), [mapData]);
 
   function closePanel() {
     setSelectedCountry(null);
@@ -314,9 +307,8 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
         </div>
 
         <div className="cmap_groups_top">
-          {view === 'export' ? (
-            <>
-              {EXP_LEGEND_ITEMS.map(item => (
+          {view === 'export'
+            ? EXP_LEGEND_ITEMS.map(item => (
                 <div className="cmap_gt_item" key={item.label}>
                   <span className="cmap_gt_dot" style={{ background: item.color }} />
                   <span className="cmap_gt_text">
@@ -324,11 +316,8 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
                     {item.note && <span className="cmap_gt_note">{item.note}</span>}
                   </span>
                 </div>
-              ))}
-            </>
-          ) : (
-            <>
-              {Object.entries(GROUP_LABELS).map(([key, label]) => (
+              ))
+            : Object.entries(GROUP_LABELS).map(([key, label]) => (
                 <div className="cmap_gt_item" key={key}>
                   <span className="cmap_gt_dot" style={{ background: GROUP_COLORS[key] }} />
                   <span className="cmap_gt_text">
@@ -337,8 +326,6 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
                   </span>
                 </div>
               ))}
-            </>
-          )}
           <div className="cmap_gt_item cmap_gt_item--nodata">
             <span className="cmap_gt_dot" style={{ background: NO_DATA_FILL }} />
             <span className="cmap_gt_text">
@@ -351,9 +338,9 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
           <svg ref={svgRef} viewBox={`0 0 ${svgW} ${H}`} className="cmap_svg" aria-label="World choropleth map of commodity dependence" onMouseMove={handleSvgHover} onMouseLeave={handleSvgLeave}>
             {/* Aksai Chin stripe pattern — alternates India and China fill colors, updates with view */}
             <defs>
-              <pattern id="cmap_aksai_stripe" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
-                <rect width="4" height="8" fill={getFill('IND')} />
-                <rect x="4" width="4" height="8" fill={getFill('CHN')} />
+              <pattern id="cmap_aksai_stripe" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
+                <rect width="6" height="6" fill={getFill('CHN')} />
+                <rect width="2" height="7" fill={getFill('IND')} />
               </pattern>
             </defs>
 
@@ -395,7 +382,6 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
               </g>
             </g>
           </svg>
-
 
           {/* Country info panel — overlaid on right side of map */}
           {selectedCountry && (

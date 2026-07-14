@@ -180,12 +180,7 @@ export default function CommodityPrices({ insight, note, source, subtitle, title
         {SERIES.map(s => {
           const isActive = activeFilter === s.label;
           return (
-            <button
-              key={s.key}
-              type="button"
-              className={`cdde_legend_item cprices_legend_btn${isActive ? ' cprices_legend_btn--active' : ''}${hasFilter && !isActive ? ' cprices_legend_btn--faded' : ''}`}
-              onClick={() => toggleFilter(s.label)}
-            >
+            <button key={s.key} type="button" className={`cdde_legend_item cprices_legend_btn${isActive ? ' cprices_legend_btn--active' : ''}${hasFilter && !isActive ? ' cprices_legend_btn--faded' : ''}`} onClick={() => toggleFilter(s.label)}>
               <span className="cdde_legend_line" style={{ background: s.color }} />
               {s.label}
             </button>
@@ -235,7 +230,7 @@ export default function CommodityPrices({ insight, note, source, subtitle, title
                     pathLength="1"
                     fill="none"
                     stroke={s.color}
-                    strokeWidth={activeFilter === 'All' ? 1.8 : activeFilter === s.label ? 2.2 : 1.8}
+                    strokeWidth={activeFilter === 'All' ? 3 : activeFilter === s.label ? 4 : 3}
                     opacity={lineOpacity(s.label)}
                     strokeLinecap="round"
                     strokeLinejoin="round"

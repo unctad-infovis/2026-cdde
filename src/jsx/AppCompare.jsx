@@ -10,6 +10,11 @@ import './components/cdde/shared/cdde-patterns.css';
 
 const components = { BackToTop, Compare };
 
+const ON_UNCTAD = typeof window !== 'undefined' && window.location.hostname.includes('unctad.org');
+const homeHref = ON_UNCTAD
+  ? `${window.location.protocol}//${window.location.host}${window.location.pathname.split('/').slice(0, -1).join('/')}`
+  : './index.html';
+
 const AppCompare = ({ meta }) => {
   const appRef = useRef();
 
@@ -17,7 +22,7 @@ const AppCompare = ({ meta }) => {
 
   const nav = (meta?.nav || []).map(item => ({
     ...item,
-    href: item.href ? (item.href.startsWith('#') ? `./index.html${item.href}` : item.href) : './index.html',
+    href: item.href ? (item.href.startsWith('#') ? `${homeHref}${item.href}` : item.href) : homeHref,
     label: item.primary ? '← Main page' : item.label
   }));
 
