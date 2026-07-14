@@ -6,7 +6,18 @@ import MiniHeader from './components/cdde/shared/MiniHeader.jsx';
 import './../styles/styles.css';
 import './components/cdde/shared/cdde-patterns.css';
 
-const nav = meta.nav || [];
+const ON_UNCTAD = typeof window !== 'undefined' && window.location.hostname.includes('unctad.org');
+const homeHref = ON_UNCTAD
+  ? `${window.location.protocol}//${window.location.host}${window.location.pathname.split('/').slice(0, -1).join('/')}`
+  : './index.html';
+
+const nav = (meta.nav || []).map(item => ({
+  ...item,
+  href: item.href
+    ? item.href.startsWith('#') ? `${homeHref}${item.href}` : item.href
+    : homeHref,
+  label: item.primary ? '← Main page' : item.label,
+}));
 
 const container = document.getElementById(`app-root-${__PROJECT_NAME__}`);
 const root = createRoot(container);
