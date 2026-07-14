@@ -58,7 +58,7 @@ export default function Nav({ items = [] }) {
               href={item.href}
               key={item.label}
               rel={item.external ? 'noopener noreferrer' : undefined}
-              target={item.external ? '_blank' : undefined}
+              target={undefined}
             >
               {item.label}
             </a>
