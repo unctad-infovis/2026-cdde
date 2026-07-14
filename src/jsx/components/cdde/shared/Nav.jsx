@@ -33,7 +33,13 @@ function scrollToY() {
 
 function isCurrentPage(href) {
   if (!href || href.startsWith('#')) return false;
-  const pathname = typeof window !== 'undefined' ? window.location.pathname : '';
+  if (typeof window === 'undefined') return false;
+  const pathname = window.location.pathname.replace(/\/$/, '');
+  if (href.startsWith('http')) {
+    try {
+      return pathname === new URL(href).pathname.replace(/\/$/, '');
+    } catch { return false; }
+  }
   const normalized = href.replace(/^\.\//, '');
   return pathname.endsWith(`/${normalized}`) || pathname.endsWith(`/${normalized.replace('.html', '')}`);
 }
