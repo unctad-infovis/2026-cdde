@@ -13,7 +13,86 @@ const PILL_H = 20;
 const PILL_R = 3;
 const PILL_ARROW = 4;
 
+const LABEL_H = 22;
+const LABEL_PAD_X = 10;
+const LABEL_GAP = 4;
+const LABEL_R = 4;
+// Candidate slots tried for each label, all sitting directly against the dot — no sideways
+// drift, so a label never ends up far from its own dot. Primary (cardinal) sides are tried
+// first in a randomised order so labels don't all default to the same side; the four diagonal
+// corners are the fallback. If none is overlap-free, the least-overlapping slot wins — a little
+// overlap beats placing the label away from its dot.
+const LABEL_PRIMARY = ['top', 'right', 'bottom', 'left'];
+const LABEL_SECONDARY = ['top-right', 'bottom-right', 'bottom-left', 'top-left'];
+
+function shuffled(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
 const REGION_LIST = ['All regions', 'Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
+
+// Category fill/border pair: fill stays the regular category colour, border is the darker
+// shade used to outline a selected dot or a highlight label.
+const fillColor = dev => (dev ? C_BLUE : C_YELLOW);
+const borderColor = dev => (dev ? 'var(--un-color-blue-darkest)' : 'var(--un-color-yellow-darkest)');
+
+// Fill for a dot: grey when another country is highlighted instead of this one, its category colour otherwise.
+function dotFill(n, hlSet, hasHL) {
+  if (hasHL && !hlSet.has(n.iso3)) return '#ccc';
+  return fillColor(n.dev);
+}
+
+// Builds a candidate label box directly against the given side/corner of a highlighted dot.
+function labelRectFor(node, pos, w, h) {
+  const gap = node.r + LABEL_GAP;
+  const diag = gap / Math.SQRT2;
+  switch (pos) {
+    case 'top':
+      return { left: node.x - w / 2, right: node.x + w / 2, top: node.y - gap - h, bottom: node.y - gap };
+    case 'bottom':
+      return { left: node.x - w / 2, right: node.x + w / 2, top: node.y + gap, bottom: node.y + gap + h };
+    case 'left':
+      return { left: node.x - gap - w, right: node.x - gap, top: node.y - h / 2, bottom: node.y + h / 2 };
+    case 'right':
+      return { left: node.x + gap, right: node.x + gap + w, top: node.y - h / 2, bottom: node.y + h / 2 };
+    case 'top-right':
+      return { left: node.x + diag, right: node.x + diag + w, top: node.y - diag - h, bottom: node.y - diag };
+    case 'bottom-right':
+      return { left: node.x + diag, right: node.x + diag + w, top: node.y + diag, bottom: node.y + diag + h };
+    case 'bottom-left':
+      return { left: node.x - diag - w, right: node.x - diag, top: node.y + diag, bottom: node.y + diag + h };
+    default:
+      return { left: node.x - diag - w, right: node.x - diag, top: node.y - diag - h, bottom: node.y - diag };
+  }
+}
+
+function clampRect(rect, bounds) {
+  const r = { ...rect };
+  if (r.left < bounds.left) {
+    r.right += bounds.left - r.left;
+    r.left = bounds.left;
+  }
+  if (r.right > bounds.right) {
+    r.left -= r.right - bounds.right;
+    r.right = bounds.right;
+  }
+  if (r.top < bounds.top) {
+    r.bottom += bounds.top - r.top;
+    r.top = bounds.top;
+  }
+  if (r.bottom > bounds.bottom) {
+    r.top -= r.bottom - bounds.bottom;
+    r.bottom = bounds.bottom;
+  }
+  return r;
+}
+
+const rectsOverlap = (a, b) => a.left < b.right && a.right > b.left && a.top < b.bottom && a.bottom > b.top;
 
 export default function EconomyBubbleChart({ countries, title, subtitle, description, source, note }) {
   const [region, setRegion] = useState('All regions');
@@ -28,9 +107,69 @@ export default function EconomyBubbleChart({ countries, title, subtitle, descrip
   const wrapRef = useRef();
   const hlRef = useRef();
   const highlightRef = useRef(highlight);
+  const nodesRef = useRef([]);
+  const labelsGroupRef = useRef(null);
+  const dimsRef = useRef({ iW: 0, iH: 0 });
   useEffect(() => {
     highlightRef.current = highlight;
   }, [highlight]);
+
+  const renderLabels = hlList => {
+    const labelsGroup = labelsGroupRef.current;
+    if (!labelsGroup) return;
+    labelsGroup.selectAll('*').remove();
+    const hlSet = new Set(hlList);
+    if (!hlSet.size) return;
+
+    const { iW, iH } = dimsRef.current;
+    const bounds = { left: -14, right: iW + 14, top: -38, bottom: iH + 26 };
+    const allNodes = nodesRef.current;
+    const hlNodes = allNodes.filter(n => hlSet.has(n.iso3)).sort((a, b) => a.x - b.x);
+    if (!hlNodes.length) return;
+
+    // Measure label widths off-screen so box sizing matches the actual rendered text.
+    const measureG = labelsGroup.append('g').attr('visibility', 'hidden');
+    const widths = new Map();
+    hlNodes.forEach(n => {
+      const t = measureG.append('text').attr('class', 'ebc_label_text').text(n.name);
+      widths.set(n.iso3, t.node().getBBox().width);
+    });
+    measureG.remove();
+
+    const placed = [];
+    hlNodes.forEach(n => {
+      const w = (widths.get(n.iso3) || 40) + LABEL_PAD_X * 2;
+      const h = LABEL_H;
+
+      const candidates = [...shuffled(LABEL_PRIMARY), ...LABEL_SECONDARY];
+      let best = null;
+      let bestOverlap = Infinity;
+      for (const pos of candidates) {
+        const clamped = clampRect(labelRectFor(n, pos, w, h), bounds);
+        let overlapCount = 0;
+        placed.forEach(p => {
+          if (rectsOverlap(clamped, p)) overlapCount += 1;
+        });
+        if (overlapCount < bestOverlap) {
+          bestOverlap = overlapCount;
+          best = clamped;
+        }
+        if (overlapCount === 0) break;
+      }
+      placed.push(best);
+
+      const labelG = labelsGroup.append('g').attr('class', 'ebc_label').attr('transform', `translate(${best.left},${best.top})`);
+      labelG.append('rect').attr('class', 'ebc_label_rect').attr('width', w).attr('height', h).attr('rx', LABEL_R).style('fill', fillColor(n.dev));
+      labelG
+        .append('text')
+        .attr('class', 'ebc_label_text')
+        .attr('x', w / 2)
+        .attr('y', h / 2 + 1)
+        .attr('text-anchor', 'middle')
+        .attr('dominant-baseline', 'middle')
+        .text(n.name);
+    });
+  };
 
   useEffect(() => {
     loadFile('assets/data/cdde_social_context.json')
@@ -155,11 +294,14 @@ export default function EconomyBubbleChart({ countries, title, subtitle, descrip
       .attr('cx', d => d.x)
       .attr('cy', d => d.y)
       .attr('r', 0)
-      .attr('fill', d => (hasHL && !hlSet.has(d.iso3) ? '#ccc' : d.dev ? C_BLUE : C_YELLOW))
+      .style('fill', d => dotFill(d, hlSet, hasHL))
       .attr('opacity', d => (hasHL && !hlSet.has(d.iso3) ? 0.25 : 0.82))
-      .style('stroke', d => (hlSet.has(d.iso3) ? 'var(--un-color-blue-darkest)' : 'none'))
+      .style('stroke', d => (hlSet.has(d.iso3) ? borderColor(d.dev) : 'none'))
       .attr('stroke-width', 2.5)
-      .style('cursor', 'default')
+      .style('cursor', 'pointer')
+      .on('click', (_event, d) => {
+        setHighlight(prev => (prev.includes(d.iso3) ? prev.filter(iso3 => iso3 !== d.iso3) : [...prev, d.iso3]));
+      })
       .on('mouseover', (event, d) => {
         const rect = wrapRef.current.getBoundingClientRect();
         setTooltip({ left: event.clientX - rect.left, top: event.clientY - rect.top, name: d.name, val: d.val });
@@ -174,6 +316,11 @@ export default function EconomyBubbleChart({ countries, title, subtitle, descrip
       .delay((_d, i) => i * 2)
       .attr('r', d => d.r);
 
+    nodesRef.current = nodes;
+    dimsRef.current = { iW, iH };
+    labelsGroupRef.current = g.append('g').attr('class', 'ebc_labels');
+    renderLabels(highlightRef.current);
+
     d3.select(svgRef.current).on('mouseleave', () => setTooltip(null));
   }, [visible, chartW, socialData]);
 
@@ -183,9 +330,10 @@ export default function EconomyBubbleChart({ countries, title, subtitle, descrip
     const hasHL = hlSet.size > 0;
     d3.select(svgRef.current)
       .selectAll('circle')
-      .attr('fill', d => (hasHL && !hlSet.has(d.iso3) ? '#ccc' : d.dev ? C_BLUE : C_YELLOW))
+      .style('fill', d => dotFill(d, hlSet, hasHL))
       .attr('opacity', d => (hasHL && !hlSet.has(d.iso3) ? 0.25 : 0.82))
-      .style('stroke', d => (hlSet.has(d.iso3) ? 'var(--un-color-blue-darkest)' : 'none'));
+      .style('stroke', d => (hlSet.has(d.iso3) ? borderColor(d.dev) : 'none'));
+    renderLabels(highlight);
   }, [highlight]);
 
   const handleHlInput = e => {

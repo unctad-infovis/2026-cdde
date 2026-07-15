@@ -94,6 +94,19 @@
       right: 0;
       top: 0;
     }
+    /* Country labels */
+    .ebc_label {
+      pointer-events: none;
+    }
+    .ebc_label_rect {
+      filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.18));
+    }
+    .ebc_label_text {
+      fill: #fff;
+      font-family: Inter, Arial, sans-serif;
+      font-size: var(--un-font-size-xxxs);
+      font-weight: var(--un-font-weight-bold);
+    }
     /* Tooltip content */
     .ebc_tt_name {
       color: var(--un-color-blue-darkest);
