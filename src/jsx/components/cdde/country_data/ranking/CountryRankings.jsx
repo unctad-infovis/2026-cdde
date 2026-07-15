@@ -188,7 +188,7 @@ export default function CountryRankings({ countries }) {
 
   return (
     <div className="rt_wrap">
-      {(!countries || !dataLoaded) && <div className="cdde_loading" style={{ height: 400 }} />}
+      {(!countries || !dataLoaded) && <div className="cdde_loading cdde_loading--lg" />}
       {countries && dataLoaded && (
         <>
           {/* ── Controls ── */}
@@ -203,8 +203,8 @@ export default function CountryRankings({ countries }) {
                     </option>
                   ))}
                 </select>
-                <svg className="rt_chevron" viewBox="0 0 10 6" fill="none" aria-hidden="true">
-                  <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <svg className="rt_chevron" viewBox="0 0 10 6" aria-hidden="true">
+                  <path d="M1 1l4 4 4-4" />
                 </svg>
               </div>
 
@@ -217,8 +217,8 @@ export default function CountryRankings({ countries }) {
                     </option>
                   ))}
                 </select>
-                <svg className="rt_chevron" viewBox="0 0 10 6" fill="none" aria-hidden="true">
-                  <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <svg className="rt_chevron" viewBox="0 0 10 6" aria-hidden="true">
+                  <path d="M1 1l4 4 4-4" />
                 </svg>
               </div>
             </div>
@@ -226,11 +226,11 @@ export default function CountryRankings({ countries }) {
             <div className="rt_controls_right">
               <div className="cdde_legend_row rt_legend">
                 <span className="cdde_legend_item">
-                  <span className="cdde_legend_dot" style={{ background: 'var(--un-color-blue)' }} />
+                  <span className="cdde_legend_dot cdde_legend_dot--blue" />
                   Developed
                 </span>
                 <span className="cdde_legend_item">
-                  <span className="cdde_legend_dot" style={{ background: 'var(--un-color-yellow)' }} />
+                  <span className="cdde_legend_dot cdde_legend_dot--yellow" />
                   Developing
                 </span>
               </div>

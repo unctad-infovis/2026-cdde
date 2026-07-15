@@ -3,9 +3,7 @@ import Nav from './Nav.jsx';
 import './MiniHeader.css';
 
 const ON_UNCTAD = typeof window !== 'undefined' && window.location.hostname.includes('unctad.org');
-const homeHref = ON_UNCTAD
-  ? `${window.location.protocol}//${window.location.host}${window.location.pathname.split('/').slice(0, -1).join('/')}`
-  : './index.html';
+const homeHref = ON_UNCTAD ? `${window.location.protocol}//${window.location.host}${window.location.pathname.split('/').slice(0, -1).join('/')}` : './index.html';
 
 // Resolve nav items: primary items that haven't already been labelled get "← Main page"
 // pointing back to the parent page. This handles the standalone header context where
@@ -39,17 +37,11 @@ export default function MiniHeader({ title, title_highlight, nav }) {
 
   return (
     <div className="mh_container" style={{ '--hero-bg-url': `url(${basePath()}assets/img/2026-cdde_hero_tmp.jpg)` }}>
-      <svg width="0" height="0" aria-hidden="true">
-        <defs>
-          <filter id="hero-photo-grade" colorInterpolationFilters="sRGB">
-            <feColorMatrix type="matrix" values="1.00 0.00 0.00 0 0  0.00 0.97 0.00 0 0  0.00 0.00 1.13 0 0  0 0 0 1 0" />
-          </filter>
-        </defs>
-      </svg>
-
-      <div className="mh_content">
-        <h1 className="mh_title">{renderTitle()}</h1>
-        {resolvedNav.length > 0 && <Nav items={resolvedNav} />}
+      <div className="mh_container_inner">
+        <div className="mh_content">
+          <h1 className="mh_title">{renderTitle()}</h1>
+          {resolvedNav.length > 0 && <Nav items={resolvedNav} />}
+        </div>
       </div>
     </div>
   );

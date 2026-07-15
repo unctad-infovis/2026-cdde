@@ -241,12 +241,12 @@ export default function CommodityPrices({ insight, note, source, subtitle, title
 
                 {/* Transparent overlay — captures mouse for crosshair */}
                 {/* biome-ignore lint/a11y/noStaticElementInteractions: SVG chart interaction overlay */}
-                <rect x={0} y={0} width={CHART_W} height={CHART_H} fill="transparent" style={{ cursor: 'crosshair' }} onMouseMove={handleMouseMove} />
+                <rect x={0} y={0} width={CHART_W} height={CHART_H} className="cp_chart_overlay" onMouseMove={handleMouseMove} />
 
                 {/* Annotation circles — rendered after overlay so they capture mouse */}
                 {chart.annoPositions.map(a => (
                   // biome-ignore lint/a11y/noStaticElementInteractions: SVG annotation hover target
-                  <g key={a.num} transform={`translate(${a.x}, 0)`} style={{ cursor: 'help' }} onMouseEnter={e => handleAnnoEnter(e, a)} onMouseLeave={handleAnnoLeave}>
+                  <g key={a.num} transform={`translate(${a.x}, 0)`} className="cp_anno_group" onMouseEnter={e => handleAnnoEnter(e, a)} onMouseLeave={handleAnnoLeave}>
                     <circle cx={0} cy={-4} r={12} fill="transparent" />
                     <circle cx={0} cy={-4} r={10} fill="#fff" stroke={C_ANNO} strokeWidth={1.5} />
                     <text x={0} y={-3} textAnchor="middle" dominantBaseline="central" className="cprices_anno_num">
@@ -256,14 +256,14 @@ export default function CommodityPrices({ insight, note, source, subtitle, title
                 ))}
 
                 {/* Crosshair line */}
-                {tooltip?.type === 'cross' && <line x1={tooltip.svgX} y1={0} x2={tooltip.svgX} y2={CHART_H} stroke="#bbb" strokeWidth={1} strokeDasharray="3 3" style={{ pointerEvents: 'none' }} />}
+                {tooltip?.type === 'cross' && <line x1={tooltip.svgX} y1={0} x2={tooltip.svgX} y2={CHART_H} stroke="#bbb" strokeWidth={1} strokeDasharray="3 3" className="cp_crosshair" />}
 
                 {/* Crosshair dots */}
                 {tooltip?.type === 'cross' &&
                   SERIES.map(s => {
                     if (tooltip.d[s.key] == null) return null;
                     if (activeFilter !== 'All' && activeFilter !== s.label) return null;
-                    return <circle key={s.key} cx={tooltip.svgX} cy={chart.yScale(tooltip.d[s.key])} r={4} fill={s.color} stroke="#fff" strokeWidth={1.5} style={{ pointerEvents: 'none' }} />;
+                    return <circle key={s.key} cx={tooltip.svgX} cy={chart.yScale(tooltip.d[s.key])} r={4} fill={s.color} stroke="#fff" strokeWidth={1.5} className="cp_tooltip_dot" />;
                   })}
 
                 {/* X axis */}

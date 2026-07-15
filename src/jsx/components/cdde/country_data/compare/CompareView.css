@@ -22,6 +22,7 @@
       display: flex;
       flex-direction: column;
       min-height: 190px;
+      overflow: hidden;
       padding: 24px;
       position: relative;
       &::after {
@@ -98,6 +99,9 @@
       letter-spacing: -1px;
       line-height: 1;
       margin-bottom: 6px;
+      @media all and (max-width: 700px) {
+        font-size: var(--un-font-size-xxxl);
+      }
     }
     .cv_card_dep_label {
       color: rgba(255, 255, 255, 0.55);
@@ -122,7 +126,7 @@
       padding: 24px;
     }
     .cv_panel_title {
-      color: var(--un-color-blue-darkest);
+      color: var(--un-color-blue-text-dark);
       font-size: var(--un-font-size-xl);
       font-weight: var(--un-font-weight-boldest);
       line-height: var(--un-line-height-small);
@@ -158,37 +162,46 @@
       display: flex;
       flex-direction: column;
       gap: 14px;
-    }
-    .cv_dna_row {
-      align-items: center;
-      display: grid;
-      gap: 16px;
-      grid-template-columns: 130px 1fr;
-    }
-    .cv_dna_flag_name {
-      align-items: center;
-      display: flex;
-      gap: 8px;
-    }
-    .cv_dna_cname {
-      color: var(--un-color-blue-darkest);
-      font-size: var(--un-font-size-xs);
-      font-weight: var(--un-font-weight-bold);
-    }
-    .cv_dna_bar {
-      border-radius: 4px;
-      display: flex;
-      height: 34px;
-      overflow: hidden;
-    }
-    .cv_dna_bar--empty {
-      align-items: center;
-      background: var(--un-color-grey-lightest);
-      padding: 0 12px;
-    }
-    .cv_dna_nodata {
-      color: var(--un-color-grey-text);
-      font-size: var(--un-font-size-xxxs);
+      .cv_dna_row {
+        align-items: center;
+        display: grid;
+        gap: 16px;
+        grid-template-columns: 130px 1fr;
+        @media all and (max-width: 600px) {
+          display: block;
+        }
+        .cv_dna_flag_name {
+          align-items: center;
+          display: flex;
+          gap: 8px;
+          justify-content: flex-end;
+          @media all and (max-width: 600px) {
+            display: flex;
+            flex-direction: row-reverse;
+            margin-bottom: 5px;
+          }
+        }
+        .cv_dna_cname {
+          color: var(--un-color-blue-text-dark);
+          font-size: var(--un-font-size-xs);
+          font-weight: var(--un-font-weight-bold);
+        }
+        .cv_dna_bar {
+          border-radius: 4px;
+          display: flex;
+          height: 34px;
+          overflow: hidden;
+        }
+        .cv_dna_bar--empty {
+          align-items: center;
+          background: var(--un-color-grey-lightest);
+          padding: 0 12px;
+        }
+        .cv_dna_nodata {
+          color: var(--un-color-grey-text);
+          font-size: var(--un-font-size-xxxs);
+        }
+      }
     }
     /* Indicator table */
     .cv_tbl_hdr {
@@ -236,7 +249,7 @@
       padding-right: 16px;
     }
     .cv_tbl_ind_label {
-      color: var(--un-color-blue-darkest);
+      color: var(--un-color-blue-text-dark);
       font-size: var(--un-font-size-xxs);
       font-weight: var(--un-font-weight-bold);
       line-height: var(--un-line-height-small);
@@ -258,7 +271,7 @@
       gap: 6px;
     }
     .cv_val_num {
-      color: var(--un-color-blue-darkest);
+      color: var(--un-color-blue-text-dark);
       font-size: var(--un-font-size-xl);
       font-weight: var(--un-font-weight-boldest);
       line-height: 1;
@@ -288,6 +301,9 @@
     .cv_tbl_empty {
       color: var(--un-color-grey-text);
       font-size: var(--un-font-size-xs);
+    }
+    .cv_val_country_label {
+      display: none;
     }
     /* Dominant group cell */
     .cv_group_cell {
@@ -322,36 +338,55 @@
         flex-direction: column;
       }
     }
-    @media (max-width: 640px) {
+    @media (max-width: 700px) {
       .cv_panel {
+        overflow-x: unset;
         padding: 16px 12px;
       }
-      .cv_tbl_hdr,
-      .cv_tbl_row {
-        grid-template-columns: 80px repeat(3, 1fr);
-      }
-      .cv_tbl_hdr_col {
-        overflow: hidden;
-      }
-      .cv_tbl_hdr_name {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-      }
-      .cv_tbl_ind {
-        padding-right: 8px;
-      }
-      .cv_tbl_ind_desc {
+      .cv_tbl_hdr {
         display: none;
       }
+      /* Each indicator becomes a stacked block: label on top, country rows below */
+      .cv_tbl_row {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        padding: 14px 0 10px;
+      }
+      .cv_tbl_ind {
+        margin-bottom: 6px;
+        padding-right: 0;
+        .cv_tbl_ind_label {
+          font-size: var(--un-font-size-normal);
+        }
+      }
+      /* Each country value: [name left] [value right] */
       .cv_tbl_val {
-        padding-right: 6px;
+        align-items: baseline;
+        display: grid;
+        gap: 8px;
+        grid-template-columns: 1fr 1fr;
+        padding: 4px 0;
+      }
+      .cv_val_country_label {
+        color: var(--un-color-grey-text);
+        display: block;
+        font-size: var(--un-font-size-xs);
+        width: 120px;
+      }
+      .cv_val_row {
+        justify-content: flex-start;
+        text-align: left;
       }
       .cv_val_num {
-        font-size: var(--un-font-size-xs);
+        font-size: var(--un-font-size-s);
       }
       .cv_bar_track {
         display: none;
+      }
+      /* Dominant group: icon+label right-aligned */
+      .cv_group_cell {
+        justify-content: flex-start;
       }
     }
   }

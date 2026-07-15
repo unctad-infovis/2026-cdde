@@ -21,7 +21,7 @@ export default function TopMarkets({ iso3, title, subtitle, description, source,
     <div className="cdde_card">
       <ChartHeader title={title} subtitle={subtitle} description={description} />
 
-      {!allData && <div className="cdde_loading" style={{ height: 120 }} />}
+      {!allData && <div className="cdde_loading cdde_loading--sm" />}
       {allData && !markets && <p className="cdde_no_data">Destination market data not available for this country.</p>}
       {markets && <ColChart items={markets} />}
 

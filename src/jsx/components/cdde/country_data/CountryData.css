@@ -140,10 +140,27 @@
     gap: 8px;
     padding: 6px 12px;
   }
+  .cmp_icon_menu {
+    fill: currentColor;
+    height: 14px;
+    width: 14px;
+  }
+  .cmp_icon_close {
+    fill: none;
+    height: 12px;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-width: 1.5;
+    width: 12px;
+  }
   .cmp_search_icon {
     color: var(--un-color-grey-text);
+    fill: none;
     flex-shrink: 0;
     height: 14px;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-width: 1.4;
     width: 14px;
   }
   .cmp_search_input {
@@ -217,17 +234,17 @@
     flex-direction: column;
     left: 0;
     max-height: calc(100vh - 200px);
-    max-width: 360px;
+    max-width: 400px;
     overflow: hidden;
     position: absolute;
     top: 0;
     transform: translateX(0);
-    visibility: visible;
-    width: 100%;
-    z-index: 10;
     transition:
       transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
       visibility 0s;
+    visibility: visible;
+    width: 100%;
+    z-index: 10;
   }
   .cmp_col_left--closed {
     pointer-events: none;
@@ -292,7 +309,7 @@
   }
   @media (max-width: 600px) {
     .cmp_section {
-      padding: 0 8px;
+      padding: 40px 8px;
     }
   }
 }

@@ -136,6 +136,19 @@
       max-width: 200px;
       white-space: normal;
     }
+    .cp_chart_overlay {
+      cursor: crosshair;
+      fill: transparent;
+    }
+    .cp_anno_group {
+      cursor: help;
+    }
+    .cp_crosshair {
+      pointer-events: none;
+    }
+    .cp_tooltip_dot {
+      pointer-events: none;
+    }
     /* Annotation key */
     .cprices_anno_key {
       display: flex;

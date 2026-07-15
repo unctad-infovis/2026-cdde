@@ -21,7 +21,7 @@ export default function LeadingExports({ iso3, title, subtitle, description, sou
     <div className="cdde_card">
       <ChartHeader title={title} subtitle={subtitle} description={description} />
 
-      {!allData && <div className="cdde_loading" style={{ height: 120 }} />}
+      {!allData && <div className="cdde_loading cdde_loading--sm" />}
       {allData && !exports && <p className="cdde_no_data">Export breakdown data not available for this country.</p>}
       {exports && <ColChart items={exports} />}
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import loadFile from '../../../../helpers/LoadFile';
 import CircleFlag from '../../../general/CircleFlag';
-import { depColor, GROUP_COLORS } from '../../shared/cdde-constants';
+import { depColor } from '../../shared/cdde-constants';
 import RollingNumber from '../../shared/RollingNumber';
 import DependenceOverTime from './DependenceOverTime';
 import EnergyNetImports from './EnergyNetImports';
@@ -13,13 +13,6 @@ import TimeSeriesChart from './TimeSeriesChart';
 import TopMarkets from './TopMarkets';
 
 import './CountryProfile.css';
-
-const GROUP_TEXT_COLORS = {
-  agri: 'var(--un-color-green-text)',
-  energy: 'var(--un-color-purple-text)',
-  mining: 'var(--un-color-yellow-dark)',
-  'non-dependent': 'var(--un-color-grey-text)'
-};
 
 const GROUP_INSIGHT = {
   agri: 'agricultural commodities, exposing the economy to weather, price and policy shocks across these markets',
@@ -52,7 +45,6 @@ export default function CountryProfile({ country, content = {} }) {
   const countryStats = stats?.[iso3] ?? null;
   const safePct = Number.isFinite(pct) ? pct : null;
 
-  const groupColor = GROUP_TEXT_COLORS[dominant_group] || 'var(--un-color-grey-text)';
   const insightDesc = GROUP_INSIGHT[dominant_group] || 'commodity exports';
 
   return (
@@ -75,7 +67,7 @@ export default function CountryProfile({ country, content = {} }) {
         {/* Insight */}
         {safePct != null && (
           <p className="cp_insight">
-            {name}'s exports remain anchored in <strong style={{ color: groupColor }}>{insightDesc.split(',')[0]}</strong>
+            {name}'s exports remain anchored in <strong data-group={dominant_group}>{insightDesc.split(',')[0]}</strong>
             {insightDesc.includes(',') ? `,${insightDesc.split(',').slice(1).join(',')}` : ''}.
           </p>
         )}
@@ -89,7 +81,7 @@ export default function CountryProfile({ country, content = {} }) {
               <div className="cp_stat_cats">
                 {categories.map(cat => (
                   <div key={cat.key} className={`cp_stat_cat_row${dominant_group === cat.key ? ' cp_stat_cat_row--dominant' : ''}`}>
-                    <span className="cp_stat_cat_dot" style={{ background: GROUP_COLORS[cat.key] }} />
+                    <span className="cp_stat_cat_dot" data-group={cat.key} />
                     <span className="cp_stat_cat_label">{cat.label}</span>
                     <span className="cp_stat_cat_val">{cat.val}%</span>
                   </div>

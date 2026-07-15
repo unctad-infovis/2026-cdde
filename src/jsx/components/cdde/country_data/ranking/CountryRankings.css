@@ -64,12 +64,17 @@
     }
   }
   .rt_chevron {
+    color: var(--un-color-grey-text);
+    fill: none;
+    height: 6px;
+    pointer-events: none;
     position: absolute;
     right: 10px;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.5;
     width: 10px;
-    height: 6px;
-    color: var(--un-color-grey-text);
-    pointer-events: none;
   }
   /* Legend — inline in controls bar */
   .rt_legend {

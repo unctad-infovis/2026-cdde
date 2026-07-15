@@ -3,7 +3,6 @@ import loadFile from '../../../helpers/LoadFile';
 import useIsVisible from '../../../helpers/UseIsVisible';
 import ChartHeader from '../shared/ChartHeader';
 import ChartMeta from '../shared/ChartMeta';
-import { C_BLUE, C_YELLOW } from '../shared/cdde-constants';
 import DumbbellChart from '../shared/DumbbellChart';
 
 import './StatusChangers.css';
@@ -44,16 +43,16 @@ export default function StatusChangers({ insight, note, source, subtitle, title 
 
       <div className="cdde_legend_row">
         <span className="cdde_legend_item">
-          <span className="cdde_legend_dot" style={{ background: C_BLUE }} />
+          <span className="cdde_legend_dot cdde_legend_dot--blue" />
           No longer commodity-dependent
         </span>
         <span className="cdde_legend_item">
-          <span className="cdde_legend_dot" style={{ background: C_YELLOW }} />
+          <span className="cdde_legend_dot cdde_legend_dot--yellow" />
           Now commodity-dependent
         </span>
       </div>
 
-      <div className="sc_chart_wrap" ref={wrapRef}>{data ? <DumbbellChart data={data} xMin={0} xMax={100} nameW={172} badgeW={56} svgW={svgW} referencePct={60} referenceLabel="60% threshold" xTickValues={[0, 50, 100]} animated={animated} /> : <div className="sc_loading" />}</div>
+      <div className="sc_chart_wrap" ref={wrapRef}>{data ? <DumbbellChart data={data} xMin={0} xMax={100} nameW={svgW < 360 ? 100 : svgW < 480 ? 130 : 172} badgeW={56} svgW={svgW} referencePct={60} referenceLabel="60% threshold" xTickValues={[0, 50, 100]} animated={animated} /> : <div className="sc_loading" />}</div>
 
       <ChartMeta source={source} note={note} sourceKey="Commodity Dependence, 2022–2024" />
     </div>

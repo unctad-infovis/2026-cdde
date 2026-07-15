@@ -26,8 +26,8 @@ function SourcesAccordion({ items }) {
           <div key={item.title} className={`km_acc_item${isOpen ? ' km_acc_item--open' : ''}`}>
             <button type="button" className="km_acc_trigger" onClick={() => setOpen(isOpen ? -1 : i)} aria-expanded={isOpen}>
               <span className="km_acc_title">{item.title}</span>
-              <svg className="km_acc_chevron" viewBox="0 0 12 8" fill="none" aria-hidden="true">
-                <path d="M1 1l5 5 5-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              <svg className="km_acc_chevron" viewBox="0 0 12 8" aria-hidden="true">
+                <path d="M1 1l5 5 5-5" />
               </svg>
             </button>
             {isOpen && (

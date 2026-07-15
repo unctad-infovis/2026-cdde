@@ -1,10 +1,10 @@
 import './CommodityGroups.css';
 
 const GROUPS = [
-  { color: 'var(--un-color-green)', label: 'Agricultural products', note: 'Food and raw materials' },
-  { color: 'var(--un-color-green-dark)', label: 'Raw materials', note: 'Part of agricultural group' },
-  { color: 'var(--un-color-blue)', label: 'Energy', note: 'Oil, gas, coal' },
-  { color: 'var(--un-color-yellow)', label: 'Mining', note: 'Ores and precious metals' }
+  { cls: 'agri', label: 'Agricultural products', note: 'Food and raw materials' },
+  { cls: 'raw', label: 'Raw materials', note: 'Part of agricultural group' },
+  { cls: 'energy', label: 'Energy', note: 'Oil, gas, coal' },
+  { cls: 'mining', label: 'Mining', note: 'Ores and precious metals' }
 ];
 
 export default function CommodityGroups({ methodology_url }) {
@@ -14,7 +14,7 @@ export default function CommodityGroups({ methodology_url }) {
         <div className="cg_groups">
           {GROUPS.map(g => (
             <div className="cg_group" key={g.label}>
-              <span className="cg_dot" style={{ background: g.color }} />
+              <span className={`cg_dot cg_dot--${g.cls}`} />
               <span className="cg_name">{g.label}</span>
               <span className="cg_note">{g.note}</span>
             </div>

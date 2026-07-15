@@ -8,7 +8,7 @@ import { C_BLUE, C_YELLOW, DEVELOPED, REGION_GROUPS } from '../../shared/cdde-co
 
 import './EconomyBubbleChart.css';
 
-const PILL_W = 110;
+const PILL_W = 100;
 const PILL_H = 20;
 const PILL_R = 3;
 const PILL_ARROW = 4;
@@ -63,7 +63,7 @@ export default function EconomyBubbleChart({ countries, title, subtitle, descrip
     if (!chartW || !visible.length || !svgRef.current) return;
 
     const W = chartW;
-    const H = 300;
+    const H = W < 420 ? 250 : W < 600 ? 300 : 300;
     const M = { top: 40, right: 16, bottom: 28, left: 16 };
     const iW = W - M.left - M.right;
     const iH = H - M.top - M.bottom;
@@ -72,7 +72,7 @@ export default function EconomyBubbleChart({ countries, title, subtitle, descrip
 
     const getPop = c => socialData?.[c.iso3]?.population ?? 5000;
     const maxPop = d3.max(visible, c => getPop(c)) || 1400000;
-    const maxR = W < 420 ? 10 : W < 600 ? 15 : 50;
+    const maxR = W < 450 ? 20 : W < 600 ? 25 : W < 800 ? 30 : 50;
     const rScale = d3.scaleSqrt().domain([0, maxPop]).range([2, maxR]);
 
     const nodes = visible.map(c => ({
@@ -138,10 +138,7 @@ export default function EconomyBubbleChart({ countries, title, subtitle, descrip
       .attr('x', PILL_W / 2)
       .attr('y', PILL_H - 5)
       .attr('text-anchor', 'middle')
-      .attr('fill', '#fff')
-      .style('font-size', 'var(--un-font-size-xxxxs)')
-      .attr('font-weight', 700)
-      .attr('font-family', 'Inter, Arial, sans-serif')
+      .attr('class', 'dot_pill_label')
       .text('60% threshold');
     pillG
       .append('polygon')
@@ -234,8 +231,8 @@ export default function EconomyBubbleChart({ countries, title, subtitle, descrip
                 </option>
               ))}
             </select>
-            <svg className="ebc_chevron" viewBox="0 0 12 8" fill="none" aria-hidden="true">
-              <path d="M1 1l5 5 5-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+            <svg className="ebc_chevron" viewBox="0 0 12 8" aria-hidden="true">
+              <path d="M1 1l5 5 5-5" />
             </svg>
           </div>
         </div>
@@ -279,11 +276,11 @@ export default function EconomyBubbleChart({ countries, title, subtitle, descrip
       <div className="ebc_legend">
         <div className="ebc_legend_left">
           <div className="ebc_legend_item">
-            <span className="cdde_legend_dot" style={{ background: 'var(--un-color-blue)' }} />
+            <span className="cdde_legend_dot cdde_legend_dot--blue" />
             <span className="ebc_legend_label">Developed</span>
           </div>
           <div className="ebc_legend_item">
-            <span className="cdde_legend_dot" style={{ background: 'var(--un-color-yellow)' }} />
+            <span className="cdde_legend_dot cdde_legend_dot--yellow" />
             <span className="ebc_legend_label">Developing</span>
           </div>
         </div>

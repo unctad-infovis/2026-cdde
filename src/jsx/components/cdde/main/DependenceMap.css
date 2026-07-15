@@ -24,13 +24,6 @@
       .cmap_inner {
         padding: 16px 8px 12px;
       }
-      .cmap_controls {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-      .cmap_search {
-        flex: 1 1 100%;
-      }
     }
     .cmap_inner {
       background-color: #fff;
@@ -119,6 +112,7 @@
         width: 10px;
       }
       .cmap_gt_item--nodata .cmap_gt_dot {
+        background: #f0f0f0;
         border: 1px solid var(--un-color-grey-light);
         box-sizing: border-box;
       }
@@ -383,6 +377,19 @@
         top: 10px;
         width: 256px;
         z-index: 20;
+      }
+      @media (max-width: 480px) {
+        .cmap_map_area {
+          display: flex;
+          flex-direction: column;
+        }
+        .cmap_panel {
+          max-height: none;
+          position: relative;
+          right: auto;
+          top: auto;
+          width: auto;
+        }
       }
       .cmap_panel_header {
         align-items: center;

@@ -1,13 +1,24 @@
 import useSources, { fmtExtractedDate } from '../../../helpers/useSources';
 import './ChartMeta.css';
 
-function linkifySource(text, link) {
-  if (!link || typeof text !== 'string' || !text.includes('UNCTADstat')) return text;
-  const parts = text.split('UNCTADstat');
-  return parts.flatMap((part, i) =>
-    i < parts.length - 1
-      ? [part, <a key={i} href={link} target="_blank" rel="noopener">UNCTADstat</a>]
-      : [part]
+const SOURCE_LINKS = [
+  ['UNCTADstat', 'https://unctadstat.unctad.org/datacentre/'],
+  ['World Bank', 'https://databank.worldbank.org/source/world-development-indicators'],
+  ['UNDP', 'https://hdr.undp.org/data-center/human-development-index#/indicies/HDI'],
+];
+
+function linkifySource(text, unctadLink) {
+  if (typeof text !== 'string') return text;
+  const pairs = SOURCE_LINKS.map(([label, href]) =>
+    [label, label === 'UNCTADstat' && unctadLink?.includes('unctadstat') ? unctadLink : href]
+  ).filter(([label]) => text.includes(label));
+  if (!pairs.length) return text;
+  const pattern = new RegExp(`(${pairs.map(([l]) => l.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`);
+  const linkMap = Object.fromEntries(pairs);
+  return text.split(pattern).map((part, i) =>
+    linkMap[part]
+      ? <a key={i} href={linkMap[part]} target="_blank" rel="noopener">{part}</a>
+      : part
   );
 }
 

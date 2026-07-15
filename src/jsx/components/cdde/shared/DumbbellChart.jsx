@@ -59,7 +59,7 @@ export default function DumbbellChart({ data, xMin, xMax, nameW = 140, badgeW = 
 
       {/* Reference badge – HTML inside foreignObject to match alc_threshold_label exactly */}
       {refX != null && referenceLabel && (
-        <foreignObject x={0} y={0} width={svgW} height={AXIS_H} style={{ overflow: 'visible' }}>
+        <foreignObject x={0} y={0} width={svgW} height={AXIS_H} className="dbc_axis_fo">
           <div style={{ position: 'relative', height: `${AXIS_H}px`, overflow: 'visible' }}>
             <div className="db_ref_badge" style={{ position: 'absolute', left: `${refX}px`, bottom: 0 }}>
               {referenceLabel}

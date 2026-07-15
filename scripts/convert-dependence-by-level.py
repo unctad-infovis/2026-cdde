@@ -29,8 +29,8 @@ GROUP_MAP = {
     "Small island developing states":   ("SIDS",             37),
     "Landlocked developing countries":  ("LLDCs",            32),
     "Least developed countries":        ("LDCs",             44),
-    "Other developing countries":       ("Other developing", 55),
-    "Developed countries":              ("Developed",        48),
+    "Other developing countries":       ("Other developing economies", 55),
+    "Developed countries":              ("Developed economies",        48),
 }
 
 

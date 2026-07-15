@@ -41,6 +41,10 @@
     height: 10px;
     width: 10px;
   }
+  .cg_dot--agri   { background: var(--un-color-green); }
+  .cg_dot--raw    { background: var(--un-color-green-dark); }
+  .cg_dot--energy { background: var(--un-color-blue); }
+  .cg_dot--mining { background: var(--un-color-yellow); }
   .cg_name {
     color: var(--un-color-grey-darkest);
     font-size: var(--un-font-size-xxs);

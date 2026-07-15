@@ -33,12 +33,18 @@ const wb    = XLSX.readFile(INPUT);
 const sheet = wb.Sheets[wb.SheetNames[0]];
 const rows  = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: '' });
 
+const LABEL_RENAME = {
+  'Other developing': 'Other developing economies',
+  'Developed':        'Developed economies',
+};
+
 const header = ['group', 'economies', 'avg_pct'];
 const out    = [header.join(',')];
 
 for (let i = 1; i < rows.length; i++) {
-  const [group, economies, avg_pct] = rows[i].map(c => String(c || '').trim());
-  if (!group || !avg_pct) continue;
+  const [rawGroup, economies, avg_pct] = rows[i].map(c => String(c || '').trim());
+  if (!rawGroup || !avg_pct) continue;
+  const group = LABEL_RENAME[rawGroup] ?? rawGroup;
   out.push([group, +economies, +avg_pct].join(','));
 }
 

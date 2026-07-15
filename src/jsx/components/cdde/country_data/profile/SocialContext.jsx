@@ -39,7 +39,7 @@ export default function SocialContext({ iso3, title, subtitle, description, sour
   return (
     <div className="cdde_card">
       <ChartHeader title={title} subtitle={subtitle} description={description} />
-      {!allData && <div className="cdde_loading" style={{ height: 120 }} />}
+      {!allData && <div className="cdde_loading cdde_loading--sm" />}
       {allData && !d && <p className="cdde_no_data">Social data not available for this country.</p>}
       {d && <StatList items={items} key={iso3} />}
       <ChartMeta source={source} note={note} sourceKey={['Employment to population', 'Female employment', 'Human Development Index']} />

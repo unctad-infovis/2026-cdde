@@ -98,10 +98,10 @@ export default function Compare({ content = {} }) {
           <div className="cmp_filter_bar">
             {/* Panel toggle */}
             <button type="button" className={`cmp_panel_btn${panelOpen ? ' cmp_panel_btn--open' : ''}`} onClick={() => setPanelOpen(v => !v)} aria-label={panelOpen ? 'Hide country list' : 'Show country list'}>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                <rect x="1" y="2" width="12" height="1.5" rx="0.75" fill="currentColor" />
-                <rect x="1" y="6.25" width="12" height="1.5" rx="0.75" fill="currentColor" />
-                <rect x="1" y="10.5" width="12" height="1.5" rx="0.75" fill="currentColor" />
+              <svg className="cmp_icon_menu" viewBox="0 0 14 14" aria-hidden="true">
+                <rect x="1" y="2" width="12" height="1.5" rx="0.75" />
+                <rect x="1" y="6.25" width="12" height="1.5" rx="0.75" />
+                <rect x="1" y="10.5" width="12" height="1.5" rx="0.75" />
               </svg>
               <span>Select another country</span>
             </button>
@@ -114,18 +114,18 @@ export default function Compare({ content = {} }) {
             {/* Collapsible overlay panel */}
             <div className={`cmp_col_left${panelOpen ? '' : ' cmp_col_left--closed'}`}>
               <button type="button" className="cmp_panel_close" onClick={() => setPanelOpen(false)} aria-label="Close country list">
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                  <line x1="1" y1="1" x2="11" y2="11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                  <line x1="11" y1="1" x2="1" y2="11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                <svg className="cmp_icon_close" viewBox="0 0 12 12" aria-hidden="true">
+                  <line x1="1" y1="1" x2="11" y2="11" />
+                  <line x1="11" y1="1" x2="1" y2="11" />
                 </svg>
               </button>
 
               {/* Search + region + threshold filters */}
               <div className="cmp_panel_filters">
                 <div className="cmp_search_wrap">
-                  <svg className="cmp_search_icon" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                    <circle cx="5.5" cy="5.5" r="4.5" stroke="currentColor" strokeWidth="1.4" />
-                    <line x1="9" y1="9" x2="13" y2="13" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+                  <svg className="cmp_search_icon" viewBox="0 0 14 14" aria-hidden="true">
+                    <circle cx="5.5" cy="5.5" r="4.5" />
+                    <line x1="9" y1="9" x2="13" y2="13" />
                   </svg>
                   <input className="cmp_search_input" type="text" placeholder={`Search ${totalCount} member States`} value={search} onChange={e => setSearch(e.target.value)} />
                 </div>

@@ -2,16 +2,16 @@
   .dm_container {
     background: #fff;
     border-radius: 20px;
-    padding: 24px 20px 18px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     gap: 0;
     height: 100%;
-    box-sizing: border-box;
+    padding: 24px 20px 18px;
     /* insight spacing override — cards are in stretch layout */
     .cdde_insight {
-      margin-top: 10px;
       margin-bottom: 16px;
+      margin-top: 10px;
     }
     /* source margin override */
     .cdde_source {
@@ -19,10 +19,10 @@
     }
   }
   .dm_loading {
-    height: 460px;
+    animation: cdde_pulse 1.4s ease infinite;
     background: var(--un-color-blue-lightest);
     border-radius: 8px;
-    animation: cdde_pulse 1.4s ease infinite;
+    height: 460px;
   }
   .dm_chart_wrap {
     flex: 1;

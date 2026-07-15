@@ -218,10 +218,10 @@ export default function CompareView({ compareList, countries, onCompareChange, d
             ['agri', 'Agricultural'],
             ['energy', 'Energy'],
             ['mining', 'Mining'],
-            ['other', 'Other / non-commodity']
+            ['non-dependent', 'Other / non-commodity']
           ].map(([k, l]) => (
             <div key={k} className="cv_dna_leg_item">
-              <span className="cv_dna_leg_dot" style={{ background: DNA_COLORS[k] }} />
+              <span className="cv_dna_leg_dot" data-group={k} />
               <span className="cv_dna_leg_lbl">{l}</span>
             </div>
           ))}
@@ -234,8 +234,8 @@ export default function CompareView({ compareList, countries, onCompareChange, d
             return (
               <div key={i} className="cv_dna_row">
                 <div className="cv_dna_flag_name">
-                  <CircleFlag countryCode={country.iso2} width={22} height={22} />
                   <span className="cv_dna_cname">{country.name}</span>
+                  <CircleFlag countryCode={country.iso2} width={22} height={22} />
                 </div>
                 {d ? (
                   <StackedBar
@@ -292,16 +292,17 @@ export default function CompareView({ compareList, countries, onCompareChange, d
                 <span className="cv_tbl_ind_desc">{row.desc}</span>
               </div>
 
-              {slots.map(({ _country, slot, i }) => {
+              {slots.map(({ country, slot, i }) => {
                 const val = vals[i];
 
                 if (row.fmt === null) {
                   const g = GROUP_INFO[val] || null;
                   return (
                     <div key={i} className="cv_tbl_val">
+                      {country?.name && <span className="cv_val_country_label">{country.name}</span>}
                       {g ? (
                         <div className="cv_group_cell">
-                          <span className="cv_group_icon" style={{ background: slot.bar }}>
+                          <span className="cv_group_icon" data-group={val}>
                             {g.icon}
                           </span>
                           <span className="cv_group_lbl">{g.label}</span>
@@ -318,6 +319,7 @@ export default function CompareView({ compareList, countries, onCompareChange, d
 
                 return (
                   <div key={i} className="cv_tbl_val">
+                    {country?.name && <span className="cv_val_country_label">{country.name}</span>}
                     {val != null ? (
                       <>
                         <div className="cv_val_row">

@@ -323,7 +323,7 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
               ))
             : Object.entries(GROUP_LABELS).map(([key, label]) => (
                 <div className="cmap_gt_item" key={key}>
-                  <span className="cmap_gt_dot" style={{ background: GROUP_COLORS[key] }} />
+                  <span className="cmap_gt_dot" data-group={key} />
                   <span className="cmap_gt_text">
                     <span className="cmap_gt_label">{label}</span>
                     <span className="cmap_gt_note">{GROUP_NOTES[key]}</span>
@@ -331,7 +331,7 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
                 </div>
               ))}
           <div className="cmap_gt_item cmap_gt_item--nodata">
-            <span className="cmap_gt_dot" style={{ background: NO_DATA_FILL }} />
+            <span className="cmap_gt_dot cmap_gt_dot--no-data" />
             <span className="cmap_gt_text">
               <span className="cmap_gt_label">No data</span>
             </span>
@@ -410,7 +410,7 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
                     <span className="cmap_panel_hero_label">Commodity dependence share</span>
                     <span className="cmap_panel_hero_value">{selectedCountry.export_dependence != null ? `${selectedCountry.export_dependence}%` : 'Data not available'}</span>
                     {selectedCountry.dominant_group && selectedCountry.dominant_group !== 'non-dependent' && (
-                      <span className="cmap_panel_stat_group" style={{ background: GROUP_COLORS[selectedCountry.dominant_group] }}>
+                      <span className="cmap_panel_stat_group" data-group={selectedCountry.dominant_group}>
                         {GROUP_LABELS[selectedCountry.dominant_group] || selectedCountry.dominant_group}
                       </span>
                     )}
@@ -422,7 +422,7 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
                           { key: 'mining', label: 'Mining', val: selectedCountry.mining_pct }
                         ].map(cat => (
                           <div key={cat.key} className={`cmap_tt_cat_row${selectedCountry.dominant_group === cat.key ? ' cmap_tt_cat_row--dominant' : ''}`}>
-                            <span className="cmap_tt_group_dot" style={{ background: GROUP_COLORS[cat.key] }} />
+                            <span className="cmap_tt_group_dot" data-group={cat.key} />
                             <span className="cmap_tt_label">{cat.label}</span>
                             <span className="cmap_tt_val">{cat.val != null ? cat.val : 0}%</span>
                           </div>
@@ -472,7 +472,7 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
                         { key: 'mining', label: 'Mining', val: row.mining_pct }
                       ].map(cat => (
                         <div key={cat.key} className={`cmap_tt_cat_row${row.dominant_group === cat.key ? ' cmap_tt_cat_row--dominant' : ''}`}>
-                          <span className="cmap_tt_group_dot" style={{ background: GROUP_COLORS[cat.key] }} />
+                          <span className="cmap_tt_group_dot" data-group={cat.key} />
                           <span className="cmap_tt_label">{cat.label}</span>
                           <span className="cmap_tt_val">{cat.val != null ? cat.val : 0}%</span>
                         </div>

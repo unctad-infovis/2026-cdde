@@ -20,5 +20,8 @@ run(`azcopy copy "dist/*" "${STORAGE}/" --include-path "css;assets" --recursive 
 // Note: azcopy appends the source directory name ("js") to the destination, so destination is STORAGE not STORAGE/js
 run(`azcopy copy "dist/js" "${STORAGE}" --include-pattern "${ENTRIES}" --cache-control "no-cache, must-revalidate" --recursive`);
 
-// Chunk JS: immutable — filenames include content hashes so a new hash = cache miss anyway
-run(`azcopy copy "dist/js" "${STORAGE}" --exclude-pattern "${ENTRIES}*.map" --cache-control "max-age=31536000, immutable" --recursive`);
+// Chunk JS: immutable — random deploy hash guarantees a new URL on every build, so CDN always misses
+// Exclude entry files and their source maps; build the pattern as two separate lists to avoid the
+// "*.map suffix only attaches to the last semicolon token" pitfall in azcopy --exclude-pattern.
+const ENTRY_MAPS = ENTRIES.split(';').map(e => `${e}.map`).join(';');
+run(`azcopy copy "dist/js" "${STORAGE}" --exclude-pattern "${ENTRIES};${ENTRY_MAPS}" --cache-control "max-age=31536000, immutable" --recursive`);

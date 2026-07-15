@@ -51,4 +51,7 @@
     font-size: var(--un-font-size-xxxs);
     font-weight: var(--un-font-weight-bolder);
   }
+  .dbc_axis_fo {
+    overflow: visible;
+  }
 }

@@ -257,7 +257,7 @@
         color: #2c668d;
         display: flex;
         flex-wrap: wrap;
-        font-size: 2vw;
+        font-size: clamp(11px, 2vw, 18px);
         font-weight: 900;
         left: 16%;
         line-height: 1rem;
