@@ -24,6 +24,7 @@ Content is authored in MDX and rendered as a standalone React application embedd
 <div class="app-root-2026-cdde" id="app-root-2026-cdde">
   Loading...
 </div>
+<noscript>Your browser does not support Javascript!</noscript>
 ```
 
 ### Country data page
@@ -34,6 +35,7 @@ Content is authored in MDX and rendered as a standalone React application embedd
 <div class="app-root-2026-cdde" id="app-root-2026-cdde">
   Loading...
 </div>
+<noscript>Your browser does not support Javascript!</noscript>
 ```
 
 ### Know more page
@@ -44,6 +46,7 @@ Content is authored in MDX and rendered as a standalone React application embedd
 <div class="app-root-2026-cdde" id="app-root-2026-cdde">
   Loading...
 </div>
+<noscript>Your browser does not support Javascript!</noscript>
 ```
 
 ### Header
@@ -56,9 +59,14 @@ A standalone hero header with the publication title and navigation bar, intended
 <div class="app-root-2026-cdde" id="app-root-2026-cdde">
   Loading...
 </div>
+<noscript>Your browser does not support Javascript!</noscript>
 ```
 
 Update the `?v=` query parameter to match the current build version to bust the cache.
+
+## Used in
+
+* [The State of Commodity Dependence](https://unctad.org/topic/commodities/state-of-commodity-dependence)
 
 ## Rights of usage
 
@@ -136,28 +144,28 @@ The following packages are used in this project by default.
 
 ### Project specific
 
-* **d3** – used to create all custom SVG visualisations (maps, line charts, bubble charts, dumbbell charts)
-* **topojson-client** – used to render the world map from TopoJSON geometry
+* **d3** — used to create all custom SVG visualisations (maps, line charts, bubble charts, dumbbell charts)
+* **topojson-client** — used to render the world map from TopoJSON geometry
 
 ### Build & Dev Server
 
-* **vite** – development server with hot module replacement and production bundler, replaces webpack
-* **@vitejs/plugin-react** – adds React and JSX support to Vite
+* **vite** — development server with hot module replacement and production bundler, replaces webpack
+* **@vitejs/plugin-react** — adds React and JSX support to Vite
 
 ### React
 
-* **react** – UI component library
-* **react-dom** – renders React components to the DOM
+* **react** — UI component library
+* **react-dom** — renders React components to the DOM
 
 ### Formatter & Linter
 
-* **@biomejs/biome** – formats and lints JS, JSX and CSS files on save, replaces ESLint + Prettier
+* **@biomejs/biome** — formats and lints JS, JSX and CSS files on save, replaces ESLint + Prettier
 
 ### Minification
 
-* **terser** – minifies the production JavaScript bundle, removes console.logs in production builds
+* **terser** — minifies the production JavaScript bundle, removes console.logs in production builds
 
 ### MDX
 
-* **@mdx-js/rollup** – Vite/Rollup plugin that compiles MDX files into React components
-* **@mdx-js/react** – provides React context for MDX components
+* **@mdx-js/rollup** — Vite/Rollup plugin that compiles MDX files into React components
+* **@mdx-js/react** — provides React context for MDX components
