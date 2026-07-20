@@ -2,7 +2,7 @@ import useCountUp from '../../../helpers/UseCountUp';
 
 function AnimatedNumber({ num, suffix, decimals, suffixAtEnd, className, style }) {
   const [count, ref] = useCountUp(num, { decimals, duration: 1400 });
-  const done = Math.abs(count - num) < Math.pow(10, -decimals) / 2;
+  const done = Math.abs(count - num) < 10 ** -decimals / 2;
   return (
     <span ref={ref} className={className} style={style}>
       {count.toFixed(decimals)}
