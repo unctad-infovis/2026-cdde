@@ -67,6 +67,9 @@ Update the `?v=` query parameter to match the current build version to bust the 
 ## Used in
 
 * [The State of Commodity Dependence](https://unctad.org/topic/commodities/state-of-commodity-dependence)
+* [The State of Commodity Dependence – Country Profiles](https://unctad.org/topic/commodities/state-of-commodity-dependence/country-profiles)
+* [The State of Commodity Dependence – Know More](https://unctad.org/topic/commodities/state-of-commodity-dependence/know-more)
+* [The State of Commodity Dependence – Related Content](https://unctad.org/topic/commodities/state-of-commodity-dependence/related-content)
 
 ## Rights of usage
 
