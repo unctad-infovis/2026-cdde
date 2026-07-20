@@ -1,5 +1,5 @@
+import loadFile from '@unctad-infovis/general-tools/helpers/LoadFile.js';
 import { useEffect, useState } from 'react';
-import loadFile from '../../../helpers/LoadFile';
 import './KnowMore.css';
 
 const NAV_ITEMS = [

@@ -1,7 +1,7 @@
+import CSVtoJSON from '@unctad-infovis/general-tools/helpers/CsvToJson.js';
+import loadFile from '@unctad-infovis/general-tools/helpers/LoadFile.js';
+import useIsVisible from '@unctad-infovis/general-tools/helpers/UseIsVisible.js';
 import { useEffect, useState } from 'react';
-import CSVtoJSON from '../../../helpers/CsvToJson';
-import loadFile from '../../../helpers/LoadFile';
-import useIsVisible from '../../../helpers/UseIsVisible';
 import ChartHeader from '../shared/ChartHeader';
 import ChartMeta from '../shared/ChartMeta';
 
@@ -72,16 +72,10 @@ export default function DependenceByLevel({ insight, note, source, subtitle, tit
                   <span className="dbl_row_economies">{row.economies} economies</span>
                 </div>
                 <div className="dbl_bar_track">
-                  <div
-                    className={`dbl_bar${colorClass}`}
-                    style={{ width: animated ? `${barPct}%` : '0%', transitionDelay: delay }}
-                  />
+                  <div className={`dbl_bar${colorClass}`} style={{ width: animated ? `${barPct}%` : '0%', transitionDelay: delay }} />
                   <div className="dbl_threshold_line" style={{ left: `${thresholdPct}%` }} />
                 </div>
-                <span
-                  className="dbl_row_value"
-                  style={{ opacity: animated ? 1 : 0, transition: 'opacity 0.3s ease', transitionDelay: `${500 + idx * 80 + 480}ms` }}
-                >
+                <span className="dbl_row_value" style={{ opacity: animated ? 1 : 0, transition: 'opacity 0.3s ease', transitionDelay: `${500 + idx * 80 + 480}ms` }}>
                   {row.avg_pct.toFixed(1)}%
                 </span>
               </div>

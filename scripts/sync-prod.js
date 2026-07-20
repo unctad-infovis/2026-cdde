@@ -1,12 +1,7 @@
 const { execSync } = require('node:child_process');
 
 const STORAGE = `https://${process.env.AZURE_STORAGE_NAME}.blob.core.windows.net/\\$web/${process.env.npm_package_name}`;
-const ENTRIES = [
-  '2026-cdde.min.js',
-  '2026-cdde-compare.min.js',
-  '2026-cdde-header.min.js',
-  '2026-cdde-know-more.min.js',
-].join(';');
+const ENTRIES = ['2026-cdde.min.js', '2026-cdde-compare.min.js', '2026-cdde-header.min.js', '2026-cdde-know-more.min.js'].join(';');
 
 function run(cmd) {
   console.log(`\n> ${cmd}`);
@@ -23,5 +18,7 @@ run(`azcopy copy "dist/js" "${STORAGE}" --include-pattern "${ENTRIES}" --cache-c
 // Chunk JS: immutable — random deploy hash guarantees a new URL on every build, so CDN always misses
 // Exclude entry files and their source maps; build the pattern as two separate lists to avoid the
 // "*.map suffix only attaches to the last semicolon token" pitfall in azcopy --exclude-pattern.
-const ENTRY_MAPS = ENTRIES.split(';').map(e => `${e}.map`).join(';');
+const ENTRY_MAPS = ENTRIES.split(';')
+  .map(e => `${e}.map`)
+  .join(';');
 run(`azcopy copy "dist/js" "${STORAGE}" --exclude-pattern "${ENTRIES};${ENTRY_MAPS}" --cache-control "max-age=31536000, immutable" --recursive`);

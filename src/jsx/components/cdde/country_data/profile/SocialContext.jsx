@@ -1,5 +1,5 @@
+import loadFile from '@unctad-infovis/general-tools/helpers/LoadFile.js';
 import { useEffect, useState } from 'react';
-import loadFile from '../../../../helpers/LoadFile';
 import ChartHeader from '../../shared/ChartHeader';
 import ChartMeta from '../../shared/ChartMeta';
 import StatList from '../../shared/StatList';
@@ -19,22 +19,26 @@ export default function SocialContext({ iso3, title, subtitle, description, sour
   useEffect(() => {
     loadFile('assets/data/cdde_social_context.json')
       .then(r => r?.json())
-      .then(d => { if (d) setAllData(d); });
+      .then(d => {
+        if (d) setAllData(d);
+      });
   }, []);
 
   const d = allData?.[iso3] ?? null;
   const empYear = EMP_YEAR[iso3] ?? 2024;
 
-  const items = d ? [
-    { label: 'Employment rate', value: d.emp != null ? `${d.emp}%` : null, note: `${empYear}, working-age population` },
-    { label: 'Female employment', value: d.emp_female != null ? `${d.emp_female}%` : null, note: `${empYear}, working-age population` },
-    { label: 'Population', value: fmtPop(d.population), note: '2024 estimate' },
-    {
-      label: 'Human Development Index',
-      value: d.hdi_value != null ? d.hdi_value.toFixed(3) : null,
-      note: d.hdi_rank != null ? `Rank ${d.hdi_rank}${d.hdi_category ? ` – ${d.hdi_category}` : ''}, 2023` : '2023',
-    },
-  ] : [];
+  const items = d
+    ? [
+        { label: 'Employment rate', value: d.emp != null ? `${d.emp}%` : null, note: `${empYear}, working-age population` },
+        { label: 'Female employment', value: d.emp_female != null ? `${d.emp_female}%` : null, note: `${empYear}, working-age population` },
+        { label: 'Population', value: fmtPop(d.population), note: '2024 estimate' },
+        {
+          label: 'Human Development Index',
+          value: d.hdi_value != null ? d.hdi_value.toFixed(3) : null,
+          note: d.hdi_rank != null ? `Rank ${d.hdi_rank}${d.hdi_category ? ` – ${d.hdi_category}` : ''}, 2023` : '2023'
+        }
+      ]
+    : [];
 
   return (
     <div className="cdde_card">

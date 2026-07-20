@@ -1,10 +1,10 @@
+import CSVtoJSON from '@unctad-infovis/general-tools/helpers/CsvToJson.js';
+import loadFile from '@unctad-infovis/general-tools/helpers/LoadFile.js';
+import useIsVisible from '@unctad-infovis/general-tools/helpers/UseIsVisible.js';
 import * as d3 from 'd3';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import * as topojson from 'topojson-client';
 import { SMALL_ISLAND_DOTS } from '../../../data/sids';
-import CSVtoJSON from '../../../helpers/CsvToJson';
-import loadFile from '../../../helpers/LoadFile';
-import useIsVisible from '../../../helpers/UseIsVisible';
 import CircleFlag from '../../general/CircleFlag';
 import ChartHeader from '../shared/ChartHeader';
 import ChartMeta from '../shared/ChartMeta';
@@ -15,9 +15,7 @@ import { DEP_COLOR_SCALE, GROUP_COLORS, NO_DATA_FILL } from '../shared/cdde-cons
 import './DependenceMap.css';
 
 const ON_UNCTAD = typeof window !== 'undefined' && window.location.hostname.includes('unctad.org');
-const PROFILE_BASE = ON_UNCTAD
-  ? 'https://unctad.org/topic/commodities/state-of-commodity-dependence/country-profiles'
-  : './compare.html';
+const PROFILE_BASE = ON_UNCTAD ? 'https://unctad.org/topic/commodities/state-of-commodity-dependence/country-profiles' : './compare.html';
 const MAX_H = 480;
 
 // HKG, MAC, TWN share China's data and highlight together
@@ -362,7 +360,8 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
                     return mapData ? <path key="xac" d={d} fill="url(#cmap_aksai_stripe)" style={{ pointerEvents: 'none' }} /> : null;
                   }
                   const inActiveGroup = hoverTooltip?.iso3 && CHINA_GROUP.has(hoverTooltip.iso3) && CHINA_GROUP.has(id);
-                  return <path key={`${id}_${d}`} d={d} className={`cmap_country${inActiveGroup ? ' cmap_country--active' : ''}`} style={{ fill: getFill(id) }} onClick={() => handleCountryClick(id)} data-iso={id} />;
+                  // biome-ignore lint/a11y/useSemanticElements: SVG does not support <button> as a descendant of <g>; role="button" is the correct ARIA pattern here
+                  return <path key={`${id}_${d}`} d={d} className={`cmap_country${inActiveGroup ? ' cmap_country--active' : ''}`} role="button" style={{ fill: getFill(id) }} onClick={() => handleCountryClick(id)} data-iso={id} />;
                 })}
               </g>
 
@@ -381,7 +380,8 @@ export default function DependenceMap({ insight, note, source, subtitle, title }
               {/* Small island dots */}
               <g className="cmap_islands" style={{ opacity: revealed ? (switching ? 0.85 : 1) : 0, transition: REDUCED_MOTION ? 'none' : switching ? 'opacity 0.2s ease' : 'opacity 0.7s ease' }}>
                 {computed?.islandDots?.map(s => (
-                  <circle key={s.iso3} cx={s.x} cy={s.y} r={4 / zt.k} style={{ fill: getFill(s.iso3) }} stroke="#fff" strokeWidth={0.8 / zt.k} className="cmap_island_dot" data-iso={s.iso3} onClick={() => handleCountryClick(s.iso3)} />
+                  // biome-ignore lint/a11y/useSemanticElements: SVG does not support <button> as a descendant of <g>; role="button" is the correct ARIA pattern here
+                  <circle key={s.iso3} cx={s.x} cy={s.y} r={4 / zt.k} style={{ fill: getFill(s.iso3) }} role="button" stroke="#fff" strokeWidth={0.8 / zt.k} className="cmap_island_dot" data-iso={s.iso3} onClick={() => handleCountryClick(s.iso3)} aria-label={s.iso3} />
                 ))}
               </g>
             </g>

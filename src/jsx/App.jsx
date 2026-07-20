@@ -1,7 +1,9 @@
+import BackToTop from '@unctad-infovis/general-tools/components/BackToTop.jsx';
 import { useEffect, useRef } from 'react';
 import Article from '../Main.mdx';
 
 // cdde/main
+import KnowMore from './components/cdde/know_more/KnowMore.jsx';
 import CommodityGroups from './components/cdde/main/CommodityGroups.jsx';
 import CommodityPrices from './components/cdde/main/CommodityPrices.jsx';
 import DependenceByGroup from './components/cdde/main/DependenceByGroup.jsx';
@@ -10,14 +12,13 @@ import DependenceMap from './components/cdde/main/DependenceMap.jsx';
 import DependenceMovers from './components/cdde/main/DependenceMovers.jsx';
 import ExportsByRegion from './components/cdde/main/ExportsByRegion.jsx';
 import Header from './components/cdde/main/Header.jsx';
-import KnowMore from './components/cdde/know_more/KnowMore.jsx';
 import NarrativeIntro from './components/cdde/main/NarrativeIntro.jsx';
 import SectionDivider from './components/cdde/main/SectionDivider.jsx';
 import StatusChangers from './components/cdde/main/StatusChangers.jsx';
 import Nav from './components/cdde/shared/Nav.jsx';
-import BackToTop from './components/general/BackToTop.jsx';
 
-import './../styles/styles.css';
+import '@unctad-infovis/general-tools/styles/styles.css';
+import './App.css';
 import './components/cdde/shared/cdde-patterns.css';
 
 const components = {

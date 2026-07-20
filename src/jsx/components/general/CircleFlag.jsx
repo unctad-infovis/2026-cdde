@@ -1,4 +1,4 @@
-import basePath from './../../helpers/BasePath';
+import basePath from '@unctad-infovis/general-tools/helpers/BasePath.js';
 
 export default function CircleFlag({ countryCode, height = 24, width, className }) {
   const size = width ?? height;

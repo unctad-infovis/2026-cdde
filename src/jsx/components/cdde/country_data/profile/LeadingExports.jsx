@@ -1,5 +1,5 @@
+import loadFile from '@unctad-infovis/general-tools/helpers/LoadFile.js';
 import { useEffect, useState } from 'react';
-import loadFile from '../../../../helpers/LoadFile';
 import ChartHeader from '../../shared/ChartHeader';
 import ChartMeta from '../../shared/ChartMeta';
 import ColChart from '../../shared/ColChart';

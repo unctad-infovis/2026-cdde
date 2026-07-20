@@ -1,7 +1,7 @@
+import loadFile from '@unctad-infovis/general-tools/helpers/LoadFile.js';
+import useIsVisible from '@unctad-infovis/general-tools/helpers/UseIsVisible.js';
 import * as d3 from 'd3';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import loadFile from '../../../helpers/LoadFile';
-import useIsVisible from '../../../helpers/UseIsVisible';
 import ChartHeader from '../shared/ChartHeader';
 import ChartMeta from '../shared/ChartMeta';
 import ChartTooltip from '../shared/ChartTooltip';

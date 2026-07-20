@@ -24,7 +24,7 @@ function niceStep(raw) {
   return 10 * mag;
 }
 
-export default function LineChartTime({ series, lineColor = C_BLUE, yFmt = fmtBillions, tooltipUnit = 'bn USD', ariaLabel = 'Line chart over time' }) {
+export default function LineChartTime({ series, lineColor = C_BLUE, yFmt = fmtBillions, ariaLabel = 'Line chart over time' }) {
   const wrapRef = useRef(null);
   const pathRef = useRef(null);
   const [svgW, setSvgW] = useState(560);

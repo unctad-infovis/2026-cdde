@@ -11,21 +11,18 @@ for (const f of fs.readdirSync('dist').filter(f => f.endsWith('.html'))) {
   fs.writeFileSync(p, html.replace(/href="\/(?!\/)/g, 'href="./').replace(/src="\/(?!\/)/g, 'src="./'));
 }
 
-// Chunk files that are dynamically imported by entry files and/or by other chunks.
-const CHUNKS = [
-  '2026-cdde.BackToTop.js',
-  '2026-cdde.cdde-patterns.js',
-  '2026-cdde.KnowMore.js',
-  '2026-cdde.MiniHeader.js',
-  '2026-cdde.UNCTADSiteHeader.js',
-];
+const ENTRIES = ['dist/js/2026-cdde.min.js', 'dist/js/2026-cdde-compare.min.js', 'dist/js/2026-cdde-header.min.js', 'dist/js/2026-cdde-know-more.min.js'];
 
-const ENTRIES = [
-  'dist/js/2026-cdde.min.js',
-  'dist/js/2026-cdde-compare.min.js',
-  'dist/js/2026-cdde-header.min.js',
-  'dist/js/2026-cdde-know-more.min.js',
-];
+// Chunk files that are dynamically imported by entry files and/or by other chunks.
+// Rollup names these after one of the modules bundled into them, which can change
+// whenever imports move between local files and packages, so discover them instead
+// of hardcoding names.
+const CHUNKS = fs
+  .readdirSync('dist/js')
+  .filter(f => f.endsWith('.js'))
+  .map(f => path.join('dist/js', f))
+  .filter(p => !ENTRIES.includes(p))
+  .map(p => path.basename(p));
 
 const ALL_JS = [...ENTRIES, ...CHUNKS.map(c => path.join('dist/js', c))];
 

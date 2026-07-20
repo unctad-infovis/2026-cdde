@@ -1,6 +1,10 @@
 @keyframes rt_bar_grow {
-  from { width: 0%; }
-  to { width: var(--rt-bar-pct); }
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--rt-bar-pct);
+  }
 }
 #app-root-2026-cdde .app {
   /* Responsive */

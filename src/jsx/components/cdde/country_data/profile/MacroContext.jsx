@@ -1,5 +1,5 @@
+import loadFile from '@unctad-infovis/general-tools/helpers/LoadFile.js';
 import { useEffect, useState } from 'react';
-import loadFile from '../../../../helpers/LoadFile';
 import ChartHeader from '../../shared/ChartHeader';
 import ChartMeta from '../../shared/ChartMeta';
 import StatList from '../../shared/StatList';
@@ -22,15 +22,19 @@ export default function MacroContext({ iso3, title, subtitle, description, sourc
   useEffect(() => {
     loadFile('assets/data/cdde_macro_context.json')
       .then(r => r?.json())
-      .then(d => { if (d) setAllData(d); });
+      .then(d => {
+        if (d) setAllData(d);
+      });
   }, []);
 
   const d = allData?.[iso3] ?? null;
 
-  const items = d ? [
-    { label: 'GDP', value: fmtGdp(d.gdp), note: 'Constant 2020 USD' },
-    { label: 'GDP per capita', value: fmtPerCapita(d.gdp_per_capita), note: 'Constant 2020 USD' },
-  ] : [];
+  const items = d
+    ? [
+        { label: 'GDP', value: fmtGdp(d.gdp), note: 'Constant 2020 USD' },
+        { label: 'GDP per capita', value: fmtPerCapita(d.gdp_per_capita), note: 'Constant 2020 USD' }
+      ]
+    : [];
 
   return (
     <div className="cdde_card">

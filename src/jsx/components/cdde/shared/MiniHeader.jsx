@@ -1,4 +1,4 @@
-import basePath from '../../../helpers/BasePath';
+import basePath from '@unctad-infovis/general-tools/helpers/BasePath.js';
 import Nav from './Nav.jsx';
 import './MiniHeader.css';
 

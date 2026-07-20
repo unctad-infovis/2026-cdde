@@ -1,6 +1,6 @@
+import loadFile from '@unctad-infovis/general-tools/helpers/LoadFile.js';
+import useIsVisible from '@unctad-infovis/general-tools/helpers/UseIsVisible.js';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import loadFile from '../../../helpers/LoadFile';
-import useIsVisible from '../../../helpers/UseIsVisible';
 import ChartHeader from '../shared/ChartHeader';
 import ChartMeta from '../shared/ChartMeta';
 import DumbbellChart from '../shared/DumbbellChart';
@@ -41,7 +41,9 @@ export default function DependenceMovers({ insight, note, source, subtitle, titl
 
       {insight && <p className="cdde_insight">{insight}</p>}
 
-      <div className="dm_chart_wrap" ref={wrapRef}>{data ? <DumbbellChart data={data} xMin={0} xMax={100} nameW={144} badgeW={56} svgW={svgW} referencePct={60} referenceLabel="60% threshold" xTickValues={[0, 50, 100]} animated={animated} /> : <div className="dm_loading" />}</div>
+      <div className="dm_chart_wrap" ref={wrapRef}>
+        {data ? <DumbbellChart data={data} xMin={0} xMax={100} nameW={144} badgeW={56} svgW={svgW} referencePct={60} referenceLabel="60% threshold" xTickValues={[0, 50, 100]} animated={animated} /> : <div className="dm_loading" />}
+      </div>
 
       <ChartMeta source={source} note={note} sourceKey="Commodity Dependence, 2022–2024" />
     </div>

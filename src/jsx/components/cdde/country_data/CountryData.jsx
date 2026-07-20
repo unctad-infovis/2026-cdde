@@ -1,6 +1,6 @@
+import CSVtoJSON from '@unctad-infovis/general-tools/helpers/CsvToJson.js';
+import loadFile from '@unctad-infovis/general-tools/helpers/LoadFile.js';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import CSVtoJSON from '../../../helpers/CsvToJson';
-import loadFile from '../../../helpers/LoadFile';
 import { REGION_GROUPS } from '../shared/cdde-constants';
 import CountryList from './CountryList';
 import CompareView from './compare/CompareView';

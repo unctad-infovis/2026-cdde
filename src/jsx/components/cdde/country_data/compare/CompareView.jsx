@@ -1,5 +1,5 @@
+import loadFile from '@unctad-infovis/general-tools/helpers/LoadFile.js';
 import { useEffect, useRef, useState } from 'react';
-import loadFile from '../../../../helpers/LoadFile';
 import CircleFlag from '../../../general/CircleFlag';
 import ChartHeader from '../../shared/ChartHeader';
 import CountrySearch from '../../shared/CountrySearch';

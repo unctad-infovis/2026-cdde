@@ -1,5 +1,5 @@
-import basePath from './../../../helpers/BasePath';
-import ButtonShare from './../../general/ButtonShare.jsx';
+import ButtonShare from '@unctad-infovis/general-tools/components/ButtonShare.jsx';
+import basePath from '@unctad-infovis/general-tools/helpers/BasePath.js';
 import Nav from './../shared/Nav.jsx';
 import RollingNumber from './../shared/RollingNumber.jsx';
 import './Header.css';

@@ -1,5 +1,5 @@
+import basePath from '@unctad-infovis/general-tools/helpers/BasePath.js';
 import { useId } from 'react';
-import basePath from '../../../helpers/BasePath';
 import { C_BLUE, C_YELLOW } from './cdde-constants';
 import './DumbbellChart.css';
 

@@ -1,4 +1,4 @@
-import useIsVisible from '../../../helpers/UseIsVisible';
+import useIsVisible from '@unctad-infovis/general-tools/helpers/UseIsVisible.js';
 
 export default function StatList({ items, columns = 2 }) {
   const [visRef, isVisible] = useIsVisible(0.15);
@@ -16,10 +16,7 @@ export default function StatList({ items, columns = 2 }) {
           }}
         >
           <span className="stl_label">{item.label}</span>
-          {item.value != null
-            ? <span className="stl_value">{item.value}</span>
-            : <span className="stl_unavailable">Data not available</span>
-          }
+          {item.value != null ? <span className="stl_value">{item.value}</span> : <span className="stl_unavailable">Data not available</span>}
           {item.value != null && item.note && <span className="stl_note">{item.note}</span>}
         </div>
       ))}

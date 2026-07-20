@@ -20,7 +20,7 @@ export default defineConfig(({ command }) => ({
         header: './header.html'
       },
       output: {
-        entryFileNames: chunk => chunk.name === 'index' ? `js/${name}.min.js` : `js/${name}-${chunk.name}.min.js`,
+        entryFileNames: chunk => (chunk.name === 'index' ? `js/${name}.min.js` : `js/${name}-${chunk.name}.min.js`),
         chunkFileNames: `js/${name}.[name].js`,
         assetFileNames: assetInfo => {
           if (assetInfo.name?.endsWith('.css')) return `css/${name}.min.css`;

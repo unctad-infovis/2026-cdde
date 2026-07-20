@@ -1,4 +1,4 @@
-import basePath from './../../../helpers/BasePath';
+import basePath from '@unctad-infovis/general-tools/helpers/BasePath.js';
 import './SectionDivider.css';
 
 export default function SectionDivider({ children, eyebrow, panel_description, panel_eyebrow, panel_title, photo_credit = 'Unsplash', spotlight, title }) {

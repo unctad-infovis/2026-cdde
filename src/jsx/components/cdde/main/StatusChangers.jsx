@@ -1,6 +1,6 @@
+import loadFile from '@unctad-infovis/general-tools/helpers/LoadFile.js';
+import useIsVisible from '@unctad-infovis/general-tools/helpers/UseIsVisible.js';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import loadFile from '../../../helpers/LoadFile';
-import useIsVisible from '../../../helpers/UseIsVisible';
 import ChartHeader from '../shared/ChartHeader';
 import ChartMeta from '../shared/ChartMeta';
 import DumbbellChart from '../shared/DumbbellChart';
@@ -52,7 +52,9 @@ export default function StatusChangers({ insight, note, source, subtitle, title 
         </span>
       </div>
 
-      <div className="sc_chart_wrap" ref={wrapRef}>{data ? <DumbbellChart data={data} xMin={0} xMax={100} nameW={svgW < 360 ? 100 : svgW < 480 ? 130 : 172} badgeW={56} svgW={svgW} referencePct={60} referenceLabel="60% threshold" xTickValues={[0, 50, 100]} animated={animated} /> : <div className="sc_loading" />}</div>
+      <div className="sc_chart_wrap" ref={wrapRef}>
+        {data ? <DumbbellChart data={data} xMin={0} xMax={100} nameW={svgW < 360 ? 100 : svgW < 480 ? 130 : 172} badgeW={56} svgW={svgW} referencePct={60} referenceLabel="60% threshold" xTickValues={[0, 50, 100]} animated={animated} /> : <div className="sc_loading" />}
+      </div>
 
       <ChartMeta source={source} note={note} sourceKey="Commodity Dependence, 2022–2024" />
     </div>

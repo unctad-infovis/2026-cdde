@@ -91,7 +91,6 @@ export default function PeriodColumns({ val1, val2 }) {
   // Animated bar props: grow from zero line outward
   function animBarProps(val) {
     if (val == null) return null;
-    const fullTop = Math.min(yScale(val), zeroY);
     const fullHeight = Math.max(Math.abs(yScale(val) - zeroY), 1);
     const animHeight = fullHeight * progress;
     const top = val >= 0 ? zeroY - animHeight : zeroY;
@@ -109,54 +108,56 @@ export default function PeriodColumns({ val1, val2 }) {
   return (
     <div className="pcc_wrap" ref={wrapRef}>
       {!hasData && <p className="cdde_no_data">Data not available</p>}
-      {hasData && <svg viewBox={`0 0 ${svgW} ${H}`} className="pcc_svg" aria-label="Column chart comparing two time periods">
-        <g transform={`translate(${M.left},${M.top})`}>
-          {yTicks.map(v => (
-            <g key={v} transform={`translate(0,${yScale(v)})`}>
-              <line x1={0} x2={CHART_W} className="pcc_grid" />
-              <text x={-4} y={4} textAnchor="end" className="pcc_tick_label">
-                {axisFmt(v, step)}
-              </text>
-            </g>
-          ))}
+      {hasData && (
+        <svg viewBox={`0 0 ${svgW} ${H}`} className="pcc_svg" aria-label="Column chart comparing two time periods">
+          <g transform={`translate(${M.left},${M.top})`}>
+            {yTicks.map(v => (
+              <g key={v} transform={`translate(0,${yScale(v)})`}>
+                <line x1={0} x2={CHART_W} className="pcc_grid" />
+                <text x={-4} y={4} textAnchor="end" className="pcc_tick_label">
+                  {axisFmt(v, step)}
+                </text>
+              </g>
+            ))}
 
-          {/* Zero baseline serves as x-axis */}
-          <line x1={0} y1={zeroY} x2={CHART_W} y2={zeroY} className="pcc_zero" />
+            {/* Zero baseline serves as x-axis */}
+            <line x1={0} y1={zeroY} x2={CHART_W} y2={zeroY} className="pcc_zero" />
 
-          {val1 != null &&
-            (() => {
-              const b = animBarProps(val1);
-              return (
-                <>
-                  <rect x={x1} y={b.y} width={barW} height={b.height} fill={COLOR1} rx={3} />
-                  <text x={x1 + barW / 2} y={valLabelY(val1)} textAnchor="middle" className="pcc_val_label" style={{ opacity: labelOpacity }}>
-                    {fmtPct(val1)}
-                  </text>
-                </>
-              );
-            })()}
+            {val1 != null &&
+              (() => {
+                const b = animBarProps(val1);
+                return (
+                  <>
+                    <rect x={x1} y={b.y} width={barW} height={b.height} fill={COLOR1} rx={3} />
+                    <text x={x1 + barW / 2} y={valLabelY(val1)} textAnchor="middle" className="pcc_val_label" style={{ opacity: labelOpacity }}>
+                      {fmtPct(val1)}
+                    </text>
+                  </>
+                );
+              })()}
 
-          {val2 != null &&
-            (() => {
-              const b = animBarProps(val2);
-              return (
-                <>
-                  <rect x={x2} y={b.y} width={barW} height={b.height} fill={COLOR2} rx={3} />
-                  <text x={x2 + barW / 2} y={valLabelY(val2)} textAnchor="middle" className="pcc_val_label" style={{ opacity: labelOpacity }}>
-                    {fmtPct(val2)}
-                  </text>
-                </>
-              );
-            })()}
+            {val2 != null &&
+              (() => {
+                const b = animBarProps(val2);
+                return (
+                  <>
+                    <rect x={x2} y={b.y} width={barW} height={b.height} fill={COLOR2} rx={3} />
+                    <text x={x2 + barW / 2} y={valLabelY(val2)} textAnchor="middle" className="pcc_val_label" style={{ opacity: labelOpacity }}>
+                      {fmtPct(val2)}
+                    </text>
+                  </>
+                );
+              })()}
 
-          <text x={x1 + barW / 2} y={CHART_H + 16} textAnchor="middle" className="pcc_tick_label">
-            {LABEL1}
-          </text>
-          <text x={x2 + barW / 2} y={CHART_H + 16} textAnchor="middle" className="pcc_tick_label">
-            {LABEL2}
-          </text>
-        </g>
-      </svg>}
+            <text x={x1 + barW / 2} y={CHART_H + 16} textAnchor="middle" className="pcc_tick_label">
+              {LABEL1}
+            </text>
+            <text x={x2 + barW / 2} y={CHART_H + 16} textAnchor="middle" className="pcc_tick_label">
+              {LABEL2}
+            </text>
+          </g>
+        </svg>
+      )}
     </div>
   );
 }

@@ -1,6 +1,6 @@
+import loadFile from '@unctad-infovis/general-tools/helpers/LoadFile.js';
 import * as d3 from 'd3';
 import { useEffect, useRef, useState } from 'react';
-import loadFile from '../../../../helpers/LoadFile';
 import ChartHeader from '../../shared/ChartHeader';
 import ChartMeta from '../../shared/ChartMeta';
 import ChartTooltip from '../../shared/ChartTooltip';
@@ -93,51 +93,53 @@ export default function DependenceOverTime({ iso3, title, subtitle, description,
 
       <button type="button" className="dot_chart_wrap" ref={wrapRef} onMouseMove={hasData ? handleMouseMove : undefined} onMouseLeave={() => setTooltip(null)}>
         {!hasData && <p className="cdde_no_data">Data not available</p>}
-        {hasData && <svg viewBox={`0 0 ${svgW} ${H}`} className="dot_svg" aria-label="Line chart of commodity export dependence over time">
-          <g transform={`translate(${M.left},${M.top})`}>
-            {yTicks.map((v, i) => (
-              <g key={v} transform={`translate(0,${yScale(v)})`}>
-                <line x1={0} x2={CHART_W} className="dot_grid" />
-                <text x={-6} y={4} textAnchor="end" className="dot_tick_label">
-                  {i === yTicks.length - 1 ? `${v}%` : v}
+        {hasData && (
+          <svg viewBox={`0 0 ${svgW} ${H}`} className="dot_svg" aria-label="Line chart of commodity export dependence over time">
+            <g transform={`translate(${M.left},${M.top})`}>
+              {yTicks.map((v, i) => (
+                <g key={v} transform={`translate(0,${yScale(v)})`}>
+                  <line x1={0} x2={CHART_W} className="dot_grid" />
+                  <text x={-6} y={4} textAnchor="end" className="dot_tick_label">
+                    {i === yTicks.length - 1 ? `${v}%` : v}
+                  </text>
+                </g>
+              ))}
+
+              <line x1={0} x2={CHART_W} y1={threshold60Y} y2={threshold60Y} className="dot_threshold" />
+
+              {linePath && <path d={linePath} fill="none" stroke={lineColor} strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" />}
+              <g transform={`translate(4, ${threshold60Y - PILL_H - PILL_ARROW})`}>
+                <rect x={0} y={0} width={PILL_W} height={PILL_H} rx={PILL_R} fill="var(--un-color-yellow)" />
+                <text x={PILL_W / 2} y={PILL_H - 5} textAnchor="middle" className="dot_pill_label">
+                  60% threshold
                 </text>
+                <polygon points={`${pillCX - PILL_ARROW},${PILL_H} ${pillCX + PILL_ARROW},${PILL_H} ${pillCX},${PILL_H + PILL_ARROW}`} fill="var(--un-color-yellow)" />
               </g>
-            ))}
 
-            <line x1={0} x2={CHART_W} y1={threshold60Y} y2={threshold60Y} className="dot_threshold" />
+              {lastPt && (
+                <>
+                  <circle cx={lastX} cy={lastY} r={4} fill={lineColor} />
+                  <rect x={lastX - 24} y={lastY - 30} width={48} height={22} rx={4} fill={lineColor} />
+                  <text x={lastX} y={lastY - 13} textAnchor="middle" className="dot_callout_label">
+                    {lastPt.pct.toFixed(1)}
+                  </text>
+                </>
+              )}
 
-            {linePath && <path d={linePath} fill="none" stroke={lineColor} strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" />}
-            <g transform={`translate(4, ${threshold60Y - PILL_H - PILL_ARROW})`}>
-              <rect x={0} y={0} width={PILL_W} height={PILL_H} rx={PILL_R} fill="var(--un-color-yellow)" />
-              <text x={PILL_W / 2} y={PILL_H - 5} textAnchor="middle" className="dot_pill_label">
-                60% threshold
-              </text>
-              <polygon points={`${pillCX - PILL_ARROW},${PILL_H} ${pillCX + PILL_ARROW},${PILL_H} ${pillCX},${PILL_H + PILL_ARROW}`} fill="var(--un-color-yellow)" />
+              {tooltip && <line x1={tooltip.cursorX} y1={0} x2={tooltip.cursorX} y2={CHART_H} className="dot_cursor" />}
+
+              <line x1={0} y1={CHART_H} x2={CHART_W} y2={CHART_H} className="dot_axis" />
+              {xTicks.map(t => (
+                <g key={t} transform={`translate(${xScale(t)},${CHART_H})`}>
+                  <line y2={4} className="dot_tick" />
+                  <text y={16} textAnchor={t === xMin ? 'start' : t === xMax ? 'end' : 'middle'} className="dot_tick_label">
+                    {t}
+                  </text>
+                </g>
+              ))}
             </g>
-
-            {lastPt && (
-              <>
-                <circle cx={lastX} cy={lastY} r={4} fill={lineColor} />
-                <rect x={lastX - 24} y={lastY - 30} width={48} height={22} rx={4} fill={lineColor} />
-                <text x={lastX} y={lastY - 13} textAnchor="middle" className="dot_callout_label">
-                  {lastPt.pct.toFixed(1)}
-                </text>
-              </>
-            )}
-
-            {tooltip && <line x1={tooltip.cursorX} y1={0} x2={tooltip.cursorX} y2={CHART_H} className="dot_cursor" />}
-
-            <line x1={0} y1={CHART_H} x2={CHART_W} y2={CHART_H} className="dot_axis" />
-            {xTicks.map(t => (
-              <g key={t} transform={`translate(${xScale(t)},${CHART_H})`}>
-                <line y2={4} className="dot_tick" />
-                <text y={16} textAnchor={t === xMin ? 'start' : t === xMax ? 'end' : 'middle'} className="dot_tick_label">
-                  {t}
-                </text>
-              </g>
-            ))}
-          </g>
-        </svg>}
+          </svg>
+        )}
 
         {tooltip && (
           <ChartTooltip left={tooltip.x} top={tooltip.domY} flip={tooltip.flip}>

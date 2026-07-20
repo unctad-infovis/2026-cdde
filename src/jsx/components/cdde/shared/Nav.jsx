@@ -4,7 +4,7 @@ const ON_UNCTAD = typeof window !== 'undefined' && window.location.hostname.incl
 const UNCTAD_CDDE_PREFIX = 'https://unctad.org/topic/commodities/state-of-commodity-dependence/';
 const LOCAL_SLUG_MAP = {
   'country-profiles': 'compare.html',
-  'know-more': 'know-more.html',
+  'know-more': 'know-more.html'
 };
 
 function resolveItem(item) {
@@ -38,7 +38,9 @@ function isCurrentPage(href) {
   if (href.startsWith('http')) {
     try {
       return pathname === new URL(href).pathname.replace(/\/$/, '');
-    } catch { return false; }
+    } catch {
+      return false;
+    }
   }
   const normalized = href.replace(/^\.\//, '');
   return pathname.endsWith(`/${normalized}`) || pathname.endsWith(`/${normalized.replace('.html', '')}`);
@@ -53,12 +55,7 @@ export default function Nav({ items = [] }) {
         const cls = `nav_btn${item.primary ? ' nav_btn--primary' : ''}${active ? ' nav_btn--active' : ''}`;
         if (item.href) {
           return (
-            <a
-              className={cls}
-              href={item.href}
-              key={item.label}
-              target={undefined}
-            >
+            <a className={cls} href={item.href} key={item.label} target={undefined}>
               {item.label}
             </a>
           );

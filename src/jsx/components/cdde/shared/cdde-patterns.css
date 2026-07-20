@@ -18,8 +18,12 @@
     background: var(--un-color-blue-lightest);
     border-radius: 8px;
   }
-  .cdde_loading--sm { height: 120px; }
-  .cdde_loading--lg { height: 400px; }
+  .cdde_loading--sm {
+    height: 120px;
+  }
+  .cdde_loading--lg {
+    height: 400px;
+  }
   /* ── Insight block ─────────────────────────────────────────── */
   .cdde_insight {
     border-left: 3px solid var(--un-color-blue);
@@ -96,8 +100,12 @@
     height: 10px;
     width: 10px;
   }
-  .cdde_legend_dot--blue   { background: var(--un-color-blue); }
-  .cdde_legend_dot--yellow { background: var(--un-color-yellow); }
+  .cdde_legend_dot--blue {
+    background: var(--un-color-blue);
+  }
+  .cdde_legend_dot--yellow {
+    background: var(--un-color-yellow);
+  }
   .cdde_legend_dot--sq {
     border-radius: 2px;
   }
@@ -255,13 +263,28 @@
     }
   }
   /* ── Section background wrapper ────────────────────────────── */
-  .cdde_bg_section { background-color: #f6fbfe; }
-  .cdde_bg_section--padded { padding: 20px 0 40px; }
+  .cdde_bg_section {
+    background-color: #f6fbfe;
+  }
+  .cdde_bg_section--padded {
+    padding: 20px 0 40px;
+  }
   /* ── Circle flag image ──────────────────────────────────────── */
-  .cdde_circle_flag { border-radius: 50%; display: inline-block; }
+  .cdde_circle_flag {
+    border-radius: 50%;
+    display: inline-block;
+  }
   /* ── Category group colours (via data-group attribute) ──────── */
-  [data-group="agri"]          { background: #72bf44; }
-  [data-group="energy"]        { background: #a05fb4; }
-  [data-group="mining"]        { background: #fbaf17; }
-  [data-group="non-dependent"] { background: #aea29a; }
+  [data-group='agri'] {
+    background: #72bf44;
+  }
+  [data-group='energy'] {
+    background: #a05fb4;
+  }
+  [data-group='mining'] {
+    background: #fbaf17;
+  }
+  [data-group='non-dependent'] {
+    background: #aea29a;
+  }
 }

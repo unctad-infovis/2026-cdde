@@ -1,6 +1,6 @@
+import loadFile from '@unctad-infovis/general-tools/helpers/LoadFile.js';
 import * as d3 from 'd3';
-import { useEffect, useMemo, useRef, useState } from 'react';
-import loadFile from '../../../../helpers/LoadFile';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import ChartHeader from '../../shared/ChartHeader';
 import ChartMeta from '../../shared/ChartMeta';
 import ChartTooltip from '../../shared/ChartTooltip';
@@ -114,7 +114,7 @@ export default function EconomyBubbleChart({ countries, title, subtitle, descrip
     highlightRef.current = highlight;
   }, [highlight]);
 
-  const renderLabels = hlList => {
+  const renderLabels = useCallback(hlList => {
     const labelsGroup = labelsGroupRef.current;
     if (!labelsGroup) return;
     labelsGroup.selectAll('*').remove();
@@ -169,7 +169,7 @@ export default function EconomyBubbleChart({ countries, title, subtitle, descrip
         .attr('dominant-baseline', 'middle')
         .text(n.name);
     });
-  };
+  }, []);
 
   useEffect(() => {
     loadFile('assets/data/cdde_social_context.json')
@@ -322,7 +322,7 @@ export default function EconomyBubbleChart({ countries, title, subtitle, descrip
     renderLabels(highlightRef.current);
 
     d3.select(svgRef.current).on('mouseleave', () => setTooltip(null));
-  }, [visible, chartW, socialData]);
+  }, [visible, chartW, socialData, renderLabels]);
 
   useEffect(() => {
     if (!svgRef.current) return;
@@ -334,7 +334,7 @@ export default function EconomyBubbleChart({ countries, title, subtitle, descrip
       .attr('opacity', d => (hasHL && !hlSet.has(d.iso3) ? 0.25 : 0.82))
       .style('stroke', d => (hlSet.has(d.iso3) ? borderColor(d.dev) : 'none'));
     renderLabels(highlight);
-  }, [highlight]);
+  }, [highlight, renderLabels]);
 
   const handleHlInput = e => {
     const val = e.target.value;

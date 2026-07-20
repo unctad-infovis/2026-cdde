@@ -1,4 +1,4 @@
-import useCountUp from '../../../helpers/UseCountUp';
+import useCountUp from '@unctad-infovis/general-tools/helpers/UseCountUp.js';
 
 function AnimatedNumber({ num, suffix, decimals, suffixAtEnd, className, style }) {
   const [count, ref] = useCountUp(num, { decimals, duration: 1400 });

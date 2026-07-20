@@ -1,5 +1,5 @@
+import loadFile from '@unctad-infovis/general-tools/helpers/LoadFile.js';
 import { useEffect, useState } from 'react';
-import loadFile from '../../../../helpers/LoadFile';
 import CircleFlag from '../../../general/CircleFlag';
 import { DEVELOPED } from '../../shared/cdde-constants';
 

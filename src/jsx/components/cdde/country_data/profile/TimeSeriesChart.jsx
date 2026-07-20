@@ -1,5 +1,5 @@
+import loadFile from '@unctad-infovis/general-tools/helpers/LoadFile.js';
 import { useEffect, useState } from 'react';
-import loadFile from '../../../../helpers/LoadFile';
 import ChartHeader from '../../shared/ChartHeader';
 import ChartMeta from '../../shared/ChartMeta';
 import LineChartTime from '../../shared/LineChartTime';
@@ -8,7 +8,7 @@ const SOURCE_KEYS = {
   'cdde_exports_over_time.json': 'Commodity Exports, 2022–2024',
   'cdde_imports_over_time.json': 'Historical Commodity Imports',
   'cdde_food_imports.json': 'Historical Food Imports',
-  'cdde_energy_imports.json': 'Historical Energy Imports',
+  'cdde_energy_imports.json': 'Historical Energy Imports'
 };
 
 export default function TimeSeriesChart({ iso3, dataFile, lineColor, ariaLabel, title, subtitle, description, source, note, useMillions = false }) {
