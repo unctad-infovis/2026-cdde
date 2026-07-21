@@ -1,4 +1,4 @@
-import basePath from '@unctad-infovis/general-tools/helpers/BasePath.js';
+import { getFlagUrl } from '@unctad-infovis/unctad-flags';
 import { useId } from 'react';
 import { C_BLUE, C_YELLOW } from './cdde-constants';
 import './DumbbellChart.css';
@@ -16,7 +16,6 @@ const FLAG_GAP = 6;
 
 export default function DumbbellChart({ data, xMin, xMax, nameW = 140, badgeW = 56, svgW = 520, referencePct, referenceLabel, xTickValues, animated = false }) {
   const uid = useId().replace(/:/g, '');
-  const bp = basePath();
 
   const trackW = svgW - nameW - badgeW - TRACK_PAD_R;
   const H = AXIS_H + ROW_H * data.length + 8;
@@ -110,7 +109,7 @@ export default function DumbbellChart({ data, xMin, xMax, nameW = 140, badgeW = 
             <text x={textEndX} y={y + 4} textAnchor="end" className="db_row_name">
               {row.name}
             </text>
-            {row.iso2 && <image href={`${bp}assets/img/flags/${row.iso2.toLowerCase()}.svg`} x={flagCX - FLAG_R} y={y - FLAG_R} width={FLAG_R * 2} height={FLAG_R * 2} clipPath={`url(#${uid}_f${i})`} />}
+            {row.iso2 && <image href={getFlagUrl(row.iso2)} x={flagCX - FLAG_R} y={y - FLAG_R} width={FLAG_R * 2} height={FLAG_R * 2} clipPath={`url(#${uid}_f${i})`} />}
             <line x1={nameW} y1={y} x2={nameW + trackW} y2={y} className="db_track" />
             <line x1={startX} y1={y} x2={lineEnd} y2={y} pathLength="1" stroke={color} strokeWidth={STROKE_W} strokeLinecap="round" style={shaftStyle} />
             <polyline points={arrowPts} pathLength="1" fill="none" stroke={color} strokeWidth={STROKE_W} strokeLinecap="round" strokeLinejoin="round" style={tipStyle} />
