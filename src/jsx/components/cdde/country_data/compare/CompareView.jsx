@@ -1,6 +1,6 @@
 import loadFile from '@unctad-infovis/general-tools/helpers/LoadFile.js';
 import { useEffect, useRef, useState } from 'react';
-import CircleFlag from '../../../general/CircleFlag';
+import CircleFlag from '@unctad-infovis/general-tools/components/CircleFlag.jsx';
 import ChartHeader from '../../shared/ChartHeader';
 import CountrySearch from '../../shared/CountrySearch';
 import { GROUP_COLORS } from '../../shared/cdde-constants';

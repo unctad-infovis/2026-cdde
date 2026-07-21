@@ -1,5 +1,5 @@
 import { useEffect, useId, useRef, useState } from 'react';
-import CircleFlag from '../../general/CircleFlag';
+import CircleFlag from '@unctad-infovis/general-tools/components/CircleFlag.jsx';
 import './CountrySearch.css';
 
 export default function CountrySearch({ countries, value, onChange, placeholder = 'Select economy…' }) {

@@ -5,7 +5,7 @@ import * as d3 from 'd3';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import * as topojson from 'topojson-client';
 import { SMALL_ISLAND_DOTS } from '../../../data/sids';
-import CircleFlag from '../../general/CircleFlag';
+import CircleFlag from '@unctad-infovis/general-tools/components/CircleFlag.jsx';
 import ChartHeader from '../shared/ChartHeader';
 import ChartMeta from '../shared/ChartMeta';
 import ChartTooltip from '../shared/ChartTooltip';

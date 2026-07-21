@@ -269,11 +269,6 @@
   .cdde_bg_section--padded {
     padding: 20px 0 40px;
   }
-  /* ── Circle flag image ──────────────────────────────────────── */
-  .cdde_circle_flag {
-    border-radius: 50%;
-    display: inline-block;
-  }
   /* ── Category group colours (via data-group attribute) ──────── */
   [data-group='agri'] {
     background: #72bf44;

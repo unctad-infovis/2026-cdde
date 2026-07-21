@@ -1,6 +1,6 @@
 import loadFile from '@unctad-infovis/general-tools/helpers/LoadFile.js';
 import { useEffect, useState } from 'react';
-import CircleFlag from '../../../general/CircleFlag';
+import CircleFlag from '@unctad-infovis/general-tools/components/CircleFlag.jsx';
 import { depColor } from '../../shared/cdde-constants';
 import RollingNumber from '../../shared/RollingNumber';
 import DependenceOverTime from './DependenceOverTime';
