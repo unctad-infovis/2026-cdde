@@ -11,6 +11,8 @@
 }
 #app-root-2026-cdde .app {
   .cmap_section {
+    margin: 0 auto;
+    padding: 16px 0 16px 0;
     @media (prefers-reduced-motion: reduce) {
       .cmap_country {
         transition: opacity 0.15s;

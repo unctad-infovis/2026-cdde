@@ -1,8 +1,7 @@
 #app-root-2026-cdde .app {
   .exc_container {
-    border-radius: 20px;
     margin: 0 auto;
-    padding: 28px 0 20px 0;
+    padding: 16px 0 16px 0;
     .exc_container_inner {
       background-color: #fff;
       border-radius: 20px;
