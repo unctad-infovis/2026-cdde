@@ -1,6 +1,6 @@
-const fs = require('node:fs');
-const crypto = require('node:crypto');
-const path = require('node:path');
+import fs from 'node:fs';
+import crypto from 'node:crypto';
+import path from 'node:path';
 
 // Fix HTML: convert absolute paths to relative so the site works at any subpath
 // Also write .nojekyll for gh-pages

@@ -1,4 +1,4 @@
-const { execSync } = require('node:child_process');
+import { execSync } from 'node:child_process';
 
 const STORAGE = `https://${process.env.AZURE_STORAGE_NAME}.blob.core.windows.net/\\$web/${process.env.npm_package_name}`;
 const ENTRIES = ['2026-cdde.min.js', '2026-cdde-compare.min.js', '2026-cdde-header.min.js', '2026-cdde-know-more.min.js'].join(';');

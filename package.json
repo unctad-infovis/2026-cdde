@@ -1,6 +1,7 @@
 {
   "name": "2026-cdde",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "build": "vite build",
     "postbuild": "node scripts/postbuild.js",
