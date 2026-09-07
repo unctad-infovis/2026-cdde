@@ -145,6 +145,13 @@ All data files live in `public/assets/data/` and are loaded at runtime. They are
 
 The following packages are used in this project by default.
 
+### Shared UNCTAD packages
+
+* **@unctad-infovis/general-tools** — shared React components (`ButtonAnchor`, `ButtonShare`, `ChartDataWrapper`, `Image`, `ProgressBar`, `Quote`, `Select`, `Tooltip`, `UNCTADSiteHeader`, `BackToTop`, …), helpers (`BasePath`, `LoadFile`, `CsvToJson`, `FormatNr`, `RoundNr`, `UseIsVisible`, …) and base design-token styles
+* **@unctad-infovis/unctad-flags** — hosted flag SVGs (not bundled) resolved by URL via `getFlagUrl`
+
+These packages are published from the [`un-init-project`](https://github.com/unctad-infovis/un-init-project) monorepo to GitHub Packages, so installing needs an `.npmrc` with `@unctad-infovis:registry=https://npm.pkg.github.com` and a `GITHUB_PACKAGES_TOKEN` environment variable.
+
 ### Project specific
 
 * **d3** — used to create all custom SVG visualisations (maps, line charts, bubble charts, dumbbell charts)
