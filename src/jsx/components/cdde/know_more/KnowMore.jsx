@@ -1,5 +1,6 @@
 import loadFile from '@unctad-infovis/general-tools/helpers/LoadFile.js';
-import { useEffect, useState } from 'react';
+import pinFallback from '@unctad-infovis/general-tools/helpers/PinFallback.js';
+import { useEffect, useRef, useState } from 'react';
 import './KnowMore.css';
 
 const NAV_ITEMS = [
@@ -160,6 +161,10 @@ export default function KnowMore() {
   const [groupings, setGroupings] = useState(null);
   const [sitc3, setSitc3] = useState(null);
   const [activeSection, setActiveSection] = useState('km-sources');
+  const navRef = useRef(null);
+
+  // Where the host page makes position: sticky impossible (unctad.org below ~992px), the nav is pinned by hand
+  useEffect(() => pinFallback(navRef.current, () => 0), []);
 
   useEffect(() => {
     loadFile('assets/data/cdde_sources.json')
@@ -205,7 +210,7 @@ export default function KnowMore() {
         </div>
       </div>
 
-      <div className="km_sticky_nav">
+      <div className="km_sticky_nav" ref={navRef}>
         <div className="km_nav_inner">
           {NAV_ITEMS.map(({ id, label }) => (
             <button key={id} type="button" className={`km_nav_pill${activeSection === id ? ' km_nav_pill--active' : ''}`} onClick={() => scrollTo(id)}>
